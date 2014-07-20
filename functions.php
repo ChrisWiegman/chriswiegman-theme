@@ -52,11 +52,6 @@ if ( ! function_exists( 'chriswiegman_setup' ) ) {
 			'aside', 'image', 'video', 'quote', 'link'
 		) );
 
-		// Setup the WordPress core custom background feature.
-		add_theme_support( 'custom-background', apply_filters( 'chriswiegman_custom_background_args', array(
-			'default-color' => 'ffffff',
-			'default-image' => '',
-		) ) );
 	}
 
 } // chriswiegman_setup
@@ -109,8 +104,3 @@ require get_template_directory() . '/inc/template-tags.php';
  * Custom functions that act independently of the theme templates.
  */
 require get_template_directory() . '/inc/extras.php';
-
-/**
- * Load Jetpack compatibility file.
- */
-require get_template_directory() . '/inc/jetpack.php';
