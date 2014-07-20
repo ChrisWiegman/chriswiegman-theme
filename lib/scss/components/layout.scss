@@ -1,20 +1,22 @@
-.content-area {
-	float: left;
-	margin: 0 -25% 0 0;
-	width: 100%;
+.site-content {
+	clear       : both;
+	margin      : 0 auto;
+	max-width   : 1152px;
+	overflow    : hidden;
+	padding-top : 43px;
 }
 
-.site-main {
-	margin: 0 25% 0 0;
+.content-area {
+	float : left;
+	width : 60%;
 }
 
 .site-content .widget-area {
-	float: right;
-	overflow: hidden;
-	width: 25%;
+	float : right;
+	width : 30%;
 }
 
 .site-footer {
-	clear: both;
-	width: 100%;
+	clear : both;
+	width : 100%;
 }
