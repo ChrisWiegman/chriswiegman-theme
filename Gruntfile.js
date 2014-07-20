@@ -1,0 +1,78 @@
+module.exports = function ( grunt ) {
+
+	// Start out by loading the grunt modules we'll need
+	grunt.loadNpmTasks( 'grunt-contrib-sass' );
+	grunt.loadNpmTasks( 'grunt-contrib-watch' );
+	grunt.loadNpmTasks( 'grunt-contrib-uglify' );
+
+	grunt.initConfig( {
+
+		pkg: grunt.file.readJSON( 'package.json' ),
+
+		sass: {
+			options: {
+				style: 'compressed',
+				sourcemap: false,
+				noCache: true
+			},
+			production: {
+				files: {
+					'css/master.css': 'lib/scss/master.scss'
+				}
+			}
+		},
+
+		uglify: {
+			options: {
+				beautify: false,
+				preserveComments: false
+			},
+			production: {
+				options: {
+					beautify: false,
+					mangle: {
+						except: ['jQuery']
+					}
+				},
+				files: {
+					'js/scripts.min.js': [
+						'lib/js/scripts.js'
+					],
+					'js/admin.min.js': [
+						'lib/js/admin.js'
+					]
+				}
+			}
+		},
+
+		watch: {
+			options: {
+				livereload: true
+			},
+			styles: {
+				files: [
+					'lib/scss/components/font-awesome/*',
+					'lib/scss/components/*',
+					'lib/scss/*'
+				],
+				tasks: [ 'sass' ]
+			},
+			scripts: {
+				files: [
+					'lib/js/*'
+				],
+				tasks: ['uglify']
+			}
+		}
+
+	} );
+
+	// A very basic default task.
+	grunt.registerTask( 'default',
+		[
+			'sass',
+			'uglify'
+		]
+	);
+
+};
