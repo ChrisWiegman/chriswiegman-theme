@@ -12,7 +12,8 @@ if ( ! isset( $content_width ) ) {
 	$content_width = 640; /* pixels */
 }
 
-if ( ! function_exists( 'chriswiegman_setup' ) ) :
+if ( ! function_exists( 'chriswiegman_setup' ) ) {
+
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
 	 *
@@ -21,14 +22,6 @@ if ( ! function_exists( 'chriswiegman_setup' ) ) :
 	 * as indicating support for post thumbnails.
 	 */
 	function chriswiegman_setup() {
-
-		/*
-		 * Make theme available for translation.
-		 * Translations can be filed in the /languages/ directory.
-		 * If you're building a theme based on ChrisWiegman, use a find and replace
-		 * to change 'chriswiegman' to the name of your theme in all the template files
-		 */
-		load_theme_textdomain( 'chriswiegman', get_template_directory() . '/languages' );
 
 		// Add default posts and comments RSS feed links to head.
 		add_theme_support( 'automatic-feed-links' );
@@ -41,9 +34,7 @@ if ( ! function_exists( 'chriswiegman_setup' ) ) :
 		//add_theme_support( 'post-thumbnails' );
 
 		// This theme uses wp_nav_menu() in one location.
-		register_nav_menus( array(
-			                    'primary' => __( 'Primary Menu', 'chriswiegman' ),
-		                    ) );
+		register_nav_menus( array( 'primary' => __( 'Primary Menu', 'chriswiegman' ), ) );
 
 		/*
 		 * Switch default core markup for search form, comment form, and comments
@@ -67,7 +58,9 @@ if ( ! function_exists( 'chriswiegman_setup' ) ) :
 			'default-image' => '',
 		) ) );
 	}
-endif; // chriswiegman_setup
+
+} // chriswiegman_setup
+
 add_action( 'after_setup_theme', 'chriswiegman_setup' );
 
 /**
@@ -102,6 +95,7 @@ function chriswiegman_scripts() {
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
+
 }
 
 add_action( 'wp_enqueue_scripts', 'chriswiegman_scripts' );
