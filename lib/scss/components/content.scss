@@ -4,22 +4,32 @@
 
 .hentry {
 
-	background-color : $white;
 	font-size        : 22px;
 	font-size        : 1.375rem;
 	line-height      : 1.6;
 	margin           : 0 0 2.5em;
-	padding          : 35px;
+	padding          : 35px 35px 0 35px;
 
-	.entry-title {
+	.entry-header {
 
-		font-size   : 36px;
-		font-size   : 2.25rem;
-		font-weight : 300;
+		.entry-title {
 
-		a {
-			color           : $text-color;
-			text-decoration : none;
+			font-size   : 36px;
+			font-size   : 2.25rem;
+			font-weight : 300;
+
+			a {
+				color           : $text-color;
+				text-decoration : none;
+
+				&:hover {
+					border-bottom   : 1px solid $orange;
+					color           : $orange;
+					text-decoration : none;
+				}
+
+			}
+
 		}
 
 	}
@@ -44,6 +54,10 @@
 	.entry-content,
 	.entry-summary {
 		margin : 1.5em 0 0;
+	}
+
+	.entry-footer {
+		border-bottom: 1px solid $light-grey;
 	}
 
 	.page-links {
