@@ -1,15 +1,37 @@
 a {
 
-	color : royalblue;
+	border-bottom      : 1px solid $white;
+	color              : $light-orange;
+	-webkit-transition : all .5s ease-in-out;
+	-moz-transition    : all .5s ease-in-out;
+	-o-transition      : all .5s ease-in-out;
+	transition         : all .5s ease-in-out;
+	text-decoration    : none;
 
-	&:visited {
-		color : purple;
+	img {
+		border : none;
+	}
+
+	&:focus {
+		outline : thin dotted $light-grey;
 	}
 
 	&:hover,
-	&:focus,
 	&:active {
-		color : midnightblue;
+		outline : 0;
+	}
+
+	&:hover {
+		border-bottom   : 1px solid $orange;
+		color           : $orange;
+		text-decoration : none;
+	}
+
+	&:visited {
+		-webkit-transition : all .5s ease-in-out;
+		-moz-transition    : all .5s ease-in-out;
+		-o-transition      : all .5s ease-in-out;
+		transition         : all .5s ease-in-out;
 	}
 
 }

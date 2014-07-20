@@ -1,13 +1,6 @@
-body,
-button,
-input,
-select,
-textarea {
-	color       : #404040;
+body {
+	color       : $text-color;
 	font-family : 'Helvetica Neue', Helvetica, Arial, serif;
-	font-size   : 16px;
-	font-size   : 1.6rem;
-	line-height : 1.5;
 }
 
 h1,
@@ -17,6 +10,79 @@ h4,
 h5,
 h6 {
 	clear : both;
+}
+
+h1 {
+	font-size : 36px;
+	font-size : 2.25rem;
+}
+
+.page .entry-title {
+
+	border-bottom : 1px solid #ddd;
+	clear         : both;
+	line-height   : 1.4;
+	margin-bottom : 24px;
+	margin-bottom : 1.5rem;
+
+	a {
+		border-bottom : 1px solid #ddd;
+		clear         : both;
+		line-height   : 1.5;
+		margin-bottom : 24px;
+		margin-bottom : 1.5rem;
+	}
+
+}
+
+.software .entry-title, .error404 .entry-title, .software .entry-title a {
+	border-bottom : 1px solid #ddd;
+	clear         : both;
+	line-height   : 1.5;
+	margin-bottom : 24px;
+	margin-bottom : 1.5rem;
+}
+
+blockquote::before {
+	font-size : 32px;
+	font-size : 2rem;
+}
+
+h2 {
+
+	font-size : 30px;
+	font-size : 1.875rem;
+
+	&.software-category {
+		font-size     : 26px;
+		font-size     : 1.625rem;
+		margin-bottom : 20px;
+		margin-bottom : 1.25rem;
+		width         : auto;
+	}
+
+}
+
+h3 {
+	font-size : 24px;
+	font-size : 1.5rem;
+}
+
+h4, .archive-title, .taxonomy-description h1 {
+	font-size      : 24px;
+	font-size      : 1.5rem;
+	padding-bottom : 16px;
+	padding-bottom : 1rem;
+}
+
+h5 {
+	font-size : 18px;
+	font-size : 1.125rem;
+}
+
+h6, .author-box h1, .sidebar h2 a {
+	font-size : 16px;
+	font-size : 1rem;
 }
 
 p {

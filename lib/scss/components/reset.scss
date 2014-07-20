@@ -57,7 +57,6 @@ th,
 td {
 	border         : 0;
 	font-family    : inherit;
-	font-size      : 100%;
 	font-style     : inherit;
 	font-weight    : inherit;
 	margin         : 0;
@@ -67,7 +66,7 @@ td {
 }
 
 html {
-	font-size                : 62.5%;
+	font-size                : 100%;
 	/* Corrects text resizing oddly in IE6/7 when body font-size is set using em units http://clagnut.com/blog/348/#c790 */
 	overflow-y               : scroll;
 	/* Keeps page centered in all browsers regardless of content height */
@@ -98,7 +97,7 @@ html {
 }
 
 body {
-	background : #fff;
+	background : $white;
 	/* Fallback for when there is no custom background color defined. */
 }
 
@@ -154,21 +153,4 @@ q {
 blockquote,
 q {
 	quotes : "" "";
-}
-
-a {
-
-	&:focus {
-		outline : thin dotted;
-	}
-
-	&:hover,
-	&:active {
-		outline : 0;
-	}
-
-	img {
-		border : 0;
-	}
-
 }

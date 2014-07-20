@@ -1,10 +1,5 @@
 .main-navigation {
 
-	clear   : both;
-	display : block;
-	float   : left;
-	width   : 100%;
-
 	ul {
 		list-style   : none;
 		margin       : 0;
@@ -59,26 +54,6 @@
 
 .menu-toggle {
 	display : none;
-}
-
-@media screen and (max-width : 600px) {
-
-	.menu-toggle {
-		display : block;
-	}
-
-	.main-navigation {
-
-		&.toggled .nav-menu {
-			display : block;
-		}
-
-		ul {
-			display : none;
-		}
-
-	}
-
 }
 
 .site-main {

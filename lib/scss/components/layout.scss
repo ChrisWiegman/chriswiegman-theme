@@ -1,3 +1,8 @@
+html,
+body {
+	background-color : $near-white;
+}
+
 .site-content {
 	clear       : both;
 	margin      : 0 auto;
@@ -6,9 +11,25 @@
 	padding-top : 43px;
 }
 
+.site-header {
+
+	background-color : $black;
+	color            : $light-grey;
+	height           : 80px;
+
+	.site-branding {
+		float : left;
+	}
+
+	.main-navigation {
+		float : right;
+	}
+
+}
+
 .content-area {
 	float : left;
-	width : 60%;
+	width : 66%;
 }
 
 .site-content .widget-area {
@@ -17,6 +38,9 @@
 }
 
 .site-footer {
-	clear : both;
-	width : 100%;
+	background-color : $black;
+	clear            : both;
+	color            : $light-grey;
+	height           : 50px;
+	width            : 100%;
 }

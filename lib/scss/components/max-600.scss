@@ -1,0 +1,19 @@
+@media screen and (max-width : 600px) {
+
+	.menu-toggle {
+		display : block;
+	}
+
+	.main-navigation {
+
+		&.toggled .nav-menu {
+			display : block;
+		}
+
+		ul {
+			display : none;
+		}
+
+	}
+
+}
