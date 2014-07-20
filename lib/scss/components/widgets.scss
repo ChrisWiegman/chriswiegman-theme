@@ -1,0 +1,17 @@
+.widget {
+
+	margin : 0 0 1.5em;
+
+	select {
+		max-width : 100%;
+	}
+
+}
+
+/* Make sure select elements fit in widgets */
+
+/* Search widget */
+
+.widget_search .search-submit {
+	display : none;
+}

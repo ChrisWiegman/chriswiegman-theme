@@ -1,0 +1,45 @@
+/*--------------------------------------------------------------
+0.1 Posts and pages
+--------------------------------------------------------------*/
+
+.hentry {
+	margin : 0 0 1.5em;
+}
+
+.byline,
+.updated {
+	display : none;
+}
+
+.single .byline,
+.group-blog .byline {
+	display : inline;
+}
+
+.page-content,
+.entry-content,
+.entry-summary {
+	margin : 1.5em 0 0;
+}
+
+.page-links {
+	clear  : both;
+	margin : 0 0 1.5em;
+}
+
+/*--------------------------------------------------------------
+0.2 Asides
+--------------------------------------------------------------*/
+
+.blog .format-aside .entry-title,
+.archive .format-aside .entry-title {
+	display : none;
+}
+
+/*--------------------------------------------------------------
+0.3 Comments
+--------------------------------------------------------------*/
+
+.comment-content a {
+	word-wrap : break-word;
+}
