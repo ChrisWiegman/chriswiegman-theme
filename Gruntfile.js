@@ -35,11 +35,9 @@ module.exports = function ( grunt ) {
 					}
 				},
 				files: {
-					'js/scripts.min.js': [
-						'lib/js/scripts.js'
-					],
-					'js/admin.min.js': [
-						'lib/js/admin.js'
+					'js/footer.min.js': [
+						'lib/js/navigation.js',
+					    'lib/js/skip-link-focus-fix.js'
 					]
 				}
 			}
