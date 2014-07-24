@@ -3,51 +3,59 @@ body {
 	background-color : $near-white;
 }
 
-#intro {
-	background-color : $black;
-	padding          : 64px;
-	margin-top       : 80px;
-}
+#page {
 
-.site-content {
-	clear       : both;
-	margin      : 0 auto;
-	max-width   : 1152px;
-	overflow    : hidden;
-	padding-top : 43px;
-}
+	margin : 0 auto;
 
-.site-header {
-
-	height   : 80px;
-	position : fixed;
-	top: 0;
-
-	.site-branding {
-		float : left;
+	div#intro {
+		background-color : $black;
+		clear            : both;
+		margin-top       : 80px;
+		padding          : 64px;
 	}
 
-	.main-navigation {
+	.site-content {
+		margin      : 0 auto;
+		max-width   : 1152px;
+		overflow    : hidden;
+		padding-top : 43px;
+	}
+
+	.site-header {
+
+		background-color : $white;
+		height           : 80px;
+		position         : fixed;
+		top              : 0;
+		width            : 100%;
+
+		.site-branding {
+			float : left;
+		}
+
+		.main-navigation {
+			float : right;
+		}
+
+	}
+
+	.content-area {
+		background-color : $white;
+		float            : left;
+		width            : 66%;
+	}
+
+	.site-content .widget-area {
 		float : right;
+		width : 30%;
 	}
 
-}
+	.site-footer {
+		background-color : $black;
+		clear            : both;
+		color            : $light-grey;
+		height           : 50px;
+		width            : 100%;
+	}
 
-.content-area {
-	background-color : $white;
-	float            : left;
-	width            : 66%;
-}
-
-.site-content .widget-area {
-	float : right;
-	width : 30%;
-}
-
-.site-footer {
-	background-color : $black;
-	clear            : both;
-	color            : $light-grey;
-	height           : 50px;
-	width            : 100%;
 }
