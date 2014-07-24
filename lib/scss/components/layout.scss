@@ -53,18 +53,29 @@ body {
 	.site-footer {
 
 		background-color : $dark-grey;
-		color            : $white;
+		color            : $light-grey;
 		font-size        : 75%;
 		width            : 100%;
 		opacity          : 0.9;
+
+		a {
+
+			border-bottom : none;
+			color         : $light-grey;
+
+			&:hover {
+				border-bottom : none;
+			}
+
+		}
 
 		.site-info {
 			margin    : 0 auto;
 			max-width : 1152px;
 
 			p {
-				float         : right;
-				margin: 25px;
+				float  : right;
+				margin : 25px;
 			}
 
 		}
