@@ -3,9 +3,10 @@ body {
 	background-color : $near-white;
 }
 
-#about {
+#intro {
 	background-color : $black;
 	padding          : 64px;
+	margin-top       : 80px;
 }
 
 .site-content {
@@ -18,7 +19,9 @@ body {
 
 .site-header {
 
-	height : 80px;
+	height   : 80px;
+	position : fixed;
+	top: 0;
 
 	.site-branding {
 		float : left;

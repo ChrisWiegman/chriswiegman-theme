@@ -58,8 +58,18 @@ function chriswiegman_widgets_init() {
 		                  'description'   => 'The primary sidebar on the right side of most content.',
 		                  'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		                  'after_widget'  => '</aside>',
-		                  'before_title'  => '<h1 class="widget-title">',
-		                  'after_title'   => '</h1>',
+		                  'before_title'  => '<h2 class="widget-title">',
+		                  'after_title'   => '</h2>',
+	                  ) );
+
+	register_sidebar( array(
+		                  'name'          => __( 'Intro', 'chriswiegman' ),
+		                  'id'            => 'intro',
+		                  'description'   => 'The intro area at the top of most pages.',
+		                  'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		                  'after_widget'  => '</aside>',
+		                  'before_title'  => '<h2 class="widget-title">',
+		                  'after_title'   => '</h2>',
 	                  ) );
 }
 
