@@ -26,12 +26,8 @@ if ( ! function_exists( 'chriswiegman_setup' ) ) {
 		// Add default posts and comments RSS feed links to head.
 		add_theme_support( 'automatic-feed-links' );
 
-		/*
-		 * Enable support for Post Thumbnails on posts and pages.
-		 *
-		 * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
-		 */
-		//add_theme_support( 'post-thumbnails' );
+		//Enable support for Post Thumbnails on posts and pages.
+		add_theme_support( 'post-thumbnails' );
 
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array( 'primary' => __( 'Primary Menu', 'chriswiegman' ), ) );
@@ -44,18 +40,9 @@ if ( ! function_exists( 'chriswiegman_setup' ) ) {
 			'search-form', 'comment-form', 'comment-list', 'gallery', 'caption'
 		) );
 
-		/*
-		 * Enable support for Post Formats.
-		 * See http://codex.wordpress.org/Post_Formats
-		 */
-		add_theme_support( 'post-formats', array(
-			'aside', 'image', 'video', 'quote', 'link'
-		) );
-
 	}
 
 } // chriswiegman_setup
-
 add_action( 'after_setup_theme', 'chriswiegman_setup' );
 
 /**
@@ -67,8 +54,8 @@ function chriswiegman_widgets_init() {
 
 	register_sidebar( array(
 		                  'name'          => __( 'Sidebar', 'chriswiegman' ),
-		                  'id'            => 'sidebar-1',
-		                  'description'   => '',
+		                  'id'            => 'sidebar',
+		                  'description'   => 'The primary sidebar on the right side of most content.',
 		                  'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		                  'after_widget'  => '</aside>',
 		                  'before_title'  => '<h1 class="widget-title">',
