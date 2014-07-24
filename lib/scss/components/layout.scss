@@ -3,6 +3,11 @@ body {
 	background-color : $near-white;
 }
 
+#about {
+	background-color : $black;
+	padding          : 64px;
+}
+
 .site-content {
 	clear       : both;
 	margin      : 0 auto;
@@ -13,9 +18,7 @@ body {
 
 .site-header {
 
-	background-color : $black;
-	color            : $light-grey;
-	height           : 80px;
+	height : 80px;
 
 	.site-branding {
 		float : left;
@@ -29,8 +32,8 @@ body {
 
 .content-area {
 	background-color : $white;
-	float : left;
-	width : 66%;
+	float            : left;
+	width            : 66%;
 }
 
 .site-content .widget-area {

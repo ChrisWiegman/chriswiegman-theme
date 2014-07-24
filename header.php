@@ -34,4 +34,8 @@
 		</nav><!-- #site-navigation -->
 	</header><!-- #masthead -->
 
+	<div id="about">
+
+	</div>
+
 	<div id="content" class="site-content">
