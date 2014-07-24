@@ -6,20 +6,35 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-	<?php if ( has_post_thumbnail() ) { ?>
+	<?php
 
-	<div class="featured-image"><a href="http://www.briangardner.com/telling-stories/" rel="bookmark"><img src="http://www.briangardner.com/wp-content/uploads/telling-stories.jpg" alt="Telling Stories"></a></div>
+	$title = get_the_title();
+	$permalink = esc_url( get_permalink() );
 
-	<?php } ?>
+	if ( has_post_thumbnail() ) {
 
-	<header class="entry-header">
-		<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
+		$header_class='';
 
-		<?php if ( 'post' == get_post_type() ) : ?>
+		printf( '<div class="featured-image"><a class="post-header-image" href="%s" rel="bookmark" title="%s">%s</a></div>', $permalink, $title, get_the_post_thumbnail() );
+
+	} else {
+
+		$header_class='top-padding ';
+
+	}
+
+	?>
+
+	<header class="<?php echo $header_class; ?>entry-header">
+
+		<?php printf( '<h2 class="entry-title"><a href="%s" title="%s" rel="bookmark">%s</a></h2>', $permalink, $title, $title ); ?>
+
+		<?php if ( 'post' == get_post_type() ) { ?>
 			<div class="entry-meta">
 				<?php chriswiegman_posted_on(); ?>
 			</div><!-- .entry-meta -->
-		<?php endif; ?>
+		<?php } ?>
+
 	</header>
 	<!-- .entry-header -->
 

@@ -87,16 +87,25 @@ if ( ! function_exists( 'chriswiegman_posted_on' ) ) {
 		                        esc_html( get_the_modified_date( 'F jS, Y' ) )
 		);
 
-		$posted_on = $time_string;
+		$posted_on = '<span class="posted-on">' . $time_string . '</span>';
+
+
+		if ( get_the_author_meta( 'ID' ) !== 2 ) {
 
 		$byline = sprintf(
-			_x( 'by %s', 'post author', 'chriswiegman' ),
-			'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span> '
+			_x( ' by %s', 'post author', 'chriswiegman' ),
+			'<span class="byline"> <span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span> </span>'
 		);
+
+		} else {
+
+			$byline = '';
+
+		}
 
 		if ( ! post_password_required() && ( comments_open() || '0' != get_comments_number() ) ) {
 
-			$comments = sprintf( '| <span class="comments-link">%s</span>', chriswiegman_get_comments_popup_link( __( 'Leave a comment', 'chriswiegman' ), __( '1 Comment', 'chriswiegman' ), __( '% Comments', 'chriswiegman' ) ) );
+			$comments = sprintf( '<span class="comments-link">%s</span>', chriswiegman_get_comments_popup_link( __( 'Leave a comment', 'chriswiegman' ), __( '1 Comment', 'chriswiegman' ), __( '% Comments', 'chriswiegman' ) ) );
 
 		} else {
 
@@ -108,7 +117,7 @@ if ( ! function_exists( 'chriswiegman_posted_on' ) ) {
 
 		if ( $edit_link != null ) {
 
-			$edit = sprintf( '| <span class="edit-link"><a href="%s">%s</a></span>', $edit_link, __( 'Edit', 'chriswiegman' ) );
+			$edit = sprintf( ' | <span class="edit-link"><a href="%s">%s</a></span>', $edit_link, __( 'Edit', 'chriswiegman' ) );
 
 		} else {
 
@@ -116,7 +125,7 @@ if ( ! function_exists( 'chriswiegman_posted_on' ) ) {
 
 		}
 
-		echo '<span class="posted-on">' . $posted_on . '</span><span class="byline"> ' . $byline . '</span>' . $comments . ' ' . $edit;
+		echo  $posted_on . $byline . $comments . $edit;
 
 	}
 }

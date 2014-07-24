@@ -11,9 +11,27 @@
 	margin           : 0 0 20px 0;
 	padding          : 0;
 
+	.top-padding {
+		padding-top : 40px !important;
+	}
+
+	a.post-header-image {
+
+		border : none;
+
+		&:hover {
+			border : none;
+		}
+
+	}
+
 	.entry-header {
 
-		padding : 40px 40px 0 40px;
+		padding : 0 40px;
+
+		.comments-link {
+			float : right;
+		}
 
 		.entry-title {
 
