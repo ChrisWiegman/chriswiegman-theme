@@ -24,6 +24,7 @@ body {
 	.site-header {
 
 		background-color : $white;
+		border-bottom    : 1px solid $light-grey;
 		height           : 80px;
 		position         : fixed;
 		top              : 0;
@@ -40,9 +41,8 @@ body {
 	}
 
 	.content-area {
-		background-color : $white;
-		float            : left;
-		width            : 66%;
+		float : left;
+		width : 66%;
 	}
 
 	.site-content .widget-area {
