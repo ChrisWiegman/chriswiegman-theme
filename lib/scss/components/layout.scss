@@ -51,11 +51,24 @@ body {
 	}
 
 	.site-footer {
-		background-color : $black;
-		clear            : both;
-		color            : $light-grey;
-		height           : 50px;
+
+		background-color : $dark-grey;
+		color            : $white;
+		font-size        : 75%;
 		width            : 100%;
+		opacity          : 0.9;
+
+		.site-info {
+			margin    : 0 auto;
+			max-width : 1152px;
+
+			p {
+				float         : right;
+				margin: 25px;
+			}
+
+		}
+
 	}
 
 }
