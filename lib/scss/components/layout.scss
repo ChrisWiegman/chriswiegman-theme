@@ -30,12 +30,19 @@ body {
 		top              : 0;
 		width            : 100%;
 
-		.site-branding {
-			float : left;
-		}
+		.wrap {
 
-		.main-navigation {
-			float : right;
+			margin    : 0 auto;
+			max-width : 1152px;
+
+			.site-branding {
+				float : left;
+			}
+
+			.main-navigation {
+				float : right;
+			}
+
 		}
 
 	}

@@ -8,22 +8,25 @@
 
 	li {
 		float    : left;
+		padding  : 20px;
 		position : relative;
 	}
 
 	a {
+		color           : $text-color;
 		display         : block;
 		text-decoration : none;
 	}
 
 	ul ul {
 
-		box-shadow : 0 3px 3px rgba(0, 0, 0, 0.2);
-		float      : left;
-		position   : absolute;
-		top        : 1.5em;
-		left       : -999em;
-		z-index    : 99999;
+		background-color : $white;
+		box-shadow       : 0 3px 3px rgba(0, 0, 0, 0.2);
+		float            : left;
+		position         : absolute;
+		top              : 3em;
+		left             : -999em;
+		z-index          : 99999;
 
 		ul {
 			left : -999em;
