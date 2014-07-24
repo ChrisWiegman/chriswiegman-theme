@@ -5,6 +5,13 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+
+	<?php if ( has_post_thumbnail() ) { ?>
+
+	<div class="featured-image"><a href="http://www.briangardner.com/telling-stories/" rel="bookmark"><img src="http://www.briangardner.com/wp-content/uploads/telling-stories.jpg" alt="Telling Stories"></a></div>
+
+	<?php } ?>
+
 	<header class="entry-header">
 		<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
 

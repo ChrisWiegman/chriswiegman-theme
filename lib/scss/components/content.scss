@@ -8,10 +8,12 @@
 	font-size        : 22px;
 	font-size        : 1.375rem;
 	line-height      : 1.6;
-	margin           : 0 0 2.5em;
-	padding          : 35px;
+	margin           : 0 0 20px 0;
+	padding          : 0;
 
 	.entry-header {
+
+		padding : 40px 40px 0 40px;
 
 		.entry-title {
 
@@ -53,7 +55,8 @@
 	.page-content,
 	.entry-content,
 	.entry-summary {
-		margin : 1.5em 0 0;
+		margin  : 1.5em 0 0;
+		padding : 0 40px 40px 40px;
 	}
 
 	.page-links {
