@@ -7,13 +7,7 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-
-		<div class="entry-meta">
-			<?php chriswiegman_posted_on(); ?>
-		</div>
-		<!-- .entry-meta -->
-	</header>
-	<!-- .entry-header -->
+	</header><!-- .entry-header -->
 
 	<div class="entry-content">
 
@@ -22,11 +16,9 @@
 		<?php
 		$terms = get_terms( 'software_type' );
 
-		echo '<p>I write a lot of code and, when I can, I try to share it in hopes someone might find it useful. Here are some of my active (or at least recent) projects. Take a look at <a href="https://github.com/ChrisWiegman" title="Chris Wiegman on GitHub" target="_blank">my GitHub profile</a> for even more.</p>';
-
 		if ( count( $terms ) > 0 ) {
 
-			foreach ( $terms as $term ) {
+			foreach ( $terms as $term ) { //Loop through Software categories
 
 				echo '<h2 class="software-category">' . $term->name . '</h2>';
 
@@ -46,7 +38,7 @@
 
 				$loop = new WP_Query( $args );
 
-				if ( $loop->have_posts() ) {
+				if ( $loop->have_posts() ) { //if the category has items loop through them
 
 					while ( $loop->have_posts() ) {
 
@@ -93,39 +85,6 @@
 	<!-- .entry-content -->
 
 	<footer class="entry-footer">
-		<?php
-		/* translators: used between list items, there is a space after the comma */
-		$category_list = get_the_category_list( __( ', ', 'chriswiegman' ) );
-
-		/* translators: used between list items, there is a space after the comma */
-		$tag_list = get_the_tag_list( '', __( ', ', 'chriswiegman' ) );
-
-		if ( ! chriswiegman_categorized_blog() ) {
-			// This blog only has 1 category so we just need to worry about tags in the meta text
-			if ( '' != $tag_list ) {
-				$meta_text = __( 'This entry was tagged %2$s. Bookmark the <a href="%3$s" rel="bookmark">permalink</a>.', 'chriswiegman' );
-			} else {
-				$meta_text = __( 'Bookmark the <a href="%3$s" rel="bookmark">permalink</a>.', 'chriswiegman' );
-			}
-
-		} else {
-			// But this blog has loads of categories so we should probably display them here
-			if ( '' != $tag_list ) {
-				$meta_text = __( 'This entry was posted in %1$s and tagged %2$s. Bookmark the <a href="%3$s" rel="bookmark">permalink</a>.', 'chriswiegman' );
-			} else {
-				$meta_text = __( 'This entry was posted in %1$s. Bookmark the <a href="%3$s" rel="bookmark">permalink</a>.', 'chriswiegman' );
-			}
-
-		} // end check for categories on this blog
-
-		printf(
-			$meta_text,
-			$category_list,
-			$tag_list,
-			get_permalink()
-		);
-		?>
-
 		<?php edit_post_link( __( 'Edit', 'chriswiegman' ), '<span class="edit-link">', '</span>' ); ?>
 	</footer>
 	<!-- .entry-footer -->
