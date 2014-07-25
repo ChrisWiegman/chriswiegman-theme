@@ -26,7 +26,7 @@
 		<div class="wrap">
 
 			<div class="site-branding">
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+				<div class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img src="<?php echo get_stylesheet_directory_uri() . '/img/logo.png'; ?>" alt="Chris Wiegman" width="256" height="40"></a></div>
 			</div>
 
 			<nav id="site-navigation" class="main-navigation" role="navigation">
