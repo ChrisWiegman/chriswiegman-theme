@@ -36,11 +36,25 @@ body {
 			max-width : 1152px;
 
 			.site-branding {
-				float : left;
+
+				float       : left;
+				padding-top : 20px;
+
+				a {
+
+					border-bottom : none;
+
+					&:hover {
+						border-bottom : none;
+					}
+
+				}
+
 			}
 
 			.main-navigation {
-				float : right;
+				float       : right;
+				padding-top : 10px;
 			}
 
 		}
