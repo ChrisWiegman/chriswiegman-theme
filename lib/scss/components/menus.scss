@@ -84,3 +84,25 @@
 	text-align : right;
 	width      : 50%;
 }
+
+.scrolled {
+
+	.main-navigation {
+
+		li {
+			padding  : 10px 20px;
+		}
+
+
+
+		ul ul {
+
+			top              : 2em;
+			left             : -999em;
+			z-index          : 99999;
+
+		}
+
+	}
+
+}

@@ -10,6 +10,19 @@
 
 }
 
+#intro {
+
+	.widget {
+		background-color : transparent;
+		color            : $light-grey;
+		font-size        : 32px;
+		font-size        : 2rem;
+		margin           : 0;
+		padding          : 0;
+	}
+
+}
+
 /**
  * Social Widget
  **/
