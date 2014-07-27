@@ -97,14 +97,8 @@
 		margin-top : 40px;
 	}
 
-}
-
-.author-box {
-
-	padding : 0 40px;
-
-	.avatar {
-		float : left;
+	.entry-footer {
+		padding : 0 40px;
 	}
 
 }
@@ -130,9 +124,35 @@
 	padding : 0 40px;
 }
 
+.author-box {
+
+	margin  : 0 40px;
+	padding : 40px 0;
+
+	.avatar {
+		float : left;
+	}
+
+	#authcontact {
+		clear     : both;
+		display   : block;
+		float     : left;
+		font-size : 80%;
+		width     : 100%;
+	}
+
+}
+
+.author-box,
+.comments-area {
+	border-top : 1px solid $near-white;
+	overflow   : hidden;
+}
+
 .comments-area {
 
-	padding : 0 40px;
+	margin  : 0 40px;
+	padding : 40px 0;
 
 	.avatar {
 		float   : left;
@@ -147,7 +167,7 @@
 
 		li {
 
-			border-left   : 4px solid $light-grey;
+			border-left   : 4px solid $near-white;
 			margin-bottom : 1rem;
 			padding       : 40px 0 40px 40px;
 
