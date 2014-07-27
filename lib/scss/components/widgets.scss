@@ -8,6 +8,34 @@
 		max-width : 100%;
 	}
 
+	.widget-title {
+		margin-bottom : 1rem;
+	}
+
+	ul {
+
+		margin  : 0 0 0 15px;
+		padding : 0px;
+
+		li {
+			list-style-type : circle;
+			margin-bottom   : 6px;
+			padding         : 0px;
+			word-wrap       : break-word;
+		}
+
+	}
+
+	.entry-content {
+
+		&:before,
+		&:after {
+			content : '';
+			display : inline;
+		}
+
+	}
+
 }
 
 #intro {

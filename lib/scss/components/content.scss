@@ -73,8 +73,14 @@
 	.page-content,
 	.entry-content,
 	.entry-summary {
+
 		margin  : 1.5em 0 0;
 		padding : 0 40px 40px 40px;
+
+		h3 {
+			margin-bottom : 1rem;
+		}
+
 	}
 
 	.page-links {
@@ -85,7 +91,7 @@
 	.more-link {
 		clear      : both;
 		display    : block;
-		float      : right;
+		float      : left;
 		font-size  : 16px;
 		font-size  : 1rem;
 		margin-top : 40px;
@@ -96,6 +102,10 @@
 .single,
 .page {
 
+	#main {
+		background-color : $white;
+	}
+
 	.hentry {
 
 		.entry-header {
@@ -104,6 +114,14 @@
 
 	}
 
+}
+
+.post-navigation {
+	padding : 0 40px;
+}
+
+.comments-area {
+	padding : 0 40px;
 }
 
 /*--------------------------------------------------------------
