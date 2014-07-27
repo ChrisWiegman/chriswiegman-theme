@@ -41,29 +41,29 @@ get_header(); ?>
 
 				}
 
-				@ini_set( 'auto_detect_line_endings', true );
-				$authinfo = '<div class="author-box">' . PHP_EOL;
-				$authinfo .= get_avatar( get_the_author_meta( 'ID' ), 80 );
+				echo '<div class="author-box">' . PHP_EOL;
+
+				echo get_avatar( get_the_author_meta( 'ID' ), 100 );
 
 				if ( strlen( get_the_author_meta( 'url' ) ) > 1 ) {
-					$authinfo .= '<strong>About <a href="' . get_the_author_meta( 'url' ) . '" target="_blank" title="' . get_the_author_meta( 'website_title' ) . '">' . get_the_author_meta( 'display_name' ) . '</a></strong>' . PHP_EOL;
+					echo '<strong>About <a href="' . get_the_author_meta( 'url' ) . '" target="_blank" title="' . get_the_author_meta( 'website_title' ) . '">' . get_the_author_meta( 'display_name' ) . '</a></strong>' . PHP_EOL;
 				} else {
-					$authinfo .= '<strong>About ' . get_the_author_meta( 'display_name' ) . '</strong>' . PHP_EOL;
+					echo '<strong>About ' . get_the_author_meta( 'display_name' ) . '</strong>' . PHP_EOL;
 				}
 
-				$authinfo .= '<p>' . get_the_author_meta( 'description' ) . '</p>' . PHP_EOL;
+				echo '<p>' . get_the_author_meta( 'description' ) . '</p>' . PHP_EOL;
 
 				if ( $profiles['facebook']['length'] > 1 || $profiles['linkedin']['length'] > 1 || $profiles['twitter']['length'] > 1 || $profiles['google']['length'] > 1 ) {
 
 					if ( ( $profiles['facebook']['length'] <= 1 && $profiles['google']['length'] <= 1 && $profiles['linkedin']['length'] <= 1 ) && $profiles['twitter']['length'] > 1 ) {
-						$authinfo .= '<p id="authcontact">Follow ' . get_the_author_meta( 'first_name' ) . ' on <a href="http://twitter.com/' . $profiles['twitter']['url'] . '" target="_blank" title="' . get_the_author_meta( 'display_name' ) . ' on Twitter">Twitter</a></p>' . PHP_EOL;
+						echo '<p id="authcontact">Follow ' . get_the_author_meta( 'first_name' ) . ' on <a href="http://twitter.com/' . $profiles['twitter']['url'] . '" target="_blank" title="' . get_the_author_meta( 'display_name' ) . ' on Twitter">Twitter</a></p>' . PHP_EOL;
 					} else {
 
-						$authinfo .= '<p id="authcontact">Find ' . get_the_author_meta( 'first_name' ) . ' on ';
+						echo '<p id="authcontact">Find ' . get_the_author_meta( 'first_name' ) . ' on ';
 
 						if ( $profiles['facebook']['length'] > 1 ) {
 
-							$authinfo .= ' <a href="http://facebook.com/' . $profiles['facebook']['url'] . '" target="_blank" title="' . get_the_author_meta( 'display_name' ) . ' on Facebook">Facebook</a>';
+							echo ' <a href="http://facebook.com/' . $profiles['facebook']['url'] . '" target="_blank" title="' . get_the_author_meta( 'display_name' ) . ' on Facebook">Facebook</a>';
 
 						}
 
@@ -71,7 +71,7 @@ get_header(); ?>
 
 							$comma = $profiles['facebook']['length'] > 1 ? ',' : '';
 							$and   = $profiles['facebook']['length'] > 1 && ( $profiles['linkedin']['length'] <= 1 || $profiles['twitter']['length'] <= 1 ) ? ' and' : '';
-							$authinfo .= $comma . $and . ' <a href="http://plus.google.com/' . $profiles['google']['url'] . '?rel=author" rel="author" target="_blank" title="' . get_the_author_meta( 'display_name' ) . ' on Google+">Google+</a>';
+							echo $comma . $and . ' <a href="http://plus.google.com/' . $profiles['google']['url'] . '?rel=author" rel="author" target="_blank" title="' . get_the_author_meta( 'display_name' ) . ' on Google+">Google+</a>';
 
 						}
 
@@ -79,22 +79,21 @@ get_header(); ?>
 
 							$comma = $profiles['facebook']['length'] > 1 || $profiles['google']['length'] > 1 ? ',' : '';
 							$and   = ( $profiles['facebook']['length'] > 1 || $profiles['google']['length'] > 1 ) && $profiles['twitter']['length'] <= 1 ? ' and' : '';
-							$authinfo .= $comma . $and . ' <a href="http://www.linkedin.com/in/' . $profiles['linkedin']['url'] . '" target="_blank" title="' . get_the_author_meta( 'display_name' ) . ' on LinkedIn">LinkedIn</a>';
+							echo $comma . $and . ' <a href="http://www.linkedin.com/in/' . $profiles['linkedin']['url'] . '" target="_blank" title="' . get_the_author_meta( 'display_name' ) . ' on LinkedIn">LinkedIn</a>';
 
 						}
 
 						if ( $profiles['twitter']['length'] > 1 ) {
-							$authinfo .= ', and <a href="http://twitter.com/' . $profiles['twitter']['url'] . '" target="_blank" title="' . get_the_author_meta( 'display_name' ) . ' on Twitter">Twitter</a>';
+							echo ', and <a href="http://twitter.com/' . $profiles['twitter']['url'] . '" target="_blank" title="' . get_the_author_meta( 'display_name' ) . ' on Twitter">Twitter</a>';
 						}
 
-						$authinfo .= '.</p>' . PHP_EOL;
+						echo '.</p>' . PHP_EOL;
 
 					}
 
 				}
 
-				$authinfo .= '</div>' . PHP_EOL;
-				echo $authinfo;
+				echo '</div>' . PHP_EOL;
 
 				?>
 
