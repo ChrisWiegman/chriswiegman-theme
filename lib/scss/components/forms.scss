@@ -106,28 +106,32 @@ input:hover {
 
 /* 12a - Gravity Forms ----------- */
 
-.content div.gform_wrapper {
+.gform_wrapper {
 
-	input, select, textarea, .ginput_complex label {
-		font-size : 15px;
-		padding   : 8px;
+	input,
+	select,
+	textarea,
+	.ginput_complex label,
+	label,
+	.gfield_description {
+		font-size : 15px !important;
+		font-size : 0.9375rem !important;
+		padding   : 8px !important;
 		width     : 98%;
-	}
-
-	select {
-		height : 40px;
 	}
 
 	span {
 
 		&.ginput_left {
-			float : left;
-			width : 49.5%;
+			float   : left;
+			padding : 0 2px;
+			width   : 49.5%;
 		}
 
 		&.ginput_right {
-			float : right;
-			width : 49.5%;
+			float   : right;
+			padding : 0 2px;
+			width   : 49.5%;
 		}
 
 	}

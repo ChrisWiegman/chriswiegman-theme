@@ -1,6 +1,7 @@
 body {
 	color       : $text-color;
-	font-family : 'Helvetica Neue', Helvetica, Arial, serif;
+	font-family : 'Open Sans', sans-serif;
+	font-weight : 300;
 }
 
 h1,
@@ -11,7 +12,8 @@ h5,
 h6 {
 	clear       : both;
 	color       : $black;
-	font-weight : 500;
+	font-family : 'Roboto Slab', serif;
+	font-weight : 700;
 	line-height : 1.2;
 }
 
@@ -22,14 +24,14 @@ h1 {
 
 .page .entry-title {
 
-	border-bottom : 1px solid #ddd;
+	border-bottom : 1px solid $near-white;
 	clear         : both;
 	line-height   : 1.4;
 	margin-bottom : 24px;
 	margin-bottom : 1.5rem;
 
 	a {
-		border-bottom : 1px solid #ddd;
+		border-bottom : 1px solid $near-white;
 		clear         : both;
 		line-height   : 1.5;
 		margin-bottom : 24px;

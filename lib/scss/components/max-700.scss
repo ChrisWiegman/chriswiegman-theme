@@ -1,0 +1,129 @@
+@media screen and (max-width : 700px) {
+
+	.menu-toggle {
+		color   : $text-color;
+		display : inline-block;
+		padding : 10px 20px 0 0;
+		float   : right;
+	}
+
+	.menu-primary-container {
+
+		background-color : $white;
+		color            : $text-color;
+		clear            : both;
+		float            : none;
+		margin           : 0;
+		overflow         : hidden;
+		width            : 100%;
+
+		ul {
+			float : left;
+			width : 100%;
+		}
+
+		li {
+			display         : inline-block;
+			float           : none;
+			list-style-type : none;
+			text-align      : left;
+			width           : 100%;
+
+			a {
+				display  : block;
+				padding  : 8px 16px;
+				padding  : .5rem 1rem;
+				position : relative;
+				color    : $text-color;
+
+				&:hover {
+					text-decoration : underline;
+				}
+
+			}
+
+			&:hover {
+
+				a {
+					color : $white;
+				}
+
+			}
+
+			&.right a {
+				display : inline;
+				padding : 0;
+			}
+
+			&.social-share {
+
+				float          : left;
+				padding-bottom : 8px;
+				padding-left   : 8px;
+				padding-right  : 8px;
+				width          : auto;
+
+				a {
+					border  : none;
+					margin  : 8px 8px 0 0;
+					padding : 0;
+
+					&:hover {
+						border : none;
+					}
+
+				}
+
+			}
+
+			&:hover > ul, &.sfHover ul {
+				left : auto;
+			}
+
+			ul {
+
+				font-weight : normal;
+				left        : 0;
+				position    : relative;
+				width       : 100%;
+
+				ul {
+					margin : 0;
+				}
+
+				li {
+
+					a {
+
+						padding  : 4px 32px;
+						position : relative;
+						width    : 100%;
+
+					}
+
+					ul {
+						font-size : 90%;
+
+						li {
+
+							a {
+								padding : 4px 64px;
+							}
+
+						}
+
+					}
+
+				}
+
+			}
+
+		}
+
+	}
+
+}
+
+@media only screen and (max-width : 540px) {
+
+}

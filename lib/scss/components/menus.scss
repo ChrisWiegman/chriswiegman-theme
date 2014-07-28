@@ -10,12 +10,38 @@
 		float    : left;
 		padding  : 20px;
 		position : relative;
+
+		ul li {
+			padding : 5px 20px;
+		}
+
+	}
+
+	.current_page_item {
+
+		font-style : italic;
+
+		ul {
+			font-style : normal;
+		}
+
 	}
 
 	a {
-		color           : $text-color;
-		display         : block;
-		text-decoration : none;
+
+		border-bottom      : none;
+		color              : $text-color;
+		display            : block;
+		text-decoration    : none;
+		-webkit-transition : none;
+		-moz-transition    : none;
+		-o-transition      : none;
+		transition         : none;
+
+		&:hover {
+			color : $orange;
+		}
+
 	}
 
 	ul ul {
@@ -64,8 +90,17 @@
 	.comment-navigation,
 	.paging-navigation,
 	.post-navigation {
-		margin   : 0 0 1.5em;
-		overflow : hidden;
+		margin         : 0 0 1.5em;
+		overflow       : hidden;
+		padding-bottom : 40px;
+	}
+
+}
+
+.paging-navigation {
+
+	a {
+		border-bottom : 1px solid $near-white;
 	}
 
 }
@@ -90,16 +125,14 @@
 	.main-navigation {
 
 		li {
-			padding  : 10px 20px;
+			padding : 10px 20px;
 		}
-
-
 
 		ul ul {
 
-			top              : 2em;
-			left             : -999em;
-			z-index          : 99999;
+			top     : 2em;
+			left    : -999em;
+			z-index : 99999;
 
 		}
 

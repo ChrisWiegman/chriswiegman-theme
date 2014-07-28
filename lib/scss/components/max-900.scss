@@ -1,0 +1,63 @@
+@media screen and (max-width : 900px) {
+
+	#page {
+
+		div#intro {
+			margin-top : 40px;
+		}
+
+		.site-header {
+
+			height : 40px;
+
+			.site-branding {
+				padding-top : 5px !important;
+
+				img {
+					height : 80%;
+					width  : 80%;
+				}
+
+			}
+
+			.main-navigation {
+				padding-top : 0 !important;
+			}
+
+		}
+
+		.content-area {
+			border-right : none;
+			float        : none;
+			width        : 100%;
+		}
+
+		.site-content .widget-area {
+			border-left : none;
+			float       : none;
+			width       : 100%;
+		}
+
+	}
+
+}
+
+.site-header {
+
+	.main-navigation {
+
+		li {
+			padding : 10px 20px;
+		}
+
+		ul ul {
+
+			top     : 2em;
+			left    : -999em;
+			z-index : 99999;
+
+		}
+
+	}
+
+}

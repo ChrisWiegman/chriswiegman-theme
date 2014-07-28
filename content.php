@@ -12,20 +12,12 @@
 	$permalink = esc_url( get_permalink() );
 
 	if ( has_post_thumbnail() ) {
-
-		$header_class='';
-
 		printf( '<div class="featured-image"><a class="post-header-image" href="%s" rel="bookmark" title="%s">%s</a></div>', $permalink, $title, get_the_post_thumbnail() );
-
-	} else {
-
-		$header_class='top-padding ';
-
 	}
 
 	?>
 
-	<header class="<?php echo $header_class; ?>entry-header">
+	<header class="entry-header">
 
 		<?php printf( '<h2 class="entry-title"><a href="%s" title="%s" rel="bookmark">%s</a></h2>', $permalink, $title, $title ); ?>
 

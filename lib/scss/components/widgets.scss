@@ -1,6 +1,7 @@
 .widget {
 
 	background-color : $white;
+	border           : 1px solid $light-grey;
 	margin           : 0 0 2.5em;
 	padding          : 15px;
 
@@ -42,6 +43,7 @@
 
 	.widget {
 		background-color : transparent;
+		border           : none;
 		color            : $light-grey;
 		font-size        : 32px;
 		font-size        : 2rem;
@@ -117,4 +119,94 @@
 
 .widget_search .search-submit {
 	display : none;
+}
+
+/**
+ * Signup Widget
+ **/
+.sidebar {
+	display     : inline;
+	line-height : 1.5;
+}
+
+.widgettitle {
+	margin : 0 0 8px 0;
+	margin : 0 0 .5rem 0;
+}
+
+.sidebar {
+
+	margin-top : 40px;
+
+	p {
+		margin-bottom : 16px;
+	}
+
+	.widget {
+		background-color : $white;
+		margin-bottom    : 40px;
+		overflow         : hidden;
+		padding          : 16px;
+	}
+
+	&.widget-area ul {
+
+		padding : 0 24px;
+
+		li {
+			list-style-type : circle;
+			margin-bottom   : 6px;
+			padding         : 0;
+			word-wrap       : break-word;
+		}
+
+	}
+
+}
+
+#gform_widget-2 {
+
+	background-color : $dark-grey;
+	color            : $white;
+
+	.widget-title {
+		color : $white;
+	}
+
+	.gform_wrapper {
+
+		margin    : 0;
+		max-width : 100%;
+
+		input[type=email],
+		input#subscribe-field {
+			font-size : 16px;
+			font-size : 1rem;
+			padding   : 8px !important;
+		}
+
+		.gfield_label {
+			display : none;
+		}
+
+		.top_label input.large {
+			background-color : #f9f9f9;
+			border           : 1px solid #eee;
+			padding          : 8px;
+			padding          : .5rem;
+			width            : 100%;
+		}
+
+		.gform_footer {
+			margin  : 16px 0 8px 0;
+			padding : 0;
+		}
+
+	}
+
+	#gforms_confirmation_message {
+		background-color : $dark-grey;
+		border           : none;
+	}
+
 }
