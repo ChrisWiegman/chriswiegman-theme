@@ -90,6 +90,15 @@ function chriswiegman_scripts() {
 
 }
 
+//Create the correct more link
+function chriswiegman_excerpt_more() {
+
+	return ' <a class="more-link" href="' . get_permalink( get_the_ID() ) . '">' . __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'chriswiegman' ) . '</a>';
+
+}
+
+add_filter( 'excerpt_more', 'chriswiegman_excerpt_more' );
+
 add_action( 'wp_enqueue_scripts', 'chriswiegman_scripts' );
 
 /**

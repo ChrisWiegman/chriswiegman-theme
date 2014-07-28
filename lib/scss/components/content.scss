@@ -5,11 +5,10 @@
 .hentry {
 
 	background-color : $white;
-	border           : 1px solid $light-grey;
 	font-size        : 22px;
 	font-size        : 1.375rem;
 	line-height      : 1.6;
-	margin           : 0 0 20px 0;
+	margin           : 0 0 2.5rem 0;
 	padding          : 0;
 
 	a.post-header-image {
@@ -110,16 +109,18 @@
 .single,
 .page {
 
-	#main {
+	.site-main {
 		background-color : $white;
+		border           : 1px solid $light-grey;
 	}
 
+}
+
+.home,
+.search {
+
 	.hentry {
-
-		.entry-header {
-			padding : 40px 40px 0 40px;
-		}
-
+		border : 1px solid $light-grey;
 	}
 
 }
