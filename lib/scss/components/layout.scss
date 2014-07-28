@@ -19,7 +19,7 @@ body {
 	}
 
 	.featured-image {
-		text-align: center;
+		text-align : center;
 	}
 
 	.site-content {
@@ -38,6 +38,7 @@ body {
 		position         : fixed;
 		top              : 0;
 		width            : 100%;
+		z-index          : 10000;
 
 		.wrap {
 
