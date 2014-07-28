@@ -12,7 +12,7 @@
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
 		<div class="site-info">
-			<p><span class="copyright">&copy; <?php echo date( 'Y', time() ); ?> Chris Wiegman - </span><span class="license"><a href="http://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">Creative Commons Licensed</a></span></p>
+			<p><span class="copyright">&copy; <?php echo date( 'Y', time() ); ?> Chris Wiegman - </span><span class="license"><a href="http://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">Creative Commons Licensed</a></span> - <span class="policies"><a href="/policies" title="Policies and Disclosures">Policies and Disclosures</a></span></p>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->
