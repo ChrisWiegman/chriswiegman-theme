@@ -38,7 +38,7 @@ module.exports = function ( grunt ) {
 					'js/footer.min.js': [
 						'lib/js/skip-link-focus-fix.js',
 						'lib/js/backstretch.js',
-					    'lib/js/scripts.js'
+						'lib/js/scripts.js'
 					]
 				}
 			}

@@ -3,10 +3,6 @@ body {
 	background-color : $near-white;
 }
 
-.top-padding {
-	top : 32px;
-}
-
 #page {
 
 	margin : 0 auto;
@@ -69,6 +65,10 @@ body {
 
 		}
 
+	}
+
+	.top-padding {
+		top : 32px;
 	}
 
 	.scrolled {

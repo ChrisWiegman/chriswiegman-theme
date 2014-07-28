@@ -101,6 +101,25 @@ add_filter( 'excerpt_more', 'chriswiegman_excerpt_more' );
 
 add_action( 'wp_enqueue_scripts', 'chriswiegman_scripts' );
 
+//Add custom styles to wysiwyg editor
+add_action( 'init', 'chriswiegman_add_editor_styles' );
+
+function chriswiegman_add_editor_styles() {
+
+	add_editor_style( get_stylesheet_directory_uri() . '/css/editor.css' );
+
+}
+
+add_filter( 'wp_default_scripts', 'cw_remove_jquery_migrate' );
+
+function cw_remove_jquery_migrate( $scripts ) {
+
+	if ( ! is_admin() ) {
+		$scripts->remove( 'jquery' );
+		$scripts->add( 'jquery', false, array( 'jquery-core' ), '1.11.0' );
+	}
+}
+
 /**
  * Custom template tags for this theme.
  */
