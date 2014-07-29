@@ -10,6 +10,8 @@
 	}
 
 	.widget-title {
+		font-size     : 24px;
+		font-size     : 1.5rem;
 		margin-bottom : 1rem;
 	}
 
@@ -41,14 +43,23 @@
 
 #intro {
 
-	.widget {
-		background-color : transparent;
-		border           : none;
-		color            : $light-grey;
-		font-size        : 32px;
-		font-size        : 2rem;
-		margin           : 0;
-		padding          : 0;
+	#intro-widget {
+
+		margin     : 0 auto;
+		max-width  : 1152px;
+		min-height : 200px;
+
+		.widget {
+			background-color : transparent;
+			border           : none;
+			color            : $light-grey;
+			display          : table-cell;
+			font-size        : 24px;
+			font-size        : 1.5rem;
+			padding          : 0;
+			vertical-align   : middle;
+		}
+
 	}
 
 }

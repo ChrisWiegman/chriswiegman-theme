@@ -2,7 +2,7 @@
 
 	#page {
 
-		div#intro {
+		#intro {
 			margin-top : 40px;
 		}
 
@@ -40,21 +40,21 @@
 
 	}
 
-}
+	.site-header {
 
-.site-header {
+		.main-navigation {
 
-	.main-navigation {
+			li {
+				padding : 5px 20px;
+			}
 
-		li {
-			padding : 10px 20px;
-		}
+			ul ul {
 
-		ul ul {
+				top     : 2em;
+				left    : -999em;
+				z-index : 99999;
 
-			top     : 2em;
-			left    : -999em;
-			z-index : 99999;
+			}
 
 		}
 

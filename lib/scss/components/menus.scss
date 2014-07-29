@@ -1,5 +1,7 @@
 .main-navigation {
 
+	font-weight : 400;
+
 	ul {
 		list-style   : none;
 		margin       : 0;
@@ -8,7 +10,7 @@
 
 	li {
 		float    : left;
-		padding  : 20px;
+		padding  : 15px 20px;
 		position : relative;
 
 		ul li {
@@ -129,7 +131,7 @@
 	.main-navigation {
 
 		li {
-			padding : 10px 20px;
+			padding : 5px 20px;
 		}
 
 		ul ul {

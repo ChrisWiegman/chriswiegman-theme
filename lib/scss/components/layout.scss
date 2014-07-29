@@ -7,11 +7,13 @@ body {
 
 	margin : 0 auto;
 
-	div#intro {
+	#intro {
 		background-color : $black;
 		clear            : both;
 		margin-top       : 80px;
-		padding          : 64px;
+		min-height       : 200px;
+		padding          : 0;
+		width            : 100%;
 	}
 
 	.featured-image {
@@ -111,11 +113,12 @@ body {
 
 		a {
 
-			border-bottom : none;
+			border-bottom : 1px solid $light-grey;
 			color         : $light-grey;
 
 			&:hover {
-				border-bottom : none;
+				border-bottom : 1px solid $orange;
+				color         : $orange;
 			}
 
 		}
