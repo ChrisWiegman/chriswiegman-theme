@@ -12,7 +12,7 @@ module.exports = function ( grunt ) {
 		sass: {
 			options: {
 				style: 'compressed',
-				sourcemap: true,
+				sourcemap: false,
 				noCache: true
 			},
 			production: {
