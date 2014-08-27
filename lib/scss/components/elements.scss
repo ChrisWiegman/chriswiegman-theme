@@ -37,10 +37,13 @@ dd {
 }
 
 img {
-	height    : auto;
-	/* Make sure images are scaled correctly. */
-	max-width : 100%;
-	/* Adhere to container width. */
+	height             : auto;
+	-webkit-transition : 0.5s;
+	-moz-transition    : 0.5s;
+	-ms-transition     : 0.5s;
+	-o-transition      : 0.5s;
+	transition         : 0.5s;
+	max-width          : 100%;
 }
 
 figure {

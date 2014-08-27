@@ -4,24 +4,50 @@
 
 		#intro {
 			margin-top : 40px;
+			-webkit-transition : 0.5s;
+			-moz-transition    : 0.5s;
+			-ms-transition     : 0.5s;
+			-o-transition      : 0.5s;
+			transition         : 0.5s;
 		}
 
 		.site-header {
 
-			height : 40px;
+			height             : 40px;
+			-webkit-transition : 0.5s;
+			-moz-transition    : 0.5s;
+			-ms-transition     : 0.5s;
+			-o-transition      : 0.5s;
+			transition         : 0.5s;
 
 			.site-branding {
-				padding-top : 5px !important;
+
+				padding-top        : 5px !important;
+				-webkit-transition : 0.5s;
+				-moz-transition    : 0.5s;
+				-ms-transition     : 0.5s;
+				-o-transition      : 0.5s;
+				transition         : 0.5s;
 
 				img {
-					height : 80%;
-					width  : 80%;
+					height             : 80%;
+					-webkit-transition : 0.5s;
+					-moz-transition    : 0.5s;
+					-ms-transition     : 0.5s;
+					-o-transition      : 0.5s;
+					transition         : 0.5s;
+					width              : 80%;
 				}
 
 			}
 
 			.main-navigation {
-				padding-top : 0 !important;
+				padding-top        : 0 !important;
+				-webkit-transition : 0.5s;
+				-moz-transition    : 0.5s;
+				-ms-transition     : 0.5s;
+				-o-transition      : 0.5s;
+				transition         : 0.5s;
 			}
 
 		}
@@ -45,7 +71,12 @@
 		.main-navigation {
 
 			li {
-				padding : 5px 20px;
+				padding            : 5px 20px;
+				-webkit-transition : 0.5s;
+				-moz-transition    : 0.5s;
+				-ms-transition     : 0.5s;
+				-o-transition      : 0.5s;
+				transition         : 0.5s;
 			}
 
 			ul ul {

@@ -9,9 +9,15 @@
 	}
 
 	li {
-		float    : left;
-		padding  : 15px 20px;
-		position : relative;
+
+		float              : left;
+		padding            : 15px 20px;
+		position           : relative;
+		-webkit-transition : 0.5s;
+		-moz-transition    : 0.5s;
+		-ms-transition     : 0.5s;
+		-o-transition      : 0.5s;
+		transition         : 0.5s;
 
 		ul li {
 			padding : 5px 20px;
@@ -31,14 +37,10 @@
 
 	a {
 
-		border-bottom      : none;
-		color              : $text-color;
-		display            : block;
-		text-decoration    : none;
-		-webkit-transition : none;
-		-moz-transition    : none;
-		-o-transition      : none;
-		transition         : none;
+		border-bottom   : none;
+		color           : $text-color;
+		display         : block;
+		text-decoration : none;
 
 		&:hover {
 			color : $orange;
