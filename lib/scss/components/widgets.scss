@@ -175,7 +175,8 @@
 
 }
 
-#gform_widget-2 {
+//Subscription Widget
+.jetpack_subscription_widget {
 
 	background-color : $dark-grey;
 	color            : $white;
@@ -184,33 +185,26 @@
 		color : $white;
 	}
 
-	.gform_wrapper {
+	form {
 
 		margin    : 0;
 		max-width : 100%;
 
 		input[type=email],
 		input#subscribe-field {
-			font-size : 16px;
-			font-size : 1rem;
-			padding   : 8px !important;
-		}
-
-		.gfield_label {
-			display : none;
-		}
-
-		.top_label input.large {
 			background-color : $near-white;
 			border           : 1px solid #eee;
+			color            : #999;
+			font-size        : 16px;
+			font-size        : 1rem;
 			padding          : 8px;
 			padding          : .5rem;
 			width            : 100%;
 		}
 
-		.gform_footer {
-			margin  : 16px 0 8px 0;
-			padding : 0;
+		input[type="submit"] {
+			text-transform: none !important;
+			padding: 10px 10px 6px 10px;
 		}
 
 	}
