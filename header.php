@@ -33,7 +33,7 @@
 		<div class="wrap">
 
 			<div class="site-branding">
-				<div class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img src="http://cdn1.chriswiegman.com/content/themes/chriswiegman/img/logo.png'; ?>" alt="Chris Wiegman" width="256" height="40"></a></div>
+				<div class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img src="http://cdn1.chriswiegman.com/content/themes/chriswiegman/img/logo.png" alt="Chris Wiegman" width="256" height="40"></a></div>
 			</div>
 
 			<div class="menu-toggle"><?php _e( 'Menu', 'chriswiegman' ); ?></div>
