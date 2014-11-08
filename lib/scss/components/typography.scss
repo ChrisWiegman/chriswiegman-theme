@@ -1,6 +1,6 @@
 body {
 	color       : $text-color;
-	font-family : 'Open Sans', sans-serif;
+	font-family : Verdana, Arial, sans-serif;
 	font-weight : 400;
 }
 
@@ -12,7 +12,7 @@ h5,
 h6 {
 	clear       : both;
 	color       : $black;
-	font-family : 'Roboto Slab', serif;
+	font-family : Georgia, serif;
 	font-weight : 700;
 	line-height : 1.2;
 }
@@ -117,7 +117,7 @@ address {
 pre {
 
 	background    : #eee;
-	font-family   : "Courier 10 Pitch", Courier, monospace;
+	font-family   : "Courier New", Courier, monospace;
 	line-height   : 1.6;
 	margin-bottom : 1.6em;
 	max-width     : 100%;
@@ -129,7 +129,7 @@ code,
 kbd,
 tt,
 var {
-	font : 15px Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+	font : 15px "Courier New", Courier, monospace;
 }
 
 abbr,
