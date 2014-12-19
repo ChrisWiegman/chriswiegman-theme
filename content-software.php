@@ -48,7 +48,7 @@
 
 						$meta = $cw_lib->get_plugin_data( $post->ID );
 
-						echo '<div class="software-short">';
+						echo '<div class="software-short" itemscope>';
 						echo '<h3 class="software-title"><a href="' . get_post_meta( $post->ID, '_software_url', true ) . '" target="_blank">' . get_the_title() . '</a></h3>';
 
 						if ( $meta != false ) {
