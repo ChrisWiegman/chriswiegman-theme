@@ -59,7 +59,7 @@
 							echo '<meta itemprop="reviewCount" content="' . $meta['Votes'] . '">';
 							echo '</div>';
 							echo '</div>';
-							echo '<div class="software-downloads">' . number_format( substr( $meta['Downloads'], 14 ) ) . ' downloads</div>';
+							echo '<div class="software-downloads">' . number_format( $meta['Downloads'] ) . ' downloads</div>';
 							echo '</div>';
 						}
 
