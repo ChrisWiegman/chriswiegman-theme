@@ -176,13 +176,17 @@
 }
 
 //Subscription Widget
-.jetpack_subscription_widget {
+#gform_widget-2 {
 
 	background-color : $dark-grey;
 	color            : $white;
 
 	.widget-title {
 		color : $white;
+	}
+
+	ul {
+		margin : 0 !important;
 	}
 
 	form {
@@ -203,13 +207,17 @@
 		}
 
 		input[type="submit"] {
-			text-transform: none !important;
-			padding: 10px 10px 6px 10px;
+			text-transform : none !important;
+			padding        : 10px 10px 6px 10px;
+		}
+
+		.gform_footer {
+			margin-top: 20px;
 		}
 
 	}
 
-	#gforms_confirmation_message {
+	.gforms_confirmation_message {
 		background-color : $dark-grey;
 		border           : none;
 	}

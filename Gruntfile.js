@@ -25,11 +25,16 @@ module.exports = function ( grunt ) {
 
 			cssmin : {
 
-				minify : {
-					expand : true,
-					cwd    : 'assets/css',
-					src    : ['*.css'],
-					ext    : '.css'
+				target : {
+
+						files : [{
+						         expand : true,
+						         cwd    : 'assets/css',
+						         src    : ['*.css'],
+						         dest   : 'lib/css',
+						         ext    : '.css'
+					         }]
+
 				}
 
 			},
@@ -45,7 +50,8 @@ module.exports = function ( grunt ) {
 					},
 
 					files : {
-						'assets/css/master.css' : 'assets/scss/master.scss'
+						'assets/css/master.css' : 'assets/scss/master.scss',
+						'assets/css/editor.css' : 'assets/scss/editor.scss'
 					}
 
 				},
@@ -59,7 +65,8 @@ module.exports = function ( grunt ) {
 					},
 
 					files : {
-						'lib/css/master.css' : 'assets/scss/master.scss'
+						'lib/css/master.css' : 'assets/scss/master.scss',
+						'lib/css/editor.css' : 'assets/scss/editor.scss'
 					}
 
 				}
@@ -82,7 +89,8 @@ module.exports = function ( grunt ) {
 						'lib/js/footer.js' : [
 							'assets/js/skip-link-focus-fix.js',
 							'assets/js/backstretch.js',
-							'assets/js/scripts.js'
+							'assets/js/scripts.js',
+							'assets/js/analytics.js'
 						]
 					}
 
@@ -143,6 +151,6 @@ module.exports = function ( grunt ) {
 
 	// A very basic default task.
 	grunt.registerTask ( 'default', ['sass:development', 'uglify:development', 'watch'] );
-	grunt.registerTask ( 'prod', ['clean','sass:production', 'autoprefixer', 'cssmin', 'uglify:production'] );
+	grunt.registerTask ( 'prod', ['clean', 'sass:production', 'autoprefixer', 'cssmin', 'uglify:production'] );
 
 };

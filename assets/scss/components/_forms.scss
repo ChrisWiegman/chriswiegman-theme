@@ -108,27 +108,49 @@ input:hover {
 
 .gform_wrapper {
 
+	margin : 0 0 16px 0;
+
+	ul {
+		margin : 0;
+
+		&.gfield_checkbox li, &.gfield_radio li {
+			padding : 0 0 0 1px !important;
+		}
+	}
+
+	.left-pad div ul li {
+		padding-left : 1px !important;
+	}
+
 	input,
 	select,
 	textarea,
 	.ginput_complex label,
-	label,
 	.gfield_description {
-		font-size : 15px !important;
-		font-size : 0.9375rem !important;
+		font-size : $small !important;
+		font-size : $small-rem !important;
 		padding   : 8px !important;
 		width     : 98%;
 	}
 
+	.top_label .gfield_label {
+		margin-bottom : 3px;
+		float         : none;
+		font-weight   : 700;
+		display       : block;
+	}
+
 	span {
 
-		&.ginput_left {
+		&.ginput_left,
+		&.name_first {
 			float   : left;
 			padding : 0 2px;
 			width   : 49.5%;
 		}
 
-		&.ginput_right {
+		&.ginput_right,
+		&.name_last {
 			float   : right;
 			padding : 0 2px;
 			width   : 49.5%;
@@ -145,9 +167,13 @@ input:hover {
 		padding : 0;
 	}
 
-}
+	.gfield_checkbox {
 
-div.gform_wrapper {
+		input {
+			width : auto;
+		}
+
+	}
 
 	li, form li {
 		list-style : none;
@@ -165,29 +191,9 @@ div.gform_wrapper {
 
 }
 
-#gforms_confirmation_message {
-	background-color : #bfffc7;
+.gforms_confirmation_message {
+	background-color : $green;
 	border           : 1px solid #eee;
 	margin-bottom    : 24px;
-	padding          : 8px;
-}
-
-.gform_wrapper {
-
-	ul {
-
-		&.gfield_checkbox li, &.gfield_radio li {
-			padding : 0 0 0 1px !important;
-		}
-
-	}
-
-	.left-pad div ul li {
-		padding-left : 1px !important;
-	}
-
-}
-
-#choice_10_1 {
-	font-weight : normal !important;
+	padding          : 24px;
 }

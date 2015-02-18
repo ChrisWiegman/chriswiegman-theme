@@ -1,6 +1,6 @@
 body {
 	color       : $text-color;
-	font-family : Verdana, Arial, sans-serif;
+	font-family : $sans-serif;
 	font-weight : 400;
 }
 
@@ -12,7 +12,7 @@ h5,
 h6 {
 	clear       : both;
 	color       : $black;
-	font-family : Georgia, serif;
+	font-family : $serif;
 	font-weight : 700;
 	line-height : 1.2;
 }
@@ -117,7 +117,7 @@ address {
 pre {
 
 	background    : #eee;
-	font-family   : "Courier New", Courier, monospace;
+	font-family   : $fixed;
 	line-height   : 1.6;
 	margin-bottom : 1.6em;
 	max-width     : 100%;
@@ -129,7 +129,7 @@ code,
 kbd,
 tt,
 var {
-	font : 15px "Courier New", Courier, monospace;
+	font : 15px $fixed;
 }
 
 abbr,

@@ -2491,7 +2491,7 @@ q {
 
 body {
   color: #5f5f5f;
-  font-family: Verdana, Arial, sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-weight: 400;
 }
 
@@ -2503,7 +2503,7 @@ h5,
 h6 {
   clear: both;
   color: #2e2e2e;
-  font-family: Georgia, serif;
+  font-family: "Roboto Slab", serif;
   font-weight: 700;
   line-height: 1.2;
 }
@@ -2920,23 +2920,40 @@ input:hover[type="button"], input:hover[type="submit"] {
 }
 
 /* 12a - Gravity Forms ----------- */
+.gform_wrapper {
+  margin: 0 0 16px 0;
+}
+.gform_wrapper ul {
+  margin: 0;
+}
+.gform_wrapper ul.gfield_checkbox li, .gform_wrapper ul.gfield_radio li {
+  padding: 0 0 0 1px !important;
+}
+.gform_wrapper .left-pad div ul li {
+  padding-left: 1px !important;
+}
 .gform_wrapper input,
 .gform_wrapper select,
 .gform_wrapper textarea,
 .gform_wrapper .ginput_complex label,
-.gform_wrapper label,
 .gform_wrapper .gfield_description {
-  font-size: 15px !important;
-  font-size: 0.9375rem !important;
+  font-size: 16px !important;
+  font-size: 1rem !important;
   padding: 8px !important;
   width: 98%;
 }
-.gform_wrapper span.ginput_left {
+.gform_wrapper .top_label .gfield_label {
+  margin-bottom: 3px;
+  float: none;
+  font-weight: 700;
+  display: block;
+}
+.gform_wrapper span.ginput_left, .gform_wrapper span.name_first {
   float: left;
   padding: 0 2px;
   width: 49.5%;
 }
-.gform_wrapper span.ginput_right {
+.gform_wrapper span.ginput_right, .gform_wrapper span.name_last {
   float: right;
   padding: 0 2px;
   width: 49.5%;
@@ -2948,13 +2965,15 @@ input:hover[type="button"], input:hover[type="submit"] {
 .gform_wrapper .ginput_complex label {
   padding: 0;
 }
-
-div.gform_wrapper li, div.gform_wrapper form li {
+.gform_wrapper .gfield_checkbox input {
+  width: auto;
+}
+.gform_wrapper li, .gform_wrapper form li {
   list-style: none;
   margin: 16px 0 16px 0;
   overflow: hidden;
 }
-div.gform_wrapper li.gform_validation_container {
+.gform_wrapper li.gform_validation_container {
   display: none;
   height: 1px;
   left: -99999px;
@@ -2962,22 +2981,11 @@ div.gform_wrapper li.gform_validation_container {
   width: 1px;
 }
 
-#gforms_confirmation_message {
+.gforms_confirmation_message {
   background-color: #bfffc7;
   border: 1px solid #eee;
   margin-bottom: 24px;
-  padding: 8px;
-}
-
-.gform_wrapper ul.gfield_checkbox li, .gform_wrapper ul.gfield_radio li {
-  padding: 0 0 0 1px !important;
-}
-.gform_wrapper .left-pad div ul li {
-  padding-left: 1px !important;
-}
-
-#choice_10_1 {
-  font-weight: normal !important;
+  padding: 24px;
 }
 
 a {
@@ -3324,19 +3332,22 @@ a:visited {
   word-wrap: break-word;
 }
 
-.jetpack_subscription_widget {
+#gform_widget-2 {
   background-color: #3e3e3e;
   color: #fff;
 }
-.jetpack_subscription_widget .widget-title {
+#gform_widget-2 .widget-title {
   color: #fff;
 }
-.jetpack_subscription_widget form {
+#gform_widget-2 ul {
+  margin: 0 !important;
+}
+#gform_widget-2 form {
   margin: 0;
   max-width: 100%;
 }
-.jetpack_subscription_widget form input[type=email],
-.jetpack_subscription_widget form input#subscribe-field {
+#gform_widget-2 form input[type=email],
+#gform_widget-2 form input#subscribe-field {
   background-color: #f8f8f8;
   border: 1px solid #eee;
   color: #999;
@@ -3346,11 +3357,14 @@ a:visited {
   padding: .5rem;
   width: 100%;
 }
-.jetpack_subscription_widget form input[type="submit"] {
+#gform_widget-2 form input[type="submit"] {
   text-transform: none !important;
   padding: 10px 10px 6px 10px;
 }
-.jetpack_subscription_widget #gforms_confirmation_message {
+#gform_widget-2 form .gform_footer {
+  margin-top: 20px;
+}
+#gform_widget-2 .gforms_confirmation_message {
   background-color: #3e3e3e;
   border: none;
 }
@@ -3646,57 +3660,6 @@ object {
 
 .gallery-columns-9 .gallery-item {
   max-width: 11.11%;
-}
-
-/* Software */
-.software-short {
-  float: left;
-  font-size: 14px;
-  margin-bottom: 16px;
-  padding: 15px;
-  width: 33%;
-}
-.software-short .software-rating {
-  color: #636363;
-  display: block;
-  font-style: italic;
-  margin: 6px 0;
-}
-.software-short .software-downloads {
-  clear: both;
-  float: left;
-  margin: 6px 0;
-}
-.software-short h3 {
-  font-size: 16px;
-  font-size: 1rem;
-  margin: 0;
-  padding: 0;
-}
-.software-short .software-title a:link, .software-short .software-title a:hover, .software-short .software-title a:visited {
-  text-decoration: none;
-}
-
-.rating-stars {
-  background: url("../img/star-sprite.png") no-repeat 0 0;
-  float: left;
-  height: 20px !important;
-  Margin: 6px 0;
-  max-height: 20px !important;
-  width: 112px;
-  padding: 0;
-  line-height: 20px !important;
-}
-.rating-stars .rating {
-  display: block;
-  background: url("../img/star-sprite.png") no-repeat -112px 0px;
-  height: 20px;
-  max-height: 20px;
-  padding: 0;
-}
-
-.clearfix {
-  clear: both;
 }
 
 @media screen and (max-width: 1152px) {

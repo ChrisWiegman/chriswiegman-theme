@@ -141,26 +141,28 @@ q {
 }
 
 /*!
- *  Font Awesome 4.1.0 by @davegandy - http://fontawesome.io - @fontawesome
+ *  Font Awesome 4.3.0 by @davegandy - http://fontawesome.io - @fontawesome
  *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
  */
 /* FONT PATH
  * -------------------------- */
 @font-face {
   font-family: 'FontAwesome';
-  src: url("../fonts/fontawesome-webfont.eot?v=4.1.0");
-  src: url("../fonts/fontawesome-webfont.eot?#iefix&v=4.1.0") format("embedded-opentype"), url("../fonts/fontawesome-webfont.woff?v=4.1.0") format("woff"), url("../fonts/fontawesome-webfont.ttf?v=4.1.0") format("truetype"), url("../fonts/fontawesome-webfont.svg?v=4.1.0#fontawesomeregular") format("svg");
+  src: url("../../fonts/fontawesome-webfont.eot?v=4.3.0");
+  src: url("../../fonts/fontawesome-webfont.eot?#iefix&v=4.3.0") format("embedded-opentype"), url("../../fonts/fontawesome-webfont.woff2?v=4.3.0") format("woff2"), url("../../fonts/fontawesome-webfont.woff?v=4.3.0") format("woff"), url("../../fonts/fontawesome-webfont.ttf?v=4.3.0") format("truetype"), url("../../fonts/fontawesome-webfont.svg?v=4.3.0#fontawesomeregular") format("svg");
   font-weight: normal;
   font-style: normal;
 }
 .fa {
   display: inline-block;
-  font-family: FontAwesome;
-  font-style: normal;
-  font-weight: normal;
-  line-height: 1;
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  -webkit-transform: translate(0, 0);
+      -ms-transform: translate(0, 0);
+          transform: translate(0, 0);
 }
 
 /* makes the font 33% larger relative to the icon container */
@@ -233,27 +235,26 @@ q {
 }
 
 .fa-spin {
-  -webkit-animation: spin 2s infinite linear;
-  -o-animation: spin 2s infinite linear;
-  animation: spin 2s infinite linear;
+  -webkit-animation: fa-spin 2s infinite linear;
+  animation: fa-spin 2s infinite linear;
 }
-@-webkit-keyframes spin {
+
+.fa-pulse {
+  -webkit-animation: fa-spin 1s infinite steps(8);
+  animation: fa-spin 1s infinite steps(8);
+}
+
+@-webkit-keyframes fa-spin {
   0% {
     -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
   }
   100% {
     -webkit-transform: rotate(359deg);
+    transform: rotate(359deg);
   }
 }
-@-o-keyframes spin {
-  0% {
-    -o-transform: rotate(0deg);
-  }
-  100% {
-    -o-transform: rotate(359deg);
-  }
-}
-@keyframes spin {
+@keyframes fa-spin {
   0% {
     -webkit-transform: rotate(0deg);
     transform: rotate(0deg);
@@ -296,6 +297,15 @@ q {
   -webkit-transform: scale(1, -1);
   -ms-transform: scale(1, -1);
   transform: scale(1, -1);
+}
+
+:root .fa-rotate-90,
+:root .fa-rotate-180,
+:root .fa-rotate-270,
+:root .fa-flip-horizontal,
+:root .fa-flip-vertical {
+  -webkit-filter: none;
+          filter: none;
 }
 
 .fa-stack {
@@ -380,6 +390,8 @@ q {
   content: "";
 }
 
+.fa-remove:before,
+.fa-close:before,
 .fa-times:before {
   content: "";
 }
@@ -816,7 +828,8 @@ q {
   content: "";
 }
 
-.fa-bar-chart-o:before {
+.fa-bar-chart-o:before,
+.fa-bar-chart:before {
   content: "";
 }
 
@@ -917,6 +930,7 @@ q {
   content: "";
 }
 
+.fa-facebook-f:before,
 .fa-facebook:before {
   content: "";
 }
@@ -1771,7 +1785,8 @@ q {
   content: "";
 }
 
-.fa-gittip:before {
+.fa-gittip:before,
+.fa-gratipay:before {
   content: "";
 }
 
@@ -1908,7 +1923,6 @@ q {
   content: "";
 }
 
-.fa-pied-piper-square:before,
 .fa-pied-piper:before {
   content: "";
 }
@@ -2061,6 +2075,7 @@ q {
 }
 
 .fa-life-bouy:before,
+.fa-life-buoy:before,
 .fa-life-saver:before,
 .fa-support:before,
 .fa-life-ring:before {
@@ -2120,6 +2135,7 @@ q {
   content: "";
 }
 
+.fa-genderless:before,
 .fa-circle-thin:before {
   content: "";
 }
@@ -2148,9 +2164,333 @@ q {
   content: "";
 }
 
+.fa-soccer-ball-o:before,
+.fa-futbol-o:before {
+  content: "";
+}
+
+.fa-tty:before {
+  content: "";
+}
+
+.fa-binoculars:before {
+  content: "";
+}
+
+.fa-plug:before {
+  content: "";
+}
+
+.fa-slideshare:before {
+  content: "";
+}
+
+.fa-twitch:before {
+  content: "";
+}
+
+.fa-yelp:before {
+  content: "";
+}
+
+.fa-newspaper-o:before {
+  content: "";
+}
+
+.fa-wifi:before {
+  content: "";
+}
+
+.fa-calculator:before {
+  content: "";
+}
+
+.fa-paypal:before {
+  content: "";
+}
+
+.fa-google-wallet:before {
+  content: "";
+}
+
+.fa-cc-visa:before {
+  content: "";
+}
+
+.fa-cc-mastercard:before {
+  content: "";
+}
+
+.fa-cc-discover:before {
+  content: "";
+}
+
+.fa-cc-amex:before {
+  content: "";
+}
+
+.fa-cc-paypal:before {
+  content: "";
+}
+
+.fa-cc-stripe:before {
+  content: "";
+}
+
+.fa-bell-slash:before {
+  content: "";
+}
+
+.fa-bell-slash-o:before {
+  content: "";
+}
+
+.fa-trash:before {
+  content: "";
+}
+
+.fa-copyright:before {
+  content: "";
+}
+
+.fa-at:before {
+  content: "";
+}
+
+.fa-eyedropper:before {
+  content: "";
+}
+
+.fa-paint-brush:before {
+  content: "";
+}
+
+.fa-birthday-cake:before {
+  content: "";
+}
+
+.fa-area-chart:before {
+  content: "";
+}
+
+.fa-pie-chart:before {
+  content: "";
+}
+
+.fa-line-chart:before {
+  content: "";
+}
+
+.fa-lastfm:before {
+  content: "";
+}
+
+.fa-lastfm-square:before {
+  content: "";
+}
+
+.fa-toggle-off:before {
+  content: "";
+}
+
+.fa-toggle-on:before {
+  content: "";
+}
+
+.fa-bicycle:before {
+  content: "";
+}
+
+.fa-bus:before {
+  content: "";
+}
+
+.fa-ioxhost:before {
+  content: "";
+}
+
+.fa-angellist:before {
+  content: "";
+}
+
+.fa-cc:before {
+  content: "";
+}
+
+.fa-shekel:before,
+.fa-sheqel:before,
+.fa-ils:before {
+  content: "";
+}
+
+.fa-meanpath:before {
+  content: "";
+}
+
+.fa-buysellads:before {
+  content: "";
+}
+
+.fa-connectdevelop:before {
+  content: "";
+}
+
+.fa-dashcube:before {
+  content: "";
+}
+
+.fa-forumbee:before {
+  content: "";
+}
+
+.fa-leanpub:before {
+  content: "";
+}
+
+.fa-sellsy:before {
+  content: "";
+}
+
+.fa-shirtsinbulk:before {
+  content: "";
+}
+
+.fa-simplybuilt:before {
+  content: "";
+}
+
+.fa-skyatlas:before {
+  content: "";
+}
+
+.fa-cart-plus:before {
+  content: "";
+}
+
+.fa-cart-arrow-down:before {
+  content: "";
+}
+
+.fa-diamond:before {
+  content: "";
+}
+
+.fa-ship:before {
+  content: "";
+}
+
+.fa-user-secret:before {
+  content: "";
+}
+
+.fa-motorcycle:before {
+  content: "";
+}
+
+.fa-street-view:before {
+  content: "";
+}
+
+.fa-heartbeat:before {
+  content: "";
+}
+
+.fa-venus:before {
+  content: "";
+}
+
+.fa-mars:before {
+  content: "";
+}
+
+.fa-mercury:before {
+  content: "";
+}
+
+.fa-transgender:before {
+  content: "";
+}
+
+.fa-transgender-alt:before {
+  content: "";
+}
+
+.fa-venus-double:before {
+  content: "";
+}
+
+.fa-mars-double:before {
+  content: "";
+}
+
+.fa-venus-mars:before {
+  content: "";
+}
+
+.fa-mars-stroke:before {
+  content: "";
+}
+
+.fa-mars-stroke-v:before {
+  content: "";
+}
+
+.fa-mars-stroke-h:before {
+  content: "";
+}
+
+.fa-neuter:before {
+  content: "";
+}
+
+.fa-facebook-official:before {
+  content: "";
+}
+
+.fa-pinterest-p:before {
+  content: "";
+}
+
+.fa-whatsapp:before {
+  content: "";
+}
+
+.fa-server:before {
+  content: "";
+}
+
+.fa-user-plus:before {
+  content: "";
+}
+
+.fa-user-times:before {
+  content: "";
+}
+
+.fa-hotel:before,
+.fa-bed:before {
+  content: "";
+}
+
+.fa-viacoin:before {
+  content: "";
+}
+
+.fa-train:before {
+  content: "";
+}
+
+.fa-subway:before {
+  content: "";
+}
+
+.fa-medium:before {
+  content: "";
+}
+
 body {
   color: #5f5f5f;
-  font-family: Verdana, Arial, sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-weight: 400;
 }
 
@@ -2162,7 +2502,7 @@ h5,
 h6 {
   clear: both;
   color: #2e2e2e;
-  font-family: Georgia, serif;
+  font-family: "Roboto Slab", serif;
   font-weight: 700;
   line-height: 1.2;
 }
@@ -2570,23 +2910,40 @@ input:hover[type="button"], input:hover[type="submit"] {
 }
 
 /* 12a - Gravity Forms ----------- */
+.gform_wrapper {
+  margin: 0 0 16px 0;
+}
+.gform_wrapper ul {
+  margin: 0;
+}
+.gform_wrapper ul.gfield_checkbox li, .gform_wrapper ul.gfield_radio li {
+  padding: 0 0 0 1px !important;
+}
+.gform_wrapper .left-pad div ul li {
+  padding-left: 1px !important;
+}
 .gform_wrapper input,
 .gform_wrapper select,
 .gform_wrapper textarea,
 .gform_wrapper .ginput_complex label,
-.gform_wrapper label,
 .gform_wrapper .gfield_description {
-  font-size: 15px !important;
-  font-size: 0.9375rem !important;
+  font-size: 16px !important;
+  font-size: 1rem !important;
   padding: 8px !important;
   width: 98%;
 }
-.gform_wrapper span.ginput_left {
+.gform_wrapper .top_label .gfield_label {
+  margin-bottom: 3px;
+  float: none;
+  font-weight: 700;
+  display: block;
+}
+.gform_wrapper span.ginput_left, .gform_wrapper span.name_first {
   float: left;
   padding: 0 2px;
   width: 49.5%;
 }
-.gform_wrapper span.ginput_right {
+.gform_wrapper span.ginput_right, .gform_wrapper span.name_last {
   float: right;
   padding: 0 2px;
   width: 49.5%;
@@ -2598,13 +2955,15 @@ input:hover[type="button"], input:hover[type="submit"] {
 .gform_wrapper .ginput_complex label {
   padding: 0;
 }
-
-div.gform_wrapper li, div.gform_wrapper form li {
+.gform_wrapper .gfield_checkbox input {
+  width: auto;
+}
+.gform_wrapper li, .gform_wrapper form li {
   list-style: none;
   margin: 16px 0 16px 0;
   overflow: hidden;
 }
-div.gform_wrapper li.gform_validation_container {
+.gform_wrapper li.gform_validation_container {
   display: none;
   height: 1px;
   left: -99999px;
@@ -2612,22 +2971,11 @@ div.gform_wrapper li.gform_validation_container {
   width: 1px;
 }
 
-#gforms_confirmation_message {
+.gforms_confirmation_message {
   background-color: #bfffc7;
   border: 1px solid #eee;
   margin-bottom: 24px;
-  padding: 8px;
-}
-
-.gform_wrapper ul.gfield_checkbox li, .gform_wrapper ul.gfield_radio li {
-  padding: 0 0 0 1px !important;
-}
-.gform_wrapper .left-pad div ul li {
-  padding-left: 1px !important;
-}
-
-#choice_10_1 {
-  font-weight: normal !important;
+  padding: 24px;
 }
 
 a {
@@ -2967,19 +3315,22 @@ a:visited {
   word-wrap: break-word;
 }
 
-.jetpack_subscription_widget {
+#gform_widget-2 {
   background-color: #3e3e3e;
   color: #fff;
 }
-.jetpack_subscription_widget .widget-title {
+#gform_widget-2 .widget-title {
   color: #fff;
 }
-.jetpack_subscription_widget form {
+#gform_widget-2 ul {
+  margin: 0 !important;
+}
+#gform_widget-2 form {
   margin: 0;
   max-width: 100%;
 }
-.jetpack_subscription_widget form input[type=email],
-.jetpack_subscription_widget form input#subscribe-field {
+#gform_widget-2 form input[type=email],
+#gform_widget-2 form input#subscribe-field {
   background-color: #f8f8f8;
   border: 1px solid #eee;
   color: #999;
@@ -2989,11 +3340,14 @@ a:visited {
   padding: .5rem;
   width: 100%;
 }
-.jetpack_subscription_widget form input[type="submit"] {
+#gform_widget-2 form input[type="submit"] {
   text-transform: none !important;
   padding: 10px 10px 6px 10px;
 }
-.jetpack_subscription_widget #gforms_confirmation_message {
+#gform_widget-2 form .gform_footer {
+  margin-top: 20px;
+}
+#gform_widget-2 .gforms_confirmation_message {
   background-color: #3e3e3e;
   border: none;
 }
@@ -3289,57 +3643,6 @@ object {
 
 .gallery-columns-9 .gallery-item {
   max-width: 11.11%;
-}
-
-/* Software */
-.software-short {
-  float: left;
-  font-size: 14px;
-  margin-bottom: 16px;
-  padding: 15px;
-  width: 33%;
-}
-.software-short .software-rating {
-  color: #636363;
-  display: block;
-  font-style: italic;
-  margin: 6px 0;
-}
-.software-short .software-downloads {
-  clear: both;
-  float: left;
-  margin: 6px 0;
-}
-.software-short h3 {
-  font-size: 16px;
-  font-size: 1rem;
-  margin: 0;
-  padding: 0;
-}
-.software-short .software-title a:link, .software-short .software-title a:hover, .software-short .software-title a:visited {
-  text-decoration: none;
-}
-
-.rating-stars {
-  background: url("../img/star-sprite.png") no-repeat 0 0;
-  float: left;
-  height: 20px !important;
-  Margin: 6px 0;
-  max-height: 20px !important;
-  width: 112px;
-  padding: 0;
-  line-height: 20px !important;
-}
-.rating-stars .rating {
-  display: block;
-  background: url("../img/star-sprite.png") no-repeat -112px 0px;
-  height: 20px;
-  max-height: 20px;
-  padding: 0;
-}
-
-.clearfix {
-  clear: both;
 }
 
 @media screen and (max-width: 1152px) {

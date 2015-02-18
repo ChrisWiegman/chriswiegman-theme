@@ -106,7 +106,7 @@ add_action( 'init', 'chriswiegman_add_editor_styles' );
 
 function chriswiegman_add_editor_styles() {
 
-	add_editor_style( get_stylesheet_directory_uri() . '/css/editor.css' );
+	add_editor_style( get_stylesheet_directory_uri() . '/lib/css/editor.css' );
 
 }
 
