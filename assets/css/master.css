@@ -80,17 +80,13 @@ html {
 
 * {
   /* apply a natural box layout model to all elements; see http://www.paulirish.com/2012/box-sizing-border-box-ftw/ */
-  -webkit-box-sizing: border-box;
   /* Not needed for modern webkit but still used by Blackberry Browser 7.0; see http://caniuse.com/#search=box-sizing */
-  -moz-box-sizing: border-box;
   /* Still needed for Firefox 28; see http://caniuse.com/#search=box-sizing */
   box-sizing: border-box;
 }
 *:before, *:after {
   /* apply a natural box layout model to all elements; see http://www.paulirish.com/2012/box-sizing-border-box-ftw/ */
-  -webkit-box-sizing: border-box;
   /* Not needed for modern webkit but still used by Blackberry Browser 7.0; see http://caniuse.com/#search=box-sizing */
-  -moz-box-sizing: border-box;
   /* Still needed for Firefox 28; see http://caniuse.com/#search=box-sizing */
   box-sizing: border-box;
 }
@@ -238,18 +234,8 @@ q {
 
 .fa-spin {
   -webkit-animation: spin 2s infinite linear;
-  -moz-animation: spin 2s infinite linear;
   -o-animation: spin 2s infinite linear;
   animation: spin 2s infinite linear;
-}
-
-@-moz-keyframes spin {
-  0% {
-    -moz-transform: rotate(0deg);
-  }
-  100% {
-    -moz-transform: rotate(359deg);
-  }
 }
 @-webkit-keyframes spin {
   0% {
@@ -280,45 +266,35 @@ q {
 .fa-rotate-90 {
   filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
   -webkit-transform: rotate(90deg);
-  -moz-transform: rotate(90deg);
   -ms-transform: rotate(90deg);
-  -o-transform: rotate(90deg);
   transform: rotate(90deg);
 }
 
 .fa-rotate-180 {
   filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
   -webkit-transform: rotate(180deg);
-  -moz-transform: rotate(180deg);
   -ms-transform: rotate(180deg);
-  -o-transform: rotate(180deg);
   transform: rotate(180deg);
 }
 
 .fa-rotate-270 {
   filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
   -webkit-transform: rotate(270deg);
-  -moz-transform: rotate(270deg);
   -ms-transform: rotate(270deg);
-  -o-transform: rotate(270deg);
   transform: rotate(270deg);
 }
 
 .fa-flip-horizontal {
   filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=0);
   -webkit-transform: scale(-1, 1);
-  -moz-transform: scale(-1, 1);
   -ms-transform: scale(-1, 1);
-  -o-transform: scale(-1, 1);
   transform: scale(-1, 1);
 }
 
 .fa-flip-vertical {
   filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
   -webkit-transform: scale(1, -1);
-  -moz-transform: scale(1, -1);
   -ms-transform: scale(1, -1);
-  -o-transform: scale(1, -1);
   transform: scale(1, -1);
 }
 
@@ -2373,9 +2349,6 @@ dd {
 img {
   height: auto;
   -webkit-transition: 0.5s;
-  -moz-transition: 0.5s;
-  -ms-transition: 0.5s;
-  -o-transition: 0.5s;
   transition: 0.5s;
   max-width: 100%;
 }
@@ -2408,9 +2381,6 @@ body {
   min-height: 200px;
   padding: 0;
   -webkit-transition: 0.5s;
-  -moz-transition: 0.5s;
-  -ms-transition: 0.5s;
-  -o-transition: 0.5s;
   transition: 0.5s;
   width: 100%;
 }
@@ -2431,9 +2401,6 @@ body {
   position: fixed;
   top: 0;
   -webkit-transition: 0.5s;
-  -moz-transition: 0.5s;
-  -ms-transition: 0.5s;
-  -o-transition: 0.5s;
   transition: 0.5s;
   width: 100%;
   z-index: 10000;
@@ -2667,8 +2634,6 @@ a {
   border-bottom: 1px solid #fff;
   color: #e80;
   -webkit-transition: all .5s ease-in-out;
-  -moz-transition: all .5s ease-in-out;
-  -o-transition: all .5s ease-in-out;
   transition: all .5s ease-in-out;
   text-decoration: none;
 }
@@ -2688,8 +2653,6 @@ a:hover {
 }
 a:visited {
   -webkit-transition: all .5s ease-in-out;
-  -moz-transition: all .5s ease-in-out;
-  -o-transition: all .5s ease-in-out;
   transition: all .5s ease-in-out;
 }
 
@@ -2706,9 +2669,6 @@ a:visited {
   padding: 15px 20px;
   position: relative;
   -webkit-transition: 0.5s;
-  -moz-transition: 0.5s;
-  -ms-transition: 0.5s;
-  -o-transition: 0.5s;
   transition: 0.5s;
 }
 .main-navigation li ul li {
@@ -3396,9 +3356,6 @@ object {
   #page .site-header .main-navigation {
     padding: 0 20px;
     -webkit-transition: 0.5s;
-    -moz-transition: 0.5s;
-    -ms-transition: 0.5s;
-    -o-transition: 0.5s;
     transition: 0.5s;
   }
 
@@ -3415,42 +3372,27 @@ object {
   #page #intro {
     margin-top: 40px;
     -webkit-transition: 0.5s;
-    -moz-transition: 0.5s;
-    -ms-transition: 0.5s;
-    -o-transition: 0.5s;
     transition: 0.5s;
   }
   #page .site-header {
     height: 40px;
     -webkit-transition: 0.5s;
-    -moz-transition: 0.5s;
-    -ms-transition: 0.5s;
-    -o-transition: 0.5s;
     transition: 0.5s;
   }
   #page .site-header .site-branding {
     padding-top: 5px !important;
     -webkit-transition: 0.5s;
-    -moz-transition: 0.5s;
-    -ms-transition: 0.5s;
-    -o-transition: 0.5s;
     transition: 0.5s;
   }
   #page .site-header .site-branding img {
     height: 80%;
     -webkit-transition: 0.5s;
-    -moz-transition: 0.5s;
-    -ms-transition: 0.5s;
-    -o-transition: 0.5s;
     transition: 0.5s;
     width: 80%;
   }
   #page .site-header .main-navigation {
     padding-top: 0 !important;
     -webkit-transition: 0.5s;
-    -moz-transition: 0.5s;
-    -ms-transition: 0.5s;
-    -o-transition: 0.5s;
     transition: 0.5s;
   }
   #page .content-area {
@@ -3467,9 +3409,6 @@ object {
   .site-header .main-navigation li {
     padding: 5px 20px;
     -webkit-transition: 0.5s;
-    -moz-transition: 0.5s;
-    -ms-transition: 0.5s;
-    -o-transition: 0.5s;
     transition: 0.5s;
   }
   .site-header .main-navigation ul ul {
@@ -3606,5 +3545,3 @@ object {
     padding-top: 10px !important;
   }
 }
-
-/*# sourceMappingURL=master.css.map */
