@@ -1,77 +1,148 @@
 module.exports = function ( grunt ) {
 
 	// Start out by loading the grunt modules we'll need
-	grunt.loadNpmTasks( 'grunt-contrib-sass' );
-	grunt.loadNpmTasks( 'grunt-contrib-watch' );
-	grunt.loadNpmTasks( 'grunt-contrib-uglify' );
+	require ( 'load-grunt-tasks' ) ( grunt );
 
-	grunt.initConfig( {
+	grunt.initConfig (
+		{
 
-		pkg: grunt.file.readJSON( 'package.json' ),
+			clean : ["assets/css", "lib"],
 
-		sass: {
-			options: {
-				style: 'compressed',
-				sourcemap: 'none',
-				noCache: true
-			},
-			production: {
-				files: {
-					'css/master.css': 'lib/scss/master.scss'
-				}
-			}
-		},
+			autoprefixer : {
 
-		uglify: {
-			options: {
-				beautify: false,
-				preserveComments: false
-			},
-			production: {
-				options: {
-					beautify: false,
-					mangle: {
-						except: ['jQuery']
-					}
+				options : {
+					browsers : ['last 5 versions']
 				},
-				files: {
-					'js/footer.min.js': [
-						'lib/js/skip-link-focus-fix.js',
-						'lib/js/backstretch.js',
-						'lib/js/scripts.js'
-					]
+
+				files : {
+					expand  : true,
+					flatten : true,
+					src     : 'assets/css/*.css',
+					dest    : 'assets/css'
 				}
-			}
-		},
 
-		watch: {
-			options: {
-				livereload: true
 			},
-			styles: {
-				files: [
-					'lib/scss/components/font-awesome/*',
-					'lib/scss/components/*',
-					'lib/scss/*'
-				],
-				tasks: [ 'sass' ]
+
+			cssmin : {
+
+				minify : {
+					expand : true,
+					cwd    : 'assets/css',
+					src    : ['*.css'],
+					ext    : '.css'
+				}
+
 			},
-			scripts: {
-				files: [
-					'lib/js/*'
-				],
-				tasks: ['uglify']
+
+			sass : {
+
+				production : {
+
+					options : {
+						style     : 'expanded',
+						sourcemap : 'none',
+						noCache   : true
+					},
+
+					files : {
+						'assets/css/master.css' : 'assets/scss/master.scss'
+					}
+
+				},
+
+				development : {
+
+					options : {
+						style     : 'expanded',
+						sourcemap : 'auto',
+						noCache   : true
+					},
+
+					files : {
+						'lib/css/master.css' : 'assets/scss/master.scss'
+					}
+
+				}
+
+			},
+
+			uglify : {
+
+				production : {
+
+					options : {
+						beautify         : false,
+						preserveComments : false,
+						mangle           : {
+							except : ['jQuery']
+						}
+					},
+
+					files : {
+						'lib/js/footer.js' : [
+							'assets/js/skip-link-focus-fix.js',
+							'assets/js/backstretch.js',
+							'assets/js/scripts.js'
+						]
+					}
+
+				},
+
+				development : {
+
+					options : {
+						beautify         : true,
+						preserveComments : true,
+						mangle           : {
+							except : ['jQuery']
+						}
+					},
+
+					files : {
+						'lib/js/footer.js' : [
+							'assets/js/skip-link-focus-fix.js',
+							'assets/js/backstretch.js',
+							'assets/js/scripts.js'
+						]
+					}
+
+				}
+
+			},
+
+			watch : {
+
+				options : {
+					livereload : true
+				},
+
+				styles : {
+
+					files : [
+						'assets/scss/**/*'
+					],
+
+					tasks : ['sass:development']
+
+				},
+
+				scripts : {
+
+					files : [
+						'assets/js/**/*'
+					],
+
+					tasks : ['uglify:development']
+
+				}
+
 			}
+
 		}
-
-	} );
+	);
 
 	// A very basic default task.
-	grunt.registerTask( 'default',
-		[
-			'sass',
-			'uglify'
-		]
-	);
+	grunt.registerTask ( 'default', ['sass:development', 'uglify:development', 'watch'] );
+	grunt.registerTask ( 'prod', ['clean','sass:production', 'autoprefixer', 'cssmin', 'uglify:production'] );
 
 };
