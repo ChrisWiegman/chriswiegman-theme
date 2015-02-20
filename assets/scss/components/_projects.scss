@@ -1,0 +1,35 @@
+.archive-projects {
+
+	.hentry {
+
+		font-size : $small;
+		font-size : $small-rem;
+		margin    : 0;
+
+		.entry-header {
+
+			padding : 0;
+
+			.entry-title {
+
+				border-bottom : none;
+				font-size     : $normal;
+				font-size     : $normal-rem;
+				margin-bottom : 0;
+
+				a {
+					border-bottom : none;
+				}
+
+			}
+
+		}
+
+		.entry-content {
+			margin  : 0;
+			padding : 0;
+		}
+
+	}
+
+}

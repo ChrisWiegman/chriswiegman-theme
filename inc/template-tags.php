@@ -76,6 +76,7 @@ if ( ! function_exists( 'chriswiegman_posted_on' ) ) {
 	function chriswiegman_posted_on() {
 
 		$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time>';
+
 		if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
 			$time_string .= '<time class="updated" datetime="%3$s">%4$s</time>';
 		}
@@ -89,13 +90,12 @@ if ( ! function_exists( 'chriswiegman_posted_on' ) ) {
 
 		$posted_on = '<span class="posted-on">' . $time_string . '</span>';
 
-
 		if ( get_the_author_meta( 'ID' ) !== 2 ) {
 
-		$byline = sprintf(
-			_x( ' by %s', 'post author', 'chriswiegman' ),
-			'<span class="byline"> <span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span> </span>'
-		);
+			$byline = sprintf(
+				_x( ' by %s', 'post author', 'chriswiegman' ),
+				'<span class="byline"> <span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span> </span>'
+			);
 
 		} else {
 
@@ -125,7 +125,7 @@ if ( ! function_exists( 'chriswiegman_posted_on' ) ) {
 
 		}
 
-		echo  $posted_on . $byline . $comments . $edit;
+		echo $posted_on . $byline . $comments . $edit;
 
 	}
 }
@@ -265,7 +265,7 @@ function chriswiegman_get_comments_popup_link( $zero = false, $one = false, $mor
 		$return_string .= ' class="' . $css_class . '" ';
 	}
 
-	$title = the_title_attribute( array( 'echo' => 0 ) );
+	$title      = the_title_attribute( array( 'echo' => 0 ) );
 	$attributes = '';
 
 	$return_string .= apply_filters( 'comments_popup_link_attributes', $attributes );

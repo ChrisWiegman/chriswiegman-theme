@@ -7,7 +7,8 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-	</header><!-- .entry-header -->
+	</header>
+	<!-- .entry-header -->
 
 	<div class="entry-content">
 
@@ -17,7 +18,7 @@
 
 			<h4><?php _e( 'Pages:', 'genesis' ); ?></h4>
 			<ul>
-				<?php wp_list_pages( array( 'title_li' => '', 'exclude' => 4698 ) ); ?>
+				<?php wp_list_pages( array( 'title_li' => '' ) ); ?>
 			</ul>
 
 			<h4><?php _e( '50 Latest Posts:', 'genesis' ); ?></h4>
@@ -25,7 +26,8 @@
 				<?php wp_get_archives( 'type=postbypost&limit=50' ); ?>
 			</ul>
 
-		</div><!-- end .archive-page-->
+		</div>
+		<!-- end .archive-page-->
 
 		<div class="archive-page">
 
@@ -41,7 +43,8 @@
 
 		</div>
 
-		<div class="clear"></div><!-- end .archive-page-->
+		<div class="clear"></div>
+		<!-- end .archive-page-->
 
 		<?php
 		wp_link_pages( array(

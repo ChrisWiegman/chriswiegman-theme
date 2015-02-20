@@ -1,6 +1,6 @@
 <?php
 /**
- * The template for the software page
+ * The template for the archive page
  *
  * @package ChrisWiegman
  */

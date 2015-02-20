@@ -3580,6 +3580,28 @@ h1.page-title {
   word-wrap: break-word;
 }
 
+.archive-projects .hentry {
+  font-size: 16px;
+  font-size: 1rem;
+  margin: 0;
+}
+.archive-projects .hentry .entry-header {
+  padding: 0;
+}
+.archive-projects .hentry .entry-header .entry-title {
+  border-bottom: none;
+  font-size: 22px;
+  font-size: 1.375rem;
+  margin-bottom: 0;
+}
+.archive-projects .hentry .entry-header .entry-title a {
+  border-bottom: none;
+}
+.archive-projects .hentry .entry-content {
+  margin: 0;
+  padding: 0;
+}
+
 .page-content img.wp-smiley,
 .entry-content img.wp-smiley,
 .comment-content img.wp-smiley {
