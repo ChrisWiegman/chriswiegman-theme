@@ -3563,6 +3563,35 @@ h1.page-title {
   word-wrap: break-word;
 }
 
+.archive-projects .hentry,
+.project .hentry {
+  font-size: 16px;
+  font-size: 1rem;
+  margin: 0 0 20px 0;
+}
+.archive-projects .hentry .entry-header,
+.project .hentry .entry-header {
+  padding: 0;
+}
+.archive-projects .hentry .entry-header .entry-title,
+.project .hentry .entry-header .entry-title {
+  border-bottom: none;
+  font-size: 22px;
+  font-size: 1.375rem;
+  margin-bottom: 0;
+}
+.archive-projects .hentry .entry-header .entry-title a,
+.project .hentry .entry-header .entry-title a {
+  border-bottom: none;
+}
+.archive-projects .entry-meta .project-status,
+.archive-projects .entry-meta .project-type,
+.project .entry-meta .project-status,
+.project .entry-meta .project-type {
+  font-style: italic;
+  font-weight: bold;
+}
+
 .page-content img.wp-smiley,
 .entry-content img.wp-smiley,
 .comment-content img.wp-smiley {
