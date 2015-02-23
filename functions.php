@@ -123,6 +123,18 @@ function cw_remove_jquery_migrate( $scripts ) {
 	}
 }
 
+//Change the feed URL
+add_filter( 'feed_link', 'cw_rss_link' );
+function cw_rss_link( $output ) {
+
+	if ( strpos( $output, 'comment' ) ) {
+		return 'http://feeds.chriswiegman.com/comments';
+	}
+
+	return 'http://feeds.chriswiegman.com';
+
+}
+
 /**
  * Custom template tags for this theme.
  */
