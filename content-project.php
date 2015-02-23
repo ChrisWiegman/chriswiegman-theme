@@ -4,7 +4,7 @@
  */
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<article id="project-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<?php
 
 	$title     = get_the_title();
@@ -14,8 +14,8 @@
 		printf( '<div class="featured-image"><a class="post-header-image" href="%s" rel="bookmark" title="%s">%s</a></div>', $permalink, $title, get_the_post_thumbnail() );
 	}
 
-	$types    = get_the_terms( get_the_ID(), 'project_type' );
-	$statuses = get_the_terms( get_the_ID(), 'project_status' );
+	$types    = get_the_terms( get_the_ID(), 'project-type' );
+	$statuses = get_the_terms( get_the_ID(), 'project-status' );
 
 	?>
 
@@ -26,13 +26,13 @@
 			<span class="project-types">
 				<?php _e( 'Type: ', 'ChrisWiegman' ); ?>
 				<?php foreach ( $types as $type ) { ?>
-					<span class="project-type"><a class="url fn n" href=""><?php echo $type->name; ?></a></span>
+					<span class="project-type"><?php echo $type->name; ?></span>
 				<?php } ?>
 				</span>
 			<span class="project-statuses">
 				<?php _e( 'Status: ', 'ChrisWiegman' ); ?>
 				<?php foreach ( $statuses as $status ) { ?>
-					<span class="project-status"><a class="url fn n" href=""><?php echo $status->name; ?></a></span>
+					<span class="project-status"><?php echo $status->name; ?></span>
 				<?php } ?>
 			</span>
 		</div>

@@ -29,6 +29,9 @@ if ( ! function_exists( 'chriswiegman_setup' ) ) {
 		//Enable support for Post Thumbnails on posts and pages.
 		add_theme_support( 'post-thumbnails' );
 
+		//Enable post formats
+		add_theme_support( 'post-formats', array( 'image' ) );
+
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array( 'primary' => __( 'Primary Menu', 'chriswiegman' ), ) );
 

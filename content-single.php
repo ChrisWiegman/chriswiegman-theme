@@ -10,7 +10,7 @@
 	$title = get_the_title();
 	$permalink = esc_url( get_permalink() );
 
-	if ( has_post_thumbnail() ) {
+	if ( has_post_thumbnail() && ! has_post_format( 'image' ) ) {
 		printf( '<div class="featured-image"><a class="post-header-image" href="%s" rel="bookmark" title="%s">%s</a></div>', $permalink, $title, get_the_post_thumbnail() );
 	}
 
