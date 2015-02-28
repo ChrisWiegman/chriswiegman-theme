@@ -123,15 +123,19 @@ function cw_remove_jquery_migrate( $scripts ) {
 	}
 }
 
-//Change the feed URL
-add_filter( 'feed_link', 'cw_rss_link' );
-function cw_rss_link( $output ) {
+//Cleanup the header
+remove_action( 'wp_head', 'wlwmanifest_link' );
+remove_action( 'wp_head', 'wp_generator' );
+remove_action( 'wp_head', 'feed_links_extra', 3 );
+remove_action( 'wp_head', 'feed_links', 2 );
+remove_action( 'wp_head', 'rsd_link' );
+add_action( 'wp_head', 'cw_feed_links' );
+function cw_feed_links() {
 
-	if ( strpos( $output, 'comment' ) ) {
-		return 'http://feeds.chriswiegman.com/comments';
-	}
-
-	return 'http://feeds.chriswiegman.com';
+	echo '<link rel="alternate" type="' . feed_content_type() . '" title="Chris Wiegman | All Posts" href="http://feeds.chriswiegman.com" />' . PHP_EOL;
+	echo '<link rel="alternate" type="' . feed_content_type() . '" title="Chris Wiegman | Tech Posts" href="http://feeds.chriswiegman.com/technology" />' . PHP_EOL;
+	echo '<link rel="alternate" type="' . feed_content_type() . '" title="Chris Wiegman | Personal Posts" href="http://feeds.chriswiegman.com/personal" />' . PHP_EOL;
+	echo '<link rel="alternate" type="' . feed_content_type() . '" title="Chris Wiegman | Comments" href="http://feeds.chriswiegman.com/comments" />' . PHP_EOL;
 
 }
 
