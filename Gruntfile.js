@@ -100,7 +100,7 @@ module.exports = function ( grunt ) {
 
 					options : {
 						beautify         : true,
-						preserveComments : true,
+						preserveComments : true
 					},
 
 					files : {
