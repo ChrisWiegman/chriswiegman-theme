@@ -1,6 +1,6 @@
 //Load Google Fonts
 WebFontConfig = {
-	google : { families : ['Open+Sans:400,400italic,400,700,700italic:latin', 'Roboto+Slab:700:latin'] }
+	google : { families : ['Roboto:400,400italic,700,700italic:latin', 'Roboto+Slab:700:latin'] }
 };
 
 (function () {
