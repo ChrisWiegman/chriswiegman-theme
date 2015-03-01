@@ -17,6 +17,9 @@ WebFontConfig = {
 
 jQuery ( document ).ready ( function ( $ ) {
 
+	//welcome message
+	console.log( "Thanks for visiting! Please don't forget to subscribe at http://feeds.chriswiegman.com" );
+
 	//toggle nav
 	$ ( '.menu-toggle' ).on ( 'click', function () {
 
