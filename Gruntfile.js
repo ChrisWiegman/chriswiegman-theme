@@ -87,10 +87,10 @@ module.exports = function ( grunt ) {
 
 					files : {
 						'lib/js/footer.js' : [
+							'assets/js/analytics.js',
 							'assets/js/skip-link-focus-fix.js',
 							'assets/js/backstretch.js',
-							'assets/js/scripts.js',
-							'assets/js/analytics.js'
+							'assets/js/scripts.js'
 						]
 					}
 
@@ -101,9 +101,6 @@ module.exports = function ( grunt ) {
 					options : {
 						beautify         : true,
 						preserveComments : true,
-						mangle           : {
-							except : ['jQuery']
-						}
 					},
 
 					files : {
