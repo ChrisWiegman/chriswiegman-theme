@@ -47,7 +47,7 @@
 
 		margin     : 0 auto;
 		max-width  : 1152px;
-		min-height : 200px;
+		min-height : 300px;
 
 		.widget {
 			background-color : transparent;
@@ -56,7 +56,7 @@
 			display          : table-cell;
 			font-size        : 24px;
 			font-size        : 1.5rem;
-			padding          : 0;
+			padding          : 40px 0 0;
 			vertical-align   : middle;
 		}
 
@@ -212,7 +212,7 @@
 		}
 
 		.gform_footer {
-			margin-top: 20px;
+			margin-top : 20px;
 		}
 
 	}

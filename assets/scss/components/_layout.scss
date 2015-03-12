@@ -8,17 +8,21 @@ body {
 	margin : 0 auto;
 
 	#intro {
-		background-color   : $black;
-		clear              : both;
-		margin-top         : 80px;
-		min-height         : 200px;
-		padding            : 0;
-		-webkit-transition : 0.5s;
-		-moz-transition    : 0.5s;
-		-ms-transition     : 0.5s;
-		-o-transition      : 0.5s;
-		transition         : 0.5s;
-		width              : 100%;
+		background-color      : $black;
+		background-attachment : fixed;
+		background-image      : url("https://cdn1.chriswiegman.com/mail/background.jpg");
+		background-position   : center;
+		background-size       : cover;
+		clear                 : both;
+		margin-top            : 80px;
+		min-height            : 300px;
+		padding               : 0;
+		-webkit-transition    : 0.5s;
+		-moz-transition       : 0.5s;
+		-ms-transition        : 0.5s;
+		-o-transition         : 0.5s;
+		transition            : 0.5s;
+		width                 : 100%;
 	}
 
 	.featured-image {
@@ -33,15 +37,16 @@ body {
 
 	.site-header {
 
-		background-color   : $white;
-		border-bottom      : 1px solid $light-grey;
-		height             : 80px;
-		overflow           : visible;
-		position           : fixed;
-		top                : 0;
-		transition         : 0.5s;
-		width              : 100%;
-		z-index            : 10000;
+		background-color : $white;
+		border-bottom    : 1px solid $light-grey;
+		height           : 80px;
+		opacity          : 0.95;
+		overflow         : visible;
+		position         : fixed;
+		top              : 0;
+		transition       : 0.5s;
+		width            : 100%;
+		z-index          : 10000;
 
 		.wrap {
 

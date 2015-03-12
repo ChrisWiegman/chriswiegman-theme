@@ -176,12 +176,20 @@ h1.page-title {
 
 .comments-area {
 
-	margin  : 0 40px;
+	margin  : 0;
 	padding : 40px 0;
 
 	.avatar {
 		float   : left;
 		padding : 0 10px 10px 0;
+	}
+
+	h2 {
+		padding : 0 40px;
+	}
+
+	#respond {
+		padding : 0 40px;
 	}
 
 	ol {
