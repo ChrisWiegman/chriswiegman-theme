@@ -88,6 +88,7 @@ module.exports = function ( grunt ) {
 					files : {
 						'lib/js/footer.js' : [
 							'assets/js/analytics.js',
+							'assets/js/progress.js',
 							'assets/js/skip-link-focus-fix.js',
 							'assets/js/scripts.js'
 						]
@@ -105,6 +106,7 @@ module.exports = function ( grunt ) {
 					files : {
 						'lib/js/footer.js' : [
 							'assets/js/skip-link-focus-fix.js',
+							'assets/js/progress.js',
 							'assets/js/scripts.js'
 						]
 					}

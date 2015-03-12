@@ -83,9 +83,9 @@ add_action( 'widgets_init', 'chriswiegman_widgets_init' );
  */
 function chriswiegman_scripts() {
 
-	wp_enqueue_style( 'chriswiegman-style', get_template_directory_uri() . '/lib/css/master.css', array(), '1.2' );
+	wp_enqueue_style( 'chriswiegman-style', get_template_directory_uri() . '/lib/css/master.css', array(), '1.3' );
 
-	wp_enqueue_script( 'chriswiegman-footer', get_template_directory_uri() . '/lib/js/footer.js', array( 'jquery' ), '1.3', false );
+	wp_enqueue_script( 'chriswiegman-footer', get_template_directory_uri() . '/lib/js/footer.js', array( 'jquery' ), '1.4', true );
 
 	$vars = array(
 		'small'  => wp_get_attachment_image_src( get_post_thumbnail_id(), array( 150, 150 ) ),
