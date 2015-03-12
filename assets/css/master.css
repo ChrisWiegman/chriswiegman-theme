@@ -2729,7 +2729,6 @@ body {
 }
 #page .site-content {
   margin: 0 auto;
-  max-width: 1152px;
   overflow: hidden;
   padding-top: 43px;
 }
@@ -2741,7 +2740,7 @@ body {
   position: fixed;
   top: 0;
   -webkit-transition: 0.5s;
-  transition: 0.5s;
+          transition: 0.5s;
   width: 100%;
   z-index: 10000;
 }
@@ -3378,6 +3377,9 @@ h1.page-title {
 .hentry a.post-header-image:hover {
   border: none;
 }
+.hentry a.post-header-image img {
+  width: 100%;
+}
 .hentry .entry-header {
   padding: 40px 40px 0 40px;
 }
@@ -3674,21 +3676,17 @@ object {
   max-width: 11.11%;
 }
 
-@media screen and (max-width: 1152px) {
-  .hentry {
-    border-left: none;
-  }
-
-  .widget {
-    border-right: none;
-  }
-}
 @media screen and (max-width: 1192px) {
+  #page .site-content {
+    max-width: 99%;
+    -webkit-transition: 0.5s;
+            transition: 0.5s;
+  }
   #page .site-header .site-branding,
   #page .site-header .main-navigation {
     padding: 0 20px;
     -webkit-transition: 0.5s;
-    transition: 0.5s;
+            transition: 0.5s;
   }
 
   .paging-navigation {
@@ -3698,6 +3696,22 @@ object {
 
   #intro #intro-widget .widget {
     padding: 0 20px;
+  }
+}
+@media screen and (min-width: 1192px) {
+  #page .site-content {
+    max-width: 90%;
+    -webkit-transition: 0.5s;
+            transition: 0.5s;
+  }
+}
+@media screen and (max-width: 1152px) {
+  .hentry {
+    border-left: none;
+  }
+
+  .widget {
+    border-right: none;
   }
 }
 @media screen and (max-width: 900px) {

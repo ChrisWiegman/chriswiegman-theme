@@ -1,15 +1,20 @@
 @media screen and (max-width : 1192px) {
 
-	#page .site-header {
+	#page {
 
-		.site-branding,
-		.main-navigation {
-			padding            : 0 20px;
-			-webkit-transition : 0.5s;
-			-moz-transition    : 0.5s;
-			-ms-transition     : 0.5s;
-			-o-transition      : 0.5s;
-			transition         : 0.5s;
+		.site-content {
+			max-width  : 99%;
+			transition : 0.5s;
+		}
+
+		.site-header {
+
+			.site-branding,
+			.main-navigation {
+				padding            : 0 20px;
+				transition         : 0.5s;
+			}
+
 		}
 
 	}

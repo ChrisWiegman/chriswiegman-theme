@@ -36,8 +36,8 @@ get_header(); ?>
 
 					}
 
-					$profiles[$link]['url']    = $url;
-					$profiles[$link]['length'] = strlen( $url );
+					$profiles[ $link ]['url']    = $url;
+					$profiles[ $link ]['length'] = strlen( $url );
 
 				}
 

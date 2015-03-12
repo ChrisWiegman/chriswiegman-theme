@@ -7,7 +7,7 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<?php
 
-	$title = get_the_title();
+	$title     = get_the_title();
 	$permalink = esc_url( get_permalink() );
 
 	if ( has_post_thumbnail() && ! has_post_format( 'image' ) ) {

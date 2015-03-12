@@ -18,12 +18,12 @@ WebFontConfig = {
 jQuery ( document ).ready ( function ( $ ) {
 
 	//welcome message
-	console.log( "Thanks for visiting! Please don't forget to subscribe at http://feeds.chriswiegman.com" );
+	console.log ( "Thanks for visiting! Please don't forget to subscribe at http://feeds.chriswiegman.com" );
 
 	//toggle nav
 	$ ( '.menu-toggle' ).on ( 'click', function () {
 
-		$ ( "#menu-primary" ).slideToggle ( 'slow' );
+		$ ( '#menu-primary' ).slideToggle ( 'slow' );
 		$ ( this ).toggleClass ( 'active' );
 
 	} );
@@ -37,17 +37,19 @@ jQuery ( document ).ready ( function ( $ ) {
 
 	} );
 
+	var header = $ ( '.site-header' );
+
 	//Add correct class to header on load
 	if ( $ ( this ).scrollTop () > 10 ) {
 
-		if ( ! $ ( '.site-header' ).hasClass ( 'scrolled' ) ) {
-			$ ( '.site-header' ).addClass ( 'scrolled' );
+		if ( ! header.hasClass ( 'scrolled' ) ) {
+			header.addClass ( 'scrolled' );
 		}
 
 	} else {
 
-		if ( $ ( '.site-header' ).hasClass ( 'scrolled' ) ) {
-			$ ( '.site-header' ).removeClass ( 'scrolled' );
+		if ( header.hasClass ( 'scrolled' ) ) {
+			header.removeClass ( 'scrolled' );
 		}
 
 	}
@@ -57,14 +59,14 @@ jQuery ( document ).ready ( function ( $ ) {
 
 		if ( $ ( this ).scrollTop () > 55 ) {
 
-			if ( ! $ ( '.site-header' ).hasClass ( 'scrolled' ) ) {
-				$ ( '.site-header' ).addClass ( 'scrolled' );
+			if ( ! header.hasClass ( 'scrolled' ) ) {
+				header.addClass ( 'scrolled' );
 			}
 
 		} else {
 
-			if ( $ ( '.site-header' ).hasClass ( 'scrolled' ) ) {
-				$ ( '.site-header' ).removeClass ( 'scrolled' );
+			if ( header.hasClass ( 'scrolled' ) ) {
+				header.removeClass ( 'scrolled' );
 			}
 
 		}
@@ -72,8 +74,9 @@ jQuery ( document ).ready ( function ( $ ) {
 	} );
 
 	var maxHeight = 0;
+	var softwareShort = $ ( '.software-short' );
 
-	$ ( '.software-short' ).each ( function () {
+	softwareShort.each ( function () {
 
 		if ( $ ( this ).height () > maxHeight ) {
 			maxHeight = $ ( this ).height ();
@@ -81,14 +84,14 @@ jQuery ( document ).ready ( function ( $ ) {
 
 	} );
 
-	$ ( '.software-short' ).height ( maxHeight );
+	softwareShort.height ( maxHeight );
 
 } );
 
 /**
  * Removes inline styles from element
  *
- * @param  string    style    Name of style to remove
+ * @param            style    Name of style to remove
  * @return string    Inline styles without removed element
  */
 jQuery.fn.removeStyle = function ( style ) {
