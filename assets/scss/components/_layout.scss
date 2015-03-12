@@ -40,13 +40,28 @@ body {
 		background-color : $white;
 		border-bottom    : 1px solid $light-grey;
 		height           : 80px;
-		opacity          : 0.95;
 		overflow         : visible;
 		position         : fixed;
 		top              : 0;
 		transition       : 0.5s;
 		width            : 100%;
 		z-index          : 10000;
+
+		.progress-wrap {
+
+			position : relative;
+			width    : 100%;
+
+			.progress-indicator {
+				background-color : #000;
+				display          : block;
+				height           : 80px;
+				opacity          : 0.05;
+				position         : absolute;
+				transition       : height 0.5s;
+			}
+
+		}
 
 		.wrap {
 
@@ -85,7 +100,7 @@ body {
 
 	.scrolled {
 
-		height : 40px;
+		height : 40px !important;
 
 		.site-branding {
 			padding-top : 5px !important;

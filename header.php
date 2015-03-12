@@ -27,9 +27,9 @@
 		$hclass = '';
 	}
 	?>
-	<header id="masthead" class="<?php echo $hclass; ?>site-header progress" role="banner">
-		<div class="wrap wrapper">
-
+	<header id="masthead" class="<?php echo $hclass; ?>site-header" role="banner">
+		<div class="progress-wrap"><div class="progress-indicator"></div></div>
+		<div class="wrap">
 			<div class="site-branding">
 				<div class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img src="/content/themes/chriswiegman/img/logo.png" alt="Chris Wiegman" width="256" height="40"></a></div>
 			</div>

@@ -2716,9 +2716,13 @@ body {
 }
 #page #intro {
   background-color: #2e2e2e;
+  background-attachment: fixed;
+  background-image: url("https://cdn1.chriswiegman.com/mail/background.jpg");
+  background-position: center;
+  background-size: cover;
   clear: both;
   margin-top: 80px;
-  min-height: 200px;
+  min-height: 300px;
   padding: 0;
   -webkit-transition: 0.5s;
   transition: 0.5s;
@@ -2744,6 +2748,19 @@ body {
   width: 100%;
   z-index: 10000;
 }
+#page .site-header .progress-wrap {
+  position: relative;
+  width: 100%;
+}
+#page .site-header .progress-wrap .progress-indicator {
+  background-color: #000;
+  display: block;
+  height: 80px;
+  opacity: 0.05;
+  position: absolute;
+  -webkit-transition: height 0.5s;
+          transition: height 0.5s;
+}
 #page .site-header .wrap {
   margin: 0 auto;
   max-width: 1152px;
@@ -2766,7 +2783,7 @@ body {
   top: 32px;
 }
 #page .scrolled {
-  height: 40px;
+  height: 40px !important;
 }
 #page .scrolled .site-branding {
   padding-top: 5px !important;
@@ -3221,7 +3238,7 @@ a:visited {
 #intro #intro-widget {
   margin: 0 auto;
   max-width: 1152px;
-  min-height: 200px;
+  min-height: 300px;
 }
 #intro #intro-widget .widget {
   background-color: transparent;
@@ -3230,7 +3247,7 @@ a:visited {
   display: table-cell;
   font-size: 24px;
   font-size: 1.5rem;
-  padding: 0;
+  padding: 40px 0 0;
   vertical-align: middle;
 }
 
@@ -3488,12 +3505,18 @@ h1.page-title {
 }
 
 .comments-area {
-  margin: 0 40px;
+  margin: 0;
   padding: 40px 0;
 }
 .comments-area .avatar {
   float: left;
   padding: 0 10px 10px 0;
+}
+.comments-area h2 {
+  padding: 0 40px;
+}
+.comments-area #respond {
+  padding: 0 40px;
 }
 .comments-area ol {
   list-style: none;
@@ -3695,7 +3718,7 @@ object {
   }
 
   #intro #intro-widget .widget {
-    padding: 0 20px;
+    padding: 40px 20px 20px;
   }
 }
 @media screen and (min-width: 1192px) {

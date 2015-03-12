@@ -37,7 +37,8 @@ jQuery ( document ).ready ( function ( $ ) {
 
 	} );
 
-	var header = $ ( '.site-header' );
+	var header = $ ( '.site-header, .progress-indicator' );
+	var progress = $ ( '.progress-indicator' );
 
 	//Add correct class to header on load
 	if ( $ ( this ).scrollTop () > 10 ) {
