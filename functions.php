@@ -83,7 +83,7 @@ add_action( 'widgets_init', 'chriswiegman_widgets_init' );
  */
 function chriswiegman_scripts() {
 
-	wp_enqueue_style( 'chriswiegman-style', get_template_directory_uri() . '/lib/css/master.css', array(), '1.3' );
+	wp_enqueue_style( 'chriswiegman-style', get_template_directory_uri() . '/lib/css/master.css', array(), '1.4' );
 
 	wp_enqueue_script( 'chriswiegman-footer', get_template_directory_uri() . '/lib/js/footer.js', array( 'jquery' ), '1.4', true );
 

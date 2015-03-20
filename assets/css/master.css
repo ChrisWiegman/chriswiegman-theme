@@ -2652,6 +2652,11 @@ big {
   font-size: 125%;
 }
 
+.searchwp-highlight {
+  background-color: #ff0;
+  padding: 2px;
+}
+
 hr {
   background-color: #ccc;
   border: 0;
