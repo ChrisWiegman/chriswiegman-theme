@@ -2772,6 +2772,7 @@ body {
 }
 #page .site-header .wrap .site-branding {
   float: left;
+  max-width: 270px;
   padding-top: 20px;
 }
 #page .site-header .wrap .site-branding a {
@@ -3372,6 +3373,10 @@ a:visited {
 #gform_widget-2 form .gform_footer {
   margin-top: 20px;
 }
+#gform_widget-2 form select {
+  display: block;
+  width: 100% !important;
+}
 #gform_widget-2 .gforms_confirmation_message {
   background-color: #3e3e3e;
   border: none;
@@ -3771,6 +3776,7 @@ object {
     transition: 0.5s;
   }
   #page .site-header .site-branding {
+    max-width: 270px;
     padding-top: 5px !important;
     -webkit-transition: 0.5s;
     transition: 0.5s;
