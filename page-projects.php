@@ -30,6 +30,7 @@ get_header(); ?>
 				<div class="entry-content">
 					<?php the_content(); ?>
 					<?php get_template_part( 'content', 'projects' ); ?>
+					<p class="projects-note">Note that "archived" projects are projects I am no longer involved in for one reason or another.</p>
 				</div>
 				<!-- .entry-content -->
 			</article><!-- #post-## -->

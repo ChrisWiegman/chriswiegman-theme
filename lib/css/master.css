@@ -3645,6 +3645,12 @@ ul.archive-projects .entry-meta .project-type {
   font-weight: bold;
 }
 
+.projects-note {
+  font-size: 80%;
+  font-style: italic;
+  color: #999;
+}
+
 .page-content img.wp-smiley,
 .entry-content img.wp-smiley,
 .comment-content img.wp-smiley {
