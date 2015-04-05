@@ -2713,7 +2713,7 @@ th {
 
 html,
 body {
-  background-color: #f8f8f8;
+  background-color: #f2f2f2;
 }
 
 #page {
@@ -2739,7 +2739,7 @@ body {
 #page .site-content {
   margin: 0 auto;
   overflow: hidden;
-  padding-top: 43px;
+  padding-top: 123px;
 }
 #page .site-header {
   background-color: #fff;
@@ -2830,6 +2830,10 @@ body {
 #page .site-footer .site-info p {
   float: right;
   margin: 25px;
+}
+
+.home #page .site-content {
+  padding-top: 43px;
 }
 
 input, select, textarea {
@@ -3513,6 +3517,12 @@ h1.page-title {
   margin: 0;
   padding: 40px 0;
 }
+.comments-area .no-comments {
+  padding: 0 40px;
+}
+.comments-area .bypostauthor {
+  background-color: #e0ffff !important;
+}
 .comments-area .avatar {
   float: left;
   padding: 0 10px 10px 0;
@@ -3529,7 +3539,6 @@ h1.page-title {
   padding: 40px 0 0 0;
 }
 .comments-area ol li {
-  border-left: 4px solid #f8f8f8;
   margin-bottom: 1rem;
   padding: 40px 0 40px 40px;
 }
@@ -3593,33 +3602,41 @@ h1.page-title {
   word-wrap: break-word;
 }
 
-.archive-projects .hentry,
-.project .hentry {
+ul.archive-projects {
+  margin-left: 60px;
+  padding: 0 40px;
+}
+ul.archive-projects li {
   font-size: 16px;
   font-size: 1rem;
   margin: 0 0 20px 0;
 }
-.archive-projects .hentry .entry-header,
-.project .hentry .entry-header {
+ul.archive-projects li i {
+  margin: 0;
   padding: 0;
 }
-.archive-projects .hentry .entry-header .entry-title,
-.project .hentry .entry-header .entry-title {
+ul.archive-projects li .entry-header {
+  padding: 0;
+}
+ul.archive-projects li .entry-header .entry-title {
   border-bottom: none;
   font-size: 22px;
   font-size: 1.375rem;
   margin-bottom: 0;
 }
-.archive-projects .hentry .entry-header .entry-title a,
-.project .hentry .entry-header .entry-title a {
+ul.archive-projects li .entry-header .entry-title a {
   border-bottom: none;
 }
-.archive-projects .entry-meta .project-status,
-.archive-projects .entry-meta .project-type,
-.project .entry-meta .project-status,
-.project .entry-meta .project-type {
+ul.archive-projects .entry-meta .project-status,
+ul.archive-projects .entry-meta .project-type {
   font-style: italic;
   font-weight: bold;
+}
+
+.projects-note {
+  font-size: 80%;
+  font-style: italic;
+  color: #999;
 }
 
 .page-content img.wp-smiley,
@@ -3773,6 +3790,9 @@ object {
     border-right: none;
     float: none;
     width: 100%;
+  }
+  #page .site-content {
+    padding-top: 80px;
   }
   #page .site-content .widget-area {
     border-left: none;
