@@ -3614,31 +3614,33 @@ h1.page-title {
   word-wrap: break-word;
 }
 
-.archive-projects .hentry,
-.project .hentry {
+ul.archive-projects {
+  margin-left: 60px;
+  padding: 0 40px;
+}
+ul.archive-projects li {
   font-size: 16px;
   font-size: 1rem;
   margin: 0 0 20px 0;
 }
-.archive-projects .hentry .entry-header,
-.project .hentry .entry-header {
+ul.archive-projects li i {
+  margin: 0;
   padding: 0;
 }
-.archive-projects .hentry .entry-header .entry-title,
-.project .hentry .entry-header .entry-title {
+ul.archive-projects li .entry-header {
+  padding: 0;
+}
+ul.archive-projects li .entry-header .entry-title {
   border-bottom: none;
   font-size: 22px;
   font-size: 1.375rem;
   margin-bottom: 0;
 }
-.archive-projects .hentry .entry-header .entry-title a,
-.project .hentry .entry-header .entry-title a {
+ul.archive-projects li .entry-header .entry-title a {
   border-bottom: none;
 }
-.archive-projects .entry-meta .project-status,
-.archive-projects .entry-meta .project-type,
-.project .entry-meta .project-status,
-.project .entry-meta .project-type {
+ul.archive-projects .entry-meta .project-status,
+ul.archive-projects .entry-meta .project-type {
   font-style: italic;
   font-weight: bold;
 }

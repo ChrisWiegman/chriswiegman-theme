@@ -4,7 +4,7 @@
  */
 ?>
 <!-- begin .archive-projects-->
-<div class="archive-projects">
+<ul class="archive-projects fa-ul">
 
 	<?php
 	$args = array( 'post_type' => 'project' );
@@ -21,6 +21,6 @@
 	} ?>
 
 
-</div>
+</ul>
 <!-- end .archive-projects-->
 
