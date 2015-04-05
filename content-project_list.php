@@ -6,9 +6,20 @@
 	$permalink = esc_url( get_permalink() );
 	$types     = get_the_terms( get_the_ID(), 'project-type' );
 	$statuses  = get_the_terms( get_the_ID(), 'project-status' );
-	$icon_meta = get_post_meta( get_the_ID(), '_project_icon', true );
 
-	$icon = empty( $icon_meta ) ? 'laptop' : esc_attr( $icon_meta );
+	if ( has_term( 'wordpress-plugin', 'project-type', get_the_ID() ) ) {
+
+		$icon = 'wordpress';
+
+	} elseif ( has_term( 'google-chrome-extension', 'project-type', get_the_ID() ) ) {
+
+		$icon = 'google';
+
+	} else {
+
+		$icon = 'laptop';
+
+	}
 
 	?>
 
