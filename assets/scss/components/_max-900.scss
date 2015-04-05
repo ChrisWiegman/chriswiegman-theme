@@ -3,7 +3,7 @@
 	#page {
 
 		#intro {
-			margin-top : 40px;
+			margin-top         : 40px;
 			-webkit-transition : 0.5s;
 			-moz-transition    : 0.5s;
 			-ms-transition     : 0.5s;
@@ -58,10 +58,16 @@
 			width        : 100%;
 		}
 
-		.site-content .widget-area {
-			border-left : none;
-			float       : none;
-			width       : 100%;
+		.site-content {
+
+			padding-top : 80px;
+
+			.widget-area {
+				border-left : none;
+				float       : none;
+				width       : 100%;
+			}
+
 		}
 
 	}

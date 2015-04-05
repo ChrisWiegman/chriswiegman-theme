@@ -45,7 +45,7 @@
 	</header>
 	<!-- #masthead -->
 
-	<?php if ( is_active_sidebar( 'intro' ) ) { ?>
+	<?php if ( is_home() && is_active_sidebar( 'intro' ) ) { ?>
 
 		<div id="intro">
 			<div id="intro-widget" class="widget-area" role="complementary">

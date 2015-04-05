@@ -32,7 +32,7 @@ body {
 	.site-content {
 		margin      : 0 auto;
 		overflow    : hidden;
-		padding-top : 43px;
+		padding-top : 123px;
 	}
 
 	.site-header {
@@ -161,4 +161,8 @@ body {
 
 	}
 
+}
+
+.home #page .site-content {
+	padding-top : 43px;
 }
