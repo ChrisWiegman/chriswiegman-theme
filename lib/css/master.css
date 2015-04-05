@@ -2717,7 +2717,7 @@ th {
 
 html,
 body {
-  background-color: #f8f8f8;
+  background-color: #f2f2f2;
 }
 
 #page {
@@ -3529,6 +3529,12 @@ h1.page-title {
   margin: 0;
   padding: 40px 0;
 }
+.comments-area .no-comments {
+  padding: 0 40px;
+}
+.comments-area .bypostauthor {
+  background-color: #e0ffff !important;
+}
 .comments-area .avatar {
   float: left;
   padding: 0 10px 10px 0;
@@ -3545,7 +3551,6 @@ h1.page-title {
   padding: 40px 0 0 0;
 }
 .comments-area ol li {
-  border-left: 4px solid #f8f8f8;
   margin-bottom: 1rem;
   padding: 40px 0 40px 40px;
 }
