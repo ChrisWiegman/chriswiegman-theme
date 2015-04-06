@@ -43,6 +43,14 @@
 	<div class="entry-content">
 		<?php the_content(); ?>
 		<?php
+		$project_url = get_post_meta( get_the_ID(), '_project_url', true );
+
+		if ( $project_url ) {
+		?>
+			<a href="<?php echo $project_url; ?>" target="_blank">View the project Page</a>
+		<?php
+		}
+
 		wp_link_pages( array(
 			               'before' => '<div class="page-links">' . __( 'Pages:', 'chriswiegman' ),
 			               'after'  => '</div>',
