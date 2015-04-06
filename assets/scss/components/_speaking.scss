@@ -1,0 +1,39 @@
+ul.archive-speaking {
+
+	margin-left : 60px;
+	padding     : 0 40px;
+
+	li {
+
+		font-size : $small;
+		font-size : $small-rem;
+		margin    : 0 0 20px 0;
+
+		i {
+			margin  : 0;
+			padding : 0;
+		}
+
+		.entry-header {
+
+			padding : 0;
+
+			.entry-title {
+
+				border-bottom : none;
+				font-size     : $normal;
+				font-size     : $normal-rem;
+				margin-bottom : 0;
+
+				a {
+					border-bottom : none;
+					color         : $black;
+				}
+
+			}
+
+		}
+
+	}
+
+}

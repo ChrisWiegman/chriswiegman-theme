@@ -27,7 +27,7 @@
 
 	<span class="entry-header">
 
-		<?php printf( '<h2 class="entry-title"><a href="%s" title="%s" rel="bookmark">%s</a></h2>', $permalink, $title, $title ); ?>
+		<?php printf( '<h2 class="entry-title"><a href="%s" title="%s" rel="bookmark">%s</a></h2>', esc_url( $permalink ), esc_attr( $title ), sanitize_text_field( $title ) ); ?>
 
 		<div class="entry-meta">
 					<span class="project-types">
@@ -40,7 +40,7 @@
 								continue;
 							}
 							?>
-							<span class="project-type"><?php echo $type->name; ?></span>
+							<span class="project-type"><?php echo sanitize_text_field( $type->name ); ?></span>
 						<?php } ?>
 					</span>
 					<span class="project-statuses">
@@ -53,7 +53,7 @@
 								continue;
 							}
 							?>
-							<span class="project-status"><?php echo $status->name; ?></span>
+							<span class="project-status"><?php echo sanitize_text_field( $status->name ); ?></span>
 						<?php } ?>
 					</span>
 		</div>

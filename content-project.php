@@ -11,7 +11,7 @@
 	$permalink = esc_url( get_permalink() );
 
 	if ( has_post_thumbnail() ) {
-		printf( '<div class="featured-image"><a class="post-header-image" href="%s" rel="bookmark" title="%s">%s</a></div>', $permalink, $title, get_the_post_thumbnail() );
+		printf( '<div class="featured-image"><a class="post-header-image" href="%s" rel="bookmark" title="%s">%s</a></div>', esc_url( $permalink ), esc_attr( $title ), get_the_post_thumbnail() );
 	}
 
 	$types    = get_the_terms( get_the_ID(), 'project-type' );
@@ -26,13 +26,13 @@
 			<span class="project-types">
 				<?php _e( 'Type: ', 'ChrisWiegman' ); ?>
 				<?php foreach ( $types as $type ) { ?>
-					<span class="project-type"><?php echo $type->name; ?></span>
+					<span class="project-type"><?php echo sanitize_text_field( $type->name ); ?></span>
 				<?php } ?>
 				</span>
 			<span class="project-statuses">
 				<?php _e( 'Status: ', 'ChrisWiegman' ); ?>
 				<?php foreach ( $statuses as $status ) { ?>
-					<span class="project-status"><?php echo $status->name; ?></span>
+					<span class="project-status"><?php echo sanitize_text_field( $status->name ); ?></span>
 				<?php } ?>
 			</span>
 		</div>
@@ -46,7 +46,7 @@
 		$project_url = get_post_meta( get_the_ID(), '_project_url', true );
 
 		if ( $project_url ) {
-		?>
+			?>
 			<a href="<?php echo $project_url; ?>" target="_blank">View the project Page</a>
 		<?php
 		}
