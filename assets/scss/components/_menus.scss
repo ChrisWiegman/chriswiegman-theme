@@ -128,6 +128,30 @@
 	width      : 50%;
 }
 
+.footer-menu {
+
+	font-size   : 1rem !important;
+	font-weight : bold;
+	margin      : 10px 0;
+
+	ul {
+
+		list-style : none;
+		margin     : 0 auto;
+
+		li {
+			display : inline;
+			margin  : 0 10px;
+		}
+
+	}
+
+	a {
+		border-bottom : none !important;
+	}
+
+}
+
 .scrolled {
 
 	.main-navigation {

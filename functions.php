@@ -33,14 +33,23 @@ if ( ! function_exists( 'chriswiegman_setup' ) ) {
 		add_theme_support( 'post-formats', array( 'image', 'quote' ) );
 
 		// This theme uses wp_nav_menu() in one location.
-		register_nav_menus( array( 'primary' => __( 'Primary Menu', 'chriswiegman' ), ) );
+		register_nav_menus(
+			array(
+				'primary' => __( 'Primary Menu', 'chriswiegman' ),
+				'footer'  => __( 'Footer Menu', 'chriswiegman' ),
+			)
+		);
 
 		/*
 		 * Switch default core markup for search form, comment form, and comments
 		 * to output valid HTML5.
 		 */
 		add_theme_support( 'html5', array(
-			'search-form', 'comment-form', 'comment-list', 'gallery', 'caption'
+			'search-form',
+			'comment-form',
+			'comment-list',
+			'gallery',
+			'caption'
 		) );
 
 	}

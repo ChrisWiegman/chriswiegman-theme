@@ -136,6 +136,7 @@ body {
 		font-size        : 75%;
 		width            : 100%;
 		opacity          : 0.9;
+		text-align       : center;
 
 		a {
 
@@ -150,14 +151,8 @@ body {
 		}
 
 		.site-info {
-			margin    : 0 auto;
-			max-width : 1152px;
-
-			p {
-				float  : right;
-				margin : 25px;
-			}
-
+			clear  : both;
+			margin : 10px 0;
 		}
 
 	}
