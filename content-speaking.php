@@ -12,6 +12,7 @@
 		'order'     => 'DESC',
 		'orderby'   => 'meta_value_num',
 		'meta_key'  => '_presentation_date',
+		'nopaging'  => true,
 	);
 	$loop = new WP_Query( $args );
 	?>
