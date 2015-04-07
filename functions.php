@@ -141,7 +141,7 @@ function cw_remove_jquery_migrate( $scripts ) {
 
 	if ( ! is_admin() ) {
 		$scripts->remove( 'jquery' );
-		$scripts->add( 'jquery', false, array( 'jquery-core' ), '1.11.0' );
+		$scripts->add( 'jquery', false, array( 'jquery-core' ), '1.11.1' );
 	}
 
 }

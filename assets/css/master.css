@@ -2815,6 +2815,7 @@ body {
   font-size: 75%;
   width: 100%;
   opacity: 0.9;
+  text-align: center;
 }
 #page .site-footer a {
   border-bottom: 1px solid #ebebeb;
@@ -2825,12 +2826,8 @@ body {
   color: #cf5300;
 }
 #page .site-footer .site-info {
-  margin: 0 auto;
-  max-width: 1152px;
-}
-#page .site-footer .site-info p {
-  float: right;
-  margin: 25px;
+  clear: both;
+  margin: 10px 0;
 }
 
 .home #page .site-content {
@@ -3122,6 +3119,23 @@ a:visited {
   width: 50%;
 }
 
+.footer-menu {
+  font-size: 1rem !important;
+  font-weight: bold;
+  margin: 10px 0;
+}
+.footer-menu ul {
+  list-style: none;
+  margin: 0 auto;
+}
+.footer-menu ul li {
+  display: inline;
+  margin: 0 10px;
+}
+.footer-menu a {
+  border-bottom: none !important;
+}
+
 .scrolled .main-navigation li {
   padding: 5px 20px;
 }
@@ -3380,6 +3394,24 @@ a:visited {
 #gform_widget-2 .gforms_confirmation_message {
   background-color: #3e3e3e;
   border: none;
+}
+
+#cw_ad_widget-2 {
+  background-color: transparent;
+  border: none;
+  text-align: center;
+}
+#cw_ad_widget-2 a {
+  border-bottom: none;
+}
+#cw_ad_widget-2 img {
+  margin: 15px 0;
+}
+#cw_ad_widget-2 .left-image {
+  padding-right: 25px;
+}
+#cw_ad_widget-2 .right-image {
+  padding-left: 25px;
 }
 
 /*--------------------------------------------------------------

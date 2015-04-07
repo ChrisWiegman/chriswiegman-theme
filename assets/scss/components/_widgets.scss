@@ -228,3 +228,27 @@
 	}
 
 }
+
+#cw_ad_widget-2 {
+
+	background-color : transparent;
+	border           : none;
+	text-align       : center;
+
+	a {
+		border-bottom : none;
+	}
+
+	img {
+		margin : 15px 0;
+	}
+
+	.left-image {
+		padding-right : 25px;
+	}
+
+	.right-image {
+		padding-left : 25px;
+	}
+
+}
