@@ -7,7 +7,7 @@ ul.archive-projects {
 
 		font-size : $small;
 		font-size : $small-rem;
-		margin    : 30px 0;
+		margin    : 0;
 
 		.fa {
 			margin  : 0;
@@ -50,8 +50,8 @@ ul.archive-projects {
 		border-bottom : 1px solid #efefef;
 		display       : block;
 		height        : 1px;
-		margin        : 0 auto;
-		width         : 50%;
+		margin        : 30px auto;
+		width         : 60%;
 
 	}
 

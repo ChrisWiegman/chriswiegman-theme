@@ -3646,7 +3646,7 @@ ul.archive-projects {
 ul.archive-projects li {
   font-size: 16px;
   font-size: 1rem;
-  margin: 30px 0;
+  margin: 0;
 }
 ul.archive-projects li .fa {
   margin: 0;
@@ -3673,8 +3673,8 @@ ul.archive-projects .divider {
   border-bottom: 1px solid #efefef;
   display: block;
   height: 1px;
-  margin: 0 auto;
-  width: 50%;
+  margin: 30px auto;
+  width: 60%;
 }
 
 .projects-note {
@@ -3690,7 +3690,7 @@ ul.archive-speaking {
 ul.archive-speaking li {
   font-size: 16px;
   font-size: 1rem;
-  margin: 30px 0;
+  margin: 0;
 }
 ul.archive-speaking li .fa {
   margin: 0;
@@ -3717,8 +3717,8 @@ ul.archive-speaking .divider {
   border-bottom: 1px solid #efefef;
   display: block;
   height: 1px;
-  margin: 0 auto;
-  width: 50%;
+  margin: 30px auto;
+  width: 60%;
 }
 
 .page-content img.wp-smiley,

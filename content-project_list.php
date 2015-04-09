@@ -61,6 +61,5 @@
 
 	</div>
 	<!-- .entry-header -->
-
+	<div class="divider"></div>
 </li><!-- #post-## -->
-<div class="divider"></div>
