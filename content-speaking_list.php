@@ -17,7 +17,7 @@
 
 	<i class="fa fa-<?php echo $icon; ?> fa-3x fa-fw fa-li"></i>
 
-	<span class="entry-header">
+	<div class="entry-header">
 
 		<?php
 		if ( empty ( $slide_url ) ) {
@@ -76,7 +76,7 @@
 		</div>
 		<!-- .entry-meta -->
 
-	</span>
+	</div>
 	<!-- .entry-header -->
 
 </li><!-- #post-## -->
