@@ -3646,9 +3646,9 @@ ul.archive-projects {
 ul.archive-projects li {
   font-size: 16px;
   font-size: 1rem;
-  margin: 0 0 20px 0;
+  margin: 30px 0;
 }
-ul.archive-projects li i {
+ul.archive-projects li .fa {
   margin: 0;
   padding: 0;
 }
@@ -3669,6 +3669,13 @@ ul.archive-projects .entry-meta .project-type {
   font-style: italic;
   font-weight: bold;
 }
+ul.archive-projects .divider {
+  border-bottom: 1px solid #efefef;
+  display: block;
+  height: 1px;
+  margin: 0 auto;
+  width: 50%;
+}
 
 .projects-note {
   font-size: 80%;
@@ -3683,9 +3690,9 @@ ul.archive-speaking {
 ul.archive-speaking li {
   font-size: 16px;
   font-size: 1rem;
-  margin: 0 0 20px 0;
+  margin: 30px 0;
 }
-ul.archive-speaking li i {
+ul.archive-speaking li .fa {
   margin: 0;
   padding: 0;
 }
@@ -3701,6 +3708,17 @@ ul.archive-speaking li .entry-header .entry-title {
 ul.archive-speaking li .entry-header .entry-title a {
   border-bottom: none;
   color: #2e2e2e;
+}
+ul.archive-speaking .speaking-date,
+ul.archive-speaking .speaking-location {
+  font-style: italic;
+}
+ul.archive-speaking .divider {
+  border-bottom: 1px solid #efefef;
+  display: block;
+  height: 1px;
+  margin: 0 auto;
+  width: 50%;
 }
 
 .page-content img.wp-smiley,

@@ -15,7 +15,7 @@
 
 	?>
 
-	<i class="fa fa-<?php echo $icon; ?> fa-3x fa-fw fa-li"></i>
+	<span class="fa fa-<?php echo $icon; ?> fa-3x fa-fw fa-li"></span>
 
 	<div class="entry-header">
 
@@ -37,7 +37,7 @@
 
 			if ( ! empty( $conference_name ) ) {
 
-				echo '<span class="speaking-date" >';
+				echo '<span class="speaking-conference" >';
 
 				if ( empty( $conference_url ) ) {
 
@@ -80,3 +80,4 @@
 	<!-- .entry-header -->
 
 </li><!-- #post-## -->
+<div class="divider"></div>

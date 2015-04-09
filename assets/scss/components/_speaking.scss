@@ -7,9 +7,9 @@ ul.archive-speaking {
 
 		font-size : $small;
 		font-size : $small-rem;
-		margin    : 0 0 20px 0;
+		margin    : 30px 0;
 
-		i {
+		.fa {
 			margin  : 0;
 			padding : 0;
 		}
@@ -33,6 +33,21 @@ ul.archive-speaking {
 			}
 
 		}
+
+	}
+
+	.speaking-date,
+	.speaking-location {
+		font-style : italic;
+	}
+
+	.divider {
+
+		border-bottom : 1px solid #efefef;
+		display       : block;
+		height        : 1px;
+		margin        : 0 auto;
+		width         : 50%;
 
 	}
 

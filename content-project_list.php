@@ -23,7 +23,7 @@
 
 	?>
 
-	<i class="fa fa-<?php echo $icon; ?> fa-3x fa-fw fa-li"></i>
+	<span class="fa fa-<?php echo $icon; ?> fa-3x fa-fw fa-li"></span>
 
 	<div class="entry-header">
 
@@ -63,3 +63,4 @@
 	<!-- .entry-header -->
 
 </li><!-- #post-## -->
+<div class="divider"></div>
