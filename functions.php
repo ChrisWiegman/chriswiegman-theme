@@ -156,9 +156,7 @@ add_action( 'wp_head', 'cw_feed_links' );
 function cw_feed_links() {
 
 	echo '<link rel="alternate" type="' . feed_content_type() . '" title="Chris Wiegman | All Posts" href="http://feeds.chriswiegman.com" />' . PHP_EOL;
-	echo '<link rel="alternate" type="' . feed_content_type() . '" title="Chris Wiegman | Tech Posts" href="http://feeds.chriswiegman.com/technology" />' . PHP_EOL;
-	echo '<link rel="alternate" type="' . feed_content_type() . '" title="Chris Wiegman | Personal Posts" href="http://feeds.chriswiegman.com/personal" />' . PHP_EOL;
-	echo '<link rel="alternate" type="' . feed_content_type() . '" title="Chris Wiegman | Comments" href="http://feeds.chriswiegman.com/comments" />' . PHP_EOL;
+	echo '<link rel="alternate" type="' . feed_content_type() . '" title="Chris Wiegman | All Comments" href="http://feeds.chriswiegman.com/comments" />' . PHP_EOL;
 
 }
 
