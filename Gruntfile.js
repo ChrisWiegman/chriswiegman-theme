@@ -6,8 +6,6 @@ module.exports = function ( grunt ) {
 	grunt.initConfig (
 		{
 
-			clean : ["assets/css", "lib"],
-
 			autoprefixer : {
 
 				options : {
@@ -32,7 +30,7 @@ module.exports = function ( grunt ) {
 						         cwd    : 'assets/css',
 						         src    : ['*.css'],
 						         dest   : 'lib/css',
-						         ext    : '.css'
+						         ext    : '.min.css'
 					         }]
 
 				}
@@ -86,7 +84,7 @@ module.exports = function ( grunt ) {
 					},
 
 					files : {
-						'lib/js/footer.js' : [
+						'lib/js/footer.min.js' : [
 							'assets/js/analytics.js',
 							'assets/js/progress.js',
 							'assets/js/skip-link-focus-fix.js',
@@ -105,8 +103,9 @@ module.exports = function ( grunt ) {
 
 					files : {
 						'lib/js/footer.js' : [
-							'assets/js/skip-link-focus-fix.js',
+							'assets/js/analytics.js',
 							'assets/js/progress.js',
+							'assets/js/skip-link-focus-fix.js',
 							'assets/js/scripts.js'
 						]
 					}
@@ -147,7 +146,7 @@ module.exports = function ( grunt ) {
 	);
 
 	// A very basic default task.
-	grunt.registerTask ( 'default', ['sass:development', 'uglify:development', 'watch'] );
-	grunt.registerTask ( 'prod', ['clean', 'sass:production', 'autoprefixer', 'cssmin', 'uglify:production'] );
+	grunt.registerTask ( 'dev', ['sass:development', 'sass:production', 'autoprefixer', 'cssmin',  'uglify:development', 'uglify:production', 'watch'] );
+	grunt.registerTask ( 'default', ['sass:development', 'sass:production', 'autoprefixer', 'cssmin',  'uglify:development', 'uglify:production'] );
 
 };
