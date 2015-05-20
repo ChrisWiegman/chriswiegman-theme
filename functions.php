@@ -5,6 +5,8 @@
  * @package ChrisWiegman
  */
 
+define( 'CW_THEME_VERISON', '1.1.0' );
+
 /**
  * Set the content width based on the theme's design and stylesheet.
  */
@@ -92,9 +94,20 @@ add_action( 'widgets_init', 'chriswiegman_widgets_init' );
  */
 function chriswiegman_scripts() {
 
-	wp_enqueue_style( 'chriswiegman-style', get_template_directory_uri() . '/lib/css/master.css', array(), '1.4' );
+	if ( defined( 'WP_LOCAL_DEV' ) && true === WP_LOCAL_DEV ) {
 
-	wp_enqueue_script( 'chriswiegman-footer', get_template_directory_uri() . '/lib/js/footer.js', array( 'jquery' ), '1.4', true );
+		wp_enqueue_style( 'chriswiegman-style', get_template_directory_uri() . '/lib/css/master.css', array(), CW_THEME_VERISON );
+
+		wp_enqueue_script( 'chriswiegman-footer', get_template_directory_uri() . '/lib/js/footer.js', array( 'jquery' ), CW_THEME_VERISON, true );
+
+
+	} else {
+
+		wp_enqueue_style( 'chriswiegman-style', get_template_directory_uri() . '/lib/css/master.min.css', array(), CW_THEME_VERISON );
+
+		wp_enqueue_script( 'chriswiegman-footer', get_template_directory_uri() . '/lib/js/footer.min.js', array( 'jquery' ), CW_THEME_VERISON, true );
+
+	}
 
 	$vars = array(
 		'small'  => wp_get_attachment_image_src( get_post_thumbnail_id(), array( 150, 150 ) ),
@@ -131,7 +144,16 @@ add_action( 'init', 'chriswiegman_add_editor_styles' );
 
 function chriswiegman_add_editor_styles() {
 
-	add_editor_style( get_stylesheet_directory_uri() . '/lib/css/editor.css' );
+	if ( defined( 'WP_LOCAL_DEV' ) && true === WP_LOCAL_DEV ) {
+
+		add_editor_style( get_stylesheet_directory_uri() . '/lib/css/editor.min.css' );
+
+	} else {
+
+		add_editor_style( get_stylesheet_directory_uri() . '/lib/css/editor.css' );
+
+
+	}
 
 }
 
