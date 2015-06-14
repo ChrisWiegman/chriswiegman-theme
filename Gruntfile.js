@@ -6,6 +6,12 @@ module.exports = function ( grunt ) {
 	grunt.initConfig (
 		{
 
+			clean: {
+				dist: {
+					src: ['lib']
+				}
+			},
+
 			autoprefixer : {
 
 				options : {
@@ -15,8 +21,8 @@ module.exports = function ( grunt ) {
 				files : {
 					expand  : true,
 					flatten : true,
-					src     : 'assets/css/*.css',
-					dest    : 'assets/css'
+					src     : 'lib/css/*.css',
+					dest    : 'lib/css'
 				}
 
 			},
@@ -27,7 +33,7 @@ module.exports = function ( grunt ) {
 
 					files : [{
 						         expand : true,
-						         cwd    : 'assets/css',
+						         cwd    : 'lib/css',
 						         src    : ['*.css'],
 						         dest   : 'lib/css',
 						         ext    : '.min.css'
@@ -39,15 +45,19 @@ module.exports = function ( grunt ) {
 
 			sass : {
 
-				options : {
-					style     : 'expanded',
-					sourcemap : 'none',
-					noCache   : true
-				},
+				dist : {
 
-				files : {
-					'assets/css/master.css' : 'assets/scss/master.scss',
-					'assets/css/editor.css' : 'assets/scss/editor.scss'
+					options : {
+						style     : 'expanded',
+						sourcemap : 'auto',
+						noCache   : true
+					},
+
+					files : {
+						'lib/css/master.css' : 'assets/scss/master.scss',
+						'lib/css/editor.css' : 'assets/scss/editor.scss'
+					}
+
 				}
 
 			},
@@ -125,7 +135,7 @@ module.exports = function ( grunt ) {
 	);
 
 	// A very basic default task.
-	grunt.registerTask ( 'default', ['sass', 'autoprefixer', 'cssmin', 'uglify:development', 'uglify:production', 'watch'] );
-	grunt.registerTask ( 'prod', ['sass', 'autoprefixer', 'cssmin', 'uglify:development', 'uglify:production'] );
+	grunt.registerTask ( 'default', ['clean','sass', 'autoprefixer', 'cssmin', 'uglify:development', 'uglify:production', 'watch'] );
+	grunt.registerTask ( 'prod', ['clean','sass', 'autoprefixer', 'cssmin', 'uglify:development', 'uglify:production'] );
 
 };

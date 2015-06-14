@@ -17,7 +17,15 @@
 </head>
 
 <body <?php body_class(); ?>>
-<div id="page" class="hfeed site">
+
+<?php
+if ( is_home() && is_active_sidebar( 'intro' ) ) {
+	$intro_class = 'has-intro ';
+} else {
+	$intro_class = '';
+}
+?>
+<div id="page" class="hfeed site <?php echo $intro_class; ?>">
 	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'chriswiegman' ); ?></a>
 
 	<?php
@@ -28,10 +36,14 @@
 	}
 	?>
 	<header id="masthead" class="<?php echo $hclass; ?>site-header" role="banner">
-		<div class="progress-wrap"><div class="progress-indicator"></div></div>
+		<div class="progress-wrap">
+			<div class="progress-indicator"></div>
+		</div>
 		<div class="wrap">
 			<div class="site-branding">
-				<div class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img src="/content/themes/chriswiegman/img/logo.png" alt="Chris Wiegman" width="256" height="40"></a></div>
+				<div class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img
+							src="/content/themes/chriswiegman/img/logo.png" alt="Chris Wiegman" width="256" height="40"></a>
+				</div>
 			</div>
 
 			<div class="menu-toggle"><?php _e( 'Menu', 'chriswiegman' ); ?></div>
