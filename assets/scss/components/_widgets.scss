@@ -212,12 +212,17 @@
 		}
 
 		.gform_footer {
-			margin-top : 20px;
+			margin-top : 0;
 		}
 
 		select {
 			display : block;
 			width   : 100% !important;
+		}
+
+		.gfield_label {
+			display : none;
+			margin  : 0;
 		}
 
 	}

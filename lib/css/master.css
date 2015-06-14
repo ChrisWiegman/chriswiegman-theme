@@ -3001,6 +3001,10 @@ input:hover[type="button"], input:hover[type="submit"] {
   padding: 24px;
 }
 
+.gform_wrapper .gform_heading {
+  margin-bottom: 0 !important;
+}
+
 a {
   border-bottom: 1px solid #fff;
   color: #e80;
@@ -3385,11 +3389,15 @@ a:visited {
   padding: 10px 10px 6px 10px;
 }
 #gform_widget-2 form .gform_footer {
-  margin-top: 20px;
+  margin-top: 0;
 }
 #gform_widget-2 form select {
   display: block;
   width: 100% !important;
+}
+#gform_widget-2 form .gfield_label {
+  display: none;
+  margin: 0;
 }
 #gform_widget-2 .gforms_confirmation_message {
   background-color: #3e3e3e;
