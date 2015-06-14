@@ -25,7 +25,7 @@ module.exports = function ( grunt ) {
 
 				target : {
 
-						files : [{
+					files : [{
 						         expand : true,
 						         cwd    : 'assets/css',
 						         src    : ['*.css'],
@@ -39,34 +39,15 @@ module.exports = function ( grunt ) {
 
 			sass : {
 
-				production : {
-
-					options : {
-						style     : 'expanded',
-						sourcemap : 'none',
-						noCache   : true
-					},
-
-					files : {
-						'assets/css/master.css' : 'assets/scss/master.scss',
-						'assets/css/editor.css' : 'assets/scss/editor.scss'
-					}
-
+				options : {
+					style     : 'expanded',
+					sourcemap : 'none',
+					noCache   : true
 				},
 
-				development : {
-
-					options : {
-						style     : 'expanded',
-						sourcemap : 'auto',
-						noCache   : true
-					},
-
-					files : {
-						'lib/css/master.css' : 'assets/scss/master.scss',
-						'lib/css/editor.css' : 'assets/scss/editor.scss'
-					}
-
+				files : {
+					'assets/css/master.css' : 'assets/scss/master.scss',
+					'assets/css/editor.css' : 'assets/scss/editor.scss'
 				}
 
 			},
@@ -85,7 +66,6 @@ module.exports = function ( grunt ) {
 
 					files : {
 						'lib/js/footer.min.js' : [
-							'assets/js/analytics.js',
 							'assets/js/progress.js',
 							'assets/js/skip-link-focus-fix.js',
 							'assets/js/scripts.js'
@@ -103,7 +83,6 @@ module.exports = function ( grunt ) {
 
 					files : {
 						'lib/js/footer.js' : [
-							'assets/js/analytics.js',
 							'assets/js/progress.js',
 							'assets/js/skip-link-focus-fix.js',
 							'assets/js/scripts.js'
@@ -126,7 +105,7 @@ module.exports = function ( grunt ) {
 						'assets/scss/**/*'
 					],
 
-					tasks : ['sass:development']
+					tasks : ['sass', 'autoprefixer', 'cssmin']
 
 				},
 
@@ -136,7 +115,7 @@ module.exports = function ( grunt ) {
 						'assets/js/**/*'
 					],
 
-					tasks : ['uglify:development']
+					tasks : ['uglify:development', 'uglify:production']
 
 				}
 
@@ -146,7 +125,7 @@ module.exports = function ( grunt ) {
 	);
 
 	// A very basic default task.
-	grunt.registerTask ( 'dev', ['sass:development', 'sass:production', 'autoprefixer', 'cssmin',  'uglify:development', 'uglify:production', 'watch'] );
-	grunt.registerTask ( 'default', ['sass:development', 'sass:production', 'autoprefixer', 'cssmin',  'uglify:development', 'uglify:production'] );
+	grunt.registerTask ( 'default', ['sass', 'autoprefixer', 'cssmin', 'uglify:development', 'uglify:production', 'watch'] );
+	grunt.registerTask ( 'prod', ['sass', 'autoprefixer', 'cssmin', 'uglify:development', 'uglify:production'] );
 
 };

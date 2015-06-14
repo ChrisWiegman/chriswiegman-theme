@@ -5,7 +5,7 @@
  * @package ChrisWiegman
  */
 
-define( 'CW_THEME_VERISON', '1.1.0' );
+define( 'CW_THEME_VERISON', '1.2.0' );
 
 /**
  * Set the content width based on the theme's design and stylesheet.
@@ -14,55 +14,49 @@ if ( ! isset( $content_width ) ) {
 	$content_width = 640; /* pixels */
 }
 
-if ( ! function_exists( 'chriswiegman_setup' ) ) {
+/**
+ * Sets up theme defaults and registers support for various WordPress features.
+ */
+function chriswiegman_setup() {
 
-	/**
-	 * Sets up theme defaults and registers support for various WordPress features.
-	 *
-	 * Note that this function is hooked into the after_setup_theme hook, which
-	 * runs before the init hook. The init hook is too late for some features, such
-	 * as indicating support for post thumbnails.
+	// Add default posts and comments RSS feed links to head.
+	add_theme_support( 'automatic-feed-links' );
+
+	//Enable support for Post Thumbnails on posts and pages.
+	add_theme_support( 'post-thumbnails' );
+
+	//Enable post formats
+	add_theme_support( 'post-formats', array( 'image', 'quote' ) );
+
+	// This theme uses wp_nav_menu() in one location.
+	register_nav_menus(
+		array(
+			'primary' => __( 'Primary Menu', 'chriswiegman' ),
+			'footer'  => __( 'Footer Menu', 'chriswiegman' ),
+		)
+	);
+
+	/*
+	 * Switch default core markup for search form, comment form, and comments
+	 * to output valid HTML5.
 	 */
-	function chriswiegman_setup() {
-
-		// Add default posts and comments RSS feed links to head.
-		add_theme_support( 'automatic-feed-links' );
-
-		//Enable support for Post Thumbnails on posts and pages.
-		add_theme_support( 'post-thumbnails' );
-
-		//Enable post formats
-		add_theme_support( 'post-formats', array( 'image', 'quote' ) );
-
-		// This theme uses wp_nav_menu() in one location.
-		register_nav_menus(
-			array(
-				'primary' => __( 'Primary Menu', 'chriswiegman' ),
-				'footer'  => __( 'Footer Menu', 'chriswiegman' ),
-			)
-		);
-
-		/*
-		 * Switch default core markup for search form, comment form, and comments
-		 * to output valid HTML5.
-		 */
-		add_theme_support( 'html5', array(
+	add_theme_support(
+		'html5',
+		array(
 			'search-form',
 			'comment-form',
 			'comment-list',
 			'gallery',
-			'caption'
-		) );
+			'caption',
+		)
+	);
 
-	}
+}
 
-} // chriswiegman_setup
 add_action( 'after_setup_theme', 'chriswiegman_setup' );
 
 /**
  * Register widget area.
- *
- * @link http://codex.wordpress.org/Function_Reference/register_sidebar
  */
 function chriswiegman_widgets_init() {
 
@@ -100,7 +94,6 @@ function chriswiegman_scripts() {
 
 		wp_enqueue_script( 'chriswiegman-footer', get_template_directory_uri() . '/lib/js/footer.js', array( 'jquery' ), CW_THEME_VERISON, true );
 
-
 	} else {
 
 		wp_enqueue_style( 'chriswiegman-style', get_template_directory_uri() . '/lib/css/master.min.css', array(), CW_THEME_VERISON );
@@ -128,7 +121,9 @@ function chriswiegman_scripts() {
 
 }
 
-//Create the correct more link
+/**
+ * Create the correct more link
+ */
 function chriswiegman_excerpt_more() {
 
 	return '... <a class="more-link" href="' . get_permalink( get_the_ID() ) . '">' . __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'chriswiegman' ) . '</a>';
@@ -139,9 +134,9 @@ add_filter( 'excerpt_more', 'chriswiegman_excerpt_more' );
 
 add_action( 'wp_enqueue_scripts', 'chriswiegman_scripts' );
 
-//Add custom styles to wysiwyg editor
-add_action( 'init', 'chriswiegman_add_editor_styles' );
-
+/**
+ * Add custom styles to wysiwyg editor
+ */
 function chriswiegman_add_editor_styles() {
 
 	if ( defined( 'WP_LOCAL_DEV' ) && true === WP_LOCAL_DEV ) {
@@ -152,13 +147,15 @@ function chriswiegman_add_editor_styles() {
 
 		add_editor_style( get_stylesheet_directory_uri() . '/lib/css/editor.css' );
 
-
 	}
 
 }
 
-add_filter( 'wp_default_scripts', 'cw_remove_jquery_migrate' );
+add_action( 'init', 'chriswiegman_add_editor_styles' );
 
+/**
+ * Removes an extra jQuery Script
+ */
 function cw_remove_jquery_migrate( $scripts ) {
 
 	if ( ! is_admin() ) {
@@ -168,19 +165,24 @@ function cw_remove_jquery_migrate( $scripts ) {
 
 }
 
-//Cleanup the header
-remove_action( 'wp_head', 'wlwmanifest_link' );
-remove_action( 'wp_head', 'wp_generator' );
-remove_action( 'wp_head', 'feed_links_extra', 3 );
-remove_action( 'wp_head', 'feed_links', 2 );
-remove_action( 'wp_head', 'rsd_link' );
-add_action( 'wp_head', 'cw_feed_links' );
+add_filter( 'wp_default_scripts', 'cw_remove_jquery_migrate' );
+
+/**
+ * Clean up the header
+ */
 function cw_feed_links() {
 
 	echo '<link rel="alternate" type="' . feed_content_type() . '" title="Chris Wiegman | All Posts" href="http://feeds.chriswiegman.com" />' . PHP_EOL;
 	echo '<link rel="alternate" type="' . feed_content_type() . '" title="Chris Wiegman | All Comments" href="http://feeds.chriswiegman.com/comments" />' . PHP_EOL;
 
 }
+
+remove_action( 'wp_head', 'wlwmanifest_link' );
+remove_action( 'wp_head', 'wp_generator' );
+remove_action( 'wp_head', 'feed_links_extra', 3 );
+remove_action( 'wp_head', 'feed_links', 2 );
+remove_action( 'wp_head', 'rsd_link' );
+add_action( 'wp_head', 'cw_feed_links' );
 
 /**
  * Custom template tags for this theme.
