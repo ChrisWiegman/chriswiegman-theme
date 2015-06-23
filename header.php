@@ -42,7 +42,7 @@ if ( is_home() && is_active_sidebar( 'intro' ) ) {
 		<div class="wrap">
 			<div class="site-branding">
 				<div class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img
-							src="/content/themes/chriswiegman/img/logo.png" alt="Chris Wiegman" width="256" height="40"></a>
+							src="/wp-content/themes/chriswiegman/img/logo.png" alt="Chris Wiegman" width="256" height="40"></a>
 				</div>
 			</div>
 
