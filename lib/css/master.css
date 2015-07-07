@@ -3898,18 +3898,6 @@ object {
     width: 100%;
   }
 
-  .site-header .main-navigation li {
-    padding: 5px 20px;
-    -webkit-transition: 0.5s;
-    transition: 0.5s;
-  }
-  .site-header .main-navigation ul ul {
-    top: 2em;
-    left: -999em;
-    z-index: 99999;
-  }
-}
-@media screen and (max-width: 820px) {
   #menu-primary {
     display: none;
   }
@@ -3934,8 +3922,10 @@ object {
     width: 100%;
   }
   .site-header .main-navigation li {
-    width: 100%;
     padding: 2px 0 2px 10px;
+    -webkit-transition: 0.5s;
+            transition: 0.5s;
+    width: 100%;
   }
   .site-header .main-navigation ul {
     float: none;
@@ -3944,9 +3934,10 @@ object {
   .site-header .main-navigation ul ul {
     box-shadow: none;
     float: none;
-    left: 0 !important;
+    left: -999em;
     position: relative;
-    top: 0 !important;
+    top: 2em;
+    z-index: 99999;
   }
 }
 @media screen and (max-width: 700px) {
@@ -4138,3 +4129,5 @@ object {
     page-break-after: avoid;
   }
 }
+
+/*# sourceMappingURL=master.css.map */

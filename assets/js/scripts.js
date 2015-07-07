@@ -14,7 +14,7 @@ jQuery ( document ).ready ( function ( $ ) {
 	//hide the menu button when we resize the menu
 	$ ( window ).resize ( function () {
 
-		if ( $ ( window ).width () >= 820 ) {
+		if ( $ ( window ).width () >= 900 ) {
 			$ ( '#menu-primary' ).removeAttr ( 'style' );
 		}
 
