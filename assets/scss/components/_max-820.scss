@@ -1,0 +1,57 @@
+@media screen and (max-width : 820px) {
+
+	#menu-primary {
+		display : none;
+	}
+
+	.site-header {
+
+		.menu-toggle {
+			color       : $text-color;
+			display     : inline-block;
+			font-weight : 400;
+			padding     : 5px 20px 0 0;
+			float       : right;
+		}
+
+		.main-navigation {
+
+			background-color : $white;
+			color            : $text-color;
+			clear            : both;
+			float            : none;
+			margin           : 0;
+			padding          : 0;
+			position         : absolute;
+			overflow         : hidden;
+			top              : 39px;
+			width            : 100%;
+
+			li {
+				width   : 100%;
+				padding : 2px 0 2px 10px;
+
+			}
+
+			ul {
+
+				float : none;
+				width : 100%;
+
+				ul {
+
+					box-shadow : none;
+					float      : none;
+					left       : 0 !important;
+					position   : relative;
+					top        : 0 !important;
+
+				}
+
+			}
+
+		}
+
+	}
+
+}
