@@ -2758,10 +2758,10 @@ body {
   width: 100%;
 }
 #page .site-header .progress-wrap .progress-indicator {
-  background-color: #000;
+  background-color: #0cf;
   display: block;
   height: 80px;
-  opacity: 0.05;
+  opacity: 0.2;
   position: absolute;
   -webkit-transition: height 0.5s;
           transition: height 0.5s;
