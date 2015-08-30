@@ -136,7 +136,6 @@ module.exports = function ( grunt ) {
 	);
 
 	// A very basic default task.
-	grunt.registerTask ( 'prod', ['clean', 'sass', 'autoprefixer', 'cssmin', 'uglify:development', 'uglify:production'] );
-	grunt.registerTask ( 'default', ['prod', 'watch'] );
+	grunt.registerTask ( 'default', ['clean', 'sass', 'autoprefixer', 'cssmin', 'uglify:development', 'uglify:production'] );
 
 };
