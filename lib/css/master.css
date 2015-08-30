@@ -2758,7 +2758,7 @@ body {
   width: 100%;
 }
 #page .site-header .progress-wrap .progress-indicator {
-  background-color: #0cf;
+  background-color: #e80;
   display: block;
   height: 80px;
   opacity: 0.2;
@@ -3565,9 +3565,6 @@ h1.page-title {
 .comments-area .no-comments {
   padding: 0 40px;
 }
-.comments-area .bypostauthor {
-  background-color: #e0ffff !important;
-}
 .comments-area .avatar {
   float: left;
   padding: 0 10px 10px 0;
@@ -3811,6 +3808,68 @@ object {
   max-width: 11.11%;
 }
 
+.navbar .nav {
+  width: 100%;
+}
+.navbar .nav .cw-nav-menu-search {
+  float: right;
+}
+
+.cw-nav-menu-search .search-form {
+  position: relative;
+  margin: 0;
+}
+.cw-nav-menu-search .search-form .screen-reader-text {
+  position: absolute;
+  left: -9999px;
+  overflow: hidden;
+}
+.cw-nav-menu-search .search-form .search-submit {
+  display: none;
+}
+.cw-nav-menu-search .search-form .search-field {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  cursor: pointer;
+  height: 35px;
+  margin: 2px 0 2px 0;
+  padding: 3px 0 3px 25px;
+  position: relative;
+  -webkit-transition: width 400ms ease;
+          transition: width 400ms ease;
+  width: 0px;
+}
+.cw-nav-menu-search .search-form .search-field:active, .cw-nav-menu-search .search-form .search-field:focus {
+  clear: both;
+  float: left;
+  color: #5a5a5a;
+  border: 2px solid #ebebeb;
+  cursor: text;
+  outline: 0;
+  width: 250px;
+  box-shadow: none;
+  margin: 0;
+  top: 40px;
+}
+.cw-nav-menu-search .search-form:before {
+  font-family: FontAwesome;
+  content: "";
+  position: absolute;
+  font-size: 19px;
+  font-weight: normal;
+  top: 5px;
+  left: 5px;
+}
+
+@media (max-width: 979px) {
+  .navbar .nav {
+    width: auto;
+  }
+  .navbar .nav .cw-nav-menu-search {
+    float: left;
+  }
+}
 @media screen and (max-width: 1192px) {
   #page .site-content {
     max-width: 99%;
