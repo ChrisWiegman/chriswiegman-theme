@@ -6,62 +6,49 @@
   font-weight: 400;
   font-size: 22px;
   font-size: 1.375rem;
-  line-height: 1.6;
-}
+  line-height: 1.6; }
 
 #tinymce p {
-  margin-bottom: 1.5rem;
-}
+  margin-bottom: 1.5rem; }
 
 #tinymce img.alignleft {
   display: inline;
-  margin: 0 24px 24px 0;
-}
+  margin: 0 24px 24px 0; }
 
 #tinymce img.centered, #tinymce .aligncenter {
   display: block;
-  margin: 0 auto 24px;
-}
+  margin: 0 auto 24px; }
 
 #tinymce img.alignnone {
   display: inline;
-  margin-bottom: 12px;
-}
+  margin-bottom: 12px; }
 
 #tinymce h1, #tinymce h2, #tinymce h3, #tinymce h4, #tinymce h5, #tinymce h6 {
   font-family: Georgia, Times, Times New Roman, serif;
-  font-weight: 700;
-}
+  font-weight: 700; }
 
 #tinymce h2 {
   font-size: 30px;
-  font-size: 1.875rem;
-}
+  font-size: 1.875rem; }
 
 #tinymce h3 {
   font-size: 24px;
-  font-size: 1.5rem;
-}
+  font-size: 1.5rem; }
 
 #tinymce h4 {
   font-size: 24px;
   font-size: 1.5rem;
   padding-bottom: 16px;
-  padding-bottom: 1rem;
-}
+  padding-bottom: 1rem; }
 
 #tinymce h5 {
   font-size: 18px;
-  font-size: 1.125rem;
-}
+  font-size: 1.125rem; }
 
 #tinymce h6 {
   font-size: 16px;
-  font-size: 1rem;
-}
+  font-size: 1rem; }
 
 #tinymce a {
-  color: #e80;
-}
-
+  color: #e80; }
 /*# sourceMappingURL=editor.css.map */
