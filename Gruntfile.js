@@ -33,12 +33,12 @@ module.exports = function ( grunt ) {
 				target : {
 
 					files : [{
-						         expand : true,
-						         cwd    : 'lib/css',
-						         src    : ['*.css'],
-						         dest   : 'lib/css',
-						         ext    : '.min.css'
-					         }]
+						expand : true,
+						cwd    : 'lib/css',
+						src    : ['*.css'],
+						dest   : 'lib/css',
+						ext    : '.min.css'
+					}]
 
 				}
 
@@ -50,7 +50,7 @@ module.exports = function ( grunt ) {
 
 					options : {
 						style     : 'expanded',
-						sourcemap : 'auto',
+						sourceMap : true,
 						noCache   : true
 					},
 
