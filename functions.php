@@ -193,17 +193,3 @@ require get_template_directory() . '/inc/template-tags.php';
  * Custom functions that act independently of the theme templates.
  */
 require get_template_directory() . '/inc/extras.php';
-
-//Add search form to menu
-add_filter( 'wp_nav_menu_items', 'add_search_box_to_menu', 10, 2 );
-
-function add_search_box_to_menu( $items, $args ) {
-
-	// If this isn't the main navbar menu, do nothing
-	if ( 'primary' !== $args->theme_location ) {
-		return $items;
-	}
-
-	// On main menu: put styling around search and append it to the menu items
-	return $items . '<li class="cw-nav-menu-search">' . get_search_form( false ) . '</li>';
-}
