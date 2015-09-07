@@ -2374,7 +2374,7 @@ body {
       position: relative;
       width: 100%; }
       #page .site-header .progress-wrap .progress-indicator {
-        background-color: #e80;
+        background-color: #999;
         display: block;
         height: 80px;
         opacity: 0.2;
