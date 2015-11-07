@@ -3248,7 +3248,7 @@ object {
   #cw_ad_widget-2 .right-image {
     padding-left: 0; } }
 
-@media screen and (max-width: 985px) {
+@media screen and (max-width: 900px) {
   #page #intro {
     margin-top: 40px;
     -webkit-transition: 0.5s;
