@@ -3386,6 +3386,13 @@ object {
     margin-left: 0;
     float: none;
     width: auto; }
+  #page .site-header {
+    position: absolute; }
+  .single .site-main,
+  .page .site-main,
+  .home .hentry,
+  .search .hentry {
+    border: none; }
   #secondary,
   #intro,
   #site-navigation,
@@ -3405,8 +3412,14 @@ object {
     float: none;
     width: auto; }
   #footer,
-  .ad {
+  .ad,
+  .footer-menu,
+  .author-box,
+  .comment-respond,
+  .nav-links {
     display: none; }
+  .comments-area ol li {
+    padding: 0; }
   h1,
   h2,
   h3,
