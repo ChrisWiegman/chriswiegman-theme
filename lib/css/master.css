@@ -2690,46 +2690,6 @@ a {
   left: -999em;
   z-index: 99999; }
 
-.cw-menu-search {
-  float: right; }
-  .cw-menu-search .search-form {
-    color: #3e3e3e;
-    position: relative;
-    margin: 0; }
-    .cw-menu-search .search-form:before {
-      font-family: 'FontAwesome';
-      content: '\f002';
-      position: absolute;
-      font-weight: normal;
-      top: 0;
-      left: 5px; }
-    .cw-menu-search .search-form .screen-reader-text {
-      position: absolute;
-      left: -9999px;
-      overflow: hidden; }
-  .cw-menu-search .search-submit {
-    display: none; }
-  .cw-menu-search .search-field {
-    color: #3e3e3e;
-    background: transparent;
-    border: none;
-    box-shadow: none;
-    cursor: pointer;
-    height: 26px;
-    margin: 0;
-    padding: 0 0 0 20px;
-    position: relative;
-    -webkit-transition: width 400ms ease;
-            transition: width 400ms ease;
-    width: 0; }
-    .cw-menu-search .search-field:active, .cw-menu-search .search-field:focus {
-      border: 2px solid #ebebeb;
-      cursor: text;
-      outline: 0;
-      width: 250px;
-      box-shadow: none;
-      margin: 0; }
-
 /* Text meant only for screen readers */
 .screen-reader-text {
   clip: rect(1px, 1px, 1px, 1px);
@@ -2805,7 +2765,7 @@ a {
 
 .widget {
   background-color: #fff;
-  border: 1px solid #ebebeb;
+  border: 1px solid #ddd;
   margin: 0 0 2.5em;
   padding: 15px; }
   .widget select {
@@ -3032,12 +2992,12 @@ h1.page-title {
 .single .site-main,
 .page .site-main {
   background-color: #fff;
-  border: 1px solid #ebebeb;
+  border: 1px solid #ddd;
   margin-bottom: 2.5rem; }
 
 .home .hentry,
 .search .hentry {
-  border: 1px solid #ebebeb; }
+  border: 1px solid #ddd; }
 
 .post-navigation {
   padding: 0 40px; }
@@ -3354,9 +3314,7 @@ object {
         left: -999em;
         position: relative;
         top: 2em;
-        z-index: 99999; }
-  .cw-menu-search {
-    float: left; } }
+        z-index: 99999; } }
 
 @media screen and (max-width: 700px) {
   .alignleft,

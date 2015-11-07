@@ -3,60 +3,60 @@
 --------------------------------------------------------------*/
 
 h1.page-title {
-	margin-bottom : 2rem;
+	margin-bottom: 2rem;
 }
 
 .hentry {
 
-	background-color : $white;
-	font-size        : $normal;
-	font-size        : $normal-rem;
-	line-height      : 1.6;
-	margin           : 0 0 2.5rem 0;
-	padding          : 0;
+	background-color: $white;
+	font-size:        $normal;
+	font-size:        $normal-rem;
+	line-height:      1.6;
+	margin:           0 0 2.5rem 0;
+	padding:          0;
 
 	.gist {
-		font-size   : 14px;
-		font-size   : 0.875rem;
-		line-height : 1.4;
+		font-size:   14px;
+		font-size:   0.875rem;
+		line-height: 1.4;
 	}
 
 	a.post-header-image {
 
-		border : none;
+		border: none;
 
 		&:hover {
-			border : none;
+			border: none;
 		}
 
 		img {
-			width : 100%;
+			width: 100%;
 		}
 
 	}
 
 	.entry-header {
 
-		padding : 40px 40px 0 40px;
+		padding: 40px 40px 0 40px;
 
 		.comments-link {
-			float : right;
+			float: right;
 		}
 
 		.entry-title {
 
-			font-size   : 36px;
-			font-size   : 2.25rem;
-			font-weight : 300;
+			font-size:   36px;
+			font-size:   2.25rem;
+			font-weight: 300;
 
 			a {
-				color           : $text-color;
-				text-decoration : none;
+				color:           $text-color;
+				text-decoration: none;
 
 				&:hover {
-					border-bottom   : none;
-					color           : $orange;
-					text-decoration : none;
+					border-bottom:   none;
+					color:           $orange;
+					text-decoration: none;
 				}
 
 			}
@@ -67,56 +67,56 @@ h1.page-title {
 
 	.entry-meta,
 	.entry-footer {
-		color     : $grey;
-		font-size : 16px;
-		font-size : 1rem;
+		color:     $grey;
+		font-size: 16px;
+		font-size: 1rem;
 	}
 
 	.updated {
-		display : none;
+		display: none;
 	}
 
 	.single .byline,
 	.group-blog .byline {
-		display : inline;
+		display: inline;
 	}
 
 	.page-content,
 	.entry-content,
 	.entry-summary {
 
-		margin  : 1.5em 0 0;
-		padding : 0 40px;
+		margin:  1.5em 0 0;
+		padding: 0 40px;
 
 		h2,
 		h3 {
-			margin-bottom : 1rem;
+			margin-bottom: 1rem;
 		}
 
 	}
 
 	.page-links {
-		clear  : both;
-		margin : 0 0 1.5em;
+		clear:  both;
+		margin: 0 0 1.5em;
 	}
 
 	.more-link {
 
-		border-bottom : none;
-		clear         : both;
-		display       : block;
-		font-size     : 16px;
-		font-size     : 1rem;
-		margin-top    : 40px;
+		border-bottom: none;
+		clear:         both;
+		display:       block;
+		font-size:     16px;
+		font-size:     1rem;
+		margin-top:    40px;
 
 		&:hover {
-			border-bottom : none;
+			border-bottom: none;
 		}
 
 	}
 
 	.entry-footer {
-		padding : 40px;
+		padding: 40px;
 	}
 
 }
@@ -125,9 +125,9 @@ h1.page-title {
 .page {
 
 	.site-main {
-		background-color : $white;
-		border           : 1px solid $light-grey;
-		margin-bottom    : 2.5rem;
+		background-color: $white;
+		border:           1px solid $border-color;
+		margin-bottom:    2.5rem;
 	}
 
 }
@@ -136,97 +136,97 @@ h1.page-title {
 .search {
 
 	.hentry {
-		border : 1px solid $light-grey;
+		border: 1px solid $border-color;
 	}
 
 }
 
 .post-navigation {
-	padding : 0 40px;
+	padding: 0 40px;
 }
 
 .author-box {
 
-	margin  : 0 40px;
-	padding : 40px 0;
+	margin:  0 40px;
+	padding: 40px 0;
 
 	.avatar {
-		float : left;
+		float: left;
 	}
 
 	#authcontact {
-		clear     : both;
-		display   : block;
-		float     : left;
-		font-size : 80%;
-		width     : 100%;
+		clear:     both;
+		display:   block;
+		float:     left;
+		font-size: 80%;
+		width:     100%;
 	}
 
 }
 
 .author-box,
 .comments-area {
-	border-top : 1px solid $near-white;
-	overflow   : hidden;
+	border-top: 1px solid $near-white;
+	overflow:   hidden;
 }
 
 .comment-reply-title {
-	margin-bottom : 40px;
+	margin-bottom: 40px;
 }
 
 .comments-area {
 
-	margin  : 0;
-	padding : 40px 0;
+	margin:  0;
+	padding: 40px 0;
 
 	.no-comments {
-		padding : 0 40px;
+		padding: 0 40px;
 	}
 
 	.avatar {
-		float   : left;
-		padding : 0 10px 10px 0;
+		float:   left;
+		padding: 0 10px 10px 0;
 	}
 
 	h2 {
-		padding : 0 40px;
+		padding: 0 40px;
 	}
 
 	#respond {
-		padding : 0 40px;
+		padding: 0 40px;
 	}
 
 	ol {
 
-		list-style : none;
-		margin     : 0;
-		padding    : 40px 0 0 0;
+		list-style: none;
+		margin:     0;
+		padding:    40px 0 0 0;
 
 		li {
 
-			margin-bottom : 1rem;
-			padding       : 40px 0 40px 40px;
+			margin-bottom: 1rem;
+			padding:       40px 0 40px 40px;
 
 			.comment-content {
-				clear         : both;
-				padding-right : 40px;
+				clear:         both;
+				padding-right: 40px;
 			}
 
 			ol {
 
-				padding-top : 40px;
+				padding-top: 40px;
 
 				li {
 
-					background-color : $light-grey;
-					border-left      : none;
+					background-color: $light-grey;
+					border-left:      none;
 
 					a {
 
-						border-bottom : 1px solid $light-grey;
+						border-bottom: 1px solid $light-grey;
 
 						&:focus {
-							outline : thin dotted $white;
+							outline: thin dotted $white;
 						}
 
 					}
@@ -235,14 +235,14 @@ h1.page-title {
 
 						li {
 
-							background-color : $white;
+							background-color: $white;
 
 							a {
 
-								border-bottom : 1px solid $white;
+								border-bottom: 1px solid $white;
 
 								&:focus {
-									outline : thin dotted $light-grey;
+									outline: thin dotted $light-grey;
 								}
 
 							}
@@ -251,14 +251,14 @@ h1.page-title {
 
 								li {
 
-									background-color : $light-grey;
+									background-color: $light-grey;
 
 									a {
 
-										border-bottom : 1px solid $light-grey;
+										border-bottom: 1px solid $light-grey;
 
 										&:focus {
-											outline : thin dotted $white;
+											outline: thin dotted $white;
 										}
 
 									}
@@ -267,14 +267,14 @@ h1.page-title {
 
 										li {
 
-											background-color : $white;
+											background-color: $white;
 
 											a {
 
-												border-bottom : 1px solid $white;
+												border-bottom: 1px solid $white;
 
 												&:focus {
-													outline : thin dotted $light-grey;
+													outline: thin dotted $light-grey;
 												}
 
 											}
@@ -307,7 +307,7 @@ h1.page-title {
 
 .blog .format-aside .entry-title,
 .archive .format-aside .entry-title {
-	display : none;
+	display: none;
 }
 
 /*--------------------------------------------------------------
@@ -315,5 +315,5 @@ h1.page-title {
 --------------------------------------------------------------*/
 
 .comment-content a {
-	word-wrap : break-word;
+	word-wrap: break-word;
 }
