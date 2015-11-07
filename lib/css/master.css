@@ -136,8 +136,8 @@ q {
  * -------------------------- */
 @font-face {
   font-family: 'FontAwesome';
-  src: url("https://cdn1.chriswiegman.com/wp-content/themes/chriswiegman/fonts/fontawesome-webfont.eot?v=4.4.0");
-  src: url("https://cdn1.chriswiegman.com/wp-content/themes/chriswiegman/fonts/fontawesome-webfont.eot?#iefix&v=4.4.0") format("embedded-opentype"), url("https://cdn1.chriswiegman.com/wp-content/themes/chriswiegman/fonts/fontawesome-webfont.woff2?v=4.4.0") format("woff2"), url("https://cdn1.chriswiegman.com/wp-content/themes/chriswiegman/fonts/fontawesome-webfont.woff?v=4.4.0") format("woff"), url("https://cdn1.chriswiegman.com/wp-content/themes/chriswiegman/fonts/fontawesome-webfont.ttf?v=4.4.0") format("truetype"), url("https://cdn1.chriswiegman.com/wp-content/themes/chriswiegman/fonts/fontawesome-webfont.svg?v=4.4.0#fontawesomeregular") format("svg");
+  src: url("/content/themes/chriswiegman/fonts/fontawesome-webfont.eot?v=4.4.0");
+  src: url("/content/themes/chriswiegman/fonts/fontawesome-webfont.eot?#iefix&v=4.4.0") format("embedded-opentype"), url("/content/themes/chriswiegman/fonts/fontawesome-webfont.woff2?v=4.4.0") format("woff2"), url("/content/themes/chriswiegman/fonts/fontawesome-webfont.woff?v=4.4.0") format("woff"), url("/content/themes/chriswiegman/fonts/fontawesome-webfont.ttf?v=4.4.0") format("truetype"), url("/content/themes/chriswiegman/fonts/fontawesome-webfont.svg?v=4.4.0#fontawesomeregular") format("svg");
   font-weight: normal;
   font-style: normal; }
 
@@ -2690,6 +2690,46 @@ a {
   left: -999em;
   z-index: 99999; }
 
+.cw-menu-search {
+  float: right; }
+  .cw-menu-search .search-form {
+    color: #3e3e3e;
+    position: relative;
+    margin: 0; }
+    .cw-menu-search .search-form:before {
+      font-family: 'FontAwesome';
+      content: '\f002';
+      position: absolute;
+      font-weight: normal;
+      top: 0;
+      left: 5px; }
+    .cw-menu-search .search-form .screen-reader-text {
+      position: absolute;
+      left: -9999px;
+      overflow: hidden; }
+  .cw-menu-search .search-submit {
+    display: none; }
+  .cw-menu-search .search-field {
+    color: #3e3e3e;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    cursor: pointer;
+    height: 26px;
+    margin: 0;
+    padding: 0 0 0 20px;
+    position: relative;
+    -webkit-transition: width 400ms ease;
+            transition: width 400ms ease;
+    width: 0; }
+    .cw-menu-search .search-field:active, .cw-menu-search .search-field:focus {
+      border: 2px solid #ebebeb;
+      cursor: text;
+      outline: 0;
+      width: 250px;
+      box-shadow: none;
+      margin: 0; }
+
 /* Text meant only for screen readers */
 .screen-reader-text {
   clip: rect(1px, 1px, 1px, 1px);
@@ -3248,7 +3288,7 @@ object {
   #cw_ad_widget-2 .right-image {
     padding-left: 0; } }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 985px) {
   #page #intro {
     margin-top: 40px;
     -webkit-transition: 0.5s;
@@ -3314,7 +3354,9 @@ object {
         left: -999em;
         position: relative;
         top: 2em;
-        z-index: 99999; } }
+        z-index: 99999; }
+  .cw-menu-search {
+    float: left; } }
 
 @media screen and (max-width: 700px) {
   .alignleft,
