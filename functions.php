@@ -22,10 +22,10 @@ function chriswiegman_setup() {
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
 
-	//Enable support for Post Thumbnails on posts and pages.
+	// Enable support for Post Thumbnails on posts and pages.
 	add_theme_support( 'post-thumbnails' );
 
-	//Enable post formats
+	// Enable post formats.
 	add_theme_support( 'post-formats', array( 'image', 'quote' ) );
 
 	// This theme uses wp_nav_menu() in one location.
@@ -61,24 +61,24 @@ add_action( 'after_setup_theme', 'chriswiegman_setup' );
 function chriswiegman_widgets_init() {
 
 	register_sidebar( array(
-		                  'name'          => __( 'Sidebar', 'chriswiegman' ),
-		                  'id'            => 'sidebar',
-		                  'description'   => 'The primary sidebar on the right side of most content.',
-		                  'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		                  'after_widget'  => '</aside>',
-		                  'before_title'  => '<h2 class="widget-title">',
-		                  'after_title'   => '</h2>',
-	                  ) );
+		'name'          => __( 'Sidebar', 'chriswiegman' ),
+		'id'            => 'sidebar',
+		'description'   => 'The primary sidebar on the right side of most content.',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
 
 	register_sidebar( array(
-		                  'name'          => __( 'Intro', 'chriswiegman' ),
-		                  'id'            => 'intro',
-		                  'description'   => 'The intro area at the top of most pages.',
-		                  'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		                  'after_widget'  => '</aside>',
-		                  'before_title'  => '<h2 class="widget-title">',
-		                  'after_title'   => '</h2>',
-	                  ) );
+		'name'          => __( 'Intro', 'chriswiegman' ),
+		'id'            => 'intro',
+		'description'   => 'The intro area at the top of most pages.',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
 }
 
 add_action( 'widgets_init', 'chriswiegman_widgets_init' );
@@ -172,8 +172,8 @@ add_filter( 'wp_default_scripts', 'cw_remove_jquery_migrate' );
  */
 function cw_feed_links() {
 
-	echo '<link rel="alternate" type="' . feed_content_type() . '" title="Chris Wiegman | All Posts" href="http://feeds.chriswiegman.com" />' . PHP_EOL;
-	echo '<link rel="alternate" type="' . feed_content_type() . '" title="Chris Wiegman | All Comments" href="http://feeds.chriswiegman.com/comments" />' . PHP_EOL;
+	echo '<link rel="alternate" type="' . esc_attr( feed_content_type() ) . '" title="Chris Wiegman | All Posts" href="http://feeds.chriswiegman.com" />' . PHP_EOL;
+	echo '<link rel="alternate" type="' . esc_attr( feed_content_type() ) . '" title="Chris Wiegman | All Comments" href="http://feeds.chriswiegman.com/comments" />' . PHP_EOL;
 
 }
 
