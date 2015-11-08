@@ -5,6 +5,9 @@ textarea {
 	border:           1px solid $light-grey !important;
 }
 
+#respond input,
+#response select,
+#respond textarea,
 input[type="search"] {
 	background-color:   $near-white;
 	border:             1px solid $light-grey;
@@ -13,6 +16,19 @@ input[type="search"] {
 	padding:            8px;
 	width:              100%;
 	-webkit-appearance: textfield;
+}
+
+#respond input[type="submit"] {
+
+	width: auto;
+
+	&:hover {
+		background:      $orange !important;
+		border:          1px solid $orange !important;
+		color:           $background !important;
+		text-decoration: none;
+	}
+
 }
 
 .searchform input {
@@ -26,24 +42,14 @@ input {
 		background: $button-color !important;
 		border:     1px solid $button-color !important;
 		color:      $white !important;
-	}
 
-}
+		&:hover {
+			background:      $orange !important;
+			border:          1px solid $orange !important;
+			color:           $background !important;
+			text-decoration: none;
+		}
 
-button:hover {
-	background:      $orange !important;
-	border:          none !important;
-	color:           $background !important;
-	text-decoration: none;
-}
-
-input:hover {
-
-	&[type="button"], &[type="submit"] {
-		background:      $orange;
-		/* Old browsers */
-		color:           #f5f5f5 !important;
-		text-decoration: none;
 	}
 
 }
