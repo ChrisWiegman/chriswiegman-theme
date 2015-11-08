@@ -11,8 +11,8 @@ h1.page-title {
 	background-color: $white;
 	font-size:        $normal;
 	font-size:        $normal-rem;
-	line-height:      1.6;
-	margin:           0 0 2.5rem 0;
+	line-height:      1.5;
+	margin:           0 0 2rem 0;
 	padding:          0;
 
 	.gist {
@@ -45,8 +45,8 @@ h1.page-title {
 
 		.entry-title {
 
-			font-size:   36px;
-			font-size:   2.25rem;
+			font-size:   $heading;
+			font-size:   $heading-rem;
 			font-weight: 300;
 
 			a {
