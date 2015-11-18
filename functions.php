@@ -88,7 +88,7 @@ add_action( 'widgets_init', 'chriswiegman_widgets_init' );
  */
 function chriswiegman_scripts() {
 
-	if ( defined( 'WP_LOCAL_DEV' ) && true === WP_LOCAL_DEV ) {
+	if ( defined( 'SCRIPT_DEBUG' ) && true === SCRIPT_DEBUG ) {
 
 		wp_enqueue_style( 'chriswiegman-style', get_template_directory_uri() . '/lib/css/master.css', array(), CW_THEME_VERISON );
 
