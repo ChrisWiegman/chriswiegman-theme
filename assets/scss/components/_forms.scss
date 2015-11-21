@@ -1,55 +1,203 @@
-input,
-select,
-textarea {
-	background-color: $near-white !important;
-	border:           1px solid $light-grey !important;
+input, select, textarea {
+	background-color : $near-white;
+	border           : 1px solid $light-grey;
+	font-size        : 18px;
+	font-size        : 1.125rem;
+	padding          : 8px;
+	width            : 100%;
 }
 
-#respond input,
-#response select,
-#respond textarea,
 input[type="search"] {
-	background-color:   $near-white;
-	border:             1px solid $light-grey;
-	font-size:          18px;
-	font-size:          1.125rem;
-	padding:            8px;
-	width:              100%;
-	-webkit-appearance: textfield;
-}
-
-#respond input[type="submit"] {
-
-	width: auto;
-
-	&:hover {
-		background:      $orange !important;
-		border:          1px solid $orange !important;
-		color:           $background !important;
-		text-decoration: none;
-	}
-
+	-webkit-appearance : textfield;
 }
 
 .searchform input {
-	margin:  0;
-	padding: 8px 4px;
+	margin  : 0;
+	padding : 8px 4px;
+}
+
+button {
+	background      : $dark-blue;
+	border          : none;
+	color           : $white !important;
+	cursor          : pointer;
+	font-size       : 18px;
+	font-size       : 1.125rem;
+	font-weight     : 700;
+	line-height     : 18px;
+	line-height     : 1.125rem;
+	padding         : 8px;
+	text-decoration : none;
+	text-transform  : uppercase;
+	width           : auto;
 }
 
 input {
 
 	&[type="button"], &[type="submit"] {
-		background: $button-color !important;
-		border:     1px solid $button-color !important;
-		color:      $white !important;
+		background      : #2d6a81;
+		border          : none;
+		color           : $white !important;
+		cursor          : pointer;
+		font-size       : 18px;
+		font-size       : 1.125rem;
+		font-weight     : 700;
+		line-height     : 18px;
+		line-height     : 1.125rem;
+		padding         : 8px;
+		text-decoration : none;
+		text-transform  : uppercase;
+		width           : auto;
+	}
 
-		&:hover {
-			background:      $orange !important;
-			border:          1px solid $orange !important;
-			color:           $background !important;
-			text-decoration: none;
+}
+
+.btn {
+	background      : #2d6a81;
+	border          : none;
+	color           : $white !important;
+	cursor          : pointer;
+	font-size       : 18px;
+	font-size       : 1.125rem;
+	font-weight     : 700;
+	line-height     : 18px;
+	line-height     : 1.125rem;
+	padding         : 8px;
+	text-decoration : none;
+	text-transform  : uppercase;
+	width           : auto;
+}
+
+button:hover {
+	background      : $orange;
+	/* Old browsers */
+	color           : #f5f5f5 !important;
+	text-decoration : none;
+}
+
+input:hover {
+
+	&[type="button"], &[type="submit"] {
+		background      : $orange;
+		/* Old browsers */
+		color           : #f5f5f5 !important;
+		text-decoration : none;
+	}
+
+}
+
+.btn:hover {
+	background      : $orange;
+	/* Old browsers */
+	color           : #f5f5f5 !important;
+	text-decoration : none;
+}
+
+.enews input[type="submit"], .search-form input[type="submit"] {
+	border   : 0;
+	clip     : rect(0, 0, 0, 0);
+	height   : 1px;
+	margin   : -1px;
+	overflow : hidden;
+	padding  : 0;
+	position : absolute;
+	width    : 1px;
+}
+
+/* 12a - Gravity Forms ----------- */
+
+.gform_wrapper {
+
+	margin : 0 0 16px 0;
+
+	ul {
+		margin : 0;
+
+		&.gfield_checkbox li, &.gfield_radio li {
+			padding : 0 0 0 1px !important;
+		}
+	}
+
+	.left-pad div ul li {
+		padding-left : 1px !important;
+	}
+
+	input,
+	select,
+	textarea,
+	.ginput_complex label,
+	.gfield_description {
+		font-size : $small !important;
+		font-size : $small-rem !important;
+		padding   : 8px !important;
+		width     : 98%;
+	}
+
+	.top_label .gfield_label {
+		margin-bottom : 3px;
+		float         : none;
+		font-weight   : 700;
+		display       : block;
+	}
+
+	span {
+
+		&.ginput_left,
+		&.name_first {
+			float   : left;
+			padding : 0 2px;
+			width   : 49.5%;
+		}
+
+		&.ginput_right,
+		&.name_last {
+			float   : right;
+			padding : 0 2px;
+			width   : 49.5%;
 		}
 
 	}
 
+	input[type="submit"] {
+		padding : 8px 12px;
+		width   : auto;
+	}
+
+	.ginput_complex label {
+		padding : 0;
+	}
+
+	.gfield_checkbox {
+
+		input {
+			width : auto;
+		}
+
+	}
+
+	li, form li {
+		list-style : none;
+		margin     : 16px 0 16px 0;
+		overflow   : hidden;
+	}
+
+	li.gform_validation_container {
+		display  : none;
+		height   : 1px;
+		left     : -99999px;
+		position : absolute;
+		width    : 1px;
+	}
+
+}
+
+.gforms_confirmation_message {
+	background-color : $green;
+	border           : 1px solid #eee;
+	margin-bottom    : 24px;
+	padding          : 24px;
+}
+
+.gform_wrapper .gform_heading {
+	margin-bottom: 0 !important;
 }
