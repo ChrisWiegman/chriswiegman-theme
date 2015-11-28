@@ -2996,7 +2996,8 @@ h1.page-title {
   margin-bottom: 2.5rem; }
 
 .home .hentry,
-.search .hentry {
+.search .hentry,
+.journal .hentry {
   border: 1px solid #ddd; }
 
 .post-navigation {
