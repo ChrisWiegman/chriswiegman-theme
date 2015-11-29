@@ -63,7 +63,7 @@ get_header(); ?>
 
 						if ( $profiles['facebook']['length'] > 1 ) {
 
-							echo ' <a href="http://facebook.com/' . $profiles['facebook']['url'] . '" target="_blank" title="' . get_the_author_meta( 'display_name' ) . ' on Facebook">Facebook</a>';
+							echo ' <a href="https://facebook.com/' . $profiles['facebook']['url'] . '" target="_blank" title="' . get_the_author_meta( 'display_name' ) . ' on Facebook">Facebook</a>';
 
 						}
 
@@ -71,7 +71,7 @@ get_header(); ?>
 
 							$comma = $profiles['facebook']['length'] > 1 ? ',' : '';
 							$and   = $profiles['facebook']['length'] > 1 && ( $profiles['linkedin']['length'] <= 1 || $profiles['twitter']['length'] <= 1 ) ? ' and' : '';
-							echo $comma . $and . ' <a href="http://plus.google.com/' . $profiles['google']['url'] . '?rel=author" rel="author" target="_blank" title="' . get_the_author_meta( 'display_name' ) . ' on Google+">Google+</a>';
+							echo $comma . $and . ' <a href="https://plus.google.com/' . $profiles['google']['url'] . '?rel=author" rel="author" target="_blank" title="' . get_the_author_meta( 'display_name' ) . ' on Google+">Google+</a>';
 
 						}
 
@@ -79,12 +79,12 @@ get_header(); ?>
 
 							$comma = $profiles['facebook']['length'] > 1 || $profiles['google']['length'] > 1 ? ',' : '';
 							$and   = ( $profiles['facebook']['length'] > 1 || $profiles['google']['length'] > 1 ) && $profiles['twitter']['length'] <= 1 ? ' and' : '';
-							echo $comma . $and . ' <a href="http://www.linkedin.com/in/' . $profiles['linkedin']['url'] . '" target="_blank" title="' . get_the_author_meta( 'display_name' ) . ' on LinkedIn">LinkedIn</a>';
+							echo $comma . $and . ' <a href="https://www.linkedin.com/in/' . $profiles['linkedin']['url'] . '" target="_blank" title="' . get_the_author_meta( 'display_name' ) . ' on LinkedIn">LinkedIn</a>';
 
 						}
 
 						if ( $profiles['twitter']['length'] > 1 ) {
-							echo ', and <a href="http://twitter.com/' . $profiles['twitter']['url'] . '" target="_blank" title="' . get_the_author_meta( 'display_name' ) . ' on Twitter">Twitter</a>';
+							echo ', and <a href="https://twitter.com/' . $profiles['twitter']['url'] . '" target="_blank" title="' . get_the_author_meta( 'display_name' ) . ' on Twitter">Twitter</a>';
 						}
 
 						echo '.</p>' . PHP_EOL;
