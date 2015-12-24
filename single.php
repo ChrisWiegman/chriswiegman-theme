@@ -20,7 +20,8 @@ get_header(); ?>
 
 				$links = array(
 					'facebook' => get_the_author_meta( 'facebook' ),
-					'linkedin' => get_the_author_meta( 'linkedin' ),
+					'github' => get_the_author_meta( 'github' ),
+					'wordpress' => get_the_author_meta( 'wordpress' ),
 					'twitter'  => get_the_author_meta( 'twitter' ),
 					'google'   => get_the_author_meta( 'googleplus' ),
 				);
@@ -70,16 +71,24 @@ get_header(); ?>
 						if ( $profiles['google']['length'] > 1 ) {
 
 							$comma = $profiles['facebook']['length'] > 1 ? ',' : '';
-							$and   = $profiles['facebook']['length'] > 1 && ( $profiles['linkedin']['length'] <= 1 || $profiles['twitter']['length'] <= 1 ) ? ' and' : '';
+							$and   = $profiles['facebook']['length'] > 1 && ( $profiles['github']['length'] <= 1 || $profiles['twitter']['length'] <= 1 ) ? ' and' : '';
 							echo $comma . $and . ' <a href="https://plus.google.com/' . $profiles['google']['url'] . '?rel=author" rel="author" target="_blank" title="' . get_the_author_meta( 'display_name' ) . ' on Google+">Google+</a>';
 
 						}
 
-						if ( $profiles['linkedin']['length'] > 1 ) {
+						if ( $profiles['github']['length'] > 1 ) {
 
 							$comma = $profiles['facebook']['length'] > 1 || $profiles['google']['length'] > 1 ? ',' : '';
 							$and   = ( $profiles['facebook']['length'] > 1 || $profiles['google']['length'] > 1 ) && $profiles['twitter']['length'] <= 1 ? ' and' : '';
-							echo $comma . $and . ' <a href="https://www.linkedin.com/in/' . $profiles['linkedin']['url'] . '" target="_blank" title="' . get_the_author_meta( 'display_name' ) . ' on LinkedIn">LinkedIn</a>';
+							echo $comma . $and . ' <a href="https://github.com/' . $profiles['github']['url'] . '" target="_blank" title="' . get_the_author_meta( 'display_name' ) . ' on GitHub">GitHub</a>';
+
+						}
+
+						if ( $profiles['wordpress']['length'] > 1 ) {
+
+							$comma = $profiles['facebook']['length'] > 1 || $profiles['google']['length'] > 1  || $profiles['github']['length'] > 1 ? ',' : '';
+							$and   = ( $profiles['facebook']['length'] > 1 || $profiles['google']['length'] > 1 || $profiles['github']['length'] > 1 ) && $profiles['twitter']['length'] <= 1 ? ' and' : '';
+							echo $comma . $and . ' <a href="https://profiles.wordpress.org/' . $profiles['wordpress']['url'] . '" target="_blank" title="' . get_the_author_meta( 'display_name' ) . ' on WordPress.org">WordPress.org</a>';
 
 						}
 
