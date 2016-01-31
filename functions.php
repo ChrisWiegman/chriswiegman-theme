@@ -193,18 +193,3 @@ require get_template_directory() . '/inc/template-tags.php';
  * Custom functions that act independently of the theme templates.
  */
 require get_template_directory() . '/inc/extras.php';
-
-/**
- * Don't show personal posts on homepage.
- */
-function cw_exclude_category_home( $query ) {
-
-	if ( $query->is_home ) {
-		$query->set( 'cat', '-34' );
-	}
-
-	return $query;
-
-}
-
-add_filter( 'pre_get_posts', 'cw_exclude_category_home' );
