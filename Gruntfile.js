@@ -76,7 +76,7 @@ module.exports = function ( grunt ) {
 					},
 
 					files : {
-						'assets/css/style.css' : 'assets/sass/style.scss'
+						'assets/css/master.css' : 'assets/sass/master.scss'
 					}
 
 				}
@@ -100,8 +100,9 @@ module.exports = function ( grunt ) {
 					},
 
 					files : {
-						'assets/js/theme.min.js' : [
-							'assets/js/src/navigation.js',
+						'assets/js/footer.min.js' : [
+							'assets/js/src/vendor/backstretch.js',
+							'assets/js/src/progress.js',
 						    'assets/js/src/skip-link-focus-fix.js',
 							'assets/js/src/scripts.js'
 						]
@@ -120,8 +121,9 @@ module.exports = function ( grunt ) {
 					},
 
 					files : {
-						'assets/js/theme.js' : [
-							'assets/js/src/navigation.js',
+						'assets/js/footer.js' : [
+							'assets/js/src/vendor/backstretch.js',
+							'assets/js/src/progress.js',
 							'assets/js/src/skip-link-focus-fix.js',
 							'assets/js/src/scripts.js'
 						]

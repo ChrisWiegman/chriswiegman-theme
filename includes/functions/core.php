@@ -212,7 +212,7 @@ function action_wp_head() {
  *
  * @return array
  */
-function filter_body_classes( $classes ) {
+function filter_body_class( $classes ) {
 
 	// Adds a class of group-blog to blogs with more than 1 published author.
 	if ( is_multi_author() ) {

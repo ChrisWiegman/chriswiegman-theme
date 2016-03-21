@@ -37,7 +37,8 @@ class Functions_Tests extends Base\TestCase {
 	function test_init() {
 
 		// Setup.
-		\WP_Mock::expectActionAdded( 'after_setup_theme', '\CW\Theme\Functions\Core\setup' );
+		\WP_Mock::wpPassthruFunction( 'remove_action' );
+		\WP_Mock::expectActionAdded( 'after_setup_theme', 'CW\Theme\Functions\Core\action_after_setup_theme' );
 
 		// Act.
 		init();

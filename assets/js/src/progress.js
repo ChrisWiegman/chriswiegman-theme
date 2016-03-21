@@ -1,8 +1,8 @@
-jQuery( document ).ready ( function ( $ ) {
+jQuery( document ).ready( function ( $ ) {
 
 	var body = $( 'body' );
 
-	if ( body.hasClass ( 'single' ) || body.hasClass ( 'page' ) ) {
+	if ( body.hasClass( 'single' ) || body.hasClass( 'page' ) ) {
 
 		var $window            = $( window );
 		var $progressIndicator = $( '.progress-indicator' );
@@ -12,34 +12,34 @@ jQuery( document ).ready ( function ( $ ) {
 		setSizes();
 		updateProgress();
 
-		$window.on ( 'scroll', function () {
+		$window.on( 'scroll', function () {
 
 			updateProgress();
 
-		} ).on ( 'resize', function () {
+		} ).on( 'resize', function () {
 
 			setSizes();
 			updateProgress();
 
 		} );
 
-		function setSizes() {
+		var setSizes = function () {
 
 			var $article = $( 'article' );
 
-			windowHeight  = $window.height ();
-			contentHeight = $article.height () + $article.position ().top;
+			windowHeight  = $window.height();
+			contentHeight = $article.height() + $article.position().top;
 			sHeight       = contentHeight - windowHeight;
 
-		}
+		};
 
-		function updateProgress() {
+		var updateProgress = function () {
 
-			var completePercentage = Math.max ( 0, Math.min ( 1, $window.scrollTop () / sHeight ) );
+			var completePercentage = Math.max( 0, Math.min( 1, $window.scrollTop() / sHeight ) );
 
-			$progressIndicator.css ( {width : completePercentage * 100 + '%'} );
+			$progressIndicator.css( {width : completePercentage * 100 + '%'} );
 
-		}
+		};
 
 	}
 
