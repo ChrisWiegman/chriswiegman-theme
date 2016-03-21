@@ -1,0 +1,25 @@
+{
+	"name":              "chriswiegman",
+	"description":       "The theme for www.chriswiegman.com.",
+	"version":           "5.0.0",
+	"type":              "wordpress-theme",
+	"keywords":          [],
+	"homepage":          "https://www.chriswiegman.com/",
+	"license":           "GPLv2.0+",
+	"authors":           [
+		{
+			"name":     "Chris Wiegman",
+			"email":    "chris@chriswiegman.com",
+			"homepage": "https://www.chriswiegman.com/",
+			"role":     "Developer"
+		}
+	],
+	"minimum-stability": "dev",
+	"require":           {
+		"php": ">=5.3"
+	},
+	"require-dev":       {
+		"phpunit/phpunit": "*@stable",
+		"10up/wp_mock":    "dev-master"
+	}
+}

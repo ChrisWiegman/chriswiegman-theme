@@ -1,22 +1,26 @@
 {
-	"name"           : "ChrisWiegman",
-	"private"        : true,
-	"version"        : "2.2.0",
-	"description"    : "Grunt base for the ChrisWiegman.com theme.",
-	"dependencies"   : { },
+	"name":            "ChrisWiegman",
+	"private":         true,
+	"version":         "5.0.0",
+	"description":     "Grunt base for the ChrisWiegman.com Theme.",
+	"dependencies":    {},
 	"devDependencies": {
-		"grunt"               : "*",
-		"grunt-contrib-clean" : "*",
+		"grunt":                "*",
 		"grunt-contrib-uglify": "*",
-		"grunt-contrib-watch" : "*",
-		"grunt-sass"          : "*",
+		"grunt-contrib-watch":  "*",
+		"load-grunt-tasks":     "*",
+		"grunt-wp-i18n":        "*",
+		"grunt-sass":           "*",
+		"grunt-contrib-clean":  "*",
 		"grunt-contrib-cssmin": "*",
-		"load-grunt-tasks"    : "*",
-		"grunt-autoprefixer"  : "*"
+		"grunt-phpunit":        "*",
+		"grunt-contrib-jshint": "*",
+		"grunt-browser-sync":   "*",
+		"grunt-autoprefixer":   "*"
 	},
-	"author"         : "Chris Wiegman",
-	"repository"     : {
+	"author":          "Chris Wiegman",
+	"repository":      {
 		"type": "git",
-		"url" : "https://bitbucket.org/ChrisWiegman/chriswiegman-theme.git"
+		"url":  "https://github.com/ChrisWiegman/chriswiegman-theme"
 	}
 }

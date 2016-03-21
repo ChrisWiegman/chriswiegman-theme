@@ -1,17 +1,32 @@
 module.exports = function ( grunt ) {
 
 	// Start out by loading the grunt modules we'll need
-	require ( 'load-grunt-tasks' ) ( grunt );
+	require( 'load-grunt-tasks' )( grunt );
 
-	grunt.initConfig (
+	grunt.initConfig(
 		{
 
+			/**
+			 * Clean existing files
+			 */
 			clean : {
-				dist : {
-					src : ['lib']
+				styles : {
+					src : [
+						'assets/css/*.css',
+						'assets/css/*.map'
+					]
+				},
+				scripts : {
+					src : [
+						'assets/js/*.js',
+						'assets/js/*.map'
+					]
 				}
 			},
 
+			/**
+			 * Autoprefix CSS
+			 */
 			autoprefixer : {
 
 				options : {
@@ -22,21 +37,24 @@ module.exports = function ( grunt ) {
 				files : {
 					expand  : true,
 					flatten : true,
-					src     : 'lib/css/*.css',
-					dest    : 'lib/css'
+					src     : ['assets/css/*.css'],
+					dest    : 'assets/css'
 				}
 
 			},
 
+			/**
+			 * Minify CSS
+			 */
 			cssmin : {
 
 				target : {
 
 					files : [{
 						expand : true,
-						cwd    : 'lib/css',
+						cwd    : 'assets/css',
 						src    : ['*.css'],
-						dest   : 'lib/css',
+						dest   : 'assets/css',
 						ext    : '.min.css'
 					}]
 
@@ -44,6 +62,9 @@ module.exports = function ( grunt ) {
 
 			},
 
+			/**
+			 * Process SASS files
+			 */
 			sass : {
 
 				dist : {
@@ -55,14 +76,16 @@ module.exports = function ( grunt ) {
 					},
 
 					files : {
-						'lib/css/master.css' : 'assets/scss/master.scss',
-						'lib/css/editor.css' : 'assets/scss/editor.scss'
+						'assets/css/style.css' : 'assets/sass/style.scss'
 					}
 
 				}
 
 			},
 
+			/**
+			 * Processes and compresses JavaScript.
+			 */
 			uglify : {
 
 				production : {
@@ -70,72 +93,133 @@ module.exports = function ( grunt ) {
 					options : {
 						beautify         : false,
 						preserveComments : false,
+						sourceMap        : false,
 						mangle           : {
 							except : ['jQuery']
 						}
 					},
 
 					files : {
-						'lib/js/footer.min.js' : [
-							'assets/js/progress.js',
-							'assets/js/skip-link-focus-fix.js',
-							'assets/js/scripts.js'
+						'assets/js/theme.min.js' : [
+							'assets/js/src/navigation.js',
+						    'assets/js/src/skip-link-focus-fix.js',
+							'assets/js/src/scripts.js'
 						]
 					}
-
 				},
 
-				development : {
+				dev : {
 
 					options : {
 						beautify         : true,
-						preserveComments : true
+						preserveComments : true,
+						sourceMap        : true,
+						mangle           : {
+							except : ['jQuery']
+						}
 					},
 
 					files : {
-						'lib/js/footer.js' : [
-							'assets/js/progress.js',
-							'assets/js/skip-link-focus-fix.js',
-							'assets/js/scripts.js'
+						'assets/js/theme.js' : [
+							'assets/js/src/navigation.js',
+							'assets/js/src/skip-link-focus-fix.js',
+							'assets/js/src/scripts.js'
 						]
 					}
-
 				}
 
 			},
 
+			/**
+			 * Update translation file.
+			 */
+			makepot : {
+
+				target : {
+					options : {
+						type       : 'wp-theme',
+						domainPath : '/languages',
+						mainFile   : 'style.css'
+					}
+				}
+			},
+
+			/**
+			 * Run PHP unit tests.
+			 */
+			phpunit : {
+
+				classes : {
+					dir : 'tests/'
+				},
+
+				options : {
+
+					bin        : './vendor/bin/phpunit',
+					testSuffix : 'Tests.php',
+					bootstrap  : 'bootstrap.php',
+					colors     : true
+
+				}
+			},
+
+			/**
+			 * Clean up the JavaScript
+			 */
+			jshint : {
+				options : {
+					jshintrc : true
+				},
+				all     : ['assets/js/src/*.js']
+			},
+
+			/**
+			 * A better browser reloader
+			 */
+			browserSync : {
+				bsFiles : {
+					src : 'assets/**/*.*'
+				},
+				options : {
+					proxy     : 'www.chriswiegman.pv',
+					watchTask : true
+				}
+			},
+
+			/**
+			 * Watch scripts and styles for changes
+			 */
 			watch : {
 
 				options : {
-					livereload : true
+					livereload : false
 				},
 
 				styles : {
 
 					files : [
-						'assets/scss/**/*'
+						'assets/sass/**/*'
 					],
 
-					tasks : ['sass', 'autoprefixer', 'cssmin']
+					tasks : ['clean:styles', 'sass', 'autoprefixer', 'cssmin']
 
 				},
 
 				scripts : {
 
 					files : [
-						'assets/js/**/*'
+						'assets/js/src/**/*.*'
 					],
 
-					tasks : ['uglify:development', 'uglify:production']
+					tasks : ['clean:scripts','uglify:production']
 
 				}
-
 			}
-
 		}
 	);
 
 	// A very basic default task.
-	grunt.registerTask ( 'default', ['clean', 'sass', 'autoprefixer', 'cssmin', 'uglify:development', 'uglify:production'] );
+	grunt.registerTask( 'default', ['phpunit', 'jshint', 'clean:styles', 'sass', 'autoprefixer', 'cssmin', 'phpunit', 'jshint', 'clean:scripts', 'uglify:production', 'uglify:dev', 'makepot'] );
+	grunt.registerTask( 'dev', ['default', 'browserSync', 'watch'] );
 
 };
