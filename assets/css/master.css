@@ -77,14 +77,8 @@ html {
   line-height: 1.625; }
 
 * {
-  /* apply a natural box layout model to all elements; see http://www.paulirish.com/2012/box-sizing-border-box-ftw/ */
-  /* Not needed for modern webkit but still used by Blackberry Browser 7.0; see http://caniuse.com/#search=box-sizing */
-  /* Still needed for Firefox 28; see http://caniuse.com/#search=box-sizing */
   box-sizing: border-box; }
   *:before, *:after {
-    /* apply a natural box layout model to all elements; see http://www.paulirish.com/2012/box-sizing-border-box-ftw/ */
-    /* Not needed for modern webkit but still used by Blackberry Browser 7.0; see http://caniuse.com/#search=box-sizing */
-    /* Still needed for Firefox 28; see http://caniuse.com/#search=box-sizing */
     box-sizing: border-box; }
 
 body {
@@ -2379,7 +2373,7 @@ dd {
 img {
   height: auto;
   -webkit-transition: 0.5s;
-  transition: 0.5s;
+          transition: 0.5s;
   max-width: 100%; }
 
 figure {
@@ -2409,7 +2403,7 @@ body {
     min-height: 300px;
     padding: 0;
     -webkit-transition: 0.5s;
-    transition: 0.5s;
+            transition: 0.5s;
     width: 100%; }
   #page .featured-image {
     text-align: center; }
@@ -2640,7 +2634,7 @@ a {
   border-bottom: 1px solid #fff;
   color: #e80;
   -webkit-transition: all .5s ease-in-out;
-  transition: all .5s ease-in-out;
+          transition: all .5s ease-in-out;
   text-decoration: none; }
   a img {
     border: none; }
@@ -2654,7 +2648,7 @@ a {
     text-decoration: none; }
   a:visited {
     -webkit-transition: all .5s ease-in-out;
-    transition: all .5s ease-in-out; }
+            transition: all .5s ease-in-out; }
 
 .main-navigation {
   font-weight: 400; }
@@ -2667,7 +2661,7 @@ a {
     padding: 15px 20px;
     position: relative;
     -webkit-transition: 0.5s;
-    transition: 0.5s; }
+            transition: 0.5s; }
     .main-navigation li ul li {
       padding: 5px 20px; }
   .main-navigation .current_page_item {
@@ -2863,31 +2857,31 @@ a {
 /**
  * Social Widget
  **/
-.CW_Social_Widget ul {
+.social-widget ul {
   margin: 0;
   padding: 0;
   text-align: center;
   width: 100%; }
-  .CW_Social_Widget ul li {
+  .social-widget ul li {
     display: inline-block;
     list-style-type: none;
     margin: 0 1px 0 1px !important;
     text-align: left; }
-    .CW_Social_Widget ul li.social-share a {
+    .social-widget ul li.social-share a {
       background-color: transparent;
       border: none;
       margin: 0 12px 0 0;
       padding: 0; }
-      .CW_Social_Widget ul li.social-share a:visited {
+      .social-widget ul li.social-share a:visited {
         background-color: transparent;
         border: none;
         margin: 0px 12px 0 0;
         padding: 0; }
-      .CW_Social_Widget ul li.social-share a:hover {
+      .social-widget ul li.social-share a:hover {
         background-color: transparent;
         color: #e80;
         border: none; }
-    .CW_Social_Widget ul li.social-share:hover a {
+    .social-widget ul li.social-share:hover a {
       background-color: transparent;
       color: #cf5300;
       border: none; }
@@ -2926,18 +2920,18 @@ a {
       padding: 0;
       word-wrap: break-word; }
 
-#gform_widget-2 {
+.gform_widget {
   background-color: #3e3e3e;
   color: #fff; }
-  #gform_widget-2 .widget-title {
+  .gform_widget .widget-title {
     color: #fff; }
-  #gform_widget-2 ul {
+  .gform_widget ul {
     margin: 0 !important; }
-  #gform_widget-2 form {
+  .gform_widget form {
     margin: 0;
     max-width: 100%; }
-    #gform_widget-2 form input[type=email],
-    #gform_widget-2 form input#subscribe-field {
+    .gform_widget form input[type=email],
+    .gform_widget form input#subscribe-field {
       background-color: #f8f8f8;
       border: 1px solid #eee;
       color: #999;
@@ -2946,18 +2940,18 @@ a {
       padding: 8px;
       padding: .5rem;
       width: 100%; }
-    #gform_widget-2 form input[type="submit"] {
+    .gform_widget form input[type="submit"] {
       text-transform: none !important;
       padding: 10px 10px 6px 10px; }
-    #gform_widget-2 form .gform_footer {
+    .gform_widget form .gform_footer {
       margin-top: 0; }
-    #gform_widget-2 form select {
+    .gform_widget form select {
       display: block;
       width: 100% !important; }
-    #gform_widget-2 form .gfield_label {
+    .gform_widget form .gfield_label {
       display: none;
       margin: 0; }
-  #gform_widget-2 .gforms_confirmation_message {
+  .gform_widget .gforms_confirmation_message {
     background-color: #3e3e3e;
     border: none; }
 
@@ -3313,25 +3307,25 @@ object {
   #page #intro {
     margin-top: 40px;
     -webkit-transition: 0.5s;
-    transition: 0.5s; }
+            transition: 0.5s; }
   #page .site-header {
     height: 40px;
     -webkit-transition: 0.5s;
-    transition: 0.5s; }
+            transition: 0.5s; }
     #page .site-header .site-branding {
       max-width: 270px;
       padding-top: 5px !important;
       -webkit-transition: 0.5s;
-      transition: 0.5s; }
+              transition: 0.5s; }
       #page .site-header .site-branding img {
         height: 80%;
         -webkit-transition: 0.5s;
-        transition: 0.5s;
+                transition: 0.5s;
         width: 80%; }
     #page .site-header .main-navigation {
       padding-top: 0 !important;
       -webkit-transition: 0.5s;
-      transition: 0.5s; }
+              transition: 0.5s; }
   #page .content-area {
     border-right: none;
     float: none;
