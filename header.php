@@ -4,9 +4,16 @@
  *
  * Displays all of the <head> section and everything up till <div id="content">
  *
- * @package ChrisWiegman
+ * @since   5.0.0
+ *
+ * @package CW\Theme\Templates\Header
+ *
+ * @author  Chris Wiegman <chris@chriswiegman.com>
  */
-?><!DOCTYPE html>
+
+namespace CW\Theme\Templates\Header;
+?>
+<!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
@@ -25,8 +32,8 @@ if ( is_home() && is_active_sidebar( 'intro' ) ) {
 	$intro_class = '';
 }
 ?>
-<div id="page" class="hfeed site <?php echo $intro_class; ?>">
-	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'chriswiegman' ); ?></a>
+<div id="page" class="hfeed site <?php echo esc_attr( $intro_class ); ?>">
+	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'chriswiegman' ); ?></a>
 
 	<?php
 	if ( is_user_logged_in() ) {
@@ -35,7 +42,7 @@ if ( is_home() && is_active_sidebar( 'intro' ) ) {
 		$hclass = '';
 	}
 	?>
-	<header id="masthead" class="<?php echo $hclass; ?>site-header" role="banner">
+	<header id="masthead" class="<?php echo esc_attr( $hclass ); ?>site-header" role="banner">
 		<div class="progress-wrap">
 			<div class="progress-indicator"></div>
 		</div>
@@ -46,7 +53,7 @@ if ( is_home() && is_active_sidebar( 'intro' ) ) {
 				</div>
 			</div>
 
-			<div class="menu-toggle"><?php _e( 'Menu', 'chriswiegman' ); ?></div>
+			<div class="menu-toggle"><?php esc_html_e( 'Menu', 'chriswiegman' ); ?></div>
 			<nav id="site-navigation" class="main-navigation" role="navigation">
 
 				<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>

@@ -1,9 +1,17 @@
 <?php
 /**
- * The template for displaying search results pages.
+ * The template for the search results page
  *
- * @package ChrisWiegman
+ * @since   5.0.0
+ *
+ * @package CW\Theme\Templates\Search
+ *
+ * @author  Chris Wiegman <chris@chriswiegman.com>
  */
+
+namespace CW\Theme\Templates\Search;
+
+use CW\Theme\Functions\Template_Tags;
 
 get_header(); ?>
 
@@ -25,16 +33,16 @@ get_header(); ?>
 				 * If you want to overload this in a child theme then include a file
 				 * called content-search.php and that will be used instead.
 				 */
-				get_template_part( 'content' );
+				get_template_part( 'template-parts/content' );
 				?>
 
 			<?php endwhile; ?>
 
-			<?php chriswiegman_paging_nav(); ?>
+			<?php Template_Tags\paging_nav(); ?>
 
 		<?php else : ?>
 
-			<?php get_template_part( 'content', 'none' ); ?>
+			<?php get_template_part( 'template-parts/content', 'none' ); ?>
 
 		<?php endif; ?>
 

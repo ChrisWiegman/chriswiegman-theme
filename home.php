@@ -4,12 +4,12 @@
  *
  * @since   5.0.0
  *
- * @package chriswiegman
+ * @package CW\Theme\Templates\Home
  *
  * @author  Chris Wiegman <chris@chriswiegman.com>
  */
 
-namespace CW\Theme\Templates;
+namespace CW\Theme\Templates\Home;
 
 use CW\Theme\Functions\Template_Tags;
 

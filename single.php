@@ -1,9 +1,17 @@
 <?php
 /**
- * The template for displaying all single posts.
+ * The template for all single posts
  *
- * @package ChrisWiegman
+ * @since   5.0.0
+ *
+ * @package CW\Theme\Templates\Single
+ *
+ * @author  Chris Wiegman <chris@chriswiegman.com>
  */
+
+namespace CW\Theme\Templates\Single;
+
+use CW\Theme\Functions\Template_Tags;
 
 get_header(); ?>
 
@@ -12,18 +20,18 @@ get_header(); ?>
 
 			<?php while ( have_posts() ) : the_post(); ?>
 
-				<?php get_template_part( 'content', 'single' ); ?>
+				<?php get_template_part( 'template-parts/content', 'single' ); ?>
 
 				<?php
 
 				do_action( 'cw_before_author' );
 
 				$links = array(
-					'facebook' => get_the_author_meta( 'facebook' ),
-					'github' => get_the_author_meta( 'github' ),
+					'facebook'  => get_the_author_meta( 'facebook' ),
+					'github'    => get_the_author_meta( 'github' ),
 					'wordpress' => get_the_author_meta( 'wordpress' ),
-					'twitter'  => get_the_author_meta( 'twitter' ),
-					'google'   => get_the_author_meta( 'googleplus' ),
+					'twitter'   => get_the_author_meta( 'twitter' ),
+					'google'    => get_the_author_meta( 'googleplus' ),
 				);
 
 				$profiles = array();
@@ -47,28 +55,28 @@ get_header(); ?>
 				echo get_avatar( get_the_author_meta( 'ID' ), 100 );
 
 				if ( strlen( get_the_author_meta( 'url' ) ) > 1 ) {
-					echo '<strong>About <a href="' . get_the_author_meta( 'url' ) . '" target="_blank" title="' . get_the_author_meta( 'website_title' ) . '">' . get_the_author_meta( 'display_name' ) . '</a></strong>' . PHP_EOL;
+					echo '<strong>About <a href="' . esc_url( get_the_author_meta( 'url' ) ) . '" target="_blank" title="' . esc_attr( get_the_author_meta( 'website_title' ) ) . '">' . esc_html( get_the_author_meta( 'display_name' ) ) . '</a></strong>' . PHP_EOL;
 				} else {
-					echo '<strong>About ' . get_the_author_meta( 'display_name' ) . '</strong>' . PHP_EOL;
+					echo '<strong>About ' . esc_html( get_the_author_meta( 'display_name' ) ) . '</strong>' . PHP_EOL;
 				}
 
-				echo '<p>' . get_the_author_meta( 'description' ) . '</p>' . PHP_EOL;
+				echo '<p>' . wp_kses_post( get_the_author_meta( 'description' ) ) . '</p>' . PHP_EOL;
 
-				if ( $profiles['facebook']['length'] > 1 || $profiles['linkedin']['length'] > 1 || $profiles['twitter']['length'] > 1 || $profiles['google']['length'] > 1 ) {
+				if ( 1 < $profiles['facebook']['length'] || 1 < $profiles['linkedin']['length'] || 1 < $profiles['twitter']['length'] || 1 < $profiles['google']['length'] ) {
 
-					if ( ( $profiles['facebook']['length'] <= 1 && $profiles['google']['length'] <= 1 && $profiles['linkedin']['length'] <= 1 ) && $profiles['twitter']['length'] > 1 ) {
-						echo '<p id="authcontact">Follow ' . get_the_author_meta( 'first_name' ) . ' on <a href="http://twitter.com/' . $profiles['twitter']['url'] . '" target="_blank" title="' . get_the_author_meta( 'display_name' ) . ' on Twitter">Twitter</a></p>' . PHP_EOL;
+					if ( ( 1 >= $profiles['facebook']['length'] && 1 >= $profiles['google']['length'] && 1 >= $profiles['linkedin']['length'] ) && 1 < $profiles['twitter']['length'] ) {
+						echo '<p id="authcontact">Follow ' . esc_attr( get_the_author_meta( 'first_name' ) ) . ' on <a href="http://twitter.com/' . $profiles['twitter']['url'] . '" target="_blank" title="' . esc_attr( get_the_author_meta( 'display_name' ) ) . ' on Twitter">Twitter</a></p>' . PHP_EOL;
 					} else {
 
-						echo '<p id="authcontact">Find ' . get_the_author_meta( 'first_name' ) . ' on ';
+						echo '<p id="authcontact">Find ' . esc_html( get_the_author_meta( 'first_name' ) ) . ' on ';
 
-						if ( $profiles['facebook']['length'] > 1 ) {
+						if ( 1 < $profiles['facebook']['length'] ) {
 
-							echo ' <a href="https://facebook.com/' . $profiles['facebook']['url'] . '" target="_blank" title="' . get_the_author_meta( 'display_name' ) . ' on Facebook">Facebook</a>';
+							echo ' <a href="https://facebook.com/' . $profiles['facebook']['url'] . '" target="_blank" title="' . esc_attr( get_the_author_meta( 'display_name' ) ) . ' on Facebook">Facebook</a>';
 
 						}
 
-						if ( $profiles['google']['length'] > 1 ) {
+						if ( 1 < $profiles['google']['length'] ) {
 
 							$comma = $profiles['facebook']['length'] > 1 ? ',' : '';
 							$and   = $profiles['facebook']['length'] > 1 && ( $profiles['github']['length'] <= 1 || $profiles['twitter']['length'] <= 1 ) ? ' and' : '';
@@ -76,7 +84,7 @@ get_header(); ?>
 
 						}
 
-						if ( $profiles['github']['length'] > 1 ) {
+						if ( 1 < $profiles['github']['length'] ) {
 
 							$comma = $profiles['facebook']['length'] > 1 || $profiles['google']['length'] > 1 ? ',' : '';
 							$and   = ( $profiles['facebook']['length'] > 1 || $profiles['google']['length'] > 1 ) && $profiles['twitter']['length'] <= 1 ? ' and' : '';
@@ -84,22 +92,21 @@ get_header(); ?>
 
 						}
 
-						if ( $profiles['wordpress']['length'] > 1 ) {
+						if ( 1 < $profiles['wordpress']['length'] ) {
 
-							$comma = $profiles['facebook']['length'] > 1 || $profiles['google']['length'] > 1  || $profiles['github']['length'] > 1 ? ',' : '';
+							$comma = $profiles['facebook']['length'] > 1 || $profiles['google']['length'] > 1 || $profiles['github']['length'] > 1 ? ',' : '';
 							$and   = ( $profiles['facebook']['length'] > 1 || $profiles['google']['length'] > 1 || $profiles['github']['length'] > 1 ) && $profiles['twitter']['length'] <= 1 ? ' and' : '';
 							echo $comma . $and . ' <a href="https://profiles.wordpress.org/' . $profiles['wordpress']['url'] . '" target="_blank" title="' . get_the_author_meta( 'display_name' ) . ' on WordPress.org">WordPress.org</a>';
 
 						}
 
-						if ( $profiles['twitter']['length'] > 1 ) {
+						if ( 1 < $profiles['twitter']['length'] ) {
 							echo ', and <a href="https://twitter.com/' . $profiles['twitter']['url'] . '" target="_blank" title="' . get_the_author_meta( 'display_name' ) . ' on Twitter">Twitter</a>';
 						}
 
 						echo '.</p>' . PHP_EOL;
 
 					}
-
 				}
 
 				echo '</div>' . PHP_EOL;
@@ -107,15 +114,16 @@ get_header(); ?>
 				?>
 
 				<?php
-				// If comments are open or we have at least one comment, load up the comment template
-				if ( comments_open() || '0' != get_comments_number() ) :
+				// If comments are open or we have at least one comment, load up the comment template.
+				if ( comments_open() || 0 !== get_comments_number() ) :
 					comments_template();
 				endif;
 				?>
 
-				<?php chriswiegman_post_nav(); ?>
+				<?php Template_Tags\post_nav(); ?>
 
-			<?php endwhile; // end of the loop. ?>
+			<?php endwhile; // End of the loop.
+			?>
 
 		</main>
 		<!-- #main -->

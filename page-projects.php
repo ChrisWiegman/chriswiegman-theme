@@ -1,14 +1,15 @@
 <?php
 /**
- * The template for displaying the projects.
+ * The template for the projects page
  *
- * This is the template that displays all pages by default.
- * Please note that this is the WordPress construct of pages
- * and that other 'pages' on your WordPress site will use a
- * different template.
+ * @since   5.0.0
  *
- * @package ChrisWiegman
+ * @package CW\Theme\Templates\Page\Projects
+ *
+ * @author  Chris Wiegman <chris@chriswiegman.com>
  */
+
+namespace CW\Theme\Templates\Page\Projects;
 
 get_header(); ?>
 
@@ -18,8 +19,8 @@ get_header(); ?>
 		<?php
 		while ( have_posts() ) {
 
-		the_post();
-		?>
+			the_post();
+			?>
 
 			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 				<header class="entry-header">
@@ -29,13 +30,15 @@ get_header(); ?>
 
 				<div class="entry-content">
 					<?php the_content(); ?>
-					<?php get_template_part( 'content', 'projects' ); ?>
-					<p class="projects-note">Note that "archived" projects are projects I am no longer involved in for one reason or another.</p>
+					<?php get_template_part( 'template-parts/content', 'projects' ); ?>
+					<p class="projects-note"><?php esc_html_e( 'Note that "archived" projects are projects I am no longer involved in for
+						one reason or another.', 'chriswiegman' ); ?></p>
 				</div>
 				<!-- .entry-content -->
 			</article><!-- #post-## -->
 
-		<?php } // end of the loop. ?>
+		<?php } // End of the loop.
+		?>
 
 	</main>
 	<!-- #main -->

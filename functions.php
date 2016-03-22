@@ -4,7 +4,7 @@
  *
  * @since   5.0.0
  *
- * @package CW\Theme\Functions
+ * @package CW\Theme
  *
  * @author  Chris Wiegman <chris@chriswiegman.com>
  */
