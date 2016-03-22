@@ -1,7 +1,15 @@
 <?php
 /**
- * @package ChrisWiegman
+ * The template used for displaying page content from projects
+ *
+ * @since   5.0.0
+ *
+ * @package CW\Theme\Templates\Parts\Content\Project
+ *
+ * @author  Chris Wiegman <chris@chriswiegman.com>
  */
+
+namespace CW\Theme\Templates\Parts\Content\Project;
 ?>
 
 <article id="project-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -24,15 +32,15 @@
 
 		<div class="entry-meta">
 			<span class="project-types">
-				<?php _e( 'Type: ', 'ChrisWiegman' ); ?>
+				<?php esc_html_e( 'Type: ', 'ChrisWiegman' ); ?>
 				<?php foreach ( $types as $type ) { ?>
-					<span class="project-type"><?php echo sanitize_text_field( $type->name ); ?></span>
+					<span class="project-type"><?php echo esc_html( $type->name ); ?></span>
 				<?php } ?>
 				</span>
 			<span class="project-statuses">
-				<?php _e( 'Status: ', 'ChrisWiegman' ); ?>
+				<?php esc_html_e( 'Status: ', 'ChrisWiegman' ); ?>
 				<?php foreach ( $statuses as $status ) { ?>
-					<span class="project-status"><?php echo sanitize_text_field( $status->name ); ?></span>
+					<span class="project-status"><?php echo esc_html( $status->name ); ?></span>
 				<?php } ?>
 			</span>
 		</div>
@@ -47,14 +55,16 @@
 
 		if ( $project_url ) {
 			?>
-			<a href="<?php echo $project_url; ?>" target="_blank">View the project Page</a>
-		<?php
+			<a href="<?php echo esc_url( $project_url ); ?>" target="_blank"><?php esc_html_e( 'View the project Page', 'chriswiegman' ); ?></a>
+			<?php
 		}
 
-		wp_link_pages( array(
-			               'before' => '<div class="page-links">' . __( 'Pages:', 'chriswiegman' ),
-			               'after'  => '</div>',
-		               ) );
+		wp_link_pages(
+			array(
+				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'chriswiegman' ),
+				'after'  => '</div>',
+			)
+		);
 		?>
 	</div>
 	<!-- .entry-content -->

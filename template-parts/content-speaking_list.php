@@ -1,9 +1,23 @@
-<li id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<?php
+/**
+ * The template used for displaying the speaking gig list
+ *
+ * @since   5.0.0
+ *
+ * @package CW\Theme\Templates\Parts\Content\Speaking_List
+ *
+ * @author  Chris Wiegman <chris@chriswiegman.com>
+ */
+
+namespace CW\Theme\Templates\Parts\Content\Speaking_List;
+
+?>
+
+<li id="post-<?php esc_attr( the_ID() ); ?>" <?php post_class(); ?>>
 
 	<?php
 
 	$title                 = get_the_title();
-	$permalink             = esc_url( get_permalink() );
 	$icon_raw              = get_post_meta( get_the_ID(), '_presentation_icon', true );
 	$icon                  = empty( $icon_raw ) ? 'comment' : esc_attr( $icon_raw );
 	$conference_name       = get_post_meta( get_the_ID(), '_conference_name', true );
@@ -15,14 +29,14 @@
 
 	?>
 
-	<span class="fa fa-<?php echo $icon; ?> fa-3x fa-fw fa-li"></span>
+	<span class="fa fa-<?php echo esc_attr( $icon ); ?> fa-3x fa-fw fa-li"></span>
 
 	<div class="entry-header">
 
 		<?php
-		if ( empty ( $slide_url ) ) {
+		if ( empty( $slide_url ) ) {
 
-			printf( '<h2 class="entry-title">%s</h2>', $title );
+			printf( '<h2 class="entry-title">%s</h2>', esc_html( $title ) );
 
 		} else {
 
@@ -41,11 +55,11 @@
 
 				if ( empty( $conference_url ) ) {
 
-					echo sanitize_text_field( $conference_name );
+					echo esc_html( $conference_name );
 
 				} else {
 
-					printf( '<a href="%s" title="%s" target="_blank">%s</a>', esc_url( $conference_url ), esc_attr( $conference_name ), sanitize_text_field( $conference_name ) );
+					printf( '<a href="%s" title="%s" target="_blank">%s</a>', esc_url( $conference_url ), esc_attr( $conference_name ), esc_html( $conference_name ) );
 
 				}
 
@@ -57,7 +71,7 @@
 
 				echo ' - <span class="speaking-date" >';
 
-				echo sanitize_text_field( $presentation_date );
+				echo esc_html( $presentation_date );
 
 				echo '</span >';
 			}
@@ -66,7 +80,7 @@
 
 				echo ' - <span class="speaking-location" >';
 
-				echo sanitize_text_field( $conference_location );
+				echo esc_html( $conference_location );
 
 				echo '</span >';
 			}

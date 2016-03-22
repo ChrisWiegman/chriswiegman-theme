@@ -1,4 +1,17 @@
-<li id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<?php
+/**
+ * The template used for displaying page content from projects
+ *
+ * @since   5.0.0
+ *
+ * @package CW\Theme\Templates\Parts\Content\Project_List
+ *
+ * @author  Chris Wiegman <chris@chriswiegman.com>
+ */
+
+namespace CW\Theme\Templates\Parts\Content\Project_List;
+?>
+<li id="post-<?php esc_attr( the_ID() ); ?>" <?php post_class(); ?>>
 
 	<?php
 
@@ -23,7 +36,7 @@
 
 	?>
 
-	<span class="fa fa-<?php echo $icon; ?> fa-3x fa-fw fa-li"></span>
+	<span class="fa fa-<?php echo esc_attr( $icon ); ?> fa-3x fa-fw fa-li"></span>
 
 	<div class="entry-header">
 
@@ -31,7 +44,7 @@
 
 		<div class="entry-meta">
 					<span class="project-types">
-						<?php _e( 'Type: ', 'ChrisWiegman' ); ?>
+						<?php esc_html_e( 'Type: ', 'ChrisWiegman' ); ?>
 						<?php foreach ( $types as $type ) { ?>
 							<?php
 							$term_link = get_term_link( $type );
@@ -40,11 +53,11 @@
 								continue;
 							}
 							?>
-							<span class="project-type"><?php echo sanitize_text_field( $type->name ); ?></span>
+							<span class="project-type"><?php echo esc_html( $type->name ); ?></span>
 						<?php } ?>
 					</span>
 					<span class="project-statuses">
-						<?php _e( 'Status: ', 'ChrisWiegman' ); ?>
+						<?php esc_html_e( 'Status: ', 'ChrisWiegman' ); ?>
 						<?php foreach ( $statuses as $status ) { ?>
 							<?php
 							$term_link = get_term_link( $status );
@@ -53,7 +66,7 @@
 								continue;
 							}
 							?>
-							<span class="project-status"><?php echo sanitize_text_field( $status->name ); ?></span>
+							<span class="project-status"><?php echo esc_html( $status->name ); ?></span>
 						<?php } ?>
 					</span>
 		</div>

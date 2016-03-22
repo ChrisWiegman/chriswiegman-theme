@@ -1,14 +1,22 @@
 <?php
 /**
- * @package ChrisWiegman
+ * The template used for displaying page content from projects
+ *
+ * @since   5.0.0
+ *
+ * @package CW\Theme\Templates\Parts\Content\Projects
+ *
+ * @author  Chris Wiegman <chris@chriswiegman.com>
  */
+
+namespace CW\Theme\Templates\Parts\Content\Projects;
 ?>
 <!-- begin .archive-projects-->
 <ul class="archive-projects fa-ul">
 
 	<?php
 	$args = array( 'post_type' => 'project' );
-	$loop = new WP_Query( $args );
+	$loop = new \WP_Query( $args );
 	?>
 
 	<?php
@@ -16,10 +24,9 @@
 
 		$loop->the_post();
 
-		get_template_part( 'content', 'project_list' );
+		get_template_part( 'template-parts/content', 'project_list' );
 
 	} ?>
-
 
 </ul>
 <!-- end .archive-projects-->
