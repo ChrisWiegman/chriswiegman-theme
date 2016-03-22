@@ -1,0 +1,259 @@
+.widget {
+
+	background-color: $white;
+	border:           1px solid $border-color;
+	margin:           0 0 2.5em;
+	padding:          15px;
+
+	select {
+		max-width: 100%;
+	}
+
+	.widget-title {
+		font-size:     24px;
+		font-size:     1.5rem;
+		margin-bottom: 1rem;
+	}
+
+	ul {
+
+		margin:  0 0 0 15px;
+		padding: 0px;
+
+		li {
+			list-style-type: circle;
+			margin-bottom:   6px;
+			padding:         0px;
+			word-wrap:       break-word;
+		}
+
+	}
+
+	.entry-content {
+
+		&:before,
+		&:after {
+			content: '';
+			display: inline;
+		}
+
+	}
+
+}
+
+#intro {
+
+	#intro-widget {
+
+		margin:     0 auto;
+		max-width:  1152px;
+		min-height: 300px;
+
+		.widget {
+			background-color: transparent;
+			border:           none;
+			color:            $light-grey;
+			display:          table-cell;
+			font-size:        24px;
+			font-size:        1.5rem;
+			padding:          40px 0 0;
+			vertical-align:   middle;
+		}
+
+	}
+
+}
+
+/**
+ * Social Widget
+ **/
+.social-widget {
+
+	ul {
+
+		margin:     0;
+		padding:    0;
+		text-align: center;
+		width:      100%;
+
+		li {
+
+			display:         inline-block;
+			list-style-type: none;
+			margin:          0 1px 0 1px !important;
+			text-align:      left;
+
+			&.social-share {
+
+				a {
+					background-color: transparent;
+					border:           none;
+					margin:           0 12px 0 0;
+					padding:          0;
+
+					&:visited {
+						background-color: transparent;
+						border:           none;
+						margin:           0px 12px 0 0;
+						padding:          0;
+					}
+
+					&:hover {
+						background-color: transparent;
+						color:            $light-orange;
+						border:           none;
+					}
+
+				}
+
+				&:hover {
+
+					a {
+						background-color: transparent;
+						color:            $orange;
+						border:           none;
+					}
+
+				}
+
+			}
+
+		}
+
+	}
+
+}
+
+/**
+ * Search widget
+ **/
+
+.widget_search .search-submit {
+	display: none;
+}
+
+/**
+ * Signup Widget
+ **/
+.sidebar {
+	display:     inline;
+	line-height: 1.5;
+}
+
+.widgettitle {
+	margin: 0 0 8px 0;
+	margin: 0 0 .5rem 0;
+}
+
+.sidebar {
+
+	margin-top: 40px;
+
+	p {
+		margin-bottom: 16px;
+	}
+
+	.widget {
+		background-color: $white;
+		margin-bottom:    40px;
+		overflow:         hidden;
+		padding:          16px;
+	}
+
+	&.widget-area ul {
+
+		padding: 0 24px;
+
+		li {
+			list-style-type: circle;
+			margin-bottom:   6px;
+			padding:         0;
+			word-wrap:       break-word;
+		}
+
+	}
+
+}
+
+//Subscription Widget
+.gform_widget {
+
+	background-color: $dark-grey;
+	color:            $white;
+
+	.widget-title {
+		color: $white;
+	}
+
+	ul {
+		margin: 0 !important;
+	}
+
+	form {
+
+		margin:    0;
+		max-width: 100%;
+
+		input[type=email],
+		input#subscribe-field {
+			background-color: $near-white;
+			border:           1px solid #eee;
+			color:            #999;
+			font-size:        16px;
+			font-size:        1rem;
+			padding:          8px;
+			padding:          .5rem;
+			width:            100%;
+		}
+
+		input[type="submit"] {
+			text-transform: none !important;
+			padding:        10px 10px 6px 10px;
+		}
+
+		.gform_footer {
+			margin-top: 0;
+		}
+
+		select {
+			display: block;
+			width:   100% !important;
+		}
+
+		.gfield_label {
+			display: none;
+			margin:  0;
+		}
+
+	}
+
+	.gforms_confirmation_message {
+		background-color: $dark-grey;
+		border:           none;
+	}
+
+}
+
+#cw_ad_widget-2 {
+
+	background-color: transparent;
+	border:           none;
+	text-align:       center;
+
+	a {
+		border-bottom: none;
+	}
+
+	img {
+		margin: 15px 0;
+	}
+
+	.left-image {
+		padding-right: 25px;
+	}
+
+	.right-image {
+		padding-left: 25px;
+	}
+
+}

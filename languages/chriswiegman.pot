@@ -1,0 +1,326 @@
+# Copyright (C) 2016 Chris Wiegman
+# This file is distributed under the GNU General Public License v2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: ChrisWiegman 5.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/theme/style\n"
+"POT-Creation-Date: 2016-03-22 01:29:09+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2016-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"X-Generator: grunt-wp-i18n 0.5.4\n"
+
+#: 404.php:23
+msgid "Oops! That page can&rsquo;t be found."
+msgstr ""
+
+#: 404.php:27
+msgid ""
+"It looks like nothing was found at this location. Maybe try one of the "
+"links below or a search?"
+msgstr ""
+
+#: 404.php:35
+msgid "Most Used Categories"
+msgstr ""
+
+#: 404.php:54
+#. translators: %1$s: smiley
+msgid "Try looking in the monthly archives. %1$s"
+msgstr ""
+
+#: archive.php:29
+msgid " Posts"
+msgstr ""
+
+#: archive.php:35
+msgid "Author: %s"
+msgstr ""
+
+#: archive.php:38
+msgid "Day: %s"
+msgstr ""
+
+#: archive.php:41
+msgid "Month: %s"
+msgstr ""
+
+#: archive.php:44
+msgid "Year: %s"
+msgstr ""
+
+#: archive.php:47
+msgid "Asides"
+msgstr ""
+
+#: archive.php:50
+msgid "Galleries"
+msgstr ""
+
+#: archive.php:53
+msgid "Images"
+msgstr ""
+
+#: archive.php:56
+msgid "Videos"
+msgstr ""
+
+#: archive.php:59
+msgid "Quotes"
+msgstr ""
+
+#: archive.php:62
+msgid "Links"
+msgstr ""
+
+#: archive.php:65
+msgid "Statuses"
+msgstr ""
+
+#: archive.php:68
+msgid "Audios"
+msgstr ""
+
+#: archive.php:71
+msgid "Chats"
+msgstr ""
+
+#: archive.php:74
+msgid "Archives"
+msgstr ""
+
+#: comments.php:30 comments.php:51
+msgid "Comment navigation"
+msgstr ""
+
+#: comments.php:33 comments.php:54
+msgid "&larr; Older Comments"
+msgstr ""
+
+#: comments.php:35 comments.php:56
+msgid "Newer Comments &rarr;"
+msgstr ""
+
+#: comments.php:66
+msgid "Comments are closed."
+msgstr ""
+
+#: footer.php:25
+msgid "Creative Commons Licensed"
+msgstr ""
+
+#: footer.php:26
+msgid "Powered by"
+msgstr ""
+
+#: header.php:36
+msgid "Skip to content"
+msgstr ""
+
+#: header.php:56
+msgid "Menu"
+msgstr ""
+
+#: includes/functions/core.php:37
+msgid "Primary Menu"
+msgstr ""
+
+#: includes/functions/core.php:38
+msgid "Footer Menu"
+msgstr ""
+
+#: includes/functions/core.php:89
+msgid "Sidebar"
+msgstr ""
+
+#: includes/functions/core.php:91
+msgid "The primary sidebar on the right side of most content."
+msgstr ""
+
+#: includes/functions/core.php:101
+msgid "Intro"
+msgstr ""
+
+#: includes/functions/core.php:103
+msgid "The intro area at the top of most pages."
+msgstr ""
+
+#: includes/functions/core.php:189
+msgid "All Posts"
+msgstr ""
+
+#: includes/functions/core.php:197
+msgid "All Comments"
+msgstr ""
+
+#: includes/functions/core.php:237
+msgid "Continue Reading %s"
+msgstr ""
+
+#: includes/functions/core.php:313
+msgid "Page %s"
+msgstr ""
+
+#: includes/functions/template-tags.php:39
+msgid "Posts navigation"
+msgstr ""
+
+#: includes/functions/template-tags.php:45
+msgid "%s Older posts"
+msgstr ""
+
+#: includes/functions/template-tags.php:50
+msgid "%s Newer posts"
+msgstr ""
+
+#: includes/functions/template-tags.php:79
+msgid "Post navigation"
+msgstr ""
+
+#: includes/functions/template-tags.php:134
+msgid "Leave a comment"
+msgstr ""
+
+#: includes/functions/template-tags.php:134
+#: includes/functions/template-tags.php:245
+#: includes/functions/template-tags.php:340
+msgid "1 Comment"
+msgstr ""
+
+#: includes/functions/template-tags.php:134
+#: includes/functions/template-tags.php:249
+#: includes/functions/template-tags.php:332
+msgid "% Comments"
+msgstr ""
+
+#: includes/functions/template-tags.php:146
+#: template-parts/content-archive.php:71
+msgid "Edit"
+msgstr ""
+
+#: includes/functions/template-tags.php:241
+#: includes/functions/template-tags.php:336
+msgid "No Comments"
+msgstr ""
+
+#: includes/functions/template-tags.php:253
+msgid "Comments Off"
+msgstr ""
+
+#: includes/functions/template-tags.php:263
+msgid "Enter your password to view comments."
+msgstr ""
+
+#: includes/functions/template-tags.php:307
+msgid "Comment on %s"
+msgstr ""
+
+#: page-projects.php:34
+msgid ""
+"Note that \"archived\" projects are projects I am no longer involved in for\n"
+"\t\t\t\t\t\tone reason or another."
+msgstr ""
+
+#: search.php:24
+msgid "Search Results for: %s"
+msgstr ""
+
+#: template-parts/content-archive.php:28 template-parts/content-archive.php:61
+#: template-parts/content-project.php:64 template-parts/content-single.php:45
+#: template-parts/content.php:56
+msgid "Pages:"
+msgstr ""
+
+#: template-parts/content-archive.php:33
+msgid "50 Latest Posts:"
+msgstr ""
+
+#: template-parts/content-archive.php:43
+msgid "Categories:"
+msgstr ""
+
+#: template-parts/content-archive.php:48
+msgid "Authors:"
+msgstr ""
+
+#: template-parts/content-none.php:17
+msgid "Nothing Found"
+msgstr ""
+
+#: template-parts/content-none.php:23
+msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+
+#: template-parts/content-none.php:27
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with some "
+"different keywords."
+msgstr ""
+
+#: template-parts/content-none.php:32
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
+msgstr ""
+
+#: template-parts/content-project.php:35
+#: template-parts/content-project_list.php:47
+msgid "Type: "
+msgstr ""
+
+#: template-parts/content-project.php:41
+#: template-parts/content-project_list.php:60
+msgid "Status: "
+msgstr ""
+
+#: template-parts/content-project.php:58
+msgid "View the project Page"
+msgstr ""
+
+#. Theme Name of the plugin/theme
+msgid "ChrisWiegman"
+msgstr ""
+
+#. Theme URI of the plugin/theme
+msgid "http://underscores.me/"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid "Theme for ChrisWiegman.com"
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Chris Wiegman"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "https://www.chriswiegman.com/"
+msgstr ""
+
+#: archive.php:41
+msgctxt "monthly archives date format"
+msgid "F Y"
+msgstr ""
+
+#: archive.php:44
+msgctxt "yearly archives date format"
+msgid "Y"
+msgstr ""
+
+#: includes/functions/template-tags.php:83
+msgctxt "Previous post link"
+msgid "<span class=\"meta-nav\">&larr;</span>&nbsp;%title"
+msgstr ""
+
+#: includes/functions/template-tags.php:84
+msgctxt "Next post link"
+msgid "%title&nbsp;<span class=\"meta-nav\">&rarr;</span>"
+msgstr ""
+
+#: includes/functions/template-tags.php:122
+msgctxt "post author"
+msgid " by %s"
+msgstr ""

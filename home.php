@@ -1,15 +1,17 @@
 <?php
 /**
- * The main template file.
+ * The template for displaying the homepage
  *
- * This is the most generic template file in a WordPress theme
- * and one of the two required files for a theme (the other being style.css).
- * It is used to display a page when nothing more specific matches a query.
- * E.g., it puts together the home page when no home.php file exists.
- * Learn more: http://codex.wordpress.org/Template_Hierarchy
+ * @since   5.0.0
  *
- * @package ChrisWiegman
+ * @package CW\Theme\Templates\Home
+ *
+ * @author  Chris Wiegman <chris@chriswiegman.com>
  */
+
+namespace CW\Theme\Templates\Home;
+
+use CW\Theme\Functions\Template_Tags;
 
 get_header(); ?>
 
@@ -27,16 +29,16 @@ get_header(); ?>
 				 * If you want to override this in a child theme, then include a file
 				 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
 				 */
-				get_template_part( 'content', get_post_format() );
+				get_template_part( 'template-parts/content', get_post_format() );
 				?>
 
 			<?php endwhile; ?>
 
-			<?php chriswiegman_paging_nav(); ?>
+			<?php Template_Tags\paging_nav(); ?>
 
 		<?php else : ?>
 
-			<?php get_template_part( 'content', 'none' ); ?>
+			<?php get_template_part( 'template-parts/content', 'none' ); ?>
 
 		<?php endif; ?>
 

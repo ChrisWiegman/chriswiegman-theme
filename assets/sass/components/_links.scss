@@ -1,0 +1,31 @@
+a {
+
+	border-bottom      : 1px solid $white;
+	color              : $light-orange;
+	transition         : all .5s ease-in-out;
+	text-decoration    : none;
+
+	img {
+		border : none;
+	}
+
+	&:focus {
+		outline : thin dotted $light-grey;
+	}
+
+	&:hover,
+	&:active {
+		outline : 0;
+	}
+
+	&:hover {
+		border-bottom   : 1px solid $orange;
+		color           : $orange;
+		text-decoration : none;
+	}
+
+	&:visited {
+		transition         : all .5s ease-in-out;
+	}
+
+}

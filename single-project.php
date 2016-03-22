@@ -1,14 +1,17 @@
 <?php
 /**
- * The template for displaying all projects.
+ * The template for all single projects
  *
- * This is the template that displays all pages by default.
- * Please note that this is the WordPress construct of pages
- * and that other 'pages' on your WordPress site will use a
- * different template.
+ * @since   5.0.0
  *
- * @package ChrisWiegman
+ * @package CW\Theme\Templates\Single\Project
+ *
+ * @author  Chris Wiegman <chris@chriswiegman.com>
  */
+
+namespace CW\Theme\Templates\Single\Project;
+
+use CW\Theme\Functions\Template_Tags;
 
 get_header(); ?>
 
@@ -17,11 +20,12 @@ get_header(); ?>
 
 		<?php while ( have_posts() ) : the_post(); ?>
 
-			<?php get_template_part( 'content', 'project' ); ?>
+			<?php get_template_part( 'template-parts/content', 'project' ); ?>
 
-			<?php chriswiegman_post_nav(); ?>
+			<?php Template_Tags\post_nav(); ?>
 
-		<?php endwhile; // end of the loop. ?>
+		<?php endwhile; // End of the loop.
+		?>
 
 	</main>
 	<!-- #main -->

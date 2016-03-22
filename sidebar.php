@@ -2,8 +2,14 @@
 /**
  * The sidebar containing the main widget area.
  *
- * @package ChrisWiegman
+ * @since   5.0.0
+ *
+ * @package CW\Theme\Templates\Siebar
+ *
+ * @author  Chris Wiegman <chris@chriswiegman.com>
  */
+
+namespace CW\Theme\Templates\Sidebar;
 
 if ( ! is_active_sidebar( 'sidebar' ) ) {
 	return;

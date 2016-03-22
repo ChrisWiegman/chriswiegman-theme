@@ -1,11 +1,15 @@
 <?php
 /**
- * The template for displaying the footer.
+ * The template for displaying archive pages.
  *
- * Contains the closing of the #content div and all content after
+ * @since   5.0.0
  *
- * @package ChrisWiegman
+ * @package CW\Theme\Templates\Footer
+ *
+ * @author  Chris Wiegman <chris@chriswiegman.com>
  */
+
+namespace CW\Theme\Templates\Footer;
 ?>
 
 </div><!-- #content -->
@@ -17,9 +21,9 @@
 		</div>
 		<!-- .site-info -->
 		<div class="site-info">
-			<span class="copyright">&copy; <?php echo date( 'Y', time() ); ?> Chris Wiegman</span> -
-			<span class="license"><a href="http://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">Creative Commons Licensed</a></span> -
-			<span class="poweredby">Powered by <a href="http://wordpress.org/" title="WordPress" target="_blank">WordPress</a></span>
+			<span class="copyright">&copy; <?php echo esc_html( date( 'Y', time() ) ); ?> Chris Wiegman</span> -
+			<span class="license"><a href="http://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank"><?php esc_html_e( 'Creative Commons Licensed', 'chriswiegman' ); ?></a></span> -
+			<span class="poweredby"><?php esc_html_e( 'Powered by', 'chriswiegman' ); ?> <a href="http://wordpress.org/" title="WordPress" target="_blank">WordPress</a></span>
 		</div>
 		<!-- .site-info -->
 	</div>

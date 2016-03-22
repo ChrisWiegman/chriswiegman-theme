@@ -1,14 +1,15 @@
 <?php
 /**
- * The template for displaying the speaking page.
+ * The template for the speaking page
  *
- * This is the template that displays all pages by default.
- * Please note that this is the WordPress construct of pages
- * and that other 'pages' on your WordPress site will use a
- * different template.
+ * @since   5.0.0
  *
- * @package ChrisWiegman
+ * @package CW\Theme\Templates\Page\Speaking
+ *
+ * @author  Chris Wiegman <chris@chriswiegman.com>
  */
+
+namespace CW\Theme\Templates\Page\Speaking;
 
 get_header(); ?>
 
@@ -29,12 +30,13 @@ get_header(); ?>
 
 				<div class="entry-content">
 					<?php the_content(); ?>
-					<?php get_template_part( 'content', 'speaking' ); ?>
+					<?php get_template_part( 'template-parts/content', 'speaking' ); ?>
 				</div>
 				<!-- .entry-content -->
 			</article><!-- #post-## -->
 
-		<?php } // end of the loop. ?>
+		<?php } // End of the loop.
+		?>
 
 	</main>
 	<!-- #main -->

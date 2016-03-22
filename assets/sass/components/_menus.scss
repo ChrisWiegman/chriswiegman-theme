@@ -1,0 +1,169 @@
+.main-navigation {
+
+	font-weight: 400;
+
+	ul {
+		list-style:   none;
+		margin:       0;
+		padding-left: 0;
+	}
+
+	li {
+
+		float:              left;
+		padding:            15px 20px;
+		position:           relative;
+		transition:         0.5s;
+
+		ul li {
+			padding: 5px 20px;
+		}
+
+	}
+
+	.current_page_item {
+
+		font-style: italic;
+
+		ul {
+			font-style: normal;
+		}
+
+	}
+
+	a {
+
+		border-bottom:   none;
+		color:           $text-color;
+		display:         block;
+		text-decoration: none;
+
+		&:hover {
+			color: $orange;
+		}
+
+	}
+
+	ul ul {
+
+		background-color: $white;
+		box-shadow:       0 3px 3px rgba(0, 0, 0, 0.2);
+		float:            left;
+		position:         absolute;
+		top:              3em;
+		left:             -999em;
+		z-index:          99999;
+
+		ul {
+			left: -999em;
+			top:  0;
+		}
+
+		a {
+			width: 200px;
+		}
+
+	}
+
+	ul {
+
+		li:hover > ul {
+			left: auto;
+		}
+
+		ul li:hover > ul {
+			left: 100%;
+		}
+
+	}
+
+}
+
+#menu-primary {
+	display: block;
+}
+
+/* Small menu */
+
+.menu-toggle {
+	display: none;
+}
+
+.site-main {
+
+	.comment-navigation,
+	.paging-navigation,
+	.post-navigation {
+		margin:         0 0 1.5em;
+		overflow:       hidden;
+		padding-bottom: 40px;
+	}
+
+}
+
+.paging-navigation {
+
+	a {
+		border-bottom: 1px solid $near-white;
+	}
+
+}
+
+.comment-navigation .nav-previous,
+.paging-navigation .nav-previous,
+.post-navigation .nav-previous {
+	float: left;
+	width: 50%;
+}
+
+.comment-navigation .nav-next,
+.paging-navigation .nav-next,
+.post-navigation .nav-next {
+	float:      right;
+	text-align: right;
+	width:      50%;
+}
+
+.footer-menu {
+
+	font-size:   1rem !important;
+	font-weight: bold;
+	margin:      10px 0;
+
+	ul {
+
+		list-style: none;
+		margin:     0 auto;
+
+		li {
+			display: inline;
+			margin:  0 10px;
+		}
+
+	}
+
+	a {
+		border-bottom: none !important;
+	}
+
+}
+
+.scrolled {
+
+	.main-navigation {
+
+		li {
+			padding: 5px 20px;
+		}
+
+		ul ul {
+
+			top:     2em;
+			left:    -999em;
+			z-index: 99999;
+
+		}
+
+	}
+
+}

@@ -2,8 +2,14 @@
 /**
  * The template for the archive page
  *
- * @package ChrisWiegman
+ * @since   5.0.0
+ *
+ * @package CW\Theme\Templates\Page\Archive
+ *
+ * @author  Chris Wiegman <chris@chriswiegman.com>
  */
+
+namespace CW\Theme\Templates\Page\Archive;
 
 get_header(); ?>
 
@@ -12,9 +18,10 @@ get_header(); ?>
 
 			<?php while ( have_posts() ) : the_post(); ?>
 
-				<?php get_template_part( 'content', 'archive' ); ?>
+				<?php get_template_part( 'template-parts/content', 'archive' ); ?>
 
-			<?php endwhile; // end of the loop. ?>
+			<?php endwhile; // End of the loop.
+			?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
