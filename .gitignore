@@ -1,4 +1,6 @@
 node_modules
 vendor
+!assets/css/vendor
+!assets/js/src/vendor
 .DS_Store
 composer.lock
