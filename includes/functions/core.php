@@ -54,6 +54,8 @@ function action_after_setup_theme() {
 		)
 	);
 
+	load_theme_textdomain( 'chriswiegman', CW_THEME_PATH . '/languages' );
+
 }
 
 /**
@@ -318,6 +320,24 @@ function filter_wp_title( $title, $sep ) {
 }
 
 /**
+ * Makes WP Theme available for translation.
+ *
+ * Translations can be added to the /lang directory.
+ * If you're building a theme based on WP Theme, use a find and replace
+ * to change 'wptheme' to the name of your theme in all template files.
+ *
+ * @uses  load_theme_textdomain() For translation/localization support.
+ *
+ * @since 0.1.0
+ *
+ * @return void
+ */
+function i18n() {
+
+
+}
+
+/**
  * Setup theme hooks.
  *
  * @since 5.0.0
@@ -326,23 +346,30 @@ function filter_wp_title( $title, $sep ) {
  */
 function init() {
 
+	$n = function ( $function ) {
+
+		return __NAMESPACE__ . "\\$function";
+
+	};
+
 	remove_action( 'wp_head', 'feed_links', 2 );
 	remove_action( 'wp_head', 'feed_links_extra', 3 );
 	remove_action( 'wp_head', 'rsd_link' );
 	remove_action( 'wp_head', 'wlwmanifest_link' );
 	remove_action( 'wp_head', 'wp_generator' );
 
-	add_action( 'after_setup_theme', 'CW\Theme\Functions\Core\action_after_setup_theme' );
-	add_filter( 'excerpt_more', 'CW\Theme\Functions\Core\filter_excerpt_more' );
-	add_action( 'init', 'CW\Theme\Functions\Core\action_init' );
-	add_action( 'widgets_init', 'CW\Theme\Functions\Core\action_widgets_init' );
-	add_action( 'wp', 'CW\Theme\Functions\Core\action_wp' );
-	add_action( 'wp_enqueue_scripts', 'CW\Theme\Functions\Core\action_wp_enqueue_scripts' );
-	add_action( 'wp_head', 'CW\Theme\Functions\Core\action_wp_head' );
+	add_action( 'after_setup_theme', $n( 'i18n' ) );
+	add_action( 'after_setup_theme', $n ( 'action_after_setup_theme' ) );
+	add_filter( 'excerpt_more', $n ( 'filter_excerpt_more' ) );
+	add_action( 'init', $n ( 'action_init' ) );
+	add_action( 'widgets_init', $n ( 'action_widgets_init' ) );
+	add_action( 'wp', $n ( 'action_wp' ) );
+	add_action( 'wp_enqueue_scripts', $n ( 'action_wp_enqueue_scripts' ) );
+	add_action( 'wp_head', $n ( 'action_wp_head' ) );
 
-	add_filter( 'body_class', 'CW\Theme\Functions\Core\filter_body_class' );
-	add_filter( 'wp_default_scripts', 'CW\Theme\Functions\Core\filter_wp_default_scripts' );
-	add_filter( 'wp_page_menu_args', 'CW\Theme\Functions\Core\filter_wp_page_menu_args' );
-	add_filter( 'wp_title', 'CW\Theme\Functions\Core\filter_wp_title', 10, 2 );
+	add_filter( 'body_class', $n ( 'filter_body_class' ) );
+	add_filter( 'wp_default_scripts', $n ( 'filter_wp_default_scripts' ) );
+	add_filter( 'wp_page_menu_args', $n ( 'filter_wp_page_menu_args' ) );
+	add_filter( 'wp_title', $n ( 'filter_wp_title' ), 10, 2 );
 
 }

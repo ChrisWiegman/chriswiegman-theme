@@ -20,6 +20,7 @@
 	},
 	"require-dev":       {
 		"phpunit/phpunit": "*@stable",
-		"10up/wp_mock":    "dev-master"
+		"10up/wp_mock":    "dev-master",
+		"banago/phploy":   "*@stable"
 	}
 }
