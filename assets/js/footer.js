@@ -121,23 +121,22 @@
     var g, h = navigator.userAgent, i = navigator.platform, j = h.match(/AppleWebKit\/([0-9]+)/), j = !!j && j[1], k = h.match(/Fennec\/([0-9]+)/), k = !!k && k[1], l = h.match(/Opera Mobi\/([0-9]+)/), m = !!l && l[1], n = h.match(/MSIE ([0-9]+)/), n = !!n && n[1];
     g = !((-1 < i.indexOf("iPhone") || -1 < i.indexOf("iPad") || -1 < i.indexOf("iPod")) && j && 534 > j || b.operamini && "[object OperaMini]" === {}.toString.call(b.operamini) || l && 7458 > m || -1 < h.indexOf("Android") && j && 533 > j || k && 6 > k || "palmGetResource" in b && j && 534 > j || -1 < h.indexOf("MeeGo") && -1 < h.indexOf("NokiaBrowser/8.5.0") || n && 6 >= n);
 }(jQuery, window), jQuery(document).ready(function(a) {
-    var b = a("body");
-    if (b.hasClass("single") || b.hasClass("page")) {
-        var c, d, e, f = a(window), g = a(".progress-indicator");
-        h(), i(), f.on("scroll", function() {
-            i();
-        }).on("resize", function() {
-            h(), i();
+    var b = a("body"), c = function() {
+        var b = a("article");
+        e = h.height(), f = b.height() + b.position().top, g = f - e;
+    }, d = function() {
+        var a = Math.max(0, Math.min(1, h.scrollTop() / g));
+        i.css({
+            width: 100 * a + "%"
         });
-        var h = function() {
-            var b = a("article");
-            c = f.height(), d = b.height() + b.position().top, e = d - c;
-        }, i = function() {
-            var a = Math.max(0, Math.min(1, f.scrollTop() / e));
-            g.css({
-                width: 100 * a + "%"
-            });
-        };
+    };
+    if (b.hasClass("single") || b.hasClass("page")) {
+        var e, f, g, h = a(window), i = a(".progress-indicator");
+        c(), d(), h.on("scroll", function() {
+            d();
+        }).on("resize", function() {
+            c(), d();
+        });
     }
 }), function() {
     var a = navigator.userAgent.toLowerCase().indexOf("webkit") > -1, b = navigator.userAgent.toLowerCase().indexOf("opera") > -1, c = navigator.userAgent.toLowerCase().indexOf("msie") > -1;
