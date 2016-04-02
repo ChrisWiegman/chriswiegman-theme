@@ -3314,7 +3314,7 @@ object {
             transition: 0.5s; }
     #page .site-header .site-branding {
       max-width: 270px;
-      padding-top: 5px !important;
+      padding-top: 10px !important;
       -webkit-transition: 0.5s;
               transition: 0.5s; }
       #page .site-header .site-branding img {
@@ -3326,6 +3326,8 @@ object {
       padding-top: 0 !important;
       -webkit-transition: 0.5s;
               transition: 0.5s; }
+    #page .site-header .progress-wrap .progress-indicator {
+      height: 40px; }
   #page .content-area {
     border-right: none;
     float: none;
@@ -3342,7 +3344,7 @@ object {
     color: #5f5f5f;
     display: inline-block;
     font-weight: 400;
-    padding: 5px 20px 0 0;
+    padding: 8px 20px 0 0;
     float: right; }
   .site-header .main-navigation {
     background-color: #fff;
@@ -3430,7 +3432,9 @@ object {
 @media screen and (max-width: 350px) {
   #page .site-header .site-branding {
     max-width: 60%;
-    padding-top: 10px !important; } }
+    padding-top: 5px !important; }
+  #page .site-header .menu-toggle {
+    padding: 8px 5px 0 0; } }
 
 @media print {
   body {

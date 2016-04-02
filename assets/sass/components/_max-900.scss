@@ -15,7 +15,7 @@
 			.site-branding {
 
 				max-width:          270px;
-				padding-top:        5px !important;
+				padding-top:        10px !important;
 				transition:         0.5s;
 
 				img {
@@ -29,6 +29,14 @@
 			.main-navigation {
 				padding-top:        0 !important;
 				transition:         0.5s;
+			}
+
+			.progress-wrap {
+
+				.progress-indicator {
+					height           : 40px;
+				}
+
 			}
 
 		}
@@ -63,7 +71,7 @@
 			color:       $text-color;
 			display:     inline-block;
 			font-weight: 400;
-			padding:     5px 20px 0 0;
+			padding:     8px 20px 0 0;
 			float:       right;
 		}
 
