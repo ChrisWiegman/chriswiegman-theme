@@ -4,3 +4,4 @@ vendor
 !assets/js/src/vendor
 .DS_Store
 composer.lock
+deploy.ini
