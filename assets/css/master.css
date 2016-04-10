@@ -2388,7 +2388,7 @@ th {
 
 html,
 body {
-  background-color: #f2f2f2; }
+  background-color: #356; }
 
 #page {
   margin: 0 auto; }
@@ -2818,8 +2818,7 @@ a {
   clear: both; }
 
 .widget {
-  background-color: #fff;
-  border: 1px solid #ddd;
+  background-color: #efefef;
   margin: 0 0 2.5em;
   padding: 15px; }
   .widget select {
@@ -3046,13 +3045,7 @@ h1.page-title {
 .single .site-main,
 .page .site-main {
   background-color: #fff;
-  border: 1px solid #ddd;
   margin-bottom: 2.5rem; }
-
-.home .hentry,
-.search .hentry,
-.journal .hentry {
-  border: 1px solid #ddd; }
 
 .post-navigation {
   padding: 0 40px; }
