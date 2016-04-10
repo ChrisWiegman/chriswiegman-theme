@@ -2359,6 +2359,7 @@ dd {
 
 img {
   height: auto;
+  margin: 0 1em 1em 0;
   -webkit-transition: 0.5s;
           transition: 0.5s;
   max-width: 100%; }
@@ -2397,7 +2398,7 @@ body {
   #page .site-content {
     margin: 0 auto;
     overflow: hidden;
-    padding-top: 123px; }
+    padding-top: 56px; }
   #page .site-header {
     background-color: #fff;
     border-bottom: 1px solid #ebebeb;
@@ -2425,15 +2426,13 @@ body {
       max-width: 1152px; }
       #page .site-header .wrap .site-branding {
         float: left;
-        max-width: 270px;
-        padding-top: 5px; }
+        margin-left: 20px;
+        max-width: 200px;
+        padding-top: 8px; }
         #page .site-header .wrap .site-branding a {
           border-bottom: none; }
           #page .site-header .wrap .site-branding a:hover {
             border-bottom: none; }
-        #page .site-header .wrap .site-branding img {
-          height: 80%;
-          width: 80%; }
       #page .site-header .wrap .main-navigation {
         float: right;
         padding-top: 0; }
@@ -3217,11 +3216,6 @@ object {
     max-width: 99%;
     -webkit-transition: 0.5s;
             transition: 0.5s; }
-  #page .site-header .site-branding,
-  #page .site-header .main-navigation {
-    padding: 0 20px;
-    -webkit-transition: 0.5s;
-            transition: 0.5s; }
   .paging-navigation {
     padding-left: 20px;
     padding-right: 20px; }
@@ -3250,7 +3244,8 @@ object {
     float: none;
     width: 100%; }
   #page .site-content {
-    padding-top: 80px; }
+    padding-top: 80px;
+    max-width: 100%; }
     #page .site-content .widget-area {
       border-left: none;
       float: none;
@@ -3343,9 +3338,6 @@ object {
                     outline: thin dotted #ebebeb; } }
 
 @media screen and (max-width: 350px) {
-  #page .site-header .site-branding {
-    max-width: 60%;
-    padding-top: 5px !important; }
   #page .site-header .menu-toggle {
     padding: 8px 5px 0 0; } }
 
