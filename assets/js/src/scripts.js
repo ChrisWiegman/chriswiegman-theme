@@ -20,42 +20,6 @@ jQuery( document ).ready( function ( $ ) {
 
 	} );
 
-	var header   = $( '.site-header, .progress-indicator' );
-
-	//Add correct class to header on load
-	if ( $( this ).scrollTop() > 10 ) {
-
-		if ( ! header.hasClass( 'scrolled' ) ) {
-			header.addClass( 'scrolled' );
-		}
-
-	} else {
-
-		if ( header.hasClass( 'scrolled' ) ) {
-			header.removeClass( 'scrolled' );
-		}
-
-	}
-
-	//Add or removed header class on scroll
-	$( window ).scroll( function () {
-
-		if ( $( this ).scrollTop() > 55 ) {
-
-			if ( ! header.hasClass( 'scrolled' ) ) {
-				header.addClass( 'scrolled' );
-			}
-
-		} else {
-
-			if ( header.hasClass( 'scrolled' ) ) {
-				header.removeClass( 'scrolled' );
-			}
-
-		}
-
-	} );
-
 	var maxHeight     = 0;
 	var softwareShort = $( '.software-short' );
 
@@ -70,29 +34,3 @@ jQuery( document ).ready( function ( $ ) {
 	softwareShort.height( maxHeight );
 
 } );
-
-/**
- * Removes inline styles from element
- *
- * @param            style    Name of style to remove
- * @return string    Inline styles without removed element
- */
-jQuery.fn.removeStyle = function ( style ) {
-
-	var search = new RegExp( style + '[^;]+;?', 'g' );
-
-	return this.each( function () {
-
-		$( this ).attr( 'style', function ( i, style ) {
-
-			try {
-				return style.replace( search, '' );
-			} catch ( e ) {
-				return '';
-			}
-
-		} );
-
-	} );
-};
-

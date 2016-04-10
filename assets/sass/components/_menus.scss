@@ -1,6 +1,6 @@
 .main-navigation {
 
-	font-weight: 400;
+	font-weight: 700;
 
 	ul {
 
@@ -27,6 +27,11 @@
 			padding: 5px 20px;
 		}
 
+	}
+
+	li.social-share {
+		margin:  0;
+		padding: 4px 5px;
 	}
 
 	.current_page_item {
@@ -112,7 +117,7 @@
 .paging-navigation {
 
 	a {
-		border-bottom: 1px solid $near-white;
+		border-bottom: none;
 	}
 
 }
@@ -152,26 +157,6 @@
 
 	a {
 		border-bottom: none !important;
-	}
-
-}
-
-.scrolled {
-
-	.main-navigation {
-
-		li {
-			padding: 5px 20px;
-		}
-
-		ul ul {
-
-			top:     2em;
-			left:    -999em;
-			z-index: 99999;
-
-		}
-
 	}
 
 }
