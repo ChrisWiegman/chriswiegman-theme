@@ -2426,16 +2426,17 @@ body {
       max-width: 1152px; }
       #page .site-header .wrap .site-branding {
         float: left;
-        margin-left: 20px;
-        max-width: 200px;
+        max-width: 20%;
         padding-top: 8px; }
         #page .site-header .wrap .site-branding a {
           border-bottom: none; }
           #page .site-header .wrap .site-branding a:hover {
             border-bottom: none; }
       #page .site-header .wrap .main-navigation {
-        float: right;
-        padding-top: 0; }
+        float: left;
+        max-width: 80%;
+        padding-top: 0;
+        width: 100%; }
   #page .top-padding {
     top: 32px; }
   #page .content-area {
@@ -2641,6 +2642,7 @@ a {
     .main-navigation li ul li {
       padding: 5px 20px; }
   .main-navigation li.social-share {
+    float: right;
     margin: 0;
     padding: 4px 5px; }
   .main-navigation .current_page_item {
@@ -3223,6 +3225,13 @@ object {
     -webkit-transition: 0.5s;
             transition: 0.5s; } }
 
+@media screen and (max-width: 1172px) {
+  #page .site-header .wrap .site-branding {
+    margin-left: 20px;
+    max-width: 200px; }
+  #page .site-header .wrap .main-navigation {
+    max-width: 75%; } }
+
 @media screen and (max-width: 1152px) {
   .hentry {
     border-left: none; }
@@ -3245,34 +3254,40 @@ object {
       border-left: none;
       float: none;
       width: 100%; }
-  #menu-primary {
+  #page #menu-primary {
     display: none; }
-  .site-header .menu-toggle {
+  #page .site-header .wrap .menu-toggle {
     color: #5f5f5f;
     display: inline-block;
     font-weight: 400;
     padding: 8px 20px 0 0;
     float: right; }
-  .site-header .main-navigation {
+  #page .site-header .wrap .main-navigation {
     background-color: #fff;
     color: #5f5f5f;
     clear: both;
     float: none;
     margin: 0;
+    max-width: 100%;
     padding: 0;
     position: absolute;
     overflow: hidden;
     top: 39px;
     width: 100%; }
-    .site-header .main-navigation li {
+    #page .site-header .wrap .main-navigation li {
       padding: 2px 0 2px 10px;
       -webkit-transition: 0.5s;
               transition: 0.5s;
       width: 100%; }
-    .site-header .main-navigation ul {
+    #page .site-header .wrap .main-navigation li.social-share {
+      clear: none !important;
+      float: left;
+      margin: 4px 4px 8px 4px;
+      width: 30px; }
+    #page .site-header .wrap .main-navigation ul {
       float: none;
       width: 100%; }
-      .site-header .main-navigation ul ul {
+      #page .site-header .wrap .main-navigation ul ul {
         box-shadow: none;
         float: none;
         left: -999em;

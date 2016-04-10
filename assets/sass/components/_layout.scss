@@ -67,8 +67,7 @@ body {
 			.site-branding {
 
 				float:       left;
-				margin-left: 20px;
-				max-width:   200px;
+				max-width:   20%;
 				padding-top: 8px;
 
 				a {
@@ -84,8 +83,10 @@ body {
 			}
 
 			.main-navigation {
-				float:       right;
+				float:       left;
+				max-width:   80%;
 				padding-top: 0;
+				width:       100%;
 			}
 
 		}
