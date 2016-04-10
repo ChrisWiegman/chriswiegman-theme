@@ -1,7 +1,7 @@
 .widget {
 
 	background-color: $widget-background;
-	margin:           0 0 2.5em;
+	margin:           0 0 1em;
 	padding:          15px;
 
 	select {
@@ -9,7 +9,7 @@
 	}
 
 	.widget-title {
-		font-size:     24px;
+		border-bottom: 1px solid $border-color;
 		font-size:     1.5rem;
 		margin-bottom: 1rem;
 	}
@@ -53,7 +53,6 @@
 			border:           none;
 			color:            $light-grey;
 			display:          table-cell;
-			font-size:        24px;
 			font-size:        1.5rem;
 			padding:          40px 0 0;
 			vertical-align:   middle;
@@ -140,7 +139,6 @@
 }
 
 .widgettitle {
-	margin: 0 0 8px 0;
 	margin: 0 0 .5rem 0;
 }
 
@@ -177,13 +175,6 @@
 //Subscription Widget
 .gform_widget {
 
-	background-color: $dark-grey;
-	color:            $white;
-
-	.widget-title {
-		color: $white;
-	}
-
 	ul {
 		margin: 0 !important;
 	}
@@ -198,9 +189,7 @@
 			background-color: $near-white;
 			border:           1px solid #eee;
 			color:            #999;
-			font-size:        16px;
 			font-size:        1rem;
-			padding:          8px;
 			padding:          .5rem;
 			width:            100%;
 		}
@@ -229,30 +218,6 @@
 	.gforms_confirmation_message {
 		background-color: $dark-grey;
 		border:           none;
-	}
-
-}
-
-#cw_ad_widget-2 {
-
-	background-color: transparent;
-	border:           none;
-	text-align:       center;
-
-	a {
-		border-bottom: none;
-	}
-
-	img {
-		margin: 15px 0;
-	}
-
-	.left-image {
-		padding-right: 25px;
-	}
-
-	.right-image {
-		padding-left: 25px;
 	}
 
 }

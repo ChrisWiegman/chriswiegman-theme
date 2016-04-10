@@ -2220,59 +2220,46 @@ h6 {
   line-height: 1.2; }
 
 h1 {
-  font-size: 36px;
   font-size: 2.25rem; }
 
 .page .entry-title {
   border-bottom: 1px solid #f8f8f8;
   clear: both;
   line-height: 1.4;
-  margin-bottom: 24px;
   margin-bottom: 1.5rem; }
   .page .entry-title a {
     border-bottom: 1px solid #f8f8f8;
     clear: both;
     line-height: 1.5;
-    margin-bottom: 24px;
     margin-bottom: 1.5rem; }
 
 .software .entry-title, .error404 .entry-title, .software .entry-title a {
   border-bottom: 1px solid #ddd;
   clear: both;
   line-height: 1.5;
-  margin-bottom: 24px;
   margin-bottom: 1.5rem; }
 
 blockquote::before {
-  font-size: 32px;
   font-size: 2rem; }
 
 h2 {
-  font-size: 30px;
   font-size: 1.875rem; }
   h2.software-category {
-    font-size: 26px;
     font-size: 1.625rem;
-    margin-bottom: 20px;
     margin-bottom: 1.25rem;
     width: auto; }
 
 h3 {
-  font-size: 24px;
   font-size: 1.5rem; }
 
 h4, .archive-title, .taxonomy-description h1 {
-  font-size: 24px;
   font-size: 1.5rem;
-  padding-bottom: 16px;
   padding-bottom: 1rem; }
 
 h5 {
-  font-size: 18px;
   font-size: 1.125rem; }
 
 h6, .author-box h1, .sidebar h2 a {
-  font-size: 16px;
   font-size: 1rem; }
 
 p {
@@ -2399,7 +2386,7 @@ body {
     background-position: center;
     background-size: cover;
     clear: both;
-    margin-top: 80px;
+    margin-top: 40px;
     min-height: 300px;
     padding: 0;
     -webkit-transition: 0.5s;
@@ -2414,7 +2401,7 @@ body {
   #page .site-header {
     background-color: #fff;
     border-bottom: 1px solid #ebebeb;
-    height: 80px;
+    height: 40px;
     overflow: visible;
     position: fixed;
     top: 0;
@@ -2428,7 +2415,7 @@ body {
       #page .site-header .progress-wrap .progress-indicator {
         background-color: #999;
         display: block;
-        height: 80px;
+        height: 40px;
         opacity: 0.2;
         position: absolute;
         -webkit-transition: height 0.5s;
@@ -2439,31 +2426,25 @@ body {
       #page .site-header .wrap .site-branding {
         float: left;
         max-width: 270px;
-        padding-top: 20px; }
+        padding-top: 5px; }
         #page .site-header .wrap .site-branding a {
           border-bottom: none; }
           #page .site-header .wrap .site-branding a:hover {
             border-bottom: none; }
+        #page .site-header .wrap .site-branding img {
+          height: 80%;
+          width: 80%; }
       #page .site-header .wrap .main-navigation {
         float: right;
-        padding-top: 10px; }
+        padding-top: 0; }
   #page .top-padding {
     top: 32px; }
-  #page .scrolled {
-    height: 40px !important; }
-    #page .scrolled .site-branding {
-      padding-top: 5px !important; }
-      #page .scrolled .site-branding img {
-        height: 80%;
-        width: 80%; }
-    #page .scrolled .main-navigation {
-      padding-top: 0 !important; }
   #page .content-area {
     float: left;
     width: 66%; }
   #page .site-content .widget-area {
     float: right;
-    width: 30%; }
+    width: 33%; }
   #page .site-footer {
     background-color: #3e3e3e;
     color: #ebebeb;
@@ -2482,12 +2463,11 @@ body {
       margin: 10px 0; }
 
 .home #page.has-intro .site-content {
-  padding-top: 43px; }
+  padding-top: 1em; }
 
 input, select, textarea {
   background-color: #f8f8f8;
   border: 1px solid #ebebeb;
-  font-size: 18px;
   font-size: 1.125rem;
   padding: 8px;
   width: 100%; }
@@ -2504,10 +2484,8 @@ button {
   border: none;
   color: #fff !important;
   cursor: pointer;
-  font-size: 18px;
   font-size: 1.125rem;
   font-weight: 700;
-  line-height: 18px;
   line-height: 1.125rem;
   padding: 8px;
   text-decoration: none;
@@ -2519,10 +2497,8 @@ input[type="button"], input[type="submit"] {
   border: none;
   color: #fff !important;
   cursor: pointer;
-  font-size: 18px;
   font-size: 1.125rem;
   font-weight: 700;
-  line-height: 18px;
   line-height: 1.125rem;
   padding: 8px;
   text-decoration: none;
@@ -2534,10 +2510,8 @@ input[type="button"], input[type="submit"] {
   border: none;
   color: #fff !important;
   cursor: pointer;
-  font-size: 18px;
   font-size: 1.125rem;
   font-weight: 700;
-  line-height: 18px;
   line-height: 1.125rem;
   padding: 8px;
   text-decoration: none;
@@ -2586,7 +2560,6 @@ input:hover[type="button"], input:hover[type="submit"] {
   .gform_wrapper textarea,
   .gform_wrapper .ginput_complex label,
   .gform_wrapper .gfield_description {
-    font-size: 16px !important;
     font-size: 1rem !important;
     padding: 8px !important;
     width: 98%; }
@@ -2656,9 +2629,13 @@ a {
     list-style: none;
     margin: 0;
     padding-left: 0; }
+    .main-navigation ul ul {
+      top: 2em;
+      left: -999em;
+      z-index: 99999; }
   .main-navigation li {
     float: left;
-    padding: 15px 20px;
+    padding: 8px 20px;
     position: relative;
     -webkit-transition: 0.5s;
             transition: 0.5s; }
@@ -2818,13 +2795,13 @@ a {
   clear: both; }
 
 .widget {
-  background-color: #efefef;
-  margin: 0 0 2.5em;
+  background-color: #ebebeb;
+  margin: 0 0 1em;
   padding: 15px; }
   .widget select {
     max-width: 100%; }
   .widget .widget-title {
-    font-size: 24px;
+    border-bottom: 1px solid #ddd;
     font-size: 1.5rem;
     margin-bottom: 1rem; }
   .widget ul {
@@ -2848,7 +2825,6 @@ a {
     border: none;
     color: #ebebeb;
     display: table-cell;
-    font-size: 24px;
     font-size: 1.5rem;
     padding: 40px 0 0;
     vertical-align: middle; }
@@ -2899,7 +2875,6 @@ a {
   line-height: 1.5; }
 
 .widgettitle {
-  margin: 0 0 8px 0;
   margin: 0 0 .5rem 0; }
 
 .sidebar {
@@ -2919,53 +2894,35 @@ a {
       padding: 0;
       word-wrap: break-word; }
 
-.gform_widget {
-  background-color: #3e3e3e;
-  color: #fff; }
-  .gform_widget .widget-title {
-    color: #fff; }
-  .gform_widget ul {
-    margin: 0 !important; }
-  .gform_widget form {
-    margin: 0;
-    max-width: 100%; }
-    .gform_widget form input[type=email],
-    .gform_widget form input#subscribe-field {
-      background-color: #f8f8f8;
-      border: 1px solid #eee;
-      color: #999;
-      font-size: 16px;
-      font-size: 1rem;
-      padding: 8px;
-      padding: .5rem;
-      width: 100%; }
-    .gform_widget form input[type="submit"] {
-      text-transform: none !important;
-      padding: 10px 10px 6px 10px; }
-    .gform_widget form .gform_footer {
-      margin-top: 0; }
-    .gform_widget form select {
-      display: block;
-      width: 100% !important; }
-    .gform_widget form .gfield_label {
-      display: none;
-      margin: 0; }
-  .gform_widget .gforms_confirmation_message {
-    background-color: #3e3e3e;
-    border: none; }
+.gform_widget ul {
+  margin: 0 !important; }
 
-#cw_ad_widget-2 {
-  background-color: transparent;
-  border: none;
-  text-align: center; }
-  #cw_ad_widget-2 a {
-    border-bottom: none; }
-  #cw_ad_widget-2 img {
-    margin: 15px 0; }
-  #cw_ad_widget-2 .left-image {
-    padding-right: 25px; }
-  #cw_ad_widget-2 .right-image {
-    padding-left: 25px; }
+.gform_widget form {
+  margin: 0;
+  max-width: 100%; }
+  .gform_widget form input[type=email],
+  .gform_widget form input#subscribe-field {
+    background-color: #f8f8f8;
+    border: 1px solid #eee;
+    color: #999;
+    font-size: 1rem;
+    padding: .5rem;
+    width: 100%; }
+  .gform_widget form input[type="submit"] {
+    text-transform: none !important;
+    padding: 10px 10px 6px 10px; }
+  .gform_widget form .gform_footer {
+    margin-top: 0; }
+  .gform_widget form select {
+    display: block;
+    width: 100% !important; }
+  .gform_widget form .gfield_label {
+    display: none;
+    margin: 0; }
+
+.gform_widget .gforms_confirmation_message {
+  background-color: #3e3e3e;
+  border: none; }
 
 /*--------------------------------------------------------------
 0.1 Posts and pages
@@ -2975,13 +2932,11 @@ h1.page-title {
 
 .hentry {
   background-color: #fff;
-  font-size: 22px;
   font-size: 1.375rem;
   line-height: 1.6;
-  margin: 0 0 2.5rem 0;
+  margin: 0 0 1rem 0;
   padding: 0; }
   .hentry .gist {
-    font-size: 14px;
     font-size: 0.875rem;
     line-height: 1.4; }
   .hentry a.post-header-image {
@@ -2995,7 +2950,6 @@ h1.page-title {
     .hentry .entry-header .comments-link {
       float: right; }
     .hentry .entry-header .entry-title {
-      font-size: 36px;
       font-size: 2.25rem;
       font-weight: 300; }
       .hentry .entry-header .entry-title a {
@@ -3008,7 +2962,6 @@ h1.page-title {
   .hentry .entry-meta,
   .hentry .entry-footer {
     color: #999;
-    font-size: 16px;
     font-size: 1rem; }
   .hentry .updated {
     display: none; }
@@ -3034,7 +2987,6 @@ h1.page-title {
     border-bottom: none;
     clear: both;
     display: block;
-    font-size: 16px;
     font-size: 1rem;
     margin-top: 40px; }
     .hentry .more-link:hover {
@@ -3137,7 +3089,6 @@ ul.archive-projects {
   margin-left: 60px;
   padding: 0 40px; }
   ul.archive-projects li {
-    font-size: 16px;
     font-size: 1rem;
     margin: 0; }
     ul.archive-projects li .fa {
@@ -3147,7 +3098,6 @@ ul.archive-projects {
       padding: 0; }
       ul.archive-projects li .entry-header .entry-title {
         border-bottom: none;
-        font-size: 22px;
         font-size: 1.375rem;
         margin-bottom: 0; }
         ul.archive-projects li .entry-header .entry-title a {
@@ -3172,7 +3122,6 @@ ul.archive-speaking {
   margin-left: 60px;
   padding: 0 40px; }
   ul.archive-speaking li {
-    font-size: 16px;
     font-size: 1rem;
     margin: 0; }
     ul.archive-speaking li .fa {
@@ -3182,7 +3131,6 @@ ul.archive-speaking {
       padding: 0; }
       ul.archive-speaking li .entry-header .entry-title {
         border-bottom: none;
-        font-size: 22px;
         font-size: 1.375rem;
         margin-bottom: 0; }
         ul.archive-speaking li .entry-header .entry-title a {
@@ -3297,30 +3245,6 @@ object {
     padding-left: 0; } }
 
 @media screen and (max-width: 900px) {
-  #page #intro {
-    margin-top: 40px;
-    -webkit-transition: 0.5s;
-            transition: 0.5s; }
-  #page .site-header {
-    height: 40px;
-    -webkit-transition: 0.5s;
-            transition: 0.5s; }
-    #page .site-header .site-branding {
-      max-width: 270px;
-      padding-top: 10px !important;
-      -webkit-transition: 0.5s;
-              transition: 0.5s; }
-      #page .site-header .site-branding img {
-        height: 80%;
-        -webkit-transition: 0.5s;
-                transition: 0.5s;
-        width: 80%; }
-    #page .site-header .main-navigation {
-      padding-top: 0 !important;
-      -webkit-transition: 0.5s;
-              transition: 0.5s; }
-    #page .site-header .progress-wrap .progress-indicator {
-      height: 40px; }
   #page .content-area {
     border-right: none;
     float: none;
@@ -3382,11 +3306,7 @@ object {
     float: none;
     width: 100%; }
   #intro .widget {
-    font-size: 24px;
     font-size: 1.5rem; }
-  #page .site-header .site-branding,
-  #page .site-header .main-navigation {
-    padding: 0 0 0 10px; }
   .paging-navigation {
     padding-left: 10px;
     padding-right: 10px; }

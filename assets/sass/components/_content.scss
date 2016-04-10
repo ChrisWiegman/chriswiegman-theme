@@ -9,14 +9,12 @@ h1.page-title {
 .hentry {
 
 	background-color: $white;
-	font-size:        $normal;
 	font-size:        $normal-rem;
 	line-height:      1.6;
-	margin:           0 0 2.5rem 0;
+	margin:           0 0 1rem 0;
 	padding:          0;
 
 	.gist {
-		font-size:   14px;
 		font-size:   0.875rem;
 		line-height: 1.4;
 	}
@@ -45,7 +43,6 @@ h1.page-title {
 
 		.entry-title {
 
-			font-size:   36px;
 			font-size:   2.25rem;
 			font-weight: 300;
 
@@ -68,7 +65,6 @@ h1.page-title {
 	.entry-meta,
 	.entry-footer {
 		color:     $grey;
-		font-size: 16px;
 		font-size: 1rem;
 	}
 
@@ -105,7 +101,6 @@ h1.page-title {
 		border-bottom: none;
 		clear:         both;
 		display:       block;
-		font-size:     16px;
 		font-size:     1rem;
 		margin-top:    40px;
 

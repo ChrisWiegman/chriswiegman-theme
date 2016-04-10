@@ -2,45 +2,6 @@
 
 	#page {
 
-		#intro {
-			margin-top:         40px;
-			transition:         0.5s;
-		}
-
-		.site-header {
-
-			height:             40px;
-			transition:         0.5s;
-
-			.site-branding {
-
-				max-width:          270px;
-				padding-top:        10px !important;
-				transition:         0.5s;
-
-				img {
-					height:             80%;
-					transition:         0.5s;
-					width:              80%;
-				}
-
-			}
-
-			.main-navigation {
-				padding-top:        0 !important;
-				transition:         0.5s;
-			}
-
-			.progress-wrap {
-
-				.progress-indicator {
-					height           : 40px;
-				}
-
-			}
-
-		}
-
 		.content-area {
 			border-right: none;
 			float:        none;

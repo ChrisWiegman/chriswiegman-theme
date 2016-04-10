@@ -14,7 +14,7 @@ body {
 		background-position   : center;
 		background-size       : cover;
 		clear                 : both;
-		margin-top            : 80px;
+		margin-top            : 40px;
 		min-height            : 300px;
 		padding               : 0;
 		transition            : 0.5s;
@@ -35,7 +35,7 @@ body {
 
 		background-color : $white;
 		border-bottom    : 1px solid $light-grey;
-		height           : 80px;
+		height           : 40px;
 		overflow         : visible;
 		position         : fixed;
 		top              : 0;
@@ -51,7 +51,7 @@ body {
 			.progress-indicator {
 				background-color : $grey;
 				display          : block;
-				height           : 80px;
+				height           : 40px;
 				opacity          : 0.2;
 				position         : absolute;
 				transition       : height 0.5s;
@@ -68,7 +68,7 @@ body {
 
 				float       : left;
 				max-width   : 270px;
-				padding-top : 20px;
+				padding-top : 5px;
 
 				a {
 
@@ -80,11 +80,16 @@ body {
 
 				}
 
+				img {
+					height : 80%;
+					width  : 80%;
+				}
+
 			}
 
 			.main-navigation {
 				float       : right;
-				padding-top : 10px;
+				padding-top : 0;
 			}
 
 		}
@@ -95,26 +100,6 @@ body {
 		top : 32px;
 	}
 
-	.scrolled {
-
-		height : 40px !important;
-
-		.site-branding {
-			padding-top : 5px !important;
-
-			img {
-				height : 80%;
-				width  : 80%;
-			}
-
-		}
-
-		.main-navigation {
-			padding-top : 0 !important;
-		}
-
-	}
-
 	.content-area {
 		float : left;
 		width : 66%;
@@ -122,7 +107,7 @@ body {
 
 	.site-content .widget-area {
 		float : right;
-		width : 30%;
+		width : 33%;
 	}
 
 	.site-footer {
@@ -156,5 +141,5 @@ body {
 }
 
 .home #page.has-intro .site-content {
-	padding-top : 43px;
+	padding-top : 1em;
 }
