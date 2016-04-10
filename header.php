@@ -55,7 +55,6 @@ if ( is_home() && is_active_sidebar( 'intro' ) ) {
 
 			<div class="menu-toggle"><?php esc_html_e( 'Menu', 'chriswiegman' ); ?></div>
 			<nav id="site-navigation" class="main-navigation" role="navigation">
-
 				<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
 			</nav>
 
