@@ -1,8 +1,7 @@
 @media screen and (max-width: 900px) {
 
-	html,
-	body {
-		background-color: $white;
+	.single .site-main, .page .site-main {
+		margin-bottom: 1em;
 	}
 
 	#page {
@@ -15,8 +14,7 @@
 
 		.site-content {
 
-			padding-top: 80px;
-			max-width:   100%;
+			max-width: 100%;
 
 			.widget-area {
 				border-left: none;
@@ -30,7 +28,7 @@
 			display: none;
 		}
 
-		.site-header .wrap  {
+		.site-header .wrap {
 
 			.menu-toggle {
 				color:       $text-color;

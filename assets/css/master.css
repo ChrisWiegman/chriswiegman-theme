@@ -2203,9 +2203,8 @@ q {
   content: ""; }
 
 body {
-  color: #2e2e2e;
-  font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
-  font-weight: 400; }
+  color: #5f5f5f;
+  font-family: "Gudea", sans-serif; }
 
 h1,
 h2,
@@ -2215,8 +2214,7 @@ h5,
 h6 {
   clear: both;
   color: #2e2e2e;
-  font-family: Georgia, Times, Times New Roman, serif;
-  font-weight: 700;
+  font-family: "Arvo", serif;
   line-height: 1.2; }
 
 h1 {
@@ -2950,7 +2948,7 @@ h1.page-title {
       font-size: 2.25rem;
       font-weight: 300; }
       .hentry .entry-header .entry-title a {
-        color: #2e2e2e;
+        color: #5f5f5f;
         text-decoration: none; }
         .hentry .entry-header .entry-title a:hover {
           border-bottom: none;
@@ -3244,15 +3242,13 @@ object {
     padding-left: 0; } }
 
 @media screen and (max-width: 900px) {
-  html,
-  body {
-    background-color: #fff; }
+  .single .site-main, .page .site-main {
+    margin-bottom: 1em; }
   #page .content-area {
     border-right: none;
     float: none;
     width: 100%; }
   #page .site-content {
-    padding-top: 80px;
     max-width: 100%; }
     #page .site-content .widget-area {
       border-left: none;
@@ -3261,14 +3257,14 @@ object {
   #page #menu-primary {
     display: none; }
   #page .site-header .wrap .menu-toggle {
-    color: #2e2e2e;
+    color: #5f5f5f;
     display: inline-block;
     font-weight: 400;
     padding: 8px 20px 0 0;
     float: right; }
   #page .site-header .wrap .main-navigation {
     background-color: #fff;
-    color: #2e2e2e;
+    color: #5f5f5f;
     clear: both;
     float: none;
     margin: 0;
