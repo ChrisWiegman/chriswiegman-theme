@@ -25,14 +25,7 @@ namespace CW\Theme\Templates\Header;
 
 <body <?php body_class(); ?>>
 
-<?php
-if ( is_home() && is_active_sidebar( 'intro' ) ) {
-	$intro_class = 'has-intro ';
-} else {
-	$intro_class = '';
-}
-?>
-<div id="page" class="hfeed site <?php echo esc_attr( $intro_class ); ?>">
+<div id="page" class="hfeed site">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'chriswiegman' ); ?></a>
 
 	<?php
@@ -63,15 +56,15 @@ if ( is_home() && is_active_sidebar( 'intro' ) ) {
 	</header>
 	<!-- #masthead -->
 
-	<?php if ( is_home() && is_active_sidebar( 'intro' ) ) { ?>
-
-		<div id="intro">
-			<div id="intro-widget" class="widget-area" role="complementary">
-				<?php dynamic_sidebar( 'intro' ); ?>
-			</div>
-		</div>
-		<!-- #intro -->
-
-	<?php } ?>
-
 	<div id="content" class="site-content">
+
+		<?php if ( is_home() && is_active_sidebar( 'intro' ) ) { ?>
+
+			<div id="intro">
+				<div id="intro-widget" class="widget-area" role="complementary">
+					<?php dynamic_sidebar( 'intro' ); ?>
+				</div>
+			</div>
+			<!-- #intro -->
+
+		<?php } ?>

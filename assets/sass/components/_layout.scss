@@ -8,17 +8,20 @@ body {
 	margin: 0 auto;
 
 	#intro {
-		background-color:      $black;
-		background-attachment: fixed;
-		background-image:      url("https://cdn1.chriswiegman.com/mail/background.jpg");
-		background-position:   center;
-		background-size:       cover;
-		clear:                 both;
-		margin-top:            40px;
-		min-height:            300px;
-		padding:               0;
-		transition:            0.5s;
-		width:                 100%;
+
+		background-color: $white;
+		clear:            both;
+		margin-bottom:    1em;
+		min-height:       200px;
+		padding:          0;
+		transition:       0.5s;
+		width:            100%;
+
+		.widget-area {
+			width: 100%;
+			float: none;
+		}
+
 	}
 
 	.featured-image {
@@ -135,8 +138,4 @@ body {
 
 	}
 
-}
-
-.home #page.has-intro .site-content {
-	padding-top: 1em;
 }

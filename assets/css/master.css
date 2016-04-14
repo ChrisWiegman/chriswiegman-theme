@@ -2379,18 +2379,17 @@ body {
 #page {
   margin: 0 auto; }
   #page #intro {
-    background-color: #2e2e2e;
-    background-attachment: fixed;
-    background-image: url("https://cdn1.chriswiegman.com/mail/background.jpg");
-    background-position: center;
-    background-size: cover;
+    background-color: #fff;
     clear: both;
-    margin-top: 40px;
-    min-height: 300px;
+    margin-bottom: 1em;
+    min-height: 200px;
     padding: 0;
     -webkit-transition: 0.5s;
             transition: 0.5s;
     width: 100%; }
+    #page #intro .widget-area {
+      width: 100%;
+      float: none; }
   #page .featured-image {
     text-align: center; }
   #page .site-content {
@@ -2459,9 +2458,6 @@ body {
     #page .site-footer .site-info {
       clear: both;
       margin: 10px 0; }
-
-.home #page.has-intro .site-content {
-  padding-top: 1em; }
 
 input, select, textarea {
   background-color: #f8f8f8;
@@ -2814,15 +2810,13 @@ a {
 
 #intro #intro-widget {
   margin: 0 auto;
-  max-width: 1152px;
-  min-height: 300px; }
+  width: 100%; }
   #intro #intro-widget .widget {
-    background-color: transparent;
+    background-color: #fff;
     border: none;
-    color: #ebebeb;
-    display: table-cell;
-    font-size: 1.5rem;
-    padding: 40px 0 0;
+    font-size: 2rem;
+    margin: 0;
+    padding: 40px;
     vertical-align: middle; }
 
 /**
