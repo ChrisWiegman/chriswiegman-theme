@@ -2883,8 +2883,10 @@ a {
     display: block;
     width: 100% !important; }
   .gform_widget form .gfield_label {
-    display: none;
+    display: none !important;
     margin: 0; }
+  .gform_widget form .gform_footer {
+    display: none; }
 
 .gform_widget .gforms_confirmation_message {
   background-color: #3e3e3e;

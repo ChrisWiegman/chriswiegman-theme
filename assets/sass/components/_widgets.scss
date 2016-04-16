@@ -158,8 +158,12 @@
 		}
 
 		.gfield_label {
-			display: none;
+			display: none !important;
 			margin:  0;
+		}
+
+		.gform_footer {
+			display: none;
 		}
 
 	}
