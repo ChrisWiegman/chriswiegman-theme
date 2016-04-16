@@ -2819,6 +2819,9 @@ a {
     padding: 40px;
     vertical-align: middle; }
 
+.widget.latest-tweets a {
+  border-bottom: 1px solid #ebebeb; }
+
 /**
  * Social Widget
  **/
