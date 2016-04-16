@@ -2394,11 +2394,12 @@ body {
     text-align: center; }
   #page .site-content {
     margin: 0 auto;
+    max-width: 1152px;
     overflow: hidden;
     padding-top: 56px; }
   #page .site-header {
     background-color: #fff;
-    border-bottom: 1px solid #ebebeb;
+    border-bottom: 1px solid #ccc;
     height: 40px;
     overflow: visible;
     position: fixed;
@@ -2421,19 +2422,20 @@ body {
     #page .site-header .wrap {
       margin: 0 auto;
       max-width: 1152px; }
-      #page .site-header .wrap .site-branding {
+      #page .site-header .wrap .site-title {
         float: left;
-        max-width: 20%;
-        padding-top: 8px; }
-        #page .site-header .wrap .site-branding a {
+        padding-top: 8px;
+        -webkit-transition: 0.5s;
+                transition: 0.5s; }
+        #page .site-header .wrap .site-title a {
           border-bottom: none; }
-          #page .site-header .wrap .site-branding a:hover {
+          #page .site-header .wrap .site-title a:hover {
             border-bottom: none; }
       #page .site-header .wrap .main-navigation {
-        float: left;
-        max-width: 80%;
-        padding-top: 0;
-        width: 100%; }
+        margin: 0;
+        overflow: hidden;
+        -webkit-transition: 0.5s;
+                transition: 0.5s; }
   #page .top-padding {
     top: 32px; }
   #page .content-area {
@@ -2444,14 +2446,14 @@ body {
     width: 33%; }
   #page .site-footer {
     background-color: #3e3e3e;
-    color: #ebebeb;
+    color: #ccc;
     font-size: 75%;
     width: 100%;
     opacity: 0.9;
     text-align: center; }
     #page .site-footer a {
-      border-bottom: 1px solid #ebebeb;
-      color: #ebebeb; }
+      border-bottom: 1px solid #ccc;
+      color: #ccc; }
       #page .site-footer a:hover {
         border-bottom: 1px solid #cf5300;
         color: #cf5300; }
@@ -2461,7 +2463,7 @@ body {
 
 input, select, textarea {
   background-color: #f8f8f8;
-  border: 1px solid #ebebeb;
+  border: 1px solid #ccc;
   font-size: 1.125rem;
   padding: 8px;
   width: 100%; }
@@ -2606,7 +2608,7 @@ a {
   a img {
     border: none; }
   a:focus {
-    outline: thin dotted #ebebeb; }
+    outline: thin dotted #ccc; }
   a:hover, a:active {
     outline: 0; }
   a:hover {
@@ -2639,6 +2641,10 @@ a {
     float: right;
     margin: 0;
     padding: 4px 5px; }
+    .main-navigation li.social-share.first {
+      padding-left: 0; }
+    .main-navigation li.social-share.last {
+      padding-right: 0; }
   .main-navigation .current_page_item {
     font-style: italic; }
     .main-navigation .current_page_item ul {
@@ -2820,39 +2826,7 @@ a {
     vertical-align: middle; }
 
 .widget.latest-tweets a {
-  border-bottom: 1px solid #ebebeb; }
-
-/**
- * Social Widget
- **/
-.social-widget ul {
-  margin: 0;
-  padding: 0;
-  text-align: center;
-  width: 100%; }
-  .social-widget ul li {
-    display: inline-block;
-    list-style-type: none;
-    margin: 0 1px 0 1px !important;
-    text-align: left; }
-    .social-widget ul li.social-share a {
-      background-color: transparent;
-      border: none;
-      margin: 0 12px 0 0;
-      padding: 0; }
-      .social-widget ul li.social-share a:visited {
-        background-color: transparent;
-        border: none;
-        margin: 0px 12px 0 0;
-        padding: 0; }
-      .social-widget ul li.social-share a:hover {
-        background-color: transparent;
-        color: #e80;
-        border: none; }
-    .social-widget ul li.social-share:hover a {
-      background-color: transparent;
-      color: #cf5300;
-      border: none; }
+  border-bottom: 1px solid #ccc; }
 
 /**
  * Search widget
@@ -3039,10 +3013,10 @@ h1.page-title {
       .comments-area ol li ol {
         padding-top: 20px; }
         .comments-area ol li ol li {
-          background-color: #ebebeb;
+          background-color: #ccc;
           border-left: none; }
           .comments-area ol li ol li a {
-            border-bottom: 1px solid #ebebeb; }
+            border-bottom: 1px solid #ccc; }
             .comments-area ol li ol li a:focus {
               outline: thin dotted #fff; }
           .comments-area ol li ol li ol li {
@@ -3050,11 +3024,11 @@ h1.page-title {
             .comments-area ol li ol li ol li a {
               border-bottom: 1px solid #fff; }
               .comments-area ol li ol li ol li a:focus {
-                outline: thin dotted #ebebeb; }
+                outline: thin dotted #ccc; }
             .comments-area ol li ol li ol li ol li {
-              background-color: #ebebeb; }
+              background-color: #ccc; }
               .comments-area ol li ol li ol li ol li a {
-                border-bottom: 1px solid #ebebeb; }
+                border-bottom: 1px solid #ccc; }
                 .comments-area ol li ol li ol li ol li a:focus {
                   outline: thin dotted #fff; }
               .comments-area ol li ol li ol li ol li ol li {
@@ -3062,7 +3036,7 @@ h1.page-title {
                 .comments-area ol li ol li ol li ol li ol li a {
                   border-bottom: 1px solid #fff; }
                   .comments-area ol li ol li ol li ol li ol li a:focus {
-                    outline: thin dotted #ebebeb; }
+                    outline: thin dotted #ccc; }
 
 /*--------------------------------------------------------------
 0.2 Asides
@@ -3205,38 +3179,14 @@ object {
   max-width: 11.11%; }
 
 @media screen and (max-width: 1192px) {
-  #page .site-content {
-    max-width: 99%;
+  #page .site-header .wrap .site-title {
+    margin-left: 20px;
     -webkit-transition: 0.5s;
             transition: 0.5s; }
-  .paging-navigation {
-    padding-left: 20px;
-    padding-right: 20px; }
-  #intro #intro-widget .widget {
-    padding: 40px 20px 20px; } }
-
-@media screen and (min-width: 1192px) {
-  #page .site-content {
-    max-width: 90%;
+  #page .site-header .wrap .main-navigation {
+    margin-right: 20px;
     -webkit-transition: 0.5s;
             transition: 0.5s; } }
-
-@media screen and (max-width: 1172px) {
-  #page .site-header .wrap .site-branding {
-    margin-left: 20px;
-    max-width: 200px; }
-  #page .site-header .wrap .main-navigation {
-    max-width: 75%; } }
-
-@media screen and (max-width: 1152px) {
-  .hentry {
-    border-left: none; }
-  .widget {
-    border-right: none; }
-  #cw_ad_widget-2 .left-image {
-    padding-right: 0; }
-  #cw_ad_widget-2 .right-image {
-    padding-left: 0; } }
 
 @media screen and (max-width: 900px) {
   .single .site-main, .page .site-main {
@@ -3336,13 +3286,13 @@ object {
               .comments-area ol li ol li ol li a {
                 border-bottom: 1px solid #fff; }
                 .comments-area ol li ol li ol li a:focus {
-                  outline: thin dotted #ebebeb; }
+                  outline: thin dotted #ccc; }
               .comments-area ol li ol li ol li ol li {
                 background-color: #fff; }
                 .comments-area ol li ol li ol li ol li a {
                   border-bottom: 1px solid #fff; }
                   .comments-area ol li ol li ol li ol li a:focus {
-                    outline: thin dotted #ebebeb; } }
+                    outline: thin dotted #ccc; } }
 
 @media screen and (max-width: 350px) {
   #page .site-header .menu-toggle {

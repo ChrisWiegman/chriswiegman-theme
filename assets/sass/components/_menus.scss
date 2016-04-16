@@ -29,9 +29,18 @@
 	}
 
 	li.social-share {
+
 		float:   right;
 		margin:  0;
 		padding: 4px 5px;
+
+		&.first {
+			padding-left: 0;
+		}
+
+		&.last {
+			padding-right: 0;
+		}
 	}
 
 	.current_page_item {

@@ -30,6 +30,7 @@ body {
 
 	.site-content {
 		margin:      0 auto;
+		max-width:   1152px;
 		overflow:    hidden;
 		padding-top: 56px;
 	}
@@ -67,11 +68,11 @@ body {
 			margin:    0 auto;
 			max-width: 1152px;
 
-			.site-branding {
+			.site-title {
 
 				float:       left;
-				max-width:   20%;
 				padding-top: 8px;
+				transition:  0.5s;
 
 				a {
 
@@ -86,10 +87,9 @@ body {
 			}
 
 			.main-navigation {
-				float:       left;
-				max-width:   80%;
-				padding-top: 0;
-				width:       100%;
+				margin:     0;
+				overflow:   hidden;
+				transition: 0.5s;
 			}
 
 		}
