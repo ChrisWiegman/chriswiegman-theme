@@ -1,39 +1,17 @@
-@media screen and (max-width : 1192px) {
+@media screen and (max-width: 1192px) {
 
-	#page {
+	#page .site-header .wrap {
 
-		.site-content {
-			max-width  : 99%;
-			transition : 0.5s;
-		}
-
-		.site-header {
-
-			.site-branding,
-			.main-navigation {
-				padding            : 0 20px;
-				transition         : 0.5s;
-			}
+		.site-title {
+			margin-left: 20px;
+			transition:  0.5s;
 
 		}
 
-	}
-
-	.paging-navigation {
-		padding-left  : 20px;
-		padding-right : 20px;
-	}
-
-	#intro {
-
-		#intro-widget {
-
-			.widget {
-				padding : 40px 20px 20px;
-			}
-
+		.main-navigation {
+			margin-right: 20px;
+			transition:   0.5s;
 		}
-
 	}
 
 }

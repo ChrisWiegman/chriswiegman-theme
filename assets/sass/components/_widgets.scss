@@ -1,8 +1,7 @@
 .widget {
 
-	background-color: $white;
-	border:           1px solid $border-color;
-	margin:           0 0 2.5em;
+	background-color: $widget-background;
+	margin:           0 0 1em;
 	padding:          15px;
 
 	select {
@@ -10,9 +9,10 @@
 	}
 
 	.widget-title {
-		font-size:     24px;
-		font-size:     1.5rem;
-		margin-bottom: 1rem;
+		border-bottom:  1px solid $border-color;
+		font-size:      1.5rem;
+		margin-bottom:  1rem;
+		padding-bottom: 2px;
 	}
 
 	ul {
@@ -39,89 +39,67 @@
 
 	}
 
+	input {
+		border: 1px solid $border-color;
+	}
+
 }
 
 #intro {
 
 	#intro-widget {
 
-		margin:     0 auto;
-		max-width:  1152px;
-		min-height: 300px;
+		margin: 0 auto;
+		width:  100%;
 
 		.widget {
-			background-color: transparent;
+			background-color: $white;
 			border:           none;
-			color:            $light-grey;
-			display:          table-cell;
-			font-size:        24px;
-			font-size:        1.5rem;
-			padding:          40px 0 0;
+			font-size:        2rem;
+			margin:           0;
+			padding:          40px;
 			vertical-align:   middle;
+		}
+
+		p {
+			margin-bottom: 0;
 		}
 
 	}
 
 }
 
-/**
- * Social Widget
- **/
-.social-widget {
+.widget.latest-tweets {
 
 	ul {
 
-		margin:     0;
-		padding:    0;
-		text-align: center;
-		width:      100%;
+		list-style: disc;
 
 		li {
 
-			display:         inline-block;
-			list-style-type: none;
-			margin:          0 1px 0 1px !important;
-			text-align:      left;
-
-			&.social-share {
-
-				a {
-					background-color: transparent;
-					border:           none;
-					margin:           0 12px 0 0;
-					padding:          0;
-
-					&:visited {
-						background-color: transparent;
-						border:           none;
-						margin:           0px 12px 0 0;
-						padding:          0;
-					}
-
-					&:hover {
-						background-color: transparent;
-						color:            $light-orange;
-						border:           none;
-					}
-
-				}
-
-				&:hover {
-
-					a {
-						background-color: transparent;
-						color:            $orange;
-						border:           none;
-					}
-
-				}
-
+			a {
+				border-bottom: none;
 			}
 
+			.cw_tweet {
+
+				display:       block;
+				margin-bottom: 2em;
+
+				.cw_tweet_text {
+					display: block;
+				}
+
+				.cw_tweet_time {
+					clear:      both;
+					display:    block;
+					float:      right;
+					font-size:  80%;
+					font-style: italic;
+				}
+			}
 		}
-
 	}
-
 }
 
 /**
@@ -141,7 +119,6 @@
 }
 
 .widgettitle {
-	margin: 0 0 8px 0;
 	margin: 0 0 .5rem 0;
 }
 
@@ -178,13 +155,6 @@
 //Subscription Widget
 .gform_widget {
 
-	background-color: $dark-grey;
-	color:            $white;
-
-	.widget-title {
-		color: $white;
-	}
-
 	ul {
 		margin: 0 !important;
 	}
@@ -197,11 +167,8 @@
 		input[type=email],
 		input#subscribe-field {
 			background-color: $near-white;
-			border:           1px solid #eee;
 			color:            #999;
-			font-size:        16px;
 			font-size:        1rem;
-			padding:          8px;
 			padding:          .5rem;
 			width:            100%;
 		}
@@ -221,8 +188,12 @@
 		}
 
 		.gfield_label {
-			display: none;
+			display: none !important;
 			margin:  0;
+		}
+
+		.gform_footer {
+			display: none;
 		}
 
 	}
@@ -234,26 +205,22 @@
 
 }
 
-#cw_ad_widget-2 {
+#cw_affiliates {
 
-	background-color: transparent;
-	border:           none;
-	text-align:       center;
+	text-align: center;
+
+	a {
+		border-bottom: none;
+	}
+}
+
+.donate_widget {
 
 	a {
 		border-bottom: none;
 	}
 
-	img {
-		margin: 15px 0;
+	.cw_donate {
+		text-align: center;
 	}
-
-	.left-image {
-		padding-right: 25px;
-	}
-
-	.right-image {
-		padding-left: 25px;
-	}
-
 }

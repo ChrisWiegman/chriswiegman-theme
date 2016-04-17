@@ -1,56 +1,57 @@
 hr {
-	background-color : #ccc;
-	border           : 0;
-	height           : 1px;
-	margin-bottom    : 1.5em;
+	background-color: #ccc;
+	border:           0;
+	height:           1px;
+	margin-bottom:    1.5em;
 }
 
 ul,
 ol {
-	margin : 0 0 1.5em 3em;
+	margin: 0 0 1.5em 3em;
 }
 
 ul {
-	list-style : disc;
+	list-style: disc;
 }
 
 ol {
-	list-style : decimal;
+	list-style: decimal;
 }
 
 li > {
 
 	ul,
 	ol {
-		margin-bottom : 0;
-		margin-left   : 1.5em;
+		margin-bottom: 0;
+		margin-left:   1.5em;
 	}
 
 }
 
 dt {
-	font-weight : bold;
+	font-weight: bold;
 }
 
 dd {
-	margin : 0 1.5em 1.5em;
+	margin: 0 1.5em 1.5em;
 }
 
 img {
-	height             : auto;
-	transition         : 0.5s;
-	max-width          : 100%;
+	height:     auto;
+	margin:     0 1em 1em 0;
+	transition: 0.5s;
+	max-width:  100%;
 }
 
 figure {
-	margin : 0;
+	margin: 0;
 }
 
 table {
-	margin : 0 0 1.5em;
-	width  : 100%;
+	margin: 0 0 1.5em;
+	width:  100%;
 }
 
 th {
-	font-weight : bold;
+	font-weight: bold;
 }

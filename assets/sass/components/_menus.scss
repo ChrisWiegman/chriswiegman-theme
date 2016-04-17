@@ -1,24 +1,46 @@
 .main-navigation {
-
-	font-weight: 400;
+	font-weight: 700;
 
 	ul {
+
 		list-style:   none;
 		margin:       0;
 		padding-left: 0;
+
+		ul {
+			top:     2em;
+			left:    -999em;
+			z-index: 99999;
+		}
+
 	}
 
 	li {
 
-		float:              left;
-		padding:            15px 20px;
-		position:           relative;
-		transition:         0.5s;
+		float:      left;
+		padding:    8px 20px;
+		position:   relative;
+		transition: 0.5s;
 
 		ul li {
 			padding: 5px 20px;
 		}
 
+	}
+
+	li.social-share {
+
+		float:   right;
+		margin:  0;
+		padding: 4px 5px;
+
+		&.first {
+			padding-left: 0;
+		}
+
+		&.last {
+			padding-right: 0;
+		}
 	}
 
 	.current_page_item {
@@ -34,7 +56,7 @@
 	a {
 
 		border-bottom:   none;
-		color:           $text-color;
+		color:           $black;
 		display:         block;
 		text-decoration: none;
 
@@ -104,7 +126,7 @@
 .paging-navigation {
 
 	a {
-		border-bottom: 1px solid $near-white;
+		border-bottom: none;
 	}
 
 }
@@ -144,26 +166,6 @@
 
 	a {
 		border-bottom: none !important;
-	}
-
-}
-
-.scrolled {
-
-	.main-navigation {
-
-		li {
-			padding: 5px 20px;
-		}
-
-		ul ul {
-
-			top:     2em;
-			left:    -999em;
-			z-index: 99999;
-
-		}
-
 	}
 
 }

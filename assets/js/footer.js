@@ -155,33 +155,19 @@
     a(window).resize(function() {
         a(window).width() >= 900 && a("#menu-primary").removeAttr("style");
     });
-    var b = a(".site-header, .progress-indicator");
-    //Add correct class to header on load
-    a(this).scrollTop() > 10 ? b.hasClass("scrolled") || b.addClass("scrolled") : b.hasClass("scrolled") && b.removeClass("scrolled"), 
-    //Add or removed header class on scroll
-    a(window).scroll(function() {
-        a(this).scrollTop() > 55 ? b.hasClass("scrolled") || b.addClass("scrolled") : b.hasClass("scrolled") && b.removeClass("scrolled");
-    });
-    var c = 0, d = a(".software-short");
-    d.each(function() {
-        a(this).height() > c && (c = a(this).height());
-    }), d.height(c);
-}), /**
- * Removes inline styles from element
- *
- * @param            style    Name of style to remove
- * @return string    Inline styles without removed element
- */
-jQuery.fn.removeStyle = function(a) {
-    var b = new RegExp(a + "[^;]+;?", "g");
-    return this.each(function() {
-        $(this).attr("style", function(a, c) {
-            try {
-                return c.replace(b, "");
-            } catch (d) {
-                return "";
-            }
-        });
-    });
-};
+    var b = 0, c = a(".software-short");
+    c.each(function() {
+        a(this).height() > b && (b = a(this).height());
+    }), c.height(b);
+}), WebFontConfig = {
+    google: {
+        families: [ "Arvo:700:latin", "Gudea:400italic,700,400:latin" ]
+    }
+}, function() {
+    var a = document.createElement("script");
+    a.src = "https://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js", a.type = "text/javascript", 
+    a.async = "true";
+    var b = document.getElementsByTagName("script")[0];
+    b.parentNode.insertBefore(a, b);
+}();
 //# sourceMappingURL=footer.js.map

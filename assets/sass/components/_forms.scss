@@ -1,7 +1,6 @@
 input, select, textarea {
 	background-color : $near-white;
 	border           : 1px solid $light-grey;
-	font-size        : 18px;
 	font-size        : 1.125rem;
 	padding          : 8px;
 	width            : 100%;
@@ -21,10 +20,8 @@ button {
 	border          : none;
 	color           : $white !important;
 	cursor          : pointer;
-	font-size       : 18px;
 	font-size       : 1.125rem;
 	font-weight     : 700;
-	line-height     : 18px;
 	line-height     : 1.125rem;
 	padding         : 8px;
 	text-decoration : none;
@@ -39,10 +36,8 @@ input {
 		border          : none;
 		color           : $white !important;
 		cursor          : pointer;
-		font-size       : 18px;
 		font-size       : 1.125rem;
 		font-weight     : 700;
-		line-height     : 18px;
 		line-height     : 1.125rem;
 		padding         : 8px;
 		text-decoration : none;
@@ -57,10 +52,8 @@ input {
 	border          : none;
 	color           : $white !important;
 	cursor          : pointer;
-	font-size       : 18px;
 	font-size       : 1.125rem;
 	font-weight     : 700;
-	line-height     : 18px;
 	line-height     : 1.125rem;
 	padding         : 8px;
 	text-decoration : none;
@@ -127,7 +120,6 @@ input:hover {
 	textarea,
 	.ginput_complex label,
 	.gfield_description {
-		font-size : $small !important;
 		font-size : $small-rem !important;
 		padding   : 8px !important;
 		width     : 98%;

@@ -213,7 +213,7 @@ module.exports = function ( grunt ) {
 						'assets/js/src/**/*.*'
 					],
 
-					tasks : ['clean:scripts','uglify:production']
+					tasks : ['jshint', 'clean:scripts', 'uglify:production', 'uglify:dev']
 
 				}
 			}
@@ -221,7 +221,7 @@ module.exports = function ( grunt ) {
 	);
 
 	// A very basic default task.
-	grunt.registerTask( 'default', ['phpunit', 'jshint', 'clean:styles', 'sass', 'autoprefixer', 'cssmin', 'phpunit', 'jshint', 'clean:scripts', 'uglify:production', 'uglify:dev', 'makepot'] );
+	grunt.registerTask( 'default', ['phpunit', 'jshint', 'clean:styles', 'sass', 'autoprefixer', 'cssmin', 'jshint', 'clean:scripts', 'uglify:production', 'uglify:dev', 'makepot'] );
 	grunt.registerTask( 'dev', ['default', 'browserSync', 'watch'] );
 
 };

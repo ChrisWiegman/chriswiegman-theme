@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ChrisWiegman 5.0.3\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/style\n"
-"POT-Creation-Date: 2016-04-02 16:59:46+00:00\n"
+"POT-Creation-Date: 2016-04-17 12:37:42+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -116,11 +116,11 @@ msgstr ""
 msgid "Powered by"
 msgstr ""
 
-#: header.php:36
+#: header.php:29
 msgid "Skip to content"
 msgstr ""
 
-#: header.php:56
+#: header.php:47
 msgid "Menu"
 msgstr ""
 
@@ -160,7 +160,7 @@ msgstr ""
 msgid "Continue Reading %s"
 msgstr ""
 
-#: includes/functions/core.php:315
+#: includes/functions/core.php:343
 msgid "Page %s"
 msgstr ""
 

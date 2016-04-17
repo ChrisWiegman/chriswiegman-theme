@@ -9,14 +9,12 @@ h1.page-title {
 .hentry {
 
 	background-color: $white;
-	font-size:        $normal;
 	font-size:        $normal-rem;
 	line-height:      1.6;
-	margin:           0 0 2.5rem 0;
+	margin:           0 0 1rem 0;
 	padding:          0;
 
 	.gist {
-		font-size:   14px;
 		font-size:   0.875rem;
 		line-height: 1.4;
 	}
@@ -45,7 +43,6 @@ h1.page-title {
 
 		.entry-title {
 
-			font-size:   36px;
 			font-size:   2.25rem;
 			font-weight: 300;
 
@@ -68,7 +65,6 @@ h1.page-title {
 	.entry-meta,
 	.entry-footer {
 		color:     $grey;
-		font-size: 16px;
 		font-size: 1rem;
 	}
 
@@ -105,7 +101,6 @@ h1.page-title {
 		border-bottom: none;
 		clear:         both;
 		display:       block;
-		font-size:     16px;
 		font-size:     1rem;
 		margin-top:    40px;
 
@@ -125,31 +120,25 @@ h1.page-title {
 .page {
 
 	.site-main {
-		background-color: $white;
-		border:           1px solid $border-color;
-		margin-bottom:    2.5rem;
-	}
-
-}
-
-.home,
-.search,
-.journal {
-
-	.hentry {
-		border: 1px solid $border-color;
+		margin-bottom: 2.5rem;
 	}
 
 }
 
 .post-navigation {
-	padding: 0 40px;
+
+	padding: 20px 0;
+
+	a {
+		border-bottom: 1px solid $background;
+	}
 }
 
 .author-box {
 
-	margin:  0 40px;
-	padding: 40px 0;
+	background-color: $white;
+	margin:           0 40px;
+	padding:          40px 0;
 
 	.avatar {
 		float: left;
@@ -165,140 +154,19 @@ h1.page-title {
 
 }
 
-.author-box,
-.comments-area {
+.author-box {
 	border-top: 1px solid $near-white;
+	margin:     0 0 1em 0;
 	overflow:   hidden;
+	padding:    25px;
 }
 
-.comment-reply-title {
-	margin-bottom: 40px;
-}
-
-.comments-area {
-
-	margin:  0;
-	padding: 40px 0;
-
-	.no-comments {
-		padding: 0 40px;
-	}
-
-	.avatar {
-		float:   left;
-		padding: 0 10px 10px 0;
-	}
-
-	h2 {
-		padding: 0 20px;
-	}
-
-	#respond {
-		padding: 0 20px;
-	}
-
-	ol {
-
-		list-style: none;
-		margin:     0;
-		padding:    20px 0 0 0;
-
-		li {
-
-			margin-bottom: 1rem;
-			padding:       20px 0 20px 20px;
-
-			.comment-content {
-				clear:         both;
-				padding-right: 20px;
-			}
-
-			ol {
-
-				padding-top: 20px;
-
-				li {
-
-					background-color: $light-grey;
-					border-left:      none;
-
-					a {
-
-						border-bottom: 1px solid $light-grey;
-
-						&:focus {
-							outline: thin dotted $white;
-						}
-
-					}
-
-					ol {
-
-						li {
-
-							background-color: $white;
-
-							a {
-
-								border-bottom: 1px solid $white;
-
-								&:focus {
-									outline: thin dotted $light-grey;
-								}
-
-							}
-
-							ol {
-
-								li {
-
-									background-color: $light-grey;
-
-									a {
-
-										border-bottom: 1px solid $light-grey;
-
-										&:focus {
-											outline: thin dotted $white;
-										}
-
-									}
-
-									ol {
-
-										li {
-
-											background-color: $white;
-
-											a {
-
-												border-bottom: 1px solid $white;
-
-												&:focus {
-													outline: thin dotted $light-grey;
-												}
-
-											}
-
-										}
-
-									}
-
-								}
-
-							}
-
-						}
-
-					}
-
-				}
-
-			}
-
-		}
-
-	}
+#disqus_thread {
+	background-color: $white;
+	line-height:      1.5;
+	overflow:         hidden;
+	margin:           4px 1px 0;
+	padding:          25px;
 
 }
 

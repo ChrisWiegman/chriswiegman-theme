@@ -1,81 +1,85 @@
 html,
 body {
-	background-color : $background;
+	background-color: $background;
 }
 
 #page {
 
-	margin : 0 auto;
+	margin: 0 auto;
 
 	#intro {
-		background-color      : $black;
-		background-attachment : fixed;
-		background-image      : url("https://cdn1.chriswiegman.com/mail/background.jpg");
-		background-position   : center;
-		background-size       : cover;
-		clear                 : both;
-		margin-top            : 80px;
-		min-height            : 300px;
-		padding               : 0;
-		transition            : 0.5s;
-		width                 : 100%;
+
+		background-color: $white;
+		clear:            both;
+		margin-bottom:    1em;
+		min-height:       200px;
+		padding:          0;
+		transition:       0.5s;
+		width:            100%;
+
+		.widget-area {
+			width: 100%;
+			float: none;
+		}
+
 	}
 
 	.featured-image {
-		text-align : center;
+		text-align: center;
 	}
 
 	.site-content {
-		margin      : 0 auto;
-		overflow    : hidden;
-		padding-top : 123px;
+		margin:      0 auto;
+		max-width:   1152px;
+		overflow:    hidden;
+		padding-top: 56px;
 	}
 
 	.site-header {
 
-		background-color : $white;
-		border-bottom    : 1px solid $light-grey;
-		height           : 80px;
-		overflow         : visible;
-		position         : fixed;
-		top              : 0;
-		transition       : 0.5s;
-		width            : 100%;
-		z-index          : 10000;
+		background-color: $white;
+		border-bottom:    1px solid $light-grey;
+		height:           40px;
+		overflow:         visible;
+		position:         fixed;
+		top:              0;
+		transition:       0.5s;
+		width:            100%;
+		z-index:          10000;
 
 		.progress-wrap {
 
-			position : relative;
-			width    : 100%;
+			position: relative;
+			width:    100%;
 
 			.progress-indicator {
-				background-color : $grey;
-				display          : block;
-				height           : 80px;
-				opacity          : 0.2;
-				position         : absolute;
-				transition       : height 0.5s;
+				background-color: $grey;
+				display:          block;
+				height:           40px;
+				opacity:          0.2;
+				position:         absolute;
+				transition:       height 0.5s;
 			}
 
 		}
 
 		.wrap {
 
-			margin    : 0 auto;
-			max-width : 1152px;
+			margin:    0 auto;
+			max-width: 1152px;
 
-			.site-branding {
+			.site-title {
 
-				float       : left;
-				max-width   : 270px;
-				padding-top : 20px;
+				float:       left;
+				padding-top: 8px;
+				transition:  0.5s;
 
 				a {
 
-					border-bottom : none;
+					border-bottom: none;
 
 					&:hover {
-						border-bottom : none;
+						border-bottom: none;
 					}
 
 				}
@@ -83,8 +87,9 @@ body {
 			}
 
 			.main-navigation {
-				float       : right;
-				padding-top : 10px;
+				margin:     0;
+				overflow:   hidden;
+				transition: 0.5s;
 			}
 
 		}
@@ -92,69 +97,45 @@ body {
 	}
 
 	.top-padding {
-		top : 32px;
-	}
-
-	.scrolled {
-
-		height : 40px !important;
-
-		.site-branding {
-			padding-top : 5px !important;
-
-			img {
-				height : 80%;
-				width  : 80%;
-			}
-
-		}
-
-		.main-navigation {
-			padding-top : 0 !important;
-		}
-
+		top: 32px;
 	}
 
 	.content-area {
-		float : left;
-		width : 66%;
+		float: left;
+		width: 66%;
 	}
 
 	.site-content .widget-area {
-		float : right;
-		width : 30%;
+		float: right;
+		width: 33%;
 	}
 
 	.site-footer {
 
-		background-color : $dark-grey;
-		color            : $light-grey;
-		font-size        : 75%;
-		width            : 100%;
-		opacity          : 0.9;
-		text-align       : center;
+		background-color: $dark-grey;
+		color:            $light-grey;
+		font-size:        75%;
+		width:            100%;
+		opacity:          0.9;
+		text-align:       center;
 
 		a {
 
-			border-bottom : 1px solid $light-grey;
-			color         : $light-grey;
+			border-bottom: 1px solid $light-grey;
+			color:         $light-grey;
 
 			&:hover {
-				border-bottom : 1px solid $orange;
-				color         : $orange;
+				border-bottom: 1px solid $orange;
+				color:         $orange;
 			}
 
 		}
 
 		.site-info {
-			clear  : both;
-			margin : 10px 0;
+			clear:  both;
+			margin: 10px 0;
 		}
 
 	}
 
-}
-
-.home #page.has-intro .site-content {
-	padding-top : 43px;
 }

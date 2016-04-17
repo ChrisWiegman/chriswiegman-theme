@@ -263,6 +263,34 @@ function filter_wp_default_scripts( $scripts ) {
 }
 
 /**
+ * Filter wp_nav_menu_items
+ *
+ * Add social sharing to main menu.
+ *
+ * @since 5.1.0
+ *
+ * @param string $items The HTML list content for the menu items.
+ * @param object $args  An object containing wp_nav_menu() arguments.
+ *
+ * @return string Filtered HTML list of menu items
+ */
+function filter_wp_nav_menu_items( $items, $args ) {
+
+	if ( 'primary' === $args->theme_location ) {
+
+		$items .= '<li class="social-share last"><a href="https://github.com/ChrisWiegman" target="_blank" title="' . esc_attr( 'View My Code on Github', 'chriswiegman' ) . '"><span class="fa fa-github fa-2x"></span></a></li>';
+		$items .= '<li class="social-share"><a href="https://profiles.wordpress.org/chriswiegman/" target="_blank" title="' . esc_attr( 'View My Plugins on WordPress.org', 'chriswiegman' ) . '"><span class="fa fa-wordpress fa-2x"></span></a></li>';
+		$items .= '<li class="social-share"><a href="https://twitter.com/ChrisWiegman" target="_blank" title="' . esc_attr( 'Follow Me on Twitter', 'chriswiegman' ) . '"><span class="fa fa-twitter fa-2x"></span></a></li>';
+		$items .= '<li class="social-share"><a href="https://facebook.com/chris.wiegman" target="_blank" title="' . esc_attr( 'Friend Me on Facebook', 'chriswiegman' ) . '"><span class="fa fa-facebook fa-2x"></span></a></li>';
+		$items .= '<li class="social-share first"><a href="http://feeds.chriswiegman.com/" target="_blank" title="' . esc_attr( 'Subscribe via RSS', 'chriswiegman' ) . '"><span class="fa fa-rss fa-2x"></span></a></li>';
+
+	}
+
+	return $items;
+
+}
+
+/**
  * Filter wp_page_menu_args
  *
  * Show home item on menu.
@@ -334,7 +362,6 @@ function filter_wp_title( $title, $sep ) {
  */
 function i18n() {
 
-
 }
 
 /**
@@ -369,6 +396,7 @@ function init() {
 
 	add_filter( 'body_class', $n ( 'filter_body_class' ) );
 	add_filter( 'wp_default_scripts', $n ( 'filter_wp_default_scripts' ) );
+	add_filter( 'wp_nav_menu_items', $n( 'filter_wp_nav_menu_items' ), 10, 2 );
 	add_filter( 'wp_page_menu_args', $n ( 'filter_wp_page_menu_args' ) );
 	add_filter( 'wp_title', $n ( 'filter_wp_title' ), 10, 2 );
 
