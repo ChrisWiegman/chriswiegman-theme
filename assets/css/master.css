@@ -2824,6 +2824,8 @@ a {
     margin: 0;
     padding: 40px;
     vertical-align: middle; }
+  #intro #intro-widget p {
+    margin-bottom: 0; }
 
 .widget.latest-tweets ul {
   list-style: disc; }

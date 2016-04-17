@@ -60,6 +60,10 @@
 			vertical-align:   middle;
 		}
 
+		p {
+			margin-bottom: 0;
+		}
+
 	}
 
 }
@@ -78,7 +82,7 @@
 
 			.cw_tweet {
 
-				display: block;
+				display:       block;
 				margin-bottom: 2em;
 
 				.cw_tweet_text {
