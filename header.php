@@ -41,7 +41,7 @@ namespace CW\Theme\Templates\Header;
 		</div>
 		<div class="wrap">
 			<div class="site-title">
-				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img src="https://www.chriswiegman.pv/content/themes/chriswiegman/assets/images/chris-wiegman.png" alt="Chris Wiegman" width="200" height="27"></a>
+				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img src="https://cdn1.chriswiegman.com/content/themes/chriswiegman/assets/images/chris-wiegman.png" alt="Chris Wiegman" width="200" height="27"></a>
 			</div>
 
 			<div class="menu-toggle"><?php esc_html_e( 'Menu', 'chriswiegman' ); ?></div>
