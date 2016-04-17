@@ -2799,7 +2799,8 @@ a {
   .widget .widget-title {
     border-bottom: 1px solid #ddd;
     font-size: 1.5rem;
-    margin-bottom: 1rem; }
+    margin-bottom: 1rem;
+    padding-bottom: 2px; }
   .widget ul {
     margin: 0 0 0 15px;
     padding: 0px; }
@@ -2911,6 +2912,12 @@ a {
   text-align: center; }
   #cw_affiliates a {
     border-bottom: none; }
+
+.donate_widget a {
+  border-bottom: none; }
+
+.donate_widget .cw_donate {
+  text-align: center; }
 
 /*--------------------------------------------------------------
 0.1 Posts and pages
