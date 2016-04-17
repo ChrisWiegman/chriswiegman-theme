@@ -76,7 +76,8 @@ module.exports = function ( grunt ) {
 					},
 
 					files : {
-						'assets/css/master.css' : 'assets/sass/master.scss'
+						'assets/css/master.css' : 'assets/sass/master.scss',
+						'assets/css/editor.css' : 'assets/sass/editor.scss'
 					}
 
 				}

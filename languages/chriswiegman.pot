@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ChrisWiegman 5.1.3\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/style\n"
-"POT-Creation-Date: 2016-04-17 14:04:33+00:00\n"
+"POT-Creation-Date: 2016-04-17 14:16:41+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -148,19 +148,19 @@ msgstr ""
 msgid "The intro area at the top of most pages."
 msgstr ""
 
-#: includes/functions/core.php:191
+#: includes/functions/core.php:193
 msgid "All Posts"
 msgstr ""
 
-#: includes/functions/core.php:199
+#: includes/functions/core.php:201
 msgid "All Comments"
 msgstr ""
 
-#: includes/functions/core.php:239
+#: includes/functions/core.php:241
 msgid "Continue Reading %s"
 msgstr ""
 
-#: includes/functions/core.php:343
+#: includes/functions/core.php:345
 msgid "Page %s"
 msgstr ""
 
