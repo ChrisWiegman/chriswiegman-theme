@@ -2982,63 +2982,17 @@ h1.page-title {
     font-size: 80%;
     width: 100%; }
 
-.author-box,
-.comments-area {
+.author-box {
   border-top: 1px solid #f8f8f8;
   overflow: hidden; }
 
-.comment-reply-title {
-  margin-bottom: 40px; }
-
-.comments-area {
-  margin: 0;
-  padding: 40px 0; }
-  .comments-area .no-comments {
-    padding: 0 40px; }
-  .comments-area .avatar {
-    float: left;
-    padding: 0 10px 10px 0; }
-  .comments-area h2 {
-    padding: 0 20px; }
-  .comments-area #respond {
-    padding: 0 20px; }
-  .comments-area ol {
-    list-style: none;
-    margin: 0;
-    padding: 20px 0 0 0; }
-    .comments-area ol li {
-      margin-bottom: 1rem;
-      padding: 20px 0 20px 20px; }
-      .comments-area ol li .comment-content {
-        clear: both;
-        padding-right: 20px; }
-      .comments-area ol li ol {
-        padding-top: 20px; }
-        .comments-area ol li ol li {
-          background-color: #ccc;
-          border-left: none; }
-          .comments-area ol li ol li a {
-            border-bottom: 1px solid #ccc; }
-            .comments-area ol li ol li a:focus {
-              outline: thin dotted #fff; }
-          .comments-area ol li ol li ol li {
-            background-color: #fff; }
-            .comments-area ol li ol li ol li a {
-              border-bottom: 1px solid #fff; }
-              .comments-area ol li ol li ol li a:focus {
-                outline: thin dotted #ccc; }
-            .comments-area ol li ol li ol li ol li {
-              background-color: #ccc; }
-              .comments-area ol li ol li ol li ol li a {
-                border-bottom: 1px solid #ccc; }
-                .comments-area ol li ol li ol li ol li a:focus {
-                  outline: thin dotted #fff; }
-              .comments-area ol li ol li ol li ol li ol li {
-                background-color: #fff; }
-                .comments-area ol li ol li ol li ol li ol li a {
-                  border-bottom: 1px solid #fff; }
-                  .comments-area ol li ol li ol li ol li ol li a:focus {
-                    outline: thin dotted #ccc; }
+#disqus_thread {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  line-height: 1.5;
+  overflow: hidden;
+  margin: 4px 1px 0;
+  padding: 25px; }
 
 /*--------------------------------------------------------------
 0.2 Asides
