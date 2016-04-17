@@ -2825,8 +2825,21 @@ a {
     padding: 40px;
     vertical-align: middle; }
 
-.widget.latest-tweets a {
-  border-bottom: 1px solid #ccc; }
+.widget.latest-tweets ul {
+  list-style: disc; }
+  .widget.latest-tweets ul li a {
+    border-bottom: none; }
+  .widget.latest-tweets ul li .cw_tweet {
+    display: block;
+    margin-bottom: 2em; }
+    .widget.latest-tweets ul li .cw_tweet .cw_tweet_text {
+      display: block; }
+    .widget.latest-tweets ul li .cw_tweet .cw_tweet_time {
+      clear: both;
+      display: block;
+      float: right;
+      font-size: 80%;
+      font-style: italic; }
 
 /**
  * Search widget
@@ -2964,13 +2977,15 @@ h1.page-title {
 
 .single .site-main,
 .page .site-main {
-  background-color: #fff;
   margin-bottom: 2.5rem; }
 
 .post-navigation {
-  padding: 0 40px; }
+  padding: 20px 0; }
+  .post-navigation a {
+    border-bottom: 1px solid #356; }
 
 .author-box {
+  background-color: #fff;
   margin: 0 40px;
   padding: 40px 0; }
   .author-box .avatar {
@@ -2984,11 +2999,12 @@ h1.page-title {
 
 .author-box {
   border-top: 1px solid #f8f8f8;
-  overflow: hidden; }
+  margin: 0 0 1em 0;
+  overflow: hidden;
+  padding: 25px; }
 
 #disqus_thread {
   background-color: #fff;
-  border: 1px solid #ccc;
   line-height: 1.5;
   overflow: hidden;
   margin: 4px 1px 0;

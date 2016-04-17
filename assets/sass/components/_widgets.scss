@@ -66,10 +66,35 @@
 
 .widget.latest-tweets {
 
-	a {
-		border-bottom: 1px solid $light-grey;
-	}
+	ul {
 
+		list-style: disc;
+
+		li {
+
+			a {
+				border-bottom: none;
+			}
+
+			.cw_tweet {
+
+				display: block;
+				margin-bottom: 2em;
+
+				.cw_tweet_text {
+					display: block;
+				}
+
+				.cw_tweet_time {
+					clear:      both;
+					display:    block;
+					float:      right;
+					font-size:  80%;
+					font-style: italic;
+				}
+			}
+		}
+	}
 }
 
 /**
