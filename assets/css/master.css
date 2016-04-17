@@ -2885,6 +2885,8 @@ a {
   background-color: #ebebeb;
   margin: 0 0 1em;
   padding: 15px; }
+  .widget a {
+    border-bottom: none; }
   .widget select {
     max-width: 100%; }
   .widget .widget-title {
@@ -2921,8 +2923,6 @@ a {
 
 .widget.latest-tweets ul {
   list-style: disc; }
-  .widget.latest-tweets ul li a {
-    border-bottom: none; }
   .widget.latest-tweets ul li .cw_tweet {
     display: block;
     margin-bottom: 2em; }

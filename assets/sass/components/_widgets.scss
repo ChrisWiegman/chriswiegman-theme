@@ -4,6 +4,10 @@
 	margin:           0 0 1em;
 	padding:          15px;
 
+	a {
+		border-bottom: none;
+	}
+
 	select {
 		max-width: 100%;
 	}
@@ -76,10 +80,6 @@
 		list-style: disc;
 
 		li {
-
-			a {
-				border-bottom: none;
-			}
 
 			.cw_tweet {
 
