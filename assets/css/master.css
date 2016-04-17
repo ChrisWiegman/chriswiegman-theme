@@ -2921,14 +2921,14 @@ a {
   #intro #intro-widget p {
     margin-bottom: 0; }
 
-.widget.latest-tweets ul {
+.widget.latest_tweets ul {
   list-style: disc; }
-  .widget.latest-tweets ul li .cw_tweet {
+  .widget.latest_tweets ul li .cw_tweet {
     display: block;
     margin-bottom: 2em; }
-    .widget.latest-tweets ul li .cw_tweet .cw_tweet_text {
+    .widget.latest_tweets ul li .cw_tweet .cw_tweet_text {
       display: block; }
-    .widget.latest-tweets ul li .cw_tweet .cw_tweet_time {
+    .widget.latest_tweets ul li .cw_tweet .cw_tweet_time {
       clear: both;
       display: block;
       float: right;

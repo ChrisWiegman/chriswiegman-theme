@@ -1,15 +1,15 @@
 <?php
 /**
- * The template for the projects page
+ * The template for the code page
  *
  * @since   5.0.0
  *
- * @package CW\Theme\Templates\Page\Projects
+ * @package CW\Theme\Templates\Page\Code
  *
  * @author  Chris Wiegman <chris@chriswiegman.com>
  */
 
-namespace CW\Theme\Templates\Page\Projects;
+namespace CW\Theme\Templates\Page\Code;
 
 get_header(); ?>
 
