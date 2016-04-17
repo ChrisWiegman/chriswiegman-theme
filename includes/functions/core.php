@@ -151,9 +151,11 @@ function action_wp_enqueue_scripts() {
 
 	$min = ( defined( 'SCRIPT_DEBUG' ) && true === SCRIPT_DEBUG ) ? '' : '.min';
 
+	wp_enqueue_style( 'google-fonts', 'https://fonts.googleapis.com/css?family=Arvo:700|Gudea:400,400italic,700', array(), CW_THEME_VERSION );
+
 	wp_enqueue_style( 'chriswiegman-style', get_template_directory_uri() . '/assets/css/master' . $min . '.css', array(), CW_THEME_VERSION );
 
-	wp_enqueue_script( 'chriswiegman-footer', get_template_directory_uri() . '/assets/js/footer' . $min . '.js', array( 'jquery' ), CW_THEME_VERSION, true );
+	wp_enqueue_script( 'chriswiegman-footer', get_template_directory_uri() . '/assets/js/footer' . $min . '.js', array( 'jquery' ), CW_THEME_VERSION, false );
 
 	$vars = array(
 		'small'  => wp_get_attachment_image_src( get_post_thumbnail_id(), array( 150, 150 ) ),
@@ -256,7 +258,7 @@ function filter_wp_default_scripts( $scripts ) {
 	if ( ! is_admin() ) {
 
 		$scripts->remove( 'jquery' );
-		$scripts->add( 'jquery', false, array( 'jquery-core' ), '1.11.3' );
+		$scripts->add( 'jquery', false, array( 'jquery-core' ), '1.12.3' );
 
 	}
 
