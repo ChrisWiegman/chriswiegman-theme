@@ -2907,6 +2907,11 @@ a {
   background-color: #3e3e3e;
   border: none; }
 
+#cw_affiliates {
+  text-align: center; }
+  #cw_affiliates a {
+    border-bottom: none; }
+
 /*--------------------------------------------------------------
 0.1 Posts and pages
 --------------------------------------------------------------*/
