@@ -25,12 +25,12 @@ namespace CW\Theme\Templates\Parts\Content\Archive;
 
 		<div class="archive-page">
 
-			<h4><?php esc_html_e( 'Pages:', 'genesis' ); ?></h4>
+			<h4><?php esc_html_e( 'Pages:', 'chriswiegman' ); ?></h4>
 			<ul>
 				<?php wp_list_pages( array( 'title_li' => '' ) ); ?>
 			</ul>
 
-			<h4><?php esc_html_e( '50 Latest Posts:', 'genesis' ); ?></h4>
+			<h4><?php esc_html_e( '50 Latest Posts:', 'chriswiegman' ); ?></h4>
 			<ul>
 				<?php wp_get_archives( 'type=postbypost&limit=50' ); ?>
 			</ul>
@@ -40,12 +40,12 @@ namespace CW\Theme\Templates\Parts\Content\Archive;
 
 		<div class="archive-page">
 
-			<h4><?php esc_html_e( 'Categories:', 'genesis' ); ?></h4>
+			<h4><?php esc_html_e( 'Categories:', 'chriswiegman' ); ?></h4>
 			<ul>
 				<?php wp_list_categories( 'sort_column=name&title_li=' ); ?>
 			</ul>
 
-			<h4><?php esc_html_e( 'Authors:', 'genesis' ); ?></h4>
+			<h4><?php esc_html_e( 'Authors:', 'chriswiegman' ); ?></h4>
 			<ul>
 				<?php wp_list_authors( 'exclude_admin=0&optioncount=1' ); ?>
 			</ul>
