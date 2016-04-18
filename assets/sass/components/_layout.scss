@@ -71,8 +71,19 @@ body {
 			.site-title {
 
 				float:       left;
-				padding-top: 8px;
+				font-family: Verdana, Arial, Helvetica, sans-serif;
+				font-weight: bold;
+				font-size:   200%;
+				line-height: 1;
 				transition:  0.5s;
+
+				.logo-chris {
+					color: #9b9b9b;
+				}
+
+				.logo-wiegman {
+					color: #356;
+				}
 
 				a {
 
