@@ -16,7 +16,8 @@
 		"grunt-phpunit":        "*",
 		"grunt-contrib-jshint": "*",
 		"grunt-browser-sync":   "*",
-		"grunt-autoprefixer":   "*"
+		"grunt-autoprefixer":   "*",
+		"time-grunt":           "*"
 	},
 	"author":          "Chris Wiegman",
 	"repository":      {
