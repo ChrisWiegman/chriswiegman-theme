@@ -2519,6 +2519,7 @@ body {
         font-weight: bold;
         font-size: 200%;
         line-height: 1;
+        margin-top: 2px;
         -webkit-transition: 0.5s;
                 transition: 0.5s; }
         #page .site-header .wrap .site-title .logo-chris {
