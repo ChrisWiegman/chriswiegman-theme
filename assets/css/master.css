@@ -137,7 +137,7 @@ q {
 
 .fa {
   display: inline-block;
-  font: normal normal normal 14px / 1 FontAwesome;
+  font: normal normal normal 14px/1 FontAwesome;
   font-size: inherit;
   text-rendering: auto;
   -webkit-font-smoothing: antialiased;
@@ -2515,9 +2515,17 @@ body {
       max-width: 1152px; }
       #page .site-header .wrap .site-title {
         float: left;
-        padding-top: 8px;
+        font-family: Verdana, Arial, Helvetica, sans-serif;
+        font-weight: bold;
+        font-size: 200%;
+        line-height: 1;
+        margin-top: 2px;
         -webkit-transition: 0.5s;
                 transition: 0.5s; }
+        #page .site-header .wrap .site-title .logo-chris {
+          color: #9b9b9b; }
+        #page .site-header .wrap .site-title .logo-wiegman {
+          color: #356; }
         #page .site-header .wrap .site-title a {
           border-bottom: none; }
           #page .site-header .wrap .site-title a:hover {

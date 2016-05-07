@@ -3,6 +3,9 @@ module.exports = function ( grunt ) {
 	// Start out by loading the grunt modules we'll need
 	require( 'load-grunt-tasks' )( grunt );
 
+	// Show elapsed time
+	require( 'time-grunt' )( grunt );
+
 	grunt.initConfig(
 		{
 
@@ -10,7 +13,7 @@ module.exports = function ( grunt ) {
 			 * Clean existing files
 			 */
 			clean : {
-				styles : {
+				styles  : {
 					src : [
 						'assets/css/*.css',
 						'assets/css/*.map'
@@ -104,7 +107,7 @@ module.exports = function ( grunt ) {
 						'assets/js/footer.min.js' : [
 							'assets/js/src/vendor/backstretch.js',
 							'assets/js/src/progress.js',
-						    'assets/js/src/skip-link-focus-fix.js',
+							'assets/js/src/skip-link-focus-fix.js',
 							'assets/js/src/scripts.js'
 						]
 					}
