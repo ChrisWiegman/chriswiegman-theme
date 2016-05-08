@@ -2465,7 +2465,7 @@ th {
 
 html,
 body {
-  background-color: #356; }
+  background-color: #f0f3f4; }
 
 #page {
   margin: 0 auto; }
@@ -2544,15 +2544,15 @@ body {
     float: right;
     width: 33%; }
   #page .site-footer {
-    background-color: #3e3e3e;
-    color: #ccc;
+    background-color: #fff;
+    color: #999;
     font-size: 75%;
     width: 100%;
     opacity: 0.9;
     text-align: center; }
     #page .site-footer a {
-      border-bottom: 1px solid #ccc;
-      color: #ccc; }
+      border-bottom: 1px solid #999;
+      color: #999; }
       #page .site-footer a:hover {
         border-bottom: 1px solid #cf5300;
         color: #cf5300; }
@@ -2890,7 +2890,7 @@ a {
   clear: both; }
 
 .widget {
-  background-color: #ebebeb;
+  background-color: #f0f3f4;
   margin: 0 0 1em;
   padding: 15px; }
   .widget a {
@@ -2916,18 +2916,20 @@ a {
   .widget input {
     border: 1px solid #ddd; }
 
-#intro #intro-widget {
-  margin: 0 auto;
-  width: 100%; }
-  #intro #intro-widget .widget {
-    background-color: #fff;
-    border: none;
-    font-size: 2rem;
-    margin: 0;
-    padding: 40px;
-    vertical-align: middle; }
-  #intro #intro-widget p {
-    margin-bottom: 0; }
+#intro {
+  border: 1px solid #ddd; }
+  #intro #intro-widget {
+    margin: 0 auto;
+    width: 100%; }
+    #intro #intro-widget .widget {
+      background-color: #fff;
+      border: none;
+      font-size: 2rem;
+      margin: 0;
+      padding: 40px;
+      vertical-align: middle; }
+    #intro #intro-widget p {
+      margin-bottom: 0; }
 
 .widget.latest_tweets ul {
   list-style: disc; }
@@ -3026,6 +3028,7 @@ h1.page-title {
 
 .hentry {
   background-color: #fff;
+  border: 1px solid #ddd;
   font-size: 1.375rem;
   line-height: 1.6;
   margin: 0 0 1rem 0;
@@ -3095,7 +3098,7 @@ h1.page-title {
 .post-navigation {
   padding: 20px 0; }
   .post-navigation a {
-    border-bottom: 1px solid #356; }
+    border-bottom: 1px solid #f0f3f4; }
 
 .author-box {
   background-color: #fff;

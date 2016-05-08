@@ -124,8 +124,8 @@ body {
 
 	.site-footer {
 
-		background-color: $dark-grey;
-		color:            $light-grey;
+		background-color: $white;
+		color:            $grey;
 		font-size:        75%;
 		width:            100%;
 		opacity:          0.9;
@@ -133,8 +133,8 @@ body {
 
 		a {
 
-			border-bottom: 1px solid $light-grey;
-			color:         $light-grey;
+			border-bottom: 1px solid $grey;
+			color:         $grey;
 
 			&:hover {
 				border-bottom: 1px solid $orange;
