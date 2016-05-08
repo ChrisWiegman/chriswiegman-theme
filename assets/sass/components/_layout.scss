@@ -15,7 +15,8 @@ body {
 		margin:      0 auto;
 		max-width:   1152px;
 		overflow:    hidden;
-		padding-top: 56px;
+		padding-top: 86px;
+		transition: 0.5s;
 	}
 
 	.site-header {
@@ -56,9 +57,9 @@ body {
 				float:       left;
 				font-family: Verdana, Arial, Helvetica, sans-serif;
 				font-weight: bold;
-				font-size:   200%;
+				font-size:   180%;
 				line-height: 1;
-				margin-top:  2px;
+				margin-top:  4px;
 				transition:  0.5s;
 
 				.logo-chris {
@@ -102,7 +103,8 @@ body {
 
 	.site-content .widget-area {
 		float: right;
-		width: 33%;
+		width: 30%;
+		transition: 0.5s;
 	}
 
 	.site-footer {

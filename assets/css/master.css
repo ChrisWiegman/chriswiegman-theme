@@ -2475,7 +2475,9 @@ body {
     margin: 0 auto;
     max-width: 1152px;
     overflow: hidden;
-    padding-top: 56px; }
+    padding-top: 86px;
+    -webkit-transition: 0.5s;
+            transition: 0.5s; }
   #page .site-header {
     background-color: #fff;
     border-bottom: 1px solid #ccc;
@@ -2505,9 +2507,9 @@ body {
         float: left;
         font-family: Verdana, Arial, Helvetica, sans-serif;
         font-weight: bold;
-        font-size: 200%;
+        font-size: 180%;
         line-height: 1;
-        margin-top: 2px;
+        margin-top: 4px;
         -webkit-transition: 0.5s;
                 transition: 0.5s; }
         #page .site-header .wrap .site-title .logo-chris {
@@ -2530,7 +2532,9 @@ body {
     width: 66%; }
   #page .site-content .widget-area {
     float: right;
-    width: 33%; }
+    width: 30%;
+    -webkit-transition: 0.5s;
+            transition: 0.5s; }
   #page .site-footer {
     background-color: #fff;
     color: #999;
@@ -3004,8 +3008,10 @@ h1.page-title {
   border: 1px solid #ddd;
   font-size: 1.375rem;
   line-height: 1.6;
-  margin: 0 0 1rem 0;
-  padding: 0; }
+  margin: 0 0 3rem 0;
+  padding: 0;
+  -webkit-transition: 0.5s;
+          transition: 0.5s; }
   .hentry .gist {
     font-size: 0.875rem;
     line-height: 1.4; }
@@ -3251,7 +3257,18 @@ object {
 
 @media screen and (max-width: 1152px) {
   .hentry {
-    border-left: none; } }
+    border-left: none;
+    margin: 0 0 1rem 0;
+    -webkit-transition: 0.5s;
+            transition: 0.5s; }
+  #page .site-content {
+    padding-top: 56px;
+    -webkit-transition: 0.5s;
+            transition: 0.5s; }
+    #page .site-content .widget-area {
+      width: 33%;
+      -webkit-transition: 0.5s;
+              transition: 0.5s; } }
 
 @media screen and (max-width: 900px) {
   .single .site-main, .page .site-main {
@@ -3263,7 +3280,8 @@ object {
     float: none;
     width: 100%; }
   #page .site-content {
-    max-width: 100%; }
+    max-width: 100%;
+    padding-top: 56px; }
     #page .site-content .widget-area {
       border-left: none;
       float: none;
@@ -3317,10 +3335,6 @@ object {
     display: block;
     float: none;
     margin: 10px auto; }
-  .widget,
-  .hentry {
-    border-left: none;
-    border-right: none; }
   .software-short {
     float: none;
     width: 100%; }
