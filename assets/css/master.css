@@ -3276,9 +3276,17 @@ object {
     -webkit-transition: 0.5s;
             transition: 0.5s; } }
 
+@media screen and (max-width: 1152px) {
+  #intro {
+    border: none; }
+  .hentry {
+    border-left: none; } }
+
 @media screen and (max-width: 900px) {
   .single .site-main, .page .site-main {
     margin-bottom: 1em; }
+  .hentry {
+    border: none; }
   #page .content-area {
     border-right: none;
     float: none;
@@ -3384,7 +3392,10 @@ object {
 
 @media screen and (max-width: 350px) {
   #page .site-header .menu-toggle {
-    padding: 8px 5px 0 0; } }
+    padding: 8px 5px 0 0; }
+  #page .site-header .wrap .site-title {
+    font-size: 150%;
+    margin-top: 8px; } }
 
 @media print {
   body {
