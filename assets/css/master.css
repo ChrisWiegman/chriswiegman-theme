@@ -2469,18 +2469,6 @@ body {
 
 #page {
   margin: 0 auto; }
-  #page #intro {
-    background-color: #fff;
-    clear: both;
-    margin-bottom: 1em;
-    min-height: 200px;
-    padding: 0;
-    -webkit-transition: 0.5s;
-            transition: 0.5s;
-    width: 100%; }
-    #page #intro .widget-area {
-      width: 100%;
-      float: none; }
   #page .featured-image {
     text-align: center; }
   #page .site-content {
@@ -2916,21 +2904,6 @@ a {
   .widget input {
     border: 1px solid #ddd; }
 
-#intro {
-  border: 1px solid #ddd; }
-  #intro #intro-widget {
-    margin: 0 auto;
-    width: 100%; }
-    #intro #intro-widget .widget {
-      background-color: #fff;
-      border: none;
-      font-size: 2rem;
-      margin: 0;
-      padding: 40px;
-      vertical-align: middle; }
-    #intro #intro-widget p {
-      margin-bottom: 0; }
-
 .widget.latest_tweets ul {
   list-style: disc; }
   .widget.latest_tweets ul li .cw_tweet {
@@ -3277,8 +3250,6 @@ object {
             transition: 0.5s; } }
 
 @media screen and (max-width: 1152px) {
-  #intro {
-    border: none; }
   .hentry {
     border-left: none; } }
 
@@ -3353,8 +3324,6 @@ object {
   .software-short {
     float: none;
     width: 100%; }
-  #intro .widget {
-    font-size: 1.5rem; }
   .paging-navigation {
     padding-left: 10px;
     padding-right: 10px; }
@@ -3414,7 +3383,6 @@ object {
   .search .hentry {
     border: none; }
   #secondary,
-  #intro,
   #site-navigation,
   #commentform {
     display: none; }

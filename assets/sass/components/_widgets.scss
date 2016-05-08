@@ -49,32 +49,6 @@
 
 }
 
-#intro {
-
-	border: 1px solid $border-color;
-
-	#intro-widget {
-
-		margin: 0 auto;
-		width:  100%;
-
-		.widget {
-			background-color: $white;
-			border:           none;
-			font-size:        2rem;
-			margin:           0;
-			padding:          40px;
-			vertical-align:   middle;
-		}
-
-		p {
-			margin-bottom: 0;
-		}
-
-	}
-
-}
-
 .widget.latest_tweets {
 
 	ul {
