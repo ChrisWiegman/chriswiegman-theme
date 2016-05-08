@@ -3383,22 +3383,29 @@ object {
 @media print {
   body {
     background: white;
+    color: #000 !important;
     font-size: 10pt;
     margin: 0; }
   #page .content-area {
     margin-left: 0;
     float: none;
     width: auto; }
+  #page .site-content {
+    padding-top: 40px; }
   #page .site-header {
-    position: absolute; }
+    border-bottom: none; }
+    #page .site-header .wrap .site-title {
+      margin: 7px 0 0 20px; }
   .single .site-main,
   .page .site-main,
-  .home .hentry,
-  .search .hentry {
+  .hentry {
     border: none; }
   #secondary,
   #site-navigation,
-  #commentform {
+  #commentform,
+  .comments-link,
+  .sharedaddy,
+  #disqus_thread {
     display: none; }
   #header {
     height: 75px; }
