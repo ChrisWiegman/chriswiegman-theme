@@ -2,6 +2,7 @@
 
 	body {
 		background: white;
+		color:      #000 !important;
 		font-size:  10pt;
 		margin:     0
 	}
@@ -14,23 +15,32 @@
 			width:       auto
 		}
 
-		.site-header {
-			position: absolute;
+		.site-content {
+			padding-top: 40px;
 		}
 
+		.site-header {
+
+			border-bottom: none;
+
+			.wrap .site-title {
+				margin: 7px 0 0 20px;
+			}
+		}
 	}
 
 	.single .site-main,
 	.page .site-main,
-	.home .hentry,
-	.search .hentry {
+	.hentry {
 		border: none;
 	}
 
 	#secondary,
-	#intro,
 	#site-navigation,
-	#commentform {
+	#commentform,
+	.comments-link,
+	.sharedaddy,
+	#disqus_thread {
 		display: none
 	}
 

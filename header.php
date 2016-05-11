@@ -55,14 +55,3 @@ namespace CW\Theme\Templates\Header;
 	<!-- #masthead -->
 
 	<div id="content" class="site-content">
-
-		<?php if ( is_home() && is_active_sidebar( 'intro' ) ) { ?>
-
-			<div id="intro">
-				<div id="intro-widget" class="widget-area" role="complementary">
-					<?php dynamic_sidebar( 'intro' ); ?>
-				</div>
-			</div>
-			<!-- #intro -->
-
-		<?php } ?>

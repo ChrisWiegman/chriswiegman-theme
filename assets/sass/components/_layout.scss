@@ -7,23 +7,6 @@ body {
 
 	margin: 0 auto;
 
-	#intro {
-
-		background-color: $white;
-		clear:            both;
-		margin-bottom:    1em;
-		min-height:       200px;
-		padding:          0;
-		transition:       0.5s;
-		width:            100%;
-
-		.widget-area {
-			width: 100%;
-			float: none;
-		}
-
-	}
-
 	.featured-image {
 		text-align: center;
 	}
@@ -32,7 +15,8 @@ body {
 		margin:      0 auto;
 		max-width:   1152px;
 		overflow:    hidden;
-		padding-top: 56px;
+		padding-top: 76px;
+		transition: 0.5s;
 	}
 
 	.site-header {
@@ -53,7 +37,7 @@ body {
 			width:    100%;
 
 			.progress-indicator {
-				background-color: $grey;
+				background-color: #9ab;
 				display:          block;
 				height:           40px;
 				opacity:          0.2;
@@ -73,9 +57,9 @@ body {
 				float:       left;
 				font-family: Verdana, Arial, Helvetica, sans-serif;
 				font-weight: bold;
-				font-size:   200%;
+				font-size:   180%;
 				line-height: 1;
-				margin-top:  2px;
+				margin-top:  4px;
 				transition:  0.5s;
 
 				.logo-chris {
@@ -119,13 +103,14 @@ body {
 
 	.site-content .widget-area {
 		float: right;
-		width: 33%;
+		width: 30%;
+		transition: 0.5s;
 	}
 
 	.site-footer {
 
-		background-color: $dark-grey;
-		color:            $light-grey;
+		background-color: $white;
+		color:            $grey;
 		font-size:        75%;
 		width:            100%;
 		opacity:          0.9;
@@ -133,8 +118,8 @@ body {
 
 		a {
 
-			border-bottom: 1px solid $light-grey;
-			color:         $light-grey;
+			border-bottom: 1px solid $grey;
+			color:         $grey;
 
 			&:hover {
 				border-bottom: 1px solid $orange;

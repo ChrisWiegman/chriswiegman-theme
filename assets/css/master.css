@@ -2465,29 +2465,19 @@ th {
 
 html,
 body {
-  background-color: #356; }
+  background-color: #f0f3f4; }
 
 #page {
   margin: 0 auto; }
-  #page #intro {
-    background-color: #fff;
-    clear: both;
-    margin-bottom: 1em;
-    min-height: 200px;
-    padding: 0;
-    -webkit-transition: 0.5s;
-            transition: 0.5s;
-    width: 100%; }
-    #page #intro .widget-area {
-      width: 100%;
-      float: none; }
   #page .featured-image {
     text-align: center; }
   #page .site-content {
     margin: 0 auto;
     max-width: 1152px;
     overflow: hidden;
-    padding-top: 56px; }
+    padding-top: 76px;
+    -webkit-transition: 0.5s;
+            transition: 0.5s; }
   #page .site-header {
     background-color: #fff;
     border-bottom: 1px solid #ccc;
@@ -2503,7 +2493,7 @@ body {
       position: relative;
       width: 100%; }
       #page .site-header .progress-wrap .progress-indicator {
-        background-color: #999;
+        background-color: #9ab;
         display: block;
         height: 40px;
         opacity: 0.2;
@@ -2517,9 +2507,9 @@ body {
         float: left;
         font-family: Verdana, Arial, Helvetica, sans-serif;
         font-weight: bold;
-        font-size: 200%;
+        font-size: 180%;
         line-height: 1;
-        margin-top: 2px;
+        margin-top: 4px;
         -webkit-transition: 0.5s;
                 transition: 0.5s; }
         #page .site-header .wrap .site-title .logo-chris {
@@ -2542,17 +2532,19 @@ body {
     width: 66%; }
   #page .site-content .widget-area {
     float: right;
-    width: 33%; }
+    width: 30%;
+    -webkit-transition: 0.5s;
+            transition: 0.5s; }
   #page .site-footer {
-    background-color: #3e3e3e;
-    color: #ccc;
+    background-color: #fff;
+    color: #999;
     font-size: 75%;
     width: 100%;
     opacity: 0.9;
     text-align: center; }
     #page .site-footer a {
-      border-bottom: 1px solid #ccc;
-      color: #ccc; }
+      border-bottom: 1px solid #999;
+      color: #999; }
       #page .site-footer a:hover {
         border-bottom: 1px solid #cf5300;
         color: #cf5300; }
@@ -2890,7 +2882,7 @@ a {
   clear: both; }
 
 .widget {
-  background-color: #ebebeb;
+  background-color: #f0f3f4;
   margin: 0 0 1em;
   padding: 15px; }
   .widget a {
@@ -2915,19 +2907,6 @@ a {
     display: inline; }
   .widget input {
     border: 1px solid #ddd; }
-
-#intro #intro-widget {
-  margin: 0 auto;
-  width: 100%; }
-  #intro #intro-widget .widget {
-    background-color: #fff;
-    border: none;
-    font-size: 2rem;
-    margin: 0;
-    padding: 40px;
-    vertical-align: middle; }
-  #intro #intro-widget p {
-    margin-bottom: 0; }
 
 .widget.latest_tweets ul {
   list-style: disc; }
@@ -3026,10 +3005,13 @@ h1.page-title {
 
 .hentry {
   background-color: #fff;
+  border: 1px solid #ddd;
   font-size: 1.375rem;
   line-height: 1.6;
-  margin: 0 0 1rem 0;
-  padding: 0; }
+  margin: 0 0 3rem 0;
+  padding: 0;
+  -webkit-transition: 0.5s;
+          transition: 0.5s; }
   .hentry .gist {
     font-size: 0.875rem;
     line-height: 1.4; }
@@ -3095,7 +3077,7 @@ h1.page-title {
 .post-navigation {
   padding: 20px 0; }
   .post-navigation a {
-    border-bottom: 1px solid #356; }
+    border-bottom: 1px solid #f0f3f4; }
 
 .author-box {
   background-color: #fff;
@@ -3273,15 +3255,33 @@ object {
     -webkit-transition: 0.5s;
             transition: 0.5s; } }
 
+@media screen and (max-width: 1152px) {
+  .hentry {
+    border-left: none;
+    margin: 0 0 1rem 0;
+    -webkit-transition: 0.5s;
+            transition: 0.5s; }
+  #page .site-content {
+    padding-top: 56px;
+    -webkit-transition: 0.5s;
+            transition: 0.5s; }
+    #page .site-content .widget-area {
+      width: 33%;
+      -webkit-transition: 0.5s;
+              transition: 0.5s; } }
+
 @media screen and (max-width: 900px) {
   .single .site-main, .page .site-main {
     margin-bottom: 1em; }
+  .hentry {
+    border: none; }
   #page .content-area {
     border-right: none;
     float: none;
     width: 100%; }
   #page .site-content {
-    max-width: 100%; }
+    max-width: 100%;
+    padding-top: 56px; }
     #page .site-content .widget-area {
       border-left: none;
       float: none;
@@ -3335,15 +3335,9 @@ object {
     display: block;
     float: none;
     margin: 10px auto; }
-  .widget,
-  .hentry {
-    border-left: none;
-    border-right: none; }
   .software-short {
     float: none;
     width: 100%; }
-  #intro .widget {
-    font-size: 1.5rem; }
   .paging-navigation {
     padding-left: 10px;
     padding-right: 10px; }
@@ -3381,28 +3375,37 @@ object {
 
 @media screen and (max-width: 350px) {
   #page .site-header .menu-toggle {
-    padding: 8px 5px 0 0; } }
+    padding: 8px 5px 0 0; }
+  #page .site-header .wrap .site-title {
+    font-size: 150%;
+    margin-top: 8px; } }
 
 @media print {
   body {
     background: white;
+    color: #000 !important;
     font-size: 10pt;
     margin: 0; }
   #page .content-area {
     margin-left: 0;
     float: none;
     width: auto; }
+  #page .site-content {
+    padding-top: 40px; }
   #page .site-header {
-    position: absolute; }
+    border-bottom: none; }
+    #page .site-header .wrap .site-title {
+      margin: 7px 0 0 20px; }
   .single .site-main,
   .page .site-main,
-  .home .hentry,
-  .search .hentry {
+  .hentry {
     border: none; }
   #secondary,
-  #intro,
   #site-navigation,
-  #commentform {
+  #commentform,
+  .comments-link,
+  .sharedaddy,
+  #disqus_thread {
     display: none; }
   #header {
     height: 75px; }

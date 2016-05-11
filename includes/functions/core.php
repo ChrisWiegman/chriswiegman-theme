@@ -98,18 +98,6 @@ function action_widgets_init() {
 		)
 	);
 
-	register_sidebar(
-		array(
-			'name'          => esc_html__( 'Intro', 'chriswiegman' ),
-			'id'            => 'intro',
-			'description'   => esc_html__( 'The intro area at the top of most pages.', 'chriswiegman' ),
-			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-			'after_widget'  => '</aside>',
-			'before_title'  => '<h2 class="widget-title">',
-			'after_title'   => '</h2>',
-		)
-	);
-
 }
 
 /**
