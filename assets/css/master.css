@@ -2553,7 +2553,7 @@ body {
       margin: 10px 0; }
 
 input, select, textarea {
-  background-color: #f8f8f8;
+  background-color: #f0f3f4;
   border: 1px solid #ccc;
   font-size: 1.125rem;
   padding: 8px;
@@ -2686,6 +2686,15 @@ input:hover[type="button"], input:hover[type="submit"] {
   border: 1px solid #eee;
   margin-bottom: 24px;
   padding: 24px; }
+
+.gform_wrapper .gfield_radio input {
+  float: left;
+  margin-top: 9px;
+  width: auto !important; }
+
+.gform_wrapper .gfield_radio label {
+  display: block;
+  margin: 0 0 0 24px; }
 
 .gform_wrapper .gform_heading {
   margin-bottom: 0 !important; }
