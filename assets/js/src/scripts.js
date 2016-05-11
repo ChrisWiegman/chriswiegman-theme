@@ -36,7 +36,7 @@ jQuery( document ).ready( function ( $ ) {
 } );
 
 WebFontConfig = {
-	google : {families : ['Arvo:700:latin', 'Gudea:400italic,700,400:latin']}
+	google : {families : ['Arvo::latin', 'Lato:400,700,400italic,700italic:latin']}
 };
 
 (function () {
