@@ -2295,7 +2295,7 @@ q {
 
 body {
   color: #5f5f5f;
-  font-family: "Gudea", sans-serif; }
+  font-family: "Lato", sans-serif; }
 
 h1,
 h2,
@@ -3078,6 +3078,8 @@ h1.page-title {
       border-bottom: none; }
   .hentry .entry-footer {
     padding: 40px; }
+  .hentry li {
+    border: none; }
 
 .single .site-main,
 .page .site-main {
