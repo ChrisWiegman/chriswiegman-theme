@@ -2556,14 +2556,15 @@ body {
 input, select, textarea {
   background-color: #f0f3f4;
   border: 1px solid #ccc;
-  font-size: 1.125rem;
+  font-size: 1.2rem;
   padding: 8px;
   width: 100%; }
 
 input[type="search"] {
   -webkit-appearance: textfield; }
 
-.searchform input {
+.search-form input {
+  background-color: #f8f8f8;
   margin: 0;
   padding: 8px 4px; }
 
@@ -2572,8 +2573,8 @@ button {
   border: none;
   color: #fff !important;
   cursor: pointer;
-  font-size: 1.125rem;
-  font-weight: 700;
+  font-size: 1.2rem;
+  font-weight: bold;
   line-height: 1.125rem;
   padding: 8px;
   text-decoration: none;
@@ -2648,9 +2649,12 @@ input:hover[type="button"], input:hover[type="submit"] {
   .gform_wrapper textarea,
   .gform_wrapper .ginput_complex label,
   .gform_wrapper .gfield_description {
-    font-size: 0.9rem !important;
+    font-size: 1.2rem !important;
     padding: 8px !important;
     width: 98%; }
+  .gform_wrapper .ginput_complex label,
+  .gform_wrapper .gfield_description {
+    font-size: 0.9rem !important; }
   .gform_wrapper .top_label .gfield_label {
     margin-bottom: 3px;
     float: none;
@@ -2690,7 +2694,7 @@ input:hover[type="button"], input:hover[type="submit"] {
 
 .gform_wrapper .gfield_radio input {
   float: left;
-  margin-top: 9px;
+  margin-top: 7px;
   width: auto !important; }
 
 .gform_wrapper .gfield_radio label {
@@ -2975,7 +2979,7 @@ a {
   .gform_widget form input#subscribe-field {
     background-color: #f8f8f8;
     color: #999;
-    font-size: 1rem;
+    font-size: 1.2rem;
     padding: .5rem;
     width: 100%; }
   .gform_widget form input[type="submit"] {

@@ -1,7 +1,7 @@
 input, select, textarea {
 	background-color: $background;
 	border:           1px solid $light-grey;
-	font-size:        1.125rem;
+	font-size:        $normal-rem;
 	padding:          8px;
 	width:            100%;
 }
@@ -10,9 +10,10 @@ input[type="search"] {
 	-webkit-appearance: textfield;
 }
 
-.searchform input {
-	margin:  0;
-	padding: 8px 4px;
+.search-form input {
+	background-color: $near-white;
+	margin:           0;
+	padding:          8px 4px;
 }
 
 button {
@@ -20,8 +21,8 @@ button {
 	border:          none;
 	color:           $white !important;
 	cursor:          pointer;
-	font-size:       1.125rem;
-	font-weight:     700;
+	font-size:       $normal-rem;
+	font-weight:     bold;
 	line-height:     1.125rem;
 	padding:         8px;
 	text-decoration: none;
@@ -120,9 +121,14 @@ input:hover {
 	textarea,
 	.ginput_complex label,
 	.gfield_description {
-		font-size: $small-rem !important;
+		font-size: $normal-rem !important;
 		padding:   8px !important;
 		width:     98%;
+	}
+
+	.ginput_complex label,
+	.gfield_description {
+		font-size: $small-rem !important;
 	}
 
 	.top_label .gfield_label {
@@ -196,7 +202,7 @@ input:hover {
 
 		input {
 			float:      left;
-			margin-top: 9px;
+			margin-top: 7px;
 			width:      auto !important;
 		}
 
