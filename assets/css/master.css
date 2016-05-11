@@ -3045,6 +3045,8 @@ h1.page-title {
           border-bottom: none;
           color: #cf5300;
           text-decoration: none; }
+  .hentry.has-post-thumbnail .entry-header {
+    padding: 0 40px; }
   .hentry .entry-meta,
   .hentry .entry-footer {
     color: #999;

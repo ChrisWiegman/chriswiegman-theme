@@ -57,11 +57,12 @@ h1.page-title {
 					color:           $orange;
 					text-decoration: none;
 				}
-
 			}
-
 		}
+	}
 
+	&.has-post-thumbnail .entry-header {
+		padding: 0 40px;
 	}
 
 	.entry-meta,
