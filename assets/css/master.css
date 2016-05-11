@@ -2295,7 +2295,7 @@ q {
 
 body {
   color: #5f5f5f;
-  font-family: "Lato", sans-serif; }
+  font-family: Verdana, Helvatica, Arial, sans-serif; }
 
 h1,
 h2,
@@ -2305,7 +2305,7 @@ h5,
 h6 {
   clear: both;
   color: #2e2e2e;
-  font-family: "Arvo", serif;
+  font-family: Georgia, serif;
   line-height: 1.2; }
 
 h1 {

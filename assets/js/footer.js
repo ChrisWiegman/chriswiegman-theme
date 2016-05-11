@@ -159,15 +159,5 @@
     c.each(function() {
         a(this).height() > b && (b = a(this).height());
     }), c.height(b);
-}), WebFontConfig = {
-    google: {
-        families: [ "Arvo::latin", "Lato:400,700,400italic,700italic:latin" ]
-    }
-}, function() {
-    var a = document.createElement("script");
-    a.src = "https://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js", a.type = "text/javascript", 
-    a.async = "true";
-    var b = document.getElementsByTagName("script")[0];
-    b.parentNode.insertBefore(a, b);
-}();
+});
 //# sourceMappingURL=footer.js.map
