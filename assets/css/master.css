@@ -2306,6 +2306,7 @@ h6 {
   clear: both;
   color: #2e2e2e;
   font-family: Georgia, serif;
+  font-weight: bold;
   line-height: 1.2; }
 
 h1 {
@@ -2647,7 +2648,7 @@ input:hover[type="button"], input:hover[type="submit"] {
   .gform_wrapper textarea,
   .gform_wrapper .ginput_complex label,
   .gform_wrapper .gfield_description {
-    font-size: 1rem !important;
+    font-size: 0.9rem !important;
     padding: 8px !important;
     width: 98%; }
   .gform_wrapper .top_label .gfield_label {
@@ -3015,7 +3016,7 @@ h1.page-title {
 .hentry {
   background-color: #fff;
   border: 1px solid #ddd;
-  font-size: 1.375rem;
+  font-size: 1.2rem;
   line-height: 1.6;
   margin: 0 0 3rem 0;
   padding: 0;
@@ -3133,7 +3134,7 @@ ul.archive-projects {
   margin-left: 60px;
   padding: 0 40px; }
   ul.archive-projects li {
-    font-size: 1rem;
+    font-size: 0.9rem;
     margin: 0; }
     ul.archive-projects li .fa {
       margin: 0;
@@ -3142,7 +3143,7 @@ ul.archive-projects {
       padding: 0; }
       ul.archive-projects li .entry-header .entry-title {
         border-bottom: none;
-        font-size: 1.375rem;
+        font-size: 1.2rem;
         margin-bottom: 0; }
         ul.archive-projects li .entry-header .entry-title a {
           border-bottom: none; }
@@ -3166,7 +3167,7 @@ ul.archive-speaking {
   margin-left: 60px;
   padding: 0 40px; }
   ul.archive-speaking li {
-    font-size: 1rem;
+    font-size: 0.9rem;
     margin: 0; }
     ul.archive-speaking li .fa {
       margin: 0;
@@ -3175,7 +3176,7 @@ ul.archive-speaking {
       padding: 0; }
       ul.archive-speaking li .entry-header .entry-title {
         border-bottom: none;
-        font-size: 1.375rem;
+        font-size: 1.2rem;
         margin-bottom: 0; }
         ul.archive-speaking li .entry-header .entry-title a {
           border-bottom: none;
