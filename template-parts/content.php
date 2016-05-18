@@ -31,7 +31,7 @@ use CW\Theme\Functions\Template_Tags;
 	<?php if ( ! has_post_format( 'quote' ) ) { ?>
 		<header class="entry-header">
 
-			<?php printf( '<h2 class="entry-title"><a href="%s" title="%s" rel="bookmark">%s</a></h2>', esc_url( $permalink ), esc_attr( $title ), esc_html( $title ) ); ?>
+			<?php printf( '<h2 class="entry-title"><a href="%s" title="%s" rel="bookmark">%s</a></h2>', esc_url( $permalink ), esc_attr( $title ), wp_kses( $title, array( 'span' => array( 'class' => array() ) ) ) ); ?>
 
 			<?php if ( 'post' === get_post_type() ) { ?>
 				<div class="entry-meta">
@@ -45,11 +45,7 @@ use CW\Theme\Functions\Template_Tags;
 
 	<div class="entry-content">
 		<?php
-		if ( ! has_post_format( 'quote' ) ) {
-			the_excerpt();
-		} else {
-			the_content();
-		}
+		the_content( sprintf( esc_html__( 'Continue Reading %s', 'chriswiegman' ), '<span class="meta-nav">&rarr;</span>' ) );
 
 		wp_link_pages(
 			array(

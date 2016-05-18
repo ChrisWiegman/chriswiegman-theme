@@ -216,21 +216,6 @@ function filter_body_class( $classes ) {
 }
 
 /**
- * Filter excerpt_more
- *
- * Create the correct more link
- *
- * @since 5.0.0
- *
- * @return string The return more text
- */
-function filter_excerpt_more() {
-
-	return '... <a class="more-link" href="' . esc_url( get_permalink( get_the_ID() ) ) . '">' . sprintf( esc_html__( 'Continue Reading %s', 'chriswiegman' ), '<span class="meta-nav">&rarr;</span>' ) . '</a>';
-
-}
-
-/**
  * Filter wp_default_scripts
  *
  * Removes an extra jQuery Script
@@ -377,7 +362,6 @@ function init() {
 
 	add_action( 'after_setup_theme', $n( 'i18n' ) );
 	add_action( 'after_setup_theme', $n ( 'action_after_setup_theme' ) );
-	add_filter( 'excerpt_more', $n ( 'filter_excerpt_more' ) );
 	add_action( 'init', $n ( 'action_init' ) );
 	add_action( 'widgets_init', $n ( 'action_widgets_init' ) );
 	add_action( 'wp', $n ( 'action_wp' ) );
