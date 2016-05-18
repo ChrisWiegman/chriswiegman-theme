@@ -45,11 +45,7 @@ use CW\Theme\Functions\Template_Tags;
 
 	<div class="entry-content">
 		<?php
-		if ( ! has_post_format( 'quote' ) ) {
-			the_excerpt();
-		} else {
-			the_content();
-		}
+		the_content();
 
 		wp_link_pages(
 			array(
