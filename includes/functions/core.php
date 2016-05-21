@@ -216,6 +216,34 @@ function filter_body_class( $classes ) {
 }
 
 /**
+ * Filter post_class
+ *
+ * Filter the list of CSS classes for the current post.
+ *
+ * @since 5.2.5
+ *
+ * @param array $classes An array of post classes.
+ * @param array $class   An array of additional classes added to the post.
+ * @param int   $post_id The post ID.
+ *
+ * @return array Filtered array of post classes
+ */
+function filter_post_class( $classes, $class, $post_id ) {
+
+	$post_type = get_post_type( $post_id );
+
+	if ( is_page() && 'speaking' === $post_type || 'project' === $post_type && in_array( 'has-post-thumbnail', $classes, true ) ) {
+
+		if ( $index = array_search( 'has-post-thumbnail', $classes ) ) {
+			unset( $classes[ $index ] );
+		}
+	}
+
+	return $classes;
+
+}
+
+/**
  * Filter wp_default_scripts
  *
  * Removes an extra jQuery Script
@@ -369,6 +397,7 @@ function init() {
 	add_action( 'wp_head', $n ( 'action_wp_head' ) );
 
 	add_filter( 'body_class', $n ( 'filter_body_class' ) );
+	add_filter( 'post_class', $n( 'filter_post_class' ), 10, 3 );
 	add_filter( 'wp_default_scripts', $n ( 'filter_wp_default_scripts' ) );
 	add_filter( 'wp_nav_menu_items', $n( 'filter_wp_nav_menu_items' ), 10, 2 );
 	add_filter( 'wp_page_menu_args', $n ( 'filter_wp_page_menu_args' ) );

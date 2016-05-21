@@ -2450,8 +2450,7 @@ dd {
 img {
   height: auto;
   margin: 0 1em 1em 0;
-  -webkit-transition: 0.5s;
-          transition: 0.5s;
+  transition: 0.5s;
   max-width: 100%; }
 
 figure {
@@ -2477,8 +2476,7 @@ body {
     max-width: 1152px;
     overflow: hidden;
     padding-top: 76px;
-    -webkit-transition: 0.5s;
-            transition: 0.5s; }
+    transition: 0.5s; }
   #page .site-header {
     background-color: #fff;
     border-bottom: 1px solid #ccc;
@@ -2486,8 +2484,7 @@ body {
     overflow: visible;
     position: fixed;
     top: 0;
-    -webkit-transition: 0.5s;
-            transition: 0.5s;
+    transition: 0.5s;
     width: 100%;
     z-index: 10000; }
     #page .site-header .progress-wrap {
@@ -2499,8 +2496,7 @@ body {
         height: 40px;
         opacity: 0.2;
         position: absolute;
-        -webkit-transition: height 0.5s;
-                transition: height 0.5s; }
+        transition: height 0.5s; }
     #page .site-header .wrap {
       margin: 0 auto;
       max-width: 1152px; }
@@ -2511,8 +2507,7 @@ body {
         font-size: 180%;
         line-height: 1;
         margin-top: 4px;
-        -webkit-transition: 0.5s;
-                transition: 0.5s; }
+        transition: 0.5s; }
         #page .site-header .wrap .site-title .logo-chris {
           color: #9b9b9b; }
         #page .site-header .wrap .site-title .logo-wiegman {
@@ -2524,8 +2519,7 @@ body {
       #page .site-header .wrap .main-navigation {
         margin: 0;
         overflow: hidden;
-        -webkit-transition: 0.5s;
-                transition: 0.5s; }
+        transition: 0.5s; }
   #page .top-padding {
     top: 32px; }
   #page .content-area {
@@ -2534,8 +2528,7 @@ body {
   #page .site-content .widget-area {
     float: right;
     width: 30%;
-    -webkit-transition: 0.5s;
-            transition: 0.5s; }
+    transition: 0.5s; }
   #page .site-footer {
     background-color: #fff;
     color: #999;
@@ -2707,8 +2700,7 @@ input:hover[type="button"], input:hover[type="submit"] {
 a {
   border-bottom: 1px solid #fff;
   color: #e80;
-  -webkit-transition: all .5s ease-in-out;
-          transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out;
   text-decoration: none; }
   a img {
     border: none; }
@@ -2721,8 +2713,7 @@ a {
     color: #cf5300;
     text-decoration: none; }
   a:visited {
-    -webkit-transition: all .5s ease-in-out;
-            transition: all .5s ease-in-out; }
+    transition: all .5s ease-in-out; }
 
 .main-navigation {
   font-weight: 700; }
@@ -2738,8 +2729,7 @@ a {
     float: left;
     padding: 8px 20px;
     position: relative;
-    -webkit-transition: 0.5s;
-            transition: 0.5s; }
+    transition: 0.5s; }
     .main-navigation li ul li {
       padding: 5px 20px; }
   .main-navigation li.social-share {
@@ -3024,8 +3014,7 @@ h1.page-title {
   line-height: 1.6;
   margin: 0 0 3rem 0;
   padding: 0;
-  -webkit-transition: 0.5s;
-          transition: 0.5s; }
+  transition: 0.5s; }
   .hentry .gist {
     font-size: 0.875rem;
     line-height: 1.4; }
@@ -3087,6 +3076,10 @@ h1.page-title {
     padding: 40px; }
   .hentry li {
     border: none; }
+  .hentry.project {
+    padding-bottom: 2.5em; }
+  .hentry .archive-projects .project {
+    padding-bottom: 0; }
 
 .single .site-main,
 .page .site-main {
@@ -3266,27 +3259,22 @@ object {
 @media screen and (max-width: 1192px) {
   #page .site-header .wrap .site-title {
     margin-left: 20px;
-    -webkit-transition: 0.5s;
-            transition: 0.5s; }
+    transition: 0.5s; }
   #page .site-header .wrap .main-navigation {
     margin-right: 20px;
-    -webkit-transition: 0.5s;
-            transition: 0.5s; } }
+    transition: 0.5s; } }
 
 @media screen and (max-width: 1152px) {
   .hentry {
     border-left: none;
     margin: 0 0 1rem 0;
-    -webkit-transition: 0.5s;
-            transition: 0.5s; }
+    transition: 0.5s; }
   #page .site-content {
     padding-top: 56px;
-    -webkit-transition: 0.5s;
-            transition: 0.5s; }
+    transition: 0.5s; }
     #page .site-content .widget-area {
       width: 33%;
-      -webkit-transition: 0.5s;
-              transition: 0.5s; } }
+      transition: 0.5s; } }
 
 @media screen and (max-width: 970px) {
   .single .site-main, .page .site-main {
@@ -3326,8 +3314,7 @@ object {
     width: 100%; }
     #page .site-header .wrap .main-navigation li {
       padding: 2px 0 2px 10px;
-      -webkit-transition: 0.5s;
-              transition: 0.5s;
+      transition: 0.5s;
       width: 100%; }
     #page .site-header .wrap .main-navigation li.social-share {
       clear: none !important;
