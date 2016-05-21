@@ -10,7 +10,7 @@
  */
 
 // Useful global constants.
-define( 'CW_THEME_VERSION', '5.2.4' );
+define( 'CW_THEME_VERSION', '5.2.5' );
 define( 'CW_THEME_PATH', get_template_directory() . '/' );
 define( 'CW_THEME_INCLUDES', CW_THEME_PATH . 'includes/' );
 
