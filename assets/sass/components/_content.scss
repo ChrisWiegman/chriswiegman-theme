@@ -120,6 +120,10 @@ h1.page-title {
 	li {
 		border: none;
 	}
+
+	&.project {
+		padding-bottom: 2.5em;
+	}
 }
 
 .single,
