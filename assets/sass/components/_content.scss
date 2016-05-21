@@ -124,6 +124,10 @@ h1.page-title {
 	&.project {
 		padding-bottom: 2.5em;
 	}
+
+	& .archive-projects .project {
+		padding-bottom: 0;
+	}
 }
 
 .single,
