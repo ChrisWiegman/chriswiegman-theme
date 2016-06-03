@@ -3090,13 +3090,18 @@ h1.page-title {
   .post-navigation a {
     border-bottom: 1px solid #f0f3f4; }
 
-.author-box {
+.author-box,
+.comments-area {
   background-color: #fff;
+  border-top: 1px solid #f8f8f8;
   margin: 0 40px;
+  overflow: hidden;
   padding: 40px 0; }
-  .author-box .avatar {
+  .author-box .avatar,
+  .comments-area .avatar {
     float: left; }
-  .author-box #authcontact {
+  .author-box #authcontact,
+  .comments-area #authcontact {
     clear: both;
     display: block;
     float: left;
@@ -3104,17 +3109,61 @@ h1.page-title {
     width: 100%; }
 
 .author-box {
-  border-top: 1px solid #f8f8f8;
-  margin: 0 0 1em 0;
-  overflow: hidden;
+  margin: 0 0 3em 0;
   padding: 25px; }
 
-#disqus_thread {
-  background-color: #fff;
-  line-height: 1.5;
-  overflow: hidden;
-  margin: 4px 1px 0;
-  padding: 25px; }
+.comment-reply-title {
+  margin-bottom: 40px; }
+
+.comments-area {
+  margin: 0;
+  padding: 40px 0; }
+  .comments-area .no-comments {
+    padding: 0 40px; }
+  .comments-area .avatar {
+    float: left;
+    padding: 0 10px 10px 0; }
+  .comments-area h2 {
+    padding: 0 20px; }
+  .comments-area #respond {
+    padding: 0 20px; }
+  .comments-area ol {
+    list-style: none;
+    margin: 0;
+    padding: 20px 0 0 0; }
+    .comments-area ol li {
+      margin-bottom: 1rem;
+      padding: 20px 0 20px 20px; }
+      .comments-area ol li .comment-content {
+        clear: both;
+        padding-right: 20px; }
+      .comments-area ol li ol {
+        padding-top: 20px; }
+        .comments-area ol li ol li {
+          background-color: #f0f3f4;
+          border-left: none; }
+          .comments-area ol li ol li a {
+            border-bottom: 1px solid #ccc; }
+            .comments-area ol li ol li a:focus {
+              outline: thin dotted #fff; }
+          .comments-area ol li ol li ol li {
+            background-color: #fff; }
+            .comments-area ol li ol li ol li a {
+              border-bottom: 1px solid #fff; }
+              .comments-area ol li ol li ol li a:focus {
+                outline: thin dotted #ccc; }
+            .comments-area ol li ol li ol li ol li {
+              background-color: #f0f3f4; }
+              .comments-area ol li ol li ol li ol li a {
+                border-bottom: 1px solid #ccc; }
+                .comments-area ol li ol li ol li ol li a:focus {
+                  outline: thin dotted #fff; }
+              .comments-area ol li ol li ol li ol li ol li {
+                background-color: #fff; }
+                .comments-area ol li ol li ol li ol li ol li a {
+                  border-bottom: 1px solid #fff; }
+                  .comments-area ol li ol li ol li ol li ol li a:focus {
+                    outline: thin dotted #ccc; }
 
 /*--------------------------------------------------------------
 0.2 Asides
@@ -3347,8 +3396,7 @@ object {
     padding-left: 10px;
     padding-right: 10px; }
   .comments-area {
-    margin: 0 20px;
-    padding: 20px 0; }
+    padding: 20px; }
     .comments-area ol {
       padding: 20px 0 0 0; }
       .comments-area ol li {
