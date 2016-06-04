@@ -6,6 +6,11 @@ input, select, textarea {
 	width:            100%;
 }
 
+#prompt-comment-subscribe input {
+	margin-bottom: 1.5em;
+	width:         auto;
+}
+
 input[type="search"] {
 	-webkit-appearance: textfield;
 }

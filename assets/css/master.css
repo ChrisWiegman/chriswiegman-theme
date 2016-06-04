@@ -2553,6 +2553,10 @@ input, select, textarea {
   padding: 8px;
   width: 100%; }
 
+#prompt-comment-subscribe input {
+  margin-bottom: 1.5em;
+  width: auto; }
+
 input[type="search"] {
   -webkit-appearance: textfield; }
 
