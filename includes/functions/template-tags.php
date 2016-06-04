@@ -131,7 +131,7 @@ function posted_on() {
 
 	if ( ! post_password_required() && ( comments_open() || 0 !== get_comments_number() ) ) {
 
-		$comments = sprintf( '<span class="comments-link">%s</span>', get_comments_popup_link( esc_attr__( 'Leave a comment', 'chriswiegman' ), esc_attr__( '1 Comment', 'chriswiegman' ), esc_attr__( '% Comments', 'chriswiegman' ) ) );
+		$comments = sprintf( '<span class="comments-link">%s</span>', get_comments_popup_link() );
 
 	} else {
 
@@ -253,7 +253,7 @@ function get_comments_popup_link( $zero = false, $one = false, $more = false, $c
 		$none = esc_html__( 'Comments Off', 'chriswiegman' );
 	}
 
-	$number = get_comments_number( $id );
+	$number = absint( get_comments_number( $id ) );
 
 	if ( 0 === $number && ! comments_open() && ! pings_open() ) {
 		return '<span' . ( ( ! empty( $css_class ) ) ? ' class="' . esc_attr( $css_class ) . '"' : '' ) . '>' . $none . '</span>';
@@ -325,7 +325,7 @@ function get_comments_popup_link( $zero = false, $one = false, $more = false, $c
  */
 function get_comments_number_string( $zero = false, $one = false, $more = false ) {
 
-	$number = get_comments_number();
+	$number = absint( get_comments_number() );
 
 	if ( $number > 1 ) {
 
