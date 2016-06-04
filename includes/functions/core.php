@@ -194,6 +194,30 @@ function action_wp_head() {
 }
 
 /**
+ * Update AMP JSON
+ *
+ * Adds required parameters such as logo to AMP's JSON.
+ *
+ * @since 5.2.7
+ *
+ * @param array    $metadata Array of meta data.
+ * @param \WP_POST $post     The current WordPress post.
+ *
+ * @return array Filtered array of AMP data.
+ */
+function filter_amp_post_template_metadata( $metadata, $post ) {
+
+	$metadata['publisher']['logo'] = array(
+		'@type'  => 'ImageObject',
+		'url'    => 'https://www.chriswiegman.com/content/uploads/2014/05/chris-wiegman-cartoon.png',
+		'height' => 300,
+		'width'  => 300,
+	);
+
+	return $metadata;
+}
+
+/**
  *Filter body_classees
  *
  * Adds custom classes to the array of body classes.
@@ -396,6 +420,7 @@ function init() {
 	add_action( 'wp_enqueue_scripts', $n ( 'action_wp_enqueue_scripts' ) );
 	add_action( 'wp_head', $n ( 'action_wp_head' ) );
 
+	add_filter( 'amp_post_template_metadata', $n( 'filter_amp_post_template_metadata' ), 10, 2 );
 	add_filter( 'body_class', $n ( 'filter_body_class' ) );
 	add_filter( 'post_class', $n( 'filter_post_class' ), 10, 3 );
 	add_filter( 'wp_default_scripts', $n ( 'filter_wp_default_scripts' ) );
