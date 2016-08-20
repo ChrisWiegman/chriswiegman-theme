@@ -8,6 +8,10 @@ if ( ! defined( 'WP_LANG_DIR' ) ) {
 	define( 'WP_LANG_DIR', 'lang_dir' );
 }
 
+if ( ! defined( 'CW_THEME_INCLUDES' ) ) {
+	define( 'CW_THEME_INCLUDES', PROJECT );
+}
+
 if ( ! file_exists( __DIR__ . '/vendor/autoload.php' ) ) {
 	throw new PHPUnit_Framework_Exception(
 		'ERROR' . PHP_EOL . PHP_EOL .
