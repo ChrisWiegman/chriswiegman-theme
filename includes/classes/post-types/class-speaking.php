@@ -116,14 +116,14 @@ class Speaking {
 
 		if ( isset( get_current_screen()->id ) && strpos( get_current_screen()->id, 'speaking' ) !== false ) {
 
-			wp_register_style( 'cw-jquery-ui-css', CW_THEME_PATH . 'assets/css/vendor/jquery-ui.min.css', array(), '1.11.4' );
+			wp_register_style( 'cw-jquery-ui-css', CW_THEME_URL . 'assets/css/vendor/jquery-ui.min.css', array(), '1.11.4' );
 			wp_enqueue_style( 'cw-jquery-ui-css' );
 
 			wp_enqueue_script( 'jquery-ui-datepicker' );
 
 			$min = ( defined( 'SCRIPT_DEBUG' ) && true === SCRIPT_DEBUG ) ? '' : '.min';
 
-			wp_register_script( 'chriswiegman_speaking_date', CW_THEME_PATH . 'assets/js/admin-speaking' . $min . '.js', array( 'jquery-ui-datepicker' ), CW_THEME_VERSION );
+			wp_register_script( 'chriswiegman_speaking_date', CW_THEME_URL . 'assets/js/admin-speaking' . $min . '.js', array( 'jquery-ui-datepicker' ), CW_THEME_VERSION );
 			wp_enqueue_script( 'chriswiegman_speaking_date' );
 
 		}

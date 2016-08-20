@@ -186,7 +186,7 @@ class Latest_Tweets extends \WP_Widget {
 
 		$min = ( defined( 'SCRIPT_DEBUG' ) && true === SCRIPT_DEBUG ) ? '' : '.min';
 
-		wp_register_script( 'cw_tweets_js', CW_THEME_PATH . '/assets/js/cw-latest-tweets' . $min . '.js', array( 'jquery' ), CW_THEME_VERSION, true );
+		wp_register_script( 'cw_tweets_js', CW_THEME_URL . '/assets/js/cw-latest-tweets' . $min . '.js', array( 'jquery' ), CW_THEME_VERSION, true );
 
 	}
 

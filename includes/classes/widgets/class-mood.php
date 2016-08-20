@@ -145,9 +145,9 @@ class Mood extends \WP_Widget {
 
 		$min = ( defined( 'SCRIPT_DEBUG' ) && true === SCRIPT_DEBUG ) ? '' : '.min';
 
-		wp_register_script( 'cw_mood_js', CW_THEME_PATH . '/assets/js/cw-mood' . $min . '.js', array(), CW_THEME_VERSION, true );
+		wp_register_script( 'cw_mood_js', CW_THEME_URL . '/assets/js/cw-mood' . $min . '.js', array(), CW_THEME_VERSION, true );
 
-		wp_register_style( 'cw_mood_css', CW_THEME_PATH . 'assets/css/mood' . $min . '.css', array(), CW_THEME_VERSION );
+		wp_register_style( 'cw_mood_css', CW_THEME_URL . 'assets/css/mood' . $min . '.css', array(), CW_THEME_VERSION );
 
 	}
 

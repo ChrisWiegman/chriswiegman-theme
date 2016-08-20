@@ -104,7 +104,7 @@ class Ad extends \WP_Widget {
 			echo wp_kses_post( $args['before_title'] . apply_filters( 'widget_title', $instance['title'] ) . $args['after_title'] );
 		}
 
-		$image_path = str_replace( 'www.chriswiegman.com', 'cdn1.chriswiegman.com', CW_THEME_PATH ) . '/assets/images/';
+		$image_path = str_replace( 'www.chriswiegman.com', 'cdn1.chriswiegman.com', CW_THEME_URL ) . '/assets/images/';
 
 		echo '<div id="cw_affiliates">';
 		echo '<a href="http://cfw.bz/Linode" class="small-image left-image" target="_blank" title="VPS Hosting with Linode"><img src="' . esc_url( $image_path . '/linode.jpg' ) . '" alt="VPS Hosting with Linode" width="125" height="125"></a>';

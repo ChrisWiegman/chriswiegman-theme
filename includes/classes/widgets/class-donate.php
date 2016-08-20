@@ -104,7 +104,7 @@ class Donate extends \WP_Widget {
 			echo wp_kses_post( $args['before_title'] . apply_filters( 'widget_title', $instance['title'] ) . $args['after_title'] );
 		}
 
-		$image_path = str_replace( 'www.chriswiegman.com', 'cdn1.chriswiegman.com', CW_THEME_PATH ) . 'assets/images/';
+		$image_path = str_replace( 'www.chriswiegman.com', 'cdn1.chriswiegman.com', CW_THEME_URL ) . 'assets/images/';
 
 		?>
 		<div class="cw_donate">
