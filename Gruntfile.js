@@ -80,7 +80,8 @@ module.exports = function ( grunt ) {
 
 					files : {
 						'assets/css/master.css' : 'assets/sass/master.scss',
-						'assets/css/editor.css' : 'assets/sass/editor.scss'
+						'assets/css/editor.css' : 'assets/sass/editor.scss',
+						'assets/css/mood.css' : 'assets/sass/mood.scss'
 					}
 
 				}
@@ -109,6 +110,16 @@ module.exports = function ( grunt ) {
 							'assets/js/src/progress.js',
 							'assets/js/src/skip-link-focus-fix.js',
 							'assets/js/src/scripts.js'
+						],
+						'assets/js/admin-speaking.min.js'   : [
+							'assets/js/src/admin-speaking.js'
+						],
+						'assets/js/cw-mood.min.js'          : [
+							'assets/js/src/vendor/Chart.min.js',
+							'assets/js/src/cw-mood.js'
+						],
+						'assets/js/cw-latest-tweets.min.js' : [
+							'assets/js/src/cw-latest-tweets.js'
 						]
 					}
 				},
@@ -130,6 +141,16 @@ module.exports = function ( grunt ) {
 							'assets/js/src/progress.js',
 							'assets/js/src/skip-link-focus-fix.js',
 							'assets/js/src/scripts.js'
+						],
+						'assets/js/admin-speaking.js'   : [
+							'assets/js/src/admin-speaking.js'
+						],
+						'assets/js/cw-mood.js'          : [
+							'assets/js/src/vendor/Chart.min.js',
+							'assets/js/src/cw-mood.js'
+						],
+						'assets/js/cw-latest-tweets.js' : [
+							'assets/js/src/cw-latest-tweets.js'
 						]
 					}
 				}
@@ -187,7 +208,7 @@ module.exports = function ( grunt ) {
 					src : 'assets/**/*.*'
 				},
 				options : {
-					proxy     : 'www.chriswiegman.pv',
+					proxy     : 'www.chriswiegman.dev',
 					watchTask : true
 				}
 			},

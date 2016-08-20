@@ -2,9 +2,9 @@
 # This file is distributed under the GNU General Public License v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: ChrisWiegman 5.2.6\n"
+"Project-Id-Version: ChrisWiegman 5.3\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/style\n"
-"POT-Creation-Date: 2016-06-04 17:27:06+00:00\n"
+"POT-Creation-Date: 2016-08-20 19:22:06+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -12,6 +12,30 @@ msgstr ""
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "X-Generator: grunt-wp-i18n 0.5.4\n"
+
+#: includes/classes/post-types/class-journal.php:196
+#: includes/classes/post-types/class-journal.php:220
+#: includes/classes/post-types/class-journal.php:490
+#: includes/classes/post-types/class-journal.php:513
+#: includes/classes/post-types/class-journal.php:536
+msgid "1"
+msgstr ""
+
+#: includes/classes/post-types/class-journal.php:202
+#: includes/classes/post-types/class-journal.php:226
+#: includes/classes/post-types/class-journal.php:496
+#: includes/classes/post-types/class-journal.php:519
+#: includes/classes/post-types/class-journal.php:542
+msgid "2"
+msgstr ""
+
+#: includes/classes/post-types/class-journal.php:208
+#: includes/classes/post-types/class-journal.php:232
+#: includes/classes/post-types/class-journal.php:502
+#: includes/classes/post-types/class-journal.php:525
+#: includes/classes/post-types/class-journal.php:548
+msgid "3"
+msgstr ""
 
 #: 404.php:23
 msgid "Oops! That page can&rsquo;t be found."
@@ -124,31 +148,441 @@ msgstr ""
 msgid "Menu"
 msgstr ""
 
-#: includes/functions/core.php:37
+#: includes/classes/post-types/class-journal.php:59
+msgid "My Evening Journal Entry for "
+msgstr ""
+
+#: includes/classes/post-types/class-journal.php:81
+msgid "My Morning Journal Entry for "
+msgstr ""
+
+#: includes/classes/post-types/class-journal.php:110
+#: includes/classes/post-types/class-journal.php:143
+msgid "Add New Entry"
+msgstr ""
+
+#: includes/classes/post-types/class-journal.php:111
+#: includes/classes/post-types/class-journal.php:144
+msgid "New Entry"
+msgstr ""
+
+#: includes/classes/post-types/class-journal.php:112
+#: includes/classes/post-types/class-journal.php:145
+msgid "Edit Entry"
+msgstr ""
+
+#: includes/classes/post-types/class-journal.php:113
+#: includes/classes/post-types/class-journal.php:146
+msgid "View Entry"
+msgstr ""
+
+#: includes/classes/post-types/class-journal.php:114
+#: includes/classes/post-types/class-journal.php:147
+msgid "All Entries"
+msgstr ""
+
+#: includes/classes/post-types/class-journal.php:115
+#: includes/classes/post-types/class-journal.php:148
+msgid "Search Entries"
+msgstr ""
+
+#: includes/classes/post-types/class-journal.php:116
+#: includes/classes/post-types/class-journal.php:149
+msgid "Parent Entries:"
+msgstr ""
+
+#: includes/classes/post-types/class-journal.php:117
+#: includes/classes/post-types/class-journal.php:150
+msgid "No entries found."
+msgstr ""
+
+#: includes/classes/post-types/class-journal.php:118
+#: includes/classes/post-types/class-journal.php:151
+msgid "No entries found in Trash."
+msgstr ""
+
+#: includes/classes/post-types/class-journal.php:120
+msgid "Morning journal entries."
+msgstr ""
+
+#: includes/classes/post-types/class-journal.php:153
+msgid "Evening journal entries."
+msgstr ""
+
+#: includes/classes/post-types/class-journal.php:191
+msgid "List 3 Amazing things happened today:"
+msgstr ""
+
+#: includes/classes/post-types/class-journal.php:215
+msgid "How could you have made today better?"
+msgstr ""
+
+#: includes/classes/post-types/class-journal.php:260
+msgid "Energy/Mood:"
+msgstr ""
+
+#: includes/classes/post-types/class-journal.php:263
+msgid "Select"
+msgstr ""
+
+#: includes/classes/post-types/class-journal.php:277
+msgid "Excellent"
+msgstr ""
+
+#: includes/classes/post-types/class-journal.php:278
+msgid "Good"
+msgstr ""
+
+#: includes/classes/post-types/class-journal.php:279
+msgid "OK"
+msgstr ""
+
+#: includes/classes/post-types/class-journal.php:280
+msgid "Bad"
+msgstr ""
+
+#: includes/classes/post-types/class-journal.php:281
+msgid "Horrible"
+msgstr ""
+
+#: includes/classes/post-types/class-journal.php:479
+msgid "Context"
+msgstr ""
+
+#: includes/classes/post-types/class-journal.php:486
+msgid "I'm grateful for:"
+msgstr ""
+
+#: includes/classes/post-types/class-journal.php:509
+msgid "What would make today better:"
+msgstr ""
+
+#: includes/classes/post-types/class-journal.php:532
+msgid "Daily Affirmation:"
+msgstr ""
+
+#: includes/classes/post-types/class-project.php:47
+msgid "Project URL"
+msgstr ""
+
+#: includes/classes/post-types/class-project.php:76
+msgid "Add New Project"
+msgstr ""
+
+#: includes/classes/post-types/class-project.php:77
+msgid "New Project"
+msgstr ""
+
+#: includes/classes/post-types/class-project.php:78
+msgid "Edit Project"
+msgstr ""
+
+#: includes/classes/post-types/class-project.php:79
+msgid "View Project"
+msgstr ""
+
+#: includes/classes/post-types/class-project.php:80
+msgid "All Projects"
+msgstr ""
+
+#: includes/classes/post-types/class-project.php:81
+msgid "Search Projects"
+msgstr ""
+
+#: includes/classes/post-types/class-project.php:82
+msgid "Parent Projects:"
+msgstr ""
+
+#: includes/classes/post-types/class-project.php:83
+msgid "No projects found."
+msgstr ""
+
+#: includes/classes/post-types/class-project.php:84
+msgid "No projects found in Trash."
+msgstr ""
+
+#: includes/classes/post-types/class-project.php:86
+msgid "A place to list ongoing and archived projects"
+msgstr ""
+
+#: includes/classes/post-types/class-project.php:128
+msgid "URL"
+msgstr ""
+
+#: includes/classes/post-types/class-project.php:206
+msgid "Search Project Types"
+msgstr ""
+
+#: includes/classes/post-types/class-project.php:207
+msgid "All Project Types"
+msgstr ""
+
+#: includes/classes/post-types/class-project.php:208
+msgid "Parent Project Type"
+msgstr ""
+
+#: includes/classes/post-types/class-project.php:209
+msgid "Parent Project Type:"
+msgstr ""
+
+#: includes/classes/post-types/class-project.php:210
+msgid "Edit Project Type"
+msgstr ""
+
+#: includes/classes/post-types/class-project.php:211
+msgid "Update Project Type"
+msgstr ""
+
+#: includes/classes/post-types/class-project.php:212
+msgid "Add New Project Type"
+msgstr ""
+
+#: includes/classes/post-types/class-project.php:213
+msgid "New Project Type Name"
+msgstr ""
+
+#: includes/classes/post-types/class-project.php:214
+msgid "Type"
+msgstr ""
+
+#: includes/classes/post-types/class-project.php:231
+msgid "Search Project Statuses"
+msgstr ""
+
+#: includes/classes/post-types/class-project.php:232
+msgid "All Project Statuses"
+msgstr ""
+
+#: includes/classes/post-types/class-project.php:233
+msgid "Parent Project Status"
+msgstr ""
+
+#: includes/classes/post-types/class-project.php:234
+msgid "Parent Project Status:"
+msgstr ""
+
+#: includes/classes/post-types/class-project.php:235
+msgid "Edit Project Status"
+msgstr ""
+
+#: includes/classes/post-types/class-project.php:236
+msgid "Update Project Status"
+msgstr ""
+
+#: includes/classes/post-types/class-project.php:237
+msgid "Add New Project Status"
+msgstr ""
+
+#: includes/classes/post-types/class-project.php:238
+msgid "New Project Status Name"
+msgstr ""
+
+#: includes/classes/post-types/class-project.php:239
+msgid "Status"
+msgstr ""
+
+#: includes/classes/post-types/class-speaking.php:97
+msgid "Speaking Gig Information"
+msgstr ""
+
+#: includes/classes/post-types/class-speaking.php:152
+msgid "Add New Speaking Gig"
+msgstr ""
+
+#: includes/classes/post-types/class-speaking.php:153
+msgid "New Speaking Gig"
+msgstr ""
+
+#: includes/classes/post-types/class-speaking.php:154
+msgid "Edit Speaking Gig"
+msgstr ""
+
+#: includes/classes/post-types/class-speaking.php:155
+msgid "View Speaking Gig"
+msgstr ""
+
+#: includes/classes/post-types/class-speaking.php:156
+msgid "All Speaking Gigs"
+msgstr ""
+
+#: includes/classes/post-types/class-speaking.php:157
+msgid "Search Speaking Gigs"
+msgstr ""
+
+#: includes/classes/post-types/class-speaking.php:158
+msgid "Parent Speaking Gigs:"
+msgstr ""
+
+#: includes/classes/post-types/class-speaking.php:159
+msgid "No speaking gigs found."
+msgstr ""
+
+#: includes/classes/post-types/class-speaking.php:160
+msgid "No speaking gigs found in Trash."
+msgstr ""
+
+#: includes/classes/post-types/class-speaking.php:162
+msgid "A place to list speaking gigs."
+msgstr ""
+
+#: includes/classes/post-types/class-speaking.php:284
+msgid "Conference Name"
+msgstr ""
+
+#: includes/classes/post-types/class-speaking.php:298
+msgid "Conference URL"
+msgstr ""
+
+#: includes/classes/post-types/class-speaking.php:313
+msgid "Slide URL"
+msgstr ""
+
+#: includes/classes/post-types/class-speaking.php:329
+msgid "Presentation Date"
+msgstr ""
+
+#: includes/classes/post-types/class-speaking.php:345
+msgid "Presentation Icon"
+msgstr ""
+
+#: includes/classes/post-types/class-speaking.php:348
+msgid "Comment"
+msgstr ""
+
+#: includes/classes/post-types/class-speaking.php:349
+msgid "Laptop"
+msgstr ""
+
+#: includes/classes/post-types/class-speaking.php:350
+msgid "University"
+msgstr ""
+
+#: includes/classes/post-types/class-speaking.php:351
+msgid "Users"
+msgstr ""
+
+#: includes/classes/post-types/class-speaking.php:352
+msgid "Video Camera"
+msgstr ""
+
+#: includes/classes/post-types/class-speaking.php:353
+msgid "Microphone"
+msgstr ""
+
+#: includes/classes/post-types/class-speaking.php:366
+msgid "Conference Location"
+msgstr ""
+
+#: includes/classes/widgets/class-ad.php:31
+#: includes/classes/widgets/class-ad.php:34
+#: includes/classes/widgets/class-ad.php:51
+msgid "Recommended Services"
+msgstr ""
+
+#: includes/classes/widgets/class-ad.php:56
+#: includes/classes/widgets/class-donate.php:56
+#: includes/classes/widgets/class-latest-tweets.php:210
+#: includes/classes/widgets/class-mood.php:169
+msgid "Title:"
+msgstr ""
+
+#: includes/classes/widgets/class-donate.php:31
+#: includes/classes/widgets/class-donate.php:34
+#: includes/classes/widgets/class-donate.php:51
+msgid "Support My Work"
+msgstr ""
+
+#: includes/classes/widgets/class-donate.php:111
+msgid ""
+"If you find my work useful please consider a few dollars to help pay for "
+"this site."
+msgstr ""
+
+#: includes/classes/widgets/class-latest-tweets.php:38
+msgid "Latest Tweets Widget"
+msgstr ""
+
+#: includes/classes/widgets/class-latest-tweets.php:41
+msgid "Latest Tweets"
+msgstr ""
+
+#: includes/classes/widgets/class-latest-tweets.php:204
+msgid "My Latest Tweets"
+msgstr ""
+
+#: includes/classes/widgets/class-latest-tweets.php:216
+msgid "Twitter User:"
+msgstr ""
+
+#: includes/classes/widgets/class-latest-tweets.php:222
+msgid "Number of Tweets:"
+msgstr ""
+
+#: includes/classes/widgets/class-mood.php:26
+msgid "Journal Mood Widget"
+msgstr ""
+
+#: includes/classes/widgets/class-mood.php:29
+msgid "Mood Widget"
+msgstr ""
+
+#: includes/classes/widgets/class-mood.php:51
+msgid "Invalid start or end date"
+msgstr ""
+
+#: includes/classes/widgets/class-mood.php:58
+msgid "My mood data"
+msgstr ""
+
+#: includes/classes/widgets/class-mood.php:165
+msgid "My Mood"
+msgstr ""
+
+#: includes/functions/core.php:39
 msgid "Primary Menu"
 msgstr ""
 
-#: includes/functions/core.php:38
+#: includes/functions/core.php:40
 msgid "Footer Menu"
 msgstr ""
 
-#: includes/functions/core.php:91
+#: includes/functions/core.php:137
 msgid "Sidebar"
 msgstr ""
 
-#: includes/functions/core.php:93
+#: includes/functions/core.php:139
 msgid "The primary sidebar on the right side of most content."
 msgstr ""
 
-#: includes/functions/core.php:181
+#: includes/functions/core.php:232
 msgid "All Posts"
 msgstr ""
 
-#: includes/functions/core.php:189
+#: includes/functions/core.php:240
 msgid "All Comments"
 msgstr ""
 
-#: includes/functions/core.php:370
+#: includes/functions/core.php:334
+msgid "Website Title"
+msgstr ""
+
+#: includes/functions/core.php:335
+msgid "Twitter"
+msgstr ""
+
+#: includes/functions/core.php:336
+msgid "Facebook"
+msgstr ""
+
+#: includes/functions/core.php:337
+msgid "WordPress.org"
+msgstr ""
+
+#: includes/functions/core.php:338
+msgid "GitHub"
+msgstr ""
+
+#: includes/functions/core.php:449
 msgid "Page %s"
 msgstr ""
 
@@ -294,6 +728,114 @@ msgstr ""
 #: archive.php:44
 msgctxt "yearly archives date format"
 msgid "Y"
+msgstr ""
+
+#: includes/classes/post-types/class-journal.php:105
+msgctxt "post type general name"
+msgid "Morning Entries"
+msgstr ""
+
+#: includes/classes/post-types/class-journal.php:138
+msgctxt "post type general name"
+msgid "Evening Entries"
+msgstr ""
+
+#: includes/classes/post-types/class-project.php:71
+msgctxt "post type general name"
+msgid "Projects"
+msgstr ""
+
+#: includes/classes/post-types/class-speaking.php:147
+msgctxt "post type general name"
+msgid "Speaking Gigs"
+msgstr ""
+
+#: includes/classes/post-types/class-journal.php:106
+msgctxt "post type singular name"
+msgid "Morning Entry"
+msgstr ""
+
+#: includes/classes/post-types/class-journal.php:139
+msgctxt "post type singular name"
+msgid "Evening Entry"
+msgstr ""
+
+#: includes/classes/post-types/class-project.php:72
+msgctxt "post type singular name"
+msgid "Project"
+msgstr ""
+
+#: includes/classes/post-types/class-speaking.php:148
+msgctxt "post type singular name"
+msgid "Speaking Gig"
+msgstr ""
+
+#: includes/classes/post-types/class-journal.php:107
+msgctxt "admin menu"
+msgid "Morning Journal"
+msgstr ""
+
+#: includes/classes/post-types/class-journal.php:140
+msgctxt "admin menu"
+msgid "Evening Journal"
+msgstr ""
+
+#: includes/classes/post-types/class-project.php:73
+msgctxt "admin menu"
+msgid "Projects"
+msgstr ""
+
+#: includes/classes/post-types/class-speaking.php:149
+msgctxt "admin menu"
+msgid "Speaking Gigs"
+msgstr ""
+
+#: includes/classes/post-types/class-journal.php:108
+msgctxt "add new on admin bar"
+msgid "Morning Entry"
+msgstr ""
+
+#: includes/classes/post-types/class-journal.php:141
+msgctxt "add new on admin bar"
+msgid "Evening Entry"
+msgstr ""
+
+#: includes/classes/post-types/class-project.php:74
+msgctxt "add new on admin bar"
+msgid "Project"
+msgstr ""
+
+#: includes/classes/post-types/class-speaking.php:150
+msgctxt "add new on admin bar"
+msgid "Speaking Gigs"
+msgstr ""
+
+#: includes/classes/post-types/class-journal.php:109
+#: includes/classes/post-types/class-journal.php:142
+#: includes/classes/post-types/class-project.php:75
+#: includes/classes/post-types/class-speaking.php:151
+msgctxt "book"
+msgid "Add New"
+msgstr ""
+
+#: includes/classes/post-types/class-project.php:204
+msgctxt "taxonomy general name"
+msgid "Project Types"
+msgstr ""
+
+#: includes/classes/post-types/class-project.php:229
+msgctxt "taxonomy general name"
+msgid "Project Status"
+msgstr ""
+
+#: includes/classes/post-types/class-project.php:205
+msgctxt "taxonomy singular name"
+msgid "Project Type"
+msgstr ""
+
+#: includes/classes/post-types/class-project.php:230
+msgctxt "taxonomy singular name"
+msgid "Project Status"
 msgstr ""
 
 #: includes/functions/template-tags.php:83

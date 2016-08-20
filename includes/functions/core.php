@@ -11,6 +11,8 @@
 
 namespace CW\Theme\Functions\Core;
 
+use CW\Theme\Features;
+
 /**
  * Action after_theme_setup
  *
@@ -59,6 +61,50 @@ function action_after_setup_theme() {
 }
 
 /**
+ * Action dashboard_glance_items
+ *
+ * Add CPTs to "At a Glance Widget" in the Dashboard.
+ *
+ * @since 3.1.0
+ *
+ * @return void
+ */
+function action_dashboard_glance_items() {
+
+	$args = array(
+		'public'   => true,
+		'_builtin' => false,
+	);
+
+	$output     = 'object';
+	$operator   = 'and';
+	$post_types = get_post_types( $args, $output, $operator );
+
+	foreach ( $post_types as $post_type ) {
+
+		$num_posts = wp_count_posts( $post_type->name );
+		$num       = number_format_i18n( $num_posts->publish );
+		$text      = _n( $post_type->labels->singular_name, $post_type->labels->name, intval( $num_posts->publish ) );
+		$cpt_name  = '';
+
+		if ( current_user_can( 'edit_posts' ) ) {
+			$cpt_name = $post_type->name;
+		}
+
+		printf(
+			'<li class="%s-count"><tr><a href="%s"><td class="first b b-%s"></td>%d <td class="t %s">%s</td></a></tr></li>',
+			esc_attr( $cpt_name ),
+			'edit.php?post_type=' . esc_attr( $cpt_name ),
+			esc_attr( $post_type->name ),
+			absint( $num ),
+			esc_attr( $post_type->name ),
+			esc_html( $text )
+		);
+
+	}
+}
+
+/**
  * Action init
  *
  * Add custom styles to wysiwyg editor
@@ -97,6 +143,11 @@ function action_widgets_init() {
 			'after_title'   => '</h2>',
 		)
 	);
+
+	register_widget( 'CW\Theme\Widgets\Mood' );
+	register_widget( 'CW\Theme\Widgets\Latest_Tweets' );
+	register_widget( 'CW\Theme\Widgets\Ad' );
+	register_widget( 'CW\Theme\Widgets\Donate' );
 
 }
 
@@ -268,6 +319,34 @@ function filter_post_class( $classes, $class, $post_id ) {
 }
 
 /**
+ * Update contact methods
+ *
+ * Add and return contact methods for user profile
+ *
+ * @since 1.0.0
+ *
+ * @param array $contact_methods existing contact methods.
+ *
+ * @return array Array of new contact methods
+ */
+function filter_user_contactmethods( $contact_methods ) {
+
+	$contact_methods['website_title'] = esc_html__( 'Website Title', 'chriswiegman' );
+	$contact_methods['twitter']       = esc_html__( 'Twitter', 'chriswiegman' );
+	$contact_methods['facebook']      = esc_html__( 'Facebook', 'chriswiegman' );
+	$contact_methods['wordpress']     = esc_html__( 'WordPress.org', 'chriswiegman' );
+	$contact_methods['github']        = esc_html__( 'GitHub', 'chriswiegman' );
+
+	// Remove Contact Methods.
+	unset( $contact_methods['aim'] );
+	unset( $contact_methods['yim'] );
+	unset( $contact_methods['jabber'] );
+
+	return $contact_methods;
+
+}
+
+/**
  * Filter wp_default_scripts
  *
  * Removes an extra jQuery Script
@@ -415,17 +494,58 @@ function init() {
 	add_action( 'after_setup_theme', $n( 'i18n' ) );
 	add_action( 'after_setup_theme', $n ( 'action_after_setup_theme' ) );
 	add_action( 'init', $n ( 'action_init' ) );
+	add_action( 'dashboard_glance_items', $n( 'action_dashboard_glance_items' ) );
 	add_action( 'widgets_init', $n ( 'action_widgets_init' ) );
 	add_action( 'wp', $n ( 'action_wp' ) );
 	add_action( 'wp_enqueue_scripts', $n ( 'action_wp_enqueue_scripts' ) );
 	add_action( 'wp_head', $n ( 'action_wp_head' ) );
 
+	add_action( 'widgets_init', $n( 'action_widgets_init' ) );
+
 	add_filter( 'amp_post_template_metadata', $n( 'filter_amp_post_template_metadata' ), 10, 2 );
 	add_filter( 'body_class', $n ( 'filter_body_class' ) );
 	add_filter( 'post_class', $n( 'filter_post_class' ), 10, 3 );
+	add_filter( 'user_contactmethods', $n( 'filter_user_contactmethods' ) );
 	add_filter( 'wp_default_scripts', $n ( 'filter_wp_default_scripts' ) );
 	add_filter( 'wp_nav_menu_items', $n( 'filter_wp_nav_menu_items' ), 10, 2 );
 	add_filter( 'wp_page_menu_args', $n ( 'filter_wp_page_menu_args' ) );
 	add_filter( 'wp_title', $n ( 'filter_wp_title' ), 10, 2 );
+
+	// Load CDN.
+	if ( ! defined( 'WP_LOCAL_DEV' ) || false === WP_LOCAL_DEV ) {
+
+		require( CW_THEME_INCLUDES . '/classes/features/class-cdn.php' );
+
+		new Features\CDN();
+
+	}
+
+}
+
+/**
+ * A safe exit handler that will keep our code testable
+ *
+ * If you need to kill script execution with no output (e.g. when redirecting),
+ * use this function. Your functions should never be calling die() or exit()
+ * directly, as this makes them extremely difficult to test.
+ *
+ * @since 3.2.0
+ *
+ * @return void
+ */
+function safe_exit() {
+
+	$die_handler = function () {
+
+		return function () {
+
+			die;
+		};
+	};
+
+	add_filter( 'wp_die_ajax_handler', $die_handler );
+	add_filter( 'wp_die_xmlrpc_handler', $die_handler );
+	add_filter( 'wp_die_handler', $die_handler );
+	wp_die();
 
 }
