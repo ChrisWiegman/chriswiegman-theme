@@ -107,12 +107,12 @@ class Ad extends \WP_Widget {
 		$image_path = str_replace( 'www.chriswiegman.com', 'cdn1.chriswiegman.com', CW_THEME_URL ) . '/assets/images/';
 
 		echo '<div id="cw_affiliates">';
-		echo '<a href="http://cfw.bz/Linode" class="small-image left-image" target="_blank" title="VPS Hosting with Linode"><img src="' . esc_url( $image_path . '/linode.jpg' ) . '" alt="VPS Hosting with Linode" width="125" height="125"></a>';
-		echo '<a href="http://cfw.bz/GravityForms" class="small-image right-image" target="_blank" title="WordPress Forms with Gravity Forms"><img src="' . esc_url( $image_path . '/gravity-forms.gif' ) . '" alt="WordPress Forms with Gravity Forms" width="125" height="125"></a><br />';
-		echo '<a href="http://cfw.bz/Namecheap" class="small-image left-image" target="_blank" title="SSL Certificates and Domains from Namecheap"><img src="' . esc_url( $image_path . '/namecheap.gif' ) . '" alt="SSL Certificates and Domains from Namecheap" width="125" height="125"></a>';
-		echo '<a href="http://cfw.bz/MailChimp" class="small-image right-image" target="_blank" title="Get the word out with MailChimp"><img src="' . esc_url( $image_path . '/mailchimp.gif' ) . '" alt="Get the word out with MailChimp" width="125" height="125"></a><br />';
-		echo '<a href="http://cfw.bz/DepositPhotos" class="small-image left-image" target="_blank" title="Quality stock photos for your site"><img src="' . esc_url( $image_path . '/depositphotos.jpg' ) . '" alt="Quality stock photos for your site" width="125" height="125"></a>';
-		echo '<a href="http://cfw.bz/dnsmadeeasy" class="small-image right-image" target="_blank" title="Upgrade your DNS with DNSMadeEasy"><img src="' . esc_url( $image_path . '/dnsmadeeasy.jpg' ) . '" alt="Upgrade your DNS with DNSMadeEasy" width="125" height="125"></a>';
+		echo '<a href="http://cfw.bz/Linode" class="small-image left-image" target="_blank" title="VPS Hosting with Linode"><img src="' . esc_url( $image_path . 'linode.jpg' ) . '" alt="VPS Hosting with Linode" width="125" height="125"></a>';
+		echo '<a href="http://cfw.bz/GravityForms" class="small-image right-image" target="_blank" title="WordPress Forms with Gravity Forms"><img src="' . esc_url( $image_path . 'gravity-forms.gif' ) . '" alt="WordPress Forms with Gravity Forms" width="125" height="125"></a><br />';
+		echo '<a href="http://cfw.bz/Namecheap" class="small-image left-image" target="_blank" title="SSL Certificates and Domains from Namecheap"><img src="' . esc_url( $image_path . 'namecheap.gif' ) . '" alt="SSL Certificates and Domains from Namecheap" width="125" height="125"></a>';
+		echo '<a href="http://cfw.bz/MailChimp" class="small-image right-image" target="_blank" title="Get the word out with MailChimp"><img src="' . esc_url( $image_path . 'mailchimp.gif' ) . '" alt="Get the word out with MailChimp" width="125" height="125"></a><br />';
+		echo '<a href="http://cfw.bz/DepositPhotos" class="small-image left-image" target="_blank" title="Quality stock photos for your site"><img src="' . esc_url( $image_path . 'depositphotos.jpg' ) . '" alt="Quality stock photos for your site" width="125" height="125"></a>';
+		echo '<a href="http://cfw.bz/dnsmadeeasy" class="small-image right-image" target="_blank" title="Upgrade your DNS with DNSMadeEasy"><img src="' . esc_url( $image_path . 'dnsmadeeasy.jpg' ) . '" alt="Upgrade your DNS with DNSMadeEasy" width="125" height="125"></a>';
 		echo '</div>';
 
 		echo wp_kses_post( $args['after_widget'] );
