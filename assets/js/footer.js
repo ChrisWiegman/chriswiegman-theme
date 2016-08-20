@@ -77,7 +77,7 @@
                     width: e,
                     height: g
                 }).css(c);
-            } catch (h) {}
+            } catch (a) {}
             return this;
         },
         show: function(b) {
