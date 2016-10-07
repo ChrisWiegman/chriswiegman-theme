@@ -1,5 +1,6 @@
 node_modules
 vendor
+!includes/vendor
 !assets/css/vendor
 !assets/js/src/vendor
 .DS_Store
