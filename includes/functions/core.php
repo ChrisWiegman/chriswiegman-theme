@@ -144,7 +144,6 @@ function action_widgets_init() {
 		)
 	);
 
-	register_widget( 'CW\Theme\Widgets\Mood' );
 	register_widget( 'CW\Theme\Widgets\Latest_Tweets' );
 	register_widget( 'CW\Theme\Widgets\Ad' );
 	register_widget( 'CW\Theme\Widgets\Donate' );
