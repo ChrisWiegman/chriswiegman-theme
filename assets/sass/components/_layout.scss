@@ -16,7 +16,7 @@ body {
 		max-width:   1152px;
 		overflow:    hidden;
 		padding-top: 76px;
-		transition: 0.5s;
+		transition:  0.5s;
 	}
 
 	.site-header {
@@ -33,18 +33,19 @@ body {
 
 		.progress-wrap {
 
-			position: relative;
-			width:    100%;
+			position:       relative;
+			width:          100%;
+			pointer-events: none;
 
 			.progress-indicator {
 				background-color: #9ab;
 				display:          block;
 				height:           40px;
 				opacity:          0.2;
+				pointer-events:   none;
 				position:         absolute;
 				transition:       height 0.5s;
 			}
-
 		}
 
 		.wrap {
@@ -77,9 +78,7 @@ body {
 					&:hover {
 						border-bottom: none;
 					}
-
 				}
-
 			}
 
 			.main-navigation {
@@ -87,9 +86,7 @@ body {
 				overflow:   hidden;
 				transition: 0.5s;
 			}
-
 		}
-
 	}
 
 	.top-padding {
@@ -102,8 +99,8 @@ body {
 	}
 
 	.site-content .widget-area {
-		float: right;
-		width: 30%;
+		float:      right;
+		width:      30%;
 		transition: 0.5s;
 	}
 
@@ -125,14 +122,11 @@ body {
 				border-bottom: 1px solid $orange;
 				color:         $orange;
 			}
-
 		}
 
 		.site-info {
 			clear:  both;
 			margin: 10px 0;
 		}
-
 	}
-
 }
