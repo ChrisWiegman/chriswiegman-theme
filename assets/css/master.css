@@ -2475,28 +2475,30 @@ body {
     margin: 0 auto;
     max-width: 1152px;
     overflow: hidden;
-    padding-top: 76px;
+    padding-top: 115px;
     transition: 0.5s; }
   #page .site-header {
     background-color: #fff;
     border-bottom: 1px solid #ddd;
-    height: 40px;
+    height: 78px;
     overflow: visible;
+    padding: 18px 40px;
     position: fixed;
     top: 0;
     transition: 0.5s;
     width: 100%;
     z-index: 10000; }
     #page .site-header .progress-wrap {
-      position: relative;
+      position: absolute;
+      top: 0;
+      margin: 0 -40px;
       width: 100%;
       pointer-events: none; }
       #page .site-header .progress-wrap .progress-indicator {
         background-color: #9ab;
         display: block;
-        height: 40px;
+        height: 78px;
         opacity: 0.2;
-        pointer-events: none;
         position: absolute;
         transition: height 0.5s; }
     #page .site-header .wrap {
@@ -2522,6 +2524,13 @@ body {
         margin: 0;
         overflow: hidden;
         transition: 0.5s; }
+    #page .site-header.scrolled {
+      height: 39px;
+      padding: 0 40px; }
+      #page .site-header.scrolled .wrap .site-title {
+        margin-top: 4px; }
+      #page .site-header.scrolled .progress-wrap .progress-indicator {
+        height: 39px; }
   #page .top-padding {
     top: 32px; }
   #page .content-area {
@@ -2705,7 +2714,7 @@ input:hover[type="button"], input:hover[type="submit"] {
 
 a {
   border-bottom: 1px solid #fff;
-  color: #e80;
+  color: #cf5300;
   transition: all .5s ease-in-out;
   text-decoration: none; }
   a img {
@@ -2715,8 +2724,8 @@ a {
   a:hover, a:active {
     outline: 0; }
   a:hover {
-    border-bottom: 1px solid #cf5300;
-    color: #cf5300;
+    border-bottom: 1px solid #356;
+    color: #356;
     text-decoration: none; }
   a:visited {
     transition: all .5s ease-in-out; }
@@ -3325,7 +3334,7 @@ object {
     margin: 0 0 1rem 0;
     transition: 0.5s; }
   #page .site-content {
-    padding-top: 56px;
+    padding-top: 115px;
     transition: 0.5s; }
     #page .site-content .widget-area {
       width: 33%;
@@ -3349,43 +3358,46 @@ object {
       width: 100%; }
   #page #menu-primary {
     display: none; }
-  #page .site-header .wrap .menu-toggle {
-    color: #5f5f5f;
-    display: inline-block;
-    font-weight: 400;
-    padding: 8px 20px 0 0;
-    float: right; }
-  #page .site-header .wrap .main-navigation {
-    background-color: #fff;
-    color: #5f5f5f;
-    clear: both;
-    float: none;
-    margin: 0;
-    max-width: 100%;
-    padding: 0;
-    position: absolute;
-    overflow: hidden;
-    top: 39px;
-    width: 100%; }
-    #page .site-header .wrap .main-navigation li {
-      padding: 2px 0 2px 10px;
-      transition: 0.5s;
-      width: 100%; }
-    #page .site-header .wrap .main-navigation li.social-share {
-      clear: none !important;
-      float: left;
-      margin: 4px 4px 8px 4px;
-      width: 30px; }
-    #page .site-header .wrap .main-navigation ul {
+  #page .site-header {
+    height: 39px;
+    padding: 0 40px; }
+    #page .site-header .wrap .menu-toggle {
+      color: #5f5f5f;
+      display: inline-block;
+      font-weight: 400;
+      padding: 8px 20px 0 0;
+      float: right; }
+    #page .site-header .wrap .main-navigation {
+      background-color: #fff;
+      color: #5f5f5f;
+      clear: both;
       float: none;
+      margin: 0;
+      max-width: 100%;
+      padding: 0;
+      position: absolute;
+      overflow: hidden;
+      top: 39px;
       width: 100%; }
-      #page .site-header .wrap .main-navigation ul ul {
-        box-shadow: none;
+      #page .site-header .wrap .main-navigation li {
+        padding: 2px 0 2px 10px;
+        transition: 0.5s;
+        width: 100%; }
+      #page .site-header .wrap .main-navigation li.social-share {
+        clear: none !important;
+        float: left;
+        margin: 4px 4px 8px 4px;
+        width: 30px; }
+      #page .site-header .wrap .main-navigation ul {
         float: none;
-        left: -999em;
-        position: relative;
-        top: 2em;
-        z-index: 99999; } }
+        width: 100%; }
+        #page .site-header .wrap .main-navigation ul ul {
+          box-shadow: none;
+          float: none;
+          left: -999em;
+          position: relative;
+          top: 2em;
+          z-index: 99999; } }
 
 @media screen and (max-width: 700px) {
   .alignleft,
