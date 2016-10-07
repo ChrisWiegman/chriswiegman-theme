@@ -2479,7 +2479,7 @@ body {
     transition: 0.5s; }
   #page .site-header {
     background-color: #fff;
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid #ddd;
     height: 40px;
     overflow: visible;
     position: fixed;
@@ -2489,12 +2489,14 @@ body {
     z-index: 10000; }
     #page .site-header .progress-wrap {
       position: relative;
-      width: 100%; }
+      width: 100%;
+      pointer-events: none; }
       #page .site-header .progress-wrap .progress-indicator {
         background-color: #9ab;
         display: block;
         height: 40px;
         opacity: 0.2;
+        pointer-events: none;
         position: absolute;
         transition: height 0.5s; }
     #page .site-header .wrap {

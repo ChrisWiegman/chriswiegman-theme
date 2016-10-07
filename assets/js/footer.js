@@ -151,13 +151,18 @@
     //toggle nav
     a(".menu-toggle").on("click", function() {
         a("#menu-primary").slideToggle("slow"), a(this).toggleClass("active");
-    }), //hide the menu button when we resize the menu
-    a(window).resize(function() {
-        a(window).width() >= 900 && a("#menu-primary").removeAttr("style");
     });
-    var b = 0, c = a(".software-short");
-    c.each(function() {
-        a(this).height() > b && (b = a(this).height());
-    }), c.height(b);
+    // Resize header on scroll.
+    var b = a(".site-header, .progress-indicator");
+    // Add correct class to header on load.
+    a(this).scrollTop() > 10 ? b.hasClass("scrolled") || b.addClass("scrolled") : b.hasClass("scrolled") && b.removeClass("scrolled"), 
+    // Add or removed header class on scroll.
+    a(window).scroll(function() {
+        a(this).scrollTop() > 30 ? b.hasClass("scrolled") || b.addClass("scrolled") : b.hasClass("scrolled") && b.removeClass("scrolled");
+    });
+    var c = 0, d = a(".software-short");
+    d.each(function() {
+        a(this).height() > c && (c = a(this).height());
+    }), d.height(c);
 });
 //# sourceMappingURL=footer.js.map
