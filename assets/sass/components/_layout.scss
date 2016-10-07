@@ -15,7 +15,7 @@ body {
 		margin:      0 auto;
 		max-width:   1152px;
 		overflow:    hidden;
-		padding-top: 76px;
+		padding-top: 115px;
 		transition:  0.5s;
 	}
 
@@ -23,8 +23,9 @@ body {
 
 		background-color: $white;
 		border-bottom:    1px solid $border-color;
-		height:           40px;
+		height:           78px;
 		overflow:         visible;
+		padding:          18px 40px;
 		position:         fixed;
 		top:              0;
 		transition:       0.5s;
@@ -33,16 +34,17 @@ body {
 
 		.progress-wrap {
 
-			position:       relative;
+			position:       absolute;
+			top:            0;
+			margin:         0 -40px;
 			width:          100%;
 			pointer-events: none;
 
 			.progress-indicator {
 				background-color: #9ab;
 				display:          block;
-				height:           40px;
+				height:           78px;
 				opacity:          0.2;
-				pointer-events:   none;
 				position:         absolute;
 				transition:       height 0.5s;
 			}
@@ -85,6 +87,26 @@ body {
 				margin:     0;
 				overflow:   hidden;
 				transition: 0.5s;
+			}
+		}
+
+		&.scrolled {
+
+			height:  39px;
+			padding: 0 40px;
+
+			.wrap {
+
+				.site-title {
+					margin-top: 4px;
+				}
+			}
+
+			.progress-wrap {
+
+				.progress-indicator {
+					height: 39px;
+				}
 			}
 		}
 	}
