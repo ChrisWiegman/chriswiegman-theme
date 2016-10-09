@@ -1,4 +1,5 @@
 .main-navigation {
+
 	font-weight: 700;
 
 	ul {
@@ -12,7 +13,6 @@
 			left:    -999em;
 			z-index: 99999;
 		}
-
 	}
 
 	li {
@@ -25,7 +25,6 @@
 		ul li {
 			padding: 5px 20px;
 		}
-
 	}
 
 	li.social-share {
@@ -50,20 +49,18 @@
 		ul {
 			font-style: normal;
 		}
-
 	}
 
 	a {
 
 		border-bottom:   none;
-		color:           $black;
+		color:           $dark-grey;
 		display:         block;
 		text-decoration: none;
 
 		&:hover {
 			color: $orange;
 		}
-
 	}
 
 	ul ul {
@@ -84,7 +81,6 @@
 		a {
 			width: 200px;
 		}
-
 	}
 
 	ul {
@@ -96,9 +92,7 @@
 		ul li:hover > ul {
 			left: 100%;
 		}
-
 	}
-
 }
 
 #menu-primary {
@@ -113,22 +107,25 @@
 
 .site-main {
 
-	.comment-navigation,
-	.paging-navigation,
-	.post-navigation {
+	.comment-navigation {
 		margin:         0 0 1.5em;
 		overflow:       hidden;
 		padding-bottom: 40px;
 	}
-
 }
 
-.paging-navigation {
+.paging-navigation,
+.post-navigation {
+
+	background-color: $white;
+	border:           1px solid $border-color;
+	margin:           0 0 3em 0;
+	overflow:         hidden;
+	padding:          20px;
 
 	a {
 		border-bottom: none;
 	}
-
 }
 
 .comment-navigation .nav-previous,
@@ -161,11 +158,9 @@
 			display: inline;
 			margin:  0 10px;
 		}
-
 	}
 
 	a {
 		border-bottom: none !important;
 	}
-
 }

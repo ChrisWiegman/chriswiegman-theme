@@ -114,10 +114,6 @@ module.exports = function ( grunt ) {
 						'assets/js/admin-speaking.min.js'   : [
 							'assets/js/src/admin-speaking.js'
 						],
-						'assets/js/cw-mood.min.js'          : [
-							'assets/js/src/vendor/Chart.min.js',
-							'assets/js/src/cw-mood.js'
-						],
 						'assets/js/cw-latest-tweets.min.js' : [
 							'assets/js/src/cw-latest-tweets.js'
 						]
@@ -144,10 +140,6 @@ module.exports = function ( grunt ) {
 						],
 						'assets/js/admin-speaking.js'   : [
 							'assets/js/src/admin-speaking.js'
-						],
-						'assets/js/cw-mood.js'          : [
-							'assets/js/src/vendor/Chart.min.js',
-							'assets/js/src/cw-mood.js'
 						],
 						'assets/js/cw-latest-tweets.js' : [
 							'assets/js/src/cw-latest-tweets.js'

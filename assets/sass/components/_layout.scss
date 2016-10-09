@@ -15,16 +15,17 @@ body {
 		margin:      0 auto;
 		max-width:   1152px;
 		overflow:    hidden;
-		padding-top: 76px;
-		transition: 0.5s;
+		padding-top: 115px;
+		transition:  0.5s;
 	}
 
 	.site-header {
 
 		background-color: $white;
-		border-bottom:    1px solid $light-grey;
-		height:           40px;
+		border-bottom:    1px solid $border-color;
+		height:           78px;
 		overflow:         visible;
+		padding:          18px 40px;
 		position:         fixed;
 		top:              0;
 		transition:       0.5s;
@@ -33,18 +34,20 @@ body {
 
 		.progress-wrap {
 
-			position: relative;
-			width:    100%;
+			position:       absolute;
+			top:            0;
+			margin:         0 -40px;
+			width:          100%;
+			pointer-events: none;
 
 			.progress-indicator {
 				background-color: #9ab;
 				display:          block;
-				height:           40px;
+				height:           78px;
 				opacity:          0.2;
 				position:         absolute;
 				transition:       height 0.5s;
 			}
-
 		}
 
 		.wrap {
@@ -69,17 +72,6 @@ body {
 				.logo-wiegman {
 					color: #356;
 				}
-
-				a {
-
-					border-bottom: none;
-
-					&:hover {
-						border-bottom: none;
-					}
-
-				}
-
 			}
 
 			.main-navigation {
@@ -87,9 +79,27 @@ body {
 				overflow:   hidden;
 				transition: 0.5s;
 			}
-
 		}
 
+		&.scrolled {
+
+			height:  39px;
+			padding: 0 40px;
+
+			.wrap {
+
+				.site-title {
+					margin-top: 4px;
+				}
+			}
+
+			.progress-wrap {
+
+				.progress-indicator {
+					height: 39px;
+				}
+			}
+		}
 	}
 
 	.top-padding {
@@ -102,8 +112,8 @@ body {
 	}
 
 	.site-content .widget-area {
-		float: right;
-		width: 30%;
+		float:      right;
+		width:      30%;
 		transition: 0.5s;
 	}
 
@@ -119,20 +129,17 @@ body {
 		a {
 
 			border-bottom: 1px solid $grey;
-			color:         $grey;
+			color:         $dark-grey;
 
 			&:hover {
 				border-bottom: 1px solid $orange;
 				color:         $orange;
 			}
-
 		}
 
 		.site-info {
 			clear:  both;
 			margin: 10px 0;
 		}
-
 	}
-
 }

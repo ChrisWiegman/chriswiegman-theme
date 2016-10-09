@@ -2475,25 +2475,29 @@ body {
     margin: 0 auto;
     max-width: 1152px;
     overflow: hidden;
-    padding-top: 76px;
+    padding-top: 115px;
     transition: 0.5s; }
   #page .site-header {
     background-color: #fff;
-    border-bottom: 1px solid #ccc;
-    height: 40px;
+    border-bottom: 1px solid #ddd;
+    height: 78px;
     overflow: visible;
+    padding: 18px 40px;
     position: fixed;
     top: 0;
     transition: 0.5s;
     width: 100%;
     z-index: 10000; }
     #page .site-header .progress-wrap {
-      position: relative;
-      width: 100%; }
+      position: absolute;
+      top: 0;
+      margin: 0 -40px;
+      width: 100%;
+      pointer-events: none; }
       #page .site-header .progress-wrap .progress-indicator {
         background-color: #9ab;
         display: block;
-        height: 40px;
+        height: 78px;
         opacity: 0.2;
         position: absolute;
         transition: height 0.5s; }
@@ -2512,14 +2516,17 @@ body {
           color: #9b9b9b; }
         #page .site-header .wrap .site-title .logo-wiegman {
           color: #356; }
-        #page .site-header .wrap .site-title a {
-          border-bottom: none; }
-          #page .site-header .wrap .site-title a:hover {
-            border-bottom: none; }
       #page .site-header .wrap .main-navigation {
         margin: 0;
         overflow: hidden;
         transition: 0.5s; }
+    #page .site-header.scrolled {
+      height: 39px;
+      padding: 0 40px; }
+      #page .site-header.scrolled .wrap .site-title {
+        margin-top: 4px; }
+      #page .site-header.scrolled .progress-wrap .progress-indicator {
+        height: 39px; }
   #page .top-padding {
     top: 32px; }
   #page .content-area {
@@ -2538,7 +2545,7 @@ body {
     text-align: center; }
     #page .site-footer a {
       border-bottom: 1px solid #999;
-      color: #999; }
+      color: #3e3e3e; }
       #page .site-footer a:hover {
         border-bottom: 1px solid #cf5300;
         color: #cf5300; }
@@ -2703,8 +2710,8 @@ input:hover[type="button"], input:hover[type="submit"] {
 
 a {
   border-bottom: 1px solid #fff;
-  color: #e80;
-  transition: all .5s ease-in-out;
+  color: #cf5300;
+  transition: all .2s ease-in-out;
   text-decoration: none; }
   a img {
     border: none; }
@@ -2713,8 +2720,8 @@ a {
   a:hover, a:active {
     outline: 0; }
   a:hover {
-    border-bottom: 1px solid #cf5300;
-    color: #cf5300;
+    border-bottom: 1px solid #356;
+    color: #356;
     text-decoration: none; }
   a:visited {
     transition: all .5s ease-in-out; }
@@ -2750,7 +2757,7 @@ a {
       font-style: normal; }
   .main-navigation a {
     border-bottom: none;
-    color: #2e2e2e;
+    color: #3e3e3e;
     display: block;
     text-decoration: none; }
     .main-navigation a:hover {
@@ -2780,15 +2787,21 @@ a {
 .menu-toggle {
   display: none; }
 
-.site-main .comment-navigation,
-.site-main .paging-navigation,
-.site-main .post-navigation {
+.site-main .comment-navigation {
   margin: 0 0 1.5em;
   overflow: hidden;
   padding-bottom: 40px; }
 
-.paging-navigation a {
-  border-bottom: none; }
+.paging-navigation,
+.post-navigation {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  margin: 0 0 3em 0;
+  overflow: hidden;
+  padding: 20px; }
+  .paging-navigation a,
+  .post-navigation a {
+    border-bottom: none; }
 
 .comment-navigation .nav-previous,
 .paging-navigation .nav-previous,
@@ -3073,7 +3086,7 @@ h1.page-title {
     clear: both;
     display: block;
     font-size: 1rem;
-    margin-top: 40px; }
+    margin: 40px 0; }
     .hentry .more-link:hover {
       border-bottom: none; }
   .hentry .entry-footer {
@@ -3088,11 +3101,6 @@ h1.page-title {
 .single .site-main,
 .page .site-main {
   margin-bottom: 2.5rem; }
-
-.post-navigation {
-  padding: 20px 0; }
-  .post-navigation a {
-    border-bottom: 1px solid #f0f3f4; }
 
 .author-box,
 .comments-area {
@@ -3113,6 +3121,7 @@ h1.page-title {
     width: 100%; }
 
 .author-box {
+  border: 1px solid #ddd;
   margin: 0 0 3em 0;
   padding: 25px; }
 
@@ -3120,6 +3129,7 @@ h1.page-title {
   margin-bottom: 40px; }
 
 .comments-area {
+  border: 1px solid #ddd;
   margin: 0;
   padding: 40px 0; }
   .comments-area .no-comments {
@@ -3320,10 +3330,9 @@ object {
 @media screen and (max-width: 1152px) {
   .hentry {
     border-left: none;
-    margin: 0 0 1rem 0;
     transition: 0.5s; }
   #page .site-content {
-    padding-top: 56px;
+    padding-top: 115px;
     transition: 0.5s; }
     #page .site-content .widget-area {
       width: 33%;
@@ -3332,7 +3341,15 @@ object {
 @media screen and (max-width: 970px) {
   .single .site-main, .page .site-main {
     margin-bottom: 1em; }
-  .hentry {
+  .hentry,
+  .author-box,
+  .comments-area,
+  .paging-navigation,
+  .post-navigation {
+    border: none;
+    margin: 0 0 1rem 0; }
+  .paging-navigation,
+  .post-navication {
     border: none; }
   #page .content-area {
     border-right: none;
@@ -3347,45 +3364,55 @@ object {
       width: 100%; }
   #page #menu-primary {
     display: none; }
-  #page .site-header .wrap .menu-toggle {
-    color: #5f5f5f;
-    display: inline-block;
-    font-weight: 400;
-    padding: 8px 20px 0 0;
-    float: right; }
-  #page .site-header .wrap .main-navigation {
-    background-color: #fff;
-    color: #5f5f5f;
-    clear: both;
-    float: none;
-    margin: 0;
-    max-width: 100%;
-    padding: 0;
-    position: absolute;
-    overflow: hidden;
-    top: 39px;
-    width: 100%; }
-    #page .site-header .wrap .main-navigation li {
-      padding: 2px 0 2px 10px;
-      transition: 0.5s;
-      width: 100%; }
-    #page .site-header .wrap .main-navigation li.social-share {
-      clear: none !important;
-      float: left;
-      margin: 4px 4px 8px 4px;
-      width: 30px; }
-    #page .site-header .wrap .main-navigation ul {
+  #page .site-header {
+    height: 39px;
+    padding: 0 40px; }
+    #page .site-header .wrap .menu-toggle {
+      color: #5f5f5f;
+      display: inline-block;
+      font-weight: 400;
+      padding: 8px 20px 0 0;
+      float: right; }
+    #page .site-header .wrap .main-navigation {
+      background-color: #fff;
+      color: #5f5f5f;
+      clear: both;
       float: none;
+      margin: 0;
+      max-width: 100%;
+      padding: 0;
+      position: absolute;
+      overflow: hidden;
+      top: 39px;
       width: 100%; }
-      #page .site-header .wrap .main-navigation ul ul {
-        box-shadow: none;
+      #page .site-header .wrap .main-navigation li {
+        padding: 2px 0 2px 10px;
+        transition: 0.5s;
+        width: 100%; }
+      #page .site-header .wrap .main-navigation li.social-share {
+        clear: none !important;
+        float: left;
+        margin: 4px 4px 8px 4px;
+        width: 30px; }
+      #page .site-header .wrap .main-navigation ul {
         float: none;
-        left: -999em;
-        position: relative;
-        top: 2em;
-        z-index: 99999; } }
+        width: 100%; }
+        #page .site-header .wrap .main-navigation ul ul {
+          box-shadow: none;
+          float: none;
+          left: -999em;
+          position: relative;
+          top: 2em;
+          z-index: 99999; } }
 
 @media screen and (max-width: 700px) {
+  #page .site-header {
+    padding: 0; }
+    #page .site-header .menu-toggle {
+      padding: 8px 5px 0 0; }
+    #page .site-header .wrap .site-title {
+      font-size: 150%;
+      margin-top: 8px; }
   .alignleft,
   .alignright,
   .aligncenter {
@@ -3429,13 +3456,6 @@ object {
                   border-bottom: 1px solid #fff; }
                   .comments-area ol li ol li ol li ol li a:focus {
                     outline: thin dotted #ccc; } }
-
-@media screen and (max-width: 350px) {
-  #page .site-header .menu-toggle {
-    padding: 8px 5px 0 0; }
-  #page .site-header .wrap .site-title {
-    font-size: 150%;
-    margin-top: 8px; } }
 
 @media print {
   body {

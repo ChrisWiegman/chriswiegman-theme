@@ -11,11 +11,39 @@ jQuery( document ).ready( function ( $ ) {
 
 	} );
 
-	//hide the menu button when we resize the menu
-	$( window ).resize( function () {
+	// Resize header on scroll.
+	var header = $( '.site-header, .progress-indicator' );
 
-		if ( $( window ).width() >= 900 ) {
-			$( '#menu-primary' ).removeAttr( 'style' );
+	// Add correct class to header on load.
+	if ( $( this ).scrollTop() > 10 ) {
+
+		if ( ! header.hasClass( 'scrolled' ) ) {
+			header.addClass( 'scrolled' );
+		}
+
+	} else {
+
+		if ( header.hasClass( 'scrolled' ) ) {
+			header.removeClass( 'scrolled' );
+		}
+
+	}
+
+	// Add or removed header class on scroll.
+	$( window ).scroll( function () {
+
+		if ( $( this ).scrollTop() > 30 ) {
+
+			if ( ! header.hasClass( 'scrolled' ) ) {
+				header.addClass( 'scrolled' );
+			}
+
+		} else {
+
+			if ( header.hasClass( 'scrolled' ) ) {
+				header.removeClass( 'scrolled' );
+			}
+
 		}
 
 	} );

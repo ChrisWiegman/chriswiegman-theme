@@ -19,13 +19,12 @@ define( 'CW_THEME_INCLUDES', CW_THEME_PATH . 'includes/' );
 
 require( CW_THEME_INCLUDES . 'functions/core.php' );
 require( CW_THEME_INCLUDES . 'functions/template-tags.php' );
-require( CW_THEME_INCLUDES . '/classes/widgets/class-ad.php' );
-require( CW_THEME_INCLUDES . '/classes/widgets/class-donate.php' );
-require( CW_THEME_INCLUDES . '/classes/widgets/class-mood.php' );
-require( CW_THEME_INCLUDES . '/classes/widgets/class-latest-tweets.php' );
-require( CW_THEME_INCLUDES . '/classes/post-types/class-project.php' );
-require( CW_THEME_INCLUDES . '/classes/post-types/class-speaking.php' );
-require( CW_THEME_INCLUDES . '/classes/post-types/class-journal.php' );
+require( CW_THEME_INCLUDES . 'classes/widgets/class-ad.php' );
+require( CW_THEME_INCLUDES . 'classes/widgets/class-donate.php' );
+require( CW_THEME_INCLUDES . 'classes/widgets/class-latest-tweets.php' );
+require( CW_THEME_INCLUDES . 'classes/post-types/class-project.php' );
+require( CW_THEME_INCLUDES . 'classes/post-types/class-speaking.php' );
+require( CW_THEME_INCLUDES . 'classes/post-types/class-journal.php' );
 
 // Instantiate required classes.
 new Post_Types\Project();

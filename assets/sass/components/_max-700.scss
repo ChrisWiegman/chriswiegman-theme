@@ -1,107 +1,111 @@
-@media screen and (max-width : 700px) {
+@media screen and (max-width: 700px) {
+
+	#page {
+
+		.site-header {
+
+			padding: 0;
+
+			.menu-toggle {
+				padding: 8px 5px 0 0;
+			}
+
+			.wrap .site-title {
+				font-size:  150%;
+				margin-top: 8px;
+			}
+		}
+	}
 
 	.alignleft,
 	.alignright,
 	.aligncenter {
-		clear   : both;
-		display : block;
-		float   : none;
-		margin  : 10px auto;
+		clear:   both;
+		display: block;
+		float:   none;
+		margin:  10px auto;
 	}
 
 	.software-short {
-		float : none;
-		width : 100%;
+		float: none;
+		width: 100%;
 	}
 
 	.paging-navigation {
-		padding-left  : 10px;
-		padding-right : 10px;
+		padding-left:  10px;
+		padding-right: 10px;
 	}
 
 	.comments-area {
 
-		padding : 20px;
+		padding: 20px;
 
 		ol {
-			padding : 20px 0 0 0;
+			padding: 20px 0 0 0;
 
 			li {
 
-				border-left : none;
-				padding     : 0;
+				border-left: none;
+				padding:     0;
 
 				.comment-content {
-					padding-right : 0;
+					padding-right: 0;
 				}
 
 				ol {
 
-					padding-top : 20px;
+					padding-top: 20px;
 
 					li {
 
-						background-color : $white;
-						border-left      : none;
+						background-color: $white;
+						border-left:      none;
 
 						a {
 
-							border-bottom : 1px solid $white;
+							border-bottom: 1px solid $white;
 
 							&:focus {
-								outline : thin dotted #d3d3d3;
+								outline: thin dotted #d3d3d3;
 							}
-
 						}
 
 						ol {
 
 							li {
 
-								background-color : $white;
+								background-color: $white;
 
 								a {
 
-									border-bottom : 1px solid $white;
+									border-bottom: 1px solid $white;
 
 									&:focus {
-										outline : thin dotted $light-grey;
+										outline: thin dotted $light-grey;
 									}
-
 								}
 
 								ol {
 
 									li {
 
-										background-color : $white;
+										background-color: $white;
 
 										a {
 
-											border-bottom : 1px solid $white;
+											border-bottom: 1px solid $white;
 
 											&:focus {
-												outline : thin dotted $light-grey;
+												outline: thin dotted $light-grey;
 											}
-
 										}
-
 									}
-
 								}
-
 							}
-
 						}
-
 					}
-
 				}
-
 			}
-
 		}
-
 	}
-
 }

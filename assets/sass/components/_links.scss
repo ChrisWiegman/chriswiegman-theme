@@ -1,31 +1,30 @@
 a {
 
-	border-bottom      : 1px solid $white;
-	color              : $light-orange;
-	transition         : all .5s ease-in-out;
-	text-decoration    : none;
+	border-bottom:   1px solid $white;
+	color:           $orange;
+	transition:      all .2s ease-in-out;
+	text-decoration: none;
 
 	img {
-		border : none;
+		border: none;
 	}
 
 	&:focus {
-		outline : thin dotted $light-grey;
+		outline: thin dotted $light-grey;
 	}
 
 	&:hover,
 	&:active {
-		outline : 0;
+		outline: 0;
 	}
 
 	&:hover {
-		border-bottom   : 1px solid $orange;
-		color           : $orange;
-		text-decoration : none;
+		border-bottom:   1px solid $link-color;
+		color:           $link-color;
+		text-decoration: none;
 	}
 
 	&:visited {
-		transition         : all .5s ease-in-out;
+		transition: all .5s ease-in-out;
 	}
-
 }
