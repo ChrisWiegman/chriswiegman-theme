@@ -72,15 +72,6 @@ body {
 				.logo-wiegman {
 					color: #356;
 				}
-
-				a {
-
-					border-bottom: none;
-
-					&:hover {
-						border-bottom: none;
-					}
-				}
 			}
 
 			.main-navigation {
@@ -138,7 +129,7 @@ body {
 		a {
 
 			border-bottom: 1px solid $grey;
-			color:         $grey;
+			color:         $dark-grey;
 
 			&:hover {
 				border-bottom: 1px solid $orange;

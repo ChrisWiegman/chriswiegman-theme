@@ -2516,10 +2516,6 @@ body {
           color: #9b9b9b; }
         #page .site-header .wrap .site-title .logo-wiegman {
           color: #356; }
-        #page .site-header .wrap .site-title a {
-          border-bottom: none; }
-          #page .site-header .wrap .site-title a:hover {
-            border-bottom: none; }
       #page .site-header .wrap .main-navigation {
         margin: 0;
         overflow: hidden;
@@ -2549,7 +2545,7 @@ body {
     text-align: center; }
     #page .site-footer a {
       border-bottom: 1px solid #999;
-      color: #999; }
+      color: #3e3e3e; }
       #page .site-footer a:hover {
         border-bottom: 1px solid #cf5300;
         color: #cf5300; }
@@ -2715,7 +2711,7 @@ input:hover[type="button"], input:hover[type="submit"] {
 a {
   border-bottom: 1px solid #fff;
   color: #cf5300;
-  transition: all .5s ease-in-out;
+  transition: all .2s ease-in-out;
   text-decoration: none; }
   a img {
     border: none; }
@@ -2761,7 +2757,7 @@ a {
       font-style: normal; }
   .main-navigation a {
     border-bottom: none;
-    color: #2e2e2e;
+    color: #3e3e3e;
     display: block;
     text-decoration: none; }
     .main-navigation a:hover {
@@ -2791,15 +2787,21 @@ a {
 .menu-toggle {
   display: none; }
 
-.site-main .comment-navigation,
-.site-main .paging-navigation,
-.site-main .post-navigation {
+.site-main .comment-navigation {
   margin: 0 0 1.5em;
   overflow: hidden;
   padding-bottom: 40px; }
 
-.paging-navigation a {
-  border-bottom: none; }
+.paging-navigation,
+.post-navigation {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  margin: 0 0 3em 0;
+  overflow: hidden;
+  padding: 20px; }
+  .paging-navigation a,
+  .post-navigation a {
+    border-bottom: none; }
 
 .comment-navigation .nav-previous,
 .paging-navigation .nav-previous,
@@ -3084,7 +3086,7 @@ h1.page-title {
     clear: both;
     display: block;
     font-size: 1rem;
-    margin-top: 40px; }
+    margin: 40px 0; }
     .hentry .more-link:hover {
       border-bottom: none; }
   .hentry .entry-footer {
@@ -3099,11 +3101,6 @@ h1.page-title {
 .single .site-main,
 .page .site-main {
   margin-bottom: 2.5rem; }
-
-.post-navigation {
-  padding: 20px 0; }
-  .post-navigation a {
-    border-bottom: 1px solid #f0f3f4; }
 
 .author-box,
 .comments-area {
@@ -3124,6 +3121,7 @@ h1.page-title {
     width: 100%; }
 
 .author-box {
+  border: 1px solid #ddd;
   margin: 0 0 3em 0;
   padding: 25px; }
 
@@ -3131,6 +3129,7 @@ h1.page-title {
   margin-bottom: 40px; }
 
 .comments-area {
+  border: 1px solid #ddd;
   margin: 0;
   padding: 40px 0; }
   .comments-area .no-comments {
@@ -3331,7 +3330,6 @@ object {
 @media screen and (max-width: 1152px) {
   .hentry {
     border-left: none;
-    margin: 0 0 1rem 0;
     transition: 0.5s; }
   #page .site-content {
     padding-top: 115px;
@@ -3343,7 +3341,15 @@ object {
 @media screen and (max-width: 970px) {
   .single .site-main, .page .site-main {
     margin-bottom: 1em; }
-  .hentry {
+  .hentry,
+  .author-box,
+  .comments-area,
+  .paging-navigation,
+  .post-navigation {
+    border: none;
+    margin: 0 0 1rem 0; }
+  .paging-navigation,
+  .post-navication {
     border: none; }
   #page .content-area {
     border-right: none;
@@ -3400,6 +3406,13 @@ object {
           z-index: 99999; } }
 
 @media screen and (max-width: 700px) {
+  #page .site-header {
+    padding: 0; }
+    #page .site-header .menu-toggle {
+      padding: 8px 5px 0 0; }
+    #page .site-header .wrap .site-title {
+      font-size: 150%;
+      margin-top: 8px; }
   .alignleft,
   .alignright,
   .aligncenter {
@@ -3443,13 +3456,6 @@ object {
                   border-bottom: 1px solid #fff; }
                   .comments-area ol li ol li ol li ol li a:focus {
                     outline: thin dotted #ccc; } }
-
-@media screen and (max-width: 350px) {
-  #page .site-header .menu-toggle {
-    padding: 8px 5px 0 0; }
-  #page .site-header .wrap .site-title {
-    font-size: 150%;
-    margin-top: 8px; } }
 
 @media print {
   body {

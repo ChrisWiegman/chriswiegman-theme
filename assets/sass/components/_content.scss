@@ -32,7 +32,6 @@ h1.page-title {
 		img {
 			width: 100%;
 		}
-
 	}
 
 	.entry-header {
@@ -91,7 +90,6 @@ h1.page-title {
 		h3 {
 			margin-bottom: 1rem;
 		}
-
 	}
 
 	.page-links {
@@ -105,12 +103,11 @@ h1.page-title {
 		clear:         both;
 		display:       block;
 		font-size:     1rem;
-		margin-top:    40px;
+		margin:        40px 0;
 
 		&:hover {
 			border-bottom: none;
 		}
-
 	}
 
 	.entry-footer {
@@ -136,16 +133,6 @@ h1.page-title {
 	.site-main {
 		margin-bottom: 2.5rem;
 	}
-
-}
-
-.post-navigation {
-
-	padding: 20px 0;
-
-	a {
-		border-bottom: 1px solid $background;
-	}
 }
 
 .author-box,
@@ -168,12 +155,12 @@ h1.page-title {
 		font-size: 80%;
 		width:     100%;
 	}
-
 }
 
 .author-box {
-	margin:     0 0 3em 0;
-	padding:    25px;
+	border:  1px solid $border-color;
+	margin:  0 0 3em 0;
+	padding: 25px;
 }
 
 .comment-reply-title {
@@ -182,6 +169,7 @@ h1.page-title {
 
 .comments-area {
 
+	border:  1px solid $border-color;
 	margin:  0;
 	padding: 40px 0;
 
@@ -234,7 +222,6 @@ h1.page-title {
 						&:focus {
 							outline: thin dotted $white;
 						}
-
 					}
 
 					ol {
@@ -250,7 +237,6 @@ h1.page-title {
 								&:focus {
 									outline: thin dotted $light-grey;
 								}
-
 							}
 
 							ol {
@@ -266,7 +252,6 @@ h1.page-title {
 										&:focus {
 											outline: thin dotted $white;
 										}
-
 									}
 
 									ol {
@@ -282,29 +267,17 @@ h1.page-title {
 												&:focus {
 													outline: thin dotted $light-grey;
 												}
-
 											}
-
 										}
-
 									}
-
 								}
-
 							}
-
 						}
-
 					}
-
 				}
-
 			}
-
 		}
-
 	}
-
 }
 
 /*--------------------------------------------------------------

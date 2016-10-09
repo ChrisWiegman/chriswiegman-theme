@@ -4,7 +4,17 @@
 		margin-bottom: 1em;
 	}
 
-	.hentry {
+	.hentry,
+	.author-box,
+	.comments-area,
+	.paging-navigation,
+	.post-navigation {
+		border: none;
+		margin: 0 0 1rem 0;
+	}
+
+	.paging-navigation,
+	.post-navication {
 		border: none;
 	}
 

@@ -47,7 +47,7 @@ function paging_nav( $query = null ) {
 
 			<?php if ( get_previous_posts_link() ) { ?>
 				<div
-					class="nav-next"><?php previous_posts_link( sprintf( esc_html__( '%s Newer posts', 'chriswiegman' ), '<span class="meta-nav">&rarr;</span>' ) ); ?></div>
+					class="nav-next"><?php previous_posts_link( sprintf( esc_html__( 'Newer posts %s', 'chriswiegman' ), '<span class="meta-nav">&rarr;</span>' ) ); ?></div>
 			<?php } ?>
 
 		</div>
