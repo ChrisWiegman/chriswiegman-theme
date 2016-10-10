@@ -3130,7 +3130,7 @@ h1.page-title {
 
 .comments-area {
   border: 1px solid #ddd;
-  margin: 0;
+  margin: 0 0 3em 0;
   padding: 40px 0; }
   .comments-area .no-comments {
     padding: 0 40px; }
