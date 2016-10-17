@@ -11,6 +11,29 @@
 
 use CW\Theme\Post_Types;
 
+add_filter( 'stylesheet_directory_uri', 'filter_stylesheet_directory_uri' );
+
+/**
+ * Filter stylesheet_directory_uri
+ *
+ * Make sure we're using the right folder with Varnish
+ *
+ * @since 5.3.4
+ *
+ * @param string $stylesheet_dir_uri Stylesheet directory URI.
+ *
+ * @return string Filtered URI.
+ */
+function filter_stylesheet_directory_uri( $stylesheet_dir_uri ) {
+
+	if ( defined( 'WP_LOCAL_DEV' ) && true === WP_LOCAL_DEV ) {
+		return str_replace( 'http:', 'https:', $stylesheet_dir_uri );
+	}
+
+	return $stylesheet_dir_uri;
+
+}
+
 // Useful global constants.
 define( 'CW_THEME_VERSION', '5.3.3' );
 define( 'CW_THEME_PATH', get_template_directory() . '/' );
