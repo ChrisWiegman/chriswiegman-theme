@@ -18,7 +18,7 @@ add_filter( 'stylesheet_directory_uri', 'filter_stylesheet_directory_uri' );
  *
  * Make sure we're using the right folder with Varnish
  *
- * @since 5.3.4
+ * @since 5.4.2
  *
  * @param string $stylesheet_dir_uri Stylesheet directory URI.
  *
@@ -35,7 +35,7 @@ function filter_stylesheet_directory_uri( $stylesheet_dir_uri ) {
 }
 
 // Useful global constants.
-define( 'CW_THEME_VERSION', '5.3.3' );
+define( 'CW_THEME_VERSION', '5.4.2' );
 define( 'CW_THEME_PATH', get_template_directory() . '/' );
 define( 'CW_THEME_URL', get_stylesheet_directory_uri() );
 define( 'CW_THEME_INCLUDES', CW_THEME_PATH . 'includes/' );
