@@ -21,6 +21,15 @@ input[type="search"] {
 	padding:          8px 4px;
 }
 
+.hentry {
+
+	.search-form input {
+		background-color: $white;
+		margin:           0 10% 10% 10%;
+		width:            80%;
+	}
+}
+
 button {
 	background:      $dark-blue;
 	border:          none;
