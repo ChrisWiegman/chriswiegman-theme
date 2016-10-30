@@ -2,9 +2,9 @@
 # This file is distributed under the GNU General Public License v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: ChrisWiegman 5.3.3\n"
+"Project-Id-Version: ChrisWiegman 5.4.4\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/style\n"
-"POT-Creation-Date: 2016-10-09 22:18:24+00:00\n"
+"POT-Creation-Date: 2016-10-30 22:45:07+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -41,19 +41,8 @@ msgstr ""
 msgid "Oops! That page can&rsquo;t be found."
 msgstr ""
 
-#: 404.php:27
-msgid ""
-"It looks like nothing was found at this location. Maybe try one of the "
-"links below or a search?"
-msgstr ""
-
-#: 404.php:35
-msgid "Most Used Categories"
-msgstr ""
-
-#: 404.php:54
-#. translators: %1$s: smiley
-msgid "Try looking in the monthly archives. %1$s"
+#: 404.php:26
+msgid "It looks like nothing was found at this location. Maybe try a search?"
 msgstr ""
 
 #: archive.php:29
@@ -533,35 +522,35 @@ msgstr ""
 msgid "The primary sidebar on the right side of most content."
 msgstr ""
 
-#: includes/functions/core.php:231
+#: includes/functions/core.php:229
 msgid "All Posts"
 msgstr ""
 
-#: includes/functions/core.php:239
+#: includes/functions/core.php:237
 msgid "All Comments"
 msgstr ""
 
-#: includes/functions/core.php:333
+#: includes/functions/core.php:331
 msgid "Website Title"
 msgstr ""
 
-#: includes/functions/core.php:334
+#: includes/functions/core.php:332
 msgid "Twitter"
 msgstr ""
 
-#: includes/functions/core.php:335
+#: includes/functions/core.php:333
 msgid "Facebook"
 msgstr ""
 
-#: includes/functions/core.php:336
+#: includes/functions/core.php:334
 msgid "WordPress.org"
 msgstr ""
 
-#: includes/functions/core.php:337
+#: includes/functions/core.php:335
 msgid "GitHub"
 msgstr ""
 
-#: includes/functions/core.php:448
+#: includes/functions/core.php:446
 msgid "Page %s"
 msgstr ""
 
