@@ -15,7 +15,8 @@ input[type="search"] {
 	-webkit-appearance: textfield;
 }
 
-.search-form input {
+.search-form input,
+#subscribe-field-blog_subscription-2 {
 	background-color: $near-white;
 	margin:           0;
 	padding:          8px 4px;
@@ -23,8 +24,7 @@ input[type="search"] {
 
 .hentry {
 
-	.search-form input,
-	#subscribe-field-blog_subscription-2 {
+	.search-form input {
 		background-color: $white;
 		margin:           0 10% 10% 10%;
 		width:            80%;

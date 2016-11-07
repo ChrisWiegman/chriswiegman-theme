@@ -2567,13 +2567,13 @@ input, select, textarea {
 input[type="search"] {
   -webkit-appearance: textfield; }
 
-.search-form input {
+.search-form input,
+#subscribe-field-blog_subscription-2 {
   background-color: #f8f8f8;
   margin: 0;
   padding: 8px 4px; }
 
-.hentry .search-form input,
-.hentry #subscribe-field-blog_subscription-2 {
+.hentry .search-form input {
   background-color: #fff;
   margin: 0 10% 10% 10%;
   width: 80%; }
@@ -2866,20 +2866,6 @@ a {
   .widget input {
     border: 1px solid #ddd; }
 
-.widget.latest_tweets ul {
-  list-style: disc; }
-  .widget.latest_tweets ul li .cw_tweet {
-    display: block;
-    margin-bottom: 2em; }
-    .widget.latest_tweets ul li .cw_tweet .cw_tweet_text {
-      display: block; }
-    .widget.latest_tweets ul li .cw_tweet .cw_tweet_time {
-      clear: both;
-      display: block;
-      float: right;
-      font-size: 80%;
-      font-style: italic; }
-
 /**
  * Search widget
  **/
@@ -2912,48 +2898,6 @@ a {
       margin-bottom: 6px;
       padding: 0;
       word-wrap: break-word; }
-
-.gform_widget ul {
-  margin: 0 !important; }
-
-.gform_widget form {
-  margin: 0;
-  max-width: 100%; }
-  .gform_widget form input[type=email],
-  .gform_widget form input#subscribe-field {
-    background-color: #f8f8f8;
-    color: #999;
-    font-size: 1.2rem;
-    padding: .5rem;
-    width: 100%; }
-  .gform_widget form input[type="submit"] {
-    text-transform: none !important;
-    padding: 10px 10px 6px 10px; }
-  .gform_widget form .gform_footer {
-    margin-top: 0; }
-  .gform_widget form select {
-    display: block;
-    width: 100% !important; }
-  .gform_widget form .gfield_label {
-    display: none !important;
-    margin: 0; }
-  .gform_widget form .gform_footer {
-    display: none; }
-
-.gform_widget .gforms_confirmation_message {
-  background-color: #3e3e3e;
-  border: none; }
-
-#cw_affiliates {
-  text-align: center; }
-  #cw_affiliates a {
-    border-bottom: none; }
-
-.donate_widget a {
-  border-bottom: none; }
-
-.donate_widget .cw_donate {
-  text-align: center; }
 
 /*--------------------------------------------------------------
 0.1 Posts and pages
