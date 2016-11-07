@@ -2572,7 +2572,8 @@ input[type="search"] {
   margin: 0;
   padding: 8px 4px; }
 
-.hentry .search-form input {
+.hentry .search-form input,
+.hentry #subscribe-field-blog_subscription-2 {
   background-color: #fff;
   margin: 0 10% 10% 10%;
   width: 80%; }

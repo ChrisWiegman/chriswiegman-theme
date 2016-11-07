@@ -2,9 +2,9 @@
 # This file is distributed under the GNU General Public License v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: ChrisWiegman 5.4.5\n"
+"Project-Id-Version: ChrisWiegman 5.5\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/style\n"
-"POT-Creation-Date: 2016-11-07 01:42:42+00:00\n"
+"POT-Creation-Date: 2016-11-07 02:17:52+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -462,50 +462,6 @@ msgstr ""
 msgid "Conference Location"
 msgstr ""
 
-#: includes/classes/widgets/class-ad.php:31
-#: includes/classes/widgets/class-ad.php:34
-#: includes/classes/widgets/class-ad.php:51
-msgid "Recommended Services"
-msgstr ""
-
-#: includes/classes/widgets/class-ad.php:56
-#: includes/classes/widgets/class-donate.php:56
-#: includes/classes/widgets/class-latest-tweets.php:210
-msgid "Title:"
-msgstr ""
-
-#: includes/classes/widgets/class-donate.php:31
-#: includes/classes/widgets/class-donate.php:34
-#: includes/classes/widgets/class-donate.php:51
-msgid "Support My Work"
-msgstr ""
-
-#: includes/classes/widgets/class-donate.php:111
-msgid ""
-"If you find my work useful please consider a few dollars to help pay for "
-"this site."
-msgstr ""
-
-#: includes/classes/widgets/class-latest-tweets.php:38
-msgid "Latest Tweets Widget"
-msgstr ""
-
-#: includes/classes/widgets/class-latest-tweets.php:41
-msgid "Latest Tweets"
-msgstr ""
-
-#: includes/classes/widgets/class-latest-tweets.php:204
-msgid "My Latest Tweets"
-msgstr ""
-
-#: includes/classes/widgets/class-latest-tweets.php:216
-msgid "Twitter User:"
-msgstr ""
-
-#: includes/classes/widgets/class-latest-tweets.php:222
-msgid "Number of Tweets:"
-msgstr ""
-
 #: includes/functions/core.php:39
 msgid "Primary Menu"
 msgstr ""
@@ -522,35 +478,27 @@ msgstr ""
 msgid "The primary sidebar on the right side of most content."
 msgstr ""
 
-#: includes/functions/core.php:230
-msgid "All Posts"
-msgstr ""
-
-#: includes/functions/core.php:238
-msgid "All Comments"
-msgstr ""
-
-#: includes/functions/core.php:332
+#: includes/functions/core.php:249
 msgid "Website Title"
 msgstr ""
 
-#: includes/functions/core.php:333
+#: includes/functions/core.php:250
 msgid "Twitter"
 msgstr ""
 
-#: includes/functions/core.php:334
+#: includes/functions/core.php:251
 msgid "Facebook"
 msgstr ""
 
-#: includes/functions/core.php:335
+#: includes/functions/core.php:252
 msgid "WordPress.org"
 msgstr ""
 
-#: includes/functions/core.php:336
+#: includes/functions/core.php:253
 msgid "GitHub"
 msgstr ""
 
-#: includes/functions/core.php:447
+#: includes/functions/core.php:364
 msgid "Page %s"
 msgstr ""
 
