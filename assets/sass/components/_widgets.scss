@@ -49,35 +49,6 @@
 
 }
 
-.widget.latest_tweets {
-
-	ul {
-
-		list-style: disc;
-
-		li {
-
-			.cw_tweet {
-
-				display:       block;
-				margin-bottom: 2em;
-
-				.cw_tweet_text {
-					display: block;
-				}
-
-				.cw_tweet_time {
-					clear:      both;
-					display:    block;
-					float:      right;
-					font-size:  80%;
-					font-style: italic;
-				}
-			}
-		}
-	}
-}
-
 /**
  * Search widget
  **/
@@ -123,80 +94,5 @@
 			padding:         0;
 			word-wrap:       break-word;
 		}
-
-	}
-
-}
-
-//Subscription Widget
-.gform_widget {
-
-	ul {
-		margin: 0 !important;
-	}
-
-	form {
-
-		margin:    0;
-		max-width: 100%;
-
-		input[type=email],
-		input#subscribe-field {
-			background-color: $near-white;
-			color:            #999;
-			font-size:        $normal-rem;
-			padding:          .5rem;
-			width:            100%;
-		}
-
-		input[type="submit"] {
-			text-transform: none !important;
-			padding:        10px 10px 6px 10px;
-		}
-
-		.gform_footer {
-			margin-top: 0;
-		}
-
-		select {
-			display: block;
-			width:   100% !important;
-		}
-
-		.gfield_label {
-			display: none !important;
-			margin:  0;
-		}
-
-		.gform_footer {
-			display: none;
-		}
-
-	}
-
-	.gforms_confirmation_message {
-		background-color: $dark-grey;
-		border:           none;
-	}
-
-}
-
-#cw_affiliates {
-
-	text-align: center;
-
-	a {
-		border-bottom: none;
-	}
-}
-
-.donate_widget {
-
-	a {
-		border-bottom: none;
-	}
-
-	.cw_donate {
-		text-align: center;
 	}
 }
