@@ -33,7 +33,9 @@ namespace CW\Theme\Templates\Parts\Content\Speaking;
 
 		get_template_part( 'template-parts/content', 'speaking_list' );
 
-	} ?>
+	}
+	wp_reset_postdata();
+	?>
 
 </ul>
 <!-- end .archive-projects-->

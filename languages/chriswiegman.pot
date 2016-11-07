@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ChrisWiegman 5.4.5\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/style\n"
-"POT-Creation-Date: 2016-11-04 23:49:21+00:00\n"
+"POT-Creation-Date: 2016-11-07 01:42:42+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -602,10 +602,22 @@ msgstr ""
 msgid "Comment on %s"
 msgstr ""
 
-#: page-code.php:34
+#: page-about.php:32
+msgid "Bio"
+msgstr ""
+
+#: page-about.php:38
+msgid "Projects"
+msgstr ""
+
+#: page-about.php:45
 msgid ""
 "Note that \"archived\" projects are projects I am no longer involved in for\n"
 "\t\t\t\t\t\tone reason or another."
+msgstr ""
+
+#: page-about.php:52
+msgid "Speaking"
 msgstr ""
 
 #: search.php:24
