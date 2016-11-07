@@ -145,35 +145,7 @@ function action_widgets_init() {
 	);
 
 	register_widget( 'CW\Theme\Widgets\Latest_Tweets' );
-	register_widget( 'CW\Theme\Widgets\Ad' );
-	register_widget( 'CW\Theme\Widgets\Donate' );
 
-}
-
-/**
- * Action wp
- *
- * Sets the authordata global when viewing an author archive.
- *
- * This provides backwards compatibility with
- * http://core.trac.wordpress.org/changeset/25574
- *
- * It removes the need to call the_post() and rewind_posts() in an author
- * template to print information about the author.
- *
- * @since 5.0.0
- *
- * @global \WP_Query $wp_query WordPress Query object.
- *
- * @return void
- */
-function action_wp() {
-
-	global $wp_query;
-
-	if ( $wp_query->is_author() && isset( $wp_query->post ) ) {
-		$GLOBALS['authordata'] = get_userdata( $wp_query->post->post_author );
-	}
 }
 
 /**
@@ -190,6 +162,7 @@ function action_wp_enqueue_scripts() {
 	$min = ( defined( 'SCRIPT_DEBUG' ) && true === SCRIPT_DEBUG ) ? '' : '.min';
 
 	wp_enqueue_style( 'chriswiegman-style', get_template_directory_uri() . '/assets/css/master' . $min . '.css', array(), CW_THEME_VERSION );
+	wp_enqueue_style( 'google-fonts', 'https://fonts.googleapis.com/css?family=Arvo:700|Gudea:400,400italic,700', array(), CW_THEME_VERSION );
 
 	wp_enqueue_script( 'chriswiegman-footer', get_template_directory_uri() . '/assets/js/footer' . $min . '.js', array( 'jquery' ), CW_THEME_VERSION, false );
 
@@ -210,59 +183,6 @@ function action_wp_enqueue_scripts() {
 		wp_enqueue_script( 'comment-reply' );
 	}
 
-}
-
-/**
- * Action wp_head
- *
- * Clean up the header
- *
- * @since 5.0.0
- *
- * @return void
- */
-function action_wp_head() {
-
-	printf(
-		'<link rel="alternate" type="%s" title="%s" href="%s" />%s',
-		esc_attr( feed_content_type() ),
-		get_the_title() . ' | ' . esc_attr__( 'All Posts', 'chriswiegman' ),
-		'http://feeds.chriswiegman.com/',
-		esc_attr( PHP_EOL )
-	);
-
-	printf(
-		'<link rel="alternate" type="%s" title="%s" href="%s" />%s',
-		esc_attr( feed_content_type() ),
-		get_the_title() . ' | ' . esc_attr__( 'All Comments', 'chriswiegman' ),
-		'http://feeds.chriswiegman.com/comments',
-		esc_attr( PHP_EOL )
-	);
-
-}
-
-/**
- * Update AMP JSON
- *
- * Adds required parameters such as logo to AMP's JSON.
- *
- * @since 5.2.7
- *
- * @param array    $metadata Array of meta data.
- * @param \WP_POST $post     The current WordPress post.
- *
- * @return array Filtered array of AMP data.
- */
-function filter_amp_post_template_metadata( $metadata, $post ) {
-
-	$metadata['publisher']['logo'] = array(
-		'@type'  => 'ImageObject',
-		'url'    => 'https://www.chriswiegman.com/content/uploads/2014/05/chris-wiegman-cartoon.png',
-		'height' => 300,
-		'width'  => 300,
-	);
-
-	return $metadata;
 }
 
 /**
@@ -482,9 +402,6 @@ function init() {
 
 	};
 
-	remove_action( 'wp_head', 'feed_links', 2 );
-	remove_action( 'wp_head', 'feed_links_extra', 3 );
-	remove_action( 'wp_head', 'rsd_link' );
 	remove_action( 'wp_head', 'wlwmanifest_link' );
 	remove_action( 'wp_head', 'wp_generator' );
 
@@ -493,13 +410,10 @@ function init() {
 	add_action( 'init', $n ( 'action_init' ) );
 	add_action( 'dashboard_glance_items', $n( 'action_dashboard_glance_items' ) );
 	add_action( 'widgets_init', $n ( 'action_widgets_init' ) );
-	add_action( 'wp', $n ( 'action_wp' ) );
 	add_action( 'wp_enqueue_scripts', $n ( 'action_wp_enqueue_scripts' ) );
-	add_action( 'wp_head', $n ( 'action_wp_head' ) );
 
 	add_action( 'widgets_init', $n( 'action_widgets_init' ) );
 
-	add_filter( 'amp_post_template_metadata', $n( 'filter_amp_post_template_metadata' ), 10, 2 );
 	add_filter( 'body_class', $n ( 'filter_body_class' ) );
 	add_filter( 'post_class', $n( 'filter_post_class' ), 10, 3 );
 	add_filter( 'user_contactmethods', $n( 'filter_user_contactmethods' ) );

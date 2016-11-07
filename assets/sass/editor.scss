@@ -1,11 +1,13 @@
+@import url('https://fonts.googleapis.com/css?family=Arvo:700|Gudea:400,400i,700');
+
 #tinymce {
 	background:  #fff;
 	color:       #5f5f5f;
 	padding:     8px;
-	font-family: Verdana, Helvatica, Arial, sans-serif;
+	font-family: Gudea, sans-serif;
 	font-weight: 400;
 	font-size:   1.2rem;
-	line-height: 1.6;
+	line-height: 1.4;
 }
 
 #tinymce p {
@@ -28,7 +30,7 @@
 }
 
 #tinymce h1, #tinymce h2, #tinymce h3, #tinymce h4, #tinymce h5, #tinymce h6 {
-	font-family: Georgia, serif;
+	font-family: Arvo, serif;
 	font-weight: 700;
 }
 

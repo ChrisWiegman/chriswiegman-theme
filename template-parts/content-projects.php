@@ -26,7 +26,9 @@ namespace CW\Theme\Templates\Parts\Content\Projects;
 
 		get_template_part( 'template-parts/content', 'project_list' );
 
-	} ?>
+	}
+	wp_reset_postdata();
+	?>
 
 </ul>
 <!-- end .archive-projects-->

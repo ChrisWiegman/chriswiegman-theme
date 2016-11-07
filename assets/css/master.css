@@ -2295,7 +2295,7 @@ q {
 
 body {
   color: #5f5f5f;
-  font-family: Verdana, Helvatica, Arial, sans-serif; }
+  font-family: Gudea, sans-serif; }
 
 h1,
 h2,
@@ -2305,7 +2305,7 @@ h5,
 h6 {
   clear: both;
   color: #2e2e2e;
-  font-family: Georgia, serif;
+  font-family: Arvo, serif;
   font-weight: bold;
   line-height: 1.2; }
 
@@ -2643,75 +2643,6 @@ input:hover[type="button"], input:hover[type="submit"] {
   padding: 0;
   position: absolute;
   width: 1px; }
-
-/* 12a - Gravity Forms ----------- */
-.gform_wrapper {
-  margin: 0 0 16px 0; }
-  .gform_wrapper ul {
-    margin: 0; }
-    .gform_wrapper ul.gfield_checkbox li, .gform_wrapper ul.gfield_radio li {
-      padding: 0 0 0 1px !important; }
-  .gform_wrapper .left-pad div ul li {
-    padding-left: 1px !important; }
-  .gform_wrapper input,
-  .gform_wrapper select,
-  .gform_wrapper textarea,
-  .gform_wrapper .ginput_complex label,
-  .gform_wrapper .gfield_description {
-    font-size: 1.2rem !important;
-    padding: 8px !important;
-    width: 98%; }
-  .gform_wrapper .ginput_complex label,
-  .gform_wrapper .gfield_description {
-    font-size: 0.9rem !important; }
-  .gform_wrapper .top_label .gfield_label {
-    margin-bottom: 3px;
-    float: none;
-    font-weight: 700;
-    display: block; }
-  .gform_wrapper span.ginput_left, .gform_wrapper span.name_first {
-    float: left;
-    padding: 0 2px;
-    width: 49.5%; }
-  .gform_wrapper span.ginput_right, .gform_wrapper span.name_last {
-    float: right;
-    padding: 0 2px;
-    width: 49.5%; }
-  .gform_wrapper input[type="submit"] {
-    padding: 8px 12px;
-    width: auto; }
-  .gform_wrapper .ginput_complex label {
-    padding: 0; }
-  .gform_wrapper .gfield_checkbox input {
-    width: auto; }
-  .gform_wrapper li, .gform_wrapper form li {
-    list-style: none;
-    margin: 16px 0 16px 0;
-    overflow: hidden; }
-  .gform_wrapper li.gform_validation_container {
-    display: none;
-    height: 1px;
-    left: -99999px;
-    position: absolute;
-    width: 1px; }
-
-.gforms_confirmation_message {
-  background-color: #bfffc7;
-  border: 1px solid #eee;
-  margin-bottom: 24px;
-  padding: 24px; }
-
-.gform_wrapper .gfield_radio input {
-  float: left;
-  margin-top: 7px;
-  width: auto !important; }
-
-.gform_wrapper .gfield_radio label {
-  display: block;
-  margin: 0 0 0 24px; }
-
-.gform_wrapper .gform_heading {
-  margin-bottom: 0 !important; }
 
 a {
   border-bottom: 1px solid #fff;
