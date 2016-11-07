@@ -23,7 +23,8 @@ input[type="search"] {
 
 .hentry {
 
-	.search-form input {
+	.search-form input,
+	#subscribe-field-blog_subscription-2 {
 		background-color: $white;
 		margin:           0 10% 10% 10%;
 		width:            80%;
