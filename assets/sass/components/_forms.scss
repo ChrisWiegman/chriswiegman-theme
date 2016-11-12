@@ -112,3 +112,123 @@ input:hover {
 	position: absolute;
 	width:    1px;
 }
+
+/* 12a - Gravity Forms ----------- */
+
+.gform_wrapper {
+
+	margin: 0 0 16px 0;
+
+	ul {
+		margin: 0;
+
+		&.gfield_checkbox li, &.gfield_radio li {
+			padding: 0 0 0 1px !important;
+		}
+	}
+
+	.left-pad div ul li {
+		padding-left: 1px !important;
+	}
+
+	input,
+	select,
+	textarea,
+	.ginput_complex label,
+	.gfield_description {
+		font-size: $normal-rem !important;
+		padding:   8px !important;
+		width:     98%;
+	}
+
+	.ginput_complex label,
+	.gfield_description {
+		font-size: $small-rem !important;
+	}
+
+	.top_label .gfield_label {
+		margin-bottom: 3px;
+		float:         none;
+		font-weight:   700;
+		display:       block;
+	}
+
+	span {
+
+		&.ginput_left,
+		&.name_first {
+			float:   left;
+			padding: 0 2px;
+			width:   49.5%;
+		}
+
+		&.ginput_right,
+		&.name_last {
+			float:   right;
+			padding: 0 2px;
+			width:   49.5%;
+		}
+
+	}
+
+	input[type="submit"] {
+		padding: 8px 12px;
+		width:   auto;
+	}
+
+	.ginput_complex label {
+		padding: 0;
+	}
+
+	.gfield_checkbox {
+
+		input {
+			width: auto;
+		}
+
+	}
+
+	li, form li {
+		list-style: none;
+		margin:     16px 0 16px 0;
+		overflow:   hidden;
+	}
+
+	li.gform_validation_container {
+		display:  none;
+		height:   1px;
+		left:     -99999px;
+		position: absolute;
+		width:    1px;
+	}
+
+}
+
+.gforms_confirmation_message {
+	background-color: $green;
+	border:           1px solid #eee;
+	margin-bottom:    24px;
+	padding:          24px;
+}
+
+.gform_wrapper {
+
+	.gfield_radio {
+
+		input {
+			float:      left;
+			margin-top: 7px;
+			width:      auto !important;
+		}
+
+		label {
+			display: block;
+			margin:  0 0 0 24px;
+		}
+
+	}
+
+	.gform_heading {
+		margin-bottom: 0 !important;
+	}
+}

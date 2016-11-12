@@ -94,5 +94,60 @@
 			padding:         0;
 			word-wrap:       break-word;
 		}
+
 	}
+
+}
+
+//Subscription Widget
+.gform_widget {
+
+	.gform_wrapper {
+		margin: 0;
+	}
+
+	img {
+		float:  left;
+		margin: 0 5px 5px 0;
+	}
+
+	ul {
+		margin: 0 !important;
+	}
+
+	form {
+
+		margin:    0;
+		max-width: 100%;
+
+		input[type=text],
+		select {
+			background-color: $white;
+			color:            $text-color;
+			font-size:        $normal-rem;
+			padding:          .5rem;
+			width:            100%;
+		}
+
+		.gform_footer {
+			margin-top: 0;
+		}
+
+		select {
+			display: block;
+			width:   100% !important;
+		}
+
+		.gfield_label {
+			display: none !important;
+			margin:  0;
+		}
+
+	}
+
+	.gforms_confirmation_message {
+		background-color: $dark-grey;
+		border:           none;
+	}
+
 }
