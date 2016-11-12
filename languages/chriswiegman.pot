@@ -2,9 +2,9 @@
 # This file is distributed under the GNU General Public License v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: ChrisWiegman 5.6.2\n"
+"Project-Id-Version: ChrisWiegman 5.6.3\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/style\n"
-"POT-Creation-Date: 2016-11-12 01:59:37+00:00\n"
+"POT-Creation-Date: 2016-11-12 02:02:21+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -479,34 +479,38 @@ msgid "The primary sidebar on the right side of most content."
 msgstr ""
 
 #: includes/functions/core.php:200
-msgid "All Posts"
+msgid "Tech Posts Only"
 msgstr ""
 
 #: includes/functions/core.php:208
+msgid "All Posts"
+msgstr ""
+
+#: includes/functions/core.php:216
 msgid "All Comments"
 msgstr ""
 
-#: includes/functions/core.php:302
+#: includes/functions/core.php:310
 msgid "Website Title"
 msgstr ""
 
-#: includes/functions/core.php:303
+#: includes/functions/core.php:311
 msgid "Twitter"
 msgstr ""
 
-#: includes/functions/core.php:304
+#: includes/functions/core.php:312
 msgid "Facebook"
 msgstr ""
 
-#: includes/functions/core.php:305
+#: includes/functions/core.php:313
 msgid "WordPress.org"
 msgstr ""
 
-#: includes/functions/core.php:306
+#: includes/functions/core.php:314
 msgid "GitHub"
 msgstr ""
 
-#: includes/functions/core.php:417
+#: includes/functions/core.php:425
 msgid "Page %s"
 msgstr ""
 
