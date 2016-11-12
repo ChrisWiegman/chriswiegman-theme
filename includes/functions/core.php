@@ -184,6 +184,59 @@ function action_wp_enqueue_scripts() {
 }
 
 /**
+ * Action wp_head
+ *
+ * Clean up the header
+ *
+ * @since 5.0.0
+ *
+ * @return void
+ */
+function action_wp_head() {
+
+	printf(
+		'<link rel="alternate" type="%s" title="%s" href="%s" />%s',
+		esc_attr( feed_content_type() ),
+		get_the_title() . ' | ' . esc_attr__( 'All Posts', 'chriswiegman' ),
+		'http://feeds.chriswiegman.com/',
+		esc_attr( PHP_EOL )
+	);
+
+	printf(
+		'<link rel="alternate" type="%s" title="%s" href="%s" />%s',
+		esc_attr( feed_content_type() ),
+		get_the_title() . ' | ' . esc_attr__( 'All Comments', 'chriswiegman' ),
+		'http://feeds.chriswiegman.com/comments',
+		esc_attr( PHP_EOL )
+	);
+
+}
+
+/**
+ * Update AMP JSON
+ *
+ * Adds required parameters such as logo to AMP's JSON.
+ *
+ * @since 5.2.7
+ *
+ * @param array    $metadata Array of meta data.
+ * @param \WP_POST $post     The current WordPress post.
+ *
+ * @return array Filtered array of AMP data.
+ */
+function filter_amp_post_template_metadata( $metadata, $post ) {
+
+	$metadata['publisher']['logo'] = array(
+		'@type'  => 'ImageObject',
+		'url'    => 'https://www.chriswiegman.com/content/uploads/2014/05/chris-wiegman-cartoon.png',
+		'height' => 300,
+		'width'  => 300,
+	);
+
+	return $metadata;
+}
+
+/**
  *Filter body_classees
  *
  * Adds custom classes to the array of body classes.
@@ -400,6 +453,9 @@ function init() {
 
 	};
 
+	remove_action( 'wp_head', 'feed_links', 2 );
+	remove_action( 'wp_head', 'feed_links_extra', 3 );
+	remove_action( 'wp_head', 'rsd_link' );
 	remove_action( 'wp_head', 'wlwmanifest_link' );
 	remove_action( 'wp_head', 'wp_generator' );
 
@@ -409,9 +465,11 @@ function init() {
 	add_action( 'dashboard_glance_items', $n( 'action_dashboard_glance_items' ) );
 	add_action( 'widgets_init', $n ( 'action_widgets_init' ) );
 	add_action( 'wp_enqueue_scripts', $n ( 'action_wp_enqueue_scripts' ) );
+	add_action( 'wp_head', $n ( 'action_wp_head' ) );
 
 	add_action( 'widgets_init', $n( 'action_widgets_init' ) );
 
+	add_filter( 'amp_post_template_metadata', $n( 'filter_amp_post_template_metadata' ), 10, 2 );
 	add_filter( 'body_class', $n ( 'filter_body_class' ) );
 	add_filter( 'post_class', $n( 'filter_post_class' ), 10, 3 );
 	add_filter( 'user_contactmethods', $n( 'filter_user_contactmethods' ) );
