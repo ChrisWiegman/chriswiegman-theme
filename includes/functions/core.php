@@ -144,6 +144,8 @@ function action_widgets_init() {
 		)
 	);
 
+	register_widget( 'CW\Theme\Widgets\Latest_Tweets' );
+
 }
 
 /**
