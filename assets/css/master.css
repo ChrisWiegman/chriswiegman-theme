@@ -2295,7 +2295,7 @@ q {
 
 body {
   color: #5f5f5f;
-  font-family: Gudea, sans-serif; }
+  font-family: Helvetica, Arial, sans-serif; }
 
 h1,
 h2,
@@ -2305,7 +2305,7 @@ h5,
 h6 {
   clear: both;
   color: #2e2e2e;
-  font-family: Arvo, serif;
+  font-family: Georgia, serif;
   font-weight: bold;
   line-height: 1.2; }
 
@@ -3000,6 +3000,11 @@ a {
 .gform_widget .gforms_confirmation_message {
   background-color: #3e3e3e;
   border: none; }
+
+.cw_tweet_time {
+  font-size: 80%;
+  font-style: italic;
+  margin-left: 10px; }
 
 /*--------------------------------------------------------------
 0.1 Posts and pages
