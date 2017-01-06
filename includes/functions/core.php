@@ -185,6 +185,24 @@ function action_wp_enqueue_scripts() {
 }
 
 /**
+ * Filter asset version
+ *
+ * Removes the asset version from static assets.
+ *
+ * @since 5.7.1
+ *
+ * @param string $src The script source
+ *
+ * @return string The script source without the version number.
+ */
+function remove_asset_version( $src ) {
+
+	$parts = explode( '?ver', $src );
+
+	return $parts[0];
+}
+
+/**
  * Action wp_head
  *
  * Clean up the header
@@ -481,6 +499,8 @@ function init() {
 	add_filter( 'amp_post_template_metadata', $n( 'filter_amp_post_template_metadata' ), 10, 2 );
 	add_filter( 'body_class', $n ( 'filter_body_class' ) );
 	add_filter( 'post_class', $n( 'filter_post_class' ), 10, 3 );
+	add_filter( 'script_loader_src', $n( 'remove_asset_version' ), 15 );
+	add_filter( 'style_loader_src', $n( 'remove_asset_version' ), 15 );
 	add_filter( 'user_contactmethods', $n( 'filter_user_contactmethods' ) );
 	add_filter( 'wp_default_scripts', $n ( 'filter_wp_default_scripts' ) );
 	add_filter( 'wp_nav_menu_items', $n( 'filter_wp_nav_menu_items' ), 10, 2 );
