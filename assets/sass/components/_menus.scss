@@ -31,7 +31,11 @@
 
 		float:   right;
 		margin:  0;
-		padding: 4px 5px;
+		padding: 2px 5px;
+
+		.menu-icon {
+			font-size: 180%;
+		}
 
 		&.first {
 			padding-left: 0;
