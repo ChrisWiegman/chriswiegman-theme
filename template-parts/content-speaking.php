@@ -13,7 +13,7 @@ namespace CW\Theme\Templates\Parts\Content\Speaking;
 
 ?>
 <!-- begin .archive-projects-->
-<ul class="archive-speaking fa-ul">
+<ul class="archive-speaking cpt-list">
 
 	<?php
 	$args = array(
