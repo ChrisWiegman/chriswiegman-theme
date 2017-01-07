@@ -124,8 +124,8 @@ q {
 
 @font-face {
   font-family: 'cw';
-  src: url("../font/cw.eot");
-  src: url("../font/cw.eot#iefix") format("embedded-opentype"), url("../font/cw.woff2") format("woff2"), url("../font/cw.woff") format("woff"), url("../font/cw.ttf") format("truetype"), url("../font/cw.svg#cw") format("svg");
+  src: url("https://cdn1.chriswiegman.com/content/themes/chriswiegman/assets/font/cw.eot");
+  src: url("https://cdn1.chriswiegman.com/content/themes/chriswiegman/assets/font/cw.eot#iefix") format("embedded-opentype"), url("https://cdn1.chriswiegman.com/content/themes/chriswiegman/assets/font/cw.woff2") format("woff2"), url("https://cdn1.chriswiegman.com/content/themes/chriswiegman/assets/font/cw.woff") format("woff"), url("https://cdn1.chriswiegman.com/content/themes/chriswiegman/assets/font/cw.ttf") format("truetype"), url("https://cdn1.chriswiegman.com/content/themes/chriswiegman/assets/   font/cw.svg#cw") format("svg");
   font-weight: normal;
   font-style: normal; }
 
@@ -982,12 +982,23 @@ h1.page-title {
   .hentry .entry-summary {
     margin: 1.5em 0 0;
     padding: 0 40px; }
-    .hentry .page-content .list-icon,
-    .hentry .entry-content .list-icon,
-    .hentry .entry-summary .list-icon {
-      float: left;
-      font-size: 300%;
-      margin: 0; }
+    .hentry .page-content ul.cpt-list li,
+    .hentry .entry-content ul.cpt-list li,
+    .hentry .entry-summary ul.cpt-list li {
+      list-style: none;
+      position: relative; }
+      .hentry .page-content ul.cpt-list li .list-icon,
+      .hentry .entry-content ul.cpt-list li .list-icon,
+      .hentry .entry-summary ul.cpt-list li .list-icon {
+        position: absolute;
+        display: inline-block;
+        left: -2.1428571429em;
+        width: 2.1428571429em;
+        top: -5px;
+        text-align: center;
+        font-size: 300%;
+        margin: 0;
+        padding: 0; }
     .hentry .page-content h2,
     .hentry .page-content h3,
     .hentry .entry-content h2,
