@@ -86,11 +86,26 @@ h1.page-title {
 		margin:  1.5em 0 0;
 		padding: 0 40px;
 
-		.list-icon {
-			float:     left;
-			font-size: 300%;
-			margin:    0;
+		ul.cpt-list {
+			li {
+				list-style: none;
+				position:   relative;
 
+				$fa-li-width: (30em / 14) !default;
+
+				.list-icon {
+					position:   absolute;
+					display:    inline-block;
+					left:       -$fa-li-width;
+					width:      $fa-li-width;
+					top:        -5px;
+					text-align: center;
+					font-size:  300%;
+					margin:     0;
+					padding:    0;
+
+				}
+			}
 		}
 
 		h2,

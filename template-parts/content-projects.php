@@ -12,7 +12,7 @@
 namespace CW\Theme\Templates\Parts\Content\Projects;
 ?>
 <!-- begin .archive-projects-->
-<ul class="archive-projects fa-ul">
+<ul class="archive-projects cpt-list">
 
 	<?php
 	$args = array( 'post_type' => 'project' );
