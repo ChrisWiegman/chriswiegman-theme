@@ -29,7 +29,7 @@ namespace CW\Theme\Templates\Parts\Content\Speaking_List;
 
 	?>
 
-	<span class="fa fa-<?php echo esc_attr( $icon ); ?> fa-3x fa-fw fa-li"></span>
+	<i class="list-icon icon-<?php echo esc_attr( $icon ); ?>"></i>
 
 	<div class="entry-header">
 
