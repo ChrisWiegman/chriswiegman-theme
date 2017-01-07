@@ -673,9 +673,9 @@ a {
   .main-navigation li.social-share {
     float: right;
     margin: 0;
-    padding: 2px 5px; }
+    padding: 2px; }
     .main-navigation li.social-share .menu-icon {
-      font-size: 180%; }
+      font-size: 160%; }
     .main-navigation li.social-share.first {
       padding-left: 0; }
     .main-navigation li.social-share.last {
