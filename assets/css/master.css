@@ -871,7 +871,7 @@ a {
 .jetpack_subscription_widget form {
   margin: 0;
   max-width: 100%; }
-  .jetpack_subscription_widget form input[type=text],
+  .jetpack_subscription_widget form input[type=email],
   .jetpack_subscription_widget form select {
     background-color: #fff;
     color: #5f5f5f;
