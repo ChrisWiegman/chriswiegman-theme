@@ -2,9 +2,9 @@
 # This file is distributed under the GNU General Public License v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: ChrisWiegman 5.7.5\n"
+"Project-Id-Version: ChrisWiegman 5.8\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/style\n"
-"POT-Creation-Date: 2017-01-07 16:32:44+00:00\n"
+"POT-Creation-Date: 2017-01-22 23:28:08+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -12,30 +12,6 @@ msgstr ""
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "X-Generator: grunt-wp-i18n 0.5.4\n"
-
-#: includes/classes/post-types/class-journal.php:196
-#: includes/classes/post-types/class-journal.php:220
-#: includes/classes/post-types/class-journal.php:490
-#: includes/classes/post-types/class-journal.php:513
-#: includes/classes/post-types/class-journal.php:536
-msgid "1"
-msgstr ""
-
-#: includes/classes/post-types/class-journal.php:202
-#: includes/classes/post-types/class-journal.php:226
-#: includes/classes/post-types/class-journal.php:496
-#: includes/classes/post-types/class-journal.php:519
-#: includes/classes/post-types/class-journal.php:542
-msgid "2"
-msgstr ""
-
-#: includes/classes/post-types/class-journal.php:208
-#: includes/classes/post-types/class-journal.php:232
-#: includes/classes/post-types/class-journal.php:502
-#: includes/classes/post-types/class-journal.php:525
-#: includes/classes/post-types/class-journal.php:548
-msgid "3"
-msgstr ""
 
 #: 404.php:21
 msgid "Oops! That page can&rsquo;t be found."
@@ -135,119 +111,6 @@ msgstr ""
 
 #: header.php:47
 msgid "Menu"
-msgstr ""
-
-#: includes/classes/post-types/class-journal.php:59
-msgid "My Evening Journal Entry for "
-msgstr ""
-
-#: includes/classes/post-types/class-journal.php:81
-msgid "My Morning Journal Entry for "
-msgstr ""
-
-#: includes/classes/post-types/class-journal.php:110
-#: includes/classes/post-types/class-journal.php:143
-msgid "Add New Entry"
-msgstr ""
-
-#: includes/classes/post-types/class-journal.php:111
-#: includes/classes/post-types/class-journal.php:144
-msgid "New Entry"
-msgstr ""
-
-#: includes/classes/post-types/class-journal.php:112
-#: includes/classes/post-types/class-journal.php:145
-msgid "Edit Entry"
-msgstr ""
-
-#: includes/classes/post-types/class-journal.php:113
-#: includes/classes/post-types/class-journal.php:146
-msgid "View Entry"
-msgstr ""
-
-#: includes/classes/post-types/class-journal.php:114
-#: includes/classes/post-types/class-journal.php:147
-msgid "All Entries"
-msgstr ""
-
-#: includes/classes/post-types/class-journal.php:115
-#: includes/classes/post-types/class-journal.php:148
-msgid "Search Entries"
-msgstr ""
-
-#: includes/classes/post-types/class-journal.php:116
-#: includes/classes/post-types/class-journal.php:149
-msgid "Parent Entries:"
-msgstr ""
-
-#: includes/classes/post-types/class-journal.php:117
-#: includes/classes/post-types/class-journal.php:150
-msgid "No entries found."
-msgstr ""
-
-#: includes/classes/post-types/class-journal.php:118
-#: includes/classes/post-types/class-journal.php:151
-msgid "No entries found in Trash."
-msgstr ""
-
-#: includes/classes/post-types/class-journal.php:120
-msgid "Morning journal entries."
-msgstr ""
-
-#: includes/classes/post-types/class-journal.php:153
-msgid "Evening journal entries."
-msgstr ""
-
-#: includes/classes/post-types/class-journal.php:191
-msgid "List 3 Amazing things happened today:"
-msgstr ""
-
-#: includes/classes/post-types/class-journal.php:215
-msgid "How could you have made today better?"
-msgstr ""
-
-#: includes/classes/post-types/class-journal.php:260
-msgid "Energy/Mood:"
-msgstr ""
-
-#: includes/classes/post-types/class-journal.php:263
-msgid "Select"
-msgstr ""
-
-#: includes/classes/post-types/class-journal.php:277
-msgid "Excellent"
-msgstr ""
-
-#: includes/classes/post-types/class-journal.php:278
-msgid "Good"
-msgstr ""
-
-#: includes/classes/post-types/class-journal.php:279
-msgid "OK"
-msgstr ""
-
-#: includes/classes/post-types/class-journal.php:280
-msgid "Bad"
-msgstr ""
-
-#: includes/classes/post-types/class-journal.php:281
-msgid "Horrible"
-msgstr ""
-
-#: includes/classes/post-types/class-journal.php:479
-msgid "Context"
-msgstr ""
-
-#: includes/classes/post-types/class-journal.php:486
-msgid "I'm grateful for:"
-msgstr ""
-
-#: includes/classes/post-types/class-journal.php:509
-msgid "What would make today better:"
-msgstr ""
-
-#: includes/classes/post-types/class-journal.php:532
-msgid "Daily Affirmation:"
 msgstr ""
 
 #: includes/classes/post-types/class-project.php:47
@@ -694,16 +557,6 @@ msgctxt "yearly archives date format"
 msgid "Y"
 msgstr ""
 
-#: includes/classes/post-types/class-journal.php:105
-msgctxt "post type general name"
-msgid "Morning Entries"
-msgstr ""
-
-#: includes/classes/post-types/class-journal.php:138
-msgctxt "post type general name"
-msgid "Evening Entries"
-msgstr ""
-
 #: includes/classes/post-types/class-project.php:71
 msgctxt "post type general name"
 msgid "Projects"
@@ -712,16 +565,6 @@ msgstr ""
 #: includes/classes/post-types/class-speaking.php:147
 msgctxt "post type general name"
 msgid "Speaking Gigs"
-msgstr ""
-
-#: includes/classes/post-types/class-journal.php:106
-msgctxt "post type singular name"
-msgid "Morning Entry"
-msgstr ""
-
-#: includes/classes/post-types/class-journal.php:139
-msgctxt "post type singular name"
-msgid "Evening Entry"
 msgstr ""
 
 #: includes/classes/post-types/class-project.php:72
@@ -734,16 +577,6 @@ msgctxt "post type singular name"
 msgid "Speaking Gig"
 msgstr ""
 
-#: includes/classes/post-types/class-journal.php:107
-msgctxt "admin menu"
-msgid "Morning Journal"
-msgstr ""
-
-#: includes/classes/post-types/class-journal.php:140
-msgctxt "admin menu"
-msgid "Evening Journal"
-msgstr ""
-
 #: includes/classes/post-types/class-project.php:73
 msgctxt "admin menu"
 msgid "Projects"
@@ -752,16 +585,6 @@ msgstr ""
 #: includes/classes/post-types/class-speaking.php:149
 msgctxt "admin menu"
 msgid "Speaking Gigs"
-msgstr ""
-
-#: includes/classes/post-types/class-journal.php:108
-msgctxt "add new on admin bar"
-msgid "Morning Entry"
-msgstr ""
-
-#: includes/classes/post-types/class-journal.php:141
-msgctxt "add new on admin bar"
-msgid "Evening Entry"
 msgstr ""
 
 #: includes/classes/post-types/class-project.php:74
@@ -774,8 +597,6 @@ msgctxt "add new on admin bar"
 msgid "Speaking Gigs"
 msgstr ""
 
-#: includes/classes/post-types/class-journal.php:109
-#: includes/classes/post-types/class-journal.php:142
 #: includes/classes/post-types/class-project.php:75
 #: includes/classes/post-types/class-speaking.php:151
 msgctxt "book"
