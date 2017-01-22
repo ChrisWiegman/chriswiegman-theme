@@ -494,8 +494,6 @@ function init() {
 	add_action( 'wp_enqueue_scripts', $n ( 'action_wp_enqueue_scripts' ) );
 	add_action( 'wp_head', $n ( 'action_wp_head' ) );
 
-	add_action( 'widgets_init', $n( 'action_widgets_init' ) );
-
 	add_filter( 'amp_post_template_metadata', $n( 'filter_amp_post_template_metadata' ), 10, 2 );
 	add_filter( 'body_class', $n ( 'filter_body_class' ) );
 	add_filter( 'post_class', $n( 'filter_post_class' ), 10, 3 );
@@ -506,15 +504,6 @@ function init() {
 	add_filter( 'wp_nav_menu_items', $n( 'filter_wp_nav_menu_items' ), 10, 2 );
 	add_filter( 'wp_page_menu_args', $n ( 'filter_wp_page_menu_args' ) );
 	add_filter( 'wp_title', $n ( 'filter_wp_title' ), 10, 2 );
-
-	// Load CDN.
-	if ( ! defined( 'WP_LOCAL_DEV' ) || false === WP_LOCAL_DEV ) {
-
-		require( CW_THEME_INCLUDES . '/classes/features/class-cdn.php' );
-
-		new Features\CDN();
-
-	}
 
 }
 
