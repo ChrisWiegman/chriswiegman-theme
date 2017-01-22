@@ -494,8 +494,6 @@ function init() {
 	add_action( 'wp_enqueue_scripts', $n ( 'action_wp_enqueue_scripts' ) );
 	add_action( 'wp_head', $n ( 'action_wp_head' ) );
 
-	add_action( 'widgets_init', $n( 'action_widgets_init' ) );
-
 	add_filter( 'amp_post_template_metadata', $n( 'filter_amp_post_template_metadata' ), 10, 2 );
 	add_filter( 'body_class', $n ( 'filter_body_class' ) );
 	add_filter( 'post_class', $n( 'filter_post_class' ), 10, 3 );
