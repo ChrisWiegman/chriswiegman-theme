@@ -507,15 +507,6 @@ function init() {
 	add_filter( 'wp_page_menu_args', $n ( 'filter_wp_page_menu_args' ) );
 	add_filter( 'wp_title', $n ( 'filter_wp_title' ), 10, 2 );
 
-	// Load CDN.
-	if ( ! defined( 'WP_LOCAL_DEV' ) || false === WP_LOCAL_DEV ) {
-
-		require( CW_THEME_INCLUDES . '/classes/features/class-cdn.php' );
-
-		new Features\CDN();
-
-	}
-
 }
 
 /**
