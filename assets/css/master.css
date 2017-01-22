@@ -858,36 +858,36 @@ a {
       padding: 0;
       word-wrap: break-word; }
 
-.gform_widget .gform_wrapper {
+.jetpack_subscription_widget .gform_wrapper {
   margin: 0; }
 
-.gform_widget img {
+.jetpack_subscription_widget img {
   float: left;
   margin: 0 5px 5px 0; }
 
-.gform_widget ul {
+.jetpack_subscription_widget ul {
   margin: 0 !important; }
 
-.gform_widget form {
+.jetpack_subscription_widget form {
   margin: 0;
   max-width: 100%; }
-  .gform_widget form input[type=text],
-  .gform_widget form select {
+  .jetpack_subscription_widget form input[type=email],
+  .jetpack_subscription_widget form select {
     background-color: #fff;
     color: #5f5f5f;
     font-size: 1.2rem;
     padding: .5rem;
     width: 100%; }
-  .gform_widget form .gform_footer {
+  .jetpack_subscription_widget form .gform_footer {
     margin-top: 0; }
-  .gform_widget form select {
+  .jetpack_subscription_widget form select {
     display: block;
     width: 100% !important; }
-  .gform_widget form .gfield_label {
+  .jetpack_subscription_widget form .gfield_label {
     display: none !important;
     margin: 0; }
 
-.gform_widget .gforms_confirmation_message {
+.jetpack_subscription_widget .gforms_confirmation_message {
   background-color: #3e3e3e;
   border: none; }
 
