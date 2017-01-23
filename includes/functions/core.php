@@ -456,6 +456,9 @@ function init() {
 
 	add_filter( 'amp_post_template_metadata', $n( 'filter_amp_post_template_metadata' ), 10, 2 );
 	add_filter( 'body_class', $n ( 'filter_body_class' ) );
+	add_filter( 'jetpack_sso_bypass_login_forward_wpcom', '__return_true' );
+	add_filter( 'jetpack_remove_login_form', '__return_true' );
+	add_filter( 'jetpack_sso_require_two_step', '__return_true' );
 	add_filter( 'post_class', $n( 'filter_post_class' ), 10, 3 );
 	add_filter( 'script_loader_src', $n( 'remove_asset_version' ), 15 );
 	add_filter( 'style_loader_src', $n( 'remove_asset_version' ), 15 );
