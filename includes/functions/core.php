@@ -203,43 +203,6 @@ function remove_asset_version( $src ) {
 }
 
 /**
- * Action wp_head
- *
- * Clean up the header
- *
- * @since 5.0.0
- *
- * @return void
- */
-function action_wp_head() {
-
-	printf(
-		'<link rel="alternate" type="%s" title="%s" href="%s" />%s',
-		esc_attr( feed_content_type() ),
-		esc_html( get_bloginfo( 'name' ) ) . ' | ' . esc_attr__( 'Tech Posts Only', 'chriswiegman' ),
-		'http://feeds.chriswiegman.com/',
-		esc_attr( PHP_EOL )
-	);
-
-	printf(
-		'<link rel="alternate" type="%s" title="%s" href="%s" />%s',
-		esc_attr( feed_content_type() ),
-		esc_html( get_bloginfo( 'name' ) ) . ' | ' . esc_attr__( 'All Posts', 'chriswiegman' ),
-		'http://feeds.chriswiegman.com/all',
-		esc_attr( PHP_EOL )
-	);
-
-	printf(
-		'<link rel="alternate" type="%s" title="%s" href="%s" />%s',
-		esc_attr( feed_content_type() ),
-		esc_html( get_bloginfo( 'name' ) ) . ' | ' . esc_attr__( 'All Comments', 'chriswiegman' ),
-		'http://feeds.chriswiegman.com/comments',
-		esc_attr( PHP_EOL )
-	);
-
-}
-
-/**
  * Update AMP JSON
  *
  * Adds required parameters such as logo to AMP's JSON.
@@ -480,8 +443,6 @@ function init() {
 
 	};
 
-	remove_action( 'wp_head', 'feed_links', 2 );
-	remove_action( 'wp_head', 'feed_links_extra', 3 );
 	remove_action( 'wp_head', 'rsd_link' );
 	remove_action( 'wp_head', 'wlwmanifest_link' );
 	remove_action( 'wp_head', 'wp_generator' );
@@ -492,7 +453,6 @@ function init() {
 	add_action( 'dashboard_glance_items', $n( 'action_dashboard_glance_items' ) );
 	add_action( 'widgets_init', $n ( 'action_widgets_init' ) );
 	add_action( 'wp_enqueue_scripts', $n ( 'action_wp_enqueue_scripts' ) );
-	add_action( 'wp_head', $n ( 'action_wp_head' ) );
 
 	add_filter( 'amp_post_template_metadata', $n( 'filter_amp_post_template_metadata' ), 10, 2 );
 	add_filter( 'body_class', $n ( 'filter_body_class' ) );
