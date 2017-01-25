@@ -45,18 +45,6 @@ get_header(); ?>
 
 					</div>
 
-					<div id="speaking">
-
-						<h2><?php esc_html_e( 'Speaking', 'chriswiegman' ); ?></h2>
-
-						<p id="speaking-intro">
-							<?php echo wp_kses_post( get_post_meta( get_the_ID(), 'speaking_intro', true ) ); ?>
-						</p>
-
-						<?php get_template_part( 'template-parts/content', 'speaking' ); ?>
-
-					</div>
-
 				</div>
 
 			<?php } // End of the loop.
