@@ -122,33 +122,6 @@ function action_init() {
 }
 
 /**
- * Action widgets_init
- *
- * Register widget area.
- *
- * @since 5.0.0
- *
- * @return void
- */
-function action_widgets_init() {
-
-	register_sidebar(
-		array(
-			'name'          => esc_html__( 'Sidebar', 'chriswiegman' ),
-			'id'            => 'sidebar',
-			'description'   => esc_html__( 'The primary sidebar on the right side of most content.', 'chriswiegman' ),
-			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-			'after_widget'  => '</aside>',
-			'before_title'  => '<h2 class="widget-title">',
-			'after_title'   => '</h2>',
-		)
-	);
-
-	register_widget( 'CW\Theme\Widgets\Latest_Tweets' );
-
-}
-
-/**
  * Action wp_enqueue_scripts
  *
  * Enqueue scripts and styles.
@@ -449,7 +422,6 @@ function init() {
 	add_action( 'after_setup_theme', $n ( 'action_after_setup_theme' ) );
 	add_action( 'init', $n ( 'action_init' ) );
 	add_action( 'dashboard_glance_items', $n( 'action_dashboard_glance_items' ) );
-	add_action( 'widgets_init', $n ( 'action_widgets_init' ) );
 	add_action( 'wp_enqueue_scripts', $n ( 'action_wp_enqueue_scripts' ) );
 
 	add_filter( 'amp_post_template_metadata', $n( 'filter_amp_post_template_metadata' ), 10, 2 );
