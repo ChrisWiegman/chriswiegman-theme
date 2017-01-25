@@ -29,8 +29,6 @@ get_header(); ?>
 
 				<div class="entry-content">
 
-					<h2><?php esc_html_e( 'Bio', 'chriswiegman' ); ?></h2>
-
 					<?php the_content(); ?>
 
 					<div id="projects">
