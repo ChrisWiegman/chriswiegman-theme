@@ -344,8 +344,7 @@ function filter_wp_nav_menu_items( $items, $args ) {
 
 		$items .= '<li class="social-share last"><a href="https://github.com/ChrisWiegman" target="_blank" title="' . esc_attr( 'View My Code on Github', 'chriswiegman' ) . '"><i class="menu-icon icon-github"></i></a></li>';
 		$items .= '<li class="social-share"><a href="https://profiles.wordpress.org/chriswiegman/" target="_blank" title="' . esc_attr( 'View My Plugins on WordPress.org', 'chriswiegman' ) . '"><i class="menu-icon icon-wordpress"></i></a></li>';
-		$items .= '<li class="social-share"><a href="https://twitter.com/ChrisWiegman" target="_blank" title="' . esc_attr( 'Follow Me on Twitter', 'chriswiegman' ) . '"><i class="menu-icon icon-twitter"></i></a></li>';
-		$items .= '<li class="social-share first"><a href="http://feeds.chriswiegman.com/" target="_blank" title="' . esc_attr( 'Subscribe via RSS', 'chriswiegman' ) . '"><i class="menu-icon icon-rss"></i></a></li>';
+		$items .= '<li class="social-share first"><a href="https://twitter.com/ChrisWiegman" target="_blank" title="' . esc_attr( 'Follow Me on Twitter', 'chriswiegman' ) . '"><i class="menu-icon icon-twitter"></i></a></li>';
 
 	}
 
