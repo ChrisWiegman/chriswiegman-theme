@@ -1,7 +1,7 @@
 jQuery( document ).ready( function ( $ ) {
 
 	//welcome message
-	console.log( 'Thanks for visiting! Please do not forget to subscribe at http://feeds.chriswiegman.com/' );
+	console.log( 'Thanks for visiting! Please do not forget to subscribe at https://www.chriswiegman.com/feed' );
 
 	//toggle nav
 	$( '.menu-toggle' ).on( 'click', function () {
