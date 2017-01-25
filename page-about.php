@@ -33,32 +33,6 @@ get_header(); ?>
 
 					<?php the_content(); ?>
 
-					<div id="projects">
-
-						<h2><?php esc_html_e( 'Projects', 'chriswiegman' ); ?></h2>
-
-						<p id="projects-intro">
-							<?php echo wp_kses_post( get_post_meta( get_the_ID(), 'projects_intro', true ) ); ?>
-						</p>
-
-						<?php get_template_part( 'template-parts/content', 'projects' ); ?>
-						<p class="projects-note"><?php esc_html_e( 'Note that "archived" projects are projects I am no longer involved in for
-						one reason or another.', 'chriswiegman' ); ?></p>
-
-					</div>
-
-					<div id="speaking">
-
-						<h2><?php esc_html_e( 'Speaking', 'chriswiegman' ); ?></h2>
-
-						<p id="speaking-intro">
-							<?php echo wp_kses_post( get_post_meta( get_the_ID(), 'speaking_intro', true ) ); ?>
-						</p>
-
-						<?php get_template_part( 'template-parts/content', 'speaking' ); ?>
-
-					</div>
-
 				</div>
 
 			<?php } // End of the loop.
