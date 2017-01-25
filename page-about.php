@@ -1,15 +1,15 @@
 <?php
 /**
- * The template for the speaking page
+ * The template for the about page
  *
  * @since   5.0.0
  *
- * @package CW\Theme\Templates\Page\Speaking
+ * @package CW\Theme\Templates\Page\About
  *
  * @author  Chris Wiegman <chris@chriswiegman.com>
  */
 
-namespace CW\Theme\Templates\Page\Speaking;
+namespace CW\Theme\Templates\Page\About;
 
 get_header(); ?>
 
