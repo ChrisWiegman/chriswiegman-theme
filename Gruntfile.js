@@ -106,7 +106,6 @@ module.exports = function ( grunt ) {
 
 					files : {
 						'assets/js/footer.min.js' : [
-							'assets/js/src/vendor/backstretch.js',
 							'assets/js/src/progress.js',
 							'assets/js/src/skip-link-focus-fix.js',
 							'assets/js/src/scripts.js'
@@ -130,7 +129,6 @@ module.exports = function ( grunt ) {
 
 					files : {
 						'assets/js/footer.js' : [
-							'assets/js/src/vendor/backstretch.js',
 							'assets/js/src/progress.js',
 							'assets/js/src/skip-link-focus-fix.js',
 							'assets/js/src/scripts.js'
