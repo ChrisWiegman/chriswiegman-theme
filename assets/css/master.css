@@ -1233,7 +1233,7 @@ object {
       width: 33%;
       transition: 0.5s; } }
 
-@media screen and (max-width: 970px) {
+@media screen and (max-width: 980px) {
   .single .site-main, .page .site-main {
     margin-bottom: 1em; }
   .hentry,
