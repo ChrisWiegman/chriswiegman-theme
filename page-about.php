@@ -28,11 +28,7 @@ get_header(); ?>
 				</header>
 
 				<div class="entry-content">
-
-					<h2><?php esc_html_e( 'Bio', 'chriswiegman' ); ?></h2>
-
 					<?php the_content(); ?>
-
 				</div>
 
 			<?php } // End of the loop.
