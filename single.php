@@ -75,7 +75,7 @@ get_header(); ?>
 
 					if ( strstr( $url, 'http' ) ) {
 
-						$url = parse_url( $url, PHP_URL_PATH );
+						$url = wp_parse_url( $url, PHP_URL_PATH );
 						$url = substr( $url, 1 );
 
 					}
