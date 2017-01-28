@@ -818,7 +818,7 @@ a {
       list-style-type: circle;
       margin-bottom: 6px;
       padding: 0px;
-      word-wrap: break-word; }
+      overflow-wrap: break-word; }
   .widget .entry-content:before, .widget .entry-content:after {
     content: '';
     display: inline; }
@@ -895,6 +895,13 @@ a {
   font-size: 80%;
   font-style: italic;
   margin-left: 10px; }
+
+.cw_tweet_text a {
+  word-wrap: break-word;
+  word-break: break-all;
+  -webkit-hyphens: auto;
+      -ms-hyphens: auto;
+          hyphens: auto; }
 
 /*--------------------------------------------------------------
 0.1 Posts and pages
