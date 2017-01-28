@@ -319,6 +319,20 @@ class Speaking {
 
 		<?php
 
+		// Get presentation URL data.
+		$presentation_url = get_post_meta( $post->ID, '_presentation_url', true );
+
+		?>
+
+		<tr class="width_normal p_box">
+			<th scope="row"><label for="presentation_url"><?php esc_html_e( 'Presentation URL', 'chriswiegman' ); ?></label></th>
+			<td>
+				<input type="text" id="presentation_url" name="presentation_url" class="large-text" value="<?php echo esc_url( $presentation_url ); ?>">
+			</td>
+		</tr>
+
+		<?php
+
 		// Get Presentation date data.
 		$raw_presentation_date = get_post_meta( $post->ID, '_presentation_date', true );
 		$presentation_date     = empty( $raw_presentation_date ) ? current_time( 'm/d/Y' ) : date( 'm/d/Y', $raw_presentation_date );
@@ -379,6 +393,7 @@ class Speaking {
 		}
 
 		$project_post_meta['_slide_url']           = esc_url( $_POST['slide_url'] );
+		$project_post_meta['_presentation_url']    = esc_url( $_POST['presentation_url'] );
 		$project_post_meta['_conference_url']      = esc_url( $_POST['conference_url'] );
 		$project_post_meta['_conference_name']     = sanitize_text_field( $_POST['conference_name'] );
 		$project_post_meta['_conference_location'] = sanitize_text_field( $_POST['conference_location'] );
