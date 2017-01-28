@@ -249,6 +249,8 @@ class Latest_Tweets extends \WP_Widget {
 		$instance['user_name']   = sanitize_text_field( str_replace( '@', '', $new_instance['user_name'] ) );
 		$instance['tweet_count'] = absint( $new_instance['tweet_count'] );
 
+		delete_transient( 'cw_latest_tweets' ); // Clear the cache when we update the settings.
+
 		return $instance;
 
 	}
