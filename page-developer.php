@@ -33,7 +33,7 @@ get_header(); ?>
 
 					<div id="projects">
 
-						<h2><?php esc_html_e( 'Projects', 'chriswiegman' ); ?></h2>
+						<h2><?php esc_html_e( 'Selected Projects', 'chriswiegman' ); ?></h2>
 
 						<!-- begin .archive-projects-->
 						<ul class="archive-projects cpt-list">
