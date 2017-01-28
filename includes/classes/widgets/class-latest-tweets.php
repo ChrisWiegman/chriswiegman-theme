@@ -56,7 +56,6 @@ class Latest_Tweets extends \WP_Widget {
 	protected function get_latest_tweets( $username ) {
 
 		$latest_tweets = get_transient( 'cw_latest_tweets' );
-		$latest_tweets = false;
 
 		if ( false === $latest_tweets ) {
 
