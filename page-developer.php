@@ -35,7 +35,95 @@ get_header(); ?>
 
 						<h2><?php esc_html_e( 'Projects', 'chriswiegman' ); ?></h2>
 
-						<?php get_template_part( 'template-parts/content', 'projects' ); ?>
+						<!-- begin .archive-projects-->
+						<ul class="archive-projects cpt-list">
+
+							<?php
+							$args = array( 'post_type' => 'project' );
+							$loop = new \WP_Query( $args );
+							?>
+
+							<?php
+							while ( $loop->have_posts() ) {
+
+								$loop->the_post();
+
+								?>
+								<li id="post-<?php esc_attr( the_ID() ); ?>" <?php post_class(); ?>>
+
+									<?php
+
+									$title     = get_the_title();
+									$permalink = esc_url( get_permalink() );
+									$types     = get_the_terms( get_the_ID(), 'project-type' );
+									$statuses  = get_the_terms( get_the_ID(), 'project-status' );
+
+									if ( has_term( 'wordpress-plugin', 'project-type', get_the_ID() ) ) {
+
+										$icon = 'wordpress';
+
+									} elseif ( has_term( 'google-chrome-extension', 'project-type', get_the_ID() ) ) {
+
+										$icon = 'google';
+
+									} else {
+
+										$icon = 'laptop';
+
+									}
+
+									?>
+
+									<i class="list-icon icon-<?php echo esc_attr( $icon ); ?>"></i>
+
+									<div class="entry-header">
+
+										<?php printf( '<h2 class="entry-title"><a href="%s" title="%s" rel="bookmark">%s</a></h2>', esc_url( $permalink ), esc_attr( $title ), sanitize_text_field( $title ) ); ?>
+
+										<div class="entry-meta">
+					<span class="project-types">
+						<?php esc_html_e( 'Type: ', 'ChrisWiegman' ); ?>
+						<?php foreach ( $types as $type ) { ?>
+							<?php
+							$term_link = get_term_link( $type );
+
+							if ( is_wp_error( $term_link ) ) {
+								continue;
+							}
+							?>
+							<span class="project-type"><?php echo esc_html( $type->name ); ?></span>
+						<?php } ?>
+					</span>
+											<span class="project-statuses">
+						<?php esc_html_e( 'Status: ', 'ChrisWiegman' ); ?>
+												<?php foreach ( $statuses as $status ) { ?>
+													<?php
+													$term_link = get_term_link( $status );
+
+													if ( is_wp_error( $term_link ) ) {
+														continue;
+													}
+													?>
+													<span class="project-status"><?php echo esc_html( $status->name ); ?></span>
+												<?php } ?>
+					</span>
+										</div>
+										<!-- .entry-meta -->
+
+									</div>
+									<!-- .entry-header -->
+									<div class="divider"></div>
+								</li><!-- #post-## -->
+
+								<?php
+
+							}
+							wp_reset_postdata();
+							?>
+
+						</ul>
+						<!-- end .archive-projects-->
+
 						<p class="projects-note"><?php esc_html_e( 'Note that "archived" projects are projects I am no longer involved in for
 						one reason or another.', 'chriswiegman' ); ?></p>
 
