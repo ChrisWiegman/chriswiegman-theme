@@ -45,11 +45,6 @@ namespace CW\Theme\Templates\Parts\Content\Archive;
 				<?php wp_list_categories( 'sort_column=name&title_li=' ); ?>
 			</ul>
 
-			<h4><?php esc_html_e( 'Authors:', 'chriswiegman' ); ?></h4>
-			<ul>
-				<?php wp_list_authors( 'exclude_admin=0&optioncount=1' ); ?>
-			</ul>
-
 		</div>
 
 		<div class="clear"></div>
