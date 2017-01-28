@@ -33,7 +33,7 @@ get_header(); ?>
 
 					<div id="speaking">
 
-						<h2><?php esc_html_e( 'Speaking', 'chriswiegman' ); ?></h2>
+						<h2><?php esc_html_e( 'Selected Talks', 'chriswiegman' ); ?></h2>
 
 						<!-- begin .archive-projects-->
 						<ul class="archive-speaking cpt-list">
