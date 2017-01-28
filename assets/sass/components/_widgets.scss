@@ -28,7 +28,7 @@
 			list-style-type: circle;
 			margin-bottom:   6px;
 			padding:         0px;
-			word-wrap:       break-word;
+			overflow-wrap:   break-word;
 		}
 
 	}
@@ -156,4 +156,10 @@
 	font-size:   80%;
 	font-style:  italic;
 	margin-left: 10px;
+}
+
+.cw_tweet_text a {
+	word-wrap:  break-word;
+	word-break: break-all;
+	hyphens:    auto;
 }

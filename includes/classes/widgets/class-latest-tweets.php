@@ -155,7 +155,7 @@ class Latest_Tweets extends \WP_Widget {
 						$text = str_replace( $entity->search, $entity->replace, $text );
 					}
 
-					$text = '<li><div class="cw_tweet"><span class="cw_tweet_text">' . $text . '</span><span class="cw_tweet_time"><a href="' . esc_url( 'https://twitter.com/ChrisWiegman/statuses/' . $tweet->id ) . '" target="_blank">' . esc_html( date( 'F jS, Y g:i a', strtotime( $tweet->created_at ) ) ) . '</a></span></div></li>';
+					$text = '<li><div class="cw_tweet"><span class="cw_tweet_text">' . $text . '</span><span class="cw_tweet_time"><a href="' . esc_url( 'https://twitter.com/ChrisWiegman/statuses/' . $tweet->id ) . '" target="_blank">' . esc_html( date( 'M jS, Y', strtotime( $tweet->created_at ) ) ) . '</a></span></div></li>';
 
 					$latest_tweets .= $text;
 
