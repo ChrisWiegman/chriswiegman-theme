@@ -165,19 +165,6 @@ function action_wp_enqueue_scripts() {
 
 	wp_enqueue_script( 'chriswiegman-footer', get_template_directory_uri() . '/assets/js/footer' . $min . '.js', array( 'jquery' ), CW_THEME_VERSION, false );
 
-	$vars = array(
-		'small'  => wp_get_attachment_image_src( get_post_thumbnail_id(), array( 150, 150 ) ),
-		'medium' => wp_get_attachment_image_src( get_post_thumbnail_id(), array( 250, 250 ) ),
-		'large'  => wp_get_attachment_image_src( get_post_thumbnail_id(), array( 350, 350 ) ),
-		'full'   => wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'full' ),
-	);
-
-	wp_localize_script(
-		'chriswiegman-footer',
-		'chriswiegman_featured_image',
-		$vars
-	);
-
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
