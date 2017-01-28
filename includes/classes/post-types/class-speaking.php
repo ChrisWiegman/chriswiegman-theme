@@ -335,29 +335,6 @@ class Speaking {
 
 		<?php
 
-		// Get Icon.
-		$icon_raw = get_post_meta( $post->ID, '_presentation_icon', true );
-		$icon     = empty( $icon_raw ) ? 'comment' : esc_attr( $icon_raw );
-
-		?>
-
-		<tr class="width_normal p_box">
-			<th scope="row">
-				<label for="presentation_icon"><?php esc_html_e( 'Presentation Icon', 'chriswiegman' ); ?></label></th>
-			<td>
-				<select id="presentation_icon" name="presentation_icon" class="medium-text">
-					<option value="comment" <?php selected( $icon, 'comment' ); ?>><?php esc_html_e( 'Comment', 'chriswiegman' ); ?></option>
-					<option value="laptop" <?php selected( $icon, 'laptop' ); ?>><?php esc_html_e( 'Laptop', 'chriswiegman' ); ?></option>
-					<option value="university" <?php selected( $icon, 'university' ); ?>><?php esc_html_e( 'University', 'chriswiegman' ); ?></option>
-					<option value="users" <?php selected( $icon, 'users' ); ?>><?php esc_html_e( 'Users', 'chriswiegman' ); ?></option>
-					<option value="video-camera" <?php selected( $icon, 'video-camera' ); ?>><?php esc_html_e( 'Video Camera', 'chriswiegman' ); ?></option>
-					<option value="microphone" <?php selected( $icon, 'microphone' ); ?>><?php esc_html_e( 'Microphone', 'chriswiegman' ); ?></option>
-				</select>
-			</td>
-		</tr>
-
-		<?php
-
 		// Get conference name.
 		$conference_location = get_post_meta( $post->ID, '_conference_location', true );
 
@@ -404,7 +381,6 @@ class Speaking {
 		$project_post_meta['_slide_url']           = esc_url( $_POST['slide_url'] );
 		$project_post_meta['_conference_url']      = esc_url( $_POST['conference_url'] );
 		$project_post_meta['_conference_name']     = sanitize_text_field( $_POST['conference_name'] );
-		$project_post_meta['_presentation_icon']   = sanitize_text_field( $_POST['presentation_icon'] );
 		$project_post_meta['_conference_location'] = sanitize_text_field( $_POST['conference_location'] );
 		$project_post_meta['_presentation_date']   = strtotime( $_POST['presentation_date'] );
 
