@@ -161,11 +161,10 @@ class Speaking {
 				),
 				'description'          => esc_html__( 'A place to list speaking gigs.', 'chriswiegman' ),
 				'public'               => true,
-				'has_archive'          => true,
+				'has_archive'          => false,
 				'capability_type'      => 'post',
 				'supports'             => array(
 					'title',
-					'revisions',
 					'thumbnail',
 				),
 				'exclude_form_search'  => true,
