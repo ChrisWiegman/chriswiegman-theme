@@ -166,6 +166,7 @@ class Speaking {
 				'supports'             => array(
 					'title',
 					'revisions',
+					'thumbnail',
 				),
 				'exclude_form_search'  => true,
 				'publicly_queryable'   => false,
@@ -363,7 +364,9 @@ class Speaking {
 		?>
 
 		<tr class="width_normal p_box">
-			<th scope="row"><label for="conference_location"><?php esc_html_e( 'Conference Location', 'chriswiegman' ); ?></label></th>
+			<th scope="row">
+				<label for="conference_location"><?php esc_html_e( 'Conference Location', 'chriswiegman' ); ?></label>
+			</th>
 			<td>
 				<input type="text" id="conference_location" name="conference_location" class="medium-text" value="<?php echo esc_attr( $conference_location ); ?>">
 			</td>
@@ -381,7 +384,7 @@ class Speaking {
 	 *
 	 * @since 1.0.0
 	 *
-	 * @param int     $post_id ID of the current post.
+	 * @param int      $post_id ID of the current post.
 	 * @param \WP_POST $post    The current post.
 	 *
 	 * @return int|void post ID on failure or void on success
