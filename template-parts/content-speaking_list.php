@@ -18,8 +18,6 @@ namespace CW\Theme\Templates\Parts\Content\Speaking_List;
 	<?php
 
 	$title                 = get_the_title();
-	$icon_raw              = get_post_meta( get_the_ID(), '_presentation_icon', true );
-	$icon                  = empty( $icon_raw ) ? 'comment' : esc_attr( $icon_raw );
 	$conference_name       = get_post_meta( get_the_ID(), '_conference_name', true );
 	$slide_url             = get_post_meta( get_the_ID(), '_slide_url', true );
 	$conference_url        = get_post_meta( get_the_ID(), '_conference_url', true );
@@ -28,8 +26,6 @@ namespace CW\Theme\Templates\Parts\Content\Speaking_List;
 	$presentation_date     = empty( $raw_presentation_date ) ? '' : date( 'F Y', $raw_presentation_date );
 
 	?>
-
-	<i class="list-icon icon-<?php echo esc_attr( $icon ); ?>"></i>
 
 	<div class="entry-header">
 
