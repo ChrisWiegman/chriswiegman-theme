@@ -60,6 +60,7 @@ class Latest_Tweets extends \WP_Widget {
 		check_ajax_referer( 'cw-latest-tweets-nonce', 'nonce' );
 
 		$latest_tweets = get_transient( 'cw_latest_tweets' );
+		$latest_tweets = false;
 
 		if ( false === $latest_tweets ) {
 
@@ -106,55 +107,45 @@ class Latest_Tweets extends \WP_Widget {
 					foreach ( $tweet->entities->hashtags as $hashtag ) {
 
 						$entity          = new \stdClass();
-						$entity->start   = $hashtag->indices[0];
-						$entity->end     = $hashtag->indices[1];
-						$entity->length  = $hashtag->indices[1] - $hashtag->indices[0];
+						$entity->search  = '#' . $hashtag->text;
 						$entity->replace = sprintf( $hashtag_link_pattern, strtolower( $hashtag->text ), $hashtag->text );
 
-						$entity_holder[ $entity->start ] = $entity;
+						$entity_holder[] = $entity;
 
 					}
 
 					foreach ( $tweet->entities->urls as $url ) {
 
 						$entity          = new \stdClass();
-						$entity->start   = $url->indices[0];
-						$entity->end     = $url->indices[1];
-						$entity->length  = $url->indices[1] - $url->indices[0];
+						$entity->search  = $url->url;
 						$entity->replace = sprintf( $url_link_pattern, $url->url, $url->expanded_url, $url->display_url );
 
-						$entity_holder[ $entity->start ] = $entity;
+						$entity_holder[] = $entity;
 
 					}
 
 					foreach ( $tweet->entities->user_mentions as $user_mention ) {
 
 						$entity          = new \stdClass();
-						$entity->start   = $user_mention->indices[0];
-						$entity->end     = $user_mention->indices[1];
-						$entity->length  = $user_mention->indices[1] - $user_mention->indices[0];
+						$entity->search  = '@' . $user_mention->screen_name;
 						$entity->replace = sprintf( $user_mention_link_pattern, strtolower( $user_mention->screen_name ), $user_mention->name, $user_mention->screen_name );
 
-						$entity_holder[ $entity->start ] = $entity;
+						$entity_holder[] = $entity;
 
 					}
 
 					foreach ( $tweet->entities->media as $media ) {
 
 						$entity          = new \stdClass();
-						$entity->start   = $media->indices[0];
-						$entity->end     = $media->indices[1];
-						$entity->length  = $media->indices[1] - $media->indices[0];
+						$entity->search  = $media->url;
 						$entity->replace = sprintf( $media_link_pattern, $media->url, $media->expanded_url, $media->display_url );
 
-						$entity_holder[ $entity->start ] = $entity;
+						$entity_holder[] = $entity;
 
 					}
 
-					krsort( $entity_holder );
-
 					foreach ( $entity_holder as $entity ) {
-						$text = substr_replace( $text, $entity->replace, $entity->start, $entity->length );
+						$text = str_replace( $entity->search, $entity->replace, $text );
 					}
 
 					$text = '<div class="cw_tweet"><span class="cw_tweet_text">' . $text . '</span><span class="cw_tweet_time"><a href="' . esc_url( 'https://twitter.com/ChrisWiegman/statuses/' . $tweet->id ) . '" target="_blank">' . esc_html( date( 'F jS, Y g:i a', strtotime( $tweet->created_at ) ) ) . '</a></span></div>';
@@ -223,10 +214,10 @@ class Latest_Tweets extends \WP_Widget {
 			<?php $counts = range( 1, 20 ); ?>
 
 			<select id="<?php echo esc_attr( $this->get_field_id( 'tweet_count' ) ); ?>"
-			       name="<?php echo esc_attr( $this->get_field_name( 'tweet_count' ) ); ?>">
-			<?php foreach ( $counts as $count ) { ?>
-			<option value="<?php echo esc_attr( $count ); ?>" <?php selected( $count, $tweet_count ); ?>><?php echo esc_html( $count ); ?></option>
-		<?php } ?>
+			        name="<?php echo esc_attr( $this->get_field_name( 'tweet_count' ) ); ?>">
+				<?php foreach ( $counts as $count ) { ?>
+					<option value="<?php echo esc_attr( $count ); ?>" <?php selected( $count, $tweet_count ); ?>><?php echo esc_html( $count ); ?></option>
+				<?php } ?>
 
 			</select>
 		</p>
