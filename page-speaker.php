@@ -39,19 +39,33 @@ get_header(); ?>
 						<ul class="archive-speaking cpt-list">
 
 							<?php
-							$args = array(
+							$args  = array(
 								'post_type' => 'speaking',
 								'order'     => 'DESC',
 								'orderby'   => 'meta_value_num',
 								'meta_key'  => '_presentation_date',
 								'nopaging'  => true,
 							);
-							$loop = new \WP_Query( $args );
+							$loop  = new \WP_Query( $args );
+							$count = 0;
+							$icons = array(
+								'megaphone',
+								'comment',
+								'user',
+								'sitemap',
+								'laptop',
+								'fork',
+								'info',
+								'bank',
+								'server',
+								'television',
+							);
 							?>
 
 							<?php
 							while ( $loop->have_posts() ) {
 
+								$count ++;
 								$loop->the_post();
 
 								?>
@@ -66,10 +80,13 @@ get_header(); ?>
 									$raw_presentation_date = get_post_meta( get_the_ID(), '_presentation_date', true );
 									$conference_location   = get_post_meta( get_the_ID(), '_conference_location', true );
 									$presentation_date     = empty( $raw_presentation_date ) ? '' : date( 'F Y', $raw_presentation_date );
+									$icon                  = $icons[ $count % 6 ];
 
 									?>
 
 									<div class="entry-header">
+
+										<i class="list-icon icon-<?php echo esc_attr( $icon ); ?>"></i>
 
 										<?php
 										if ( empty( $slide_url ) ) {
