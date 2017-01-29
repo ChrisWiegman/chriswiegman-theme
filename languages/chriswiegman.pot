@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ChrisWiegman 5.8.4\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/style\n"
-"POT-Creation-Date: 2017-01-28 21:54:49+00:00\n"
+"POT-Creation-Date: 2017-01-29 00:51:39+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -157,79 +157,79 @@ msgstr ""
 msgid "A place to list ongoing and archived projects"
 msgstr ""
 
-#: includes/classes/post-types/class-project.php:130
+#: includes/classes/post-types/class-project.php:129
 msgid "URL"
 msgstr ""
 
-#: includes/classes/post-types/class-project.php:208
+#: includes/classes/post-types/class-project.php:207
 msgid "Search Project Types"
 msgstr ""
 
-#: includes/classes/post-types/class-project.php:209
+#: includes/classes/post-types/class-project.php:208
 msgid "All Project Types"
 msgstr ""
 
-#: includes/classes/post-types/class-project.php:210
+#: includes/classes/post-types/class-project.php:209
 msgid "Parent Project Type"
 msgstr ""
 
-#: includes/classes/post-types/class-project.php:211
+#: includes/classes/post-types/class-project.php:210
 msgid "Parent Project Type:"
 msgstr ""
 
-#: includes/classes/post-types/class-project.php:212
+#: includes/classes/post-types/class-project.php:211
 msgid "Edit Project Type"
 msgstr ""
 
-#: includes/classes/post-types/class-project.php:213
+#: includes/classes/post-types/class-project.php:212
 msgid "Update Project Type"
 msgstr ""
 
-#: includes/classes/post-types/class-project.php:214
+#: includes/classes/post-types/class-project.php:213
 msgid "Add New Project Type"
 msgstr ""
 
-#: includes/classes/post-types/class-project.php:215
+#: includes/classes/post-types/class-project.php:214
 msgid "New Project Type Name"
 msgstr ""
 
-#: includes/classes/post-types/class-project.php:216
+#: includes/classes/post-types/class-project.php:215
 msgid "Type"
 msgstr ""
 
-#: includes/classes/post-types/class-project.php:233
+#: includes/classes/post-types/class-project.php:232
 msgid "Search Project Statuses"
 msgstr ""
 
-#: includes/classes/post-types/class-project.php:234
+#: includes/classes/post-types/class-project.php:233
 msgid "All Project Statuses"
 msgstr ""
 
-#: includes/classes/post-types/class-project.php:235
+#: includes/classes/post-types/class-project.php:234
 msgid "Parent Project Status"
 msgstr ""
 
-#: includes/classes/post-types/class-project.php:236
+#: includes/classes/post-types/class-project.php:235
 msgid "Parent Project Status:"
 msgstr ""
 
-#: includes/classes/post-types/class-project.php:237
+#: includes/classes/post-types/class-project.php:236
 msgid "Edit Project Status"
 msgstr ""
 
-#: includes/classes/post-types/class-project.php:238
+#: includes/classes/post-types/class-project.php:237
 msgid "Update Project Status"
 msgstr ""
 
-#: includes/classes/post-types/class-project.php:239
+#: includes/classes/post-types/class-project.php:238
 msgid "Add New Project Status"
 msgstr ""
 
-#: includes/classes/post-types/class-project.php:240
+#: includes/classes/post-types/class-project.php:239
 msgid "New Project Status Name"
 msgstr ""
 
-#: includes/classes/post-types/class-project.php:241
+#: includes/classes/post-types/class-project.php:240
 msgid "Status"
 msgstr ""
 
@@ -289,15 +289,15 @@ msgstr ""
 msgid "Slide URL"
 msgstr ""
 
-#: includes/classes/post-types/class-speaking.php:327
+#: includes/classes/post-types/class-speaking.php:328
 msgid "Presentation URL"
 msgstr ""
 
-#: includes/classes/post-types/class-speaking.php:343
+#: includes/classes/post-types/class-speaking.php:344
 msgid "Presentation Date"
 msgstr ""
 
-#: includes/classes/post-types/class-speaking.php:358
+#: includes/classes/post-types/class-speaking.php:359
 msgid "Conference Location"
 msgstr ""
 
@@ -309,19 +309,19 @@ msgstr ""
 msgid "Latest Tweets"
 msgstr ""
 
-#: includes/classes/widgets/class-latest-tweets.php:203
+#: includes/classes/widgets/class-latest-tweets.php:202
 msgid "My Latest Tweets"
 msgstr ""
 
-#: includes/classes/widgets/class-latest-tweets.php:209
+#: includes/classes/widgets/class-latest-tweets.php:208
 msgid "Title:"
 msgstr ""
 
-#: includes/classes/widgets/class-latest-tweets.php:215
+#: includes/classes/widgets/class-latest-tweets.php:214
 msgid "Twitter User:"
 msgstr ""
 
-#: includes/classes/widgets/class-latest-tweets.php:221
+#: includes/classes/widgets/class-latest-tweets.php:220
 msgid "Number of Tweets:"
 msgstr ""
 
@@ -426,7 +426,7 @@ msgid "Categories:"
 msgstr ""
 
 #: page-developer.php:36
-msgid "Projects"
+msgid "Selected Projects"
 msgstr ""
 
 #: page-developer.php:85
@@ -437,14 +437,14 @@ msgstr ""
 msgid "Status: "
 msgstr ""
 
-#: page-developer.php:127
+#: page-developer.php:130
 msgid ""
 "Note that \"archived\" projects are projects I am no longer involved in for\n"
 "\t\t\t\t\t\tone reason or another."
 msgstr ""
 
 #: page-speaker.php:36
-msgid "Speaking"
+msgid "Selected Talks"
 msgstr ""
 
 #: search.php:24
@@ -551,22 +551,22 @@ msgctxt "book"
 msgid "Add New"
 msgstr ""
 
-#: includes/classes/post-types/class-project.php:206
+#: includes/classes/post-types/class-project.php:205
 msgctxt "taxonomy general name"
 msgid "Project Types"
 msgstr ""
 
-#: includes/classes/post-types/class-project.php:231
+#: includes/classes/post-types/class-project.php:230
 msgctxt "taxonomy general name"
 msgid "Project Status"
 msgstr ""
 
-#: includes/classes/post-types/class-project.php:207
+#: includes/classes/post-types/class-project.php:206
 msgctxt "taxonomy singular name"
 msgid "Project Type"
 msgstr ""
 
-#: includes/classes/post-types/class-project.php:232
+#: includes/classes/post-types/class-project.php:231
 msgctxt "taxonomy singular name"
 msgid "Project Status"
 msgstr ""
