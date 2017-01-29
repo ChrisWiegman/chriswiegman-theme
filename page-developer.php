@@ -81,21 +81,21 @@ get_header(); ?>
 										<?php printf( '<h2 class="entry-title"><a href="%s" title="%s" rel="bookmark">%s</a></h2>', esc_url( $permalink ), esc_attr( $title ), sanitize_text_field( $title ) ); ?>
 
 										<div class="entry-meta">
-					<span class="project-types">
-						<?php esc_html_e( 'Type: ', 'ChrisWiegman' ); ?>
-						<?php foreach ( $types as $type ) { ?>
-							<?php
-							$term_link = get_term_link( $type );
+											<span class="project-types">
+												<?php esc_html_e( 'Type: ', 'ChrisWiegman' ); ?>
+												<?php foreach ( $types as $type ) { ?>
+													<?php
+													$term_link = get_term_link( $type );
 
-							if ( is_wp_error( $term_link ) ) {
-								continue;
-							}
-							?>
-							<span class="project-type"><?php echo esc_html( $type->name ); ?></span>
-						<?php } ?>
-					</span>
+													if ( is_wp_error( $term_link ) ) {
+														continue;
+													}
+													?>
+													<span class="project-type"><?php echo esc_html( $type->name ); ?></span>
+												<?php } ?>
+											</span>
 											<span class="project-statuses">
-						<?php esc_html_e( 'Status: ', 'ChrisWiegman' ); ?>
+												<?php esc_html_e( 'Status: ', 'ChrisWiegman' ); ?>
 												<?php foreach ( $statuses as $status ) { ?>
 													<?php
 													$term_link = get_term_link( $status );
@@ -106,10 +106,13 @@ get_header(); ?>
 													?>
 													<span class="project-status"><?php echo esc_html( $status->name ); ?></span>
 												<?php } ?>
-					</span>
+											</span>
 										</div>
 										<!-- .entry-meta -->
 
+									</div>
+									<div class="entry-content">
+										<?php the_content(); ?>
 									</div>
 									<!-- .entry-header -->
 									<div class="divider"></div>
