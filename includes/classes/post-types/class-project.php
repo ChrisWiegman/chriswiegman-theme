@@ -93,7 +93,6 @@ class Project {
 				'supports'             => array(
 					'title',
 					'editor',
-					'thumbnail',
 				),
 				'taxonomies'           => array( 'project_type' ),
 				'register_meta_box_cb' => array( $this, 'add_project_metabox' ),

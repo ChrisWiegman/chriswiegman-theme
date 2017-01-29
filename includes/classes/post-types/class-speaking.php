@@ -165,7 +165,7 @@ class Speaking {
 				'capability_type'      => 'post',
 				'supports'             => array(
 					'title',
-					'thumbnail',
+					'editor',
 				),
 				'exclude_form_search'  => true,
 				'publicly_queryable'   => false,
@@ -324,7 +324,8 @@ class Speaking {
 		?>
 
 		<tr class="width_normal p_box">
-			<th scope="row"><label for="presentation_url"><?php esc_html_e( 'Presentation URL', 'chriswiegman' ); ?></label></th>
+			<th scope="row">
+				<label for="presentation_url"><?php esc_html_e( 'Presentation URL', 'chriswiegman' ); ?></label></th>
 			<td>
 				<input type="text" id="presentation_url" name="presentation_url" class="large-text" value="<?php echo esc_url( $presentation_url ); ?>">
 			</td>
