@@ -111,7 +111,7 @@ get_header(); ?>
 										<!-- .entry-meta -->
 
 									</div>
-									<div class="entry-content">
+									<div class="entry-description">
 										<?php the_content(); ?>
 									</div>
 									<!-- .entry-header -->
