@@ -123,8 +123,8 @@ q {
 
 @font-face {
   font-family: 'cw';
-  src: url("https://www.chriswiegman.com/content/themes/chriswiegman/assets/font/cw.eot");
-  src: url("https://www.chriswiegman.com/content/themes/chriswiegman/assets/font/cw.eot#iefix") format("embedded-opentype"), url("https://www.chriswiegman.com/content/themes/chriswiegman/assets/font/cw.woff2") format("woff2"), url("https://www.chriswiegman.com/content/themes/chriswiegman/assets/font/cw.woff") format("woff"), url("https://www.chriswiegman.com/content/themes/chriswiegman/assets/font/cw.ttf") format("truetype"), url("https://www.chriswiegman.com/content/themes/chriswiegman/assets/   font/cw.svg#cw") format("svg");
+  src: url("/content/themes/chriswiegman/assets/font/cw.eot");
+  src: url("/content/themes/chriswiegman/assets/font/cw.eot#iefix") format("embedded-opentype"), url("/content/themes/chriswiegman/assets/font/cw.woff2") format("woff2"), url("/content/themes/chriswiegman/assets/font/cw.woff") format("woff"), url("/content/themes/chriswiegman/assets/font/cw.ttf") format("truetype"), url("/content/themes/chriswiegman/assets/   font/cw.svg#cw") format("svg");
   font-weight: normal;
   font-style: normal; }
 
@@ -145,23 +145,20 @@ q {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
 
-.icon-comment:before {
+.icon-megaphone:before {
   content: '\e800'; }
 
-.icon-users:before {
+.icon-comment:before {
   content: '\e801'; }
 
-.icon-videocam:before {
+.icon-user:before {
   content: '\e802'; }
 
 .icon-twitter:before {
   content: '\f099'; }
 
-.icon-facebook:before {
-  content: '\f09a'; }
-
-.icon-rss:before {
-  content: '\f09e'; }
+.icon-sitemap:before {
+  content: '\f0e8'; }
 
 .icon-laptop:before {
   content: '\f109'; }
@@ -169,8 +166,11 @@ q {
 .icon-github:before {
   content: '\f113'; }
 
-.icon-mic:before {
-  content: '\f130'; }
+.icon-fork:before {
+  content: '\f126'; }
+
+.icon-info:before {
+  content: '\f129'; }
 
 .icon-wordpress:before {
   content: '\f19a'; }
@@ -180,6 +180,12 @@ q {
 
 .icon-google:before {
   content: '\f1a0'; }
+
+.icon-server:before {
+  content: '\f233'; }
+
+.icon-television:before {
+  content: '\f26c'; }
 
 body {
   color: #5f5f5f;
@@ -818,7 +824,7 @@ a {
       list-style-type: circle;
       margin-bottom: 6px;
       padding: 0px;
-      word-wrap: break-word; }
+      overflow-wrap: break-word; }
   .widget .entry-content:before, .widget .entry-content:after {
     content: '';
     display: inline; }
@@ -895,6 +901,13 @@ a {
   font-size: 80%;
   font-style: italic;
   margin-left: 10px; }
+
+.cw_tweet_text a {
+  word-wrap: break-word;
+  word-break: break-all;
+  -webkit-hyphens: auto;
+      -ms-hyphens: auto;
+          hyphens: auto; }
 
 /*--------------------------------------------------------------
 0.1 Posts and pages
@@ -1091,7 +1104,6 @@ ul.archive-projects {
   margin-left: 60px;
   padding: 0 40px; }
   ul.archive-projects li {
-    font-size: 0.9rem;
     margin: 0; }
     ul.archive-projects li .fa {
       margin: 0;
@@ -1104,15 +1116,19 @@ ul.archive-projects {
         margin-bottom: 0; }
         ul.archive-projects li .entry-header .entry-title a {
           border-bottom: none; }
-  ul.archive-projects .entry-meta .project-status,
-  ul.archive-projects .entry-meta .project-type {
-    font-style: italic;
-    font-weight: bold; }
+  ul.archive-projects .entry-meta {
+    border-bottom: 1px solid #efefef;
+    font-size: 0.9rem;
+    margin-bottom: 10px; }
+    ul.archive-projects .entry-meta .project-status,
+    ul.archive-projects .entry-meta .project-type {
+      font-style: italic;
+      font-weight: bold; }
   ul.archive-projects .divider {
     border-bottom: 1px solid #efefef;
     display: block;
     height: 1px;
-    margin: 30px auto;
+    margin: 0 auto 30px auto;
     width: 60%; }
 
 .projects-note {
@@ -1130,6 +1146,7 @@ ul.archive-speaking {
       margin: 0;
       padding: 0; }
     ul.archive-speaking li .entry-header {
+      font-size: 0.9rem;
       padding: 0; }
       ul.archive-speaking li .entry-header .entry-title {
         border-bottom: none;
@@ -1233,7 +1250,7 @@ object {
       width: 33%;
       transition: 0.5s; } }
 
-@media screen and (max-width: 970px) {
+@media screen and (max-width: 980px) {
   .single .site-main, .page .site-main {
     margin-bottom: 1em; }
   .hentry,

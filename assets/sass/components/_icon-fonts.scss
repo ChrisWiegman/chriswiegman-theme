@@ -1,7 +1,7 @@
 @font-face {
 	font-family: 'cw';
-	src:         url('https://www.chriswiegman.com/content/themes/chriswiegman/assets/font/cw.eot');
-	src:         url('https://www.chriswiegman.com/content/themes/chriswiegman/assets/font/cw.eot#iefix') format("embedded-opentype"), url('https://www.chriswiegman.com/content/themes/chriswiegman/assets/font/cw.woff2') format("woff2"), url('https://www.chriswiegman.com/content/themes/chriswiegman/assets/font/cw.woff') format("woff"), url('https://www.chriswiegman.com/content/themes/chriswiegman/assets/font/cw.ttf') format("truetype"), url('https://www.chriswiegman.com/content/themes/chriswiegman/assets/   font/cw.svg#cw') format("svg");
+	src:         url('/content/themes/chriswiegman/assets/font/cw.eot');
+	src:         url('/content/themes/chriswiegman/assets/font/cw.eot#iefix') format("embedded-opentype"), url('/content/themes/chriswiegman/assets/font/cw.woff2') format("woff2"), url('/content/themes/chriswiegman/assets/font/cw.woff') format("woff"), url('/content/themes/chriswiegman/assets/font/cw.ttf') format("truetype"), url('/content/themes/chriswiegman/assets/   font/cw.svg#cw') format("svg");
 	font-weight: normal;
 	font-style:  normal;
 }
@@ -24,15 +24,15 @@
 	-moz-osx-font-smoothing: grayscale;
 }
 
-.icon-comment:before {
+.icon-megaphone:before {
 	content: '\e800';
 }
 
-.icon-users:before {
+.icon-comment:before {
 	content: '\e801';
 }
 
-.icon-videocam:before {
+.icon-user:before {
 	content: '\e802';
 }
 
@@ -40,12 +40,8 @@
 	content: '\f099';
 }
 
-.icon-facebook:before {
-	content: '\f09a';
-}
-
-.icon-rss:before {
-	content: '\f09e';
+.icon-sitemap:before {
+	content: '\f0e8';
 }
 
 .icon-laptop:before {
@@ -56,8 +52,12 @@
 	content: '\f113';
 }
 
-.icon-mic:before {
-	content: '\f130';
+.icon-fork:before {
+	content: '\f126';
+}
+
+.icon-info:before {
+	content: '\f129';
 }
 
 .icon-wordpress:before {
@@ -70,4 +70,12 @@
 
 .icon-google:before {
 	content: '\f1a0';
+}
+
+.icon-server:before {
+	content: '\f233';
+}
+
+.icon-television:before {
+	content: '\f26c';
 }

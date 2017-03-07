@@ -161,11 +161,11 @@ class Speaking {
 				),
 				'description'          => esc_html__( 'A place to list speaking gigs.', 'chriswiegman' ),
 				'public'               => true,
-				'has_archive'          => true,
+				'has_archive'          => false,
 				'capability_type'      => 'post',
 				'supports'             => array(
 					'title',
-					'revisions',
+					'editor',
 				),
 				'exclude_form_search'  => true,
 				'publicly_queryable'   => false,
@@ -318,6 +318,21 @@ class Speaking {
 
 		<?php
 
+		// Get presentation URL data.
+		$presentation_url = get_post_meta( $post->ID, '_presentation_url', true );
+
+		?>
+
+		<tr class="width_normal p_box">
+			<th scope="row">
+				<label for="presentation_url"><?php esc_html_e( 'Presentation URL', 'chriswiegman' ); ?></label></th>
+			<td>
+				<input type="text" id="presentation_url" name="presentation_url" class="large-text" value="<?php echo esc_url( $presentation_url ); ?>">
+			</td>
+		</tr>
+
+		<?php
+
 		// Get Presentation date data.
 		$raw_presentation_date = get_post_meta( $post->ID, '_presentation_date', true );
 		$presentation_date     = empty( $raw_presentation_date ) ? current_time( 'm/d/Y' ) : date( 'm/d/Y', $raw_presentation_date );
@@ -334,36 +349,15 @@ class Speaking {
 
 		<?php
 
-		// Get Icon.
-		$icon_raw = get_post_meta( $post->ID, '_presentation_icon', true );
-		$icon     = empty( $icon_raw ) ? 'comment' : esc_attr( $icon_raw );
-
-		?>
-
-		<tr class="width_normal p_box">
-			<th scope="row">
-				<label for="presentation_icon"><?php esc_html_e( 'Presentation Icon', 'chriswiegman' ); ?></label></th>
-			<td>
-				<select id="presentation_icon" name="presentation_icon" class="medium-text">
-					<option value="comment" <?php selected( $icon, 'comment' ); ?>><?php esc_html_e( 'Comment', 'chriswiegman' ); ?></option>
-					<option value="laptop" <?php selected( $icon, 'laptop' ); ?>><?php esc_html_e( 'Laptop', 'chriswiegman' ); ?></option>
-					<option value="university" <?php selected( $icon, 'university' ); ?>><?php esc_html_e( 'University', 'chriswiegman' ); ?></option>
-					<option value="users" <?php selected( $icon, 'users' ); ?>><?php esc_html_e( 'Users', 'chriswiegman' ); ?></option>
-					<option value="video-camera" <?php selected( $icon, 'video-camera' ); ?>><?php esc_html_e( 'Video Camera', 'chriswiegman' ); ?></option>
-					<option value="microphone" <?php selected( $icon, 'microphone' ); ?>><?php esc_html_e( 'Microphone', 'chriswiegman' ); ?></option>
-				</select>
-			</td>
-		</tr>
-
-		<?php
-
 		// Get conference name.
 		$conference_location = get_post_meta( $post->ID, '_conference_location', true );
 
 		?>
 
 		<tr class="width_normal p_box">
-			<th scope="row"><label for="conference_location"><?php esc_html_e( 'Conference Location', 'chriswiegman' ); ?></label></th>
+			<th scope="row">
+				<label for="conference_location"><?php esc_html_e( 'Conference Location', 'chriswiegman' ); ?></label>
+			</th>
 			<td>
 				<input type="text" id="conference_location" name="conference_location" class="medium-text" value="<?php echo esc_attr( $conference_location ); ?>">
 			</td>
@@ -381,7 +375,7 @@ class Speaking {
 	 *
 	 * @since 1.0.0
 	 *
-	 * @param int     $post_id ID of the current post.
+	 * @param int      $post_id ID of the current post.
 	 * @param \WP_POST $post    The current post.
 	 *
 	 * @return int|void post ID on failure or void on success
@@ -399,9 +393,9 @@ class Speaking {
 		}
 
 		$project_post_meta['_slide_url']           = esc_url( $_POST['slide_url'] );
+		$project_post_meta['_presentation_url']    = esc_url( $_POST['presentation_url'] );
 		$project_post_meta['_conference_url']      = esc_url( $_POST['conference_url'] );
 		$project_post_meta['_conference_name']     = sanitize_text_field( $_POST['conference_name'] );
-		$project_post_meta['_presentation_icon']   = sanitize_text_field( $_POST['presentation_icon'] );
 		$project_post_meta['_conference_location'] = sanitize_text_field( $_POST['conference_location'] );
 		$project_post_meta['_presentation_date']   = strtotime( $_POST['presentation_date'] );
 

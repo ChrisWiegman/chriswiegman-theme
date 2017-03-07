@@ -40,10 +40,6 @@ class Latest_Tweets extends \WP_Widget {
 
 		parent::__construct( 'latest_tweets', esc_html__( 'Latest Tweets', 'chriswiegman' ), $widget_ops );
 
-		add_action( 'wp_ajax_get_latest_tweets', array( $this, 'action_wp_ajax_get_latest_tweets' ) );
-		add_action( 'wp_ajax_nopriv_get_latest_tweets', array( $this, 'action_wp_ajax_get_latest_tweets' ) );
-		add_action( 'wp_enqueue_scripts', array( $this, 'action_wp_enqueue_scripts' ) );
-
 	}
 
 	/**
@@ -51,19 +47,20 @@ class Latest_Tweets extends \WP_Widget {
 	 *
 	 * Handles AJAX request for retrieving latest tweets
 	 *
+	 * @param string $username The username to retrieve.
+	 * @param bool   $echo     True to echo or false to return in an array.
+	 *
 	 * @since 4.1.0
 	 *
-	 * @return void
+	 * @return string  Latest tweets to display
 	 */
-	public function action_wp_ajax_get_latest_tweets() {
-
-		check_ajax_referer( 'cw-latest-tweets-nonce', 'nonce' );
+	protected function get_latest_tweets( $username, $echo = true ) {
 
 		$latest_tweets = get_transient( 'cw_latest_tweets' );
 
 		if ( false === $latest_tweets ) {
 
-			$latest_tweets = array();
+			$latest_tweets = '';
 			$max_tweets    = ( isset( $_POST['count'] ) ) ? absint( $_POST['count'] ) : 7; // WPCS: input var OK.
 
 			// Require the twitter auth library.
@@ -79,7 +76,7 @@ class Latest_Tweets extends \WP_Widget {
 			$raw_tweets = $twitter_connection->get(
 				'statuses/user_timeline',
 				array(
-					'screen_name'     => sanitize_text_field( $_POST['userName'] ), // WPCS: input var ok.
+					'screen_name'     => sanitize_text_field( $username ),
 					'count'           => 200,
 					'exclude_replies' => true,
 					'include_rts'     => false,
@@ -103,63 +100,65 @@ class Latest_Tweets extends \WP_Widget {
 					$text          = $tweet->text;
 					$entity_holder = array();
 
-					foreach ( $tweet->entities->hashtags as $hashtag ) {
+					if ( isset( $tweet->entities->hashtags ) ) {
 
-						$entity          = new \stdClass();
-						$entity->start   = $hashtag->indices[0];
-						$entity->end     = $hashtag->indices[1];
-						$entity->length  = $hashtag->indices[1] - $hashtag->indices[0];
-						$entity->replace = sprintf( $hashtag_link_pattern, strtolower( $hashtag->text ), $hashtag->text );
+						foreach ( $tweet->entities->hashtags as $hashtag ) {
 
-						$entity_holder[ $entity->start ] = $entity;
+							$entity          = new \stdClass();
+							$entity->search  = '#' . $hashtag->text;
+							$entity->replace = sprintf( $hashtag_link_pattern, strtolower( $hashtag->text ), $hashtag->text );
 
+							$entity_holder[] = $entity;
+
+						}
 					}
 
-					foreach ( $tweet->entities->urls as $url ) {
+					if ( isset( $tweet->entities->urls ) ) {
 
-						$entity          = new \stdClass();
-						$entity->start   = $url->indices[0];
-						$entity->end     = $url->indices[1];
-						$entity->length  = $url->indices[1] - $url->indices[0];
-						$entity->replace = sprintf( $url_link_pattern, $url->url, $url->expanded_url, $url->display_url );
+						foreach ( $tweet->entities->urls as $url ) {
 
-						$entity_holder[ $entity->start ] = $entity;
+							$entity          = new \stdClass();
+							$entity->search  = $url->url;
+							$entity->replace = sprintf( $url_link_pattern, $url->url, $url->expanded_url, $url->display_url );
 
+							$entity_holder[] = $entity;
+
+						}
 					}
 
-					foreach ( $tweet->entities->user_mentions as $user_mention ) {
+					if ( isset( $tweet->entities->user_mentions ) ) {
 
-						$entity          = new \stdClass();
-						$entity->start   = $user_mention->indices[0];
-						$entity->end     = $user_mention->indices[1];
-						$entity->length  = $user_mention->indices[1] - $user_mention->indices[0];
-						$entity->replace = sprintf( $user_mention_link_pattern, strtolower( $user_mention->screen_name ), $user_mention->name, $user_mention->screen_name );
+						foreach ( $tweet->entities->user_mentions as $user_mention ) {
 
-						$entity_holder[ $entity->start ] = $entity;
+							$entity          = new \stdClass();
+							$entity->search  = '@' . $user_mention->screen_name;
+							$entity->replace = sprintf( $user_mention_link_pattern, strtolower( $user_mention->screen_name ), $user_mention->name, $user_mention->screen_name );
 
+							$entity_holder[] = $entity;
+
+						}
 					}
 
-					foreach ( $tweet->entities->media as $media ) {
+					if ( isset( $tweet->entities->media ) ) {
 
-						$entity          = new \stdClass();
-						$entity->start   = $media->indices[0];
-						$entity->end     = $media->indices[1];
-						$entity->length  = $media->indices[1] - $media->indices[0];
-						$entity->replace = sprintf( $media_link_pattern, $media->url, $media->expanded_url, $media->display_url );
+						foreach ( $tweet->entities->media as $media ) {
 
-						$entity_holder[ $entity->start ] = $entity;
+							$entity          = new \stdClass();
+							$entity->search  = $media->url;
+							$entity->replace = sprintf( $media_link_pattern, $media->url, $media->expanded_url, $media->display_url );
 
+							$entity_holder[] = $entity;
+
+						}
 					}
-
-					krsort( $entity_holder );
 
 					foreach ( $entity_holder as $entity ) {
-						$text = substr_replace( $text, $entity->replace, $entity->start, $entity->length );
+						$text = str_replace( $entity->search, $entity->replace, $text );
 					}
 
-					$text = '<div class="cw_tweet"><span class="cw_tweet_text">' . $text . '</span><span class="cw_tweet_time"><a href="' . esc_url( 'https://twitter.com/ChrisWiegman/statuses/' . $tweet->id ) . '" target="_blank">' . esc_html( date( 'F jS, Y g:i a', strtotime( $tweet->created_at ) ) ) . '</a></span></div>';
+					$text = '<li><div class="cw_tweet"><span class="cw_tweet_text">' . $text . '</span><span class="cw_tweet_time"><a href="' . esc_url( 'https://twitter.com/ChrisWiegman/statuses/' . $tweet->id ) . '" target="_blank">' . esc_html( date( 'M jS, Y', strtotime( $tweet->created_at ) ) ) . '</a></span></div></li>';
 
-					$latest_tweets[] = $text;
+					$latest_tweets .= $text;
 
 					$tweet_count ++;
 
@@ -171,8 +170,15 @@ class Latest_Tweets extends \WP_Widget {
 
 		}
 
-		wp_send_json_success( $latest_tweets );
+		if ( true === $echo ) {
 
+			echo $latest_tweets;
+
+		} else {
+
+			return $latest_tweets;
+
+		}
 	}
 
 	/**
@@ -223,10 +229,10 @@ class Latest_Tweets extends \WP_Widget {
 			<?php $counts = range( 1, 20 ); ?>
 
 			<select id="<?php echo esc_attr( $this->get_field_id( 'tweet_count' ) ); ?>"
-			       name="<?php echo esc_attr( $this->get_field_name( 'tweet_count' ) ); ?>">
-			<?php foreach ( $counts as $count ) { ?>
-			<option value="<?php echo esc_attr( $count ); ?>" <?php selected( $count, $tweet_count ); ?>><?php echo esc_html( $count ); ?></option>
-		<?php } ?>
+			        name="<?php echo esc_attr( $this->get_field_name( 'tweet_count' ) ); ?>">
+				<?php foreach ( $counts as $count ) { ?>
+					<option value="<?php echo esc_attr( $count ); ?>" <?php selected( $count, $tweet_count ); ?>><?php echo esc_html( $count ); ?></option>
+				<?php } ?>
 
 			</select>
 		</p>
@@ -251,6 +257,8 @@ class Latest_Tweets extends \WP_Widget {
 		$instance['user_name']   = sanitize_text_field( str_replace( '@', '', $new_instance['user_name'] ) );
 		$instance['tweet_count'] = absint( $new_instance['tweet_count'] );
 
+		delete_transient( 'cw_latest_tweets' ); // Clear the cache when we update the settings.
+
 		return $instance;
 
 	}
@@ -267,19 +275,6 @@ class Latest_Tweets extends \WP_Widget {
 	 */
 	public function widget( $args, $instance ) {
 
-		wp_enqueue_script( 'cw_tweets_js' );
-
-		wp_localize_script(
-			'cw_tweets_js',
-			'cwLatestTweets',
-			array(
-				'ajaxurl'  => admin_url( 'admin-ajax.php' ),
-				'nonce'    => wp_create_nonce( 'cw-latest-tweets-nonce' ),
-				'userName' => isset( $instance['user_name'] ) ? esc_attr( $instance['user_name'] ) : '',
-				'count'    => isset( $instance['tweet_count'] ) ? absint( $instance['tweet_count'] ) : '',
-			)
-		);
-
 		echo wp_kses_post( $args['before_widget'] );
 
 		if ( ! empty( $instance['title'] ) ) {
@@ -287,6 +282,11 @@ class Latest_Tweets extends \WP_Widget {
 		}
 
 		echo '<div id="cw-latest-tweets">';
+		echo '<ul class="tweet_list">';
+
+		$this->get_latest_tweets( $instance['user_name'] );
+
+		echo '</ul>';
 		echo '</div>';
 
 		echo wp_kses_post( $args['after_widget'] );

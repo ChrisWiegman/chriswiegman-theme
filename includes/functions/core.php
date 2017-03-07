@@ -165,19 +165,6 @@ function action_wp_enqueue_scripts() {
 
 	wp_enqueue_script( 'chriswiegman-footer', get_template_directory_uri() . '/assets/js/footer' . $min . '.js', array( 'jquery' ), CW_THEME_VERSION, false );
 
-	$vars = array(
-		'small'  => wp_get_attachment_image_src( get_post_thumbnail_id(), array( 150, 150 ) ),
-		'medium' => wp_get_attachment_image_src( get_post_thumbnail_id(), array( 250, 250 ) ),
-		'large'  => wp_get_attachment_image_src( get_post_thumbnail_id(), array( 350, 350 ) ),
-		'full'   => wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'full' ),
-	);
-
-	wp_localize_script(
-		'chriswiegman-footer',
-		'chriswiegman_featured_image',
-		$vars
-	);
-
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
@@ -344,9 +331,7 @@ function filter_wp_nav_menu_items( $items, $args ) {
 
 		$items .= '<li class="social-share last"><a href="https://github.com/ChrisWiegman" target="_blank" title="' . esc_attr( 'View My Code on Github', 'chriswiegman' ) . '"><i class="menu-icon icon-github"></i></a></li>';
 		$items .= '<li class="social-share"><a href="https://profiles.wordpress.org/chriswiegman/" target="_blank" title="' . esc_attr( 'View My Plugins on WordPress.org', 'chriswiegman' ) . '"><i class="menu-icon icon-wordpress"></i></a></li>';
-		$items .= '<li class="social-share"><a href="https://twitter.com/ChrisWiegman" target="_blank" title="' . esc_attr( 'Follow Me on Twitter', 'chriswiegman' ) . '"><i class="menu-icon icon-twitter"></i></a></li>';
-		$items .= '<li class="social-share"><a href="https://facebook.com/chris.wiegman" target="_blank" title="' . esc_attr( 'Friend Me on Facebook', 'chriswiegman' ) . '"><i class="menu-icon icon-facebook"></i></a></li>';
-		$items .= '<li class="social-share first"><a href="http://feeds.chriswiegman.com/" target="_blank" title="' . esc_attr( 'Subscribe via RSS', 'chriswiegman' ) . '"><i class="menu-icon icon-rss"></i></a></li>';
+		$items .= '<li class="social-share first"><a href="https://twitter.com/ChrisWiegman" target="_blank" title="' . esc_attr( 'Follow Me on Twitter', 'chriswiegman' ) . '"><i class="menu-icon icon-twitter"></i></a></li>';
 
 	}
 

@@ -81,7 +81,7 @@ module.exports = function ( grunt ) {
 					files : {
 						'assets/css/master.css' : 'assets/sass/master.scss',
 						'assets/css/editor.css' : 'assets/sass/editor.scss',
-						'assets/css/mood.css' : 'assets/sass/mood.scss'
+						'assets/css/mood.css'   : 'assets/sass/mood.scss'
 					}
 
 				}
@@ -105,17 +105,13 @@ module.exports = function ( grunt ) {
 					},
 
 					files : {
-						'assets/js/footer.min.js' : [
-							'assets/js/src/vendor/backstretch.js',
+						'assets/js/footer.min.js'         : [
 							'assets/js/src/progress.js',
 							'assets/js/src/skip-link-focus-fix.js',
 							'assets/js/src/scripts.js'
 						],
-						'assets/js/admin-speaking.min.js'   : [
+						'assets/js/admin-speaking.min.js' : [
 							'assets/js/src/admin-speaking.js'
-						],
-						'assets/js/cw-latest-tweets.min.js' : [
-							'assets/js/src/cw-latest-tweets.js'
 						]
 					}
 				},
@@ -132,17 +128,13 @@ module.exports = function ( grunt ) {
 					},
 
 					files : {
-						'assets/js/footer.js' : [
-							'assets/js/src/vendor/backstretch.js',
+						'assets/js/footer.js'         : [
 							'assets/js/src/progress.js',
 							'assets/js/src/skip-link-focus-fix.js',
 							'assets/js/src/scripts.js'
 						],
-						'assets/js/admin-speaking.js'   : [
+						'assets/js/admin-speaking.js' : [
 							'assets/js/src/admin-speaking.js'
-						],
-						'assets/js/cw-latest-tweets.js' : [
-							'assets/js/src/cw-latest-tweets.js'
 						]
 					}
 				}
