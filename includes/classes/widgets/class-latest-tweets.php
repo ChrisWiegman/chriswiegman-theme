@@ -48,12 +48,13 @@ class Latest_Tweets extends \WP_Widget {
 	 * Handles AJAX request for retrieving latest tweets
 	 *
 	 * @param string $username The username to retrieve.
+	 * @param bool   $echo     True to echo or false to return in an array.
 	 *
 	 * @since 4.1.0
 	 *
 	 * @return string  Latest tweets to display
 	 */
-	protected function get_latest_tweets( $username ) {
+	protected function get_latest_tweets( $username, $echo = true ) {
 
 		$latest_tweets = get_transient( 'cw_latest_tweets' );
 
@@ -169,8 +170,15 @@ class Latest_Tweets extends \WP_Widget {
 
 		}
 
-		return $latest_tweets;
+		if ( true === $echo ) {
 
+			echo $latest_tweets;
+
+		} else {
+
+			return $latest_tweets;
+
+		}
 	}
 
 	/**
@@ -276,7 +284,7 @@ class Latest_Tweets extends \WP_Widget {
 		echo '<div id="cw-latest-tweets">';
 		echo '<ul class="tweet_list">';
 
-		echo $this->get_latest_tweets( $instance['user_name'] );
+		$this->get_latest_tweets( $instance['user_name'] );
 
 		echo '</ul>';
 		echo '</div>';
