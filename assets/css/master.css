@@ -1104,7 +1104,6 @@ ul.archive-projects {
   margin-left: 60px;
   padding: 0 40px; }
   ul.archive-projects li {
-    font-size: 0.9rem;
     margin: 0; }
     ul.archive-projects li .fa {
       margin: 0;
@@ -1117,15 +1116,19 @@ ul.archive-projects {
         margin-bottom: 0; }
         ul.archive-projects li .entry-header .entry-title a {
           border-bottom: none; }
-  ul.archive-projects .entry-meta .project-status,
-  ul.archive-projects .entry-meta .project-type {
-    font-style: italic;
-    font-weight: bold; }
+  ul.archive-projects .entry-meta {
+    border-bottom: 1px solid #efefef;
+    font-size: 0.9rem;
+    margin-bottom: 10px; }
+    ul.archive-projects .entry-meta .project-status,
+    ul.archive-projects .entry-meta .project-type {
+      font-style: italic;
+      font-weight: bold; }
   ul.archive-projects .divider {
     border-bottom: 1px solid #efefef;
     display: block;
     height: 1px;
-    margin: 30px auto;
+    margin: 0 auto 30px auto;
     width: 60%; }
 
 .projects-note {
@@ -1143,6 +1146,7 @@ ul.archive-speaking {
       margin: 0;
       padding: 0; }
     ul.archive-speaking li .entry-header {
+      font-size: 0.9rem;
       padding: 0; }
       ul.archive-speaking li .entry-header .entry-title {
         border-bottom: none;
