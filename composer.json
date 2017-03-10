@@ -2,7 +2,6 @@
 	"name":              "chriswiegman",
 	"description":       "The theme for www.chriswiegman.com.",
 	"type":              "wordpress-theme",
-	"keywords":          [],
 	"homepage":          "https://www.chriswiegman.com/",
 	"license":           "GPLv2.0+",
 	"authors":           [
