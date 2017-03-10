@@ -78,8 +78,7 @@ module.exports = function ( grunt ) {
 
 					files : {
 						'assets/css/master.css' : 'assets/sass/master.scss',
-						'assets/css/editor.css' : 'assets/sass/editor.scss',
-						'assets/css/mood.css'   : 'assets/sass/mood.scss'
+						'assets/css/editor.css' : 'assets/sass/editor.scss'
 					}
 				}
 			},
@@ -212,7 +211,7 @@ module.exports = function ( grunt ) {
 	);
 
 	// A very basic default task.
-	grunt.registerTask( 'default', ['phpunit', 'jshint', 'clean', 'sass', 'postcss', 'cssmin', 'jshint', 'uglify:production', 'uglify:dev', 'makepot'] );
+	grunt.registerTask( 'default', ['clean', 'phpunit', 'jshint', 'sass', 'postcss', 'cssmin', 'jshint', 'uglify:production', 'uglify:dev', 'makepot'] );
 	grunt.registerTask( 'dev', ['default', 'watch'] );
 
 };
