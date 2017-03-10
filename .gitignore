@@ -4,5 +4,4 @@ vendor
 !assets/css/vendor
 !assets/js/src/vendor
 .DS_Store
-composer.lock
 phploy.ini
