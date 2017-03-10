@@ -30,20 +30,18 @@ module.exports = function ( grunt ) {
 			/**
 			 * Autoprefix CSS
 			 */
-			autoprefixer : {
+			postcss: {
 
-				options : {
-					browsers : ['last 5 versions'],
-					map      : true
+  			options: {
+    			map: true,
+    			processors: [
+						require('autoprefixer')({browsers: ['last 5 versions']})
+					]
 				},
 
-				files : {
-					expand  : true,
-					flatten : true,
-					src     : ['assets/css/*.css'],
-					dest    : 'assets/css'
+				dist: {
+					src: 'assets/css/*.css'
 				}
-
 			},
 
 			/**
@@ -83,9 +81,7 @@ module.exports = function ( grunt ) {
 						'assets/css/editor.css' : 'assets/sass/editor.scss',
 						'assets/css/mood.css'   : 'assets/sass/mood.scss'
 					}
-
 				}
-
 			},
 
 			/**
@@ -138,7 +134,6 @@ module.exports = function ( grunt ) {
 						]
 					}
 				}
-
 			},
 
 			/**
@@ -185,19 +180,6 @@ module.exports = function ( grunt ) {
 			},
 
 			/**
-			 * A better browser reloader
-			 */
-			browserSync : {
-				bsFiles : {
-					src : 'assets/**/*.*'
-				},
-				options : {
-					proxy     : 'www.chriswiegman.dev',
-					watchTask : true
-				}
-			},
-
-			/**
 			 * Watch scripts and styles for changes
 			 */
 			watch : {
@@ -212,7 +194,7 @@ module.exports = function ( grunt ) {
 						'assets/sass/**/*'
 					],
 
-					tasks : ['clean:styles', 'sass', 'autoprefixer', 'cssmin']
+					tasks : ['clean:styles', 'sass', 'postcss', 'cssmin']
 
 				},
 
@@ -230,7 +212,7 @@ module.exports = function ( grunt ) {
 	);
 
 	// A very basic default task.
-	grunt.registerTask( 'default', ['phpunit', 'jshint', 'clean:styles', 'sass', 'autoprefixer', 'cssmin', 'jshint', 'clean:scripts', 'uglify:production', 'uglify:dev', 'makepot'] );
-	grunt.registerTask( 'dev', ['default', 'browserSync', 'watch'] );
+	grunt.registerTask( 'default', ['phpunit', 'jshint', 'clean', 'sass', 'postcss', 'cssmin', 'jshint', 'uglify:production', 'uglify:dev', 'makepot'] );
+	grunt.registerTask( 'dev', ['default', 'watch'] );
 
 };
