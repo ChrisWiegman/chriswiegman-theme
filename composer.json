@@ -17,8 +17,8 @@
 		"php": ">=5.3"
 	},
 	"require-dev":       {
-		"phpunit/phpunit": "*@stable",
-		"10up/wp_mock":    "dev-master",
-		"banago/phploy":   "*@stable"
+		"phpunit/phpunit": "6.0.8",
+    "10up/wp_mock": 	 "dev-master",
+		"banago/phploy":   "4.6.3"
 	}
 }
