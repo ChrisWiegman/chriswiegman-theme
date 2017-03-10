@@ -211,7 +211,7 @@ module.exports = function ( grunt ) {
 	);
 
 	// A very basic default task.
-	grunt.registerTask( 'default', ['phpunit', 'jshint', 'clean', 'sass', 'postcss', 'cssmin', 'jshint', 'uglify:production', 'uglify:dev', 'makepot'] );
+	grunt.registerTask( 'default', ['clean', 'phpunit', 'jshint', 'sass', 'postcss', 'cssmin', 'jshint', 'uglify:production', 'uglify:dev', 'makepot'] );
 	grunt.registerTask( 'dev', ['default', 'watch'] );
 
 };
