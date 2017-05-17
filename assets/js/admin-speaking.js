@@ -1,4 +1,4 @@
-jQuery(document).ready(function(a) {
-    a("#presentation_date").datepicker();
+jQuery(document).ready(function(e) {
+    e("#presentation_date").datepicker();
 });
 //# sourceMappingURL=admin-speaking.js.map
