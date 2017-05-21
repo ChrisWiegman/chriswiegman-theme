@@ -125,8 +125,8 @@ q {
 
 @font-face {
   font-family: 'cw';
-  src: url("/app/themes/chriswiegman-theme/assets/font/cw.eot");
-  src: url("/app/themes/chriswiegman-theme/assets/font/cw.eot#iefix") format("embedded-opentype"), url("/app/themes/chriswiegman-theme/assets/font/cw.woff2") format("woff2"), url("/app/themes/chriswiegman-theme/assets/font/cw.woff") format("woff"), url("/app/themes/chriswiegman-theme/assets/font/cw.ttf") format("truetype"), url("/app/themes/chriswiegman-theme/assets/   font/cw.svg#cw") format("svg");
+  src: url("/content/themes/chriswiegman-theme/assets/font/cw.eot");
+  src: url("/content/themes/chriswiegman-theme/assets/font/cw.eot#iefix") format("embedded-opentype"), url("/content/themes/chriswiegman-theme/assets/font/cw.woff2") format("woff2"), url("/content/themes/chriswiegman-theme/assets/font/cw.woff") format("woff"), url("/content/themes/chriswiegman-theme/assets/font/cw.ttf") format("truetype"), url("/content/themes/chriswiegman-theme/assets/   font/cw.svg#cw") format("svg");
   font-weight: normal;
   font-style: normal; }
 
