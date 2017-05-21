@@ -3,8 +3,8 @@ module.exports = function ( grunt ) {
 	// Start out by loading the grunt modules we'll need
 	require( 'load-grunt-tasks' )( grunt );
 
-	// Show elapsed time
-	require( 'time-grunt' )( grunt );
+    // Show elapsed time
+    require('time-grunt')(grunt);
 
 	grunt.initConfig(
 		{
@@ -95,7 +95,7 @@ module.exports = function ( grunt ) {
 						preserveComments : false,
 						sourceMap        : false,
 						mangle           : {
-							except : ['jQuery']
+                            reserved : ['jQuery']
 						}
 					},
 
@@ -118,7 +118,7 @@ module.exports = function ( grunt ) {
 						preserveComments : true,
 						sourceMap        : true,
 						mangle           : {
-							except : ['jQuery']
+                            reserved : ['jQuery']
 						}
 					},
 

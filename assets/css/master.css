@@ -76,9 +76,11 @@ html {
   line-height: 1.625; }
 
 * {
-  box-sizing: border-box; }
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box; }
   *:before, *:after {
-    box-sizing: border-box; }
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box; }
 
 body {
   background: #fff;
@@ -123,8 +125,8 @@ q {
 
 @font-face {
   font-family: 'cw';
-  src: url("/app/themes/chriswiegman-theme/assets/font/cw.eot");
-  src: url("/app/themes/chriswiegman-theme/assets/font/cw.eot#iefix") format("embedded-opentype"), url("/app/themes/chriswiegman-theme/assets/font/cw.woff2") format("woff2"), url("/app/themes/chriswiegman-theme/assets/font/cw.woff") format("woff"), url("/app/themes/chriswiegman-theme/assets/font/cw.ttf") format("truetype"), url("/app/themes/chriswiegman-theme/assets/   font/cw.svg#cw") format("svg");
+  src: url("/content/themes/chriswiegman-theme/assets/font/cw.eot");
+  src: url("/content/themes/chriswiegman-theme/assets/font/cw.eot#iefix") format("embedded-opentype"), url("/content/themes/chriswiegman-theme/assets/font/cw.woff2") format("woff2"), url("/content/themes/chriswiegman-theme/assets/font/cw.woff") format("woff"), url("/content/themes/chriswiegman-theme/assets/font/cw.ttf") format("truetype"), url("/content/themes/chriswiegman-theme/assets/   font/cw.svg#cw") format("svg");
   font-weight: normal;
   font-style: normal; }
 
@@ -344,6 +346,8 @@ dd {
 img {
   height: auto;
   margin: 0 1em 1em 0;
+  -webkit-transition: 0.5s;
+  -o-transition: 0.5s;
   transition: 0.5s;
   max-width: 100%; }
 
@@ -370,6 +374,8 @@ body {
     max-width: 1152px;
     overflow: hidden;
     padding-top: 115px;
+    -webkit-transition: 0.5s;
+    -o-transition: 0.5s;
     transition: 0.5s; }
   #page .site-header {
     background-color: #fff;
@@ -379,6 +385,8 @@ body {
     padding: 18px 40px;
     position: fixed;
     top: 0;
+    -webkit-transition: 0.5s;
+    -o-transition: 0.5s;
     transition: 0.5s;
     width: 100%;
     z-index: 10000; }
@@ -394,6 +402,8 @@ body {
         height: 78px;
         opacity: 0.2;
         position: absolute;
+        -webkit-transition: height 0.5s;
+        -o-transition: height 0.5s;
         transition: height 0.5s; }
     #page .site-header .wrap {
       margin: 0 auto;
@@ -405,6 +415,8 @@ body {
         font-size: 180%;
         line-height: 1;
         margin-top: 4px;
+        -webkit-transition: 0.5s;
+        -o-transition: 0.5s;
         transition: 0.5s; }
         #page .site-header .wrap .site-title .logo-chris {
           color: #9b9b9b; }
@@ -413,6 +425,8 @@ body {
       #page .site-header .wrap .main-navigation {
         margin: 0;
         overflow: hidden;
+        -webkit-transition: 0.5s;
+        -o-transition: 0.5s;
         transition: 0.5s; }
     #page .site-header.scrolled {
       height: 39px;
@@ -429,6 +443,8 @@ body {
   #page .site-content .widget-area {
     float: right;
     width: 30%;
+    -webkit-transition: 0.5s;
+    -o-transition: 0.5s;
     transition: 0.5s; }
   #page .site-footer {
     background-color: #fff;
@@ -611,6 +627,8 @@ input:hover[type="button"], input:hover[type="submit"] {
 a {
   border-bottom: 1px solid #fff;
   color: #cf5300;
+  -webkit-transition: all .2s ease-in-out;
+  -o-transition: all .2s ease-in-out;
   transition: all .2s ease-in-out;
   text-decoration: none; }
   a img {
@@ -624,6 +642,8 @@ a {
     color: #356;
     text-decoration: none; }
   a:visited {
+    -webkit-transition: all .5s ease-in-out;
+    -o-transition: all .5s ease-in-out;
     transition: all .5s ease-in-out; }
 
 .main-navigation {
@@ -640,6 +660,8 @@ a {
     float: left;
     padding: 8px 20px;
     position: relative;
+    -webkit-transition: 0.5s;
+    -o-transition: 0.5s;
     transition: 0.5s; }
     .main-navigation li ul li {
       padding: 5px 20px; }
@@ -666,7 +688,8 @@ a {
       color: #cf5300; }
   .main-navigation ul ul {
     background-color: #fff;
-    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+    -webkit-box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
     float: left;
     position: absolute;
     top: 3em;
@@ -741,7 +764,8 @@ a {
   .screen-reader-text:hover, .screen-reader-text:active, .screen-reader-text:focus {
     background-color: #f1f1f1;
     border-radius: 3px;
-    box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+    -webkit-box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+            box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
     clip: auto !important;
     color: #21759b;
     display: block;
@@ -922,6 +946,8 @@ h1.page-title {
   line-height: 1.6;
   margin: 0 0 3rem 0;
   padding: 0;
+  -webkit-transition: 0.5s;
+  -o-transition: 0.5s;
   transition: 0.5s; }
   .hentry .gist {
     font-size: 0.875rem;
@@ -1234,20 +1260,30 @@ object {
 @media screen and (max-width: 1192px) {
   #page .site-header .wrap .site-title {
     margin-left: 20px;
+    -webkit-transition: 0.5s;
+    -o-transition: 0.5s;
     transition: 0.5s; }
   #page .site-header .wrap .main-navigation {
     margin-right: 20px;
+    -webkit-transition: 0.5s;
+    -o-transition: 0.5s;
     transition: 0.5s; } }
 
 @media screen and (max-width: 1152px) {
   .hentry {
     border-left: none;
+    -webkit-transition: 0.5s;
+    -o-transition: 0.5s;
     transition: 0.5s; }
   #page .site-content {
     padding-top: 115px;
+    -webkit-transition: 0.5s;
+    -o-transition: 0.5s;
     transition: 0.5s; }
     #page .site-content .widget-area {
       width: 33%;
+      -webkit-transition: 0.5s;
+      -o-transition: 0.5s;
       transition: 0.5s; } }
 
 @media screen and (max-width: 980px) {
@@ -1299,6 +1335,8 @@ object {
       width: 100%; }
       #page .site-header .wrap .main-navigation li {
         padding: 2px 0 2px 10px;
+        -webkit-transition: 0.5s;
+        -o-transition: 0.5s;
         transition: 0.5s;
         width: 100%; }
       #page .site-header .wrap .main-navigation li.social-share {
@@ -1310,7 +1348,8 @@ object {
         float: none;
         width: 100%; }
         #page .site-header .wrap .main-navigation ul ul {
-          box-shadow: none;
+          -webkit-box-shadow: none;
+                  box-shadow: none;
           float: none;
           left: -999em;
           position: relative;
