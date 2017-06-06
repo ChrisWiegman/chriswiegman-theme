@@ -43,8 +43,6 @@ class Speaking {
 	 * @since 3.1.0
 	 *
 	 * @param \WP_Query $query The query object.
-	 *
-	 * @return void
 	 */
 	public function action_pre_get_posts( $query ) {
 
@@ -87,8 +85,6 @@ class Speaking {
 	 * Adds the metabox for the Speaking CPT.
 	 *
 	 * @since 1.0.0
-	 *
-	 * @return void
 	 */
 	public function add_speaking_metabox() {
 
@@ -109,8 +105,6 @@ class Speaking {
 	 * Adds CSS and JS for the speaking content type.
 	 *
 	 * @since 1.0.0
-	 *
-	 * @return void
 	 */
 	public function admin_enqueue_scripts() {
 
@@ -135,8 +129,6 @@ class Speaking {
 	 * Registers the "speaking" CPT.
 	 *
 	 * @since 1.0.0
-	 *
-	 * @return void
 	 */
 	public function create_speaking_type() {
 
@@ -263,8 +255,6 @@ class Speaking {
 	 * Echos the content of the metabox for this CPT.
 	 *
 	 * @since 1.0.0
-	 *
-	 * @return void
 	 */
 	public function speaking_metabox() {
 
@@ -382,6 +372,7 @@ class Speaking {
 	 */
 	public function speaking_save_meta( $post_id, $post ) {
 
+		// @codingStandardsIgnoreStart
 		// Verify nonce.
 		if ( ! isset( $_POST['speaking_post_noncename'] ) || ! wp_verify_nonce( $_POST['speaking_post_noncename'], plugin_basename( __FILE__ ) ) ) {
 			return $post_id;
@@ -422,6 +413,7 @@ class Speaking {
 		}
 
 		return null;
+		// @codingStandardsIgnoreEnd
 
 	}
 

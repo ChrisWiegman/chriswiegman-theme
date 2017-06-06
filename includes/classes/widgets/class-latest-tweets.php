@@ -48,7 +48,7 @@ class Latest_Tweets extends \WP_Widget {
 	 * Handles AJAX request for retrieving latest tweets
 	 *
 	 * @param string $username The username to retrieve.
-	 * @param bool   $echo     True to echo or false to return in an array.
+	 * @param bool   $echo True to echo or false to return in an array.
 	 *
 	 * @since 4.1.0
 	 *
@@ -61,7 +61,7 @@ class Latest_Tweets extends \WP_Widget {
 		if ( false === $latest_tweets ) {
 
 			$latest_tweets = '';
-			$max_tweets    = ( isset( $_POST['count'] ) ) ? absint( $_POST['count'] ) : 7; // WPCS: input var OK.
+			$max_tweets    = ( isset( $_POST['count'] ) ) ? absint( $_POST['count'] ) : 7; // WPCS: input var OK. CSRF ok.
 
 			// Require the twitter auth library.
 			require( CW_THEME_INCLUDES . '/vendor/twitteroauth/autoload.php' );
@@ -162,31 +162,28 @@ class Latest_Tweets extends \WP_Widget {
 
 					$tweet_count ++;
 
-				}
-			}
+				} // End foreach().
+			} // End if().
 
 			// Save our new transient.
 			set_transient( 'cw_latest_tweets', $latest_tweets, 3600 );
 
-		}
+		} // End if().
 
 		if ( true === $echo ) {
 
 			echo $latest_tweets;
 
-		} else {
-
-			return $latest_tweets;
-
 		}
+
+		return $latest_tweets;
+
 	}
 
 	/**
 	 * Handles any scripts needed by the front-end of the site.
 	 *
 	 * @since 4.1.0
-	 *
-	 * @return void
 	 */
 	public static function action_wp_enqueue_scripts() {
 
@@ -202,8 +199,6 @@ class Latest_Tweets extends \WP_Widget {
 	 * @since 4.1.0
 	 *
 	 * @param array $instance Previously saved values from database.
-	 *
-	 * @return void
 	 */
 	public function form( $instance ) {
 
@@ -214,22 +209,17 @@ class Latest_Tweets extends \WP_Widget {
 		?>
 		<p>
 			<label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php esc_html_e( 'Title:', 'chriswiegman' ); ?></label>
-			<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"
-			       name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>" type="text"
-			       value="<?php echo esc_attr( esc_attr( $title ) ); ?>"/>
+			<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>" type="text" value="<?php echo esc_attr( esc_attr( $title ) ); ?>"/>
 		</p>
 		<p>
 			<label for="<?php echo esc_attr( $this->get_field_id( 'user_name' ) ); ?>"><?php esc_html_e( 'Twitter User:', 'chriswiegman' ); ?></label>
-			<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'user_name' ) ); ?>"
-			       name="<?php echo esc_attr( $this->get_field_name( 'user_name' ) ); ?>" type="text"
-			       value="<?php echo esc_attr( esc_attr( $user_name ) ); ?>"/>
+			<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'user_name' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'user_name' ) ); ?>" type="text" value="<?php echo esc_attr( esc_attr( $user_name ) ); ?>"/>
 		</p>
 		<p>
 			<label for="<?php echo esc_attr( $this->get_field_id( 'tweet_count' ) ); ?>"><?php esc_html_e( 'Number of Tweets:', 'chriswiegman' ); ?></label>
 			<?php $counts = range( 1, 20 ); ?>
 
-			<select id="<?php echo esc_attr( $this->get_field_id( 'tweet_count' ) ); ?>"
-			        name="<?php echo esc_attr( $this->get_field_name( 'tweet_count' ) ); ?>">
+			<select id="<?php echo esc_attr( $this->get_field_id( 'tweet_count' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'tweet_count' ) ); ?>">
 				<?php foreach ( $counts as $count ) { ?>
 					<option value="<?php echo esc_attr( $count ); ?>" <?php selected( $count, $tweet_count ); ?>><?php echo esc_html( $count ); ?></option>
 				<?php } ?>
@@ -268,10 +258,8 @@ class Latest_Tweets extends \WP_Widget {
 	 *
 	 * @since 4.1.0
 	 *
-	 * @param array $args     Widget arguments.
+	 * @param array $args Widget arguments.
 	 * @param array $instance Saved values from database.
-	 *
-	 * @return void
 	 */
 	public function widget( $args, $instance ) {
 
