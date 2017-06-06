@@ -125,8 +125,8 @@ q {
 
 @font-face {
   font-family: 'cw';
-  src: url("/content/themes/chriswiegman-theme/assets/font/cw.eot");
-  src: url("/content/themes/chriswiegman-theme/assets/font/cw.eot#iefix") format("embedded-opentype"), url("/content/themes/chriswiegman-theme/assets/font/cw.woff2") format("woff2"), url("/content/themes/chriswiegman-theme/assets/font/cw.woff") format("woff"), url("/content/themes/chriswiegman-theme/assets/font/cw.ttf") format("truetype"), url("/content/themes/chriswiegman-theme/assets/   font/cw.svg#cw") format("svg");
+  src: url("/content/themes/chriswiegman-theme/assets/font/cw.eot?90184104");
+  src: url("/content/themes/chriswiegman-theme/assets/font/cw.eot?90184104#iefix") format("embedded-opentype"), url("/content/themes/chriswiegman-theme/assets/font/cw.woff2?90184104") format("woff2"), url("/content/themes/chriswiegman-theme/assets/font/cw.woff?90184104") format("woff"), url("/content/themes/chriswiegman-theme/assets/font/cw.ttf?90184104") format("truetype"), url("/content/themes/chriswiegman-theme/assets/font/cw.svg?90184104#cw") format("svg");
   font-weight: normal;
   font-style: normal; }
 
@@ -159,6 +159,21 @@ q {
 .icon-twitter:before {
   content: '\f099'; }
 
+.icon-facebook:before {
+  content: '\f09a'; }
+
+.icon-rss:before {
+  content: '\f09e'; }
+
+.icon-menu:before {
+  content: '\f0c9'; }
+
+.icon-gplus:before {
+  content: '\f0d5'; }
+
+.icon-linkedin:before {
+  content: '\f0e1'; }
+
 .icon-sitemap:before {
   content: '\f0e8'; }
 
@@ -190,7 +205,7 @@ q {
   content: '\f26c'; }
 
 body {
-  color: #5f5f5f;
+  color: #1f1f1f;
   font-family: Helvetica, Arial, sans-serif; }
 
 h1,
@@ -363,7 +378,7 @@ th {
 
 html,
 body {
-  background-color: #f0f3f4; }
+  background-color: #323a41; }
 
 #page {
   margin: 0 auto; }
@@ -371,7 +386,7 @@ body {
     text-align: center; }
   #page .site-content {
     margin: 0 auto;
-    max-width: 1152px;
+    max-width: 1400px;
     overflow: hidden;
     padding-top: 115px;
     -webkit-transition: 0.5s;
@@ -407,7 +422,7 @@ body {
         transition: height 0.5s; }
     #page .site-header .wrap {
       margin: 0 auto;
-      max-width: 1152px; }
+      max-width: 1400px; }
       #page .site-header .wrap .site-title {
         float: left;
         font-family: Verdana, Arial, Helvetica, sans-serif;
@@ -419,9 +434,9 @@ body {
         -o-transition: 0.5s;
         transition: 0.5s; }
         #page .site-header .wrap .site-title .logo-chris {
-          color: #9b9b9b; }
+          color: #999; }
         #page .site-header .wrap .site-title .logo-wiegman {
-          color: #356; }
+          color: #323a41; }
       #page .site-header .wrap .main-navigation {
         margin: 0;
         overflow: hidden;
@@ -447,15 +462,15 @@ body {
     -o-transition: 0.5s;
     transition: 0.5s; }
   #page .site-footer {
-    background-color: #fff;
-    color: #999;
+    background-color: #272d33;
+    color: #8a96a0;
     font-size: 75%;
     width: 100%;
     opacity: 0.9;
     text-align: center; }
     #page .site-footer a {
-      border-bottom: 1px solid #999;
-      color: #3e3e3e; }
+      border-bottom: 1px solid #8a96a0;
+      color: #fff; }
       #page .site-footer a:hover {
         border-bottom: 1px solid #cf5300;
         color: #cf5300; }
@@ -464,7 +479,7 @@ body {
       margin: 10px 0; }
 
 input, select, textarea {
-  background-color: #f0f3f4;
+  background-color: #f8f8f8;
   border: 1px solid #ccc;
   font-size: 1.2rem;
   padding: 8px;
@@ -829,7 +844,7 @@ a {
   clear: both; }
 
 .widget {
-  background-color: #f0f3f4;
+  background-color: #f8f8f8;
   margin: 0 0 1em;
   padding: 15px; }
   .widget a {
@@ -904,7 +919,7 @@ a {
   .jetpack_subscription_widget form input[type=email],
   .jetpack_subscription_widget form select {
     background-color: #fff;
-    color: #5f5f5f;
+    color: #1f1f1f;
     font-size: 1.2rem;
     padding: .5rem;
     width: 100%; }
@@ -941,7 +956,6 @@ h1.page-title {
 
 .hentry {
   background-color: #fff;
-  border: 1px solid #ddd;
   font-size: 1.2rem;
   line-height: 1.6;
   margin: 0 0 3rem 0;
@@ -966,7 +980,7 @@ h1.page-title {
       font-size: 2.25rem;
       font-weight: 300; }
       .hentry .entry-header .entry-title a {
-        color: #5f5f5f;
+        color: #1f1f1f;
         text-decoration: none; }
         .hentry .entry-header .entry-title a:hover {
           border-bottom: none;
@@ -1039,7 +1053,6 @@ h1.page-title {
 .author-box,
 .comments-area {
   background-color: #fff;
-  border-top: 1px solid #f8f8f8;
   margin: 0 40px;
   overflow: hidden;
   padding: 40px 0; }
@@ -1055,7 +1068,6 @@ h1.page-title {
     width: 100%; }
 
 .author-box {
-  border: 1px solid #ddd;
   margin: 0 0 3em 0;
   padding: 25px; }
 
@@ -1063,7 +1075,6 @@ h1.page-title {
   margin-bottom: 40px; }
 
 .comments-area {
-  border: 1px solid #ddd;
   margin: 0 0 3em 0;
   padding: 40px 0; }
   .comments-area .no-comments {
@@ -1088,10 +1099,12 @@ h1.page-title {
       .comments-area ol li ol {
         padding-top: 20px; }
         .comments-area ol li ol li {
-          background-color: #f0f3f4;
-          border-left: none; }
+          background-color: #323a41;
+          border-left: none;
+          color: #ccc; }
           .comments-area ol li ol li a {
-            border-bottom: 1px solid #ccc; }
+            color: #ccc;
+            border-bottom: none; }
             .comments-area ol li ol li a:focus {
               outline: thin dotted #fff; }
           .comments-area ol li ol li ol li {
@@ -1101,9 +1114,11 @@ h1.page-title {
               .comments-area ol li ol li ol li a:focus {
                 outline: thin dotted #ccc; }
             .comments-area ol li ol li ol li ol li {
-              background-color: #f0f3f4; }
+              background-color: #323a41;
+              color: #ccc; }
               .comments-area ol li ol li ol li ol li a {
-                border-bottom: 1px solid #ccc; }
+                color: #ccc;
+                border-bottom: none; }
                 .comments-area ol li ol li ol li ol li a:focus {
                   outline: thin dotted #fff; }
               .comments-area ol li ol li ol li ol li ol li {
@@ -1257,19 +1272,7 @@ object {
 .gallery-columns-9 .gallery-item {
   max-width: 11.11%; }
 
-@media screen and (max-width: 1192px) {
-  #page .site-header .wrap .site-title {
-    margin-left: 20px;
-    -webkit-transition: 0.5s;
-    -o-transition: 0.5s;
-    transition: 0.5s; }
-  #page .site-header .wrap .main-navigation {
-    margin-right: 20px;
-    -webkit-transition: 0.5s;
-    -o-transition: 0.5s;
-    transition: 0.5s; } }
-
-@media screen and (max-width: 1152px) {
+@media screen and (max-width: 1400px) {
   .hentry {
     border-left: none;
     -webkit-transition: 0.5s;
@@ -1284,7 +1287,17 @@ object {
       width: 33%;
       -webkit-transition: 0.5s;
       -o-transition: 0.5s;
-      transition: 0.5s; } }
+      transition: 0.5s; }
+  #page .site-header .wrap .site-title {
+    margin-left: 20px;
+    -webkit-transition: 0.5s;
+    -o-transition: 0.5s;
+    transition: 0.5s; }
+  #page .site-header .wrap .main-navigation {
+    margin-right: 20px;
+    -webkit-transition: 0.5s;
+    -o-transition: 0.5s;
+    transition: 0.5s; } }
 
 @media screen and (max-width: 980px) {
   .single .site-main, .page .site-main {
@@ -1316,16 +1329,28 @@ object {
     height: 39px;
     padding: 0 40px; }
     #page .site-header .wrap .menu-toggle {
-      color: #5f5f5f;
+      color: #1f1f1f;
       display: inline-block;
-      font-weight: 400;
+      font-weight: 900;
       padding: 8px 20px 0 0;
       float: right; }
     #page .site-header .wrap .main-navigation {
-      background-color: #fff;
-      color: #5f5f5f;
+      background: #fff;
+      /* Old browsers */
+      /* FF3.6-15 */
+      background: -webkit-linear-gradient(top, #fff 0%, #ccc 100%);
+      /* Chrome10-25,Safari5.1-6 */
+      background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#ccc));
+      background: -o-linear-gradient(top, #fff 0%, #ccc 100%);
+      background: linear-gradient(to bottom, #fff 0%, #ccc 100%);
+      /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$white', endColorstr='$light-grey',GradientType=0 );
+      /* IE6-9 */
+      border-bottom: 1px solid #ccc;
+      color: #1f1f1f;
       clear: both;
       float: none;
+      left: 0;
       margin: 0;
       max-width: 100%;
       padding: 0;
@@ -1334,15 +1359,18 @@ object {
       top: 39px;
       width: 100%; }
       #page .site-header .wrap .main-navigation li {
-        padding: 2px 0 2px 10px;
+        border-bottom: 1px solid #ccc;
+        font-size: 150%;
+        padding: 15px 0 15px 15px;
         -webkit-transition: 0.5s;
         -o-transition: 0.5s;
         transition: 0.5s;
         width: 100%; }
       #page .site-header .wrap .main-navigation li.social-share {
+        border-bottom: none;
         clear: none !important;
         float: left;
-        margin: 4px 4px 8px 4px;
+        margin: 4px 15px 8px 15px;
         width: 30px; }
       #page .site-header .wrap .main-navigation ul {
         float: none;

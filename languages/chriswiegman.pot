@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ChrisWiegman 5.9.11\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/style\n"
-"POT-Creation-Date: 2017-05-21 15:23:19+00:00\n"
+"POT-Creation-Date: 2017-06-06 23:32:40+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -113,191 +113,191 @@ msgstr ""
 msgid "Menu"
 msgstr ""
 
-#: includes/classes/post-types/class-project.php:47
+#: includes/classes/post-types/class-project.php:45
 msgid "Project URL"
 msgstr ""
 
-#: includes/classes/post-types/class-project.php:76
+#: includes/classes/post-types/class-project.php:72
 msgid "Add New Project"
 msgstr ""
 
-#: includes/classes/post-types/class-project.php:77
+#: includes/classes/post-types/class-project.php:73
 msgid "New Project"
 msgstr ""
 
-#: includes/classes/post-types/class-project.php:78
+#: includes/classes/post-types/class-project.php:74
 msgid "Edit Project"
 msgstr ""
 
-#: includes/classes/post-types/class-project.php:79
+#: includes/classes/post-types/class-project.php:75
 msgid "View Project"
 msgstr ""
 
-#: includes/classes/post-types/class-project.php:80
+#: includes/classes/post-types/class-project.php:76
 msgid "All Projects"
 msgstr ""
 
-#: includes/classes/post-types/class-project.php:81
+#: includes/classes/post-types/class-project.php:77
 msgid "Search Projects"
 msgstr ""
 
-#: includes/classes/post-types/class-project.php:82
+#: includes/classes/post-types/class-project.php:78
 msgid "Parent Projects:"
 msgstr ""
 
-#: includes/classes/post-types/class-project.php:83
+#: includes/classes/post-types/class-project.php:79
 msgid "No projects found."
 msgstr ""
 
-#: includes/classes/post-types/class-project.php:84
+#: includes/classes/post-types/class-project.php:80
 msgid "No projects found in Trash."
 msgstr ""
 
-#: includes/classes/post-types/class-project.php:86
+#: includes/classes/post-types/class-project.php:82
 msgid "A place to list ongoing and archived projects"
 msgstr ""
 
-#: includes/classes/post-types/class-project.php:129
+#: includes/classes/post-types/class-project.php:123
 msgid "URL"
 msgstr ""
 
-#: includes/classes/post-types/class-project.php:207
+#: includes/classes/post-types/class-project.php:201
 msgid "Search Project Types"
 msgstr ""
 
-#: includes/classes/post-types/class-project.php:208
+#: includes/classes/post-types/class-project.php:202
 msgid "All Project Types"
 msgstr ""
 
-#: includes/classes/post-types/class-project.php:209
+#: includes/classes/post-types/class-project.php:203
 msgid "Parent Project Type"
 msgstr ""
 
-#: includes/classes/post-types/class-project.php:210
+#: includes/classes/post-types/class-project.php:204
 msgid "Parent Project Type:"
 msgstr ""
 
-#: includes/classes/post-types/class-project.php:211
+#: includes/classes/post-types/class-project.php:205
 msgid "Edit Project Type"
 msgstr ""
 
-#: includes/classes/post-types/class-project.php:212
+#: includes/classes/post-types/class-project.php:206
 msgid "Update Project Type"
 msgstr ""
 
-#: includes/classes/post-types/class-project.php:213
+#: includes/classes/post-types/class-project.php:207
 msgid "Add New Project Type"
 msgstr ""
 
-#: includes/classes/post-types/class-project.php:214
+#: includes/classes/post-types/class-project.php:208
 msgid "New Project Type Name"
 msgstr ""
 
-#: includes/classes/post-types/class-project.php:215
+#: includes/classes/post-types/class-project.php:209
 msgid "Type"
 msgstr ""
 
-#: includes/classes/post-types/class-project.php:232
+#: includes/classes/post-types/class-project.php:226
 msgid "Search Project Statuses"
 msgstr ""
 
-#: includes/classes/post-types/class-project.php:233
+#: includes/classes/post-types/class-project.php:227
 msgid "All Project Statuses"
 msgstr ""
 
-#: includes/classes/post-types/class-project.php:234
+#: includes/classes/post-types/class-project.php:228
 msgid "Parent Project Status"
 msgstr ""
 
-#: includes/classes/post-types/class-project.php:235
+#: includes/classes/post-types/class-project.php:229
 msgid "Parent Project Status:"
 msgstr ""
 
-#: includes/classes/post-types/class-project.php:236
+#: includes/classes/post-types/class-project.php:230
 msgid "Edit Project Status"
 msgstr ""
 
-#: includes/classes/post-types/class-project.php:237
+#: includes/classes/post-types/class-project.php:231
 msgid "Update Project Status"
 msgstr ""
 
-#: includes/classes/post-types/class-project.php:238
+#: includes/classes/post-types/class-project.php:232
 msgid "Add New Project Status"
 msgstr ""
 
-#: includes/classes/post-types/class-project.php:239
+#: includes/classes/post-types/class-project.php:233
 msgid "New Project Status Name"
 msgstr ""
 
-#: includes/classes/post-types/class-project.php:240
+#: includes/classes/post-types/class-project.php:234
 msgid "Status"
 msgstr ""
 
-#: includes/classes/post-types/class-speaking.php:97
+#: includes/classes/post-types/class-speaking.php:93
 msgid "Speaking Gig Information"
 msgstr ""
 
-#: includes/classes/post-types/class-speaking.php:152
+#: includes/classes/post-types/class-speaking.php:144
 msgid "Add New Speaking Gig"
 msgstr ""
 
-#: includes/classes/post-types/class-speaking.php:153
+#: includes/classes/post-types/class-speaking.php:145
 msgid "New Speaking Gig"
 msgstr ""
 
-#: includes/classes/post-types/class-speaking.php:154
+#: includes/classes/post-types/class-speaking.php:146
 msgid "Edit Speaking Gig"
 msgstr ""
 
-#: includes/classes/post-types/class-speaking.php:155
+#: includes/classes/post-types/class-speaking.php:147
 msgid "View Speaking Gig"
 msgstr ""
 
-#: includes/classes/post-types/class-speaking.php:156
+#: includes/classes/post-types/class-speaking.php:148
 msgid "All Speaking Gigs"
 msgstr ""
 
-#: includes/classes/post-types/class-speaking.php:157
+#: includes/classes/post-types/class-speaking.php:149
 msgid "Search Speaking Gigs"
 msgstr ""
 
-#: includes/classes/post-types/class-speaking.php:158
+#: includes/classes/post-types/class-speaking.php:150
 msgid "Parent Speaking Gigs:"
 msgstr ""
 
-#: includes/classes/post-types/class-speaking.php:159
+#: includes/classes/post-types/class-speaking.php:151
 msgid "No speaking gigs found."
 msgstr ""
 
-#: includes/classes/post-types/class-speaking.php:160
+#: includes/classes/post-types/class-speaking.php:152
 msgid "No speaking gigs found in Trash."
 msgstr ""
 
-#: includes/classes/post-types/class-speaking.php:162
+#: includes/classes/post-types/class-speaking.php:154
 msgid "A place to list speaking gigs."
 msgstr ""
 
-#: includes/classes/post-types/class-speaking.php:284
+#: includes/classes/post-types/class-speaking.php:274
 msgid "Conference Name"
 msgstr ""
 
-#: includes/classes/post-types/class-speaking.php:298
+#: includes/classes/post-types/class-speaking.php:288
 msgid "Conference URL"
 msgstr ""
 
-#: includes/classes/post-types/class-speaking.php:313
+#: includes/classes/post-types/class-speaking.php:303
 msgid "Slide URL"
 msgstr ""
 
-#: includes/classes/post-types/class-speaking.php:328
+#: includes/classes/post-types/class-speaking.php:318
 msgid "Presentation URL"
 msgstr ""
 
-#: includes/classes/post-types/class-speaking.php:344
+#: includes/classes/post-types/class-speaking.php:334
 msgid "Presentation Date"
 msgstr ""
 
-#: includes/classes/post-types/class-speaking.php:359
+#: includes/classes/post-types/class-speaking.php:349
 msgid "Conference Location"
 msgstr ""
 
@@ -309,106 +309,111 @@ msgstr ""
 msgid "Latest Tweets"
 msgstr ""
 
-#: includes/classes/widgets/class-latest-tweets.php:210
+#: includes/classes/widgets/class-latest-tweets.php:205
 msgid "My Latest Tweets"
 msgstr ""
 
-#: includes/classes/widgets/class-latest-tweets.php:216
+#: includes/classes/widgets/class-latest-tweets.php:211
 msgid "Title:"
 msgstr ""
 
-#: includes/classes/widgets/class-latest-tweets.php:222
+#: includes/classes/widgets/class-latest-tweets.php:215
 msgid "Twitter User:"
 msgstr ""
 
-#: includes/classes/widgets/class-latest-tweets.php:228
+#: includes/classes/widgets/class-latest-tweets.php:219
 msgid "Number of Tweets:"
 msgstr ""
 
-#: includes/functions/core.php:39
+#: includes/functions/core.php:35
 msgid "Primary Menu"
 msgstr ""
 
-#: includes/functions/core.php:40
+#: includes/functions/core.php:36
 msgid "Footer Menu"
 msgstr ""
 
-#: includes/functions/core.php:137
+#: includes/functions/core.php:127
 msgid "Sidebar"
 msgstr ""
 
-#: includes/functions/core.php:139
+#: includes/functions/core.php:129
 msgid "The primary sidebar on the right side of most content."
 msgstr ""
 
-#: includes/functions/core.php:279
+#: includes/functions/core.php:245
 msgid "Website Title"
 msgstr ""
 
-#: includes/functions/core.php:280
+#: includes/functions/core.php:246
 msgid "Twitter"
 msgstr ""
 
-#: includes/functions/core.php:281
+#: includes/functions/core.php:247
 msgid "Facebook"
 msgstr ""
 
-#: includes/functions/core.php:282
+#: includes/functions/core.php:248
 msgid "WordPress.org"
 msgstr ""
 
-#: includes/functions/core.php:283
+#: includes/functions/core.php:249
 msgid "GitHub"
 msgstr ""
 
-#: includes/functions/core.php:392
+#: includes/functions/core.php:250
+msgid "LinkedIn"
+msgstr ""
+
+#: includes/functions/core.php:358
+#. translators: %s is the page number.
 msgid "Page %s"
 msgstr ""
 
-#: includes/functions/template-tags.php:39
+#: includes/functions/template-tags.php:37
 msgid "Posts navigation"
 msgstr ""
 
-#: includes/functions/template-tags.php:45
+#: includes/functions/template-tags.php:43
 msgid "%s Older posts"
 msgstr ""
 
-#: includes/functions/template-tags.php:50
+#: includes/functions/template-tags.php:47
 msgid "Newer posts %s"
 msgstr ""
 
-#: includes/functions/template-tags.php:79
+#: includes/functions/template-tags.php:74
 msgid "Post navigation"
 msgstr ""
 
-#: includes/functions/template-tags.php:146 page-archive.php:71
+#: includes/functions/template-tags.php:139 page-archive.php:71
 msgid "Edit"
 msgstr ""
 
-#: includes/functions/template-tags.php:241
-#: includes/functions/template-tags.php:336
+#: includes/functions/template-tags.php:232
+#: includes/functions/template-tags.php:327
 msgid "No Comments"
 msgstr ""
 
-#: includes/functions/template-tags.php:245
-#: includes/functions/template-tags.php:340
+#: includes/functions/template-tags.php:236
+#: includes/functions/template-tags.php:331
 msgid "1 Comment"
 msgstr ""
 
-#: includes/functions/template-tags.php:249
-#: includes/functions/template-tags.php:332
+#: includes/functions/template-tags.php:240
+#: includes/functions/template-tags.php:323
 msgid "% Comments"
 msgstr ""
 
-#: includes/functions/template-tags.php:253
+#: includes/functions/template-tags.php:244
 msgid "Comments Off"
 msgstr ""
 
-#: includes/functions/template-tags.php:263
+#: includes/functions/template-tags.php:254
 msgid "Enter your password to view comments."
 msgstr ""
 
-#: includes/functions/template-tags.php:307
+#: includes/functions/template-tags.php:298
 msgid "Comment on %s"
 msgstr ""
 
@@ -505,83 +510,83 @@ msgctxt "yearly archives date format"
 msgid "Y"
 msgstr ""
 
-#: includes/classes/post-types/class-project.php:71
+#: includes/classes/post-types/class-project.php:67
 msgctxt "post type general name"
 msgid "Projects"
 msgstr ""
 
-#: includes/classes/post-types/class-speaking.php:147
+#: includes/classes/post-types/class-speaking.php:139
 msgctxt "post type general name"
 msgid "Speaking Gigs"
 msgstr ""
 
-#: includes/classes/post-types/class-project.php:72
+#: includes/classes/post-types/class-project.php:68
 msgctxt "post type singular name"
 msgid "Project"
 msgstr ""
 
-#: includes/classes/post-types/class-speaking.php:148
+#: includes/classes/post-types/class-speaking.php:140
 msgctxt "post type singular name"
 msgid "Speaking Gig"
 msgstr ""
 
-#: includes/classes/post-types/class-project.php:73
+#: includes/classes/post-types/class-project.php:69
 msgctxt "admin menu"
 msgid "Projects"
 msgstr ""
 
-#: includes/classes/post-types/class-speaking.php:149
+#: includes/classes/post-types/class-speaking.php:141
 msgctxt "admin menu"
 msgid "Speaking Gigs"
 msgstr ""
 
-#: includes/classes/post-types/class-project.php:74
+#: includes/classes/post-types/class-project.php:70
 msgctxt "add new on admin bar"
 msgid "Project"
 msgstr ""
 
-#: includes/classes/post-types/class-speaking.php:150
+#: includes/classes/post-types/class-speaking.php:142
 msgctxt "add new on admin bar"
 msgid "Speaking Gigs"
 msgstr ""
 
-#: includes/classes/post-types/class-project.php:75
-#: includes/classes/post-types/class-speaking.php:151
+#: includes/classes/post-types/class-project.php:71
+#: includes/classes/post-types/class-speaking.php:143
 msgctxt "book"
 msgid "Add New"
 msgstr ""
 
-#: includes/classes/post-types/class-project.php:205
+#: includes/classes/post-types/class-project.php:199
 msgctxt "taxonomy general name"
 msgid "Project Types"
 msgstr ""
 
-#: includes/classes/post-types/class-project.php:230
+#: includes/classes/post-types/class-project.php:224
 msgctxt "taxonomy general name"
 msgid "Project Status"
 msgstr ""
 
-#: includes/classes/post-types/class-project.php:206
+#: includes/classes/post-types/class-project.php:200
 msgctxt "taxonomy singular name"
 msgid "Project Type"
 msgstr ""
 
-#: includes/classes/post-types/class-project.php:231
+#: includes/classes/post-types/class-project.php:225
 msgctxt "taxonomy singular name"
 msgid "Project Status"
 msgstr ""
 
-#: includes/functions/template-tags.php:83
+#: includes/functions/template-tags.php:78
 msgctxt "Previous post link"
 msgid "<span class=\"meta-nav\">&larr;</span>&nbsp;%title"
 msgstr ""
 
-#: includes/functions/template-tags.php:84
+#: includes/functions/template-tags.php:79
 msgctxt "Next post link"
 msgid "%title&nbsp;<span class=\"meta-nav\">&rarr;</span>"
 msgstr ""
 
-#: includes/functions/template-tags.php:122
+#: includes/functions/template-tags.php:115
 msgctxt "post author"
 msgid " by %s"
 msgstr ""
