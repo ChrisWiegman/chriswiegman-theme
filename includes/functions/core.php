@@ -247,6 +247,7 @@ function filter_user_contactmethods( $contact_methods ) {
 	$contact_methods['facebook']      = esc_html__( 'Facebook', 'chriswiegman' );
 	$contact_methods['wordpress']     = esc_html__( 'WordPress.org', 'chriswiegman' );
 	$contact_methods['github']        = esc_html__( 'GitHub', 'chriswiegman' );
+	$contact_methods['linkedin']      = esc_html__( 'LinkedIn', 'chriswiegman' );
 
 	// Remove Contact Methods.
 	unset( $contact_methods['aim'] );
