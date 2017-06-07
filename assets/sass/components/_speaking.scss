@@ -1,32 +1,35 @@
 ul.archive-speaking {
 
-	margin-left : 60px;
-	padding     : 0 40px;
+	margin-left: 60px;
+	padding:     0 40px;
 
 	li {
 
-		font-size : $small-rem;
-		margin    : 0;
+		font-size: $small-rem;
+		margin:    0;
 
 		.fa {
-			margin  : 0;
-			padding : 0;
+			margin:  0;
+			padding: 0;
 		}
 
 		.entry-header {
 
-			font-size : $small-rem;
-			padding   : 0;
+			font-size: $small-rem;
+			padding:   0;
 
 			.entry-title {
 
-				border-bottom : none;
-				font-size     : $normal-rem;
-				margin-bottom : 0;
+				border-bottom:  none;
+				font-family:    $sans-serif;
+				font-size:      $normal-rem;
+				font-weight:    bold;
+				margin-bottom:  0;
+				padding-bottom: 0;
 
 				a {
-					border-bottom : none;
-					color         : $black;
+					border-bottom: none;
+					color:         $black;
 				}
 
 			}
@@ -37,16 +40,16 @@ ul.archive-speaking {
 
 	.speaking-date,
 	.speaking-location {
-		font-style : italic;
+		font-style: italic;
 	}
 
 	.divider {
 
-		border-bottom : 1px solid #efefef;
-		display       : block;
-		height        : 1px;
-		margin        : 30px auto;
-		width         : 60%;
+		border-bottom: 1px solid #efefef;
+		display:       block;
+		height:        1px;
+		margin:        30px auto;
+		width:         60%;
 
 	}
 

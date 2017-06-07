@@ -55,40 +55,40 @@ thead,
 tr,
 th,
 td {
-	border         : 0;
-	font-family    : inherit;
-	font-style     : inherit;
-	font-weight    : inherit;
-	margin         : 0;
-	outline        : 0;
-	padding        : 0;
-	vertical-align : baseline;
+	border:         0;
+	font-family:    inherit;
+	font-style:     inherit;
+	font-weight:    inherit;
+	margin:         0;
+	outline:        0;
+	padding:        0;
+	vertical-align: baseline;
 }
 
 html {
-	font-size                : 100%;
+	font-size:                100%;
 	/* Corrects text resizing oddly in IE6/7 when body font-size is set using em units http://clagnut.com/blog/348/#c790 */
-	overflow-y               : scroll;
+	overflow-y:               scroll;
 	/* Keeps page centered in all browsers regardless of content height */
-	-webkit-text-size-adjust : 100%;
+	-webkit-text-size-adjust: 100%;
 	/* Prevents iOS text size adjust after orientation change, without disabling user zoom */
-	-ms-text-size-adjust     : 100%;
+	-ms-text-size-adjust:     100%;
 	/* www.456bereastreet.com/archive/201012/controlling_text_size_in_safari_for_ios_without_disabling_user_zoom/ */
-	line-height              : 1.625;
+	line-height:              1.625;
 }
 
 * {
 
-	box-sizing         : border-box;
+	box-sizing: border-box;
 
 	&:before, &:after {
-		box-sizing         : border-box;
+		box-sizing: border-box;
 	}
 
 }
 
 body {
-	background : $white;
+	background: $white;
 	/* Fallback for when there is no custom background color defined. */
 }
 
@@ -102,32 +102,32 @@ header,
 main,
 nav,
 section {
-	display : block;
+	display: block;
 }
 
 ol,
 ul {
-	list-style : none;
+	list-style: none;
 }
 
 table {
 	/* tables still need 'cellspacing="0"' in the markup */
-	border-collapse : separate;
-	border-spacing  : 0;
+	border-collapse: separate;
+	border-spacing:  0;
 }
 
 caption,
 th,
 td {
-	font-weight : normal;
-	text-align  : left;
+	font-weight: normal;
+	text-align:  left;
 }
 
 blockquote {
 
 	&:before,
 	&:after {
-		content : "";
+		content: "";
 	}
 
 }
@@ -136,12 +136,12 @@ q {
 
 	&:before,
 	&:after {
-		content : "";
+		content: "";
 	}
 
 }
 
 blockquote,
 q {
-	quotes : "" "";
+	quotes: "" "";
 }
