@@ -52,30 +52,30 @@
 				.menu-toggle {
 					color:       $text-color;
 					display:     inline-block;
-					font-weight: 900;
+					font-weight: 400;
 					padding:     8px 20px 0 0;
 					float:       right;
 				}
 
 				.main-navigation {
-					
-					background: $white; /* Old browsers */
-					background: -moz-linear-gradient(top, $white 0%, $light-grey 100%); /* FF3.6-15 */
-					background: -webkit-linear-gradient(top, $white 0%,$light-grey 100%); /* Chrome10-25,Safari5.1-6 */
-					background: linear-gradient(to bottom, $white 0%,$light-grey 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-					filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$white', endColorstr='$light-grey',GradientType=0 ); /* IE6-9 */
-					border-bottom:    1px solid $light-grey;
-					color:            $text-color;
-					clear:            both;
-					float:            none;
-					left:             0;
-					margin:           0;
-					max-width:        100%;
-					padding:          0;
-					position:         absolute;
-					overflow:         hidden;
-					top:              39px;
-					width:            100%;
+
+					background:    $white; /* Old browsers */
+					background:    -moz-linear-gradient(top, $white 0%, $light-grey 100%); /* FF3.6-15 */
+					background:    -webkit-linear-gradient(top, $white 0%, $light-grey 100%); /* Chrome10-25,Safari5.1-6 */
+					background:    linear-gradient(to bottom, $white 0%, $light-grey 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+					filter:        progid:DXImageTransform.Microsoft.gradient(startColorstr='$white', endColorstr='$light-grey', GradientType=0); /* IE6-9 */
+					border-bottom: 1px solid $light-grey;
+					color:         $text-color;
+					clear:         both;
+					float:         none;
+					left:          0;
+					margin:        0;
+					max-width:     100%;
+					padding:       0;
+					position:      absolute;
+					overflow:      hidden;
+					top:           39px;
+					width:         100%;
 
 					li {
 						border-bottom: 1px solid $light-grey;
