@@ -205,7 +205,7 @@ q {
   content: '\f26c'; }
 
 body {
-  color: #1f1f1f;
+  color: #444;
   font-family: Helvetica, Arial, sans-serif; }
 
 h1,
@@ -481,7 +481,7 @@ body {
 input, select, textarea {
   background-color: #f8f8f8;
   border: 1px solid #ccc;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   padding: 8px;
   width: 100%; }
 
@@ -508,7 +508,7 @@ button {
   border: none;
   color: #fff !important;
   cursor: pointer;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: bold;
   line-height: 1.125rem;
   padding: 8px;
@@ -584,7 +584,7 @@ input:hover[type="button"], input:hover[type="submit"] {
   .gform_wrapper textarea,
   .gform_wrapper .ginput_complex label,
   .gform_wrapper .gfield_description {
-    font-size: 1.2rem !important;
+    font-size: 1.1rem !important;
     padding: 8px !important;
     width: 98%; }
   .gform_wrapper .ginput_complex label,
@@ -858,11 +858,11 @@ a {
     padding-bottom: 2px; }
   .widget ul {
     margin: 0 0 0 15px;
-    padding: 0px; }
+    padding: 0; }
     .widget ul li {
       list-style-type: circle;
       margin-bottom: 6px;
-      padding: 0px;
+      padding: 0;
       overflow-wrap: break-word; }
   .widget .entry-content:before, .widget .entry-content:after {
     content: '';
@@ -919,8 +919,8 @@ a {
   .jetpack_subscription_widget form input[type=email],
   .jetpack_subscription_widget form select {
     background-color: #fff;
-    color: #1f1f1f;
-    font-size: 1.2rem;
+    color: #444;
+    font-size: 1.1rem;
     padding: .5rem;
     width: 100%; }
   .jetpack_subscription_widget form .gform_footer {
@@ -956,7 +956,7 @@ h1.page-title {
 
 .hentry {
   background-color: #fff;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   line-height: 1.6;
   margin: 0 0 3rem 0;
   padding: 0;
@@ -980,7 +980,7 @@ h1.page-title {
       font-size: 2.25rem;
       font-weight: 300; }
       .hentry .entry-header .entry-title a {
-        color: #1f1f1f;
+        color: #444;
         text-decoration: none; }
         .hentry .entry-header .entry-title a:hover {
           border-bottom: none;
@@ -1153,8 +1153,11 @@ ul.archive-projects {
       padding: 0; }
       ul.archive-projects li .entry-header .entry-title {
         border-bottom: none;
-        font-size: 1.2rem;
-        margin-bottom: 0; }
+        font-family: Helvetica, Arial, sans-serif;
+        font-size: 1.1rem;
+        font-weight: bold;
+        margin-bottom: 0;
+        padding-bottom: 0; }
         ul.archive-projects li .entry-header .entry-title a {
           border-bottom: none; }
   ul.archive-projects .entry-meta {
@@ -1191,8 +1194,11 @@ ul.archive-speaking {
       padding: 0; }
       ul.archive-speaking li .entry-header .entry-title {
         border-bottom: none;
-        font-size: 1.2rem;
-        margin-bottom: 0; }
+        font-family: Helvetica, Arial, sans-serif;
+        font-size: 1.1rem;
+        font-weight: bold;
+        margin-bottom: 0;
+        padding-bottom: 0; }
         ul.archive-speaking li .entry-header .entry-title a {
           border-bottom: none;
           color: #2e2e2e; }
@@ -1329,7 +1335,7 @@ object {
     height: 39px;
     padding: 0 40px; }
     #page .site-header .wrap .menu-toggle {
-      color: #1f1f1f;
+      color: #444;
       display: inline-block;
       font-weight: 400;
       padding: 8px 20px 0 0;
@@ -1347,7 +1353,7 @@ object {
       filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$white', endColorstr='$light-grey', GradientType=0);
       /* IE6-9 */
       border-bottom: 1px solid #ccc;
-      color: #1f1f1f;
+      color: #444;
       clear: both;
       float: none;
       left: 0;
@@ -1494,8 +1500,8 @@ object {
     page-break-inside: avoid; }
   h3 {
     margin-left: 10px;
-    margin-bottom: 0px;
-    padding-bottom: 0px; }
+    margin-bottom: 0;
+    padding-bottom: 0; }
   blockquote, table, pre {
     page-break-inside: avoid; }
   ul, ol, dl {
