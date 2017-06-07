@@ -24,7 +24,7 @@ jQuery(document).ready(function(e) {
         e.focus());
     }, !1);
 }(), jQuery(document).ready(function(e) {
-    console.log("Thanks for visiting! Please do not forget to subscribe at https://www.chriswiegman.com/feed"), 
+    console.log("Thanks for visiting! Please do not forget to subscribe at https://chriswiegman.com/feed"), 
     e(".menu-toggle").on("click", function() {
         e("#menu-primary").slideToggle("slow"), e(this).toggleClass("active");
     });
