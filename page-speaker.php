@@ -91,11 +91,11 @@ get_header(); ?>
 										<?php
 										if ( empty( $slide_url ) ) {
 
-											printf( '<h2 class="entry-title">%s</h2>', esc_html( $title ) );
+											printf( '<h3 class="entry-title">%s</h3>', esc_html( $title ) );
 
 										} else {
 
-											printf( '<h2 class="entry-title"><a href="%s" title="%s" rel="bookmark">%s</a></h2>', esc_url( $slide_url ), esc_attr( 'View slides from: ' . $title ), sanitize_text_field( $title ) );
+											printf( '<h3 class="entry-title"><a href="%s" title="%s" rel="bookmark">%s</a></h3>', esc_url( $slide_url ), esc_attr( 'View slides from: ' . $title ), sanitize_text_field( $title ) );
 
 										}
 										?>
