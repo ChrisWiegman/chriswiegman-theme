@@ -177,7 +177,7 @@ class Speaking {
 	 *
 	 * @since 2.2.0
 	 *
-	 * @param array $column  array of column info.
+	 * @param array $column array of column info.
 	 * @param int   $post_id The post ID.
 	 */
 	public function speaking_custom_columns( $column, $post_id ) {
@@ -366,7 +366,7 @@ class Speaking {
 	 * @since 1.0.0
 	 *
 	 * @param int      $post_id ID of the current post.
-	 * @param \WP_POST $post    The current post.
+	 * @param \WP_POST $post The current post.
 	 *
 	 * @return int|void post ID on failure or void on success
 	 */
