@@ -389,18 +389,37 @@ function init() {
 	add_action( 'wp_enqueue_scripts', $n ( 'action_wp_enqueue_scripts' ) );
 
 	add_filter( 'body_class', $n ( 'filter_body_class' ) );
+	add_filter( 'emoji_svg_url', '__return_false' );
 	add_filter( 'jetpack_sso_bypass_login_forward_wpcom', '__return_true' );
 	add_filter( 'jetpack_remove_login_form', '__return_true' );
 	add_filter( 'jetpack_sso_require_two_step', '__return_true' );
 	add_filter( 'post_class', $n( 'filter_post_class' ), 10, 3 );
 	add_filter( 'script_loader_src', $n( 'remove_asset_version' ), 15 );
 	add_filter( 'style_loader_src', $n( 'remove_asset_version' ), 15 );
+	add_filter( 'tiny_mce_plugins', $n( 'filter_tiny_mce_plugins' ) );
 	add_filter( 'user_contactmethods', $n( 'filter_user_contactmethods' ) );
 	add_filter( 'wp_default_scripts', $n ( 'filter_wp_default_scripts' ) );
 	add_filter( 'wp_nav_menu_items', $n( 'filter_wp_nav_menu_items' ), 10, 2 );
 	add_filter( 'wp_page_menu_args', $n ( 'filter_wp_page_menu_args' ) );
 	add_filter( 'wp_title', $n ( 'filter_wp_title' ), 10, 2 );
 
+	remove_action( 'admin_print_styles', 'print_emoji_styles' );
+	remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
+	remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
+	remove_action( 'wp_print_styles', 'print_emoji_styles' );
+	remove_filter( 'wp_mail', 'wp_staticize_emoji_for_email' );
+	remove_filter( 'the_content_feed', 'wp_staticize_emoji' );
+	remove_filter( 'comment_text_rss', 'wp_staticize_emoji' );
+
+}
+
+function filter_tiny_mce_plugins( $plugins ) {
+
+	if ( is_array( $plugins ) ) {
+		return array_diff( $plugins, array( 'wpemoji' ) );
+	} else {
+		return array();
+	}
 }
 
 /**
