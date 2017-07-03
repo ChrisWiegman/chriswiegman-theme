@@ -2,9 +2,9 @@
 # This file is distributed under the GNU General Public License v2 or later.=!>
 msgid ""
 msgstr ""
-"Project-Id-Version: ChrisWiegman 5.9.11\n"
+"Project-Id-Version: ChrisWiegman 6.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/style\n"
-"POT-Creation-Date: 2017-07-03 00:39:12+00:00\n"
+"POT-Creation-Date: 2017-07-03 01:04:04+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -502,7 +502,7 @@ msgstr ""
 msgid "LinkedIn"
 msgstr ""
 
-#: includes/functions/core.php:358
+#: includes/functions/core.php:359
 #. translators: %s is the page number.
 msgid "Page %s"
 msgstr ""
@@ -527,30 +527,30 @@ msgstr ""
 msgid "Edit"
 msgstr ""
 
-#: includes/functions/template-tags.php:232
-#: includes/functions/template-tags.php:327
+#: includes/functions/template-tags.php:234
+#: includes/functions/template-tags.php:329
 msgid "No Comments"
 msgstr ""
 
-#: includes/functions/template-tags.php:236
-#: includes/functions/template-tags.php:331
+#: includes/functions/template-tags.php:238
+#: includes/functions/template-tags.php:333
 msgid "1 Comment"
 msgstr ""
 
-#: includes/functions/template-tags.php:240
-#: includes/functions/template-tags.php:323
+#: includes/functions/template-tags.php:242
+#: includes/functions/template-tags.php:325
 msgid "% Comments"
 msgstr ""
 
-#: includes/functions/template-tags.php:244
+#: includes/functions/template-tags.php:246
 msgid "Comments Off"
 msgstr ""
 
-#: includes/functions/template-tags.php:254
+#: includes/functions/template-tags.php:256
 msgid "Enter your password to view comments."
 msgstr ""
 
-#: includes/functions/template-tags.php:298
+#: includes/functions/template-tags.php:300
 msgid "Comment on %s"
 msgstr ""
 
