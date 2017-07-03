@@ -97,52 +97,164 @@ get_header(); ?>
 
 				echo '<p>' . wp_kses_post( get_the_author_meta( 'description' ) ) . '</p>' . PHP_EOL;
 
-				if ( 1 < $profiles['facebook']['length'] || 1 < $profiles['linkedin']['length'] || 1 < $profiles['twitter']['length'] || 1 < $profiles['google']['length'] ) {
+				if (
+					(
+						isset( $profiles['facebook'] ) &&
+						isset( $profiles['facebook']['length'] ) &&
+						1 < $profiles['facebook']['length']
+					) ||
+					(
+						isset( $profiles['linkedin'] ) &&
+						isset( $profiles['linkedin']['length'] ) &&
+						1 < $profiles['linkedin']['length']
+					) ||
+					(
+						isset( $profiles['google'] ) &&
+						isset( $profiles['google']['length'] ) &&
+						1 < $profiles['google']['length']
+					) ||
+					(
+						isset( $profiles['twitter'] ) &&
+						isset( $profiles['twitter']['length'] ) &&
+						1 < $profiles['twitter']['length']
+					) ||
+					(
+						isset( $profiles['wordpress'] ) &&
+						isset( $profiles['wordpress']['length'] ) &&
+						1 < $profiles['wordpress']['length']
+					) ||
+					(
+						isset( $profiles['github'] ) &&
+						isset( $profiles['github']['length'] ) &&
+						1 < $profiles['github']['length']
+					)
 
-					if ( ( 1 >= $profiles['facebook']['length'] && 1 >= $profiles['google']['length'] && 1 >= $profiles['linkedin']['length'] ) && 1 < $profiles['twitter']['length'] ) {
+				) {
+
+					if (
+						(
+							isset( $profiles['facebook'] ) &&
+							isset( $profiles['facebook']['length'] ) &&
+							1 >= $profiles['facebook']['length']
+						) &&
+						(
+							isset( $profiles['linkedin'] ) &&
+							isset( $profiles['linkedin']['length'] ) &&
+							1 >= $profiles['linkedin']['length']
+						) &&
+						(
+							isset( $profiles['google'] ) &&
+							isset( $profiles['google']['length'] ) &&
+							1 >= $profiles['google']['length']
+						) &&
+						(
+							isset( $profiles['twitter'] ) &&
+							isset( $profiles['twitter']['length'] ) &&
+							1 >= $profiles['twitter']['length']
+						) &&
+						(
+							isset( $profiles['wordpress'] ) &&
+							isset( $profiles['wordpress']['length'] ) &&
+							1 >= $profiles['wordpress']['length']
+						) &&
+						(
+							isset( $profiles['github'] ) &&
+							isset( $profiles['github']['length'] ) &&
+							1 >= $profiles['github']['length']
+						)
+					) {
+
 						echo '<p id="authcontact">Follow ' . esc_attr( get_the_author_meta( 'first_name' ) ) . ' on <a href="http://twitter.com/' . $profiles['twitter']['url'] . '" target="_blank" title="' . esc_attr( get_the_author_meta( 'display_name' ) ) . ' on Twitter">Twitter</a></p>' . PHP_EOL;
+
 					} else {
 
 						echo '<p id="authcontact">Find ' . esc_html( get_the_author_meta( 'first_name' ) ) . ' on ';
 
-						if ( 1 < $profiles['facebook']['length'] ) {
+						$output = '';
+						$links  = array();
 
-							echo ' <a href="https://facebook.com/' . $profiles['facebook']['url'] . '" target="_blank" title="' . esc_attr( get_the_author_meta( 'display_name' ) ) . ' on Facebook">Facebook</a>';
+						if (
+							isset( $profiles['facebook'] ) &&
+							isset( $profiles['facebook']['length'] ) &&
+							1 < $profiles['facebook']['length']
+						) {
 
-						}
-
-						if ( 1 < $profiles['google']['length'] ) {
-
-							$comma = $profiles['facebook']['length'] > 1 ? ',' : '';
-							$and   = $profiles['facebook']['length'] > 1 && ( $profiles['github']['length'] <= 1 || $profiles['twitter']['length'] <= 1 ) ? ' and' : '';
-							echo $comma . $and . ' <a href="https://plus.google.com/' . $profiles['google']['url'] . '?rel=author" rel="author" target="_blank" title="' . get_the_author_meta( 'display_name' ) . ' on Google+">Google+</a>';
-
-						}
-
-						if ( 1 < $profiles['github']['length'] ) {
-
-							$comma = $profiles['facebook']['length'] > 1 || $profiles['google']['length'] > 1 ? ',' : '';
-							$and   = ( $profiles['facebook']['length'] > 1 || $profiles['google']['length'] > 1 ) && $profiles['twitter']['length'] <= 1 ? ' and' : '';
-							echo $comma . $and . ' <a href="https://github.com/' . $profiles['github']['url'] . '" target="_blank" title="' . get_the_author_meta( 'display_name' ) . ' on GitHub">GitHub</a>';
+							$links[] = '<a href="https://facebook.com/' . esc_attr( $profiles['facebook']['url'] ) . '" target="_blank" title="' . esc_attr( get_the_author_meta( 'display_name' ) ) . ' on Facebook">Facebook</a>';
 
 						}
 
-						if ( 1 < $profiles['wordpress']['length'] ) {
+						if (
+							isset( $profiles['google'] ) &&
+							isset( $profiles['google']['length'] ) &&
+							1 < $profiles['google']['length']
+						) {
 
-							$comma = $profiles['facebook']['length'] > 1 || $profiles['google']['length'] > 1 || $profiles['github']['length'] > 1 ? ',' : '';
-							$and   = ( $profiles['facebook']['length'] > 1 || $profiles['google']['length'] > 1 || $profiles['github']['length'] > 1 ) && $profiles['twitter']['length'] <= 1 ? ' and' : '';
-							echo $comma . $and . ' <a href="https://profiles.wordpress.org/' . $profiles['wordpress']['url'] . '" target="_blank" title="' . get_the_author_meta( 'display_name' ) . ' on WordPress.org">WordPress.org</a>';
+							$links[] = '<a href="https://plus.google.com/' . esc_attr( $profiles['google']['url'] ) . '?rel=author" rel="author" target="_blank" title="' . esc_attr( get_the_author_meta( 'display_name' ) ) . ' on Google+">Google+</a>';
 
 						}
 
-						if ( 1 < $profiles['twitter']['length'] ) {
-							echo ', and <a href="https://twitter.com/' . $profiles['twitter']['url'] . '" target="_blank" title="' . get_the_author_meta( 'display_name' ) . ' on Twitter">Twitter</a>';
+						if (
+							isset( $profiles['github'] ) &&
+							isset( $profiles['github']['length'] ) &&
+							1 < $profiles['github']['length']
+						) {
+
+							$links[] = '<a href="https://github.com/' . esc_attr( $profiles['github']['url'] ) . '" target="_blank" title="' . esc_attr( get_the_author_meta( 'display_name' ) ) . ' on GitHub">GitHub</a>';
+
+						}
+
+						if (
+							isset( $profiles['wordpress'] ) &&
+							isset( $profiles['wordpress']['length'] ) &&
+							1 < $profiles['wordpress']['length']
+						) {
+
+							$links[] = '<a href="https://profiles.wordpress.org/' . esc_attr( $profiles['wordpress']['url'] ) . '" target="_blank" title="' . esc_attr( get_the_author_meta( 'display_name' ) ) . ' on WordPress.org">WordPress.org</a>';
+
+						}
+
+						if (
+							isset( $profiles['linkedin'] ) &&
+							isset( $profiles['linkedin']['length'] ) &&
+							1 < $profiles['linkedin']['length']
+						) {
+
+							$links[] = '<a href="https://www.linkedin.com/in/' . esc_attr( $profiles['linkedin']['url'] ) . '/" target="_blank" title="' . esc_attr( get_the_author_meta( 'display_name' ) ) . ' on LinkedIn">LinkedIn</a>';
+
+						}
+
+						if (
+							isset( $profiles['twitter'] ) &&
+							isset( $profiles['twitter']['length'] ) &&
+							1 < $profiles['twitter']['length']
+						) {
+
+							$links[] = '<a href="https://twitter.com/' . esc_attr( $profiles['twitter']['url'] ) . '" target="_blank" title="' . esc_attr( get_the_author_meta( 'display_name' ) ) . ' on Twitter">Twitter</a>';
+
+						}
+
+						$link_count = count( $links );
+
+						for ( $i = 0; $i < $link_count; $i ++ ) {
+
+							// @codingStandardsIgnoreStart
+							if ( 1 <= $i ) {
+								echo ', ';
+							}
+
+							if ( $i === ( $link_count - 1 ) ) {
+								echo 'and ';
+							}
+
+							echo $links[ $i ];
+							// @codingStandardsIgnoreEnd
+
 						}
 
 						echo '.</p>' . PHP_EOL;
 
-					}
-				}
+					} // End if().
+				} // End if().
 
 				echo '</div>' . PHP_EOL;
 

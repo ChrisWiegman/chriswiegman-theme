@@ -11,16 +11,12 @@
 
 namespace CW\Theme\Functions\Core;
 
-use CW\Theme\Features;
-
 /**
  * Action after_theme_setup
  *
  * Sets up theme defaults and registers support for various WordPress features.
  *
  * @since 5.0.0
- *
- * @return void
  */
 function action_after_setup_theme() {
 
@@ -66,8 +62,6 @@ function action_after_setup_theme() {
  * Add CPTs to "At a Glance Widget" in the Dashboard.
  *
  * @since 3.1.0
- *
- * @return void
  */
 function action_dashboard_glance_items() {
 
@@ -110,8 +104,6 @@ function action_dashboard_glance_items() {
  * Add custom styles to wysiwyg editor
  *
  * @since 5.0.0
- *
- * @return void
  */
 function action_init() {
 
@@ -127,8 +119,6 @@ function action_init() {
  * Register widget area.
  *
  * @since 5.0.0
- *
- * @return void
  */
 function action_widgets_init() {
 
@@ -154,8 +144,6 @@ function action_widgets_init() {
  * Enqueue scripts and styles.
  *
  * @since 5.0.0
- *
- * @return void
  */
 function action_wp_enqueue_scripts() {
 
@@ -168,7 +156,6 @@ function action_wp_enqueue_scripts() {
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
-
 }
 
 /**
@@ -178,7 +165,7 @@ function action_wp_enqueue_scripts() {
  *
  * @since 5.7.1
  *
- * @param string $src The script source
+ * @param string $src The script source.
  *
  * @return string The script source without the version number.
  */
@@ -187,30 +174,7 @@ function remove_asset_version( $src ) {
 	$parts = explode( '?ver', $src );
 
 	return $parts[0];
-}
 
-/**
- * Update AMP JSON
- *
- * Adds required parameters such as logo to AMP's JSON.
- *
- * @since 5.2.7
- *
- * @param array    $metadata Array of meta data.
- * @param \WP_POST $post     The current WordPress post.
- *
- * @return array Filtered array of AMP data.
- */
-function filter_amp_post_template_metadata( $metadata, $post ) {
-
-	$metadata['publisher']['logo'] = array(
-		'@type'  => 'ImageObject',
-		'url'    => 'https://www.chriswiegman.com/content/uploads/2014/05/chris-wiegman-cartoon.png',
-		'height' => 300,
-		'width'  => 300,
-	);
-
-	return $metadata;
 }
 
 /**
@@ -243,7 +207,7 @@ function filter_body_class( $classes ) {
  * @since 5.2.5
  *
  * @param array $classes An array of post classes.
- * @param array $class   An array of additional classes added to the post.
+ * @param array $class An array of additional classes added to the post.
  * @param int   $post_id The post ID.
  *
  * @return array Filtered array of post classes
@@ -254,7 +218,9 @@ function filter_post_class( $classes, $class, $post_id ) {
 
 	if ( is_page() && 'speaking' === $post_type || 'project' === $post_type && in_array( 'has-post-thumbnail', $classes, true ) ) {
 
-		if ( $index = array_search( 'has-post-thumbnail', $classes ) ) {
+		$index = array_search( 'has-post-thumbnail', $classes, true );
+
+		if ( $index ) {
 			unset( $classes[ $index ] );
 		}
 	}
@@ -281,6 +247,7 @@ function filter_user_contactmethods( $contact_methods ) {
 	$contact_methods['facebook']      = esc_html__( 'Facebook', 'chriswiegman' );
 	$contact_methods['wordpress']     = esc_html__( 'WordPress.org', 'chriswiegman' );
 	$contact_methods['github']        = esc_html__( 'GitHub', 'chriswiegman' );
+	$contact_methods['linkedin']      = esc_html__( 'LinkedIn', 'chriswiegman' );
 
 	// Remove Contact Methods.
 	unset( $contact_methods['aim'] );
@@ -299,8 +266,6 @@ function filter_user_contactmethods( $contact_methods ) {
  * @since 5.0.0
  *
  * @param \WP_Scripts $scripts The Default WordPress scripts.
- *
- * @return void
  */
 function filter_wp_default_scripts( $scripts ) {
 
@@ -310,7 +275,6 @@ function filter_wp_default_scripts( $scripts ) {
 		$scripts->add( 'jquery', false, array( 'jquery-core' ), '1.12.3' );
 
 	}
-
 }
 
 /**
@@ -321,7 +285,7 @@ function filter_wp_default_scripts( $scripts ) {
  * @since 5.1.0
  *
  * @param string $items The HTML list content for the menu items.
- * @param object $args  An object containing wp_nav_menu() arguments.
+ * @param object $args An object containing wp_nav_menu() arguments.
  *
  * @return string Filtered HTML list of menu items
  */
@@ -329,7 +293,8 @@ function filter_wp_nav_menu_items( $items, $args ) {
 
 	if ( 'primary' === $args->theme_location ) {
 
-		$items .= '<li class="social-share last"><a href="https://github.com/ChrisWiegman" target="_blank" title="' . esc_attr( 'View My Code on Github', 'chriswiegman' ) . '"><i class="menu-icon icon-github"></i></a></li>';
+		$items .= '<li class="social-share last"><a href="https://facebook.com/chris.wiegman" target="_blank" title="' . esc_attr( 'Find me on Faceook', 'chriswiegman' ) . '"><i class="menu-icon icon-facebook"></i></a></li>';
+		$items .= '<li class="social-share"><a href="https://github.com/ChrisWiegman" target="_blank" title="' . esc_attr( 'View My Code on Github', 'chriswiegman' ) . '"><i class="menu-icon icon-github"></i></a></li>';
 		$items .= '<li class="social-share"><a href="https://profiles.wordpress.org/chriswiegman/" target="_blank" title="' . esc_attr( 'View My Plugins on WordPress.org', 'chriswiegman' ) . '"><i class="menu-icon icon-wordpress"></i></a></li>';
 		$items .= '<li class="social-share first"><a href="https://twitter.com/ChrisWiegman" target="_blank" title="' . esc_attr( 'Follow Me on Twitter', 'chriswiegman' ) . '"><i class="menu-icon icon-twitter"></i></a></li>';
 
@@ -366,7 +331,7 @@ function filter_wp_page_menu_args( $args ) {
  * @since 5.0.0
  *
  * @param string $title Default title text for current view.
- * @param string $sep   Optional separator.
+ * @param string $sep Optional separator.
  *
  * @return string The filtered title.
  */
@@ -389,27 +354,13 @@ function filter_wp_title( $title, $sep ) {
 
 	// Add a page number if necessary.
 	if ( ( $paged >= 2 || $page >= 2 ) && ! is_404() ) {
+
+		// translators: %s is the page number.
 		$title .= " $sep " . sprintf( __( 'Page %s', 'chriswiegman' ), max( $paged, $page ) );
+
 	}
 
 	return $title;
-
-}
-
-/**
- * Makes WP Theme available for translation.
- *
- * Translations can be added to the /lang directory.
- * If you're building a theme based on WP Theme, use a find and replace
- * to change 'wptheme' to the name of your theme in all template files.
- *
- * @uses  load_theme_textdomain() For translation/localization support.
- *
- * @since 0.1.0
- *
- * @return void
- */
-function i18n() {
 
 }
 
@@ -432,26 +383,55 @@ function init() {
 	remove_action( 'wp_head', 'wlwmanifest_link' );
 	remove_action( 'wp_head', 'wp_generator' );
 
-	add_action( 'after_setup_theme', $n( 'i18n' ) );
 	add_action( 'after_setup_theme', $n ( 'action_after_setup_theme' ) );
 	add_action( 'init', $n ( 'action_init' ) );
 	add_action( 'dashboard_glance_items', $n( 'action_dashboard_glance_items' ) );
 	add_action( 'widgets_init', $n ( 'action_widgets_init' ) );
 	add_action( 'wp_enqueue_scripts', $n ( 'action_wp_enqueue_scripts' ) );
 
-	add_filter( 'amp_post_template_metadata', $n( 'filter_amp_post_template_metadata' ), 10, 2 );
 	add_filter( 'body_class', $n ( 'filter_body_class' ) );
+	add_filter( 'emoji_svg_url', '__return_false' );
 	add_filter( 'jetpack_sso_bypass_login_forward_wpcom', '__return_true' );
 	add_filter( 'jetpack_remove_login_form', '__return_true' );
 	add_filter( 'jetpack_sso_require_two_step', '__return_true' );
 	add_filter( 'post_class', $n( 'filter_post_class' ), 10, 3 );
 	add_filter( 'script_loader_src', $n( 'remove_asset_version' ), 15 );
 	add_filter( 'style_loader_src', $n( 'remove_asset_version' ), 15 );
+	add_filter( 'tiny_mce_plugins', $n( 'filter_tiny_mce_plugins' ) );
 	add_filter( 'user_contactmethods', $n( 'filter_user_contactmethods' ) );
 	add_filter( 'wp_default_scripts', $n ( 'filter_wp_default_scripts' ) );
 	add_filter( 'wp_nav_menu_items', $n( 'filter_wp_nav_menu_items' ), 10, 2 );
 	add_filter( 'wp_page_menu_args', $n ( 'filter_wp_page_menu_args' ) );
 	add_filter( 'wp_title', $n ( 'filter_wp_title' ), 10, 2 );
+
+	remove_action( 'admin_print_styles', 'print_emoji_styles' );
+	remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
+	remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
+	remove_action( 'wp_print_styles', 'print_emoji_styles' );
+	remove_filter( 'wp_mail', 'wp_staticize_emoji_for_email' );
+	remove_filter( 'the_content_feed', 'wp_staticize_emoji' );
+	remove_filter( 'comment_text_rss', 'wp_staticize_emoji' );
+
+}
+
+/**
+ * Filter tiny_mce_plugins
+ *
+ * Remove emoji from Tinymce.
+ *
+ * @since 6.0
+ *
+ * @param array $plugins Array of TinyMCE plugins.
+ *
+ * @return array Filtered array of TinyMCE plugins.
+ */
+function filter_tiny_mce_plugins( $plugins ) {
+
+	if ( is_array( $plugins ) ) {
+		return array_diff( $plugins, array( 'wpemoji' ) );
+	}
+
+	return array();
 
 }
 
@@ -463,8 +443,6 @@ function init() {
  * directly, as this makes them extremely difficult to test.
  *
  * @since 3.2.0
- *
- * @return void
  */
 function safe_exit() {
 

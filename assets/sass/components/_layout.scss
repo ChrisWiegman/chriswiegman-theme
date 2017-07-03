@@ -13,7 +13,7 @@ body {
 
 	.site-content {
 		margin:      0 auto;
-		max-width:   1152px;
+		max-width:   1400px;
 		overflow:    hidden;
 		padding-top: 115px;
 		transition:  0.5s;
@@ -53,7 +53,7 @@ body {
 		.wrap {
 
 			margin:    0 auto;
-			max-width: 1152px;
+			max-width: 1400px;
 
 			.site-title {
 
@@ -66,11 +66,11 @@ body {
 				transition:  0.5s;
 
 				.logo-chris {
-					color: #9b9b9b;
+					color: $grey;
 				}
 
 				.logo-wiegman {
-					color: #356;
+					color: $background;
 				}
 			}
 
@@ -119,8 +119,8 @@ body {
 
 	.site-footer {
 
-		background-color: $white;
-		color:            $grey;
+		background-color: $footer-background;
+		color:            $footer-text;
 		font-size:        75%;
 		width:            100%;
 		opacity:          0.9;
@@ -128,9 +128,8 @@ body {
 
 		a {
 
-			border-bottom: 1px solid $grey;
-			color:         $dark-grey;
-
+			border-bottom: 1px solid $footer-text;
+			color:         $white;
 			&:hover {
 				border-bottom: 1px solid $orange;
 				color:         $orange;

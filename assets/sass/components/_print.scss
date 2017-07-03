@@ -19,13 +19,10 @@
 			padding-top: 40px;
 		}
 
-		.site-header {
-
-			border-bottom: none;
-
-			.wrap .site-title {
-				margin: 7px 0 0 20px;
-			}
+		.site-header,
+		nav,
+		footer {
+			display: none;
 		}
 	}
 
@@ -39,8 +36,7 @@
 	#site-navigation,
 	#commentform,
 	.comments-link,
-	.sharedaddy,
-	#disqus_thread {
+	.sharedaddy {
 		display: none
 	}
 
@@ -65,7 +61,7 @@
 		width:       auto
 	}
 
-	#footer,
+	footer,
 	.ad,
 	.footer-menu,
 	.author-box,
@@ -90,8 +86,8 @@
 
 	h3 {
 		margin-left:    10px;
-		margin-bottom:  0px;
-		padding-bottom: 0px
+		margin-bottom:  0;
+		padding-bottom: 0
 	}
 
 	blockquote, table, pre {

@@ -9,7 +9,6 @@ h1.page-title {
 .hentry {
 
 	background-color: $white;
-	border:           1px solid $border-color;
 	font-size:        $normal-rem;
 	line-height:      1.6;
 	margin:           0 0 3rem 0;
@@ -161,7 +160,6 @@ h1.page-title {
 .comments-area {
 
 	background-color: $white;
-	border-top:       1px solid $near-white;
 	margin:           0 40px;
 	overflow:         hidden;
 	padding:          40px 0;
@@ -180,7 +178,6 @@ h1.page-title {
 }
 
 .author-box {
-	border:  1px solid $border-color;
 	margin:  0 0 3em 0;
 	padding: 25px;
 }
@@ -191,7 +188,6 @@ h1.page-title {
 
 .comments-area {
 
-	border:  1px solid $border-color;
 	margin:  0 0 3em 0;
 	padding: 40px 0;
 
@@ -236,10 +232,12 @@ h1.page-title {
 
 					background-color: $background;
 					border-left:      none;
+					color:            $light-grey;
 
 					a {
 
-						border-bottom: 1px solid $light-grey;
+						color:         $light-grey;
+						border-bottom: none;
 
 						&:focus {
 							outline: thin dotted $white;
@@ -266,10 +264,12 @@ h1.page-title {
 								li {
 
 									background-color: $background;
+									color:            $light-grey;
 
 									a {
 
-										border-bottom: 1px solid $light-grey;
+										color:         $light-grey;
+										border-bottom: none;
 
 										&:focus {
 											outline: thin dotted $white;

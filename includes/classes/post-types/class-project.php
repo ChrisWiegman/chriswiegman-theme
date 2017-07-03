@@ -37,8 +37,6 @@ class Project {
 	 * Adds the metabox for the Project CPT.
 	 *
 	 * @since 1.0.0
-	 *
-	 * @return void
 	 */
 	public function add_project_metabox() {
 
@@ -59,8 +57,6 @@ class Project {
 	 * Registers the "project" CPT.
 	 *
 	 * @since 1.0.0
-	 *
-	 * @return void
 	 */
 	public function create_project_type() {
 
@@ -109,8 +105,6 @@ class Project {
 	 * Echos the content of the metabox for this CPT.
 	 *
 	 * @since 1.0.0
-	 *
-	 * @return void
 	 */
 	public function project_metabox() {
 
@@ -145,12 +139,13 @@ class Project {
 	 * @since 1.0.0
 	 *
 	 * @param int      $post_id ID of the current post.
-	 * @param \WP_POST $post    The current post.
+	 * @param \WP_POST $post The current post.
 	 *
-	 * @return int|void post ID on failure or void on success
+	 * @return int post ID on failure or void on success
 	 */
 	public function project_save_meta( $post_id, $post ) {
 
+		// @codingStandardsIgnoreStart
 		// Verify nonce.
 		if ( ! isset( $_POST['project_post_noncename'] ) || ! wp_verify_nonce( $_POST['project_post_noncename'], plugin_basename( __FILE__ ) ) ) {
 			return $post_id;
@@ -186,6 +181,7 @@ class Project {
 		}
 
 		return null;
+		// @codingStandardsIgnoreEnd
 
 	}
 
@@ -195,8 +191,6 @@ class Project {
 	 * Sets up and registers taxonomies for the project post type.
 	 *
 	 * @since 1.0.0
-	 *
-	 * @return void
 	 */
 	public function project_taxonomy() {
 

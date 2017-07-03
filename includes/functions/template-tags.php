@@ -21,8 +21,6 @@ namespace CW\Theme\Functions\Template_Tags;
  * @since 5.0.0
  *
  * @param \WP_Query $query The global WP_Query.
- *
- * @return void
  */
 function paging_nav( $query = null ) {
 
@@ -46,8 +44,7 @@ function paging_nav( $query = null ) {
 			<?php } ?>
 
 			<?php if ( get_previous_posts_link() ) { ?>
-				<div
-					class="nav-next"><?php previous_posts_link( sprintf( esc_html__( 'Newer posts %s', 'chriswiegman' ), '<span class="meta-nav">&rarr;</span>' ) ); ?></div>
+				<div class="nav-next"><?php previous_posts_link( sprintf( esc_html__( 'Newer posts %s', 'chriswiegman' ), '<span class="meta-nav">&rarr;</span>' ) ); ?></div>
 			<?php } ?>
 
 		</div>
@@ -62,8 +59,6 @@ function paging_nav( $query = null ) {
  * Display navigation to next/previous post when applicable.
  *
  * @since 5.0.0
- *
- * @return void
  */
 function post_nav() {
 
@@ -95,8 +90,6 @@ function post_nav() {
  * Prints HTML with meta information for the current post-date/time and author.
  *
  * @since 5.0.0
- *
- * @return void
  */
 function posted_on() {
 
@@ -166,7 +159,9 @@ function posted_on() {
  */
 function categorized_blog() {
 
-	if ( false === ( $all_the_cool_cats = get_transient( 'chriswiegman_categories' ) ) ) {
+	$all_the_cool_cats = get_transient( 'chriswiegman_categories' );
+
+	if ( false === $all_the_cool_cats ) {
 
 		// Create an array of all the categories that are attached to posts.
 		$all_the_cool_cats = get_categories(
@@ -203,8 +198,6 @@ function categorized_blog() {
  * Flush out the transients used in chriswiegman_categorized_blog.
  *
  * @since 5.0.0
- *
- * @return void
  */
 function category_transient_flusher() {
 
@@ -223,11 +216,11 @@ add_action( 'save_post', 'CW\Theme\Functions\Template_Tags\category_transient_fl
  *
  * @since 5.0.0
  *
- * @param string|bool $zero      Optional. String to display when no comments. Default false.
- * @param string|bool $one       Optional. String to display when only one comment is available. Default false.
- * @param string|bool $more      Optional. String to display when there are more than one comment. Default false.
+ * @param string|bool $zero Optional. String to display when no comments. Default false.
+ * @param string|bool $one Optional. String to display when only one comment is available. Default false.
+ * @param string|bool $more Optional. String to display when there are more than one comment. Default false.
  * @param string|bool $css_class Optional. CSS class to use for comments. Default empty.
- * @param string|bool $none      Optional. String to display when comments have been turned off. Default false.
+ * @param string|bool $none Optional. String to display when comments have been turned off. Default false.
  *
  * @return null Returns null on single posts and pages.
  */
@@ -317,9 +310,9 @@ function get_comments_popup_link( $zero = false, $one = false, $more = false, $c
  *
  * @since 5.0.0
  *
- * @param string|bool $zero       Optional. Text for no comments. Default false.
- * @param string|bool $one        Optional. Text for one comment. Default false.
- * @param string|bool $more       Optional. Text for more than one comment. Default false.
+ * @param string|bool $zero Optional. Text for no comments. Default false.
+ * @param string|bool $one Optional. Text for one comment. Default false.
+ * @param string|bool $more Optional. Text for more than one comment. Default false.
  *
  * @return string Number of comments
  */

@@ -78,7 +78,7 @@ get_header(); ?>
 
 									<div class="entry-header">
 
-										<?php printf( '<h2 class="entry-title"><a href="%s" title="%s" rel="bookmark">%s</a></h2>', esc_url( $permalink ), esc_attr( $title ), sanitize_text_field( $title ) ); ?>
+										<?php printf( '<h3 class="entry-title"><a href="%s" title="%s" rel="bookmark">%s</a></h3>', esc_url( $permalink ), esc_attr( $title ), sanitize_text_field( $title ) ); ?>
 
 										<div class="entry-meta">
 											<span class="project-types">

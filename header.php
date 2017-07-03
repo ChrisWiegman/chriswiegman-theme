@@ -44,7 +44,7 @@ namespace CW\Theme\Templates\Header;
 				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><span class="logo-chris">Chris</span><span class="logo-wiegman">Wiegman</span></a>
 			</div>
 
-			<div class="menu-toggle"><?php esc_html_e( 'Menu', 'chriswiegman' ); ?></div>
+			<div class="menu-toggle"><i class="menu-icon icon-menu"></i><?php esc_html_e( 'Menu', 'chriswiegman' ); ?></div>
 			<nav id="site-navigation" class="main-navigation" role="navigation">
 				<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
 			</nav>
