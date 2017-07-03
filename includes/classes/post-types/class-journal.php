@@ -307,7 +307,10 @@ class Journal {
 
 			if ( $current_post ) {
 
-				$redirect = add_query_arg( array( 'post' => $current_post->ID, 'action' => 'edit' ), get_admin_url( get_current_blog_id(), 'post.php' ) );
+				$redirect = add_query_arg( array(
+					                           'post'   => $current_post->ID,
+					                           'action' => 'edit',
+				                           ), get_admin_url( get_current_blog_id(), 'post.php' ) );
 
 				wp_safe_redirect( $redirect );
 				exit();
@@ -331,14 +334,14 @@ class Journal {
 	 * @since 2.0.0
 	 *
 	 * @param int      $post_id ID of the current post.
-	 * @param \WP_POST $post    The current post.
+	 * @param \WP_POST $post The current post.
 	 *
 	 * @return int|void post ID on failure or void on success
 	 */
 	public function journal_save_evening_meta( $post_id, $post ) {
 
 		// Verify nonce.
-		if ( ! isset( $_POST['evening_journal_post_noncename'] ) || ! wp_verify_nonce( $_POST['evening_journal_post_noncename'], plugin_basename( __FILE__ ) ) ) {
+		if ( ! isset( $_POST['evening_journal_post_noncename'] ) || ! wp_verify_nonce( $_POST['evening_journal_post_noncename'], plugin_basename( __FILE__ ) ) ) { // WPCS: Input var ok. Sanitization ok.
 			return $post_id;
 		}
 
@@ -347,16 +350,16 @@ class Journal {
 			return $post_id;
 		}
 
-		$journal_post_meta['_journal_evening_amazing_1'] = sanitize_text_field( $_POST['amazing_1'] );
-		$journal_post_meta['_journal_evening_amazing_2'] = sanitize_text_field( $_POST['amazing_2'] );
-		$journal_post_meta['_journal_evening_amazing_3'] = sanitize_text_field( $_POST['amazing_3'] );
-		$journal_post_meta['_journal_evening_better_1']  = sanitize_text_field( $_POST['better_1'] );
-		$journal_post_meta['_journal_evening_better_2']  = sanitize_text_field( $_POST['better_2'] );
-		$journal_post_meta['_journal_evening_better_3']  = sanitize_text_field( $_POST['better_3'] );
+		$journal_post_meta['_journal_evening_amazing_1'] = sanitize_text_field( wp_unslash( $_POST['amazing_1'] ) ); // WPCS: Input var ok.
+		$journal_post_meta['_journal_evening_amazing_2'] = sanitize_text_field( wp_unslash( $_POST['amazing_2'] ) ); // WPCS: Input var ok.
+		$journal_post_meta['_journal_evening_amazing_3'] = sanitize_text_field( wp_unslash( $_POST['amazing_3'] ) ); // WPCS: Input var ok.
+		$journal_post_meta['_journal_evening_better_1']  = sanitize_text_field( wp_unslash( $_POST['better_1'] ) ); // WPCS: Input var ok.
+		$journal_post_meta['_journal_evening_better_2']  = sanitize_text_field( wp_unslash( $_POST['better_2'] ) ); // WPCS: Input var ok.
+		$journal_post_meta['_journal_evening_better_3']  = sanitize_text_field( wp_unslash( $_POST['better_3'] ) ); // WPCS: Input var ok.
 
-		if ( isset( $_POST['mood'] ) && 0 < absint( $_POST['mood'] ) ) {
+		if ( isset( $_POST['mood'] ) && 0 < absint( $_POST['mood'] ) ) { // WPCS: Input var ok.
 
-			$journal_post_meta['_journal_mood']['mood'] = absint( $_POST['mood'] );
+			$journal_post_meta['_journal_mood']['mood'] = absint( $_POST['mood'] ); // WPCS: Input var ok.
 			$journal_post_meta['_journal_mood']['d']    = current_time( 'timestamp' );
 			$journal_post_meta['_journal_mood']['t']    = 'e';
 
@@ -377,7 +380,7 @@ class Journal {
 	 * @since 2.0.0
 	 *
 	 * @param array    $journal_post_meta Array of meta fields to save.
-	 * @param \WP_POST $post              the current post object.
+	 * @param \WP_POST $post the current post object.
 	 *
 	 * @return void
 	 */
@@ -412,14 +415,14 @@ class Journal {
 	 * @since 2.0.0
 	 *
 	 * @param int      $post_id ID of the current post.
-	 * @param \WP_POST $post    The current post.
+	 * @param \WP_POST $post The current post.
 	 *
 	 * @return int|void post ID on failure or void on success
 	 */
 	public function journal_save_morning_meta( $post_id, $post ) {
 
 		// Verify nonce.
-		if ( ! isset( $_POST['morning_journal_post_noncename'] ) || ! wp_verify_nonce( $_POST['morning_journal_post_noncename'], plugin_basename( __FILE__ ) ) ) {
+		if ( ! isset( $_POST['morning_journal_post_noncename'] ) || ! wp_verify_nonce( $_POST['morning_journal_post_noncename'], plugin_basename( __FILE__ ) ) ) { // WPCS: Input var ok. Sanitization ok.
 			return $post_id;
 		}
 
@@ -428,20 +431,20 @@ class Journal {
 			return $post_id;
 		}
 
-		$journal_post_meta['_journal_morning_grateful_1']    = sanitize_text_field( $_POST['grateful_1'] );
-		$journal_post_meta['_journal_morning_grateful_2']    = sanitize_text_field( $_POST['grateful_2'] );
-		$journal_post_meta['_journal_morning_grateful_3']    = sanitize_text_field( $_POST['grateful_3'] );
-		$journal_post_meta['_journal_morning_better_1']      = sanitize_text_field( $_POST['better_1'] );
-		$journal_post_meta['_journal_morning_better_2']      = sanitize_text_field( $_POST['better_2'] );
-		$journal_post_meta['_journal_morning_better_3']      = sanitize_text_field( $_POST['better_3'] );
-		$journal_post_meta['_journal_morning_affirmation_1'] = sanitize_text_field( $_POST['affirmation_1'] );
-		$journal_post_meta['_journal_morning_affirmation_2'] = sanitize_text_field( $_POST['affirmation_2'] );
-		$journal_post_meta['_journal_morning_affirmation_3'] = sanitize_text_field( $_POST['affirmation_3'] );
-		$journal_post_meta['_journal_morning_context']       = sanitize_text_field( $_POST['context'] );
+		$journal_post_meta['_journal_morning_grateful_1']    = sanitize_text_field( wp_unslash( $_POST['grateful_1'] ) ); // WPCS: Input var ok.
+		$journal_post_meta['_journal_morning_grateful_2']    = sanitize_text_field( wp_unslash( $_POST['grateful_2'] ) ); // WPCS: Input var ok.
+		$journal_post_meta['_journal_morning_grateful_3']    = sanitize_text_field( wp_unslash( $_POST['grateful_3'] ) ); // WPCS: Input var ok.
+		$journal_post_meta['_journal_morning_better_1']      = sanitize_text_field( wp_unslash( $_POST['better_1'] ) ); // WPCS: Input var ok.
+		$journal_post_meta['_journal_morning_better_2']      = sanitize_text_field( wp_unslash( $_POST['better_2'] ) ); // WPCS: Input var ok.
+		$journal_post_meta['_journal_morning_better_3']      = sanitize_text_field( wp_unslash( $_POST['better_3'] ) ); // WPCS: Input var ok.
+		$journal_post_meta['_journal_morning_affirmation_1'] = sanitize_text_field( wp_unslash( $_POST['affirmation_1'] ) ); // WPCS: Input var ok.
+		$journal_post_meta['_journal_morning_affirmation_2'] = sanitize_text_field( wp_unslash( $_POST['affirmation_2'] ) ); // WPCS: Input var ok.
+		$journal_post_meta['_journal_morning_affirmation_3'] = sanitize_text_field( wp_unslash( $_POST['affirmation_3'] ) ); // WPCS: Input var ok.
+		$journal_post_meta['_journal_morning_context']       = sanitize_text_field( wp_unslash( $_POST['context'] ) ); // WPCS: Input var ok.
 
-		if ( isset( $_POST['mood'] ) && 0 < absint( $_POST['mood'] ) ) {
+		if ( isset( $_POST['mood'] ) && 0 < absint( $_POST['mood'] ) ) { // WPCS: Input var ok.
 
-			$journal_post_meta['_journal_mood']['mood'] = absint( $_POST['mood'] );
+			$journal_post_meta['_journal_mood']['mood'] = absint( $_POST['mood'] ); // WPCS: Input var ok.
 			$journal_post_meta['_journal_mood']['d']    = current_time( 'timestamp' );
 			$journal_post_meta['_journal_mood']['t']    = 'm';
 
