@@ -413,13 +413,25 @@ function init() {
 
 }
 
+/**
+ * Filter tiny_mce_plugins
+ *
+ * Remove emoji from Tinymce.
+ *
+ * @since 6.0
+ *
+ * @param array $plugins Array of TinyMCE plugins.
+ *
+ * @return array Filtered array of TinyMCE plugins.
+ */
 function filter_tiny_mce_plugins( $plugins ) {
 
 	if ( is_array( $plugins ) ) {
 		return array_diff( $plugins, array( 'wpemoji' ) );
-	} else {
-		return array();
 	}
+
+	return array();
+
 }
 
 /**
