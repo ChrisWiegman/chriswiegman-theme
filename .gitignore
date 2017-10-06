@@ -5,3 +5,4 @@ vendor
 !assets/js/src/vendor
 .DS_Store
 phploy.ini
+.idea
