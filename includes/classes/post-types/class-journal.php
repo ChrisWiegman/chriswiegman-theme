@@ -118,10 +118,12 @@ class Journal {
 					'not_found_in_trash' => esc_html__( 'No entries found in Trash.', 'chriswiegman' ),
 				),
 				'description'          => esc_html__( 'Morning journal entries.', 'chriswiegman' ),
-				'public'               => true,
-				'has_archive'          => true,
+				'public'               => false,
+				'has_archive'          => false,
 				'capability_type'      => 'post',
-				'supports'             => array( 'revisions' ),
+				'supports'             => array( 'editor' ),
+				'show_ui'              => true,
+				'can_export'           => false,
 				'register_meta_box_cb' => array( $this, 'add_morning_journal_metabox' ),
 				'menu_icon'            => 'dashicons-book-alt',
 				'menu_position'        => 20,
@@ -151,12 +153,14 @@ class Journal {
 					'not_found_in_trash' => esc_html__( 'No entries found in Trash.', 'chriswiegman' ),
 				),
 				'description'          => esc_html__( 'Evening journal entries.', 'chriswiegman' ),
-				'public'               => true,
-				'has_archive'          => true,
+				'public'               => false,
+				'has_archive'          => false,
 				'capability_type'      => 'post',
-				'supports'             => array( 'revisions' ),
-				'register_meta_box_cb' => array( $this, 'add_evening_journal_metabox' ),
-				'menu_icon'            => 'dashicons-book',
+				'supports'             => array( 'editor' ),
+				'show_ui'              => true,
+				'can_export'           => false,
+				'register_meta_box_cb' => array( $this, 'add_morning_journal_metabox' ),
+				'menu_icon'            => 'dashicons-book-alt',
 				'menu_position'        => 20,
 				'rewrite'              => array(
 					'slug' => 'journal/evening',
@@ -186,14 +190,6 @@ class Journal {
 		<table class="form-table">
 
 			<?php $this->field_mood(); ?>
-
-			<tr class="width_normal p_box">
-				<th scope="row"><label for="_journal_journal"><?php esc_html_e( 'Journal', 'chriswiegman' ); ?></label>
-				</th>
-				<td>
-					<?php wp_editor( esc_html( get_post_meta( $post->ID, '_journal_journal', true ) ), 'journal' ); ?>
-				</td>
-			</tr>
 
 			<tr class="width_normal p_box">
 				<td colspan="2"><h3><?php esc_html_e( 'List 3 Amazing things happened today:', 'chriswiegman' ); ?></h3>
@@ -364,7 +360,6 @@ class Journal {
 		$journal_post_meta['_journal_evening_better_1']  = sanitize_text_field( wp_unslash( $_POST['better_1'] ) ); // WPCS: Input var ok.
 		$journal_post_meta['_journal_evening_better_2']  = sanitize_text_field( wp_unslash( $_POST['better_2'] ) ); // WPCS: Input var ok.
 		$journal_post_meta['_journal_evening_better_3']  = sanitize_text_field( wp_unslash( $_POST['better_3'] ) ); // WPCS: Input var ok.
-		$journal_post_meta['_journal_journal']           = sanitize_text_field( wp_unslash( $_POST['journal'] ) ); // WPCS: Input var ok.
 
 		if ( isset( $_POST['mood'] ) && 0 < absint( $_POST['mood'] ) ) { // WPCS: Input var ok.
 
@@ -449,7 +444,6 @@ class Journal {
 		$journal_post_meta['_journal_morning_affirmation_1'] = sanitize_text_field( wp_unslash( $_POST['affirmation_1'] ) ); // WPCS: Input var ok.
 		$journal_post_meta['_journal_morning_affirmation_2'] = sanitize_text_field( wp_unslash( $_POST['affirmation_2'] ) ); // WPCS: Input var ok.
 		$journal_post_meta['_journal_morning_affirmation_3'] = sanitize_text_field( wp_unslash( $_POST['affirmation_3'] ) ); // WPCS: Input var ok.
-		$journal_post_meta['_journal_journal']               = sanitize_text_field( wp_unslash( $_POST['journal'] ) ); // WPCS: Input var ok.
 
 		if ( isset( $_POST['mood'] ) && 0 < absint( $_POST['mood'] ) ) { // WPCS: Input var ok.
 
@@ -486,14 +480,6 @@ class Journal {
 		<table class="form-table">
 
 			<?php $this->field_mood(); ?>
-
-			<tr class="width_normal p_box">
-				<th scope="row"><label for="_journal_journal"><?php esc_html_e( 'Journal', 'chriswiegman' ); ?></label>
-				</th>
-				<td>
-					<?php wp_editor( esc_html( get_post_meta( $post->ID, '_journal_journal', true ) ), 'journal' ); ?>
-				</td>
-			</tr>
 
 			<tr class="width_normal p_box">
 				<td colspan="2"><h3><?php esc_html_e( "I'm grateful for:", 'chriswiegman' ); ?></h3></td>
