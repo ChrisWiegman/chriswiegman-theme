@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ChrisWiegman 6.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/style\n"
-"POT-Creation-Date: 2017-10-02 17:33:16+00:00\n"
+"POT-Creation-Date: 2017-10-07 16:17:27+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -13,27 +13,27 @@ msgstr ""
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "X-Generator: grunt-wp-i18n1.0.0\n"
 
-#: includes/classes/post-types/class-journal.php:196
-#: includes/classes/post-types/class-journal.php:220
-#: includes/classes/post-types/class-journal.php:493
-#: includes/classes/post-types/class-journal.php:516
-#: includes/classes/post-types/class-journal.php:539
+#: includes/classes/post-types/class-journal.php:204
+#: includes/classes/post-types/class-journal.php:228
+#: includes/classes/post-types/class-journal.php:503
+#: includes/classes/post-types/class-journal.php:526
+#: includes/classes/post-types/class-journal.php:549
 msgid "1"
 msgstr ""
 
-#: includes/classes/post-types/class-journal.php:202
-#: includes/classes/post-types/class-journal.php:226
-#: includes/classes/post-types/class-journal.php:499
-#: includes/classes/post-types/class-journal.php:522
-#: includes/classes/post-types/class-journal.php:545
+#: includes/classes/post-types/class-journal.php:210
+#: includes/classes/post-types/class-journal.php:234
+#: includes/classes/post-types/class-journal.php:509
+#: includes/classes/post-types/class-journal.php:532
+#: includes/classes/post-types/class-journal.php:555
 msgid "2"
 msgstr ""
 
-#: includes/classes/post-types/class-journal.php:208
-#: includes/classes/post-types/class-journal.php:232
-#: includes/classes/post-types/class-journal.php:505
-#: includes/classes/post-types/class-journal.php:528
-#: includes/classes/post-types/class-journal.php:551
+#: includes/classes/post-types/class-journal.php:216
+#: includes/classes/post-types/class-journal.php:240
+#: includes/classes/post-types/class-journal.php:515
+#: includes/classes/post-types/class-journal.php:538
+#: includes/classes/post-types/class-journal.php:561
 msgid "3"
 msgstr ""
 
@@ -199,54 +199,55 @@ msgid "Evening journal entries."
 msgstr ""
 
 #: includes/classes/post-types/class-journal.php:191
+#: includes/classes/post-types/class-journal.php:491
+msgid "Journal"
+msgstr ""
+
+#: includes/classes/post-types/class-journal.php:199
 msgid "List 3 Amazing things happened today:"
 msgstr ""
 
-#: includes/classes/post-types/class-journal.php:215
+#: includes/classes/post-types/class-journal.php:223
 msgid "How could you have made today better?"
 msgstr ""
 
-#: includes/classes/post-types/class-journal.php:260
+#: includes/classes/post-types/class-journal.php:268
 msgid "Energy/Mood:"
 msgstr ""
 
-#: includes/classes/post-types/class-journal.php:263
+#: includes/classes/post-types/class-journal.php:271
 msgid "Select"
 msgstr ""
 
-#: includes/classes/post-types/class-journal.php:277
+#: includes/classes/post-types/class-journal.php:285
 msgid "Excellent"
 msgstr ""
 
-#: includes/classes/post-types/class-journal.php:278
+#: includes/classes/post-types/class-journal.php:286
 msgid "Good"
 msgstr ""
 
-#: includes/classes/post-types/class-journal.php:279
+#: includes/classes/post-types/class-journal.php:287
 msgid "OK"
 msgstr ""
 
-#: includes/classes/post-types/class-journal.php:280
+#: includes/classes/post-types/class-journal.php:288
 msgid "Bad"
 msgstr ""
 
-#: includes/classes/post-types/class-journal.php:281
+#: includes/classes/post-types/class-journal.php:289
 msgid "Horrible"
 msgstr ""
 
-#: includes/classes/post-types/class-journal.php:482
-msgid "Context"
-msgstr ""
-
-#: includes/classes/post-types/class-journal.php:489
+#: includes/classes/post-types/class-journal.php:499
 msgid "I'm grateful for:"
 msgstr ""
 
-#: includes/classes/post-types/class-journal.php:512
+#: includes/classes/post-types/class-journal.php:522
 msgid "What would make today better:"
 msgstr ""
 
-#: includes/classes/post-types/class-journal.php:535
+#: includes/classes/post-types/class-journal.php:545
 msgid "Daily Affirmation:"
 msgstr ""
 

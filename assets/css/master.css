@@ -224,12 +224,12 @@ h1 {
   font-size: 2.25rem; }
 
 .page .entry-title {
-  border-bottom: 1px solid #f8f8f8;
+  border-bottom: 1px solid #fafafa;
   clear: both;
   line-height: 1.4;
   margin-bottom: 1.5rem; }
   .page .entry-title a {
-    border-bottom: 1px solid #f8f8f8;
+    border-bottom: 1px solid #fafafa;
     clear: both;
     line-height: 1.5;
     margin-bottom: 1.5rem; }
@@ -378,7 +378,7 @@ th {
 
 html,
 body {
-  background-color: #323a41; }
+  background-color: #fafafa; }
 
 #page {
   margin: 0 auto; }
@@ -434,9 +434,9 @@ body {
         -o-transition: 0.5s;
         transition: 0.5s; }
         #page .site-header .wrap .site-title .logo-chris {
-          color: #999; }
+          color: #272d33; }
         #page .site-header .wrap .site-title .logo-wiegman {
-          color: #323a41; }
+          color: #999; }
       #page .site-header .wrap .main-navigation {
         margin: 0;
         overflow: hidden;
@@ -479,7 +479,7 @@ body {
       margin: 10px 0; }
 
 input, select, textarea {
-  background-color: #f8f8f8;
+  background-color: #fafafa;
   border: 1px solid #ccc;
   font-size: 1.1rem;
   padding: 8px;
@@ -494,7 +494,7 @@ input[type="search"] {
 
 .search-form input,
 #subscribe-field-blog_subscription-2 {
-  background-color: #f8f8f8;
+  background-color: #fafafa;
   margin: 0;
   padding: 8px 4px; }
 
@@ -735,7 +735,6 @@ a {
 .paging-navigation,
 .post-navigation {
   background-color: #fff;
-  border: 1px solid #ddd;
   margin: 0 0 3em 0;
   overflow: hidden;
   padding: 20px; }
@@ -844,7 +843,7 @@ a {
   clear: both; }
 
 .widget {
-  background-color: #f8f8f8;
+  background-color: #fafafa;
   margin: 0 0 1em;
   padding: 15px; }
   .widget a {
@@ -1099,7 +1098,7 @@ h1.page-title {
       .comments-area ol li ol {
         padding-top: 20px; }
         .comments-area ol li ol li {
-          background-color: #323a41;
+          background-color: #fafafa;
           border-left: none;
           color: #ccc; }
           .comments-area ol li ol li a {
@@ -1114,7 +1113,7 @@ h1.page-title {
               .comments-area ol li ol li ol li a:focus {
                 outline: thin dotted #ccc; }
             .comments-area ol li ol li ol li ol li {
-              background-color: #323a41;
+              background-color: #fafafa;
               color: #ccc; }
               .comments-area ol li ol li ol li ol li a {
                 color: #ccc;
