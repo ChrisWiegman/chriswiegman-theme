@@ -36,10 +36,24 @@ class Journal {
 
 		$this->title = date( 'F jS, Y', current_time( 'timestamp' ) );
 
+		add_action( 'edit_form_top', array( $this, 'action_edit_form_top' ) );
 		add_action( 'init', array( $this, 'create_journal_type' ) );
 		add_action( 'save_post', array( $this, 'journal_save_morning_meta' ), 10, 2 );
 		add_action( 'save_post', array( $this, 'journal_save_evening_meta' ), 10, 2 );
 		add_filter( 'wp_insert_post_data', array( $this, 'filter_wp_insert_post_data' ), 10, 2 );
+
+	}
+
+	/**
+	 * Action edit_form_top
+	 *
+	 * Adds the journal title where it belongs.
+	 *
+	 * @since 7.0
+	 */
+	public function action_edit_form_top() {
+
+		echo '<h2>' . esc_html__( 'My Evening Journal Entry for ', 'chriswiegman' ) . $this->title . '</h2>';
 
 	}
 
