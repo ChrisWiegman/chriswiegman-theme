@@ -188,6 +188,14 @@ class Journal {
 			<?php $this->field_mood(); ?>
 
 			<tr class="width_normal p_box">
+				<th scope="row"><label for="_journal_journal"><?php esc_html_e( 'Journal', 'chriswiegman' ); ?></label>
+				</th>
+				<td>
+					<?php wp_editor( esc_html( get_post_meta( $post->ID, '_journal_journal', true ) ), 'journal' ); ?>
+				</td>
+			</tr>
+
+			<tr class="width_normal p_box">
 				<td colspan="2"><h3><?php esc_html_e( 'List 3 Amazing things happened today:', 'chriswiegman' ); ?></h3>
 				</td>
 			</tr>
@@ -334,7 +342,7 @@ class Journal {
 	 * @since 2.0.0
 	 *
 	 * @param int      $post_id ID of the current post.
-	 * @param \WP_POST $post The current post.
+	 * @param \WP_POST $post    The current post.
 	 *
 	 * @return int|void post ID on failure or void on success
 	 */
@@ -356,6 +364,7 @@ class Journal {
 		$journal_post_meta['_journal_evening_better_1']  = sanitize_text_field( wp_unslash( $_POST['better_1'] ) ); // WPCS: Input var ok.
 		$journal_post_meta['_journal_evening_better_2']  = sanitize_text_field( wp_unslash( $_POST['better_2'] ) ); // WPCS: Input var ok.
 		$journal_post_meta['_journal_evening_better_3']  = sanitize_text_field( wp_unslash( $_POST['better_3'] ) ); // WPCS: Input var ok.
+		$journal_post_meta['_journal_journal']           = sanitize_text_field( wp_unslash( $_POST['journal'] ) ); // WPCS: Input var ok.
 
 		if ( isset( $_POST['mood'] ) && 0 < absint( $_POST['mood'] ) ) { // WPCS: Input var ok.
 
@@ -380,7 +389,7 @@ class Journal {
 	 * @since 2.0.0
 	 *
 	 * @param array    $journal_post_meta Array of meta fields to save.
-	 * @param \WP_POST $post the current post object.
+	 * @param \WP_POST $post              the current post object.
 	 *
 	 * @return void
 	 */
@@ -415,7 +424,7 @@ class Journal {
 	 * @since 2.0.0
 	 *
 	 * @param int      $post_id ID of the current post.
-	 * @param \WP_POST $post The current post.
+	 * @param \WP_POST $post    The current post.
 	 *
 	 * @return int|void post ID on failure or void on success
 	 */
@@ -440,7 +449,7 @@ class Journal {
 		$journal_post_meta['_journal_morning_affirmation_1'] = sanitize_text_field( wp_unslash( $_POST['affirmation_1'] ) ); // WPCS: Input var ok.
 		$journal_post_meta['_journal_morning_affirmation_2'] = sanitize_text_field( wp_unslash( $_POST['affirmation_2'] ) ); // WPCS: Input var ok.
 		$journal_post_meta['_journal_morning_affirmation_3'] = sanitize_text_field( wp_unslash( $_POST['affirmation_3'] ) ); // WPCS: Input var ok.
-		$journal_post_meta['_journal_morning_context']       = sanitize_text_field( wp_unslash( $_POST['context'] ) ); // WPCS: Input var ok.
+		$journal_post_meta['_journal_journal']               = sanitize_text_field( wp_unslash( $_POST['journal'] ) ); // WPCS: Input var ok.
 
 		if ( isset( $_POST['mood'] ) && 0 < absint( $_POST['mood'] ) ) { // WPCS: Input var ok.
 
@@ -479,9 +488,10 @@ class Journal {
 			<?php $this->field_mood(); ?>
 
 			<tr class="width_normal p_box">
-				<th scope="row"><label for="context"><?php esc_html_e( 'Context', 'chriswiegman' ); ?></label></th>
+				<th scope="row"><label for="_journal_journal"><?php esc_html_e( 'Journal', 'chriswiegman' ); ?></label>
+				</th>
 				<td>
-					<textarea id="context" name="context" rows="5" class="large-text"><?php echo esc_html( get_post_meta( $post->ID, '_journal_morning_context', true ) ); ?></textarea>
+					<?php wp_editor( esc_html( get_post_meta( $post->ID, '_journal_journal', true ) ), 'journal' ); ?>
 				</td>
 			</tr>
 
