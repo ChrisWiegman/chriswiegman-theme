@@ -20,77 +20,77 @@ get_header(); ?>
 			<?php
 			while ( have_posts() ) {
 
-				the_post();
-				?>
+			the_post();
+			?>
 
-				<header class="entry-header">
-					<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-				</header>
+			<header class="entry-header">
+				<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+			</header>
 
-				<div class="entry-content">
+			<div class="entry-content">
 
-					<?php the_content(); ?>
+				<?php the_content(); ?>
 
-					<div id="speaking">
+				<div id="speaking">
 
-						<h2><?php esc_html_e( 'Selected Talks', 'chriswiegman' ); ?></h2>
+					<h2><?php esc_html_e( 'Selected Talks', 'chriswiegman' ); ?></h2>
 
-						<!-- begin .archive-projects-->
-						<ul class="archive-speaking cpt-list">
+					<!-- begin .archive-projects-->
+					<ul class="archive-speaking cpt-list">
 
-							<?php
-							$args  = array(
-								'post_type' => 'speaking',
-								'order'     => 'DESC',
-								'orderby'   => 'meta_value_num',
-								'meta_key'  => '_presentation_date',
-								'nopaging'  => true,
-							);
-							$loop  = new \WP_Query( $args );
-							$count = 0;
-							$icons = array(
-								'megaphone',
-								'comment',
-								'user',
-								'sitemap',
-								'laptop',
-								'fork',
-								'info',
-								'bank',
-								'server',
-								'television',
-							);
+						<?php
+						$args  = array(
+							'post_type' => 'speaking',
+							'order'     => 'DESC',
+							'orderby'   => 'meta_value_num',
+							'meta_key'  => '_presentation_date',
+							'nopaging'  => true,
+						);
+						$loop  = new \WP_Query( $args );
+						$count = 0;
+						$icons = array(
+							'megaphone',
+							'comment',
+							'user',
+							'sitemap',
+							'laptop',
+							'fork',
+							'info',
+							'bank',
+							'server',
+							'television',
+						);
+						?>
+
+						<?php
+						while ( $loop->have_posts() ) {
+
+							$count ++;
+							$loop->the_post();
+
 							?>
+							<li id="post-<?php esc_attr( the_ID() ); ?>" <?php post_class(); ?>>
 
-							<?php
-							while ( $loop->have_posts() ) {
+								<?php
 
-								$count ++;
-								$loop->the_post();
+								$title                 = get_the_title();
+								$conference_names      = get_post_meta( get_the_ID(), '_conference_name' );
+								$slide_url             = get_post_meta( get_the_ID(), '_slide_url' );
+								$presentation_url      = get_post_meta( get_the_ID(), '_presentation_url' );
+								$conference_url        = get_post_meta( get_the_ID(), '_conference_url' );
+								$raw_presentation_date = get_post_meta( get_the_ID(), '_presentation_date' );
+								$conference_location   = get_post_meta( get_the_ID(), '_conference_location' );
+								$icon                  = $icons[ $count % 6 ];
 
 								?>
-								<li id="post-<?php esc_attr( the_ID() ); ?>" <?php post_class(); ?>>
 
-									<?php
+								<div class="entry-header">
 
-									$title                 = get_the_title();
-									$conference_name       = get_post_meta( get_the_ID(), '_conference_name', true );
-									$slide_url             = get_post_meta( get_the_ID(), '_slide_url', true );
-									$presentation_url      = get_post_meta( get_the_ID(), '_presentation_url', true );
-									$conference_url        = get_post_meta( get_the_ID(), '_conference_url', true );
-									$raw_presentation_date = get_post_meta( get_the_ID(), '_presentation_date', true );
-									$conference_location   = get_post_meta( get_the_ID(), '_conference_location', true );
-									$presentation_date     = empty( $raw_presentation_date ) ? '' : date( 'F Y', $raw_presentation_date );
-									$icon                  = $icons[ $count % 6 ];
+									<i class="list-icon icon-<?php echo esc_attr( $icon ); ?>"></i>
 
-									?>
+									<h3 class="entry-title"><?php echo esc_html( $title ); ?></h3>
 
-									<div class="entry-header">
-
-										<i class="list-icon icon-<?php echo esc_attr( $icon ); ?>"></i>
-
-										<h3 class="entry-title"><?php echo esc_html( $title ); ?></h3>
-
+									<?php foreach ( $conference_names as $index => $conference_name ) { ?>
 										<div class="entry-meta">
 
 											<?php
@@ -105,7 +105,7 @@ get_header(); ?>
 
 												} else {
 
-													printf( '<a href="%s" title="%s" target="_blank">%s</a>', esc_url( $conference_url ), esc_attr( $conference_name ), esc_html( $conference_name ) );
+													printf( '<a href="%s" title="%s" target="_blank">%s</a>', esc_url( $conference_url[ $index ] ), esc_attr( $conference_name[ $index ] ), esc_html( $conference_name ) );
 
 												}
 
@@ -113,37 +113,37 @@ get_header(); ?>
 
 											}
 
-											if ( ! empty( $presentation_date ) ) {
+											if ( ! empty( $raw_presentation_date[ $index ] ) ) {
 
 												echo ' - <span class="speaking-date" >';
 
-												echo esc_html( $presentation_date );
+												echo esc_html( date( 'F Y', $raw_presentation_date[ $index ] ) );
 
 												echo '</span >';
 											}
 
-											if ( ! empty( $conference_location ) ) {
+											if ( ! empty( $conference_location[ $index ] ) ) {
 
 												echo ' - <span class="speaking-location" >';
 
-												echo esc_html( $conference_location );
+												echo esc_html( $conference_location[ $index ] );
 
 												echo '</span >';
 											}
 
-											if ( ! empty( $slide_url ) || ! empty( $presentation_url ) ) {
+											if ( ! empty( $slide_url[ $index ] ) || ! empty( $presentation_url[ $index ] ) ) {
 
 												echo '<span class="presentation-links">';
 
-												if ( ! empty( $slide_url ) ) {
+												if ( ! empty( $slide_url[ $index ] ) ) {
 
-													printf( '<span class="slide-link" ><a href="%s" title="%s" rel="bookmark">%s</a></span>', esc_url( $slide_url ), esc_attr( 'View slides from: ' . $title ), esc_attr__( 'View Slides', 'chriswiegman' ) );
+													printf( '<span class="slide-link" ><a href="%s" title="%s" rel="bookmark">%s</a></span>', esc_url( $slide_url[ $index ] ), esc_attr( 'View slides from: ' . $title ), esc_attr__( 'View Slides', 'chriswiegman' ) );
 
 												}
 
-												if ( ! empty( $presentation_url ) ) {
+												if ( ! empty( $presentation_url[ $index ] ) ) {
 
-													printf( '<span class="presentation-link" ><a href="%s" title="%s" rel="bookmark">%s</a></span>', esc_url( $slide_url ), esc_attr( 'Watch presentation: ' . $title ), esc_attr__( 'Watch Talk', 'chriswiegman' ) );
+													printf( '<span class="presentation-link" ><a href="%s" title="%s" rel="bookmark">%s</a></span>', esc_url( $presentation_url[ $index ] ), esc_attr( 'Watch presentation: ' . $title ), esc_attr__( 'Watch Talk', 'chriswiegman' ) );
 
 												}
 
@@ -154,27 +154,33 @@ get_header(); ?>
 											?>
 
 										</div>
-										<!-- .entry-meta -->
+									<?php } ?>
+									<!-- .entry-meta -->
 
-										<?php the_content(); ?>
+								</div>
 
-									</div>
-									<!-- .entry-header -->
-									<div class="divider"></div>
-								</li><!-- #post-## -->
+								<?php the_post_thumbnail( 'medium_large'); ?>
 
-								<?php
+								<div class="entry-content">
+									<?php the_content(); ?>
+								</div>
 
-							}
-							wp_reset_postdata();
-							?>
+								<!-- .entry-header -->
+								<div class="divider"></div>
+							</li><!-- #post-## -->
 
-						</ul>
-						<!-- end .archive-projects-->
+							<?php
 
-					</div>
+						}
+						wp_reset_postdata();
+						?>
+
+					</ul>
+					<!-- end .archive-projects-->
 
 				</div>
+
+			</div>
 
 			<?php } // End of the loop.
 			?>
