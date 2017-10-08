@@ -461,32 +461,61 @@ class Speaking {
 			return $post_id;
 		}
 
-		$project_post_meta['_slide_url']           = esc_url( $_POST['slide_url'] );
-		$project_post_meta['_presentation_url']    = esc_url( $_POST['presentation_url'] );
-		$project_post_meta['_conference_url']      = esc_url( $_POST['conference_url'] );
-		$project_post_meta['_conference_name']     = sanitize_text_field( $_POST['conference_name'] );
-		$project_post_meta['_conference_location'] = sanitize_text_field( $_POST['conference_location'] );
-		$project_post_meta['_presentation_date']   = strtotime( $_POST['presentation_date'] );
+		// Sanitize all the talk meta.
+		$project_post_meta['_slide_url'] = array_map( function ( $slide_url ) {
+
+			return esc_url( $slide_url );
+
+		}, $_POST['slide_url'] );
+
+		$project_post_meta['_presentation_url'] = array_map( function ( $presentation_url ) {
+
+			return esc_url( $presentation_url );
+
+		}, $_POST['presentation_url'] );
+
+		$project_post_meta['_conference_url'] = array_map( function ( $conference_url ) {
+
+			return esc_url( $conference_url );
+
+		}, $_POST['conference_url'] );
+
+		$project_post_meta['_conference_name'] = array_map( function ( $conference_name ) {
+
+			return sanitize_text_field( $conference_name );
+
+		}, $_POST['conference_name'] );
+
+		$project_post_meta['_conference_location'] = array_map( function ( $conference_location ) {
+
+			return sanitize_text_field( $conference_location );
+
+		}, $_POST['conference_location'] );
+
+		$project_post_meta['_presentation_date'] = array_map( function ( $presentation_date ) {
+
+			return strtotime( $presentation_date );
+
+		}, $_POST['presentation_date'] );
+
+		// Ensure each is a valid conference and remove if it isn't
+		foreach ( $project_post_meta['_conference_name'] as $index => $conference ) {
+
+			if ( empty( $conference ) ) {
+
+				foreach ( $project_post_meta as $array_index => $array ) {
+					unset( $project_post_meta[ $array_index ][ $index ] );
+				}
+			}
+		}
 
 		// Add values as custom fields.
-		foreach ( $project_post_meta as $key => $value ) { // Cycle through the $quote_post_meta array.
+		foreach ( $project_post_meta as $key => $value_array ) {
 
-			$value = implode( ',', (array) $value ); // If $value is an array, make it a CSV (unlikely).
+			delete_post_meta( $post->ID, $key );
 
-			if ( get_post_meta( $post->ID, $key, false ) ) { // If the custom field already has a value.
-
-				update_post_meta( $post->ID, $key, $value );
-
-			} else { // If the custom field doesn't have a value.
-
+			foreach ( $value_array as $value ) {
 				add_post_meta( $post->ID, $key, $value );
-
-			}
-
-			if ( ! $value ) { // Delete if blank.
-
-				delete_post_meta( $post->ID, $key );
-
 			}
 		}
 
