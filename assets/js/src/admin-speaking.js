@@ -1,3 +1,3 @@
-jQuery ( document ).ready ( function ( $ ) {
-	$ ( '#presentation_date' ).datepicker ();
-} );
+jQuery(document).ready(function ($) {
+	$('#presentation_date').datepicker();
+});
