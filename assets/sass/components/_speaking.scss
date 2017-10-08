@@ -5,18 +5,23 @@ ul.archive-speaking {
 
 	li {
 
-		font-size: $small-rem;
-		margin:    0;
+		margin: 0;
+
+		img {
+			margin:  0;
+			padding: 0;
+		}
 
 		.fa {
 			margin:  0;
 			padding: 0;
 		}
 
-		.entry-header {
+		.entry-header,
+		.entry-content {
 
-			font-size: $small-rem;
-			padding:   0;
+			margin:  0;
+			padding: 0;
 
 			.entry-title {
 
