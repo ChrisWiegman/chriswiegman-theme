@@ -89,18 +89,9 @@ class Speaking {
 	public function add_speaking_metabox() {
 
 		add_meta_box(
-			'speaking-talk',
-			esc_html__( 'Talk Information', 'chriswiegman' ),
-			array( $this, 'speaking_talk_metabox' ),
 			'speaking',
-			'normal',
-			'high'
-		);
-
-		add_meta_box(
-			'speaking-conference',
-			esc_html__( 'Conference Information', 'chriswiegman' ),
-			array( $this, 'speaking_conference_metabox' ),
+			esc_html__( 'Speaking Gig Information', 'chriswiegman' ),
+			array( $this, 'speaking_metabox' ),
 			'speaking',
 			'normal',
 			'high'
@@ -266,59 +257,12 @@ class Speaking {
 	 *
 	 * @since 1.0.0
 	 */
-	public function speaking_talk_metabox() {
+	public function speaking_metabox() {
 
 		global $post;
 
 		// Create nonce.
-		echo '<input type="hidden" name="speaking_post_noncename" id="speaking_talk_post_noncename" value="' . esc_attr( wp_create_nonce( plugin_basename( __FILE__ ) ) ) . '" />';
-		echo '<table class="form-table">';
-
-		// Get slide URL data.
-		$slide_url = get_post_meta( $post->ID, '_slide_url', true );
-
-		?>
-
-		<tr class="width_normal p_box">
-			<th scope="row"><label for="slide_url"><?php esc_html_e( 'Slide URL', 'chriswiegman' ); ?></label></th>
-			<td>
-				<input type="text" id="slide_url" name="slide_url" class="large-text" value="<?php echo esc_url( $slide_url ); ?>">
-			</td>
-		</tr>
-
-		<?php
-
-		// Get presentation URL data.
-		$presentation_url = get_post_meta( $post->ID, '_presentation_url', true );
-
-		?>
-
-		<tr class="width_normal p_box">
-			<th scope="row">
-				<label for="presentation_url"><?php esc_html_e( 'Full Talk URL', 'chriswiegman' ); ?></label></th>
-			<td>
-				<input type="text" id="presentation_url" name="presentation_url" class="large-text" value="<?php echo esc_url( $presentation_url ); ?>">
-			</td>
-		</tr>
-
-		<?php
-		echo '</table>';
-
-	}
-
-	/**
-	 * Echo metabox content
-	 *
-	 * Echos the content of the metabox for this CPT.
-	 *
-	 * @since 1.0.0
-	 */
-	public function speaking_conference_metabox() {
-
-		global $post;
-
-		// Create nonce.
-		echo '<input type="hidden" name="speaking_conference_post_noncename" id="speaking_conference_post_noncename" value="' . esc_attr( wp_create_nonce( plugin_basename( __FILE__ ) ) ) . '" />';
+		echo '<input type="hidden" name="speaking_post_noncename" id="speaking_post_noncename" value="' . esc_attr( wp_create_nonce( plugin_basename( __FILE__ ) ) ) . '" />';
 		echo '<table class="form-table">';
 
 		// Get conference name.
@@ -346,6 +290,35 @@ class Speaking {
 			</th>
 			<td>
 				<input type="text" id="conference_url" name="conference_url" class="large-text" value="<?php echo esc_url( $conference_url ); ?>">
+			</td>
+		</tr>
+
+		<?php
+
+		// Get slide URL data.
+		$slide_url = get_post_meta( $post->ID, '_slide_url', true );
+
+		?>
+
+		<tr class="width_normal p_box">
+			<th scope="row"><label for="slide_url"><?php esc_html_e( 'Slide URL', 'chriswiegman' ); ?></label></th>
+			<td>
+				<input type="text" id="slide_url" name="slide_url" class="large-text" value="<?php echo esc_url( $slide_url ); ?>">
+			</td>
+		</tr>
+
+		<?php
+
+		// Get presentation URL data.
+		$presentation_url = get_post_meta( $post->ID, '_presentation_url', true );
+
+		?>
+
+		<tr class="width_normal p_box">
+			<th scope="row">
+				<label for="presentation_url"><?php esc_html_e( 'Presentation URL', 'chriswiegman' ); ?></label></th>
+			<td>
+				<input type="text" id="presentation_url" name="presentation_url" class="large-text" value="<?php echo esc_url( $presentation_url ); ?>">
 			</td>
 		</tr>
 
@@ -401,13 +374,8 @@ class Speaking {
 	public function speaking_save_meta( $post_id, $post ) {
 
 		// @codingStandardsIgnoreStart
-		// Verify talk nonce.
-		if ( ! isset( $_POST['speaking_talk_post_noncename'] ) || ! wp_verify_nonce( $_POST['speaking_talk_post_noncename'], plugin_basename( __FILE__ ) ) ) {
-			return $post_id;
-		}
-
-		// Verify talk nonce.
-		if ( ! isset( $_POST['speaking_conference_post_noncename'] ) || ! wp_verify_nonce( $_POST['speaking_conference_post_noncename'], plugin_basename( __FILE__ ) ) ) {
+		// Verify nonce.
+		if ( ! isset( $_POST['speaking_post_noncename'] ) || ! wp_verify_nonce( $_POST['speaking_post_noncename'], plugin_basename( __FILE__ ) ) ) {
 			return $post_id;
 		}
 
