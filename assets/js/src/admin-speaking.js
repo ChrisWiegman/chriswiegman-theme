@@ -7,10 +7,18 @@ jQuery(document).ready(function ($) {
 
 			var row = $('.empty-row.screen-reader-text').clone(true);
 
-			console.log($('#repeatable-fieldset tbody>tr:last'));
-
 			row.removeClass('empty-row screen-reader-text');
 			row.insertBefore('#repeatable-fieldset tbody>tr.main:last');
+
+			$('.date-field').each(function () {
+
+				if (0 === $(this).closest('.empty-row').length) {
+
+					$(this).datepicker('destroy');
+					$(this).datepicker();
+
+				}
+			});
 
 			return false;
 
@@ -29,7 +37,8 @@ jQuery(document).ready(function ($) {
 
 	});
 
-	// Add datepicker to presentation date.
-	$('#presentation_date').datepicker();
+	$('.date-field').each(function () {
+		$(this).datepicker();
+	});
 
 });
