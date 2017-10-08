@@ -263,100 +263,192 @@ class Speaking {
 
 		// Create nonce.
 		echo '<input type="hidden" name="speaking_post_noncename" id="speaking_post_noncename" value="' . esc_attr( wp_create_nonce( plugin_basename( __FILE__ ) ) ) . '" />';
-		echo '<table class="form-table">';
-
-		// Get conference name.
-		$conference_name = get_post_meta( $post->ID, '_conference_name', true );
-
 		?>
+		<table id="repeatable-fieldset" class="speaking-fields">
+			<tr class="main">
+				<td>
+					<table class="form-table">
+						<tr>
+							<td colspan="2">
+								<a class="button remove-row" href="#"><?php esc_html_e( 'Remove', 'chriswiegman' ); ?></a>
+							</td>
+						</tr>
 
-		<tr class="width_normal p_box">
-			<th scope="row">
-				<label for="conference_name"><?php esc_html_e( 'Conference Name', 'chriswiegman' ); ?></label></th>
-			<td>
-				<input type="text" id="conference_name" name="conference_name" class="large-text" value="<?php echo esc_attr( $conference_name ); ?>">
-			</td>
-		</tr>
+						<?php
 
+						// Get conference name.
+						$conference_name = get_post_meta( $post->ID, '_conference_name', true );
+
+						?>
+
+						<tr class="width_normal p_box">
+							<th scope="row">
+								<label for="conference_name"><?php esc_html_e( 'Conference Name', 'chriswiegman' ); ?></label>
+							</th>
+							<td>
+								<input type="text" id="conference_name" name="conference_name" class="large-text" value="<?php echo esc_attr( $conference_name ); ?>">
+							</td>
+						</tr>
+
+						<?php
+
+						// Get conference URL data.
+						$conference_url = get_post_meta( $post->ID, '_conference_url', true );
+
+						?>
+
+						<tr class="width_normal p_box">
+							<th scope="row">
+								<label for="conference_url"><?php esc_html_e( 'Conference URL', 'chriswiegman' ); ?></label>
+							</th>
+							<td>
+								<input type="text" id="conference_url" name="conference_url" class="large-text" value="<?php echo esc_url( $conference_url ); ?>">
+							</td>
+						</tr>
+
+						<?php
+
+						// Get slide URL data.
+						$slide_url = get_post_meta( $post->ID, '_slide_url', true );
+
+						?>
+
+						<tr class="width_normal p_box">
+							<th scope="row">
+								<label for="slide_url"><?php esc_html_e( 'Slide URL', 'chriswiegman' ); ?></label>
+							</th>
+							<td>
+								<input type="text" id="slide_url" name="slide_url" class="large-text" value="<?php echo esc_url( $slide_url ); ?>">
+							</td>
+						</tr>
+
+						<?php
+
+						// Get presentation URL data.
+						$presentation_url = get_post_meta( $post->ID, '_presentation_url', true );
+
+						?>
+
+						<tr class="width_normal p_box">
+							<th scope="row">
+								<label for="presentation_url"><?php esc_html_e( 'Presentation URL', 'chriswiegman' ); ?></label>
+							</th>
+							<td>
+								<input type="text" id="presentation_url" name="presentation_url" class="large-text" value="<?php echo esc_url( $presentation_url ); ?>">
+							</td>
+						</tr>
+
+						<?php
+
+						// Get Presentation date data.
+						$raw_presentation_date = get_post_meta( $post->ID, '_presentation_date', true );
+						$presentation_date     = empty( $raw_presentation_date ) ? current_time( 'm/d/Y' ) : date( 'm/d/Y', $raw_presentation_date );
+
+						?>
+
+						<tr class="width_normal p_box">
+							<th scope="row">
+								<label for="presentation_date"><?php esc_html_e( 'Presentation Date', 'chriswiegman' ); ?></label>
+							</th>
+							<td>
+								<input type="text" id="presentation_date" name="presentation_date" class="medium-text" value="<?php echo esc_attr( $presentation_date ); ?>">
+							</td>
+						</tr>
+
+						<?php
+
+						// Get conference name.
+						$conference_location = get_post_meta( $post->ID, '_conference_location', true );
+
+						?>
+
+						<tr class="width_normal p_box">
+							<th scope="row">
+								<label for="conference_location"><?php esc_html_e( 'Conference Location', 'chriswiegman' ); ?></label>
+							</th>
+							<td>
+								<input type="text" id="conference_location" name="conference_location" class="medium-text" value="<?php echo esc_attr( $conference_location ); ?>">
+							</td>
+						</tr>
+
+					</table>
+				</td>
+			</tr>
+
+			<!-- empty hidden one for jQuery -->
+			<tr class="main empty-row screen-reader-text">
+				<td>
+					<table class="form-table">
+						<tr>
+							<td colspan="2">
+								<a class="button remove-row" href="#"><?php esc_html_e( 'Remove', 'chriswiegman' ); ?></a>
+							</td>
+						</tr>
+
+						<tr class="width_normal p_box">
+							<th scope="row">
+								<label for="conference_name"><?php esc_html_e( 'Conference Name', 'chriswiegman' ); ?></label>
+							</th>
+							<td>
+								<input type="text" id="conference_name" name="conference_name" class="large-text">
+							</td>
+						</tr>
+
+						<tr class="width_normal p_box">
+							<th scope="row">
+								<label for="conference_url"><?php esc_html_e( 'Conference URL', 'chriswiegman' ); ?></label>
+							</th>
+							<td>
+								<input type="text" id="conference_url" name="conference_url" class="large-text">
+							</td>
+						</tr>
+
+						<tr class="width_normal p_box">
+							<th scope="row">
+								<label for="slide_url"><?php esc_html_e( 'Slide URL', 'chriswiegman' ); ?></label>
+							</th>
+							<td>
+								<input type="text" id="slide_url" name="slide_url" class="large-text">
+							</td>
+						</tr>
+
+						<tr class="width_normal p_box">
+							<th scope="row">
+								<label for="presentation_url"><?php esc_html_e( 'Presentation URL', 'chriswiegman' ); ?></label>
+							</th>
+							<td>
+								<input type="text" id="presentation_url" name="presentation_url" class="large-text">
+							</td>
+						</tr>
+
+						<tr class="width_normal p_box">
+							<th scope="row">
+								<label for="presentation_date"><?php esc_html_e( 'Presentation Date', 'chriswiegman' ); ?></label>
+							</th>
+							<td>
+								<input type="text" id="presentation_date" name="presentation_date" class="medium-text" value="<?php echo current_time( 'm/d/Y' ); ?>">
+							</td>
+						</tr>
+
+						<tr class="width_normal p_box">
+							<th scope="row">
+								<label for="conference_location"><?php esc_html_e( 'Conference Location', 'chriswiegman' ); ?></label>
+							</th>
+							<td>
+								<input type="text" id="conference_location" name="conference_location" class="medium-text">
+							</td>
+						</tr>
+
+					</table>
+				</td>
+			</tr>
+		</table>
+
+		<p>
+			<a id="add-row" class="button" href="#"><?php esc_html_e( 'Add Presentation', 'chriswiegman' ); ?></a>
+		</p>
+		<p class="description"><?php esc_html_e( 'Use the "Add Presentation" or "Remove" buttons to add one or more presentations of this talk.', 'chriswiegman' ); ?></p>
 		<?php
-
-		// Get conference URL data.
-		$conference_url = get_post_meta( $post->ID, '_conference_url', true );
-
-		?>
-
-		<tr class="width_normal p_box">
-			<th scope="row"><label for="conference_url"><?php esc_html_e( 'Conference URL', 'chriswiegman' ); ?></label>
-			</th>
-			<td>
-				<input type="text" id="conference_url" name="conference_url" class="large-text" value="<?php echo esc_url( $conference_url ); ?>">
-			</td>
-		</tr>
-
-		<?php
-
-		// Get slide URL data.
-		$slide_url = get_post_meta( $post->ID, '_slide_url', true );
-
-		?>
-
-		<tr class="width_normal p_box">
-			<th scope="row"><label for="slide_url"><?php esc_html_e( 'Slide URL', 'chriswiegman' ); ?></label></th>
-			<td>
-				<input type="text" id="slide_url" name="slide_url" class="large-text" value="<?php echo esc_url( $slide_url ); ?>">
-			</td>
-		</tr>
-
-		<?php
-
-		// Get presentation URL data.
-		$presentation_url = get_post_meta( $post->ID, '_presentation_url', true );
-
-		?>
-
-		<tr class="width_normal p_box">
-			<th scope="row">
-				<label for="presentation_url"><?php esc_html_e( 'Presentation URL', 'chriswiegman' ); ?></label></th>
-			<td>
-				<input type="text" id="presentation_url" name="presentation_url" class="large-text" value="<?php echo esc_url( $presentation_url ); ?>">
-			</td>
-		</tr>
-
-		<?php
-
-		// Get Presentation date data.
-		$raw_presentation_date = get_post_meta( $post->ID, '_presentation_date', true );
-		$presentation_date     = empty( $raw_presentation_date ) ? current_time( 'm/d/Y' ) : date( 'm/d/Y', $raw_presentation_date );
-
-		?>
-
-		<tr class="width_normal p_box">
-			<th scope="row">
-				<label for="presentation_date"><?php esc_html_e( 'Presentation Date', 'chriswiegman' ); ?></label></th>
-			<td>
-				<input type="text" id="presentation_date" name="presentation_date" class="medium-text" value="<?php echo esc_attr( $presentation_date ); ?>">
-			</td>
-		</tr>
-
-		<?php
-
-		// Get conference name.
-		$conference_location = get_post_meta( $post->ID, '_conference_location', true );
-
-		?>
-
-		<tr class="width_normal p_box">
-			<th scope="row">
-				<label for="conference_location"><?php esc_html_e( 'Conference Location', 'chriswiegman' ); ?></label>
-			</th>
-			<td>
-				<input type="text" id="conference_location" name="conference_location" class="medium-text" value="<?php echo esc_attr( $conference_location ); ?>">
-			</td>
-		</tr>
-
-		<?php
-		echo '</table>';
-
 	}
 
 	/**
