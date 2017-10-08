@@ -76,6 +76,7 @@ get_header(); ?>
 									$title                 = get_the_title();
 									$conference_name       = get_post_meta( get_the_ID(), '_conference_name', true );
 									$slide_url             = get_post_meta( get_the_ID(), '_slide_url', true );
+									$presentation_url      = get_post_meta( get_the_ID(), '_presentation_url', true );
 									$conference_url        = get_post_meta( get_the_ID(), '_conference_url', true );
 									$raw_presentation_date = get_post_meta( get_the_ID(), '_presentation_date', true );
 									$conference_location   = get_post_meta( get_the_ID(), '_conference_location', true );
@@ -88,17 +89,7 @@ get_header(); ?>
 
 										<i class="list-icon icon-<?php echo esc_attr( $icon ); ?>"></i>
 
-										<?php
-										if ( empty( $slide_url ) ) {
-
-											printf( '<h3 class="entry-title">%s</h3>', esc_html( $title ) );
-
-										} else {
-
-											printf( '<h3 class="entry-title"><a href="%s" title="%s" rel="bookmark">%s</a></h3>', esc_url( $slide_url ), esc_attr( 'View slides from: ' . $title ), sanitize_text_field( $title ) );
-
-										}
-										?>
+										<h3 class="entry-title"><?php echo esc_html( $title ); ?></h3>
 
 										<div class="entry-meta">
 
@@ -138,6 +129,26 @@ get_header(); ?>
 												echo esc_html( $conference_location );
 
 												echo '</span >';
+											}
+
+											if ( ! empty( $slide_url ) || ! empty( $presentation_url ) ) {
+
+												echo '<span class="presentation-links">';
+
+												if ( ! empty( $slide_url ) ) {
+
+													printf( '<span class="slide-link" ><a href="%s" title="%s" rel="bookmark">%s</a></span>', esc_url( $slide_url ), esc_attr( 'View slides from: ' . $title ), esc_attr__( 'View Slides', 'chriswiegman' ) );
+
+												}
+
+												if ( ! empty( $presentation_url ) ) {
+
+													printf( '<span class="presentation-link" ><a href="%s" title="%s" rel="bookmark">%s</a></span>', esc_url( $slide_url ), esc_attr( 'Watch presentation: ' . $title ), esc_attr__( 'Watch Talk', 'chriswiegman' ) );
+
+												}
+
+												echo '</span>';
+
 											}
 
 											?>
