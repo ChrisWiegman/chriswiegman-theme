@@ -54,10 +54,14 @@ class Journal {
 	public function action_edit_form_top() {
 
 		$screen = get_current_screen()->id;
-		$type   = ( 'morning-journal' === $screen ) ? esc_html__( 'Morning', 'chriswiegman' ) : esc_html__( 'Evening', 'chriswiegman' );
 
-		echo '<h2>' . sprintf( esc_html__( 'My %s Journal Entry for %s', 'chriswiegman' ), $type, $this->title ) . '</h2>';
+		if ( 'morning-journal' === $screen || 'evening-journal' === $screen ) {
 
+			$type = ( 'morning-journal' === $screen ) ? esc_html__( 'Morning', 'chriswiegman' ) : esc_html__( 'Evening', 'chriswiegman' );
+
+			echo '<h2>' . sprintf( esc_html__( 'My %s Journal Entry for %s', 'chriswiegman' ), $type, $this->title ) . '</h2>';
+
+		}
 	}
 
 	/**
