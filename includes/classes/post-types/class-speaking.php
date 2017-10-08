@@ -90,7 +90,7 @@ class Speaking {
 
 		add_meta_box(
 			'speaking',
-			esc_html__( 'Speaking Gig Information', 'chriswiegman' ),
+			esc_html__( 'Talk Information', 'chriswiegman' ),
 			array( $this, 'speaking_metabox' ),
 			'speaking',
 			'normal',
