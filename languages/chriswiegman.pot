@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ChrisWiegman 6.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/style\n"
-"POT-Creation-Date: 2017-10-07 16:17:27+00:00\n"
+"POT-Creation-Date: 2017-10-08 15:26:29+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -13,27 +13,27 @@ msgstr ""
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "X-Generator: grunt-wp-i18n1.0.0\n"
 
-#: includes/classes/post-types/class-journal.php:204
-#: includes/classes/post-types/class-journal.php:228
-#: includes/classes/post-types/class-journal.php:503
-#: includes/classes/post-types/class-journal.php:526
-#: includes/classes/post-types/class-journal.php:549
+#: includes/classes/post-types/class-journal.php:217
+#: includes/classes/post-types/class-journal.php:241
+#: includes/classes/post-types/class-journal.php:506
+#: includes/classes/post-types/class-journal.php:529
+#: includes/classes/post-types/class-journal.php:552
 msgid "1"
 msgstr ""
 
-#: includes/classes/post-types/class-journal.php:210
-#: includes/classes/post-types/class-journal.php:234
-#: includes/classes/post-types/class-journal.php:509
-#: includes/classes/post-types/class-journal.php:532
-#: includes/classes/post-types/class-journal.php:555
+#: includes/classes/post-types/class-journal.php:223
+#: includes/classes/post-types/class-journal.php:247
+#: includes/classes/post-types/class-journal.php:512
+#: includes/classes/post-types/class-journal.php:535
+#: includes/classes/post-types/class-journal.php:558
 msgid "2"
 msgstr ""
 
-#: includes/classes/post-types/class-journal.php:216
-#: includes/classes/post-types/class-journal.php:240
-#: includes/classes/post-types/class-journal.php:515
-#: includes/classes/post-types/class-journal.php:538
-#: includes/classes/post-types/class-journal.php:561
+#: includes/classes/post-types/class-journal.php:229
+#: includes/classes/post-types/class-journal.php:253
+#: includes/classes/post-types/class-journal.php:518
+#: includes/classes/post-types/class-journal.php:541
+#: includes/classes/post-types/class-journal.php:564
 msgid "3"
 msgstr ""
 
@@ -137,117 +137,121 @@ msgstr ""
 msgid "Menu"
 msgstr ""
 
+#: includes/classes/post-types/class-journal.php:57
+msgid "Morning"
+msgstr ""
+
+#: includes/classes/post-types/class-journal.php:57
+msgid "Evening"
+msgstr ""
+
 #: includes/classes/post-types/class-journal.php:59
-msgid "My Evening Journal Entry for "
+msgid "My %s Journal Entry for %s"
 msgstr ""
 
-#: includes/classes/post-types/class-journal.php:81
-msgid "My Morning Journal Entry for "
+#: includes/classes/post-types/class-journal.php:76
+#: includes/classes/post-types/class-journal.php:98
+msgid "Journal Details"
 msgstr ""
 
-#: includes/classes/post-types/class-journal.php:110
-#: includes/classes/post-types/class-journal.php:143
+#: includes/classes/post-types/class-journal.php:127
+#: includes/classes/post-types/class-journal.php:162
 msgid "Add New Entry"
 msgstr ""
 
-#: includes/classes/post-types/class-journal.php:111
-#: includes/classes/post-types/class-journal.php:144
+#: includes/classes/post-types/class-journal.php:128
+#: includes/classes/post-types/class-journal.php:163
 msgid "New Entry"
 msgstr ""
 
-#: includes/classes/post-types/class-journal.php:112
-#: includes/classes/post-types/class-journal.php:145
+#: includes/classes/post-types/class-journal.php:129
+#: includes/classes/post-types/class-journal.php:164
 msgid "Edit Entry"
 msgstr ""
 
-#: includes/classes/post-types/class-journal.php:113
-#: includes/classes/post-types/class-journal.php:146
+#: includes/classes/post-types/class-journal.php:130
+#: includes/classes/post-types/class-journal.php:165
 msgid "View Entry"
 msgstr ""
 
-#: includes/classes/post-types/class-journal.php:114
-#: includes/classes/post-types/class-journal.php:147
+#: includes/classes/post-types/class-journal.php:131
+#: includes/classes/post-types/class-journal.php:166
 msgid "All Entries"
 msgstr ""
 
-#: includes/classes/post-types/class-journal.php:115
-#: includes/classes/post-types/class-journal.php:148
+#: includes/classes/post-types/class-journal.php:132
+#: includes/classes/post-types/class-journal.php:167
 msgid "Search Entries"
 msgstr ""
 
-#: includes/classes/post-types/class-journal.php:116
-#: includes/classes/post-types/class-journal.php:149
+#: includes/classes/post-types/class-journal.php:133
+#: includes/classes/post-types/class-journal.php:168
 msgid "Parent Entries:"
 msgstr ""
 
-#: includes/classes/post-types/class-journal.php:117
-#: includes/classes/post-types/class-journal.php:150
+#: includes/classes/post-types/class-journal.php:134
+#: includes/classes/post-types/class-journal.php:169
 msgid "No entries found."
 msgstr ""
 
-#: includes/classes/post-types/class-journal.php:118
-#: includes/classes/post-types/class-journal.php:151
+#: includes/classes/post-types/class-journal.php:135
+#: includes/classes/post-types/class-journal.php:170
 msgid "No entries found in Trash."
 msgstr ""
 
-#: includes/classes/post-types/class-journal.php:120
+#: includes/classes/post-types/class-journal.php:137
 msgid "Morning journal entries."
 msgstr ""
 
-#: includes/classes/post-types/class-journal.php:153
+#: includes/classes/post-types/class-journal.php:172
 msgid "Evening journal entries."
 msgstr ""
 
-#: includes/classes/post-types/class-journal.php:191
-#: includes/classes/post-types/class-journal.php:491
-msgid "Journal"
-msgstr ""
-
-#: includes/classes/post-types/class-journal.php:199
+#: includes/classes/post-types/class-journal.php:212
 msgid "List 3 Amazing things happened today:"
 msgstr ""
 
-#: includes/classes/post-types/class-journal.php:223
+#: includes/classes/post-types/class-journal.php:236
 msgid "How could you have made today better?"
 msgstr ""
 
-#: includes/classes/post-types/class-journal.php:268
+#: includes/classes/post-types/class-journal.php:281
 msgid "Energy/Mood:"
 msgstr ""
 
-#: includes/classes/post-types/class-journal.php:271
+#: includes/classes/post-types/class-journal.php:284
 msgid "Select"
 msgstr ""
 
-#: includes/classes/post-types/class-journal.php:285
+#: includes/classes/post-types/class-journal.php:298
 msgid "Excellent"
 msgstr ""
 
-#: includes/classes/post-types/class-journal.php:286
+#: includes/classes/post-types/class-journal.php:299
 msgid "Good"
 msgstr ""
 
-#: includes/classes/post-types/class-journal.php:287
+#: includes/classes/post-types/class-journal.php:300
 msgid "OK"
 msgstr ""
 
-#: includes/classes/post-types/class-journal.php:288
+#: includes/classes/post-types/class-journal.php:301
 msgid "Bad"
 msgstr ""
 
-#: includes/classes/post-types/class-journal.php:289
+#: includes/classes/post-types/class-journal.php:302
 msgid "Horrible"
 msgstr ""
 
-#: includes/classes/post-types/class-journal.php:499
+#: includes/classes/post-types/class-journal.php:502
 msgid "I'm grateful for:"
 msgstr ""
 
-#: includes/classes/post-types/class-journal.php:522
+#: includes/classes/post-types/class-journal.php:525
 msgid "What would make today better:"
 msgstr ""
 
-#: includes/classes/post-types/class-journal.php:545
+#: includes/classes/post-types/class-journal.php:548
 msgid "Daily Affirmation:"
 msgstr ""
 
@@ -415,27 +419,27 @@ msgstr ""
 msgid "A place to list speaking gigs."
 msgstr ""
 
-#: includes/classes/post-types/class-speaking.php:274
+#: includes/classes/post-types/class-speaking.php:275
 msgid "Conference Name"
 msgstr ""
 
-#: includes/classes/post-types/class-speaking.php:288
+#: includes/classes/post-types/class-speaking.php:289
 msgid "Conference URL"
 msgstr ""
 
-#: includes/classes/post-types/class-speaking.php:303
+#: includes/classes/post-types/class-speaking.php:304
 msgid "Slide URL"
 msgstr ""
 
-#: includes/classes/post-types/class-speaking.php:318
+#: includes/classes/post-types/class-speaking.php:319
 msgid "Presentation URL"
 msgstr ""
 
-#: includes/classes/post-types/class-speaking.php:334
+#: includes/classes/post-types/class-speaking.php:335
 msgid "Presentation Date"
 msgstr ""
 
-#: includes/classes/post-types/class-speaking.php:349
+#: includes/classes/post-types/class-speaking.php:350
 msgid "Conference Location"
 msgstr ""
 
@@ -648,12 +652,12 @@ msgctxt "yearly archives date format"
 msgid "Y"
 msgstr ""
 
-#: includes/classes/post-types/class-journal.php:105
+#: includes/classes/post-types/class-journal.php:122
 msgctxt "post type general name"
 msgid "Morning Entries"
 msgstr ""
 
-#: includes/classes/post-types/class-journal.php:138
+#: includes/classes/post-types/class-journal.php:157
 msgctxt "post type general name"
 msgid "Evening Entries"
 msgstr ""
@@ -668,12 +672,12 @@ msgctxt "post type general name"
 msgid "Speaking Gigs"
 msgstr ""
 
-#: includes/classes/post-types/class-journal.php:106
+#: includes/classes/post-types/class-journal.php:123
 msgctxt "post type singular name"
 msgid "Morning Entry"
 msgstr ""
 
-#: includes/classes/post-types/class-journal.php:139
+#: includes/classes/post-types/class-journal.php:158
 msgctxt "post type singular name"
 msgid "Evening Entry"
 msgstr ""
@@ -688,12 +692,12 @@ msgctxt "post type singular name"
 msgid "Speaking Gig"
 msgstr ""
 
-#: includes/classes/post-types/class-journal.php:107
+#: includes/classes/post-types/class-journal.php:124
 msgctxt "admin menu"
 msgid "Morning Journal"
 msgstr ""
 
-#: includes/classes/post-types/class-journal.php:140
+#: includes/classes/post-types/class-journal.php:159
 msgctxt "admin menu"
 msgid "Evening Journal"
 msgstr ""
@@ -708,12 +712,12 @@ msgctxt "admin menu"
 msgid "Speaking Gigs"
 msgstr ""
 
-#: includes/classes/post-types/class-journal.php:108
+#: includes/classes/post-types/class-journal.php:125
 msgctxt "add new on admin bar"
 msgid "Morning Entry"
 msgstr ""
 
-#: includes/classes/post-types/class-journal.php:141
+#: includes/classes/post-types/class-journal.php:160
 msgctxt "add new on admin bar"
 msgid "Evening Entry"
 msgstr ""
@@ -728,8 +732,8 @@ msgctxt "add new on admin bar"
 msgid "Speaking Gigs"
 msgstr ""
 
-#: includes/classes/post-types/class-journal.php:109
-#: includes/classes/post-types/class-journal.php:142
+#: includes/classes/post-types/class-journal.php:126
+#: includes/classes/post-types/class-journal.php:161
 #: includes/classes/post-types/class-project.php:71
 #: includes/classes/post-types/class-speaking.php:143
 msgctxt "book"
