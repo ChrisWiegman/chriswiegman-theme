@@ -1204,6 +1204,12 @@ ul.archive-speaking {
   ul.archive-speaking .speaking-date,
   ul.archive-speaking .speaking-location {
     font-style: italic; }
+  ul.archive-speaking .presentation-links {
+    float: right; }
+    ul.archive-speaking .presentation-links .slide-link,
+    ul.archive-speaking .presentation-links .presentation-link {
+      font-style: italic;
+      margin-left: 10px; }
   ul.archive-speaking .divider {
     border-bottom: 1px solid #efefef;
     display: block;
