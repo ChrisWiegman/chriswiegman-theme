@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ChrisWiegman 6.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/style\n"
-"POT-Creation-Date: 2017-10-08 16:33:57+00:00\n"
+"POT-Creation-Date: 2017-10-08 21:11:27+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -379,68 +379,89 @@ msgstr ""
 msgid "Talk Information"
 msgstr ""
 
-#: includes/classes/post-types/class-speaking.php:144
+#: includes/classes/post-types/class-speaking.php:147
 msgid "Add New Speaking Gig"
 msgstr ""
 
-#: includes/classes/post-types/class-speaking.php:145
+#: includes/classes/post-types/class-speaking.php:148
 msgid "New Speaking Gig"
 msgstr ""
 
-#: includes/classes/post-types/class-speaking.php:146
+#: includes/classes/post-types/class-speaking.php:149
 msgid "Edit Speaking Gig"
 msgstr ""
 
-#: includes/classes/post-types/class-speaking.php:147
+#: includes/classes/post-types/class-speaking.php:150
 msgid "View Speaking Gig"
 msgstr ""
 
-#: includes/classes/post-types/class-speaking.php:148
+#: includes/classes/post-types/class-speaking.php:151
 msgid "All Speaking Gigs"
 msgstr ""
 
-#: includes/classes/post-types/class-speaking.php:149
+#: includes/classes/post-types/class-speaking.php:152
 msgid "Search Speaking Gigs"
 msgstr ""
 
-#: includes/classes/post-types/class-speaking.php:150
+#: includes/classes/post-types/class-speaking.php:153
 msgid "Parent Speaking Gigs:"
 msgstr ""
 
-#: includes/classes/post-types/class-speaking.php:151
+#: includes/classes/post-types/class-speaking.php:154
 msgid "No speaking gigs found."
 msgstr ""
 
-#: includes/classes/post-types/class-speaking.php:152
+#: includes/classes/post-types/class-speaking.php:155
 msgid "No speaking gigs found in Trash."
 msgstr ""
 
-#: includes/classes/post-types/class-speaking.php:154
+#: includes/classes/post-types/class-speaking.php:157
 msgid "A place to list speaking gigs."
 msgstr ""
 
-#: includes/classes/post-types/class-speaking.php:275
+#: includes/classes/post-types/class-speaking.php:297
+#: includes/classes/post-types/class-speaking.php:369
+msgid "Remove"
+msgstr ""
+
+#: includes/classes/post-types/class-speaking.php:303
+#: includes/classes/post-types/class-speaking.php:375
 msgid "Conference Name"
 msgstr ""
 
-#: includes/classes/post-types/class-speaking.php:289
+#: includes/classes/post-types/class-speaking.php:312
+#: includes/classes/post-types/class-speaking.php:384
 msgid "Conference URL"
 msgstr ""
 
-#: includes/classes/post-types/class-speaking.php:304
+#: includes/classes/post-types/class-speaking.php:321
+#: includes/classes/post-types/class-speaking.php:393
 msgid "Slide URL"
 msgstr ""
 
-#: includes/classes/post-types/class-speaking.php:319
+#: includes/classes/post-types/class-speaking.php:330
+#: includes/classes/post-types/class-speaking.php:402
 msgid "Presentation URL"
 msgstr ""
 
-#: includes/classes/post-types/class-speaking.php:335
+#: includes/classes/post-types/class-speaking.php:341
+#: includes/classes/post-types/class-speaking.php:411
 msgid "Presentation Date"
 msgstr ""
 
 #: includes/classes/post-types/class-speaking.php:350
+#: includes/classes/post-types/class-speaking.php:420
 msgid "Conference Location"
+msgstr ""
+
+#: includes/classes/post-types/class-speaking.php:433
+msgid "Add Presentation"
+msgstr ""
+
+#: includes/classes/post-types/class-speaking.php:435
+msgid ""
+"Use the \"Add Presentation\" or \"Remove\" buttons to add one or more "
+"presentations of this talk."
 msgstr ""
 
 #: includes/classes/widgets/class-latest-tweets.php:38
@@ -675,7 +696,7 @@ msgctxt "post type general name"
 msgid "Projects"
 msgstr ""
 
-#: includes/classes/post-types/class-speaking.php:139
+#: includes/classes/post-types/class-speaking.php:142
 msgctxt "post type general name"
 msgid "Speaking Gigs"
 msgstr ""
@@ -695,7 +716,7 @@ msgctxt "post type singular name"
 msgid "Project"
 msgstr ""
 
-#: includes/classes/post-types/class-speaking.php:140
+#: includes/classes/post-types/class-speaking.php:143
 msgctxt "post type singular name"
 msgid "Speaking Gig"
 msgstr ""
@@ -715,7 +736,7 @@ msgctxt "admin menu"
 msgid "Projects"
 msgstr ""
 
-#: includes/classes/post-types/class-speaking.php:141
+#: includes/classes/post-types/class-speaking.php:144
 msgctxt "admin menu"
 msgid "Speaking Gigs"
 msgstr ""
@@ -735,7 +756,7 @@ msgctxt "add new on admin bar"
 msgid "Project"
 msgstr ""
 
-#: includes/classes/post-types/class-speaking.php:142
+#: includes/classes/post-types/class-speaking.php:145
 msgctxt "add new on admin bar"
 msgid "Speaking Gigs"
 msgstr ""
@@ -743,7 +764,7 @@ msgstr ""
 #: includes/classes/post-types/class-journal.php:130
 #: includes/classes/post-types/class-journal.php:165
 #: includes/classes/post-types/class-project.php:71
-#: includes/classes/post-types/class-speaking.php:143
+#: includes/classes/post-types/class-speaking.php:146
 msgctxt "book"
 msgid "Add New"
 msgstr ""

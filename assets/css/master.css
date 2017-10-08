@@ -1183,22 +1183,27 @@ ul.archive-speaking {
   margin-left: 60px;
   padding: 0 40px; }
   ul.archive-speaking li {
-    font-size: 0.9rem;
     margin: 0; }
+    ul.archive-speaking li img {
+      margin: 0;
+      padding: 0; }
     ul.archive-speaking li .fa {
       margin: 0;
       padding: 0; }
-    ul.archive-speaking li .entry-header {
-      font-size: 0.9rem;
+    ul.archive-speaking li .entry-header,
+    ul.archive-speaking li .entry-content {
+      margin: 0;
       padding: 0; }
-      ul.archive-speaking li .entry-header .entry-title {
+      ul.archive-speaking li .entry-header .entry-title,
+      ul.archive-speaking li .entry-content .entry-title {
         border-bottom: none;
         font-family: Helvetica, Arial, sans-serif;
         font-size: 1.1rem;
         font-weight: bold;
         margin-bottom: 0;
         padding-bottom: 0; }
-        ul.archive-speaking li .entry-header .entry-title a {
+        ul.archive-speaking li .entry-header .entry-title a,
+        ul.archive-speaking li .entry-content .entry-title a {
           border-bottom: none;
           color: #2e2e2e; }
   ul.archive-speaking .speaking-date,
