@@ -117,8 +117,11 @@ class Speaking {
 
 			$min = ( defined( 'SCRIPT_DEBUG' ) && true === SCRIPT_DEBUG ) ? '' : '.min';
 
-			wp_register_script( 'chriswiegman_speaking_date', CW_THEME_URL . '/assets/js/admin-speaking' . $min . '.js', array( 'jquery-ui-datepicker' ), CW_THEME_VERSION );
-			wp_enqueue_script( 'chriswiegman_speaking_date' );
+			wp_register_style( 'chriswiegman-speaking', CW_THEME_URL . '/assets/css/admin-speaking' . $min . '.css', array(), CW_THEME_VERSION );
+			wp_enqueue_style( 'chriswiegman-speaking' );
+
+			wp_register_script( 'chriswiegman-speaking', CW_THEME_URL . '/assets/js/admin-speaking' . $min . '.js', array( 'jquery-ui-datepicker' ), CW_THEME_VERSION );
+			wp_enqueue_script( 'chriswiegman-speaking' );
 
 		}
 	}
@@ -269,8 +272,8 @@ class Speaking {
 				<td>
 					<table class="form-table">
 						<tr>
-							<td colspan="2">
-								<a class="button remove-row" href="#"><?php esc_html_e( 'Remove', 'chriswiegman' ); ?></a>
+							<td class="header" colspan="2">
+								<a class="remove-row" title="<?php esc_html_e( 'Remove', 'chriswiegman' ); ?>" href="#"><span class="dashicons dashicons-no"></span></a>
 							</td>
 						</tr>
 
@@ -380,8 +383,8 @@ class Speaking {
 				<td>
 					<table class="form-table">
 						<tr>
-							<td colspan="2">
-								<a class="button remove-row" href="#"><?php esc_html_e( 'Remove', 'chriswiegman' ); ?></a>
+							<td class="header" colspan="2">
+								<a class="remove-row" title="<?php esc_html_e( 'Remove', 'chriswiegman' ); ?>" href="#"><span class="dashicons dashicons-no"></span></a>
 							</td>
 						</tr>
 
