@@ -341,7 +341,7 @@ class Speaking {
 									<label for="presentation_date"><?php esc_html_e( 'Presentation Date', 'chriswiegman' ); ?></label>
 								</th>
 								<td>
-									<input type="text" id="presentation_date" name="presentation_date[]" class="medium-text" value="<?php echo esc_attr( $presentation_date ); ?>">
+									<input type="text" id="presentation_date" name="presentation_date[]" class="medium-text date-field" value="<?php echo esc_attr( $presentation_date ); ?>">
 								</td>
 							</tr>
 
@@ -411,7 +411,7 @@ class Speaking {
 								<label for="presentation_date"><?php esc_html_e( 'Presentation Date', 'chriswiegman' ); ?></label>
 							</th>
 							<td>
-								<input type="text" id="presentation_date" name="presentation_date[]" class="medium-text" value="<?php echo current_time( 'm/d/Y' ); ?>">
+								<input type="text" id="presentation_date" name="presentation_date[]" class="medium-text date-field" value="<?php echo current_time( 'm/d/Y' ); ?>">
 							</td>
 						</tr>
 
