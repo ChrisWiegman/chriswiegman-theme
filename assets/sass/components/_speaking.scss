@@ -43,6 +43,17 @@ ul.archive-speaking {
 		font-style: italic;
 	}
 
+	.presentation-links {
+
+		float: right;
+
+		.slide-link,
+		.presentation-link {
+			font-style:  italic;
+			margin-left: 10px;
+		}
+	}
+
 	.divider {
 
 		border-bottom: 1px solid #efefef;
