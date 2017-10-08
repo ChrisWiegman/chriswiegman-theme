@@ -53,7 +53,10 @@ class Journal {
 	 */
 	public function action_edit_form_top() {
 
-		echo '<h2>' . esc_html__( 'My Evening Journal Entry for ', 'chriswiegman' ) . $this->title . '</h2>';
+		$screen = get_current_screen()->id;
+		$type   = ( 'morning-journal' === $screen ) ? esc_html__( 'Morning', 'chriswiegman' ) : esc_html__( 'Evening', 'chriswiegman' );
+
+		echo '<h2>' . sprintf( esc_html__( 'My %s Journal Entry for %s', 'chriswiegman' ), $type, $this->title ) . '</h2>';
 
 	}
 
@@ -70,7 +73,7 @@ class Journal {
 
 		add_meta_box(
 			'evening_journal',
-			esc_html__( 'My Evening Journal Entry for ', 'chriswiegman' ) . $this->title,
+			esc_html__( 'Journal Details', 'chriswiegman' ),
 			array( $this, 'evening_journal_metabox' ),
 			'evening-journal',
 			'normal',
@@ -92,7 +95,7 @@ class Journal {
 
 		add_meta_box(
 			'morning_journal',
-			__( 'My Morning Journal Entry for ', 'chriswiegman' ) . $this->title,
+			esc_html__( 'Journal Details', 'chriswiegman' ),
 			array( $this, 'morning_journal_metabox' ),
 			'morning-journal',
 			'normal',
