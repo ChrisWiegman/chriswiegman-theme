@@ -145,6 +145,8 @@ get_header(); ?>
 										</div>
 										<!-- .entry-meta -->
 
+										<?php the_content(); ?>
+
 									</div>
 									<!-- .entry-header -->
 									<div class="divider"></div>
