@@ -108,16 +108,16 @@ class Speaking {
 	 */
 	public function admin_enqueue_scripts() {
 
-		if ( isset( get_current_screen()->id ) && strpos( get_current_screen()->id, 'speaking' ) !== false ) {
+		if ( isset( get_current_screen()->id ) && false !== strpos( get_current_screen()->id, 'speaking' ) ) {
 
-			wp_register_style( 'cw-jquery-ui-css', CW_THEME_URL . 'assets/css/vendor/jquery-ui.min.css', array(), '1.11.4' );
+			wp_register_style( 'cw-jquery-ui-css', CW_THEME_URL . '/assets/css/vendor/jquery-ui.min.css', array(), '1.11.4' );
 			wp_enqueue_style( 'cw-jquery-ui-css' );
 
 			wp_enqueue_script( 'jquery-ui-datepicker' );
 
 			$min = ( defined( 'SCRIPT_DEBUG' ) && true === SCRIPT_DEBUG ) ? '' : '.min';
 
-			wp_register_script( 'chriswiegman_speaking_date', CW_THEME_URL . 'assets/js/admin-speaking' . $min . '.js', array( 'jquery-ui-datepicker' ), CW_THEME_VERSION );
+			wp_register_script( 'chriswiegman_speaking_date', CW_THEME_URL . '/assets/js/admin-speaking' . $min . '.js', array( 'jquery-ui-datepicker' ), CW_THEME_VERSION );
 			wp_enqueue_script( 'chriswiegman_speaking_date' );
 
 		}
@@ -158,6 +158,7 @@ class Speaking {
 				'supports'             => array(
 					'title',
 					'editor',
+					'thumbnail',
 				),
 				'exclude_form_search'  => true,
 				'publicly_queryable'   => false,
@@ -177,7 +178,7 @@ class Speaking {
 	 *
 	 * @since 2.2.0
 	 *
-	 * @param array $column array of column info.
+	 * @param array $column  array of column info.
 	 * @param int   $post_id The post ID.
 	 */
 	public function speaking_custom_columns( $column, $post_id ) {
@@ -366,7 +367,7 @@ class Speaking {
 	 * @since 1.0.0
 	 *
 	 * @param int      $post_id ID of the current post.
-	 * @param \WP_POST $post The current post.
+	 * @param \WP_POST $post    The current post.
 	 *
 	 * @return int|void post ID on failure or void on success
 	 */
