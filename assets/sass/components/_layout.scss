@@ -65,12 +65,16 @@ body {
 				margin-top:  4px;
 				transition:  0.5s;
 
+				a {
+					border-bottom: none;
+				}
+
 				.logo-chris {
-					color: $grey;
+					color: $footer-background;
 				}
 
 				.logo-wiegman {
-					color: $background;
+					color: $grey;
 				}
 			}
 

@@ -207,7 +207,7 @@ function filter_body_class( $classes ) {
  * @since 5.2.5
  *
  * @param array $classes An array of post classes.
- * @param array $class An array of additional classes added to the post.
+ * @param array $class   An array of additional classes added to the post.
  * @param int   $post_id The post ID.
  *
  * @return array Filtered array of post classes
@@ -285,7 +285,7 @@ function filter_wp_default_scripts( $scripts ) {
  * @since 5.1.0
  *
  * @param string $items The HTML list content for the menu items.
- * @param object $args An object containing wp_nav_menu() arguments.
+ * @param object $args  An object containing wp_nav_menu() arguments.
  *
  * @return string Filtered HTML list of menu items
  */
@@ -331,7 +331,7 @@ function filter_wp_page_menu_args( $args ) {
  * @since 5.0.0
  *
  * @param string $title Default title text for current view.
- * @param string $sep Optional separator.
+ * @param string $sep   Optional separator.
  *
  * @return string The filtered title.
  */

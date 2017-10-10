@@ -36,11 +36,32 @@ class Journal {
 
 		$this->title = date( 'F jS, Y', current_time( 'timestamp' ) );
 
+		add_action( 'edit_form_top', array( $this, 'action_edit_form_top' ) );
 		add_action( 'init', array( $this, 'create_journal_type' ) );
 		add_action( 'save_post', array( $this, 'journal_save_morning_meta' ), 10, 2 );
 		add_action( 'save_post', array( $this, 'journal_save_evening_meta' ), 10, 2 );
 		add_filter( 'wp_insert_post_data', array( $this, 'filter_wp_insert_post_data' ), 10, 2 );
 
+	}
+
+	/**
+	 * Action edit_form_top
+	 *
+	 * Adds the journal title where it belongs.
+	 *
+	 * @since 7.0
+	 */
+	public function action_edit_form_top() {
+
+		$screen = get_current_screen()->id;
+
+		if ( 'morning-journal' === $screen || 'evening-journal' === $screen ) {
+
+			$type = ( 'morning-journal' === $screen ) ? esc_html__( 'Morning', 'chriswiegman' ) : esc_html__( 'Evening', 'chriswiegman' );
+
+			echo '<h2>' . sprintf( esc_html__( 'My %s Journal Entry for %s', 'chriswiegman' ), $type, $this->title ) . '</h2>';
+
+		}
 	}
 
 	/**
@@ -56,7 +77,7 @@ class Journal {
 
 		add_meta_box(
 			'evening_journal',
-			esc_html__( 'My Evening Journal Entry for ', 'chriswiegman' ) . $this->title,
+			esc_html__( 'Journal Details', 'chriswiegman' ),
 			array( $this, 'evening_journal_metabox' ),
 			'evening-journal',
 			'normal',
@@ -78,7 +99,7 @@ class Journal {
 
 		add_meta_box(
 			'morning_journal',
-			__( 'My Morning Journal Entry for ', 'chriswiegman' ) . $this->title,
+			esc_html__( 'Journal Details', 'chriswiegman' ),
 			array( $this, 'morning_journal_metabox' ),
 			'morning-journal',
 			'normal',
@@ -118,10 +139,12 @@ class Journal {
 					'not_found_in_trash' => esc_html__( 'No entries found in Trash.', 'chriswiegman' ),
 				),
 				'description'          => esc_html__( 'Morning journal entries.', 'chriswiegman' ),
-				'public'               => true,
-				'has_archive'          => true,
+				'public'               => false,
+				'has_archive'          => false,
 				'capability_type'      => 'post',
-				'supports'             => array( 'revisions' ),
+				'supports'             => array( 'editor' ),
+				'show_ui'              => true,
+				'can_export'           => false,
 				'register_meta_box_cb' => array( $this, 'add_morning_journal_metabox' ),
 				'menu_icon'            => 'dashicons-book-alt',
 				'menu_position'        => 20,
@@ -151,12 +174,14 @@ class Journal {
 					'not_found_in_trash' => esc_html__( 'No entries found in Trash.', 'chriswiegman' ),
 				),
 				'description'          => esc_html__( 'Evening journal entries.', 'chriswiegman' ),
-				'public'               => true,
-				'has_archive'          => true,
+				'public'               => false,
+				'has_archive'          => false,
 				'capability_type'      => 'post',
-				'supports'             => array( 'revisions' ),
-				'register_meta_box_cb' => array( $this, 'add_evening_journal_metabox' ),
-				'menu_icon'            => 'dashicons-book',
+				'supports'             => array( 'editor' ),
+				'show_ui'              => true,
+				'can_export'           => false,
+				'register_meta_box_cb' => array( $this, 'add_morning_journal_metabox' ),
+				'menu_icon'            => 'dashicons-book-alt',
 				'menu_position'        => 20,
 				'rewrite'              => array(
 					'slug' => 'journal/evening',
@@ -334,7 +359,7 @@ class Journal {
 	 * @since 2.0.0
 	 *
 	 * @param int      $post_id ID of the current post.
-	 * @param \WP_POST $post The current post.
+	 * @param \WP_POST $post    The current post.
 	 *
 	 * @return int|void post ID on failure or void on success
 	 */
@@ -380,7 +405,7 @@ class Journal {
 	 * @since 2.0.0
 	 *
 	 * @param array    $journal_post_meta Array of meta fields to save.
-	 * @param \WP_POST $post the current post object.
+	 * @param \WP_POST $post              the current post object.
 	 *
 	 * @return void
 	 */
@@ -415,7 +440,7 @@ class Journal {
 	 * @since 2.0.0
 	 *
 	 * @param int      $post_id ID of the current post.
-	 * @param \WP_POST $post The current post.
+	 * @param \WP_POST $post    The current post.
 	 *
 	 * @return int|void post ID on failure or void on success
 	 */
@@ -440,7 +465,6 @@ class Journal {
 		$journal_post_meta['_journal_morning_affirmation_1'] = sanitize_text_field( wp_unslash( $_POST['affirmation_1'] ) ); // WPCS: Input var ok.
 		$journal_post_meta['_journal_morning_affirmation_2'] = sanitize_text_field( wp_unslash( $_POST['affirmation_2'] ) ); // WPCS: Input var ok.
 		$journal_post_meta['_journal_morning_affirmation_3'] = sanitize_text_field( wp_unslash( $_POST['affirmation_3'] ) ); // WPCS: Input var ok.
-		$journal_post_meta['_journal_morning_context']       = sanitize_text_field( wp_unslash( $_POST['context'] ) ); // WPCS: Input var ok.
 
 		if ( isset( $_POST['mood'] ) && 0 < absint( $_POST['mood'] ) ) { // WPCS: Input var ok.
 
@@ -477,13 +501,6 @@ class Journal {
 		<table class="form-table">
 
 			<?php $this->field_mood(); ?>
-
-			<tr class="width_normal p_box">
-				<th scope="row"><label for="context"><?php esc_html_e( 'Context', 'chriswiegman' ); ?></label></th>
-				<td>
-					<textarea id="context" name="context" rows="5" class="large-text"><?php echo esc_html( get_post_meta( $post->ID, '_journal_morning_context', true ) ); ?></textarea>
-				</td>
-			</tr>
 
 			<tr class="width_normal p_box">
 				<td colspan="2"><h3><?php esc_html_e( "I'm grateful for:", 'chriswiegman' ); ?></h3></td>
