@@ -433,6 +433,8 @@ body {
         -webkit-transition: 0.5s;
         -o-transition: 0.5s;
         transition: 0.5s; }
+        #page .site-header .wrap .site-title a {
+          border-bottom: none; }
         #page .site-header .wrap .site-title .logo-chris {
           color: #272d33; }
         #page .site-header .wrap .site-title .logo-wiegman {
@@ -1315,7 +1317,7 @@ object {
     -o-transition: 0.5s;
     transition: 0.5s; } }
 
-@media screen and (max-width: 980px) {
+@media screen and (max-width: 1020px) {
   .single .site-main, .page .site-main {
     margin-bottom: 1em; }
   .hentry,

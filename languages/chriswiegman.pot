@@ -2,9 +2,9 @@
 # This file is distributed under the GNU General Public License v2 or later.=!>
 msgid ""
 msgstr ""
-"Project-Id-Version: ChrisWiegman 6.0\n"
+"Project-Id-Version: ChrisWiegman 7.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/style\n"
-"POT-Creation-Date: 2017-10-08 21:11:27+00:00\n"
+"POT-Creation-Date: 2017-10-10 19:00:54+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -615,11 +615,11 @@ msgstr ""
 msgid "Selected Talks"
 msgstr ""
 
-#: page-speaker.php:140
+#: page-speaker.php:139
 msgid "View Slides"
 msgstr ""
 
-#: page-speaker.php:146
+#: page-speaker.php:145
 msgid "Watch Talk"
 msgstr ""
 
@@ -668,7 +668,7 @@ msgid "Chris Wiegman"
 msgstr ""
 
 #. Author URI of the plugin/theme
-msgid "https://www.chriswiegman.com/"
+msgid "https://chriswiegman.com/"
 msgstr ""
 
 #: archive.php:41
