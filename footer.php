@@ -22,7 +22,7 @@ namespace CW\Theme\Templates\Footer;
 		<!-- .site-info -->
 		<div class="site-info">
 			<span class="copyright">&copy; <?php echo esc_html( date( 'Y', time() ) ); ?> Chris Wiegman</span> -
-			<span class="license"><a href="http://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank"><?php esc_html_e( 'Creative Commons Licensed', 'chriswiegman' ); ?></a></span>
+			<span class="license"><a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank"><?php esc_html_e( 'Creative Commons Licensed', 'chriswiegman' ); ?></a></span>
 			-
 			<span class="poweredby"><?php esc_html_e( 'Powered by', 'chriswiegman' ); ?>
 				<a href="http://wordpress.org/" title="WordPress" target="_blank">WordPress</a></span>
