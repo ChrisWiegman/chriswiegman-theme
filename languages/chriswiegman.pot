@@ -2,9 +2,9 @@
 # This file is distributed under the GNU General Public License v2 or later.=!>
 msgid ""
 msgstr ""
-"Project-Id-Version: ChrisWiegman 7.0.1\n"
+"Project-Id-Version: ChrisWiegman 7.0.3\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/style\n"
-"POT-Creation-Date: 2017-11-03 20:39:44+00:00\n"
+"POT-Creation-Date: 2017-11-03 20:49:14+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -496,39 +496,39 @@ msgstr ""
 msgid "Footer Menu"
 msgstr ""
 
-#: includes/functions/core.php:127
+#: includes/functions/core.php:139
 msgid "Sidebar"
 msgstr ""
 
-#: includes/functions/core.php:129
+#: includes/functions/core.php:141
 msgid "The primary sidebar on the right side of most content."
 msgstr ""
 
-#: includes/functions/core.php:245
+#: includes/functions/core.php:257
 msgid "Website Title"
 msgstr ""
 
-#: includes/functions/core.php:246
+#: includes/functions/core.php:258
 msgid "Twitter"
 msgstr ""
 
-#: includes/functions/core.php:247
+#: includes/functions/core.php:259
 msgid "Facebook"
 msgstr ""
 
-#: includes/functions/core.php:248
+#: includes/functions/core.php:260
 msgid "WordPress.org"
 msgstr ""
 
-#: includes/functions/core.php:249
+#: includes/functions/core.php:261
 msgid "GitHub"
 msgstr ""
 
-#: includes/functions/core.php:250
+#: includes/functions/core.php:262
 msgid "LinkedIn"
 msgstr ""
 
-#: includes/functions/core.php:359
+#: includes/functions/core.php:371
 #. translators: %s is the page number.
 msgid "Page %s"
 msgstr ""
