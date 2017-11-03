@@ -2,9 +2,9 @@
 # This file is distributed under the GNU General Public License v2 or later.=!>
 msgid ""
 msgstr ""
-"Project-Id-Version: ChrisWiegman 7.0\n"
+"Project-Id-Version: ChrisWiegman 7.0.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/style\n"
-"POT-Creation-Date: 2017-10-10 19:00:54+00:00\n"
+"POT-Creation-Date: 2017-11-03 20:39:44+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -15,25 +15,25 @@ msgstr ""
 
 #: includes/classes/post-types/class-journal.php:221
 #: includes/classes/post-types/class-journal.php:245
-#: includes/classes/post-types/class-journal.php:510
-#: includes/classes/post-types/class-journal.php:533
-#: includes/classes/post-types/class-journal.php:556
+#: includes/classes/post-types/class-journal.php:513
+#: includes/classes/post-types/class-journal.php:536
+#: includes/classes/post-types/class-journal.php:559
 msgid "1"
 msgstr ""
 
 #: includes/classes/post-types/class-journal.php:227
 #: includes/classes/post-types/class-journal.php:251
-#: includes/classes/post-types/class-journal.php:516
-#: includes/classes/post-types/class-journal.php:539
-#: includes/classes/post-types/class-journal.php:562
+#: includes/classes/post-types/class-journal.php:519
+#: includes/classes/post-types/class-journal.php:542
+#: includes/classes/post-types/class-journal.php:565
 msgid "2"
 msgstr ""
 
 #: includes/classes/post-types/class-journal.php:233
 #: includes/classes/post-types/class-journal.php:257
-#: includes/classes/post-types/class-journal.php:522
-#: includes/classes/post-types/class-journal.php:545
-#: includes/classes/post-types/class-journal.php:568
+#: includes/classes/post-types/class-journal.php:525
+#: includes/classes/post-types/class-journal.php:548
+#: includes/classes/post-types/class-journal.php:571
 msgid "3"
 msgstr ""
 
@@ -45,79 +45,79 @@ msgstr ""
 msgid "It looks like nothing was found at this location. Maybe try a search?"
 msgstr ""
 
-#: archive.php:29
+#: archive.php:30
 msgid " Posts"
 msgstr ""
 
-#: archive.php:35
+#: archive.php:36
 msgid "Author: %s"
 msgstr ""
 
-#: archive.php:38
+#: archive.php:39
 msgid "Day: %s"
 msgstr ""
 
-#: archive.php:41
+#: archive.php:42
 msgid "Month: %s"
 msgstr ""
 
-#: archive.php:44
+#: archive.php:45
 msgid "Year: %s"
 msgstr ""
 
-#: archive.php:47
+#: archive.php:48
 msgid "Asides"
 msgstr ""
 
-#: archive.php:50
+#: archive.php:51
 msgid "Galleries"
 msgstr ""
 
-#: archive.php:53
+#: archive.php:54
 msgid "Images"
 msgstr ""
 
-#: archive.php:56
+#: archive.php:57
 msgid "Videos"
 msgstr ""
 
-#: archive.php:59
+#: archive.php:60
 msgid "Quotes"
 msgstr ""
 
-#: archive.php:62
+#: archive.php:63
 msgid "Links"
 msgstr ""
 
-#: archive.php:65
+#: archive.php:66
 msgid "Statuses"
 msgstr ""
 
-#: archive.php:68
+#: archive.php:69
 msgid "Audios"
 msgstr ""
 
-#: archive.php:71
+#: archive.php:72
 msgid "Chats"
 msgstr ""
 
-#: archive.php:74
+#: archive.php:75
 msgid "Archives"
 msgstr ""
 
-#: comments.php:30 comments.php:51
+#: comments.php:30 comments.php:53
 msgid "Comment navigation"
 msgstr ""
 
-#: comments.php:33 comments.php:54
+#: comments.php:33 comments.php:56
 msgid "&larr; Older Comments"
 msgstr ""
 
-#: comments.php:35 comments.php:56
+#: comments.php:35 comments.php:58
 msgid "Newer Comments &rarr;"
 msgstr ""
 
-#: comments.php:66
+#: comments.php:68
 msgid "Comments are closed."
 msgstr ""
 
@@ -243,15 +243,15 @@ msgstr ""
 msgid "Horrible"
 msgstr ""
 
-#: includes/classes/post-types/class-journal.php:506
+#: includes/classes/post-types/class-journal.php:509
 msgid "I'm grateful for:"
 msgstr ""
 
-#: includes/classes/post-types/class-journal.php:529
+#: includes/classes/post-types/class-journal.php:532
 msgid "What would make today better:"
 msgstr ""
 
-#: includes/classes/post-types/class-journal.php:552
+#: includes/classes/post-types/class-journal.php:555
 msgid "Daily Affirmation:"
 msgstr ""
 
@@ -549,7 +549,7 @@ msgstr ""
 msgid "Post navigation"
 msgstr ""
 
-#: includes/functions/template-tags.php:139 page-archive.php:71
+#: includes/functions/template-tags.php:139 page-archive.php:72
 msgid "Edit"
 msgstr ""
 
@@ -580,50 +580,50 @@ msgstr ""
 msgid "Comment on %s"
 msgstr ""
 
-#: page-archive.php:33 page-archive.php:61 single.php:50
+#: page-archive.php:34 page-archive.php:62 single.php:54
 #: template-parts/content.php:52
 msgid "Pages:"
 msgstr ""
 
-#: page-archive.php:38
+#: page-archive.php:39
 msgid "50 Latest Posts:"
 msgstr ""
 
-#: page-archive.php:48
+#: page-archive.php:49
 msgid "Categories:"
 msgstr ""
 
-#: page-developer.php:36
+#: page-developer.php:37
 msgid "Selected Projects"
 msgstr ""
 
-#: page-developer.php:85
+#: page-developer.php:86
 msgid "Type: "
 msgstr ""
 
-#: page-developer.php:98
+#: page-developer.php:99
 msgid "Status: "
 msgstr ""
 
-#: page-developer.php:130
+#: page-developer.php:131
 msgid ""
 "Note that \"archived\" projects are projects I am no longer involved in for\n"
 "\t\t\t\t\t\tone reason or another."
 msgstr ""
 
-#: page-speaker.php:36
+#: page-speaker.php:37
 msgid "Selected Talks"
 msgstr ""
 
-#: page-speaker.php:139
+#: page-speaker.php:140
 msgid "View Slides"
 msgstr ""
 
-#: page-speaker.php:145
+#: page-speaker.php:146
 msgid "Watch Talk"
 msgstr ""
 
-#: search.php:24
+#: search.php:27
 msgid "Search Results for: %s"
 msgstr ""
 
@@ -671,12 +671,12 @@ msgstr ""
 msgid "https://chriswiegman.com/"
 msgstr ""
 
-#: archive.php:41
+#: archive.php:42
 msgctxt "monthly archives date format"
 msgid "F Y"
 msgstr ""
 
-#: archive.php:44
+#: archive.php:45
 msgctxt "yearly archives date format"
 msgid "Y"
 msgstr ""
