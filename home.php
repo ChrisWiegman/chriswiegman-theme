@@ -13,37 +13,36 @@ namespace CW\Theme\Templates\Home;
 
 use CW\Theme\Functions\Template_Tags;
 
-get_header(); ?>
+get_header();
+?>
 
-<div id="primary" class="content-area">
-	<main id="main" class="site-main" role="main">
+	<div id="primary" class="content-area">
+		<main id="main" class="site-main" role="main">
 
-		<?php if ( have_posts() ) : ?>
+			<?php
+			if ( have_posts() ) {
 
-			<?php /* Start the Loop */ ?>
-			<?php while ( have_posts() ) : the_post(); ?>
+				/* Start the Loop */
+				while ( have_posts() ) {
 
-				<?php
-				/**
-				 * Include the Post-Format-specific template for the content.
-				 * If you want to override this in a child theme, then include a file
-				 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', get_post_format() );
-				?>
+					the_post();
 
-			<?php endwhile; ?>
+					get_template_part( 'template-parts/content', get_post_format() );
 
-			<?php Template_Tags\paging_nav(); ?>
+				}
 
-		<?php else : ?>
+				Template_Tags\paging_nav();
 
-			<?php get_template_part( 'template-parts/content', 'none' ); ?>
+			} else {
 
-		<?php endif; ?>
+				get_template_part( 'template-parts/content', 'none' );
 
-	</main><!-- #main -->
-</div><!-- #primary -->
+			}
+			?>
 
-<?php get_sidebar(); ?>
-<?php get_footer(); ?>
+		</main><!-- #main -->
+	</div><!-- #primary -->
+
+	<?php
+get_sidebar();
+get_footer();

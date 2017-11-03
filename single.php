@@ -13,12 +13,16 @@ namespace CW\Theme\Templates\Single;
 
 use CW\Theme\Functions\Template_Tags;
 
-get_header(); ?>
+get_header();
+?>
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
-			<?php while ( have_posts() ) : the_post(); ?>
+			<?php
+			while ( have_posts() ) {
+				the_post();
+				?>
 
 				<article id="post-<?php esc_attr( the_ID() ); ?>" <?php post_class(); ?>>
 					<?php
@@ -85,17 +89,17 @@ get_header(); ?>
 
 				}
 
-				echo '<div class="author-box">' . PHP_EOL;
+				echo '<div class="author-box">';
 
 				echo get_avatar( get_the_author_meta( 'ID' ), 100 );
 
 				if ( strlen( get_the_author_meta( 'url' ) ) > 1 ) {
-					echo '<strong>About <a href="' . esc_url( get_the_author_meta( 'url' ) ) . '" target="_blank" title="' . esc_attr( get_the_author_meta( 'website_title' ) ) . '">' . esc_html( get_the_author_meta( 'display_name' ) ) . '</a></strong>' . PHP_EOL;
+					echo '<strong>About <a href="' . esc_url( get_the_author_meta( 'url' ) ) . '" target="_blank" title="' . esc_attr( get_the_author_meta( 'website_title' ) ) . '">' . esc_html( get_the_author_meta( 'display_name' ) ) . '</a></strong>';
 				} else {
-					echo '<strong>About ' . esc_html( get_the_author_meta( 'display_name' ) ) . '</strong>' . PHP_EOL;
+					echo '<strong>About ' . esc_html( get_the_author_meta( 'display_name' ) ) . '</strong>';
 				}
 
-				echo '<p>' . wp_kses_post( get_the_author_meta( 'description' ) ) . '</p>' . PHP_EOL;
+				echo '<p>' . wp_kses_post( get_the_author_meta( 'description' ) ) . '</p>';
 
 				if (
 					(
@@ -164,14 +168,13 @@ get_header(); ?>
 						)
 					) {
 
-						echo '<p id="authcontact">Follow ' . esc_attr( get_the_author_meta( 'first_name' ) ) . ' on <a href="http://twitter.com/' . $profiles['twitter']['url'] . '" target="_blank" title="' . esc_attr( get_the_author_meta( 'display_name' ) ) . ' on Twitter">Twitter</a></p>' . PHP_EOL;
+						echo '<p id="authcontact">Follow ' . esc_attr( get_the_author_meta( 'first_name' ) ) . ' on <a href="http://twitter.com/' . $profiles['twitter']['url'] . '" target="_blank" title="' . esc_attr( get_the_author_meta( 'display_name' ) ) . ' on Twitter">Twitter</a></p>';
 
 					} else {
 
 						echo '<p id="authcontact">Find ' . esc_html( get_the_author_meta( 'first_name' ) ) . ' on ';
 
-						$output = '';
-						$links  = array();
+						$links = array();
 
 						if (
 							isset( $profiles['facebook'] ) &&
@@ -251,30 +254,27 @@ get_header(); ?>
 
 						}
 
-						echo '.</p>' . PHP_EOL;
+						echo '.</p>';
 
 					} // End if().
 				} // End if().
 
-				echo '</div>' . PHP_EOL;
+				echo '</div>';
 
-				?>
-
-				<?php
 				// If comments are open or we have at least one comment, load up the comment template.
-				if ( comments_open() || 0 !== get_comments_number() ) :
+				if ( comments_open() || 0 !== get_comments_number() ) {
 					comments_template();
-				endif;
-				?>
+				}
 
-				<?php Template_Tags\post_nav(); ?>
+				Template_Tags\post_nav();
 
-			<?php endwhile; // End of the loop.
+			} // End of the loop.
 			?>
 
 		</main>
 		<!-- #main -->
 	</div><!-- #primary -->
 
-<?php get_sidebar(); ?>
-<?php get_footer(); ?>
+	<?php
+get_sidebar();
+get_footer();
