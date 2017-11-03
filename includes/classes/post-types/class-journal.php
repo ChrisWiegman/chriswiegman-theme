@@ -364,7 +364,7 @@ class Journal {
 	 * @param int      $post_id ID of the current post.
 	 * @param \WP_POST $post    The current post.
 	 *
-	 * @return int|void post ID on failure or void on success
+	 * @return int|null post ID on failure or void on success
 	 */
 	public function journal_save_evening_meta( $post_id, $post ) {
 
@@ -445,7 +445,7 @@ class Journal {
 	 * @param int      $post_id ID of the current post.
 	 * @param \WP_POST $post    The current post.
 	 *
-	 * @return int|void post ID on failure or void on success
+	 * @return int|null post ID on failure or void on success
 	 */
 	public function journal_save_morning_meta( $post_id, $post ) {
 
