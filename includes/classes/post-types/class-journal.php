@@ -332,10 +332,13 @@ class Journal {
 
 			if ( $current_post ) {
 
-				$redirect = add_query_arg( array(
-					                           'post'   => $current_post->ID,
-					                           'action' => 'edit',
-				                           ), get_admin_url( get_current_blog_id(), 'post.php' ) );
+				$redirect = add_query_arg(
+					array(
+						'post'   => $current_post->ID,
+						'action' => 'edit',
+					),
+					get_admin_url( get_current_blog_id(), 'post.php' )
+				);
 
 				wp_safe_redirect( $redirect );
 				exit();
