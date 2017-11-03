@@ -74,6 +74,18 @@ function action_dashboard_glance_items() {
 	$operator   = 'and';
 	$post_types = get_post_types( $args, $output, $operator );
 
+	$morning_journal_args = array(
+		'name' => 'morning-journal',
+	);
+
+	$post_types = array_merge( get_post_types( $morning_journal_args, $output, $operator ), $post_types );
+
+	$evening_journal_args = array(
+		'name' => 'evening-journal',
+	);
+
+	$post_types = array_merge( get_post_types( $evening_journal_args, $output, $operator ), $post_types );
+
 	foreach ( $post_types as $post_type ) {
 
 		$num_posts = wp_count_posts( $post_type->name );
