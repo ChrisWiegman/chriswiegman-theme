@@ -77,9 +77,9 @@ module.exports = function ( grunt ) {
 					},
 
 					files : {
-						'assets/css/admin-speaking.css' : 'assets/sass/admin-speaking.scss',
-						'assets/css/master.css' : 'assets/sass/master.scss',
-						'assets/css/editor.css' : 'assets/sass/editor.scss'
+						'assets/css/admin-speaking.css' : 'assets/css/sass/admin-speaking.scss',
+						'assets/css/master.css' : 'assets/css/sass/master.scss',
+						'assets/css/editor.css' : 'assets/css/sass/editor.scss'
 					}
 				}
 			},
