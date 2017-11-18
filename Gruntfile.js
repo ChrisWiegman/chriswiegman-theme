@@ -1,10 +1,10 @@
-module.exports = function ( grunt ) {
+module.exports = function (grunt) {
 
 	// Start out by loading the grunt modules we'll need
-	require( 'load-grunt-tasks' )( grunt );
+	require('load-grunt-tasks')(grunt);
 
-    // Show elapsed time
-    require('time-grunt')(grunt);
+	// Show elapsed time
+	require('time-grunt')(grunt);
 
 	grunt.initConfig(
 		{
@@ -12,15 +12,15 @@ module.exports = function ( grunt ) {
 			/**
 			 * Clean existing files
 			 */
-			clean : {
-				styles  : {
-					src : [
+			clean: {
+				styles:  {
+					src: [
 						'assets/css/*.css',
 						'assets/css/*.map'
 					]
 				},
-				scripts : {
-					src : [
+				scripts: {
+					src: [
 						'assets/js/*.js',
 						'assets/js/*.map'
 					]
@@ -32,9 +32,9 @@ module.exports = function ( grunt ) {
 			 */
 			postcss: {
 
-  			options: {
-    			map: true,
-    			processors: [
+				options: {
+					map:        true,
+					processors: [
 						require('autoprefixer')({browsers: ['last 5 versions']})
 					]
 				},
@@ -47,16 +47,16 @@ module.exports = function ( grunt ) {
 			/**
 			 * Minify CSS
 			 */
-			cssmin : {
+			cssmin: {
 
-				target : {
+				target: {
 
-					files : [{
-						expand : true,
-						cwd    : 'assets/css',
-						src    : ['*.css'],
-						dest   : 'assets/css',
-						ext    : '.min.css'
+					files: [{
+						expand: true,
+						cwd:    'assets/css',
+						src:    ['*.css'],
+						dest:   'assets/css',
+						ext:    '.min.css'
 					}]
 
 				}
@@ -66,20 +66,20 @@ module.exports = function ( grunt ) {
 			/**
 			 * Process SASS files
 			 */
-			sass : {
+			sass: {
 
-				dist : {
+				dist: {
 
-					options : {
-						style     : 'expanded',
-						sourceMap : true,
-						noCache   : true
+					options: {
+						style:     'expanded',
+						sourceMap: true,
+						noCache:   true
 					},
 
-					files : {
-						'assets/css/admin-speaking.css' : 'assets/css/sass/admin-speaking.scss',
-						'assets/css/master.css' : 'assets/css/sass/master.scss',
-						'assets/css/editor.css' : 'assets/css/sass/editor.scss'
+					files: {
+						'assets/css/admin-speaking.css': 'assets/css/sass/admin-speaking.scss',
+						'assets/css/master.css':         'assets/css/sass/master.scss',
+						'assets/css/editor.css':         'assets/css/sass/editor.scss'
 					}
 				}
 			},
@@ -87,49 +87,49 @@ module.exports = function ( grunt ) {
 			/**
 			 * Processes and compresses JavaScript.
 			 */
-			uglify : {
+			uglify: {
 
-				production : {
+				production: {
 
-					options : {
-						beautify         : false,
-						preserveComments : false,
-						sourceMap        : false,
-						mangle           : {
-                            reserved : ['jQuery']
+					options: {
+						beautify:         false,
+						preserveComments: false,
+						sourceMap:        false,
+						mangle:           {
+							reserved: ['jQuery']
 						}
 					},
 
-					files : {
-						'assets/js/footer.min.js'         : [
+					files: {
+						'assets/js/footer.min.js':         [
 							'assets/js/src/progress.js',
 							'assets/js/src/skip-link-focus-fix.js',
 							'assets/js/src/scripts.js'
 						],
-						'assets/js/admin-speaking.min.js' : [
+						'assets/js/admin-speaking.min.js': [
 							'assets/js/src/admin-speaking.js'
 						]
 					}
 				},
 
-				dev : {
+				dev: {
 
-					options : {
-						beautify         : true,
-						preserveComments : true,
-						sourceMap        : true,
-						mangle           : {
-                            reserved : ['jQuery']
+					options: {
+						beautify:         true,
+						preserveComments: true,
+						sourceMap:        true,
+						mangle:           {
+							reserved: ['jQuery']
 						}
 					},
 
-					files : {
-						'assets/js/footer.js'         : [
+					files: {
+						'assets/js/footer.js':         [
 							'assets/js/src/progress.js',
 							'assets/js/src/skip-link-focus-fix.js',
 							'assets/js/src/scripts.js'
 						],
-						'assets/js/admin-speaking.js' : [
+						'assets/js/admin-speaking.js': [
 							'assets/js/src/admin-speaking.js'
 						]
 					}
@@ -139,13 +139,13 @@ module.exports = function ( grunt ) {
 			/**
 			 * Update translation file.
 			 */
-			makepot : {
+			makepot: {
 
-				target : {
-					options : {
-						type       : 'wp-theme',
-						domainPath : '/languages',
-						mainFile   : 'style.css'
+				target: {
+					options: {
+						type:       'wp-theme',
+						domainPath: '/languages',
+						mainFile:   'style.css'
 					}
 				}
 			},
@@ -153,18 +153,18 @@ module.exports = function ( grunt ) {
 			/**
 			 * Run PHP unit tests.
 			 */
-			phpunit : {
+			phpunit: {
 
-				classes : {
-					dir : 'tests/'
+				classes: {
+					dir: 'tests/'
 				},
 
-				options : {
+				options: {
 
-					bin        : './vendor/bin/phpunit',
-					testSuffix : 'Tests.php',
-					bootstrap  : 'bootstrap.php',
-					colors     : true
+					bin:        './vendor/bin/phpunit',
+					testSuffix: 'Tests.php',
+					bootstrap:  'bootstrap.php',
+					colors:     true
 
 				}
 			},
@@ -172,39 +172,39 @@ module.exports = function ( grunt ) {
 			/**
 			 * Clean up the JavaScript
 			 */
-			jshint : {
-				options : {
-					jshintrc : true
+			jshint: {
+				options: {
+					jshintrc: true
 				},
-				all     : ['assets/js/src/*.js']
+				all:     ['assets/js/src/*.js']
 			},
 
 			/**
 			 * Watch scripts and styles for changes
 			 */
-			watch : {
+			watch: {
 
-				options : {
-					livereload : false
+				options: {
+					livereload: false
 				},
 
-				styles : {
+				styles: {
 
-					files : [
+					files: [
 						'assets/sass/**/*'
 					],
 
-					tasks : ['clean:styles', 'sass', 'postcss', 'cssmin']
+					tasks: ['clean:styles', 'sass', 'postcss', 'cssmin']
 
 				},
 
-				scripts : {
+				scripts: {
 
-					files : [
+					files: [
 						'assets/js/src/**/*.*'
 					],
 
-					tasks : ['jshint', 'clean:scripts', 'uglify:production', 'uglify:dev']
+					tasks: ['jshint', 'clean:scripts', 'uglify:production', 'uglify:dev']
 
 				}
 			}
@@ -212,7 +212,7 @@ module.exports = function ( grunt ) {
 	);
 
 	// A very basic default task.
-	grunt.registerTask( 'default', ['clean', 'phpunit', 'jshint', 'sass', 'postcss', 'cssmin', 'jshint', 'uglify:production', 'uglify:dev', 'makepot'] );
-	grunt.registerTask( 'dev', ['default', 'watch'] );
+	grunt.registerTask('default', ['clean', 'phpunit', 'jshint', 'sass', 'postcss', 'cssmin', 'jshint', 'uglify:production', 'uglify:dev', 'makepot']);
+	grunt.registerTask('dev', ['default', 'watch']);
 
 };
