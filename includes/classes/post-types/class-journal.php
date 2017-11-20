@@ -324,7 +324,7 @@ class Journal {
 	 */
 	public function filter_wp_insert_post_data( $data ) {
 
-		if ( isset( $data['post_status'] ) && 'auto-draft' === $data['post_status'] && isset( $data['post_type'] ) && ( 'morning-journal' === $data['post_type'] || 'evening-journal' === $data['post_type'] ) ) {
+		if ( isset( $data['post_status'] ) && 'auto-draft' !== $data['post_status'] && isset( $data['post_type'] ) && ( 'morning-journal' === $data['post_type'] || 'evening-journal' === $data['post_type'] ) ) {
 
 			$title = date( 'F jS, Y', current_time( 'timestamp' ) );
 
