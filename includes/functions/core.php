@@ -409,6 +409,8 @@ function init() {
 	add_filter( 'post_class', $n( 'filter_post_class' ), 10, 3 );
 	add_filter( 'script_loader_src', $n( 'remove_asset_version' ), 15 );
 	add_filter( 'style_loader_src', $n( 'remove_asset_version' ), 15 );
+	add_filter( 'the_content_feed', $n( 'add_image_to_rss' ), 1000 );
+	add_filter( 'the_excerpt_rss', $n( 'add_image_to_rss' ), 1000 );
 	add_filter( 'tiny_mce_plugins', $n( 'filter_tiny_mce_plugins' ) );
 	add_filter( 'user_contactmethods', $n( 'filter_user_contactmethods' ) );
 	add_filter( 'wp_default_scripts', $n ( 'filter_wp_default_scripts' ) );
@@ -423,6 +425,40 @@ function init() {
 	remove_filter( 'wp_mail', 'wp_staticize_emoji_for_email' );
 	remove_filter( 'the_content_feed', 'wp_staticize_emoji' );
 	remove_filter( 'comment_text_rss', 'wp_staticize_emoji' );
+
+}
+
+/**
+ * Filter content
+ *
+ * Adds Featured image to RSS.
+ *
+ * @param string $content The content to filter.
+ *
+ * @since 7.2
+ *
+ * @return string
+ */
+function add_image_to_rss( $content ) {
+
+	global $post;
+
+	if ( has_post_thumbnail( $post->ID ) ) {
+
+		$thumbnail = get_the_post_thumbnail(
+			$post->ID,
+			'large',
+			array(
+				'style' => 'float:left; margin:0 auto 15px auto;',
+				'class' => 'webfeedsFeaturedVisual',
+			)
+		);
+
+		$content = $thumbnail . $content;
+
+	}
+
+	return $content;
 
 }
 
