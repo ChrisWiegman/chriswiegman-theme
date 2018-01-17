@@ -407,6 +407,7 @@ function init() {
 	add_action( 'dashboard_glance_items', $n( 'action_dashboard_glance_items' ) );
 	add_action( 'widgets_init', $n ( 'action_widgets_init' ) );
 	add_action( 'wp_enqueue_scripts', $n ( 'action_wp_enqueue_scripts' ) );
+	add_action( 'wp_head', $n( 'action_wp_head' ) );
 
 	add_filter( 'body_class', $n ( 'filter_body_class' ) );
 	add_filter( 'emoji_svg_url', '__return_false' );
@@ -425,6 +426,34 @@ function init() {
 	add_filter( 'wp_page_menu_args', $n ( 'filter_wp_page_menu_args' ) );
 	add_filter( 'wp_title', $n ( 'filter_wp_title' ), 10, 2 );
 
+}
+
+/**
+ * Action wp_head
+ *
+ * Add Google Analytics to the header.
+ *
+ * @since 8.0
+ */
+function action_wp_head() {
+
+	if ( ! is_admin() && ! is_user_logged_in() ) {
+		?>
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-111026322-2"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+
+			function gtag() {
+				dataLayer.push(arguments);
+			}
+
+			gtag('js', new Date());
+
+			gtag('config', 'UA-111026322-2');
+		</script>
+		<?php
+	}
 }
 
 /**
