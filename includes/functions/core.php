@@ -435,7 +435,7 @@ function init() {
  *
  * Add Google Analytics to the header.
  *
- * @since 8.0
+ * @since 7.3
  */
 function action_wp_head() {
 
