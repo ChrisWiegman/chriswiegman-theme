@@ -192,7 +192,7 @@ module.exports = function (grunt) {
 				styles: {
 
 					files: [
-						'assets/sass/**/*'
+						'assets/css/sass/**/*'
 					],
 
 					tasks: ['clean:styles', 'sass', 'postcss', 'cssmin']

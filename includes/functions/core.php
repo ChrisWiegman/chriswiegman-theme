@@ -394,14 +394,24 @@ function init() {
 	remove_action( 'wp_head', 'rsd_link' );
 	remove_action( 'wp_head', 'wlwmanifest_link' );
 	remove_action( 'wp_head', 'wp_generator' );
+	remove_action( 'admin_print_styles', 'print_emoji_styles' );
+	remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
+	remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
+	remove_action( 'wp_print_styles', 'print_emoji_styles' );
+	remove_filter( 'wp_mail', 'wp_staticize_emoji_for_email' );
+	remove_filter( 'the_content_feed', 'wp_staticize_emoji' );
+	remove_filter( 'comment_text_rss', 'wp_staticize_emoji' );
+	remove_action( 'wp_head', 'feed_links', 2 );
+	remove_action( 'wp_head', 'feed_links_extra', 3 );
 
-	add_action( 'after_setup_theme', $n ( 'action_after_setup_theme' ) );
-	add_action( 'init', $n ( 'action_init' ) );
+	add_action( 'after_setup_theme', $n( 'action_after_setup_theme' ) );
+	add_action( 'init', $n( 'action_init' ) );
 	add_action( 'dashboard_glance_items', $n( 'action_dashboard_glance_items' ) );
-	add_action( 'widgets_init', $n ( 'action_widgets_init' ) );
-	add_action( 'wp_enqueue_scripts', $n ( 'action_wp_enqueue_scripts' ) );
+	add_action( 'widgets_init', $n( 'action_widgets_init' ) );
+	add_action( 'wp_enqueue_scripts', $n( 'action_wp_enqueue_scripts' ) );
+	add_action( 'wp_head', $n( 'action_wp_head' ) );
 
-	add_filter( 'body_class', $n ( 'filter_body_class' ) );
+	add_filter( 'body_class', $n( 'filter_body_class' ) );
 	add_filter( 'emoji_svg_url', '__return_false' );
 	add_filter( 'jetpack_sso_bypass_login_forward_wpcom', '__return_true' );
 	add_filter( 'jetpack_remove_login_form', '__return_true' );
@@ -413,18 +423,63 @@ function init() {
 	add_filter( 'the_excerpt_rss', $n( 'add_image_to_rss' ), 1000 );
 	add_filter( 'tiny_mce_plugins', $n( 'filter_tiny_mce_plugins' ) );
 	add_filter( 'user_contactmethods', $n( 'filter_user_contactmethods' ) );
-	add_filter( 'wp_default_scripts', $n ( 'filter_wp_default_scripts' ) );
+	add_filter( 'wp_default_scripts', $n( 'filter_wp_default_scripts' ) );
 	add_filter( 'wp_nav_menu_items', $n( 'filter_wp_nav_menu_items' ), 10, 2 );
-	add_filter( 'wp_page_menu_args', $n ( 'filter_wp_page_menu_args' ) );
-	add_filter( 'wp_title', $n ( 'filter_wp_title' ), 10, 2 );
+	add_filter( 'wp_page_menu_args', $n( 'filter_wp_page_menu_args' ) );
+	add_filter( 'wp_title', $n( 'filter_wp_title' ), 10, 2 );
 
-	remove_action( 'admin_print_styles', 'print_emoji_styles' );
-	remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
-	remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
-	remove_action( 'wp_print_styles', 'print_emoji_styles' );
-	remove_filter( 'wp_mail', 'wp_staticize_emoji_for_email' );
-	remove_filter( 'the_content_feed', 'wp_staticize_emoji' );
-	remove_filter( 'comment_text_rss', 'wp_staticize_emoji' );
+}
+
+/**
+ * Action wp_head
+ *
+ * Add Google Analytics to the header.
+ *
+ * @since 7.3
+ */
+function action_wp_head() {
+
+	if ( ! is_admin() && ! is_user_logged_in() ) {
+		?>
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-111026322-2"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+
+			function gtag() {
+				dataLayer.push(arguments);
+			}
+
+			gtag('js', new Date());
+
+			gtag('config', 'UA-111026322-2');
+		</script>
+		<?php
+	}
+
+	printf(
+		'<link rel="alternate" type="%s" title="%s" href="%s" />%s',
+		esc_attr( feed_content_type() ),
+		esc_html( get_bloginfo( 'name' ) ) . ' | ' . esc_attr__( 'All Posts', 'chriswiegman' ),
+		'http://feed.chriswiegman.com/',
+		esc_attr( PHP_EOL )
+	);
+
+	printf(
+		'<link rel="alternate" type="%s" title="%s" href="%s" />%s',
+		esc_attr( feed_content_type() ),
+		esc_html( get_bloginfo( 'name' ) ) . ' | ' . esc_attr__( 'Personal Posts Only', 'chriswiegman' ),
+		'http://feed.chriswiegman.com/personal',
+		esc_attr( PHP_EOL )
+	);
+
+	printf(
+		'<link rel="alternate" type="%s" title="%s" href="%s" />%s',
+		esc_attr( feed_content_type() ),
+		esc_html( get_bloginfo( 'name' ) ) . ' | ' . esc_attr__( 'All Comments', 'chriswiegman' ),
+		'http://feed.chriswiegman.com/comments',
+		esc_attr( PHP_EOL )
+	);
 
 }
 
