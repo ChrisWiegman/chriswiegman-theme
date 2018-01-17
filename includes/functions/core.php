@@ -476,6 +476,14 @@ function action_wp_head() {
 	printf(
 		'<link rel="alternate" type="%s" title="%s" href="%s" />%s',
 		esc_attr( feed_content_type() ),
+		esc_html( get_bloginfo( 'name' ) ) . ' | ' . esc_attr__( 'Tech Posts Only', 'chriswiegman' ),
+		'http://feed.chriswiegman.com/tech',
+		esc_attr( PHP_EOL )
+	);
+
+	printf(
+		'<link rel="alternate" type="%s" title="%s" href="%s" />%s',
+		esc_attr( feed_content_type() ),
 		esc_html( get_bloginfo( 'name' ) ) . ' | ' . esc_attr__( 'All Comments', 'chriswiegman' ),
 		'http://feed.chriswiegman.com/comments',
 		esc_attr( PHP_EOL )
