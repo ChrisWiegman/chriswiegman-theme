@@ -182,6 +182,23 @@ h1.page-title {
 	padding: 25px;
 }
 
+/*--------------------------------------------------------------
+0.2 Asides
+--------------------------------------------------------------*/
+
+.blog .format-aside .entry-title,
+.archive .format-aside .entry-title {
+	display: none;
+}
+
+/*--------------------------------------------------------------
+0.3 Comments
+--------------------------------------------------------------*/
+
+.comment-content a {
+	word-wrap: break-word;
+}
+
 .comment-reply-title {
 	margin-bottom: 40px;
 }
@@ -190,6 +207,33 @@ h1.page-title {
 
 	margin:  0 0 3em 0;
 	padding: 40px 0;
+
+	.mc4wp-checkbox-wp-comment-form {
+
+		margin-bottom: 0;
+
+		input {
+
+			margin-bottom: 0;
+			width:         auto;
+
+			&:after {
+				content:     " ";
+				white-space: pre;
+			}
+		}
+
+		span {
+			cursor:                 pointer;
+			position:               relative;
+			text-align:             left;
+			-webkit-transform:      translateZ(0);
+			-webkit-font-smoothing: antialiased;
+			min-height:             25px;
+			background-size:        10px;
+			padding-right:          15px;
+		}
+	}
 
 	.no-comments {
 		padding: 0 40px;
@@ -298,21 +342,4 @@ h1.page-title {
 			}
 		}
 	}
-}
-
-/*--------------------------------------------------------------
-0.2 Asides
---------------------------------------------------------------*/
-
-.blog .format-aside .entry-title,
-.archive .format-aside .entry-title {
-	display: none;
-}
-
-/*--------------------------------------------------------------
-0.3 Comments
---------------------------------------------------------------*/
-
-.comment-content a {
-	word-wrap: break-word;
 }
