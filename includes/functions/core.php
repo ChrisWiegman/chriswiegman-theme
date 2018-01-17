@@ -402,14 +402,14 @@ function init() {
 	remove_filter( 'the_content_feed', 'wp_staticize_emoji' );
 	remove_filter( 'comment_text_rss', 'wp_staticize_emoji' );
 
-	add_action( 'after_setup_theme', $n ( 'action_after_setup_theme' ) );
-	add_action( 'init', $n ( 'action_init' ) );
+	add_action( 'after_setup_theme', $n( 'action_after_setup_theme' ) );
+	add_action( 'init', $n( 'action_init' ) );
 	add_action( 'dashboard_glance_items', $n( 'action_dashboard_glance_items' ) );
-	add_action( 'widgets_init', $n ( 'action_widgets_init' ) );
-	add_action( 'wp_enqueue_scripts', $n ( 'action_wp_enqueue_scripts' ) );
+	add_action( 'widgets_init', $n( 'action_widgets_init' ) );
+	add_action( 'wp_enqueue_scripts', $n( 'action_wp_enqueue_scripts' ) );
 	add_action( 'wp_head', $n( 'action_wp_head' ) );
 
-	add_filter( 'body_class', $n ( 'filter_body_class' ) );
+	add_filter( 'body_class', $n( 'filter_body_class' ) );
 	add_filter( 'emoji_svg_url', '__return_false' );
 	add_filter( 'jetpack_sso_bypass_login_forward_wpcom', '__return_true' );
 	add_filter( 'jetpack_remove_login_form', '__return_true' );
@@ -421,10 +421,10 @@ function init() {
 	add_filter( 'the_excerpt_rss', $n( 'add_image_to_rss' ), 1000 );
 	add_filter( 'tiny_mce_plugins', $n( 'filter_tiny_mce_plugins' ) );
 	add_filter( 'user_contactmethods', $n( 'filter_user_contactmethods' ) );
-	add_filter( 'wp_default_scripts', $n ( 'filter_wp_default_scripts' ) );
+	add_filter( 'wp_default_scripts', $n( 'filter_wp_default_scripts' ) );
 	add_filter( 'wp_nav_menu_items', $n( 'filter_wp_nav_menu_items' ), 10, 2 );
-	add_filter( 'wp_page_menu_args', $n ( 'filter_wp_page_menu_args' ) );
-	add_filter( 'wp_title', $n ( 'filter_wp_title' ), 10, 2 );
+	add_filter( 'wp_page_menu_args', $n( 'filter_wp_page_menu_args' ) );
+	add_filter( 'wp_title', $n( 'filter_wp_title' ), 10, 2 );
 
 }
 
