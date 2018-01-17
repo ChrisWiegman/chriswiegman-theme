@@ -394,6 +394,13 @@ function init() {
 	remove_action( 'wp_head', 'rsd_link' );
 	remove_action( 'wp_head', 'wlwmanifest_link' );
 	remove_action( 'wp_head', 'wp_generator' );
+	remove_action( 'admin_print_styles', 'print_emoji_styles' );
+	remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
+	remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
+	remove_action( 'wp_print_styles', 'print_emoji_styles' );
+	remove_filter( 'wp_mail', 'wp_staticize_emoji_for_email' );
+	remove_filter( 'the_content_feed', 'wp_staticize_emoji' );
+	remove_filter( 'comment_text_rss', 'wp_staticize_emoji' );
 
 	add_action( 'after_setup_theme', $n ( 'action_after_setup_theme' ) );
 	add_action( 'init', $n ( 'action_init' ) );
@@ -417,14 +424,6 @@ function init() {
 	add_filter( 'wp_nav_menu_items', $n( 'filter_wp_nav_menu_items' ), 10, 2 );
 	add_filter( 'wp_page_menu_args', $n ( 'filter_wp_page_menu_args' ) );
 	add_filter( 'wp_title', $n ( 'filter_wp_title' ), 10, 2 );
-
-	remove_action( 'admin_print_styles', 'print_emoji_styles' );
-	remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
-	remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
-	remove_action( 'wp_print_styles', 'print_emoji_styles' );
-	remove_filter( 'wp_mail', 'wp_staticize_emoji_for_email' );
-	remove_filter( 'the_content_feed', 'wp_staticize_emoji' );
-	remove_filter( 'comment_text_rss', 'wp_staticize_emoji' );
 
 }
 
