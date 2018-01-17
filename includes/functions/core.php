@@ -401,6 +401,8 @@ function init() {
 	remove_filter( 'wp_mail', 'wp_staticize_emoji_for_email' );
 	remove_filter( 'the_content_feed', 'wp_staticize_emoji' );
 	remove_filter( 'comment_text_rss', 'wp_staticize_emoji' );
+	remove_action( 'wp_head', 'feed_links', 2 );
+	remove_action( 'wp_head', 'feed_links_extra', 3 );
 
 	add_action( 'after_setup_theme', $n( 'action_after_setup_theme' ) );
 	add_action( 'init', $n( 'action_init' ) );
