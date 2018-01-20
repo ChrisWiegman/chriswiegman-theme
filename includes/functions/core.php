@@ -439,24 +439,6 @@ function init() {
  */
 function action_wp_head() {
 
-	if ( ! is_admin() && ! is_user_logged_in() ) {
-		?>
-		<!-- Global site tag (gtag.js) - Google Analytics -->
-		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-111026322-2"></script>
-		<script>
-			window.dataLayer = window.dataLayer || [];
-
-			function gtag() {
-				dataLayer.push(arguments);
-			}
-
-			gtag('js', new Date());
-
-			gtag('config', 'UA-111026322-2');
-		</script>
-		<?php
-	}
-
 	printf(
 		'<link rel="alternate" type="%s" title="%s" href="%s" />%s',
 		esc_attr( feed_content_type() ),
