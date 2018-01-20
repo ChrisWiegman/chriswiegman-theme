@@ -256,7 +256,6 @@ function filter_user_contactmethods( $contact_methods ) {
 
 	$contact_methods['website_title'] = esc_html__( 'Website Title', 'chriswiegman' );
 	$contact_methods['twitter']       = esc_html__( 'Twitter', 'chriswiegman' );
-	$contact_methods['facebook']      = esc_html__( 'Facebook', 'chriswiegman' );
 	$contact_methods['wordpress']     = esc_html__( 'WordPress.org', 'chriswiegman' );
 	$contact_methods['github']        = esc_html__( 'GitHub', 'chriswiegman' );
 	$contact_methods['linkedin']      = esc_html__( 'LinkedIn', 'chriswiegman' );
@@ -305,7 +304,6 @@ function filter_wp_nav_menu_items( $items, $args ) {
 
 	if ( 'primary' === $args->theme_location ) {
 
-		$items .= '<li class="social-share last"><a href="https://facebook.com/chris.wiegman" target="_blank" title="' . esc_attr( 'Find me on Faceook', 'chriswiegman' ) . '"><i class="menu-icon icon-facebook"></i></a></li>';
 		$items .= '<li class="social-share"><a href="https://github.com/ChrisWiegman" target="_blank" title="' . esc_attr( 'View My Code on Github', 'chriswiegman' ) . '"><i class="menu-icon icon-github"></i></a></li>';
 		$items .= '<li class="social-share"><a href="https://profiles.wordpress.org/chriswiegman/" target="_blank" title="' . esc_attr( 'View My Plugins on WordPress.org', 'chriswiegman' ) . '"><i class="menu-icon icon-wordpress"></i></a></li>';
 		$items .= '<li class="social-share first"><a href="https://twitter.com/ChrisWiegman" target="_blank" title="' . esc_attr( 'Follow Me on Twitter', 'chriswiegman' ) . '"><i class="menu-icon icon-twitter"></i></a></li>';

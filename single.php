@@ -66,7 +66,6 @@ get_header();
 				do_action( 'cw_before_author' );
 
 				$links = array(
-					'facebook'  => get_the_author_meta( 'facebook' ),
 					'github'    => get_the_author_meta( 'github' ),
 					'wordpress' => get_the_author_meta( 'wordpress' ),
 					'twitter'   => get_the_author_meta( 'twitter' ),
@@ -103,11 +102,6 @@ get_header();
 
 				if (
 					(
-						isset( $profiles['facebook'] ) &&
-						isset( $profiles['facebook']['length'] ) &&
-						1 < $profiles['facebook']['length']
-					) ||
-					(
 						isset( $profiles['linkedin'] ) &&
 						isset( $profiles['linkedin']['length'] ) &&
 						1 < $profiles['linkedin']['length']
@@ -136,11 +130,6 @@ get_header();
 				) {
 
 					if (
-						(
-							isset( $profiles['facebook'] ) &&
-							isset( $profiles['facebook']['length'] ) &&
-							1 >= $profiles['facebook']['length']
-						) &&
 						(
 							isset( $profiles['linkedin'] ) &&
 							isset( $profiles['linkedin']['length'] ) &&
@@ -175,16 +164,6 @@ get_header();
 						echo '<p id="authcontact">Find ' . esc_html( get_the_author_meta( 'first_name' ) ) . ' on ';
 
 						$links = array();
-
-						if (
-							isset( $profiles['facebook'] ) &&
-							isset( $profiles['facebook']['length'] ) &&
-							1 < $profiles['facebook']['length']
-						) {
-
-							$links[] = '<a href="https://facebook.com/' . esc_attr( $profiles['facebook']['url'] ) . '" target="_blank" title="' . esc_attr( get_the_author_meta( 'display_name' ) ) . ' on Facebook">Facebook</a>';
-
-						}
 
 						if (
 							isset( $profiles['google'] ) &&
