@@ -1,14 +1,14 @@
 <?php
 /**
- * Add MaxCDN
+ * Add KeyCDN
  *
  * Adds MaxCDN to asset URLs where appropriate.
  *
  * @package chriswiegman
  *
- * @since   2.3.0
+ * @since   7.4
  *
- * @author  Chris Wiegman <chris@chriswiegman.com>
+ * @author  Chris Wiegman <info@chriswiegman.com>
  */
 
 namespace CW\Theme\Features;
@@ -23,7 +23,7 @@ class CDN {
 	 *
 	 * Sets up various CDN information.
 	 *
-	 * @since 2.2.2
+	 * @since 7.4
 	 */
 	public function __construct() {
 
@@ -39,7 +39,7 @@ class CDN {
 	 *
 	 * Returns the CDN domain for the current site.
 	 *
-	 * @since 2.2.0
+	 * @since 2.2.0* @since 7.4
 	 *
 	 * @return string The CDN domain.
 	 */
@@ -56,7 +56,7 @@ class CDN {
 	 *
 	 * Filters various HTML items to insert the CDN domain.
 	 *
-	 * @since 2.2.0
+	 * @since 7.4
 	 *
 	 * @param string $html The HTML to filter.
 	 *
@@ -88,7 +88,7 @@ class CDN {
 	 *
 	 * Filters post content items to insert the CDN domain.
 	 *
-	 * @since 2.2.0
+	 * @since 7.4
 	 *
 	 * @param string $content The content to filter.
 	 *
@@ -119,7 +119,7 @@ class CDN {
 	 *
 	 * Filters various JavaScript source URLs to insert the CDN domain.
 	 *
-	 * @since 2.2.0
+	 * @since 7.4
 	 *
 	 * @param string $src The url to filter.
 	 *
@@ -144,7 +144,7 @@ class CDN {
 	 *
 	 * Filters various CSS source URLs to insert the CDN domain.
 	 *
-	 * @since 2.2.0
+	 * @since 7.4
 	 *
 	 * @param string $src The url to filter.
 	 *
