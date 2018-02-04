@@ -414,6 +414,7 @@ function init() {
 
 	add_filter( 'body_class', $n( 'filter_body_class' ) );
 	add_filter( 'emoji_svg_url', '__return_false' );
+	add_filter( 'gform_init_scripts_footer', '__return_true' );
 	add_filter( 'jetpack_implode_frontend_css', '__return_false' );
 	add_filter( 'jetpack_sso_bypass_login_forward_wpcom', '__return_true' );
 	add_filter( 'jetpack_remove_login_form', '__return_true' );
