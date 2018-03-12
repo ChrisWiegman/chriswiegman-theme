@@ -216,11 +216,11 @@ add_action( 'save_post', 'CW\Theme\Functions\Template_Tags\category_transient_fl
  *
  * @since 5.0.0
  *
- * @param string|bool $zero Optional. String to display when no comments. Default false.
- * @param string|bool $one Optional. String to display when only one comment is available. Default false.
- * @param string|bool $more Optional. String to display when there are more than one comment. Default false.
+ * @param string|bool $zero      Optional. String to display when no comments. Default false.
+ * @param string|bool $one       Optional. String to display when only one comment is available. Default false.
+ * @param string|bool $more      Optional. String to display when there are more than one comment. Default false.
  * @param string|bool $css_class Optional. CSS class to use for comments. Default empty.
- * @param string|bool $none Optional. String to display when comments have been turned off. Default false.
+ * @param string|bool $none      Optional. String to display when comments have been turned off. Default false.
  *
  * @return null Returns null on single posts and pages.
  */
@@ -311,7 +311,7 @@ function get_comments_popup_link( $zero = false, $one = false, $more = false, $c
  * @since 5.0.0
  *
  * @param string|bool $zero Optional. Text for no comments. Default false.
- * @param string|bool $one Optional. Text for one comment. Default false.
+ * @param string|bool $one  Optional. Text for one comment. Default false.
  * @param string|bool $more Optional. Text for more than one comment. Default false.
  *
  * @return string Number of comments

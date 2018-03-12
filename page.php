@@ -33,7 +33,7 @@ get_header();
 					</div><!-- .entry-content -->
 				</article><!-- #post-## -->
 
-				<?php
+			<?php
 			endwhile; // End of the loop.
 			?>
 

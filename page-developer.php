@@ -129,19 +129,19 @@ get_header();
 							<!-- end .archive-projects-->
 
 							<p class="projects-note">
-							<?php
-							esc_html_e(
-								'Note that "archived" projects are projects I am no longer involved in for
+								<?php
+								esc_html_e(
+									'Note that "archived" projects are projects I am no longer involved in for
 						one reason or another.', 'chriswiegman'
-							);
-?>
-</p>
+								);
+								?>
+							</p>
 
 						</div>
 
 					</div>
 
-				<?php
+					<?php
 				} // End of the loop.
 				?>
 			</article><!-- #post-## -->
@@ -150,5 +150,5 @@ get_header();
 	</div><!-- #primary -->
 
 	<?php
-	get_sidebar();
-	get_footer();
+get_sidebar();
+get_footer();

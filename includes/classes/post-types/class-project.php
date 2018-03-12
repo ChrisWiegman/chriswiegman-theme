@@ -139,7 +139,7 @@ class Project {
 	 * @since 1.0.0
 	 *
 	 * @param int      $post_id ID of the current post.
-	 * @param \WP_POST $post The current post.
+	 * @param \WP_POST $post    The current post.
 	 *
 	 * @return int post ID on failure or void on success
 	 */

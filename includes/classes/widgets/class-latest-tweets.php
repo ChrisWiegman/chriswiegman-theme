@@ -48,7 +48,7 @@ class Latest_Tweets extends \WP_Widget {
 	 * Handles AJAX request for retrieving latest tweets
 	 *
 	 * @param string $username The username to retrieve.
-	 * @param bool   $echo True to echo or false to return in an array.
+	 * @param bool   $echo     True to echo or false to return in an array.
 	 *
 	 * @since 4.1.0
 	 *
@@ -258,7 +258,7 @@ class Latest_Tweets extends \WP_Widget {
 	 *
 	 * @since 4.1.0
 	 *
-	 * @param array $args Widget arguments.
+	 * @param array $args     Widget arguments.
 	 * @param array $instance Saved values from database.
 	 */
 	public function widget( $args, $instance ) {
