@@ -28,7 +28,7 @@ require CW_THEME_INCLUDES . 'classes/post-types/class-speaking.php';
 new Post_Types\Project();
 new Post_Types\Speaking();
 
-// Use a CDN if properly defined
+// Use a CDN if properly defined.
 if ( defined( 'CW_USE_CDN' ) && true === CW_USE_CDN ) {
 
 	require CW_THEME_INCLUDES . 'classes/features/class-cdn.php';

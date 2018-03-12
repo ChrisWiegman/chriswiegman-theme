@@ -61,7 +61,7 @@ get_header();
 
 										if ( has_term( 'wordpress-plugin', 'project-type', get_the_ID() ) ) {
 
-											$icon = 'wordpress';
+											$icon = 'WordPress';
 
 										} elseif ( has_term( 'google-chrome-extension', 'project-type', get_the_ID() ) ) {
 
@@ -128,14 +128,21 @@ get_header();
 							</ul>
 							<!-- end .archive-projects-->
 
-							<p class="projects-note"><?php esc_html_e( 'Note that "archived" projects are projects I am no longer involved in for
-						one reason or another.', 'chriswiegman' ); ?></p>
+							<p class="projects-note">
+							<?php
+							esc_html_e(
+								'Note that "archived" projects are projects I am no longer involved in for
+						one reason or another.', 'chriswiegman'
+							);
+?>
+</p>
 
 						</div>
 
 					</div>
 
-				<?php } // End of the loop.
+				<?php
+				} // End of the loop.
 				?>
 			</article><!-- #post-## -->
 		</main>
@@ -143,5 +150,5 @@ get_header();
 	</div><!-- #primary -->
 
 	<?php
-get_sidebar();
-get_footer();
+	get_sidebar();
+	get_footer();

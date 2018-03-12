@@ -10,6 +10,7 @@
  */
 
 namespace CW\Theme\Templates\Footer;
+
 ?>
 
 </div><!-- #content -->

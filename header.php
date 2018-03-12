@@ -12,6 +12,7 @@
  */
 
 namespace CW\Theme\Templates\Header;
+
 ?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
