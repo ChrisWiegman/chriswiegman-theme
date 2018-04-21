@@ -78,7 +78,6 @@ module.exports = function (grunt) {
 					},
 
 					files: {
-						'assets/css/admin-speaking.css': 'assets/css/sass/admin-speaking.scss',
 						'assets/css/master.css':         'assets/css/sass/master.scss',
 						'assets/css/editor.css':         'assets/css/sass/editor.scss'
 					}
@@ -106,9 +105,6 @@ module.exports = function (grunt) {
 							'assets/js/src/progress.js',
 							'assets/js/src/skip-link-focus-fix.js',
 							'assets/js/src/scripts.js'
-						],
-						'assets/js/admin-speaking.min.js': [
-							'assets/js/src/admin-speaking.js'
 						]
 					}
 				},
@@ -129,9 +125,6 @@ module.exports = function (grunt) {
 							'assets/js/src/progress.js',
 							'assets/js/src/skip-link-focus-fix.js',
 							'assets/js/src/scripts.js'
-						],
-						'assets/js/admin-speaking.js': [
-							'assets/js/src/admin-speaking.js'
 						]
 					}
 				}
