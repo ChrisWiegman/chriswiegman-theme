@@ -24,6 +24,8 @@ get_header();
 				?>
 
 				<header class="page-header">
+
+					<?php // translators: search query. ?>
 					<h1 class="page-title"><?php printf( esc_html__( 'Search Results for: %s', 'chriswiegman' ), '<span>' . esc_html( get_search_query() ) . '</span>' ); ?></h1>
 				</header><!-- .page-header -->
 
@@ -50,5 +52,5 @@ get_header();
 	</section><!-- #primary -->
 
 	<?php
-get_sidebar();
-get_footer();
+	get_sidebar();
+	get_footer();
