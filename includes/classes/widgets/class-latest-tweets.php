@@ -275,9 +275,10 @@ class Latest_Tweets extends \WP_Widget {
 		$this->get_latest_tweets( $instance['user_name'] );
 
 		echo '</ul>';
-		echo '</div>';
-
+		echo '<div class="cw-tweets-follow-me">';
 		echo '<a class="follow-me" href="https://twitter.com/chriswiegman">' . esc_html__( 'Follow me on Twitter', 'chriswiegman' ) . '</a>';
+		echo '</div>';
+		echo '</div>';
 
 		echo wp_kses_post( $args['after_widget'] );
 
