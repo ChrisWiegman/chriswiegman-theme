@@ -64,7 +64,7 @@ class Latest_Tweets extends \WP_Widget {
 			$max_tweets    = ( isset( $_POST['count'] ) ) ? absint( $_POST['count'] ) : 7; // WPCS: input var OK. CSRF ok.
 
 			// Require the twitter auth library.
-			require( CW_THEME_INCLUDES . '/vendor/twitteroauth/autoload.php' );
+			require CW_THEME_INCLUDES . '/vendor/twitteroauth/autoload.php';
 
 			$twitter_connection = new TwitterOAuth(
 				CW_TWITTER_OAUTH_CONSUMER_KEY,
@@ -162,17 +162,17 @@ class Latest_Tweets extends \WP_Widget {
 
 					$tweet_count ++;
 
-				} // End foreach().
-			} // End if().
+				}
+			}
 
 			// Save our new transient.
 			set_transient( 'cw_latest_tweets', $latest_tweets, 3600 );
 
-		} // End if().
+		}
 
 		if ( true === $echo ) {
 
-			echo $latest_tweets;
+			echo $latest_tweets; // WPCS: XSS ok.
 
 		}
 
