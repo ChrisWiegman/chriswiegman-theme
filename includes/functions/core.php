@@ -57,60 +57,6 @@ function action_after_setup_theme() {
 }
 
 /**
- * Action dashboard_glance_items
- *
- * Add CPTs to "At a Glance Widget" in the Dashboard.
- *
- * @since 3.1.0
- */
-function action_dashboard_glance_items() {
-
-	$args = array(
-		'public'   => true,
-		'_builtin' => false,
-	);
-
-	$output     = 'object';
-	$operator   = 'and';
-	$post_types = get_post_types( $args, $output, $operator );
-
-	$morning_journal_args = array(
-		'name' => 'morning-journal',
-	);
-
-	$post_types = array_merge( get_post_types( $morning_journal_args, $output, $operator ), $post_types );
-
-	$evening_journal_args = array(
-		'name' => 'evening-journal',
-	);
-
-	$post_types = array_merge( get_post_types( $evening_journal_args, $output, $operator ), $post_types );
-
-	foreach ( $post_types as $post_type ) {
-
-		$num_posts = wp_count_posts( $post_type->name );
-		$num       = number_format_i18n( $num_posts->publish );
-		$text      = _n( $post_type->labels->singular_name, $post_type->labels->name, intval( $num_posts->publish ) );
-		$cpt_name  = '';
-
-		if ( current_user_can( 'edit_posts' ) ) {
-			$cpt_name = $post_type->name;
-		}
-
-		printf(
-			'<li class="%s-count"><tr><a href="%s"><td class="first b b-%s"></td>%d <td class="t %s">%s</td></a></tr></li>',
-			esc_attr( $cpt_name ),
-			'edit.php?post_type=' . esc_attr( $cpt_name ),
-			esc_attr( $post_type->name ),
-			absint( $num ),
-			esc_attr( $post_type->name ),
-			esc_html( $text )
-		);
-
-	}
-}
-
-/**
  * Action init
  *
  * Add custom styles to wysiwyg editor
@@ -193,7 +139,7 @@ function remove_asset_version( $src ) {
 }
 
 /**
- *Filter body_classees
+ * Filter body_classees
  *
  * Adds custom classes to the array of body classes.
  *
@@ -408,13 +354,14 @@ function init() {
 	remove_action( 'wp_head', 'feed_links_extra', 3 );
 
 	add_action( 'after_setup_theme', $n( 'action_after_setup_theme' ) );
+	add_action( 'comment_post', $n( 'action_comment_post' ), 10, 2 );
 	add_action( 'init', $n( 'action_init' ) );
-	add_action( 'dashboard_glance_items', $n( 'action_dashboard_glance_items' ) );
 	add_action( 'widgets_init', $n( 'action_widgets_init' ) );
 	add_action( 'wp_enqueue_scripts', $n( 'action_wp_enqueue_scripts' ) );
 	add_action( 'wp_head', $n( 'action_wp_head' ) );
 
 	add_filter( 'body_class', $n( 'filter_body_class' ) );
+	add_filter( 'comment_form_default_fields', $n( 'filter_comment_form_default_fields' ) );
 	add_filter( 'emoji_svg_url', '__return_false' );
 	add_filter( 'gform_cdata_open', $n( 'wrap_gform_cdata_open' ) );
 	add_filter( 'gform_cdata_close', $n( 'wrap_gform_cdata_close' ) );
@@ -434,6 +381,60 @@ function init() {
 	add_filter( 'wp_nav_menu_items', $n( 'filter_wp_nav_menu_items' ), 10, 2 );
 	add_filter( 'wp_page_menu_args', $n( 'filter_wp_page_menu_args' ) );
 	add_filter( 'wp_title', $n( 'filter_wp_title' ), 10, 2 );
+
+}
+
+/**
+ * Action comment_post
+ *
+ * Saves the email adress to Gravity Forms for MailChimp integration
+ *
+ * @since 8.0
+ *
+ * @param int   $post_id        The ID of the current post.
+ * @param sting $comment_status The status flag for the comment.
+ */
+function action_comment_post( $post_id, $comment_status ) {
+
+	if ( 'spam' !== $comment_status ) {
+
+		$save_meta_checkbox = esc_attr( $_POST['subscribe-to-posts'] ); // WPCS: CSRF ok.
+
+		if ( 'on' === $save_meta_checkbox ) {
+
+			$entry = array(
+				'form_id' => 3,
+				1         => esc_attr( $_POST['email'] ), // WPCS: CSRF ok.
+			);
+
+			$entry_id = \GFAPI::add_entry( $entry );
+
+			if ( is_wp_error( $entry_id ) ) {
+				wp_die( esc_html( $entry_id->get_error_message() ) );
+			}
+		}
+	}
+}
+
+/**
+ * Filter comment_form_default_fields
+ *
+ * Adds a subscribe box to the comment form.
+ *
+ * @since 8.0
+ *
+ * @param array $fields Array of fields.
+ *
+ * @return array
+ */
+function filter_comment_form_default_fields( $fields ) {
+
+	$fields['subscribe-to-posts'] = '<p class="comment-form-public">
+    <input id="subscribe-to-posts" name="subscribe-to-posts" type="checkbox" />
+    <label for="subscribe-to-posts">' . esc_html__( 'Receive all my new posts in your email', 'chriswiegman' ) . '</label>
+    </p>';
+
+	return $fields;
 
 }
 
