@@ -355,6 +355,7 @@ function init() {
 
 	add_action( 'after_setup_theme', $n( 'action_after_setup_theme' ) );
 	add_action( 'comment_post', $n( 'action_comment_post' ), 10, 2 );
+	add_action( 'gform_post_add_entry', $n( 'action_gform_post_add_entry' ), 10, 2 );
 	add_action( 'init', $n( 'action_init' ) );
 	add_action( 'widgets_init', $n( 'action_widgets_init' ) );
 	add_action( 'wp_enqueue_scripts', $n( 'action_wp_enqueue_scripts' ) );
@@ -382,6 +383,26 @@ function init() {
 	add_filter( 'wp_page_menu_args', $n( 'filter_wp_page_menu_args' ) );
 	add_filter( 'wp_title', $n( 'filter_wp_title' ), 10, 2 );
 
+}
+
+/**
+ * Action gform_post_add_entry
+ *
+ * Process the mailchimp subscription.
+ *
+ * @since 8.0
+ *
+ * @param array $entry The Entry Object added.
+ * @param array $form  The Form Object added.
+ */
+function action_gform_post_add_entry( $entry, $form ) {
+
+	if ( isset( $form['id'] ) && 3 === $form['id'] ) {
+
+		$mailchimp = \GFMailChimp::get_instance();
+		$mailchimp->maybe_process_feed( $entry, $form );
+
+	}
 }
 
 /**
