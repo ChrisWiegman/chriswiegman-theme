@@ -187,5 +187,5 @@ $archive_page = false;
 
 	<?php
 
-get_sidebar();
-get_footer();
+	get_sidebar();
+	get_footer();
