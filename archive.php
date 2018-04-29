@@ -88,7 +88,6 @@ $archive_page = false;
 							esc_html_e( 'Chats', 'chriswiegman' );
 
 						else :
-							esc_html_e( 'Archives', 'chriswiegman' );
 							$archive_page = true;
 
 						endif;
