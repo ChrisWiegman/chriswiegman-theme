@@ -276,7 +276,7 @@ class Latest_Tweets extends \WP_Widget {
 
 		echo '</ul>';
 		echo '<div class="cw-tweets-follow-me">';
-		echo '<a class="follow-me" href="https://twitter.com/chriswiegman">' . esc_html__( 'Follow me on Twitter', 'chriswiegman' ) . '</a>';
+		echo '<a class="follow-me" href="https://twitter.com/chriswiegman" rel="external" title="' . esc_html__( 'Follow me on Twitter', 'chriswiegman' ) . '">' . esc_html__( 'Follow me on Twitter', 'chriswiegman' ) . '</a>';
 		echo '</div>';
 		echo '</div>';
 
