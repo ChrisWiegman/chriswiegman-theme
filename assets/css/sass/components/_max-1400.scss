@@ -1,35 +1,35 @@
 @media screen and (max-width: 1400px) {
 
-	.hentry {
-		border-left: none;
-		transition:  0.5s;
-	}
+  .hentry {
+    border-left: none;
+    transition: 0.5s;
+  }
 
-	#page {
+  #page {
 
-		.site-content {
+    .site-content {
 
-			padding-top: 115px;
-			transition:  0.5s;
+      padding-top: 115px;
+      transition: 0.5s;
 
-			.widget-area {
-				width:      33%;
-				transition: 0.5s;
-			}
-		}
+      .widget-area {
+        width: 33%;
+        transition: 0.5s;
+      }
+    }
 
-		.site-header .wrap {
+    .site-header .wrap {
 
-			.site-title {
-				margin-left: 20px;
-				transition:  0.5s;
+      .site-title {
+        margin-left: 20px;
+        transition: 0.5s;
 
-			}
+      }
 
-			.main-navigation {
-				margin-right: 20px;
-				transition:   0.5s;
-			}
-		}
-	}
+      .main-navigation {
+        margin-right: 20px;
+        transition: 0.5s;
+      }
+    }
+  }
 }

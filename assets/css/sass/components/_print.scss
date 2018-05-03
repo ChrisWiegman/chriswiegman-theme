@@ -1,132 +1,132 @@
 @media print {
 
-	body {
-		background: white;
-		color:      #000 !important;
-		font-size:  10pt;
-		margin:     0
-	}
+  body {
+    background: white;
+    color: #000 !important;
+    font-size: 10pt;
+    margin: 0
+  }
 
-	#page {
+  #page {
 
-		.content-area {
-			margin-left: 0;
-			float:       none;
-			width:       auto
-		}
+    .content-area {
+      margin-left: 0;
+      float: none;
+      width: auto
+    }
 
-		.site-content {
-			padding-top: 40px;
-		}
+    .site-content {
+      padding-top: 40px;
+    }
 
-		.site-header,
-		nav,
-		footer {
-			display: none;
-		}
-	}
+    .site-header,
+    nav,
+    footer {
+      display: none;
+    }
+  }
 
-	.single .site-main,
-	.page .site-main,
-	.hentry {
-		border: none;
-	}
+  .single .site-main,
+  .page .site-main,
+  .hentry {
+    border: none;
+  }
 
-	#secondary,
-	#site-navigation,
-	#commentform,
-	.comments-link,
-	.sharedaddy {
-		display: none
-	}
+  #secondary,
+  #site-navigation,
+  #commentform,
+  .comments-link,
+  .sharedaddy {
+    display: none
+  }
 
-	#header {
-		height: 75px
-	}
+  #header {
+    height: 75px
+  }
 
-	.demo .red {
-		color:       black;
-		font-weight: bold
-	}
+  .demo .red {
+    color: black;
+    font-weight: bold
+  }
 
-	#content a {
-		font-weight:     bold;
-		color:           #006;
-		text-decoration: underline
-	}
+  #content a {
+    font-weight: bold;
+    color: #006;
+    text-decoration: underline
+  }
 
-	#content {
-		margin-left: 0;
-		float:       none;
-		width:       auto
-	}
+  #content {
+    margin-left: 0;
+    float: none;
+    width: auto
+  }
 
-	footer,
-	.ad,
-	.footer-menu,
-	.author-box,
-	.comment-respond,
-	.nav-links {
-		display: none
-	}
+  footer,
+  .ad,
+  .footer-menu,
+  .author-box,
+  .comment-respond,
+  .nav-links {
+    display: none
+  }
 
-	.comments-area ol li {
-		padding: 0;
-	}
+  .comments-area ol li {
+    padding: 0;
+  }
 
-	h1,
-	h2,
-	h3,
-	h4,
-	h5,
-	h6 {
-		page-break-after:  avoid;
-		page-break-inside: avoid
-	}
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    page-break-after: avoid;
+    page-break-inside: avoid
+  }
 
-	h3 {
-		margin-left:    10px;
-		margin-bottom:  0;
-		padding-bottom: 0
-	}
+  h3 {
+    margin-left: 10px;
+    margin-bottom: 0;
+    padding-bottom: 0
+  }
 
-	blockquote, table, pre {
-		page-break-inside: avoid
-	}
+  blockquote, table, pre {
+    page-break-inside: avoid
+  }
 
-	ul, ol, dl {
-		page-break-before: avoid
-	}
+  ul, ol, dl {
+    page-break-before: avoid
+  }
 
-	img.centered {
-		display:      block;
-		margin-left:  auto;
-		margin-right: auto;
-	}
+  img.centered {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
 
-	img.right {
-		padding: 4px;
-		margin:  0 0 2px 7px;
-		display: inline;
-	}
+  img.right {
+    padding: 4px;
+    margin: 0 0 2px 7px;
+    display: inline;
+  }
 
-	img.left {
-		padding: 4px;
-		margin:  0 7px 2px 0;
-		display: inline;
-	}
+  img.left {
+    padding: 4px;
+    margin: 0 7px 2px 0;
+    display: inline;
+  }
 
-	.right {
-		float: right;
-	}
+  .right {
+    float: right;
+  }
 
-	.left {
-		float: left
-	}
+  .left {
+    float: left
+  }
 
-	img {
-		page-break-inside: avoid;
-		page-break-after:  avoid;
-	}
+  img {
+    page-break-inside: avoid;
+    page-break-after: avoid;
+  }
 
 }
