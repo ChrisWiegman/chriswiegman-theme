@@ -10,6 +10,7 @@
  */
 
 namespace CW\Theme\Templates\Parts\Content\None;
+
 ?>
 
 <section class="no-results not-found">
@@ -20,7 +21,10 @@ namespace CW\Theme\Templates\Parts\Content\None;
 	<div class="page-content">
 		<?php if ( is_home() && current_user_can( 'publish_posts' ) ) : ?>
 
+			<?php // @codingStandardsIgnoreStart ?>
+			<?php // translators: placeholder is url. ?>
 			<p><?php printf( __( 'Ready to publish your first post? <a href="%1$s">Get started here</a>.', 'chriswiegman' ), esc_url( admin_url( 'post-new.php' ) ) ); ?></p>
+			<?php // @codingStandardsIgnoreEnd ?>
 
 		<?php elseif ( is_search() ) : ?>
 

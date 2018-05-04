@@ -3,20 +3,19 @@
 	"private": true,
 	"description": "Grunt base for the ChrisWiegman.com Theme.",
 	"devDependencies": {
-		"grunt": "1.0.1",
-		"grunt-contrib-uglify": "~3.1.0",
+		"grunt": "1.0.2",
+		"grunt-contrib-uglify": "~3.3.0",
 		"grunt-contrib-watch": "1.0.0",
 		"load-grunt-tasks": "3.5.2",
-		"grunt-wp-i18n": "1.0.1",
-		"grunt-sass": "2.0.0",
+		"grunt-wp-i18n": "1.0.2",
+		"grunt-sass": "2.1.0",
 		"grunt-contrib-clean": "1.1.0",
 		"grunt-contrib-cssmin": "2.2.1",
-		"grunt-phpunit": "0.3.6",
 		"grunt-contrib-jshint": "1.1.0",
 		"grunt-postcss": "0.9.0",
 		"time-grunt": "1.4.0",
 		"pixrem": "4.0.1",
-		"autoprefixer": "7.1.6"
+		"autoprefixer": "8.2.0"
 	},
 	"author": "Chris Wiegman",
 	"repository": {

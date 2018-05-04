@@ -40,17 +40,22 @@ function paging_nav( $query = null ) {
 
 			<?php if ( get_next_posts_link( null, $query->max_num_pages ) ) { ?>
 
+				<?php // translators: arrow is direction indicator. ?>
 				<div class="nav-previous"><?php next_posts_link( sprintf( esc_html__( '%s Older posts', 'chriswiegman' ), '<span class="meta-nav">&larr;</span>' ), $query->max_num_pages ); ?></div>
 			<?php } ?>
 
 			<?php if ( get_previous_posts_link() ) { ?>
+
+				<?php // translators: arrow is direction indicator. ?>
 				<div class="nav-next"><?php previous_posts_link( sprintf( esc_html__( 'Newer posts %s', 'chriswiegman' ), '<span class="meta-nav">&rarr;</span>' ) ); ?></div>
+
 			<?php } ?>
 
 		</div>
 		<!-- .nav-links -->
 	</nav><!-- .navigation -->
 	<?php
+
 }
 
 /**
@@ -75,6 +80,7 @@ function post_nav() {
 
 		<div class="nav-links">
 			<?php
+
 			previous_post_link( '<div class="nav-previous">%link</div>', _x( '<span class="meta-nav">&larr;</span>&nbsp;%title', 'Previous post link', 'chriswiegman' ) );
 			next_post_link( '<div class="nav-next">%link</div>', _x( '%title&nbsp;<span class="meta-nav">&rarr;</span>', 'Next post link', 'chriswiegman' ) );
 			?>
@@ -82,6 +88,7 @@ function post_nav() {
 		<!-- .nav-links -->
 	</nav><!-- .navigation -->
 	<?php
+
 }
 
 /**
@@ -112,6 +119,7 @@ function posted_on() {
 	if ( get_the_author_meta( 'ID' ) !== 2 ) {
 
 		$byline = sprintf(
+			// translators: placeholder is author.
 			_x( ' by %s', 'post author', 'chriswiegman' ),
 			'<span class="byline"> <span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span> </span>'
 		);
@@ -216,11 +224,11 @@ add_action( 'save_post', 'CW\Theme\Functions\Template_Tags\category_transient_fl
  *
  * @since 5.0.0
  *
- * @param string|bool $zero Optional. String to display when no comments. Default false.
- * @param string|bool $one Optional. String to display when only one comment is available. Default false.
- * @param string|bool $more Optional. String to display when there are more than one comment. Default false.
+ * @param string|bool $zero      Optional. String to display when no comments. Default false.
+ * @param string|bool $one       Optional. String to display when only one comment is available. Default false.
+ * @param string|bool $more      Optional. String to display when there are more than one comment. Default false.
  * @param string|bool $css_class Optional. CSS class to use for comments. Default empty.
- * @param string|bool $none Optional. String to display when comments have been turned off. Default false.
+ * @param string|bool $none      Optional. String to display when comments have been turned off. Default false.
  *
  * @return null Returns null on single posts and pages.
  */
@@ -297,6 +305,7 @@ function get_comments_popup_link( $zero = false, $one = false, $more = false, $c
 	$attributes = '';
 
 	$return_string .= apply_filters( 'comments_popup_link_attributes', $attributes );
+	// translators: placeholder is post title.
 	$return_string .= ' title="' . esc_attr( sprintf( __( 'Comment on %s', 'chriswiegman' ), $title ) ) . '">';
 	$return_string .= get_comments_number_string( $zero, $one, $more );
 	$return_string .= '</a>';
@@ -311,7 +320,7 @@ function get_comments_popup_link( $zero = false, $one = false, $more = false, $c
  * @since 5.0.0
  *
  * @param string|bool $zero Optional. Text for no comments. Default false.
- * @param string|bool $one Optional. Text for one comment. Default false.
+ * @param string|bool $one  Optional. Text for one comment. Default false.
  * @param string|bool $more Optional. Text for more than one comment. Default false.
  *
  * @return string Number of comments

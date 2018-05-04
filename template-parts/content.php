@@ -45,6 +45,7 @@ use CW\Theme\Functions\Template_Tags;
 
 	<div class="entry-content">
 		<?php
+		// translators: placeholder is direction arrow.
 		the_content( sprintf( esc_html__( 'Continue Reading %s', 'chriswiegman' ), '<span class="meta-nav">&rarr;</span>' ) );
 
 		wp_link_pages(

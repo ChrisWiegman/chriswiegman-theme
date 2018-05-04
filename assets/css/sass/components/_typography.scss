@@ -1,6 +1,6 @@
 body {
-	color:       $text-color;
-	font-family: $sans-serif;
+  color: $text-color;
+  font-family: $sans-serif;
 }
 
 h1,
@@ -9,153 +9,153 @@ h3,
 h4,
 h5,
 h6 {
-	clear:       both;
-	color:       $black;
-	font-family: $serif;
-	font-weight: bold;
-	line-height: 1.2;
+  clear: both;
+  color: $black;
+  font-family: $serif;
+  font-weight: bold;
+  line-height: 1.2;
 }
 
 h1 {
-	font-size: 2.25rem;
+  font-size: 2.25rem;
 }
 
 .page .entry-title {
 
-	border-bottom: 1px solid $near-white;
-	clear:         both;
-	line-height:   1.4;
-	margin-bottom: 1.5rem;
+  border-bottom: 1px solid $near-white;
+  clear: both;
+  line-height: 1.4;
+  margin-bottom: 1.5rem;
 
-	a {
-		border-bottom: 1px solid $near-white;
-		clear:         both;
-		line-height:   1.5;
-		margin-bottom: 1.5rem;
-	}
+  a {
+    border-bottom: 1px solid $near-white;
+    clear: both;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+  }
 
 }
 
 .software .entry-title, .error404 .entry-title, .software .entry-title a {
-	border-bottom: 1px solid #ddd;
-	clear:         both;
-	line-height:   1.5;
-	margin-bottom: 1.5rem;
+  border-bottom: 1px solid #ddd;
+  clear: both;
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
 }
 
 blockquote::before {
-	font-size: 2rem;
+  font-size: 2rem;
 }
 
 h2 {
 
-	font-size: 1.875rem;
+  font-size: 1.875rem;
 
-	&.software-category {
-		font-size:     1.625rem;
-		margin-bottom: 1.25rem;
-		width:         auto;
-	}
+  &.software-category {
+    font-size: 1.625rem;
+    margin-bottom: 1.25rem;
+    width: auto;
+  }
 
 }
 
 h3 {
-	font-size: 1.5rem;
+  font-size: 1.5rem;
 }
 
 h4, .archive-title, .taxonomy-description h1 {
-	font-size:      1.5rem;
-	padding-bottom: 1rem;
+  font-size: 1.5rem;
+  padding-bottom: 1rem;
 }
 
 h5 {
-	font-size: 1.125rem;
+  font-size: 1.125rem;
 }
 
 h6, .author-box h1, .sidebar h2 a {
-	font-size: 1rem;
+  font-size: 1rem;
 }
 
 p {
-	margin-bottom: 1.5em;
+  margin-bottom: 1.5em;
 }
 
 b,
 strong {
-	font-weight: bold;
+  font-weight: bold;
 }
 
 dfn,
 cite,
 em,
 i {
-	font-style: italic;
+  font-style: italic;
 }
 
 blockquote {
-	margin: 0 1.5em;
+  margin: 0 1.5em;
 }
 
 address {
-	margin: 0 0 1.5em;
+  margin: 0 0 1.5em;
 }
 
 pre {
 
-	background:    #eee;
-	font-family:   $fixed;
-	line-height:   1.6;
-	margin-bottom: 1.6em;
-	max-width:     100%;
-	overflow:      auto;
-	padding:       1.6em;
+  background: #eee;
+  font-family: $fixed;
+  line-height: 1.6;
+  margin-bottom: 1.6em;
+  max-width: 100%;
+  overflow: auto;
+  padding: 1.6em;
 }
 
 code,
 kbd,
 tt,
 var {
-	font: 15px $fixed;
+  font: 15px $fixed;
 }
 
 abbr,
 acronym {
-	border-bottom: 1px dotted #666;
-	cursor:        help;
+  border-bottom: 1px dotted #666;
+  cursor: help;
 }
 
 mark,
 ins {
-	background:      #fff9c0;
-	text-decoration: none;
+  background: #fff9c0;
+  text-decoration: none;
 }
 
 sup,
 sub {
-	font-size:      75%;
-	height:         0;
-	line-height:    0;
-	position:       relative;
-	vertical-align: baseline;
+  font-size: 75%;
+  height: 0;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
 }
 
 sup {
-	bottom: 1ex;
+  bottom: 1ex;
 }
 
 sub {
-	top: .5ex;
+  top: .5ex;
 }
 
 small {
-	font-size: 75%;
+  font-size: 75%;
 }
 
 big {
-	font-size: 125%;
+  font-size: 125%;
 }
 
 .searchwp-highlight {
-	background-color: #ff0;
-	padding:          2px;
+  background-color: #ff0;
+  padding: 2px;
 }

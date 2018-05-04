@@ -78,7 +78,6 @@ module.exports = function (grunt) {
 					},
 
 					files: {
-						'assets/css/admin-speaking.css': 'assets/css/sass/admin-speaking.scss',
 						'assets/css/master.css':         'assets/css/sass/master.scss',
 						'assets/css/editor.css':         'assets/css/sass/editor.scss'
 					}
@@ -106,9 +105,6 @@ module.exports = function (grunt) {
 							'assets/js/src/progress.js',
 							'assets/js/src/skip-link-focus-fix.js',
 							'assets/js/src/scripts.js'
-						],
-						'assets/js/admin-speaking.min.js': [
-							'assets/js/src/admin-speaking.js'
 						]
 					}
 				},
@@ -129,9 +125,6 @@ module.exports = function (grunt) {
 							'assets/js/src/progress.js',
 							'assets/js/src/skip-link-focus-fix.js',
 							'assets/js/src/scripts.js'
-						],
-						'assets/js/admin-speaking.js': [
-							'assets/js/src/admin-speaking.js'
 						]
 					}
 				}
@@ -148,25 +141,6 @@ module.exports = function (grunt) {
 						domainPath: '/languages',
 						mainFile:   'style.css'
 					}
-				}
-			},
-
-			/**
-			 * Run PHP unit tests.
-			 */
-			phpunit: {
-
-				classes: {
-					dir: 'tests/'
-				},
-
-				options: {
-
-					bin:        './vendor/bin/phpunit',
-					testSuffix: 'Tests.php',
-					bootstrap:  'bootstrap.php',
-					colors:     true
-
 				}
 			},
 
@@ -213,7 +187,7 @@ module.exports = function (grunt) {
 	);
 
 	// A very basic default task.
-	grunt.registerTask('default', ['clean', 'phpunit', 'jshint', 'sass', 'postcss', 'cssmin', 'jshint', 'uglify:production', 'uglify:dev', 'makepot']);
+	grunt.registerTask('default', ['clean', 'jshint', 'sass', 'postcss', 'cssmin', 'jshint', 'uglify:production', 'uglify:dev', 'makepot']);
 	grunt.registerTask('dev', ['default', 'watch']);
 
 };

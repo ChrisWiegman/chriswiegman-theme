@@ -1,148 +1,152 @@
 html,
 body {
-	background-color: $background;
+  background-color: $background;
 }
 
 #page {
 
-	margin: 0 auto;
+  margin: 0 auto;
 
-	.featured-image {
-		text-align: center;
-	}
+  .featured-image {
+    text-align: center;
+  }
 
-	.site-content {
-		margin:      0 auto;
-		max-width:   1400px;
-		overflow:    hidden;
-		padding-top: 115px;
-		transition:  0.5s;
-	}
+  .site-content {
+    margin: 0 auto;
+    max-width: 1400px;
+    overflow: hidden;
+    padding-top: 115px;
+    transition: 0.5s;
+  }
 
-	.site-header {
+  .site-header {
 
-		background-color: $white;
-		border-bottom:    1px solid $border-color;
-		height:           78px;
-		overflow:         visible;
-		padding:          18px 40px;
-		position:         fixed;
-		top:              0;
-		transition:       0.5s;
-		width:            100%;
-		z-index:          10000;
+    background-color: $header-background;
+    border-bottom: 1px solid $header-background;
+    height: 78px;
+    overflow: visible;
+    padding: 18px 40px;
+    position: fixed;
+    top: 0;
+    transition: 0.5s;
+    width: 100%;
+    z-index: 10000;
 
-		.progress-wrap {
+    .progress-wrap {
 
-			position:       absolute;
-			top:            0;
-			margin:         0 -40px;
-			width:          100%;
-			pointer-events: none;
+      position: absolute;
+      top: 0;
+      margin: 0 -40px;
+      width: 100%;
+      pointer-events: none;
 
-			.progress-indicator {
-				background-color: #9ab;
-				display:          block;
-				height:           78px;
-				opacity:          0.2;
-				position:         absolute;
-				transition:       height 0.5s;
-			}
-		}
+      .progress-indicator {
+        background-color: #9ab;
+        display: block;
+        height: 78px;
+        opacity: 0.2;
+        position: absolute;
+        transition: height 0.5s;
+      }
+    }
 
-		.wrap {
+    .wrap {
 
-			margin:    0 auto;
-			max-width: 1400px;
+      margin: 0 auto;
+      max-width: 1400px;
 
-			.site-title {
+      .site-title {
 
-				float:       left;
-				font-family: Verdana, Arial, Helvetica, sans-serif;
-				font-weight: bold;
-				font-size:   180%;
-				line-height: 1;
-				margin-top:  4px;
-				transition:  0.5s;
+        float: left;
+        font-family: Verdana, Arial, Helvetica, sans-serif;
+        font-weight: bold;
+        font-size: 180%;
+        line-height: 1;
+        margin-top: 4px;
+        transition: 0.5s;
 
-				a {
-					border-bottom: none;
-				}
+        a {
+          color: $header-links;
+          border-bottom: none;
 
-				.logo-chris {
-					color: $footer-background;
-				}
+          &:hover {
+            color: $header-links-visited;
+          }
+        }
 
-				.logo-wiegman {
-					color: $grey;
-				}
-			}
+        .logo-chris {
+          color: $logo-color-1;
+        }
 
-			.main-navigation {
-				margin:     0;
-				overflow:   hidden;
-				transition: 0.5s;
-			}
-		}
+        .logo-wiegman {
+          color: $logo-color-2;
+        }
+      }
 
-		&.scrolled {
+      .main-navigation {
+        margin: 0;
+        overflow: hidden;
+        transition: 0.5s;
+      }
+    }
 
-			height:  39px;
-			padding: 0 40px;
+    &.scrolled {
 
-			.wrap {
+      height: 39px;
+      padding: 0 40px;
 
-				.site-title {
-					margin-top: 4px;
-				}
-			}
+      .wrap {
 
-			.progress-wrap {
+        .site-title {
+          margin-top: 4px;
+        }
+      }
 
-				.progress-indicator {
-					height: 39px;
-				}
-			}
-		}
-	}
+      .progress-wrap {
 
-	.top-padding {
-		top: 32px;
-	}
+        .progress-indicator {
+          height: 39px;
+        }
+      }
+    }
+  }
 
-	.content-area {
-		float: left;
-		width: 66%;
-	}
+  .top-padding {
+    top: 32px;
+  }
 
-	.site-content .widget-area {
-		float:      right;
-		width:      30%;
-		transition: 0.5s;
-	}
+  .content-area {
+    float: left;
+    width: 66%;
+  }
 
-	.site-footer {
+  .site-content .widget-area {
+    float: right;
+    width: 30%;
+    transition: 0.5s;
+  }
 
-		background-color: $footer-background;
-		color:            $footer-text;
-		font-size:        75%;
-		width:            100%;
-		opacity:          0.9;
-		text-align:       center;
+  .site-footer {
 
-		a {
+    background-color: $footer-background;
+    color: $footer-text;
+    font-size: 75%;
+    width: 100%;
+    text-align: center;
 
-			border-bottom: 1px solid $footer-text;
-			color:         $white;
-			&:hover {
-				border-bottom: 1px solid $orange;
-				color:         $orange;
-			}
-		}
+    a {
 
-		.site-info {
-			clear:  both;
-			margin: 10px 0;
-		}
-	}
+      border-bottom: 1px solid $footer-links;
+      color: $footer-links;
+      &:hover {
+        border-bottom: 1px solid $footer-links-visited;
+        color: $footer-links-visited;
+      }
+    }
+
+    .site-info {
+      clear: both;
+      margin: 10px 0;
+    }
+  }
 }

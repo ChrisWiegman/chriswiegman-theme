@@ -1,60 +1,60 @@
 .clear {
 
-	&:before,
-	&:after {
-		content: '';
-		display: table;
-	}
+  &:before,
+  &:after {
+    content: '';
+    display: table;
+  }
 
 }
 
 .entry-content {
 
-	&:before,
-	&:after {
-		content: '';
-		display: table;
-	}
+  &:before,
+  &:after {
+    content: '';
+    display: table;
+  }
 
 }
 
 .comment-content {
 
-	&:before,
-	&:after {
-		content: '';
-		display: table;
-	}
+  &:before,
+  &:after {
+    content: '';
+    display: table;
+  }
 
 }
 
 .site-header {
 
-	&:before,
-	&:after {
-		content: '';
-		display: table;
-	}
+  &:before,
+  &:after {
+    content: '';
+    display: table;
+  }
 
 }
 
 .site-content {
 
-	&:before,
-	&:after {
-		content: '';
-		display: table;
-	}
+  &:before,
+  &:after {
+    content: '';
+    display: table;
+  }
 
 }
 
 .site-footer {
 
-	&:before,
-	&:after {
-		content: '';
-		display: table;
-	}
+  &:before,
+  &:after {
+    content: '';
+    display: table;
+  }
 
 }
 
@@ -64,5 +64,5 @@
 .site-header:after,
 .site-content:after,
 .site-footer:after {
-	clear: both;
+  clear: both;
 }

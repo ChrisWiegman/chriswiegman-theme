@@ -48,7 +48,7 @@ class Latest_Tweets extends \WP_Widget {
 	 * Handles AJAX request for retrieving latest tweets
 	 *
 	 * @param string $username The username to retrieve.
-	 * @param bool   $echo True to echo or false to return in an array.
+	 * @param bool   $echo     True to echo or false to return in an array.
 	 *
 	 * @since 4.1.0
 	 *
@@ -64,7 +64,7 @@ class Latest_Tweets extends \WP_Widget {
 			$max_tweets    = ( isset( $_POST['count'] ) ) ? absint( $_POST['count'] ) : 7; // WPCS: input var OK. CSRF ok.
 
 			// Require the twitter auth library.
-			require( CW_THEME_INCLUDES . '/vendor/twitteroauth/autoload.php' );
+			require CW_THEME_INCLUDES . '/vendor/twitteroauth/autoload.php';
 
 			$twitter_connection = new TwitterOAuth(
 				CW_TWITTER_OAUTH_CONSUMER_KEY,
@@ -162,17 +162,17 @@ class Latest_Tweets extends \WP_Widget {
 
 					$tweet_count ++;
 
-				} // End foreach().
-			} // End if().
+				}
+			}
 
 			// Save our new transient.
 			set_transient( 'cw_latest_tweets', $latest_tweets, 3600 );
 
-		} // End if().
+		}
 
 		if ( true === $echo ) {
 
-			echo $latest_tweets;
+			echo $latest_tweets; // WPCS: XSS ok.
 
 		}
 
@@ -243,7 +243,7 @@ class Latest_Tweets extends \WP_Widget {
 	public function update( $new_instance, $old_instance ) {
 
 		$instance                = array();
-		$instance['title']       = strip_tags( $new_instance['title'] );
+		$instance['title']       = wp_strip_all_tags( $new_instance['title'] );
 		$instance['user_name']   = sanitize_text_field( str_replace( '@', '', $new_instance['user_name'] ) );
 		$instance['tweet_count'] = absint( $new_instance['tweet_count'] );
 
@@ -258,7 +258,7 @@ class Latest_Tweets extends \WP_Widget {
 	 *
 	 * @since 4.1.0
 	 *
-	 * @param array $args Widget arguments.
+	 * @param array $args     Widget arguments.
 	 * @param array $instance Saved values from database.
 	 */
 	public function widget( $args, $instance ) {
@@ -275,6 +275,9 @@ class Latest_Tweets extends \WP_Widget {
 		$this->get_latest_tweets( $instance['user_name'] );
 
 		echo '</ul>';
+		echo '<div class="cw-tweets-follow-me">';
+		echo '<a class="follow-me" href="https://twitter.com/chriswiegman" rel="external" title="' . esc_html__( 'Follow me on Twitter', 'chriswiegman' ) . '">' . esc_html__( 'Follow me on Twitter', 'chriswiegman' ) . '</a>';
+		echo '</div>';
 		echo '</div>';
 
 		echo wp_kses_post( $args['after_widget'] );

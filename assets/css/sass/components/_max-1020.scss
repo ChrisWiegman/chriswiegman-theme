@@ -1,114 +1,114 @@
 @media screen and (max-width: 1020px) {
 
-	.single .site-main, .page .site-main {
-		margin-bottom: 1em;
-	}
+  .single .site-main, .page .site-main {
+    margin-bottom: 1em;
+  }
 
-	.hentry,
-	.author-box,
-	.comments-area,
-	.paging-navigation,
-	.post-navigation {
-		border: none;
-		margin: 0 0 1rem 0;
-	}
+  .hentry,
+  .author-box,
+  .comments-area,
+  .paging-navigation,
+  .post-navigation {
+    border: none;
+    margin: 0 0 1rem 0;
+  }
 
-	.paging-navigation,
-	.post-navication {
-		border: none;
-	}
+  .paging-navigation,
+  .post-navication {
+    border: none;
+  }
 
-	#page {
+  #page {
 
-		.content-area {
-			border-right: none;
-			float:        none;
-			width:        100%;
-		}
+    .content-area {
+      border-right: none;
+      float: none;
+      width: 100%;
+    }
 
-		.site-content {
+    .site-content {
 
-			max-width:   100%;
-			padding-top: 56px;
+      max-width: 100%;
+      padding-top: 56px;
 
-			.widget-area {
-				border-left: none;
-				float:       none;
-				width:       100%;
-			}
-		}
+      .widget-area {
+        border-left: none;
+        float: none;
+        width: 100%;
+      }
+    }
 
-		#menu-primary {
-			display: none;
-		}
+    #menu-primary {
+      display: none;
+    }
 
-		.site-header {
+    .site-header {
 
-			height:  39px;
-			padding: 0 40px;
+      height: 39px;
+      padding: 0 40px;
 
-			.wrap {
+      .wrap {
 
-				.menu-toggle {
-					color:       $text-color;
-					display:     inline-block;
-					font-weight: 400;
-					padding:     8px 20px 0 0;
-					float:       right;
-				}
+        .menu-toggle {
+          color: $text-color;
+          display: inline-block;
+          font-weight: 400;
+          padding: 8px 20px 0 0;
+          float: right;
+        }
 
-				.main-navigation {
+        .main-navigation {
 
-					background:    $white; /* Old browsers */
-					background:    -moz-linear-gradient(top, $white 0%, $light-grey 100%); /* FF3.6-15 */
-					background:    -webkit-linear-gradient(top, $white 0%, $light-grey 100%); /* Chrome10-25,Safari5.1-6 */
-					background:    linear-gradient(to bottom, $white 0%, $light-grey 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-					filter:        progid:DXImageTransform.Microsoft.gradient(startColorstr='$white', endColorstr='$light-grey', GradientType=0); /* IE6-9 */
-					border-bottom: 1px solid $light-grey;
-					color:         $text-color;
-					clear:         both;
-					float:         none;
-					left:          0;
-					margin:        0;
-					max-width:     100%;
-					padding:       0;
-					position:      absolute;
-					overflow:      hidden;
-					top:           39px;
-					width:         100%;
+          background: $white; /* Old browsers */
+          background: -moz-linear-gradient(top, $white 0%, $light-grey 100%); /* FF3.6-15 */
+          background: -webkit-linear-gradient(top, $white 0%, $light-grey 100%); /* Chrome10-25,Safari5.1-6 */
+          background: linear-gradient(to bottom, $white 0%, $light-grey 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+          filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='$white', endColorstr='$light-grey', GradientType=0); /* IE6-9 */
+          border-bottom: 1px solid $light-grey;
+          color: $text-color;
+          clear: both;
+          float: none;
+          left: 0;
+          margin: 0;
+          max-width: 100%;
+          padding: 0;
+          position: absolute;
+          overflow: hidden;
+          top: 39px;
+          width: 100%;
 
-					li {
-						border-bottom: 1px solid $light-grey;
-						font-size:     150%;
-						padding:       15px 0 15px 15px;
-						transition:    0.5s;
-						width:         100%;
-					}
+          li {
+            border-bottom: 1px solid $light-grey;
+            font-size: 150%;
+            padding: 15px 0 15px 15px;
+            transition: 0.5s;
+            width: 100%;
+          }
 
-					li.social-share {
-						border-bottom: none;
-						clear:         none !important;
-						float:         left;
-						margin:        4px 15px 8px 15px;
-						width:         30px;
-					}
+          li.social-share {
+            border-bottom: none;
+            clear: none !important;
+            float: left;
+            margin: 4px 15px 8px 15px;
+            width: 30px;
+          }
 
-					ul {
+          ul {
 
-						float: none;
-						width: 100%;
+            float: none;
+            width: 100%;
 
-						ul {
-							box-shadow: none;
-							float:      none;
-							left:       -999em;
-							position:   relative;
-							top:        2em;
-							z-index:    99999;
-						}
-					}
-				}
-			}
-		}
-	}
+            ul {
+              box-shadow: none;
+              float: none;
+              left: -999em;
+              position: relative;
+              top: 2em;
+              z-index: 99999;
+            }
+          }
+        }
+      }
+    }
+  }
 }

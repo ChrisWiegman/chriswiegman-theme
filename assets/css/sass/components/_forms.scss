@@ -1,234 +1,234 @@
 input, select, textarea {
-	background-color: $near-white;
-	border:           1px solid $light-grey;
-	font-size:        $normal-rem;
-	padding:          8px;
-	width:            100%;
+  background-color: $near-white;
+  border: 1px solid $light-grey;
+  font-size: $normal-rem;
+  padding: 8px;
+  width: 100%;
 }
 
 #prompt-comment-subscribe input {
-	margin-bottom: 1.5em;
-	width:         auto;
+  margin-bottom: 1.5em;
+  width: auto;
 }
 
 input[type="search"] {
-	-webkit-appearance: textfield;
+  -webkit-appearance: textfield;
 }
 
 .search-form input,
-#subscribe-field-blog_subscription-2 {
-	background-color: $white;
-	margin:           0;
-	padding:          8px 4px;
+#gform_fields_4 input {
+  background-color: $white;
+  margin: 0;
+  padding: 8px;
 }
 
 .hentry {
 
-	.search-form input {
-		background-color: $white;
-		margin:           0 10% 10% 10%;
-		width:            80%;
-	}
+  .search-form input {
+    background-color: $white;
+    margin: 0 10% 10% 10%;
+    width: 80%;
+  }
 }
 
 button {
-	background:      $dark-blue;
-	border:          none;
-	color:           $white !important;
-	cursor:          pointer;
-	font-size:       $normal-rem;
-	font-weight:     bold;
-	line-height:     1.125rem;
-	padding:         8px;
-	text-decoration: none;
-	text-transform:  uppercase;
-	width:           auto;
+  background: $dark-blue;
+  border: none;
+  color: $white !important;
+  cursor: pointer;
+  font-size: $normal-rem;
+  font-weight: bold;
+  line-height: 1.125rem;
+  padding: 8px;
+  text-decoration: none;
+  text-transform: uppercase;
+  width: auto;
 }
 
 input {
 
-	&[type="button"], &[type="submit"] {
-		background:      #2d6a81;
-		border:          none;
-		color:           $white !important;
-		cursor:          pointer;
-		font-size:       1.125rem;
-		font-weight:     700;
-		line-height:     1.125rem;
-		padding:         8px;
-		text-decoration: none;
-		text-transform:  uppercase;
-		width:           auto;
-	}
+  &[type="button"], &[type="submit"] {
+    background: #2d6a81;
+    border: none;
+    color: $white !important;
+    cursor: pointer;
+    font-size: 1.125rem;
+    font-weight: 700;
+    line-height: 1.125rem;
+    padding: 8px;
+    text-decoration: none;
+    text-transform: uppercase;
+    width: auto;
+  }
 
 }
 
 .btn {
-	background:      #2d6a81;
-	border:          none;
-	color:           $white !important;
-	cursor:          pointer;
-	font-size:       1.125rem;
-	font-weight:     700;
-	line-height:     1.125rem;
-	padding:         8px;
-	text-decoration: none;
-	text-transform:  uppercase;
-	width:           auto;
+  background: #2d6a81;
+  border: none;
+  color: $white !important;
+  cursor: pointer;
+  font-size: 1.125rem;
+  font-weight: 700;
+  line-height: 1.125rem;
+  padding: 8px;
+  text-decoration: none;
+  text-transform: uppercase;
+  width: auto;
 }
 
 button:hover {
-	background:      $orange;
-	/* Old browsers */
-	color:           #f5f5f5 !important;
-	text-decoration: none;
+  background: $orange;
+  /* Old browsers */
+  color: #f5f5f5 !important;
+  text-decoration: none;
 }
 
 input:hover {
 
-	&[type="button"], &[type="submit"] {
-		background:      $orange;
-		/* Old browsers */
-		color:           #f5f5f5 !important;
-		text-decoration: none;
-	}
+  &[type="button"], &[type="submit"] {
+    background: $orange;
+    /* Old browsers */
+    color: #f5f5f5 !important;
+    text-decoration: none;
+  }
 
 }
 
 .btn:hover {
-	background:      $orange;
-	/* Old browsers */
-	color:           #f5f5f5 !important;
-	text-decoration: none;
+  background: $orange;
+  /* Old browsers */
+  color: #f5f5f5 !important;
+  text-decoration: none;
 }
 
 .enews input[type="submit"], .search-form input[type="submit"] {
-	border:   0;
-	clip:     rect(0, 0, 0, 0);
-	height:   1px;
-	margin:   -1px;
-	overflow: hidden;
-	padding:  0;
-	position: absolute;
-	width:    1px;
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
 }
 
 /* 12a - Gravity Forms ----------- */
 
 .gform_wrapper {
 
-	margin: 0 0 16px 0;
+  margin: 0 0 16px 0;
 
-	ul {
-		margin: 0;
+  ul {
+    margin: 0;
 
-		&.gfield_checkbox li, &.gfield_radio li {
-			padding: 0 0 0 1px !important;
-		}
-	}
+    &.gfield_checkbox li, &.gfield_radio li {
+      padding: 0 0 0 1px !important;
+    }
+  }
 
-	.left-pad div ul li {
-		padding-left: 1px !important;
-	}
+  .left-pad div ul li {
+    padding-left: 1px !important;
+  }
 
-	input,
-	select,
-	textarea,
-	.ginput_complex label,
-	.gfield_description {
-		font-size: $normal-rem !important;
-		padding:   8px !important;
-		width:     98%;
-	}
+  input,
+  select,
+  textarea,
+  .ginput_complex label,
+  .gfield_description {
+    font-size: $normal-rem !important;
+    padding: 8px !important;
+    width: 98%;
+  }
 
-	.ginput_complex label,
-	.gfield_description {
-		font-size: $small-rem !important;
-	}
+  .ginput_complex label,
+  .gfield_description {
+    font-size: $small-rem !important;
+  }
 
-	.top_label .gfield_label {
-		margin-bottom: 3px;
-		float:         none;
-		font-weight:   700;
-		display:       block;
-	}
+  .top_label .gfield_label {
+    margin-bottom: 3px;
+    float: none;
+    font-weight: 700;
+    display: block;
+  }
 
-	span {
+  span {
 
-		&.ginput_left,
-		&.name_first {
-			float:   left;
-			padding: 0 2px;
-			width:   49.5%;
-		}
+    &.ginput_left,
+    &.name_first {
+      float: left;
+      padding: 0 2px;
+      width: 49.5%;
+    }
 
-		&.ginput_right,
-		&.name_last {
-			float:   right;
-			padding: 0 2px;
-			width:   49.5%;
-		}
+    &.ginput_right,
+    &.name_last {
+      float: right;
+      padding: 0 2px;
+      width: 49.5%;
+    }
 
-	}
+  }
 
-	input[type="submit"] {
-		padding: 8px 12px;
-		width:   auto;
-	}
+  input[type="submit"] {
+    padding: 8px 12px;
+    width: auto;
+  }
 
-	.ginput_complex label {
-		padding: 0;
-	}
+  .ginput_complex label {
+    padding: 0;
+  }
 
-	.gfield_checkbox {
+  .gfield_checkbox {
 
-		input {
-			width: auto;
-		}
+    input {
+      width: auto;
+    }
 
-	}
+  }
 
-	li, form li {
-		list-style: none;
-		margin:     16px 0 16px 0;
-		overflow:   hidden;
-	}
+  li, form li {
+    list-style: none;
+    margin: 16px 0 16px 0;
+    overflow: hidden;
+  }
 
-	li.gform_validation_container {
-		display:  none;
-		height:   1px;
-		left:     -99999px;
-		position: absolute;
-		width:    1px;
-	}
+  li.gform_validation_container {
+    display: none;
+    height: 1px;
+    left: -99999px;
+    position: absolute;
+    width: 1px;
+  }
 
 }
 
 .gforms_confirmation_message {
-	background-color: $green;
-	border:           1px solid #eee;
-	margin-bottom:    24px;
-	padding:          24px;
+  background-color: $green;
+  border: 1px solid #eee;
+  margin-bottom: 24px;
+  padding: 24px;
 }
 
 .gform_wrapper {
 
-	.gfield_radio {
+  .gfield_radio {
 
-		input {
-			float:      left;
-			margin-top: 7px;
-			width:      auto !important;
-		}
+    input {
+      float: left;
+      margin-top: 7px;
+      width: auto !important;
+    }
 
-		label {
-			display: block;
-			margin:  0 0 0 24px;
-		}
+    label {
+      display: block;
+      margin: 0 0 0 24px;
+    }
 
-	}
+  }
 
-	.gform_heading {
-		margin-bottom: 0 !important;
-	}
+  .gform_heading {
+    margin-bottom: 0 !important;
+  }
 }

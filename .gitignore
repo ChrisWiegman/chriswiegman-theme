@@ -202,3 +202,4 @@ assets/css/*.map
 assets/js/*.js
 assets/js/*.map
 phploy.ini
+.vscode

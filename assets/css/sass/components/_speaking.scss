@@ -1,72 +1,72 @@
 ul.archive-speaking {
 
-	margin-left: 60px;
-	padding:     0 40px;
+  margin-left: 60px;
+  padding: 0 40px;
 
-	li {
+  li {
 
-		margin: 0;
+    margin: 0;
 
-		img {
-			margin:  0;
-			padding: 0;
-		}
+    img {
+      margin: 0;
+      padding: 0;
+    }
 
-		.fa {
-			margin:  0;
-			padding: 0;
-		}
+    .fa {
+      margin: 0;
+      padding: 0;
+    }
 
-		.entry-header,
-		.entry-content {
+    .entry-header,
+    .entry-content {
 
-			margin:  0;
-			padding: 0;
+      margin: 0;
+      padding: 0;
 
-			.entry-title {
+      .entry-title {
 
-				border-bottom:  none;
-				font-family:    $sans-serif;
-				font-size:      $normal-rem;
-				font-weight:    bold;
-				margin-bottom:  0;
-				padding-bottom: 0;
+        border-bottom: none;
+        font-family: $sans-serif;
+        font-size: $normal-rem;
+        font-weight: bold;
+        margin-bottom: 0;
+        padding-bottom: 0;
 
-				a {
-					border-bottom: none;
-					color:         $black;
-				}
+        a {
+          border-bottom: none;
+          color: $black;
+        }
 
-			}
+      }
 
-		}
+    }
 
-	}
+  }
 
-	.speaking-date,
-	.speaking-location {
-		font-style: italic;
-	}
+  .speaking-date,
+  .speaking-location {
+    font-style: italic;
+  }
 
-	.presentation-links {
+  .presentation-links {
 
-		float: right;
+    float: right;
 
-		.slide-link,
-		.presentation-link {
-			font-style:  italic;
-			margin-left: 10px;
-		}
-	}
+    .slide-link,
+    .presentation-link {
+      font-style: italic;
+      margin-left: 10px;
+    }
+  }
 
-	.divider {
+  .divider {
 
-		border-bottom: 1px solid #efefef;
-		display:       block;
-		height:        1px;
-		margin:        30px auto;
-		width:         60%;
+    border-bottom: 1px solid #efefef;
+    display: block;
+    height: 1px;
+    margin: 30px auto;
+    width: 60%;
 
-	}
+  }
 
 }
