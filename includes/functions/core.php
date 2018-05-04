@@ -246,7 +246,7 @@ function filter_wp_default_scripts( $scripts ) {
  * @since 5.1.0
  *
  * @param string $items The HTML list content for the menu items.
- * @param object $args  An object containing wp_nav_menu() arguments.
+ * @param mixed  $args  An object containing wp_nav_menu() arguments.
  *
  * @return string Filtered HTML list of menu items
  */
@@ -412,8 +412,8 @@ function action_gform_post_add_entry( $entry, $form ) {
  *
  * @since 8.0
  *
- * @param int   $post_id        The ID of the current post.
- * @param sting $comment_status The status flag for the comment.
+ * @param int    $post_id        The ID of the current post.
+ * @param string $comment_status The status flag for the comment.
  */
 function action_comment_post( $post_id, $comment_status ) {
 

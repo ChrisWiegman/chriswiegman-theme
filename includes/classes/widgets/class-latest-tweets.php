@@ -243,7 +243,7 @@ class Latest_Tweets extends \WP_Widget {
 	public function update( $new_instance, $old_instance ) {
 
 		$instance                = array();
-		$instance['title']       = strip_tags( $new_instance['title'] );
+		$instance['title']       = wp_strip_all_tags( $new_instance['title'] );
 		$instance['user_name']   = sanitize_text_field( str_replace( '@', '', $new_instance['user_name'] ) );
 		$instance['tweet_count'] = absint( $new_instance['tweet_count'] );
 
