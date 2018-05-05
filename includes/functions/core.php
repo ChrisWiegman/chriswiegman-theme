@@ -450,7 +450,7 @@ function filter_comment_form_default_fields( $fields ) {
 
 	$fields['subscribe-to-posts'] = '<div class="comment-form-subscribe">
 	<p class="comment-form-public">
-    <input id="subscribe-to-posts" name="subscribe-to-posts" type="checkbox" checked="checked" />
+    <input id="subscribe-to-posts" name="subscribe-to-posts" type="checkbox" />
     <label for="subscribe-to-posts">' . esc_html__( 'Receive all my new posts in your email', 'chriswiegman' ) . '</label>
     </p>
     </div>';
