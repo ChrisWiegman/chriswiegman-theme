@@ -232,7 +232,7 @@ function filter_wp_default_scripts( $scripts ) {
 	if ( ! is_admin() ) {
 
 		$scripts->remove( 'jquery' );
-		$scripts->add( 'jquery', false, array( 'jquery-core' ), '1.12.3' );
+		$scripts->add( 'jquery', false, array( 'jquery-core' ), '1.12.4' );
 
 	}
 }
