@@ -359,6 +359,8 @@ function init() {
 	add_action( 'wp_enqueue_scripts', $n( 'action_wp_enqueue_scripts' ) );
 	add_action( 'wp_head', $n( 'action_wp_head' ) );
 
+	add_filter( 'auto_update_plugin', '__return_true' );
+	add_filter( 'auto_update_theme', '__return_true' );
 	add_filter( 'body_class', $n( 'filter_body_class' ) );
 	add_filter( 'comment_form_default_fields', $n( 'filter_comment_form_default_fields' ) );
 	add_filter( 'emoji_svg_url', '__return_false' );
