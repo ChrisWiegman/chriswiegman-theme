@@ -25,7 +25,7 @@ body {
     border-bottom: 1px solid $header-background;
     height: 78px;
     overflow: visible;
-    padding: 18px 40px;
+    padding: 18px 0;
     position: fixed;
     top: 0;
     transition: 0.5s;
@@ -93,7 +93,7 @@ body {
     &.scrolled {
 
       height: 39px;
-      padding: 0 40px;
+      padding: 0;
 
       .wrap {
 
