@@ -364,8 +364,6 @@ function init() {
 	add_filter( 'body_class', $n( 'filter_body_class' ) );
 	add_filter( 'comment_form_default_fields', $n( 'filter_comment_form_default_fields' ) );
 	add_filter( 'emoji_svg_url', '__return_false' );
-	add_filter( 'gform_cdata_open', $n( 'wrap_gform_cdata_open' ) );
-	add_filter( 'gform_cdata_close', $n( 'wrap_gform_cdata_close' ) );
 	add_filter( 'gform_init_scripts_footer', '__return_true' );
 	add_filter( 'jetpack_implode_frontend_css', '__return_false' );
 	add_filter( 'jetpack_sso_bypass_login_forward_wpcom', '__return_true' );
@@ -458,40 +456,6 @@ function filter_comment_form_default_fields( $fields ) {
     </div>';
 
 	return $fields;
-
-}
-
-/**
- * Filter gform_cdata_open
- *
- * Adds a wrapper to handle JS deferment
- *
- * @since 7.4.4
- *
- * @return string
- */
-function wrap_gform_cdata_open() {
-
-	$content = 'document.addEventListener( "DOMContentLoaded", function() { ';
-
-	return $content;
-
-}
-
-/**
- * Filter gform_cdata_close
- *
- * Adds a wrapper to handle JS deferment
- *
- * @since 7.4.4
- *
- * @return string
- */
-function wrap_gform_cdata_close() {
-
-	$content = ' }, false );';
-
-	return $content;
 
 }
 
