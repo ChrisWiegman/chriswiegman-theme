@@ -45,12 +45,12 @@
     .site-header {
 
       height: 39px;
-      padding: 0 40px;
+      padding: 0;
 
       .wrap {
 
         .menu-toggle {
-          color: $text-color;
+          color: $header-links;
           display: inline-block;
           font-weight: 400;
           padding: 8px 20px 0 0;
@@ -78,11 +78,16 @@
           width: 100%;
 
           li {
+
             border-bottom: 1px solid $light-grey;
             font-size: 150%;
             padding: 15px 0 15px 15px;
             transition: 0.5s;
             width: 100%;
+
+            a {
+              color: $text-color;
+            }
           }
 
           li.social-share {
