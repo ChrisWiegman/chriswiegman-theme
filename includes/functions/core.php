@@ -354,8 +354,6 @@ function init() {
 	remove_action( 'wp_head', 'feed_links_extra', 3 );
 
 	add_action( 'after_setup_theme', $n( 'action_after_setup_theme' ) );
-	add_action( 'comment_post', $n( 'action_comment_post' ), 10, 2 );
-	add_action( 'gform_post_add_entry', $n( 'action_gform_post_add_entry' ), 10, 2 );
 	add_action( 'init', $n( 'action_init' ) );
 	add_action( 'widgets_init', $n( 'action_widgets_init' ) );
 	add_action( 'wp_enqueue_scripts', $n( 'action_wp_enqueue_scripts' ) );
@@ -364,7 +362,6 @@ function init() {
 	add_filter( 'auto_update_plugin', '__return_true' );
 	add_filter( 'auto_update_theme', '__return_true' );
 	add_filter( 'body_class', $n( 'filter_body_class' ) );
-	add_filter( 'comment_form_default_fields', $n( 'filter_comment_form_default_fields' ) );
 	add_filter( 'emoji_svg_url', '__return_false' );
 	add_filter( 'gform_init_scripts_footer', '__return_true' );
 	add_filter( 'jetpack_implode_frontend_css', '__return_false' );
@@ -382,82 +379,6 @@ function init() {
 	add_filter( 'wp_nav_menu_items', $n( 'filter_wp_nav_menu_items' ), 10, 2 );
 	add_filter( 'wp_page_menu_args', $n( 'filter_wp_page_menu_args' ) );
 	add_filter( 'wp_title', $n( 'filter_wp_title' ), 10, 2 );
-
-}
-
-/**
- * Action gform_post_add_entry
- *
- * Process the mailchimp subscription.
- *
- * @since 8.0
- *
- * @param array $entry The Entry Object added.
- * @param array $form  The Form Object added.
- */
-function action_gform_post_add_entry( $entry, $form ) {
-
-	if ( isset( $form['id'] ) && 3 === $form['id'] ) {
-
-		$mailchimp = \GFMailChimp::get_instance();
-		$mailchimp->maybe_process_feed( $entry, $form );
-
-	}
-}
-
-/**
- * Action comment_post
- *
- * Saves the email adress to Gravity Forms for MailChimp integration
- *
- * @since 8.0
- *
- * @param int    $post_id        The ID of the current post.
- * @param string $comment_status The status flag for the comment.
- */
-function action_comment_post( $post_id, $comment_status ) {
-
-	if ( 'spam' !== $comment_status ) {
-
-		$save_meta_checkbox = esc_attr( $_POST['subscribe-to-posts'] ); // WPCS: CSRF ok.
-
-		if ( 'on' === $save_meta_checkbox ) {
-
-			$entry = array(
-				'form_id' => 3,
-				1         => esc_attr( $_POST['email'] ), // WPCS: CSRF ok.
-			);
-
-			$entry_id = \GFAPI::add_entry( $entry );
-
-			if ( is_wp_error( $entry_id ) ) {
-				wp_die( esc_html( $entry_id->get_error_message() ) );
-			}
-		}
-	}
-}
-
-/**
- * Filter comment_form_default_fields
- *
- * Adds a subscribe box to the comment form.
- *
- * @since 8.0
- *
- * @param array $fields Array of fields.
- *
- * @return array
- */
-function filter_comment_form_default_fields( $fields ) {
-
-	$fields['subscribe-to-posts'] = '<div class="comment-form-subscribe">
-	<p class="comment-form-public">
-    <input id="subscribe-to-posts" name="subscribe-to-posts" type="checkbox" />
-    <label for="subscribe-to-posts">' . esc_html__( 'Receive all my new posts in your email', 'chriswiegman' ) . '</label>
-    </p>
-    </div>';
-
-	return $fields;
 
 }
 
