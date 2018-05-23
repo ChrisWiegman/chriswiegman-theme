@@ -390,12 +390,12 @@ function init() {
  * @since 8.1
  *
  * @param array $stripts Arrat of default java scripts.
- **/
+ */
 function action_wp_default_scripts( $scripts ) {
 
-    if ( ! empty( $scripts->registered['jquery'] ) ) {
-        $scripts->registered['jquery']->deps = array_diff( $scripts->registered['jquery']->deps, array( 'jquery-migrate' ) );
-    }
+	if ( ! empty( $scripts->registered['jquery'] ) ) {
+		$scripts->registered['jquery']->deps = array_diff( $scripts->registered['jquery']->deps, array( 'jquery-migrate' ) );
+	}
 }
 
 /**
