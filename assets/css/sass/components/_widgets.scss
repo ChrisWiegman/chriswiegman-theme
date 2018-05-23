@@ -100,16 +100,7 @@
 }
 
 //Subscription Widget
-#gform_widget-4 {
-
-  .gform_wrapper {
-
-    margin: 0;
-
-    ul.gform_fields li.gfield {
-      padding-right: 0;
-    }
-  }
+#blog_subscription-4 {
 
   img {
     float: left;
@@ -134,25 +125,11 @@
       width: 100%;
     }
 
-    .gform_footer {
-      margin-top: 0;
-    }
-
     select {
       display: block;
       width: 100% !important;
     }
 
-    .gfield_label {
-      display: none !important;
-      margin: 0;
-    }
-
-  }
-
-  .gforms_confirmation_message {
-    background-color: $dark-grey;
-    border: none;
   }
 
 }
