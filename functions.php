@@ -13,7 +13,7 @@ use CW\Theme\Post_Types;
 use \CW\Theme\Features;
 
 // Useful global constants.
-define( 'CW_THEME_VERSION', '8.0.6' );
+define( 'CW_THEME_VERSION', '8.1' );
 define( 'CW_THEME_PATH', get_template_directory() . '/' );
 define( 'CW_THEME_URL', get_stylesheet_directory_uri() );
 define( 'CW_THEME_INCLUDES', CW_THEME_PATH . 'includes/' );
