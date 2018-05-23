@@ -354,6 +354,7 @@ function init() {
 	add_action( 'after_setup_theme', $n( 'action_after_setup_theme' ) );
 	add_action( 'init', $n( 'action_init' ) );
 	add_action( 'widgets_init', $n( 'action_widgets_init' ) );
+	add_action( 'wp_default_scripts', $n( 'action_wp_default_scripts' ) );
 	add_action( 'wp_enqueue_scripts', $n( 'action_wp_enqueue_scripts' ) );
 	add_action( 'wp_head', $n( 'action_wp_head' ) );
 
@@ -373,11 +374,26 @@ function init() {
 	add_filter( 'the_excerpt_rss', $n( 'add_image_to_rss' ), 1000 );
 	add_filter( 'tiny_mce_plugins', $n( 'filter_tiny_mce_plugins' ) );
 	add_filter( 'user_contactmethods', $n( 'filter_user_contactmethods' ) );
-	add_filter( 'wp_default_scripts', $n( 'filter_wp_default_scripts' ) );
 	add_filter( 'wp_nav_menu_items', $n( 'filter_wp_nav_menu_items' ), 10, 2 );
 	add_filter( 'wp_page_menu_args', $n( 'filter_wp_page_menu_args' ) );
 	add_filter( 'wp_title', $n( 'filter_wp_title' ), 10, 2 );
 
+}
+
+/**
+ * filter wp_default_scripts
+ *
+ * Remove jQuery migrate script.
+ *
+ * @since 8.1
+ *
+ * @param array $stripts Arrat of default java scripts.
+ **/
+function action_wp_default_scripts( $scripts ) {
+
+    if ( ! empty( $scripts->registered['jquery'] ) ) {
+        $scripts->registered['jquery']->deps = array_diff( $scripts->registered['jquery']->deps, array( 'jquery-migrate' ) );
+    }
 }
 
 /**
