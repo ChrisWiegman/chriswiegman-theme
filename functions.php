@@ -22,4 +22,12 @@ require CW_THEME_INCLUDES . 'functions/core.php';
 require CW_THEME_INCLUDES . 'functions/template-tags.php';
 require CW_THEME_INCLUDES . 'classes/widgets/class-latest-tweets.php';
 
+// Use a CDN if properly defined.
+if ( defined( 'CW_USE_CDN' ) && true === CW_USE_CDN ) {
+
+	require CW_THEME_INCLUDES . 'classes/features/class-cdn.php';
+	new Features\CDN();
+
+}
+
 CW\Theme\Functions\Core\init();
