@@ -439,6 +439,22 @@ function action_wp_head() {
 		esc_attr( PHP_EOL )
 	);
 
+	if ( ! is_user_logged_in() ) {
+		?>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-118747007-1"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+
+            gtag('js', new Date());
+            gtag('config', 'UA-118747007-1', { 'anonymize_ip': true });
+        </script>
+		<?php
+
+	}
 }
 
 /**
