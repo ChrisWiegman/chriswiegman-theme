@@ -1,0 +1,12 @@
+{
+    "recommendations": [
+      "felixfbecker.php-intellisense",
+      "ikappas.phpcs",
+      "bmewburn.vscode-intelephense-client",
+      "neilbrayfield.php-docblocker",
+      "persoderlind.vscode-phpcbf",
+      "felixfbecker.php-debug",
+      "dbaeumer.jshint",
+      "johnbillion.vscode-wordpress-hooks"
+    ]
+  }
