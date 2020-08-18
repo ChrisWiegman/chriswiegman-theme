@@ -1,0 +1,25 @@
+@media screen and (max-width: 500px) {
+
+    .header {
+        display: block;
+    }
+
+    .container {
+
+        .content.home {
+
+            .posts-group {
+
+                display: block;
+
+                .post-year {
+                    margin: -6px 0 4px;
+                }
+
+                .post-day {
+                    display: none;
+                }
+            }
+        }
+    }
+}

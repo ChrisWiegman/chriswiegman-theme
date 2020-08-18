@@ -2,10 +2,10 @@
 /**
  * Test the primary theme file
  *
- * @package ChrisWiegman\ChrisWiegman_Theme
+ * @package chriswiegman-theme
  */
 
- namespace ChrisWiegman\ChrisWiegman_Theme\Tests;
+ namespace chriswiegman\theme\tests;
 
 use function PHPUnit\Framework\assertEquals;
 

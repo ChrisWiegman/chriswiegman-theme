@@ -1,15 +1,33 @@
 var gulp = require('gulp');
-var gulpMinify = require('gulp-minify');
+var gulpSass = require('gulp-sass');
+var rename = require('gulp-rename');
+var sourcemaps = require('gulp-sourcemaps');
 
-function minify () {
 
-    return gulp.src(['theme/scripts/*.js'])
-        .pipe(gulpMinify({
-            ignoreFiles: ['*-min.js']
-        }))
-        .pipe(gulp.dest('theme/scripts'));
+function sass () {
+
+    gulpSass.compiler = require('node-sass');
+
+    return gulp.src('./theme/assets/scss/main.scss')
+        .pipe(sourcemaps.init())
+        .pipe(gulpSass().on('error', gulpSass.logError))
+        .pipe(rename('main.css'))
+        .pipe(sourcemaps.write())
+        .pipe(gulp.dest('./theme/assets/'));
 
 }
 
-exports.minify = minify;
-exports.default = gulp.parallel(minify);
+function sassMin () {
+
+    gulpSass.compiler = require('node-sass');
+
+    return gulp.src('./theme/assets/scss/main.scss')
+        .pipe(gulpSass({ outputStyle: 'compressed' }).on('error', gulpSass.logError))
+        .pipe(rename('main.min.css'))
+        .pipe(gulp.dest('./theme/assets/'));
+
+}
+
+exports.sassMin = sassMin;
+exports.sass = sass;
+exports.default = gulp.parallel(sass,sassMin);

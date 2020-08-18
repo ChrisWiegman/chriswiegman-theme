@@ -197,10 +197,9 @@ tmtags
 node_modules
 vendor
 /theme/languages/*.pot
-assets/css/*.css
-assets/css/*.map
-assets/js/*.js
-assets/js/*.map
+/theme/assets/*.css
+/theme/assets/*.js
+/theme/assets/*.map
 coverage.clover
 /theme/scripts/*-min.js
 
