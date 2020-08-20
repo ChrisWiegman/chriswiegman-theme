@@ -9,9 +9,8 @@ CURRENTGROUP			:= $$(id -g)
 build: build-assets
 
 .PHONY: build-assets
-build-assets: | build-docker-node
-	@echo "Building plugin assets"
-	rm -f theme/scripts/*-min.js
+build-assets: | clean-assets build-docker-node
+	@echo "Building theme assets"
 	$(DOCKER_RUN) $(NODE_IMAGE) ./node_modules/gulp-cli/bin/gulp.js
 
 .PHONY: build-docker
@@ -40,8 +39,9 @@ clean: stop clean-assets clean-build
 
 .PHONY: clean-assets
 clean-assets:
-	@echo "Cleaning up plugin assets"
-	rm -rf theme/scripts/*-min.js
+	@echo "Cleaning up theme assets"
+	rm -f theme/assets/*.js
+	rm -f theme/assets/*.css
 
 .PHONY: clean-build
 clean-build:
