@@ -12,7 +12,7 @@
  * @package chriswiegman-theme
  */
 
- // Useful global constants.
+// Useful global constants.
 define( 'CW_THEME_VERSION', '9.0.0' );
 
 /**
