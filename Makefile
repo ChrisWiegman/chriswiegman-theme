@@ -34,8 +34,11 @@ build-docker-php:
 		docker build -f Docker/Dockerfile-php -t wpunit .; \
 	fi
 
+chriswiegman-theme.zip: clean-release build-assets
+	zip -r chriswiegman-theme.zip ./theme
+
 .PHONY: clean
-clean: stop clean-assets clean-build
+clean: stop clean-assets clean-build clean-release
 
 .PHONY: clean-assets
 clean-assets:
@@ -47,6 +50,11 @@ clean-assets:
 clean-build:
 	@echo "Cleaning up build-artifacts"
 	rm -rf node_modules wordpress build vendor clover.xml
+
+.PHONY: clean-release
+clean-release:
+	@echo "Cleaning up release file"
+	rm -f chriswiegman-theme.zip
 
 .PHONY: install
 install: | clean-assets clean-build
@@ -88,6 +96,9 @@ ifdef HAS_LANDO
 		lando stop; \
 	fi
 endif
+
+.PHONY: relase
+release: chriswiegman-theme.zip
 
 .PHONY: setup-wordpress
 setup-wordpress:
