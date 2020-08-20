@@ -1,4 +1,4 @@
-FROM node:lts
+FROM node:latest
 ARG UID=1000
 ARG GID=1000
 
