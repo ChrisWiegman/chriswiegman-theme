@@ -34,6 +34,9 @@ function action_after_setup_theme() {
 	add_theme_support( 'editor-styles' );
 	add_editor_style( 'assets/main.min.css' );
 
+	// Add theme support for the title tag.
+	add_theme_support( 'title-tag' );
+
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus(
 		array(
@@ -82,6 +85,7 @@ function action_wp_enqueue_scripts() {
 
 	$min = ( defined( 'SCRIPT_DEBUG' ) && true === SCRIPT_DEBUG ) ? '' : '.min';
 
+	wp_deregister_script( 'wp-embed' );
 	wp_dequeue_style( 'wp-block-library' );
 	wp_enqueue_style( 'chriswiegman-style', get_template_directory_uri() . '/assets/main' . $min . '.css', array(), CW_THEME_VERSION );
 
