@@ -19,7 +19,7 @@ class PluginFileTest extends \WP_Mock\Tools\TestCase {
 	 */
 	public function test_chriswiegman_wordpress_plugin_starter_loader() {
 
-		this->assertEquals( 1, 1 );
+		$this->assertEquals( 1, 1 );
 
 	}
 }

@@ -5,17 +5,45 @@
  * @package chriswiegman-theme
  */
 
+namespace CW\Theme;
+
 // Useful global constants.
 define( 'CW_THEME_VERSION', '9.0.0' );
+
+/**
+ * Setup theme hooks.
+ *
+ * @since 9.0.0
+ *
+ * @return void
+ */
+function init() {
+
+	$n = function ( $function ) {
+		return __NAMESPACE__ . "\\$function";
+	};
+
+	// Add new actions and filters.
+	add_action( 'after_setup_theme', $n( 'action_after_setup_theme' ) );
+	add_action( 'widgets_init', $n( 'action_widgets_init' ) );
+	add_action( 'wp_enqueue_scripts', $n( 'action_wp_enqueue_scripts' ) );
+
+	// Cleanup extra garbage.
+	if ( function_exists( 'remove_action' ) ) {
+		remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
+		remove_action( 'wp_print_styles', 'print_emoji_styles' );
+	}
+
+}
 
 /**
  * Action after_theme_setup
  *
  * Sets up theme defaults and registers support for various WordPress features.
  *
- * @since 5.0.0
+ * @since 9.0.0
  */
-function cw_theme_action_after_setup_theme() {
+function action_after_setup_theme() {
 
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
@@ -40,8 +68,6 @@ function cw_theme_action_after_setup_theme() {
 
 }
 
-add_action( 'after_setup_theme', 'cw_theme_action_after_setup_theme' );
-
 /**
  * Action widgets_init
  *
@@ -49,7 +75,7 @@ add_action( 'after_setup_theme', 'cw_theme_action_after_setup_theme' );
  *
  * @since 9.0.0
  */
-function cw_theme_action_widgets_init() {
+function action_widgets_init() {
 
 	register_sidebar(
 		array(
@@ -65,7 +91,6 @@ function cw_theme_action_widgets_init() {
 
 }
 
-add_action( 'widgets_init', 'cw_theme_action_widgets_init' );
 
 /**
  * Action wp_enqueue_scripts
@@ -74,7 +99,7 @@ add_action( 'widgets_init', 'cw_theme_action_widgets_init' );
  *
  * @since 9.0.0
  */
-function cw_theme_action_wp_enqueue_scripts() {
+function action_wp_enqueue_scripts() {
 
 	$min = ( defined( 'SCRIPT_DEBUG' ) && true === SCRIPT_DEBUG ) ? '' : '.min';
 
@@ -84,8 +109,4 @@ function cw_theme_action_wp_enqueue_scripts() {
 
 }
 
-add_action( 'wp_enqueue_scripts', 'cw_theme_action_wp_enqueue_scripts' );
-
-// Cleanup extra garbage.
-remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
-remove_action( 'wp_print_styles', 'print_emoji_styles' );
+init();
