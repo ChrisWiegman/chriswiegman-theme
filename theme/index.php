@@ -50,7 +50,7 @@ if ( have_posts() ) {
 		echo '<li class="post-item">';
 		printf( '<a href="%s">', esc_url( get_the_permalink() ) );
 		the_title( '<span class="post-title">', '</span>' );
-		the_date( 'M j', '<span class="post-day">', '</span>' );
+		printf( '<span class="post-day">%s</span', get_the_date( 'M j' ) );
 		echo '</a>';
 		echo '</li>';
 
