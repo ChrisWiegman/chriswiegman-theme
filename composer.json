@@ -1,30 +1,11 @@
 {
-	"name":              "ChrisWiegman/chriswiegman-theme",
-	"description":       "The theme for chriswiegman.com.",
-	"type":              "wordpress-theme",
-	"homepage":          "https://www.chriswiegman.com/",
-	"license":           "GPLv2.0+",
-	"authors":           [
-		{
-			"name":     "Chris Wiegman",
-			"email":    "chris@wiegman.us",
-			"homepage": "https://www.chriswiegman.com/",
-			"role":     "Developer"
-		}
-	],
-	"minimum-stability": "dev",
-	"require":           {
-		"php": ">=7.2"
-	},
-	"post-install-cmd":  [
-		"wp-enforcer"
-	],
-	"post-update-cmd":   [
-		"wp-enforcer"
-	],
-	"require-dev": {
-		"wp-cli/wp-cli": "^2.0",
-		"phpunit/phpunit": "7.4.*",
-		"stevegrunwell/wp-enforcer": "dev-master"
-	}
+    "name": "chriswiegman/chriswiegman-theme",
+    "description": "Minimal and sustainable WordPress theme for ChrisWiegman.com.",
+    "require-dev": {
+        "phpunit/phpunit": "^9.3.7",
+        "10up/wp_mock": "0.4.2",
+        "dealerdirect/phpcodesniffer-composer-installer": "^0.7.0",
+        "wp-coding-standards/wpcs": "*",
+        "johnpbloch/wordpress": "*"
+    }
 }

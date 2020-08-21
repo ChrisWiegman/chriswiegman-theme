@@ -48,6 +48,7 @@ GitHub.sublime-settings
 
 .metadata
 bin/
+!tests/bin/
 tmp/
 *.tmp
 *.bak
@@ -195,11 +196,27 @@ tmtags
 # Build Assets
 node_modules
 vendor
-!assets/css/vendor
-languages/*.pot
-assets/css/*.css
-assets/css/*.map
-assets/js/*.js
-assets/js/*.map
-phploy.ini
-.vscode
+/theme/languages/*.pot
+/theme/assets/*.css
+/theme/assets/*.js
+/theme/assets/*.map
+coverage.clover
+/theme/scripts/*-min.js
+chriswiegman-theme.zip
+
+# Docker files
+Docker/database
+Docker/wordpress
+Docker/logs
+Docker/debug
+!Docker/bin
+
+# Unit tests
+!/tests/bin/
+
+# WordPress core (for IDEs)
+/wordpress/
+
+# Build files
+/build/
+clover.xml

@@ -1,0 +1,26 @@
+name: chriswiegman-theme
+recipe: wordpress
+config:
+  webroot: wordpress
+  php: '7.4'
+  via: nginx
+  database: mariadb
+  xdebug: true
+services:
+  mailhog:
+    type: mailhog
+    portforward: true
+    hogfrom:
+      - appserver
+  phpmyadmin:
+    type: phpmyadmin
+    hosts:
+      - database
+  appserver:
+    overrides:
+      volumes:
+        - ./theme:/app/wordpress/wp-content/themes/chriswiegman-theme
+tooling:
+  phpunit:
+    service: appserver
+    cmd: vendor/bin/phpunit

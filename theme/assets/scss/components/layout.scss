@@ -1,0 +1,189 @@
+.header {
+
+    display: flex;
+    align-items: center;
+    margin: 0 auto 1rem auto;
+    max-width: 960px;
+    padding: 1rem;
+    border-bottom: 1px solid $border-color;
+
+    span.site-title {
+
+        flex: 1;
+        font-size: 1.4rem;
+        font-weight: bold;
+
+        a {
+
+            color: $text-color;
+
+            &:hover {
+                color: $light-text-color;
+            }
+        }
+    }
+
+    ul.menu {
+
+        padding: 0;
+        margin: 0;
+        right: 0;
+        list-style: none;
+
+        li {
+
+            display: inline;
+            padding: 0;
+
+            &.first {
+                padding-right: 25px;
+                ;
+            }
+        }
+    }
+}
+
+.footer {
+
+    border-top: 1px solid $border-color;
+    font-size: 0.7rem;
+    text-align: center;
+    padding: 1rem 0 0 0;
+    margin: 1rem auto 1rem auto;
+    max-width: 960px;
+
+    ul {
+
+        padding: 0;
+        margin: 0;
+
+        li {
+            display: inline;
+            list-style-type: none;
+            margin: 0.5rem;
+        }
+    }
+}
+
+.container {
+
+    margin: 0 auto;
+    max-width: 760px;
+
+    .intro {
+
+        margin-top: 2rem;
+        clear: both;
+        display: inline-block;
+        width: 100%;
+        text-align: center;
+        padding-bottom: 2rem;
+
+        img {
+            max-width: 30%;
+        }
+
+        .social {
+
+            margin-bottom: 0;
+            font-size: 1.6rem;
+
+            a {
+                padding: 0 5px;
+            }
+        }
+    }
+
+    .content {
+
+        a {
+            border-bottom: 1px solid $link-color;
+        }
+
+        li::marker {
+            color: $light-text-color;
+        }
+
+        img {
+            display: block;
+            float: none;
+            margin-left: auto;
+            margin-right: auto;
+            height: auto;
+            max-width: 100%;
+        }
+    }
+
+    .content-header {
+
+        clear: both;
+
+        h1 {
+            margin: 0;
+        }
+
+        .meta {
+
+            font-size: 0.8rem;
+
+            a {
+                color: $light-text-color;
+                font-weight: normal;
+            }
+        }
+    }
+
+    .content.home {
+
+        .posts-for-year {
+            margin-left: 20px;
+        }
+
+        .posts-group {
+
+            display: flex;
+            margin-bottom: 1.9em;
+            line-height: normal;
+
+            .post-year {
+
+                padding-top: 6px;
+                margin-right: 1.8em;
+                font-size: 1.6em;
+                color: $light-text-color;
+
+                &:hover {
+                    text-decoration: underline;
+                    cursor: pointer;
+                }
+            }
+
+            .posts-list {
+                flex-grow: 1;
+                margin: 0;
+                padding: 0;
+                list-style: none;
+            }
+
+            .post-item {
+
+                border-bottom: 1px $light-text-color dashed;
+
+                a {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: baseline;
+                    padding: 12px 0;
+                    border-bottom: none;
+                }
+            }
+
+            .post-day {
+                color: $light-text-color;
+                flex-shrink: 0;
+                font-size: 0.8rem;
+                margin-left: 1em;
+            }
+        }
+    }
+}
