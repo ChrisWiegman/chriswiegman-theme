@@ -120,7 +120,7 @@ function action_wp_enqueue_scripts() {
  */
 function filter_pre_get_posts( $query ) {
 
-	if ( $query->is_home ) {
+	if ( $query->is_home || $query->is_feed ) {
 		$query->set( 'cat', '-106' ); // Remove "Journal" posts.
 	}
 
