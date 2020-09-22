@@ -6,6 +6,16 @@
 
     .container {
 
+        .prevnext {
+
+            .prev,
+            .next {
+                display: block;
+                max-width: 100%;
+                float: none;
+            }
+        }
+
         .content.home {
 
             .posts-group {

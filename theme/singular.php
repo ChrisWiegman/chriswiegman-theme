@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Templates for individual posts and pages.
  *
