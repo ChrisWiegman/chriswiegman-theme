@@ -27,6 +27,7 @@ function init() {
 	add_action( 'after_setup_theme', $n( 'action_after_setup_theme' ) );
 	add_action( 'widgets_init', $n( 'action_widgets_init' ) );
 	add_action( 'wp_enqueue_scripts', $n( 'action_wp_enqueue_scripts' ) );
+	add_filter( 'pre_get_posts', $n( 'filter_pre_get_posts' ) );
 
 	// Cleanup extra garbage.
 	if ( function_exists( 'remove_action' ) ) {
@@ -106,6 +107,23 @@ function action_wp_enqueue_scripts() {
 	wp_deregister_script( 'wp-embed' );
 	wp_dequeue_style( 'wp-block-library' );
 	wp_enqueue_style( 'cw-theme-style', get_template_directory_uri() . '/assets/main' . $min . '.css', array(), CW_THEME_VERSION );
+
+}
+
+/**
+ * Exclude Journal from homepage
+ *
+ * @since 9.1.0
+ *
+ * @param WP_Query $query The posts query to filter.
+ */
+function filter_pre_get_posts( $query ) {
+
+	if ( $query->is_home ) {
+		$query->set( 'cat', '-106' ); // Remove "Journal" posts.
+	}
+
+	return $query;
 
 }
 
