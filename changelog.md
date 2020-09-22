@@ -1,3 +1,7 @@
+# 9.1.1
+
+* Fix next/prev paging for journal posts
+
 # 9.1.0
 
 * Removed comments feed from header
