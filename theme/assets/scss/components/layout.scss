@@ -114,6 +114,25 @@
         }
     }
 
+    .prevnext {
+
+        .prev {
+            max-width: 48%;
+            float: left;
+        }
+
+        .next {
+            max-width: 48%;
+            float: right;
+        }
+
+        &:after {
+            content: " ";
+            display: block;
+            clear: both;
+        }
+    }
+
     .content-header {
 
         clear: both;
