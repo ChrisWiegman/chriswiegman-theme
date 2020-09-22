@@ -114,6 +114,17 @@
         }
     }
 
+    .prevnext {
+
+        a.priv {
+            float: left;
+        }
+
+        a.next {
+            float: right;
+        }
+    }
+
     .content-header {
 
         clear: both;
