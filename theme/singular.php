@@ -36,8 +36,7 @@ get_header();
 
 <?php if ( 'post' === get_post_type() ) { ?>
 <div class="navigation prevnext">
-	<?php if ( has_category( 'asmodeus' ) ) { ?>
-		HAS IT
+	<?php if ( has_category( 'Journal' ) ) { ?>
 		<span class="prev"><?php previous_post_link( '&laquo; %link', '%title', true ); ?></span>
 		<span class="next"><?php next_post_link( '%link &raquo;', '%title', true ); ?></span>
 	<?php } else { ?>
