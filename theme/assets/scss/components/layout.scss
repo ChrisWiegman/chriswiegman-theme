@@ -116,12 +116,20 @@
 
     .prevnext {
 
-        a.priv {
+        clear: both;
+
+        .prev {
             float: left;
         }
 
-        a.next {
+        .next {
             float: right;
+        }
+
+        &:after {
+            content: " ";
+            display: block;
+            clear: both;
         }
     }
 
