@@ -28,6 +28,7 @@ function init() {
 	add_action( 'widgets_init', $n( 'action_widgets_init' ) );
 	add_action( 'wp_enqueue_scripts', $n( 'action_wp_enqueue_scripts' ) );
 	add_filter( 'pre_get_posts', $n( 'filter_pre_get_posts' ) );
+	add_filter( 'feed_links_show_comments_feed', __return_false() );
 
 	// Cleanup extra garbage.
 	if ( function_exists( 'remove_action' ) ) {
