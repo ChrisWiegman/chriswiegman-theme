@@ -220,3 +220,4 @@ Docker/debug
 # Build files
 /build/
 clover.xml
+.phpunit.result.cache

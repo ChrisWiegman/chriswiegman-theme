@@ -49,7 +49,7 @@ clean-assets:
 .PHONY: clean-build
 clean-build:
 	@echo "Cleaning up build-artifacts"
-	rm -rf node_modules wordpress build vendor clover.xml
+	rm -rf node_modules wordpress build vendor clover.xml .phpunit.result.cache
 
 .PHONY: clean-release
 clean-release:
@@ -146,11 +146,13 @@ test-lint-php:
 test-unit: | build-docker-php
 	@echo "Running Unit Tests Without Coverage"
 	docker run -v $$(pwd):/app --rm wpunit /app/vendor/bin/phpunit
+	rm -rf .phpunit.result.cache
 
 .PHONY: test-unit-coverage
 test-unit-coverage: | build-docker-php
 	@echo "Running Unit Tests With Coverage"
 	docker run -v $$(pwd):/app --rm --user $$(id -u):$$(id -g) wpunit /app/vendor/bin/phpunit  --coverage-text --coverage-html build/coverage/
+	rm -rf .phpunit.result.cache
 
 .PHONY: update-composer
 update-composer:
