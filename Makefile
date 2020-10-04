@@ -4,6 +4,8 @@ NODE_IMAGE 				:= -w /home/node/app -v $$(pwd):/home/node/app --user node wpnode
 HAS_LANDO 				:= $(shell command -v lando 2> /dev/null)
 CURRENTUSER				:= $$(id -u)
 CURRENTGROUP			:= $$(id -g)
+HIGHLIGHT				:=\033[0;32m
+END_HIGHLIGHT			:=\033[0m # No Color
 
 .PHONY: build
 build: build-assets
@@ -51,10 +53,30 @@ clean-build:
 	@echo "Cleaning up build-artifacts"
 	rm -rf node_modules wordpress build vendor clover.xml .phpunit.result.cache
 
+.PHONY: clean-prod-assets
+clean-prod-assets:
+	@echo "Cleaning old production assets"
+	rm -rf ./wordpress/wp-content/mysql.sql
+	rm -rf ./wordpress/wp-content/plugins/*
+	rm -rf ./wordpress/wp-content/uploads/*
+
 .PHONY: clean-release
 clean-release:
 	@echo "Cleaning up release file"
 	rm -f chriswiegman-theme.zip
+
+.PHONY: copy-prod-assets
+copy-prod-assets: | clean-prod-assets
+	@echo "Copying assets from chriswiegman.com"
+	rsync -avz -e "ssh" --progress chriswiegman@chriswiegman.ssh.wpengine.net:/home/wpe-user/sites/chriswiegman/wp-content/plugins/ ./wordpress/wp-content/plugins/
+	rsync -avz -e "ssh" --progress chriswiegman@chriswiegman.ssh.wpengine.net:/home/wpe-user/sites/chriswiegman/wp-content/uploads/ ./wordpress/wp-content/uploads/
+	scp chriswiegman@chriswiegman.ssh.wpengine.net:/home/wpe-user/sites/chriswiegman/wp-content/mysql.sql ./wordpress/wp-content/
+
+.PHONY: import-db
+import-db:
+	echo "Importing production database"
+	lando db-import ./wordpress/wp-content/mysql.sql
+	lando wp --path=./wordpress search-replace https://chriswiegman.com https://chriswiegman-theme.lndo.site --all-tables
 
 .PHONY: install
 install: | clean-assets clean-build
@@ -82,9 +104,12 @@ ifdef HAS_LANDO
 	fi
 	if [ ! -f ./wordpress/wp-config.php ]; then \
 		$(MAKE) setup-wordpress; \
+		$(MAKE) copy-prod-assets; \
+		$(MAKE) import-db; \
 		$(MAKE) setup-wordpress-plugins; \
 		$(MAKE) setup-wordpress-theme; \
-		$(MAKE) setup-demo-content; \
+		echo "You can open your dev site at: ${HIGHLIGHT}https://chriswiegman-theme.lndo.site${END_HIGHLIGHT}"; \
+		echo "See the readme for further details."; \
 	fi
 endif
 
@@ -97,6 +122,9 @@ ifdef HAS_LANDO
 	fi
 endif
 
+.PHONY: refresh
+refresh: clean-prod-assets copy-prod-assets import-db setup-wordpress-plugins setup-wordpress-theme;
+
 .PHONY: relase
 release: chriswiegman-theme.zip
 
@@ -108,17 +136,14 @@ setup-wordpress:
 
 .PHONY: setup-wordpress-plugins
 setup-wordpress-plugins:
+	lando wp plugin deactivate --path=./wordpress wordfence
+	lando wp plugin deactivate --path=./wordpress ewww-image-optimizer
 	lando wp plugin install --path=./wordpress debug-bar --activate
 	lando wp plugin install --path=./wordpress query-monitor --activate
 
 .PHONY: setup-wordpress-theme
 setup-wordpress-theme:
 	lando wp theme activate --path=./wordpress chriswiegman-theme
-
-.PHONY: setup-demo-content
-setup-demo-content:
-	lando wp --path=./wordpress plugin install wordpress-importer --activate
-	lando wp --path=./wordpress import theme-unit-test-data.xml --authors=create
 
 .PHONY: start
 start: lando-start
