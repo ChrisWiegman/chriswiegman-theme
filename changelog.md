@@ -1,3 +1,7 @@
+# 9.2.0
+
+* Improved development workflow using data synced from prod.
+
 # 9.1.1
 
 * Fix next/prev paging for journal posts
