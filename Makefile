@@ -133,6 +133,7 @@ setup-wordpress:
 	@echo "Setting up WordPress"
 	lando wp config create --dbname=wordpress --dbuser=wordpress --dbpass=wordpress --dbhost=database --path=./wordpress
 	lando wp core install --path=./wordpress --url=https://chriswiegman-theme.lndo.site --title="Chris Wiegman Theme Development" --admin_user=admin --admin_password=password --admin_email=contact@chriswiegman.com
+	sed -i "/$table_prefix = 'wp_';/a define( 'WP_DEBUG', true );\ndefine( 'WP_DEBUG_DISPLAY', true );" ./wordpress/wp-config.php
 
 .PHONY: setup-wordpress-plugins
 setup-wordpress-plugins:
