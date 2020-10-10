@@ -7,6 +7,10 @@
       "persoderlind.vscode-phpcbf",
       "felixfbecker.php-debug",
       "dbaeumer.jshint",
-      "johnbillion.vscode-wordpress-hooks"
+      "johnbillion.vscode-wordpress-hooks",
+      "mrmlnc.vscode-scss",
+      "ban.spellright",
+      "coenraads.bracket-pair-colorizer-2",
+      "michelemelluso.code-beautifier"
     ]
   }
