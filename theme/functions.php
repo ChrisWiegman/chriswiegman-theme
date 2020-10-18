@@ -91,6 +91,18 @@ function action_widgets_init() {
 		)
 	);
 
+	register_sidebar(
+		array(
+			'name'          => 'Journal Intro',
+			'id'            => 'journal-intro',
+			'description'   => 'The intro section for the journal page',
+			'before_widget' => '',
+			'after_widget'  => '',
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>',
+		)
+	);
+
 }
 
 
@@ -120,7 +132,7 @@ function action_wp_enqueue_scripts() {
  */
 function filter_pre_get_posts( $query ) {
 
-	if ( $query->is_home || $query->is_feed ) {
+	if ( $query->is_home || ( $query->is_feed && ! $query->is_category ) ) {
 		$query->set( 'cat', '-106' ); // Remove "Journal" posts.
 	}
 
