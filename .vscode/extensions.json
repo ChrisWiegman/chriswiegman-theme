@@ -14,6 +14,8 @@
       "michelemelluso.code-beautifier",
       "syler.sass-indented",
       "michelemelluso.code-beautifier",
-      "glen-84.sass-lint"
+      "glen-84.sass-lint",
+      "pflannery.vscode-versionlens",
+      "mrmlnc.vscode-scss"
     ]
   }
