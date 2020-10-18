@@ -7,7 +7,7 @@
 
 get_header();
 
-
+dynamic_sidebar( 'journal-intro' );
 
 echo '<div class="content home">';
 
