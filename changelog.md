@@ -1,3 +1,10 @@
+# 9.2.0
+
+* Improved development workflow using data synced from prod.
+* Removed unused CSS
+* Added "journal" page to properly handle journal posts
+* Added header to category pages
+
 # 9.1.1
 
 * Fix next/prev paging for journal posts

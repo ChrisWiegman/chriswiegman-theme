@@ -112,6 +112,60 @@
             height: auto;
             max-width: 100%;
         }
+
+        &.home {
+
+            .posts-for-year {
+                margin-left: 20px;
+            }
+
+            .posts-group {
+
+                display: flex;
+                margin-bottom: 1.9em;
+                line-height: normal;
+
+                .post-year {
+
+                    padding-top: 6px;
+                    margin-right: 1.8em;
+                    font-size: 1.6em;
+                    color: $light-text-color;
+
+                    &:hover {
+                        text-decoration: underline;
+                        cursor: pointer;
+                    }
+                }
+
+                .posts-list {
+                    flex-grow: 1;
+                    margin: 0;
+                    padding: 0;
+                    list-style: none;
+                }
+
+                .post-item {
+
+                    border-bottom: 1px $light-text-color dashed;
+
+                    a {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: baseline;
+                        padding: 12px 0;
+                        border-bottom: none;
+                    }
+                }
+
+                .post-day {
+                    color: $light-text-color;
+                    flex-shrink: 0;
+                    font-size: 0.8rem;
+                    margin-left: 1em;
+                }
+            }
+        }
     }
 
     .prevnext {
@@ -148,60 +202,6 @@
             a {
                 color: $light-text-color;
                 font-weight: normal;
-            }
-        }
-    }
-
-    .content.home {
-
-        .posts-for-year {
-            margin-left: 20px;
-        }
-
-        .posts-group {
-
-            display: flex;
-            margin-bottom: 1.9em;
-            line-height: normal;
-
-            .post-year {
-
-                padding-top: 6px;
-                margin-right: 1.8em;
-                font-size: 1.6em;
-                color: $light-text-color;
-
-                &:hover {
-                    text-decoration: underline;
-                    cursor: pointer;
-                }
-            }
-
-            .posts-list {
-                flex-grow: 1;
-                margin: 0;
-                padding: 0;
-                list-style: none;
-            }
-
-            .post-item {
-
-                border-bottom: 1px $light-text-color dashed;
-
-                a {
-                    display: flex;
-                    justify-content: space-between;
-                    align-items: baseline;
-                    padding: 12px 0;
-                    border-bottom: none;
-                }
-            }
-
-            .post-day {
-                color: $light-text-color;
-                flex-shrink: 0;
-                font-size: 0.8rem;
-                margin-left: 1em;
             }
         }
     }
