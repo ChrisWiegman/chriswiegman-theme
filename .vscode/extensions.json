@@ -11,6 +11,9 @@
       "mrmlnc.vscode-scss",
       "ban.spellright",
       "coenraads.bracket-pair-colorizer-2",
-      "michelemelluso.code-beautifier"
+      "michelemelluso.code-beautifier",
+      "syler.sass-indented",
+      "michelemelluso.code-beautifier",
+      "glen-84.sass-lint"
     ]
   }
