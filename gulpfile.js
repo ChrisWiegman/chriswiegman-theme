@@ -2,6 +2,11 @@ var gulp = require('gulp');
 var gulpSass = require('gulp-sass');
 var rename = require('gulp-rename');
 var sourcemaps = require('gulp-sourcemaps');
+const del = require('del');
+
+function clean () {
+    return del(["./theme/assets/*.css"]);
+}
 
 
 function sass () {
@@ -28,6 +33,17 @@ function sassMin () {
 
 }
 
+// Watch files
+function watchFiles () {
+    gulp.watch("./theme/assets/scss/**/*", sass, sassMin);
+}
+
+const build = gulp.series(clean, sass, sassMin);
+const watch = gulp.parallel(watchFiles);
+
 exports.sassMin = sassMin;
 exports.sass = sass;
-exports.default = gulp.parallel(sass,sassMin);
+exports.clean = clean;
+exports.build = build;
+exports.watch = watch;
+exports.default = build;
