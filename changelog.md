@@ -1,3 +1,7 @@
+# 9.3.2
+
+* Improve editor styles
+
 # 9.3.1
 
 * Remove unneeded header elements

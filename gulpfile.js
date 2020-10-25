@@ -22,6 +22,17 @@ function sass () {
 
 }
 
+function editorSass () {
+
+    gulpSass.compiler = require('node-sass');
+
+    return gulp.src('./theme/assets/scss/editor.scss')
+        .pipe(gulpSass().on('error', gulpSass.logError))
+        .pipe(rename('editor.css'))
+        .pipe(gulp.dest('./theme/assets/'));
+
+}
+
 function sassMin () {
 
     gulpSass.compiler = require('node-sass');
@@ -35,12 +46,13 @@ function sassMin () {
 
 // Watch files
 function watchFiles () {
-    gulp.watch("./theme/assets/scss/**/*", sass, sassMin);
+    gulp.watch("./theme/assets/scss/**/*", sass, sassMin, editorSass);
 }
 
-const build = gulp.series(clean, sass, sassMin);
+const build = gulp.series(clean, sass, sassMin, editorSass);
 const watch = gulp.parallel(watchFiles);
 
+exports.editorSass = editorSass;
 exports.sassMin = sassMin;
 exports.sass = sass;
 exports.clean = clean;

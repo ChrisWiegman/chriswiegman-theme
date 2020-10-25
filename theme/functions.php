@@ -8,7 +8,7 @@
 namespace CW\Theme;
 
 // Useful global constants.
-define( 'CW_THEME_VERSION', '9.3.1' );
+define( 'CW_THEME_VERSION', '9.3.2' );
 
 /**
  * Setup theme hooks.
@@ -83,7 +83,7 @@ function action_after_setup_theme() {
 
 	// Enable Appropriate styles in the editor.
 	add_theme_support( 'editor-styles' );
-	add_editor_style( 'assets/main.min.css' );
+	add_editor_style( 'assets/editor.css' );
 
 	// Add theme support for the title tag.
 	add_theme_support( 'title-tag' );
