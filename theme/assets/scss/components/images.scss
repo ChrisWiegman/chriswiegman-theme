@@ -1,0 +1,90 @@
+.wp-block-image {
+    margin-bottom: 1em;
+
+    img {
+        max-width: 100%;
+    }
+
+    .aligncenter {
+        text-align: center;
+    }
+
+    .alignfull img,
+    .alignwide img {
+        width: 100%;
+    }
+
+    .alignleft,
+    .alignright,
+    .aligncenter,
+    .is-resized {
+        display: table;
+    }
+
+    .alignleft>figcaption,
+    .alignright>figcaption,
+    .aligncenter>figcaption,
+    .is-resized>figcaption {
+        display: table-caption;
+        caption-side: bottom;
+    }
+
+    .alignleft {
+        /*rtl:ignore*/
+        float: left;
+        /*rtl:ignore*/
+        margin-left: 0;
+        margin-right: 1em;
+        margin-top: 0.5em;
+        margin-bottom: 0.5em;
+    }
+
+    .alignright {
+        /*rtl:ignore*/
+        float: right;
+        /*rtl:ignore*/
+        margin-right: 0;
+        margin-left: 1em;
+        margin-top: 0.5em;
+        margin-bottom: 0.5em;
+    }
+
+    .aligncenter {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    figcaption {
+        background-color: $box-background-color;
+        font-size: 0.8rem;
+        line-height: 1rem;
+        padding: 10px 5px;
+        margin-bottom: 1rem;
+        font-style: italic;
+    }
+}
+
+.is-style-rounded img {
+    border-radius: 9999px;
+}
+
+.is-style-circle-mask img {
+    border-radius: 9999px;
+}
+
+@supports ((-webkit-mask-image: none) or (mask-image: none)) or (-webkit-mask-image: none) {
+    .is-style-circle-mask img {
+        /* stylelint-disable */
+        -webkit-mask-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="50"/></svg>');
+        mask-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="50"/></svg>');
+        /* stylelint-enable */
+        mask-mode: alpha;
+        -webkit-mask-repeat: no-repeat;
+        mask-repeat: no-repeat;
+        -webkit-mask-size: contain;
+        mask-size: contain;
+        -webkit-mask-position: center;
+        mask-position: center;
+        border-radius: 0;
+    }
+}

@@ -6,6 +6,8 @@
 
     .container {
 
+        margin: 0 10px;
+
         .prevnext {
 
             .prev,
@@ -30,6 +32,14 @@
                     display: none;
                 }
             }
+        }
+
+        .wp-block-code,
+        .wp-block-quote {
+            background-color: $box-background-color;
+            position: relative;
+            margin: 1rem 5px;
+            border: 1px solid $border-color;
         }
     }
 }

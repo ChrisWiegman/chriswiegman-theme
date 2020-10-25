@@ -1,24 +1,37 @@
+body {
+    margin: 0;
+}
+
 .header {
 
-    display: flex;
-    align-items: center;
-    margin: 0 auto 1rem auto;
-    max-width: 960px;
-    padding: 1rem;
+    position: sticky;
+    top: 0;
+    background: $background-color;
     border-bottom: 1px solid $border-color;
+    margin: 0 0 1rem 0;
+    width: 100%;
+    z-index: 1;
 
-    span.site-title {
+    .content {
+        display: flex;
+        align-items: center;
+        margin: 0 auto;
+        max-width: 960px;
+        padding: 0 1rem;
 
-        flex: 1;
-        font-size: 1.4rem;
-        font-weight: bold;
+        span.site-title {
 
-        a {
+            flex: 1;
+            font-size: 1.4rem;
+            font-weight: bold;
 
-            color: $text-color;
+            a {
 
-            &:hover {
-                color: $light-text-color;
+                color: $text-color;
+
+                &:hover {
+                    color: $link-hover-color;
+                }
             }
         }
     }
@@ -46,21 +59,28 @@
 .footer {
 
     border-top: 1px solid $border-color;
-    font-size: 0.7rem;
-    text-align: center;
-    padding: 1rem 0 0 0;
-    margin: 1rem auto 1rem auto;
-    max-width: 960px;
+    width: 100%;
+    margin: 0.5rem 0 0 0;
 
-    ul {
+    .content {
 
-        padding: 0;
-        margin: 0;
+        font-size: 0.7rem;
+        text-align: center;
+        padding: 0.5rem 0 0 0;
+        margin: 0 auto;
+        max-width: 960px;
+        line-height: 1.2rem;
 
-        li {
-            display: inline;
-            list-style-type: none;
-            margin: 0.5rem;
+        ul {
+
+            padding: 0;
+            margin: 0;
+
+            li {
+                display: inline;
+                list-style-type: none;
+                margin: 0 0.5rem;
+            }
         }
     }
 }
@@ -166,9 +186,16 @@
                 }
             }
         }
+
+        .wp-block-quote p {
+            padding: 0 1rem;
+        }
     }
 
     .prevnext {
+
+        font-size: 0.8rem;
+        line-height: 0.8rem;
 
         .prev {
             max-width: 48%;

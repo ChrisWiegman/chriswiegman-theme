@@ -187,3 +187,8 @@ update-composer:
 .PHONY: update-npm
 update-npm:
 	$(DOCKER_RUN) $(NODE_IMAGE) npm update
+
+.PHONY: watch
+watch: | build-assets
+	@echo "Building and watching theme assets"
+	$(DOCKER_RUN) $(NODE_IMAGE) ./node_modules/gulp-cli/bin/gulp.js watch

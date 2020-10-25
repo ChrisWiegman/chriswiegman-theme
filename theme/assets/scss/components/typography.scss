@@ -1,10 +1,33 @@
-$sans-font: trebuchet ms,Verdana,verdana ref,segoe ui,Candara,lucida grande,lucida sans unicode,lucida sans,Tahoma,sans-serif;
+$sans-font: Frutiger,
+"Frutiger Linotype",
+Univers,
+Calibri,
+"Myriad Pro",
+Myriad,
+"DejaVu Sans Condensed",
+"Liberation Sans",
+"Nimbus Sans L",
+Tahoma,
+Geneva,
+"Helvetica Neue",
+Helvetica,
+Arial,
+sans-serif;
 
 html {
     font-family: $sans-font;
     font-size: 20px;
     line-height: 36px;
     color: $text-color;
+    background: $background-color;
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+    border-bottom: 1px solid $border-color;
 }
 
 a {
@@ -14,7 +37,6 @@ a {
 
     &:hover {
         color: $link-hover-color;
-        transition: 0.5s;
     }
 }
 
@@ -23,18 +45,5 @@ svg {
 
     &:hover {
         fill: $link-hover-color;
-        transition: 0.5s;
-    }
-}
-
-blockquote {
-
-    display: block;
-    font-style: italic;
-    padding: 20px 40px;
-
-    cite {
-        text-align: right;
-        clear: both;
     }
 }
