@@ -115,13 +115,13 @@ function action_widgets_init() {
  */
 function action_wp_enqueue_scripts() {
 
-	$min     = '';
+	$min     = '.min';
 	$version = CW_THEME_VERSION;
 
 	if ( defined( 'SCRIPT_DEBUG' ) && true === SCRIPT_DEBUG ) {
 
-		$min     = '.min';
-		$version = microtime();
+		$min     = '';
+		$version = time();
 
 	}
 
