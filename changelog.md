@@ -5,6 +5,7 @@
 * Improve quotes and code blocks (inspiration from Victoria Drake)
 * Full width header and footer
 * Sticky header
+* Improve image captions and styling
 
 # 9.2.0
 
