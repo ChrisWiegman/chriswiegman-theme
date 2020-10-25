@@ -5,6 +5,7 @@ html {
     font-size: 20px;
     line-height: 36px;
     color: $text-color;
+    background: $background-color;
 }
 
 a {
@@ -14,7 +15,6 @@ a {
 
     &:hover {
         color: $link-hover-color;
-        transition: 0.5s;
     }
 }
 
@@ -23,18 +23,5 @@ svg {
 
     &:hover {
         fill: $link-hover-color;
-        transition: 0.5s;
-    }
-}
-
-blockquote {
-
-    display: block;
-    font-style: italic;
-    padding: 20px 40px;
-
-    cite {
-        text-align: right;
-        clear: both;
     }
 }
