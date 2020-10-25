@@ -8,14 +8,12 @@
 namespace CW\Theme;
 
 // Useful global constants.
-define( 'CW_THEME_VERSION', '9.3.2' );
+define( 'CW_THEME_VERSION', '9.3.3' );
 
 /**
  * Setup theme hooks.
  *
  * @since 9.0.0
- *
- * @return void
  */
 function init() {
 
@@ -30,9 +28,13 @@ function init() {
 	add_filter( 'pre_get_posts', $n( 'filter_pre_get_posts' ) );
 	add_filter( 'feed_links_show_comments_feed', __return_false() );
 	add_filter( 'wp_resource_hints', $n( 'filter_wp_resource_hints' ), 10, 2 );
+	add_action( 'admin_menu', $n( 'action_admin_menu' ) );
+	add_action( 'init', $n( 'action_init' ), 100 );
+	add_action( 'wp_before_admin_bar_render', $n( 'action_wp_before_admin_bar_render' ) );
 
 	// Cleanup extra garbage.
 	if ( function_exists( 'remove_action' ) ) {
+
 		remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
 		remove_action( 'wp_print_styles', 'print_emoji_styles' );
 		remove_action( 'wp_head', 'rsd_link' );
@@ -41,7 +43,43 @@ function init() {
 		remove_action( 'template_redirect', 'rest_output_link_header', 11 );
 		remove_action( 'wp_head', 'wp_oembed_add_discovery_links' );
 		remove_action( 'wp_head', 'rest_output_link_wp_head' );
+
 	}
+}
+
+/**
+ * Removes comments from the admin bar
+ *
+ * @since 9.3.3
+ */
+function action_wp_before_admin_bar_render() {
+
+	global $wp_admin_bar;
+
+	$wp_admin_bar->remove_menu( 'comments' );
+
+}
+
+/**
+ * Removes comments from the admin menu
+ *
+ * @since 9.3.3
+ */
+function action_admin_menu() {
+
+	remove_menu_page( 'edit-comments.php' );
+
+}
+
+/**
+ * Remove support for comments
+ *
+ * @since 9.3.3
+ */
+function action_init() {
+
+	remove_post_type_support( 'post', 'comments' );
+	remove_post_type_support( 'page', 'comments' );
 
 }
 

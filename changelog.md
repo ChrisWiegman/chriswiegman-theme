@@ -1,3 +1,7 @@
+# 9.3.3
+
+* Remove support for comments
+
 # 9.3.2
 
 * Improve editor styles
