@@ -1,3 +1,7 @@
+# 9.3.1
+
+* Remove unneeded header elements
+
 # 9.3.0
 
 * Switch to a dark theme
