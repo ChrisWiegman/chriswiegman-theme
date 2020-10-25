@@ -13,7 +13,7 @@
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="https://gmpg.org/xfn/11">
-
+	<link rel="icon" href="/wp-content/uploads/2020/07/favicon-32x32-1.png" type="image/png">
 	<?php wp_head(); ?>
 </head>
 
