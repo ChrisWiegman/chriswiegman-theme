@@ -29,13 +29,41 @@ function init() {
 	add_action( 'wp_enqueue_scripts', $n( 'action_wp_enqueue_scripts' ) );
 	add_filter( 'pre_get_posts', $n( 'filter_pre_get_posts' ) );
 	add_filter( 'feed_links_show_comments_feed', __return_false() );
+	add_filter( 'wp_resource_hints', $n( 'filter_wp_resource_hints' ), 10, 2 );
 
 	// Cleanup extra garbage.
 	if ( function_exists( 'remove_action' ) ) {
 		remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
 		remove_action( 'wp_print_styles', 'print_emoji_styles' );
+		remove_action( 'wp_head', 'rsd_link' );
+		remove_action( 'wp_head', 'wlwmanifest_link' );
+		remove_action( 'wp_head', 'wp_generator' );
+		remove_action( 'template_redirect', 'rest_output_link_header', 11 );
+		remove_action( 'wp_head', 'wp_oembed_add_discovery_links' );
+		remove_action( 'wp_head', 'rest_output_link_wp_head' );
 	}
 
+}
+
+/**
+ * Filter wp_resource hints
+ *
+ * Remove extra DNS prefecth links.
+ *
+ * @param array  $urls          URLs to print for resource hints.
+ * @param string $relation_type The relation type the URLs are printed for, e.g. 'preconnect' or 'prerender'.
+ *
+ * @return array
+ */
+function filter_wp_resource_hints( $urls, $relation_type ) {
+
+	if ( 'dns-prefetch' !== $relation_type ) {
+		return $urls;
+	}
+
+	unset( $urls[1] );
+
+	return $urls;
 }
 
 /**
