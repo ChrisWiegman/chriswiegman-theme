@@ -51,7 +51,13 @@ clean-assets:
 .PHONY: clean-build
 clean-build:
 	@echo "Cleaning up build-artifacts"
-	rm -rf node_modules wordpress build vendor clover.xml .phpunit.result.cache
+	rm -rf \
+		node_modules \
+		wordpress \
+		build \
+		vendor \
+		clover.xml \
+		.phpunit.result.cache
 
 .PHONY: clean-prod-assets
 clean-prod-assets:
