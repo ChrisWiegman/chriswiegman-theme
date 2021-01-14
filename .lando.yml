@@ -5,7 +5,6 @@ config:
   php: '7.4'
   via: nginx
   database: mariadb
-  xdebug: true
 services:
   mailhog:
     type: mailhog
@@ -17,10 +16,18 @@ services:
     hosts:
       - database
   appserver:
+    xdebug: debug
     overrides:
       volumes:
         - ./theme:/app/wordpress/wp-content/themes/chriswiegman-theme
 tooling:
-  phpunit:
+  xdebug-on:
     service: appserver
-    cmd: vendor/bin/phpunit
+    description: Enable xdebug for nginx.
+    cmd: docker-php-ext-enable xdebug && pkill -o -USR2 php-fpm && echo "Enabling xdebug"
+    user: root
+  xdebug-off:
+    service: appserver
+    description: CUSTOM Disable xdebug for nginx.
+    cmd: rm /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini && pkill -o -USR2 php-fpm && echo "Disabling xdebug"
+    user: root

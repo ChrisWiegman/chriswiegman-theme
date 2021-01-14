@@ -1,5 +1,5 @@
 DOCKER_RUN				:= @docker run --rm
-COMPOSER_BASE_CONTAINER	:= -v $$(pwd):/app --user $$(id -u):$$(id -g) composer
+COMPOSER_BASE_CONTAINER	:= -v $$(pwd):/app --user $$(id -u):$$(id -g) composer:1
 NODE_IMAGE 				:= -w /home/node/app -v $$(pwd):/home/node/app --user node wpnode
 HAS_LANDO 				:= $(shell command -v lando 2> /dev/null)
 CURRENTUSER				:= $$(id -u)
@@ -51,7 +51,13 @@ clean-assets:
 .PHONY: clean-build
 clean-build:
 	@echo "Cleaning up build-artifacts"
-	rm -rf node_modules wordpress build vendor clover.xml .phpunit.result.cache
+	rm -rf \
+		node_modules \
+		wordpress \
+		build \
+		vendor \
+		clover.xml \
+		.phpunit.result.cache
 
 .PHONY: clean-prod-assets
 clean-prod-assets:

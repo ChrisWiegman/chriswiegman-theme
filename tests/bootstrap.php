@@ -1,11 +1,9 @@
 <?php
+use Brain\Monkey;
 
 require_once dirname( dirname( __FILE__ ) ) . '/vendor/autoload.php';
 
-WP_Mock::setUsePatchwork( false );
-
-// Now call the bootstrap method of WP Mock
-WP_Mock::bootstrap();
+Monkey\setUp();
 
 /**
  * Now we include any plugin files that we need to be able to run the tests. This

@@ -7,12 +7,12 @@
 
  namespace chriswiegman\theme\tests;
 
-use function PHPUnit\Framework\assertEquals;
+ use PHPUnit\Framework\TestCase;
 
 /**
  * Test the main plugin file
  */
-class PluginFileTest extends \WP_Mock\Tools\TestCase {
+class PluginFileTest extends TestCase {
 
 	/**
 	 * Test loader function
