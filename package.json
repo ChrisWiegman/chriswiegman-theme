@@ -14,8 +14,8 @@
     "gulp-cli": "^2.3.0",
     "gulp-rename": "^2.0.0",
     "gulp-sass": "^4.1.0",
-    "gulp-sourcemaps": "^2.6.5",
+    "gulp-sourcemaps": "^3.0.0",
     "jshint": "^2.12.0",
-    "node-sass": "^4.14.1"
+    "node-sass": "^5.0.0"
   }
 }
