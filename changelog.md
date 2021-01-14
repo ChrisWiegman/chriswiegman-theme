@@ -1,3 +1,8 @@
+# 9.3.4
+
+* Update dependencies
+* Migrate unit testing to brain monkey
+
 # 9.3.3
 
 * Remove support for comments
