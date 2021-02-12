@@ -202,7 +202,7 @@ vendor
 /theme/assets/*.map
 coverage.clover
 /theme/scripts/*-min.js
-chriswiegman-theme.zip
+chriswiegman-theme.*.zip
 
 # Docker files
 Docker/database

@@ -1,3 +1,8 @@
+# 9.3.5
+
+* Update dependencies
+* Cleanup and maintenance of build tools
+
 # 9.3.4
 
 * Update dependencies
