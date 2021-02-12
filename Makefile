@@ -212,3 +212,13 @@ watch: | build-assets
 trust-lando-cert-mac:
 	@echo "Trusting Lando cert"
 	sudo security add-trusted-cert -d -r trustRoot -k /Library/Keychains/System.keychain ~/.lando/certs/lndo.site.pem
+
+.PHONY: flush-cache
+flush-cache:
+	@echo "Flushing cache"
+	lando wp cache flush --path=./wordpress
+
+.PHONY: delete-transients
+delete-transients:
+	@echo "Deleting transients"
+	lando wp transient delete --path=./wordpress --all
