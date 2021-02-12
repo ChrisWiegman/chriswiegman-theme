@@ -6,6 +6,7 @@ CURRENTUSER				:= $$(id -u)
 CURRENTGROUP			:= $$(id -g)
 HIGHLIGHT				:=\033[0;32m
 END_HIGHLIGHT			:=\033[0m # No Color
+THEME_VERSION           := $$(grep "^Version" theme/style.css | awk -F' ' '{print $3}' | cut -d ":" -f2 | sed 's/ //g')
 
 .PHONY: build
 build: build-assets
@@ -36,8 +37,16 @@ build-docker-php:
 		docker build -f Docker/Dockerfile-php -t wpunit .; \
 	fi
 
+.PHONY: chriswiegman-theme.zip
 chriswiegman-theme.zip: clean-release build-assets
-	zip -r chriswiegman-theme.zip ./theme
+	@echo "Building release file: chriswiegman-theme.$(THEME_VERSION).zip"
+	rm -rf chriswiegman-theme.$(THEME_VERSION).zip
+	rm -rf build
+	mkdir build
+	cp -avr theme build
+	mv build/theme build/chriswiegman-theme
+	THEME_VERSION=$(THEME_VERSION) && cd build && zip -r chriswiegman-theme.$$THEME_VERSION.zip *
+	mv build/chriswiegman-theme.$(THEME_VERSION).zip ./
 
 .PHONY: clean
 clean: stop clean-assets clean-build clean-release
@@ -69,7 +78,7 @@ clean-prod-assets:
 .PHONY: clean-release
 clean-release:
 	@echo "Cleaning up release file"
-	rm -f chriswiegman-theme.zip
+	rm -f chriswiegman-theme.*.zip
 
 .PHONY: copy-prod-assets
 copy-prod-assets: | clean-prod-assets
@@ -198,3 +207,8 @@ update-npm:
 watch: | build-assets
 	@echo "Building and watching theme assets"
 	$(DOCKER_RUN) $(NODE_IMAGE) ./node_modules/gulp-cli/bin/gulp.js watch
+
+.PHONY: trust-lando-cert-mac
+trust-lando-cert-mac:
+	@echo "Trusting Lando cert"
+	sudo security add-trusted-cert -d -r trustRoot -k /Library/Keychains/System.keychain ~/.lando/certs/lndo.site.pem
