@@ -36,13 +36,8 @@ get_header();
 
 <?php if ( 'post' === get_post_type() ) { ?>
 <div class="navigation prevnext">
-	<?php if ( has_category( 'Journal' ) ) { ?>
-		<span class="prev"><?php previous_post_link( '&laquo; %link', '%title', true ); ?></span>
-		<span class="next"><?php next_post_link( '%link &raquo;', '%title', true ); ?></span>
-	<?php } else { ?>
-		<span class="prev"><?php previous_post_link( '&laquo; %link', '%title', false, '106' ); ?></span>
-		<span class="next"><?php next_post_link( '%link &raquo;', '%title', false, '106' ); ?></span>
-	<?php } ?>
+	<span class="prev"><?php previous_post_link( '&laquo; %link', '%title', false ); ?></span>
+	<span class="next"><?php next_post_link( '%link &raquo;', '%title', false ); ?></span>
 </div>
 <?php } ?>
 

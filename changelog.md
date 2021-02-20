@@ -1,3 +1,6 @@
+# 9.4.0
+
+* Remove Journal
 # 9.3.5
 
 * Update dependencies

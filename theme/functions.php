@@ -25,7 +25,6 @@ function init() {
 	add_action( 'after_setup_theme', $n( 'action_after_setup_theme' ) );
 	add_action( 'widgets_init', $n( 'action_widgets_init' ) );
 	add_action( 'wp_enqueue_scripts', $n( 'action_wp_enqueue_scripts' ) );
-	add_filter( 'pre_get_posts', $n( 'filter_pre_get_posts' ) );
 	add_filter( 'feed_links_show_comments_feed', __return_false() );
 	add_filter( 'wp_resource_hints', $n( 'filter_wp_resource_hints' ), 10, 2 );
 	add_action( 'admin_menu', $n( 'action_admin_menu' ) );
@@ -157,18 +156,6 @@ function action_widgets_init() {
 		)
 	);
 
-	register_sidebar(
-		array(
-			'name'          => 'Journal Intro',
-			'id'            => 'journal-intro',
-			'description'   => 'The intro section for the journal page',
-			'before_widget' => '',
-			'after_widget'  => '',
-			'before_title'  => '<h2 class="widget-title">',
-			'after_title'   => '</h2>',
-		)
-	);
-
 }
 
 
@@ -194,23 +181,6 @@ function action_wp_enqueue_scripts() {
 	wp_deregister_script( 'wp-embed' );
 	wp_dequeue_style( 'wp-block-library' );
 	wp_enqueue_style( 'cw-theme-style', get_template_directory_uri() . '/assets/main' . $min . '.css', array(), $version );
-
-}
-
-/**
- * Exclude Journal from homepage
- *
- * @since 9.1.0
- *
- * @param WP_Query $query The posts query to filter.
- */
-function filter_pre_get_posts( $query ) {
-
-	if ( $query->is_home || ( $query->is_feed && ! $query->is_category ) ) {
-		$query->set( 'cat', '-106' ); // Remove "Journal" posts.
-	}
-
-	return $query;
 
 }
 
