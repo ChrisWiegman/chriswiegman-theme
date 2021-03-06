@@ -4,13 +4,9 @@ body {
 
 .header {
 
-    position: sticky;
     top: 0;
-    background: $background-color;
-    border-bottom: 1px solid $border-color;
-    margin: 0 0 1rem 0;
+    padding: 1rem 0;
     width: 100%;
-    z-index: 1;
 
     .content {
         display: flex;
@@ -58,9 +54,8 @@ body {
 
 .footer {
 
-    border-top: 1px solid $border-color;
     width: 100%;
-    margin: 0.5rem 0 0 0;
+    margin: 1rem 0 0 0;
 
     .content {
 
@@ -187,8 +182,15 @@ body {
             }
         }
 
-        .wp-block-quote p {
-            padding: 0 1rem;
+        .wp-block-code,
+        .wp-block-quote {
+
+            font-size: 0.7rem;
+            margin: 2.5em 0;
+
+            p {
+                padding: 0 1rem;
+            }
         }
     }
 
