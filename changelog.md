@@ -1,3 +1,8 @@
+# 9.5.0
+
+* Revert to white backgrou
+* Simplify CSS
+
 # 9.4.0
 
 * Remove Journal
