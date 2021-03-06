@@ -1,25 +1,10 @@
-$sans-font: Frutiger,
-"Frutiger Linotype",
-Univers,
-Calibri,
-"Myriad Pro",
-Myriad,
-"DejaVu Sans Condensed",
-"Liberation Sans",
-"Nimbus Sans L",
-Tahoma,
-Geneva,
-"Helvetica Neue",
-Helvetica,
-Arial,
-sans-serif;
+$sans-font: Frutiger, "Helvetica Neue", Helvetica, Arial, sans-serif;
 
 html {
     font-family: $sans-font;
     font-size: 20px;
     line-height: 36px;
     color: $text-color;
-    background: $background-color;
 }
 
 h2,
