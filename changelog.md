@@ -1,3 +1,7 @@
+# 9.5.1
+
+* Add styles for better display on mobile
+
 # 9.5.0
 
 * Revert to white backgrou
