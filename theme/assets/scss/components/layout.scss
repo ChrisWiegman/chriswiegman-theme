@@ -201,13 +201,14 @@ body {
         line-height: 0.8rem;
 
         .prev {
-            max-width: 48%;
+            max-width: 49%;
             float: left;
         }
 
         .next {
-            max-width: 48%;
+            max-width: 49%;
             float: right;
+            text-align: right;
         }
 
         &:after {
