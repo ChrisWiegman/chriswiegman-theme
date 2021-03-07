@@ -1,3 +1,7 @@
+# 9.5.2
+
+* Cleanup mobile styles
+* Remove redundant links from footer
 # 9.5.1
 
 * Add styles for better display on mobile
