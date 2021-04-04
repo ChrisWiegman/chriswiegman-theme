@@ -1,3 +1,8 @@
+# 9.5.3
+
+* Add testing via GitHub Actions
+* Update dependencies
+
 # 9.5.2
 
 * Cleanup mobile styles
