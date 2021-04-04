@@ -1,0 +1,33 @@
+name: commit
+
+on: [push]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    name: Build and test the plugin
+    steps:
+      - name: Get working copy
+        uses: actions/checkout@main
+        with:
+          fetch-depth: 1
+      - name: Build test container
+        run: |
+          cd ${GITHUB_WORKSPACE}
+          make build
+      - name: Install dependencies
+        run: |
+          cd ${GITHUB_WORKSPACE}
+          make install
+      - name: Lint PHP
+        run: |
+          cd ${GITHUB_WORKSPACE}
+          make test-lint-php
+      - name: Lint JavaScript
+        run: |
+          cd ${GITHUB_WORKSPACE}
+          make test-lint-javascript
+      - name: PHPUnit
+        run: |
+          cd ${GITHUB_WORKSPACE}
+          make test-unit-coverage
