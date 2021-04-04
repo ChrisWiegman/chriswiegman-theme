@@ -11,10 +11,10 @@ jobs:
         uses: actions/checkout@main
         with:
           fetch-depth: 1
-      - name: Build test container
+      - name: Build test containers
         run: |
           cd ${GITHUB_WORKSPACE}
-          make build
+          make build-docker
       - name: Install dependencies
         run: |
           cd ${GITHUB_WORKSPACE}
