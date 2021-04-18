@@ -54,15 +54,15 @@ function init() {
  *
  * @since 9.6.0
  *
- * @param array $items Array of menu items.
- * @param array $args Array of menu arguments.
+ * @param string $items Output of menu items.
+ * @param WP_Term $args Array of menu arguments.
  *
- * @return array Array of menu items.
+ * @return string Output of menu items.
  */
 function filter_wp_nav_menu_items( $items, $args ) {
 
 	if ( 'primary' === $args->theme_location ) {
-		$items .= '<li>' . get_search_form( false ) . '</li>';
+		$items .= '<li class="menu-item">' . get_search_form( false ) . '</li>';
 	}
 
 	return $items;
