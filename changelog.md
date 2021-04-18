@@ -1,3 +1,6 @@
+# 9.6.1
+
+* Fix a CSS issue causing horizontal scroll on header (Thanks David Wolfpaw)
 # 9.6.0
 
 * Added new 'avatar' media size to work better with the homepage widget
