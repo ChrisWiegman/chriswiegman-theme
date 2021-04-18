@@ -2,6 +2,8 @@
 
 * Added new 'avatar' media size to work better with the homepage widget
 * Add search bar to header
+* Introduce pagination on the homepage
+* Add excerpts to the search page
 
 # 9.5.3
 
