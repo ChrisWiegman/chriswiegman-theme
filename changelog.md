@@ -1,3 +1,8 @@
+# 9.6.0
+
+* Added new 'avatar' media size to work better with the homepage widget
+* Add search bar to header
+
 # 9.5.3
 
 * Add testing via GitHub Actions
