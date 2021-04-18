@@ -139,7 +139,8 @@ body {
             max-width: 100%;
         }
 
-        &.home {
+        &.home,
+        &.search {
 
             .posts-for-year {
                 margin-left: 20px;
