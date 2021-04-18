@@ -4,6 +4,7 @@
 * Add search bar to header
 * Introduce pagination on the homepage
 * Add excerpts to the search page
+* Fixed bug caused by improperly calling filter callback
 
 # 9.5.3
 
