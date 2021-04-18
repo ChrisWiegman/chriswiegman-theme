@@ -30,6 +30,7 @@ function init() {
 	add_action( 'admin_menu', $n( 'action_admin_menu' ) );
 	add_action( 'init', $n( 'action_init' ), 100 );
 	add_action( 'wp_before_admin_bar_render', $n( 'action_wp_before_admin_bar_render' ) );
+	add_filter( 'wp_nav_menu_items', $n( 'filter_wp_nav_menu_items' ), 10, 2 );
 
 	// Cleanup extra garbage.
 	if ( function_exists( 'remove_action' ) ) {
@@ -44,6 +45,28 @@ function init() {
 		remove_action( 'wp_head', 'rest_output_link_wp_head' );
 
 	}
+}
+
+/**
+ * Filter wp_nav_menu_items
+ *
+ * Adds a search box to the main nav menu
+ *
+ * @since 9.6.0
+ *
+ * @param array $items Array of menu items.
+ * @param array $args Array of menu arguments.
+ *
+ * @return array Array of menu items.
+ */
+function filter_wp_nav_menu_items( $items, $args ) {
+
+	if ( 'primary' === $args->theme_location ) {
+		$items .= '<li>' . get_search_form( false ) . '</li>';
+	}
+
+	return $items;
+
 }
 
 /**
