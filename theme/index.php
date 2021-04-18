@@ -52,4 +52,12 @@ if ( have_posts() ) {
 
 echo '</div>';
 
+if ( $wp_query->max_num_pages > 1 ) { ?>
+		<nav class="prevnext pagination" role="navigation">
+			<div class="nav-previous prev"><?php next_posts_link( '&larr; Older posts' ); ?></div>
+			<div class="nav-next next"><?php previous_posts_link( 'Newer posts &rarr;' ); ?></div>
+		</nav>
+	<?php
+}
+
 get_footer();

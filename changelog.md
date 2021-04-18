@@ -1,3 +1,11 @@
+# 9.6.0
+
+* Added new 'avatar' media size to work better with the homepage widget
+* Add search bar to header
+* Introduce pagination on the homepage
+* Add excerpts to the search page
+* Fixed bug caused by improperly calling filter callback
+
 # 9.5.3
 
 * Add testing via GitHub Actions

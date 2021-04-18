@@ -36,8 +36,8 @@ get_header();
 
 <?php if ( 'post' === get_post_type() ) { ?>
 <div class="navigation prevnext">
-	<span class="prev"><?php previous_post_link( '&laquo; %link', '%title', false ); ?></span>
-	<span class="next"><?php next_post_link( '%link &raquo;', '%title', false ); ?></span>
+	<span class="prev"><?php previous_post_link( '&larr; %link', '%title', false ); ?></span>
+	<span class="next"><?php next_post_link( '%link &rarr;', '%title', false ); ?></span>
 </div>
 <?php } ?>
 

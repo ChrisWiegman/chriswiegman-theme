@@ -8,7 +8,7 @@
 namespace CW\Theme;
 
 // Useful global constants.
-define( 'CW_THEME_VERSION', '9.5.3' );
+define( 'CW_THEME_VERSION', '9.6.0' );
 
 /**
  * Setup theme hooks.
@@ -25,11 +25,12 @@ function init() {
 	add_action( 'after_setup_theme', $n( 'action_after_setup_theme' ) );
 	add_action( 'widgets_init', $n( 'action_widgets_init' ) );
 	add_action( 'wp_enqueue_scripts', $n( 'action_wp_enqueue_scripts' ) );
-	add_filter( 'feed_links_show_comments_feed', __return_false() );
+	add_filter( 'feed_links_show_comments_feed', '__return_false' );
 	add_filter( 'wp_resource_hints', $n( 'filter_wp_resource_hints' ), 10, 2 );
 	add_action( 'admin_menu', $n( 'action_admin_menu' ) );
 	add_action( 'init', $n( 'action_init' ), 100 );
 	add_action( 'wp_before_admin_bar_render', $n( 'action_wp_before_admin_bar_render' ) );
+	add_filter( 'wp_nav_menu_items', $n( 'filter_wp_nav_menu_items' ), 10, 2 );
 
 	// Cleanup extra garbage.
 	if ( function_exists( 'remove_action' ) ) {
@@ -44,6 +45,28 @@ function init() {
 		remove_action( 'wp_head', 'rest_output_link_wp_head' );
 
 	}
+}
+
+/**
+ * Filter wp_nav_menu_items
+ *
+ * Adds a search box to the main nav menu
+ *
+ * @since 9.6.0
+ *
+ * @param string  $items Output of menu items.
+ * @param WP_Term $args Array of menu arguments.
+ *
+ * @return string Output of menu items.
+ */
+function filter_wp_nav_menu_items( $items, $args ) {
+
+	if ( 'primary' === $args->theme_location ) {
+		$items .= '<li class="menu-item search-form">' . get_search_form( false ) . '</li>';
+	}
+
+	return $items;
+
 }
 
 /**
@@ -79,6 +102,7 @@ function action_init() {
 
 	remove_post_type_support( 'post', 'comments' );
 	remove_post_type_support( 'page', 'comments' );
+	add_image_size( 'avatar', 228, 228, true );
 
 }
 
@@ -124,6 +148,9 @@ function action_after_setup_theme() {
 
 	// Add theme support for the title tag.
 	add_theme_support( 'title-tag' );
+
+	// Add theme support for the title tag.
+	add_theme_support( 'html5' );
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus(

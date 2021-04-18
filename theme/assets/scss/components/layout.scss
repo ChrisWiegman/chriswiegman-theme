@@ -42,11 +42,22 @@ body {
         li {
 
             display: inline;
-            padding: 0;
+            padding: 0 15px 0 0;
 
-            &.first {
-                padding-right: 25px;
-                ;
+            &.search-form {
+                padding-right: 0;
+            }
+
+            .search-form {
+
+                display: inline;
+
+                label {
+
+                    .screen-reader-text {
+                        display: none;
+                    }
+                }
             }
         }
     }
@@ -88,7 +99,6 @@ body {
 
     .intro {
 
-        margin-top: 2rem;
         clear: both;
         display: inline-block;
         width: 100%;
@@ -129,7 +139,8 @@ body {
             max-width: 100%;
         }
 
-        &.home {
+        &.home,
+        &.search {
 
             .posts-for-year {
                 margin-left: 20px;
@@ -196,6 +207,10 @@ body {
     }
 
     .prevnext {
+
+        a {
+            border-bottom: none;
+        }
 
         font-size: 0.8rem;
         line-height: 0.8rem;
