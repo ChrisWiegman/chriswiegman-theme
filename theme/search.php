@@ -9,7 +9,7 @@ get_header();
 
 echo '<div class="content search">';
 
-printf( '<h1>Search results for: %s</h1>', get_search_query() );
+printf( '<h1>Search results for: %s</h1>', esc_attr( get_search_query() ) );
 
 if ( have_posts() ) {
 
