@@ -17,18 +17,23 @@
         }
     }
 
-    .container .content.home {
+    .container {
 
-        .posts-group {
+        padding-top: 2rem;
 
-            display: block;
+        .content.home {
 
-            .post-year {
-                margin: -6px 0 4px;
-            }
+            .posts-group {
 
-            .post-day {
-                display: none;
+                display: block;
+
+                .post-year {
+                    margin: -6px 0 4px;
+                }
+
+                .post-day {
+                    display: none;
+                }
             }
         }
     }
