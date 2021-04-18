@@ -42,11 +42,22 @@ body {
         li {
 
             display: inline;
-            padding: 0;
+            padding: 0 15px 0 0;
 
-            &.first {
-                padding-right: 25px;
-                ;
+            &.search-form {
+                padding-right: 0;
+            }
+
+            .search-form {
+
+                display: inline;
+
+                label {
+
+                    .screen-reader-text {
+                        display: none;
+                    }
+                }
             }
         }
     }

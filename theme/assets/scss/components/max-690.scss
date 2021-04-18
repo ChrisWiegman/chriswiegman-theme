@@ -1,4 +1,4 @@
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 690px) {
 
     .header {
 
@@ -6,6 +6,14 @@
 
         .content span.site-title {
             font-size: 1rem;
+        }
+
+        ul.menu li.search-form {
+            display: block;
+            left: 0;
+            position: absolute;
+            text-align: center;
+            width: 100%;
         }
     }
 

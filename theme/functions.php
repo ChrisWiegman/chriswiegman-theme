@@ -54,7 +54,7 @@ function init() {
  *
  * @since 9.6.0
  *
- * @param string $items Output of menu items.
+ * @param string  $items Output of menu items.
  * @param WP_Term $args Array of menu arguments.
  *
  * @return string Output of menu items.
@@ -62,7 +62,7 @@ function init() {
 function filter_wp_nav_menu_items( $items, $args ) {
 
 	if ( 'primary' === $args->theme_location ) {
-		$items .= '<li class="menu-item">' . get_search_form( false ) . '</li>';
+		$items .= '<li class="menu-item search-form">' . get_search_form( false ) . '</li>';
 	}
 
 	return $items;
@@ -148,6 +148,9 @@ function action_after_setup_theme() {
 
 	// Add theme support for the title tag.
 	add_theme_support( 'title-tag' );
+
+	// Add theme support for the title tag.
+	add_theme_support( 'html5' );
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus(
