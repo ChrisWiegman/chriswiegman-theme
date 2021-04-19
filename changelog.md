@@ -1,3 +1,7 @@
+# 9.7.0
+
+* Add security headers
+
 # 9.6.1
 
 * Fix a CSS issue causing horizontal scroll on header (Thanks David Wolfpaw)

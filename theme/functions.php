@@ -8,7 +8,7 @@
 namespace CW\Theme;
 
 // Useful global constants.
-define( 'CW_THEME_VERSION', '9.6.1' );
+define( 'CW_THEME_VERSION', '9.7.0' );
 
 /**
  * Setup theme hooks.
@@ -31,7 +31,7 @@ function init() {
 	add_action( 'init', $n( 'action_init' ), 100 );
 	add_action( 'wp_before_admin_bar_render', $n( 'action_wp_before_admin_bar_render' ) );
 	add_filter( 'wp_nav_menu_items', $n( 'filter_wp_nav_menu_items' ), 10, 2 );
-
+	add_action( 'send_headers', $n( 'action_send_headers' ) );
 	// Cleanup extra garbage.
 	if ( function_exists( 'remove_action' ) ) {
 
@@ -45,6 +45,23 @@ function init() {
 		remove_action( 'wp_head', 'rest_output_link_wp_head' );
 
 	}
+}
+
+/**
+ * Action send_headers
+ *
+ * Set the security headers.
+ *
+ * @since 9.6.2
+ */
+function action_send_headers() {
+
+	header( 'Strict-Transport-Security: max-age=15768000' );
+	header( 'x-content-type-options: nosniff' );
+	header( 'x-permitted-cross-domain-policies: none' );
+	header( 'x-xss-protection: 1; mode=block' );
+	header( "content-security-policy default-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' 'unsafe-inline'; font-src 'self' 'unsafe-inline';" );
+
 }
 
 /**
