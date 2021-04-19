@@ -1,3 +1,7 @@
+# 9.7.1
+
+* Don't set content policy in theme. Use a plugin to modify
+
 # 9.7.0
 
 * Add security headers
