@@ -60,7 +60,7 @@ function action_send_headers() {
 	header( 'x-content-type-options: nosniff' );
 	header( 'x-permitted-cross-domain-policies: none' );
 	header( 'x-xss-protection: 1; mode=block' );
-	header( "content-security-policy default-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' 'unsafe-inline'; font-src 'self' 'unsafe-inline';" );
+	header( 'x-frame-options: SAMEORIGIN' );
 
 }
 
