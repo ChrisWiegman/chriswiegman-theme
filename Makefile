@@ -1,5 +1,5 @@
 DOCKER_RUN				:= @docker run --rm
-COMPOSER_BASE_CONTAINER	:= -v $$(pwd):/app --user $$(id -u):$$(id -g) composer:1
+COMPOSER_BASE_CONTAINER	:= -v $$(pwd):/app --user $$(id -u):$$(id -g) composer
 NODE_IMAGE 				:= -w /home/node/app -v $$(pwd):/home/node/app --user node wpnode
 HAS_LANDO 				:= $(shell command -v lando 2> /dev/null)
 CURRENTUSER				:= $$(id -u)
@@ -119,8 +119,6 @@ ifdef HAS_LANDO
 	fi
 	if [ ! -f ./wordpress/wp-config.php ]; then \
 		$(MAKE) setup-wordpress; \
-		$(MAKE) copy-prod-assets; \
-		$(MAKE) import-db; \
 		$(MAKE) setup-wordpress-plugins; \
 		$(MAKE) setup-wordpress-theme; \
 		echo "You can open your dev site at: ${HIGHLIGHT}https://chriswiegman-theme.lndo.site${END_HIGHLIGHT}"; \
@@ -143,6 +141,12 @@ refresh: clean-prod-assets copy-prod-assets import-db setup-wordpress-plugins se
 .PHONY: relase
 release: chriswiegman-theme.zip
 
+.PHONY: setup
+setup: | copy-prod-assets import-db
+	lando wp plugin deactivate --path=./wordpress ewww-image-optimizer
+	$(MAKE) setup-wordpress-plugins
+	$(MAKE) setup-wordpress-theme
+
 .PHONY: setup-wordpress
 setup-wordpress:
 	@echo "Setting up WordPress"
@@ -152,8 +156,6 @@ setup-wordpress:
 
 .PHONY: setup-wordpress-plugins
 setup-wordpress-plugins:
-	lando wp plugin deactivate --path=./wordpress wordfence
-	lando wp plugin deactivate --path=./wordpress ewww-image-optimizer
 	lando wp plugin install --path=./wordpress debug-bar --activate
 	lando wp plugin install --path=./wordpress query-monitor --activate
 
