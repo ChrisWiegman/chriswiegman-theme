@@ -1,3 +1,7 @@
+# 9.7.2
+
+* Moved my own site import to a separate Make target to make working with the theme easier for others
+
 # 9.7.1
 
 * Don't set content policy in theme. Use a plugin to modify
