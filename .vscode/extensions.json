@@ -1,9 +1,8 @@
 {
     "recommendations": [
-      "ikappas.phpcs",
       "bmewburn.vscode-intelephense-client",
       "neilbrayfield.php-docblocker",
-      "persoderlind.vscode-phpcbf",
+      "wongjn.php-sniffer",
       "felixfbecker.php-debug",
       "dbaeumer.jshint",
       "johnbillion.vscode-wordpress-hooks",
