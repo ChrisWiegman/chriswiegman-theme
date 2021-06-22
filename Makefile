@@ -43,7 +43,7 @@ chriswiegman-theme.zip: clean-release build-assets
 	rm -rf chriswiegman-theme.$(THEME_VERSION).zip
 	rm -rf build
 	mkdir build
-	cp -avr theme build
+	cp -av theme build
 	mv build/theme build/chriswiegman-theme
 	THEME_VERSION=$(THEME_VERSION) && cd build && zip -r chriswiegman-theme.$$THEME_VERSION.zip *
 	mv build/chriswiegman-theme.$(THEME_VERSION).zip ./
