@@ -12,8 +12,11 @@
       "michelemelluso.code-beautifier",
       "syler.sass-indented",
       "michelemelluso.code-beautifier",
-      "glen-84.sass-lint",
       "pflannery.vscode-versionlens",
-      "mrmlnc.vscode-scss"
+      "mrmlnc.vscode-scss",
+      "pflannery.vscode-versionlens",
+      "eamodio.gitlens",
+      "mhutchie.git-graph",
+      "donjayamanne.githistory"
     ]
   }
