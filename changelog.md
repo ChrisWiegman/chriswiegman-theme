@@ -1,3 +1,8 @@
+# 9.7.3
+
+* Updated dependencies
+* Fixed editor.css
+
 # 9.7.2
 
 * Moved my own site import to a separate Make target to make working with the theme easier for others
