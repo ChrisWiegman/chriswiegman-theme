@@ -1,3 +1,6 @@
+# 9.7.4
+* Updated dependencies
+
 # 9.7.3
 
 * Updated dependencies

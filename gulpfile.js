@@ -1,5 +1,5 @@
 var gulp = require('gulp');
-var gulpSass = require('gulp-sass');
+var gulpSass = require('gulp-sass')(require('sass'));
 var rename = require('gulp-rename');
 var sourcemaps = require('gulp-sourcemaps');
 const del = require('del');
