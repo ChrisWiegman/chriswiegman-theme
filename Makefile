@@ -31,7 +31,6 @@ chriswiegman-theme.zip: clean-release build-assets
 .PHONY: chriswiegman-theme-version.zip
 chriswiegman-theme-version.zip: clean-release
 	@echo "Building release file: chriswiegman-theme.$(THEME_VERSION).zip"
-	rm -rf chriswiegman-theme.$(THEME_VERSION).zip
 	THEME_VERSION=$(THEME_VERSION) && cd ../ && zip --verbose -r -x=@chriswiegman-theme/.zipignore chriswiegman-theme/chriswiegman-theme.$$THEME_VERSION.zip chriswiegman-theme/*
 	if [ ! -f ./chriswiegman-theme.$(THEME_VERSION).zip  ]; then \
 		echo "file not available"; \
