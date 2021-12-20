@@ -1,6 +1,4 @@
 {
-    "phpcs.standard": "phpcs.xml",
-    "phpcbf.executablePath": "${workspaceRoot}/vendor/bin/phpcbf",
-    "phpcbf.standard": "phpcs.xml",
+    "phpSniffer.autoDetect": true,
     "intelephense.diagnostics.undefinedConstants": false,
 }

@@ -4,19 +4,8 @@
       "neilbrayfield.php-docblocker",
       "wongjn.php-sniffer",
       "felixfbecker.php-debug",
-      "dbaeumer.jshint",
-      "johnbillion.vscode-wordpress-hooks",
-      "mrmlnc.vscode-scss",
-      "ban.spellright",
-      "coenraads.bracket-pair-colorizer-2",
-      "michelemelluso.code-beautifier",
-      "syler.sass-indented",
-      "michelemelluso.code-beautifier",
-      "pflannery.vscode-versionlens",
-      "mrmlnc.vscode-scss",
-      "pflannery.vscode-versionlens",
-      "eamodio.gitlens",
-      "mhutchie.git-graph",
-      "donjayamanne.githistory"
+      "dbaeumer.vscode-eslint",
+      "esbenp.prettier-vscode",
+      "johnbillion.vscode-wordpress-hooks"
     ]
   }
