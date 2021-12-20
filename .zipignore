@@ -24,3 +24,4 @@
 *.cache/*
 *.idea/*
 *.DS_Store*
+*gulpfile.js*
