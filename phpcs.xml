@@ -30,16 +30,16 @@
 	<rule ref="WordPress.NamingConventions.PrefixAllGlobals">
 		<properties>
 			<property name="prefixes" type="array">
-				<element value="cw_chriswiegman_plugin" />
+				<element value="cw_chriswiegman_theme" />
 				<element value="ChrisWiegman" />
-				<element value="cw_plugin" />
+				<element value="cw_theme" />
 			</property>
 		</properties>
 	</rule>
 
 	<rule ref="WordPress.WP.I18n">
 		<properties>
-			<property name="text_domain" type="array" value="chriswiegman-plugin" />
+			<property name="text_domain" type="array" value="chriswiegman-theme" />
 		</properties>
 	</rule>
 </ruleset>
