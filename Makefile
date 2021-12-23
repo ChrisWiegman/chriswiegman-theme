@@ -159,24 +159,24 @@ setup-wordpress-theme:
 	lando wp theme activate --path=./wordpress chriswiegman-theme
 
 .PHONY: start
-start: lando-start
+start: lando-start open-site ## Starts the development environment including downloading and setting up everything it needs
 
 .PHONY: stop
-stop: lando-stop
+stop: lando-stop ## Stops the development environment. This is non-destructive.
 
 .PHONY: test
-test: test-lint test-unit
+test: test-lint test-phpunit  ## Run all testing
 
 .PHONY: test-lint
-test-lint: test-lint-php test-lint-javascript
+test-lint: test-lint-php test-lint-javascript ## Run linting on both PHP and JavaScript
 
 .PHONY: test-lint-javascript
-test-lint-javascript: | build-docker-node
+test-lint-javascript: | build-docker-node ## Run linting on JavaScript only
 	@echo "Running JavaScript linting"
 	$(DOCKER_RUN) $(NODE_IMAGE) ./node_modules/jshint/bin/jshint
 
 .PHONY: test-lint-php
-test-lint-php:
+test-lint-php: ## Run linting on PHP only
 	@echo "Running PHP linting"
 	docker run \
 		-v "$$(pwd):/app" \
