@@ -23,10 +23,6 @@ jobs:
         run: |
           cd ${GITHUB_WORKSPACE}
           make test-lint-php
-      - name: Lint JavaScript
-        run: |
-          cd ${GITHUB_WORKSPACE}
-          make test-lint-javascript
       - name: PHPUnit
         run: |
           cd ${GITHUB_WORKSPACE}

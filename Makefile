@@ -52,7 +52,8 @@ clean-build:
 	rm -rf \
 		node_modules \
 		wordpress \
-		vendor
+		vendor \
+		.phpunit.result.cache
 
 .PHONY: clean-release
 clean-release:
@@ -168,12 +169,12 @@ stop: lando-stop ## Stops the development environment. This is non-destructive.
 test: test-lint test-phpunit  ## Run all testing
 
 .PHONY: test-lint
-test-lint: test-lint-php test-lint-javascript ## Run linting on both PHP and JavaScript
+test-lint: test-lint-php ## Run linting on both PHP and JavaScript
 
 .PHONY: test-lint-javascript
-test-lint-javascript: | build-docker-node ## Run linting on JavaScript only
+test-lint-javascript: ## Run linting on JavaScript only
 	@echo "Running JavaScript linting"
-	$(DOCKER_RUN) $(NODE_IMAGE) ./node_modules/jshint/bin/jshint
+	$(DOCKER_RUN) $(NODE_IMAGE) npm run lint
 
 .PHONY: test-lint-php
 test-lint-php: ## Run linting on PHP only
