@@ -15,28 +15,28 @@ if ( have_posts() ) {
 
 	echo '<!-- Group by year. -->';
 
-	$current_year = false;
+	$cw_theme_current_year = false;
 
 	/* Start the Loop */
 	while ( have_posts() ) {
 		the_post();
 
-		$post_year = get_the_date( 'Y' );
+		$cw_theme_post_year = get_the_date( 'Y' );
 
-		if ( $post_year !== $current_year ) {
+		if ( $cw_theme_post_year !== $cw_theme_current_year ) {
 
-			if ( false !== $current_year ) {
+			if ( false !== $cw_theme_current_year ) {
 				echo '</ul>';
 				echo '</div>';
 			}
 
 			echo '<div class="posts-group">';
-			printf( '<div class="post-year" id="%d">%d</div>', intval( $post_year ), intval( $post_year ) );
+			printf( '<div class="post-year" id="%d">%d</div>', intval( $cw_theme_post_year ), intval( $cw_theme_post_year ) );
 			echo '<ul class="posts-list">';
 
 		}
 
-		$current_year = $post_year;
+		$cw_theme_current_year = $cw_theme_post_year;
 
 		echo '<li class="post-item">';
 		printf( '<a href="%s">', esc_url( get_the_permalink() ) );
