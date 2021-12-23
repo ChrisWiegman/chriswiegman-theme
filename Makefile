@@ -125,7 +125,7 @@ endif
 
 .PHONY: open
 open: ## Open the development site in your default browser
-	open https://chriswiegman-plugin.lndo.site
+	open https://chriswiegman-theme.lndo.site
 
 .PHONY: open-db
 open-db: ## Open the database in TablePlus
