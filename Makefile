@@ -1,41 +1,21 @@
-DOCKER_RUN				:= @docker run --rm
-COMPOSER_BASE_CONTAINER	:= -v $$(pwd):/app --user $$(id -u):$$(id -g) composer
-NODE_IMAGE 				:= -w /home/node/app -v $$(pwd):/home/node/app --user node wpnode
-HAS_LANDO 				:= $(shell command -v lando 2> /dev/null)
-CURRENTUSER				:= $$(id -u)
-CURRENTGROUP			:= $$(id -g)
-HIGHLIGHT				:=\033[0;32m
-END_HIGHLIGHT			:=\033[0m # No Color
-THEME_VERSION           := $$(grep "^Version" theme/style.css | awk -F' ' '{print $3}' | cut -d ":" -f2 | sed 's/ //g')
+DOCKER_RUN     := @docker run --rm
+COMPOSER_IMAGE := -v $$(pwd):/app --user $$(id -u):$$(id -g) composer
+NODE_IMAGE     := -w /home/node/app -v $$(pwd):/home/node/app --user node node:lts
+HAS_LANDO      := $(shell command -v lando 2> /dev/null)
+HIGHLIGHT      :=\033[0;32m
+END_HIGHLIGHT  :=\033[0m # No Color
+THEME_VERSION  := $$(grep "^Version" style.css | awk -F' ' '{print $3}' | cut -d ":" -f2 | sed 's/ //g')
 
 .PHONY: build
 build: build-assets
 
 .PHONY: build-assets
-build-assets: | clean-assets build-docker-node
+build-assets: | clean-assets
 	@echo "Building theme assets"
 	$(DOCKER_RUN) $(NODE_IMAGE) ./node_modules/gulp-cli/bin/gulp.js
 
 .PHONY: build-docker
 build-docker: build-docker-node build-docker-php
-
-.PHONY: build-docker-node
-build-docker-node:
-	if [ ! "$$(docker images | grep wpnode)" ]; then \
-		echo "Building the Node image"; \
-		docker build \
-			-f Docker/Dockerfile-node \
-			--build-arg UID=$(CURRENTUSER) \
-			--build-arg GID=$(CURRENTUSER) \
-			-t wpnode .; \
-	fi
-
-.PHONY: build-docker-php
-build-docker-php:
-	if [ ! "$$(docker images | grep wpunit)" ]; then \
-		echo "Building the PHP image"; \
-		docker build -f Docker/Dockerfile-php -t wpunit .; \
-	fi
 
 .PHONY: chriswiegman-theme.zip
 chriswiegman-theme.zip: clean-release build-assets
@@ -48,14 +28,23 @@ chriswiegman-theme.zip: clean-release build-assets
 	THEME_VERSION=$(THEME_VERSION) && cd build && zip -r chriswiegman-theme.$$THEME_VERSION.zip *
 	mv build/chriswiegman-theme.$(THEME_VERSION).zip ./
 
+.PHONY: chriswiegman-theme-version.zip
+chriswiegman-theme-version.zip: clean-release
+	@echo "Building release file: chriswiegman-theme.$(THEME_VERSION).zip"
+	THEME_VERSION=$(THEME_VERSION) && cd ../ && zip --verbose -r -x=@chriswiegman-theme/.zipignore chriswiegman-theme/chriswiegman-theme.$$THEME_VERSION.zip chriswiegman-theme/*
+	if [ ! -f ./chriswiegman-theme.$(THEME_VERSION).zip  ]; then \
+		echo "file not available"; \
+		exit 1; \
+	fi
+
 .PHONY: clean
-clean: stop clean-assets clean-build clean-release
+clean: clean-assets clean-build clean-release
 
 .PHONY: clean-assets
 clean-assets:
 	@echo "Cleaning up theme assets"
-	rm -f theme/assets/*.js
-	rm -f theme/assets/*.css
+	rm -f assets/*.js
+	rm -f assets/*.css
 
 .PHONY: clean-build
 clean-build:
@@ -63,35 +52,34 @@ clean-build:
 	rm -rf \
 		node_modules \
 		wordpress \
-		build \
-		vendor \
-		clover.xml \
-		.phpunit.result.cache
-
-.PHONY: clean-prod-assets
-clean-prod-assets:
-	@echo "Cleaning old production assets"
-	rm -rf ./wordpress/wp-content/mysql.sql
-	rm -rf ./wordpress/wp-content/plugins/*
-	rm -rf ./wordpress/wp-content/uploads/*
+		vendor
 
 .PHONY: clean-release
 clean-release:
 	@echo "Cleaning up release file"
-	rm -f chriswiegman-theme.*.zip
+	rm -f chriswiegman-theme*.zip
 
-.PHONY: copy-prod-assets
-copy-prod-assets: | clean-prod-assets
-	@echo "Copying assets from chriswiegman.com"
-	rsync -avz -e "ssh" --progress chriswiegman@chriswiegman.ssh.wpengine.net:/home/wpe-user/sites/chriswiegman/wp-content/plugins/ ./wordpress/wp-content/plugins/
-	rsync -avz -e "ssh" --progress chriswiegman@chriswiegman.ssh.wpengine.net:/home/wpe-user/sites/chriswiegman/wp-content/uploads/ ./wordpress/wp-content/uploads/
-	scp chriswiegman@chriswiegman.ssh.wpengine.net:/home/wpe-user/sites/chriswiegman/wp-content/mysql.sql ./wordpress/wp-content/
+.PHONY: destroy
+destroy: ## Destroys the developer environment completely (this is irreversible)
+	lando destroy -y
+	$(MAKE) clean
 
-.PHONY: import-db
-import-db:
-	echo "Importing production database"
-	lando db-import ./wordpress/wp-content/mysql.sql
-	lando wp --path=./wordpress search-replace https://chriswiegman.com https://chriswiegman-theme.lndo.site --all-tables
+.PHONY: flush-cache
+flush-cache: ## Clears all server caches enabled within WordPress
+	@echo "Flushing cache"
+	lando wp cache flush --path=./wordpress
+
+.PHONY: delete-transients
+delete-transients: ## Deletes all WordPress transients stored in the database
+	@echo "Deleting transients"
+	lando wp transient delete --path=./wordpress --all
+
+.PHONY: help
+help:  ## Display help
+	@awk -F ':|##' \
+		'/^[^\t].+?:.*?##/ {\
+			printf "\033[36m%-30s\033[0m %s\n", $$1, $$NF \
+		}' $(MAKEFILE_LIST) | sort
 
 .PHONY: install
 install: | clean-assets clean-build
@@ -101,10 +89,10 @@ install: | clean-assets clean-build
 
 .PHONY: install-composer
 install-composer:
-	$(DOCKER_RUN) $(COMPOSER_BASE_CONTAINER) install
+	$(DOCKER_RUN) $(COMPOSER_IMAGE) install
 
 .PHONY: install-npm
-install-npm: | build-docker-node
+install-npm:
 	$(DOCKER_RUN) $(NODE_IMAGE) npm install
 
 .PHONY: lando-start
@@ -135,21 +123,28 @@ ifdef HAS_LANDO
 	fi
 endif
 
-.PHONY: refresh
-refresh: clean-prod-assets copy-prod-assets import-db setup-wordpress-plugins setup-wordpress-theme;
+.PHONY: open
+open: ## Open the development site in your default browser
+	open https://chriswiegman-theme.lndo.site
+
+.PHONY: open-db
+open-db: ## Open the database in TablePlus
+	@echo "Opening the database for direct access"
+	open mysql://wordpress:wordpress@127.0.0.1:$$(lando info --service=database --path 0.external_connection.port | tr -d "'")/wordpress?enviroment=local&name=$database&safeModeLevel=0&advancedSafeModeLevel=0
+
+.PHONY: open-site
+open-site: open
 
 .PHONY: relase
-release: chriswiegman-theme.zip
+release: chriswiegman-theme-version.zip
 
-.PHONY: setup
-setup: | copy-prod-assets import-db
-	lando wp plugin deactivate --path=./wordpress ewww-image-optimizer
-	$(MAKE) setup-wordpress-plugins
-	$(MAKE) setup-wordpress-theme
+.PHONY: reset
+reset: destroy start ## Resets a running dev environment to new
 
 .PHONY: setup-wordpress
 setup-wordpress:
 	@echo "Setting up WordPress"
+	lando wp core download --path=./wordpress --version=latest
 	lando wp config create --dbname=wordpress --dbuser=wordpress --dbpass=wordpress --dbhost=database --path=./wordpress
 	lando wp core install --path=./wordpress --url=https://chriswiegman-theme.lndo.site --title="Chris Wiegman Theme Development" --admin_user=admin --admin_password=password --admin_email=contact@chriswiegman.com
 	sed -i "/$table_prefix = 'wp_';/a define( 'WP_DEBUG', true );\ndefine( 'WP_DEBUG_DISPLAY', true );" ./wordpress/wp-config.php
@@ -164,38 +159,46 @@ setup-wordpress-theme:
 	lando wp theme activate --path=./wordpress chriswiegman-theme
 
 .PHONY: start
-start: lando-start
+start: lando-start open-site ## Starts the development environment including downloading and setting up everything it needs
 
 .PHONY: stop
-stop: lando-stop
+stop: lando-stop ## Stops the development environment. This is non-destructive.
 
 .PHONY: test
-test: test-lint test-unit
+test: test-lint test-phpunit  ## Run all testing
 
 .PHONY: test-lint
-test-lint: test-lint-php test-lint-javascript
+test-lint: test-lint-php test-lint-javascript ## Run linting on both PHP and JavaScript
 
 .PHONY: test-lint-javascript
-test-lint-javascript: | build-docker-node
+test-lint-javascript: | build-docker-node ## Run linting on JavaScript only
 	@echo "Running JavaScript linting"
 	$(DOCKER_RUN) $(NODE_IMAGE) ./node_modules/jshint/bin/jshint
 
 .PHONY: test-lint-php
-test-lint-php:
+test-lint-php: ## Run linting on PHP only
 	@echo "Running PHP linting"
-	./vendor/bin/phpcs --standard=./phpcs.xml
+	docker run \
+		-v "$$(pwd):/app" \
+		--workdir /app \
+		--rm \
+		php:7.4-cli \
+		/app/vendor/bin/phpcs --standard=./phpcs.xml
 
-.PHONY: test-unit
-test-unit: | build-docker-php
+.PHONY: test-phpunit
+test-phpunit: ## Run PhpUnit
 	@echo "Running Unit Tests Without Coverage"
-	docker run -v $$(pwd):/app --rm wpunit /app/vendor/bin/phpunit
-	rm -rf .phpunit.result.cache
+	docker run \
+		-v "$$(pwd):/app" \
+		--workdir /app \
+		--rm \
+		php:7.4-cli \
+		/app/vendor/bin/phpunit
 
-.PHONY: test-unit-coverage
-test-unit-coverage: | build-docker-php
-	@echo "Running Unit Tests With Coverage"
-	docker run -v $$(pwd):/app --rm --user $$(id -u):$$(id -g) wpunit /app/vendor/bin/phpunit  --coverage-text --coverage-html build/coverage/
-	rm -rf .phpunit.result.cache
+.PHONY: trust-lando-cert-mac
+trust-lando-cert-mac: ## Trust Lando's SSL certificate on your mac
+	@echo "Trusting Lando cert"
+	sudo security add-trusted-cert -d -r trustRoot -k /Library/Keychains/System.keychain ~/.lando/certs/lndo.site.pem
 
 .PHONY: update-composer
 update-composer:
@@ -209,18 +212,3 @@ update-npm:
 watch: | build-assets
 	@echo "Building and watching theme assets"
 	$(DOCKER_RUN) $(NODE_IMAGE) ./node_modules/gulp-cli/bin/gulp.js watch
-
-.PHONY: trust-lando-cert-mac
-trust-lando-cert-mac:
-	@echo "Trusting Lando cert"
-	sudo security add-trusted-cert -d -r trustRoot -k /Library/Keychains/System.keychain ~/.lando/certs/lndo.site.pem
-
-.PHONY: flush-cache
-flush-cache:
-	@echo "Flushing cache"
-	lando wp cache flush --path=./wordpress
-
-.PHONY: delete-transients
-delete-transients:
-	@echo "Deleting transients"
-	lando wp transient delete --path=./wordpress --all

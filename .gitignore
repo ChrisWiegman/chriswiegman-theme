@@ -196,12 +196,12 @@ tmtags
 # Build Assets
 node_modules
 vendor
-/theme/languages/*.pot
-/theme/assets/*.css
-/theme/assets/*.js
-/theme/assets/*.map
+/languages/*.pot
+/assets/*.css
+/assets/*.js
+/assets/*.map
 coverage.clover
-/theme/scripts/*-min.js
+/scripts/*-min.js
 chriswiegman-theme.*.zip
 
 # Docker files

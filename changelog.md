@@ -1,3 +1,9 @@
+# 10.0.0
+* Restructured plugin for easier development
+* Updated dependencies
+* Switched to WordPress Coding Standards
+* Numerous makefile and other improvements
+
 # 9.7.4
 * Updated dependencies
 

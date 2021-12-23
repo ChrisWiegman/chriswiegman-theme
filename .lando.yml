@@ -2,7 +2,7 @@ name: chriswiegman-theme
 recipe: wordpress
 config:
   webroot: wordpress
-  php: '7.4'
+  php: "7.4"
   via: nginx
   database: mariadb
 services:
@@ -11,15 +11,11 @@ services:
     portforward: true
     hogfrom:
       - appserver
-  phpmyadmin:
-    type: phpmyadmin
-    hosts:
-      - database
   appserver:
     xdebug: debug
     overrides:
       volumes:
-        - ./theme:/app/wordpress/wp-content/themes/chriswiegman-theme
+        - ./:/app/wordpress/wp-content/themes/chriswiegman-theme
 tooling:
   xdebug-on:
     service: appserver
