@@ -1,25 +1,19 @@
-name: commit
+name: Testing
 
 on: [push]
 
 jobs:
-  build-and-test:
+  build-test:
     runs-on: ubuntu-latest
-    name: Build and test the plugin
     steps:
-      - name: Get working copy
-        uses: actions/checkout@main
+      - uses: actions/checkout@v2
+      - uses: php-actions/composer@v6
+      - name: PHPUnit Tests
+        uses: php-actions/phpunit@v3
         with:
-          fetch-depth: 1
-      - name: Install dependencies
+          configuration: phpunit.xml.dist
+          args: --coverage-text
+      - name: PHP_CodeSniffer
         run: |
           cd ${GITHUB_WORKSPACE}
-          make install-composer
-      - name: Lint PHP
-        run: |
-          cd ${GITHUB_WORKSPACE}
-          make test-lint-php
-      - name: PHPUnit
-        run: |
-          cd ${GITHUB_WORKSPACE}
-          make test-unit-coverage
+          ./vendor/bin/phpcs --standard=./phpcs.xml
