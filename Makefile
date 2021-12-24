@@ -38,7 +38,7 @@ chriswiegman-theme-version.zip: clean-release
 	fi
 
 .PHONY: clean
-clean: clean-assets clean-build clean-release
+clean: clean-assets clean-prod-assets clean-build clean-release
 
 .PHONY: clean-assets
 clean-assets:
@@ -55,10 +55,30 @@ clean-build:
 		vendor \
 		.phpunit.result.cache
 
+.PHONY: clean-prod-assets
+clean-prod-assets:
+	@echo "Cleaning old production assets"
+	rm -rf ./wordpress/wp-content/mysql.sql
+	rm -rf ./wordpress/wp-content/plugins/*
+	rm -rf ./wordpress/wp-content/uploads/*
+
 .PHONY: clean-release
 clean-release:
 	@echo "Cleaning up release file"
 	rm -f chriswiegman-theme*.zip
+
+.PHONY: copy-prod-assets
+copy-prod-assets: | clean-prod-assets
+	@echo "Copying assets from chriswiegman.com"
+	rsync -avz -e "ssh" --progress chriswiegman@chriswiegman.ssh.wpengine.net:/home/wpe-user/sites/chriswiegman/wp-content/plugins/ ./wordpress/wp-content/plugins/
+	rsync -avz -e "ssh" --progress chriswiegman@chriswiegman.ssh.wpengine.net:/home/wpe-user/sites/chriswiegman/wp-content/uploads/ ./wordpress/wp-content/uploads/
+	scp chriswiegman@chriswiegman.ssh.wpengine.net:/home/wpe-user/sites/chriswiegman/wp-content/mysql.sql ./wordpress/wp-content/
+
+.PHONY: import-db
+import-db:
+	echo "Importing production database"
+	lando db-import ./wordpress/wp-content/mysql.sql
+	lando wp --path=./wordpress search-replace https://chriswiegman.com https://chriswiegman-theme.lndo.site --all-tables
 
 .PHONY: destroy
 destroy: ## Destroys the developer environment completely (this is irreversible)
@@ -141,6 +161,12 @@ release: chriswiegman-theme-version.zip
 
 .PHONY: reset
 reset: destroy start ## Resets a running dev environment to new
+
+.PHONY: setup-site
+setup: | copy-prod-assets import-db
+	lando wp plugin deactivate --path=./wordpress ewww-image-optimizer
+	$(MAKE) setup-wordpress-plugins
+	$(MAKE) setup-wordpress-theme
 
 .PHONY: setup-wordpress
 setup-wordpress:
