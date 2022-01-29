@@ -8,6 +8,13 @@ body {
   background: $background;
 }
 
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 900px;
+  padding: 2rem;
+}
+
 header,
 footer {
   .content {
@@ -64,6 +71,72 @@ header {
 }
 
 main {
+  margin-top: 60px;
+  min-height: calc(100vh - 215px);
+
+  article {
+    a {
+      border-top: 2px solid transparent;
+      border-bottom: 2px solid $primary;
+      color: $link;
+      font-weight: 600;
+
+      &:hover {
+        background: $primary;
+        border-top: 2px solid $primary;
+        color: $reverse;
+      }
+    }
+  }
+
+  .hero {
+    padding: 2rem 0 0;
+    text-align: left;
+
+    .container {
+      color: $text-dark;
+      font-size: 1.3rem;
+
+      .content {
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+
+        h1 {
+          color: $text-bright;
+          font-size: 3rem;
+          margin-bottom: 1.5rem;
+        }
+
+        img {
+          height: auto;
+          margin-left: 2rem;
+          width: 250px;
+        }
+      }
+
+      .social {
+        display: flex;
+        gap: 1rem;
+        font-size: 1.3rem;
+        align-items: center;
+
+        a,
+        a:hover {
+          border-bottom: none;
+        }
+
+        svg {
+          font-size: 2rem;
+          fill: $link;
+
+          &:hover {
+            fill: $reverse;
+          }
+        }
+      }
+    }
+  }
 }
 
 footer {
