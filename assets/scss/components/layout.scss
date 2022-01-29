@@ -1,34 +1,48 @@
+html {
+  background-color: $background;
+}
+
 body {
   margin: 0;
 }
 
-.header {
+header {
   top: 0;
-  padding: 1rem 10px;
+  background: $header-footer-background;
+  border-bottom: 1px solid $border;
+  height: 60px;
+  left: 0;
+  position: fixed;
+  width: 100%;
+
+  a {
+    border-radius: 8px;
+    color: $font;
+    line-height: 1.1;
+    padding: 0.5rem;
+
+    &:hover {
+      color: $bright-font;
+      background: $header-footer-background-hover;
+    }
+  }
 
   .content {
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    height: 100%;
     margin: 0 auto;
-    max-width: 960px;
-    padding: 0 1rem;
+    padding: 0.5rem 1.5rem;
 
     span.site-title {
-      flex: 1;
-      font-size: 1.4rem;
+      font-size: 1rem;
       font-weight: bold;
-
-      a {
-        color: $text-color;
-
-        &:hover {
-          color: $link-hover-color;
-        }
-      }
     }
   }
 
-  ul.menu {
+  ul.menu,
+  div.menu ul {
     padding: 0;
     margin: 0;
     right: 0;
@@ -36,7 +50,7 @@ body {
 
     li {
       display: inline;
-      padding: 0 15px 0 0;
+      gap: 0.5rem;
 
       &.search-form {
         padding-right: 0;
@@ -55,17 +69,17 @@ body {
   }
 }
 
-.footer {
+footer {
+  background: $header-footer-background;
+  border-top: 1px solid $border;
+  padding: 3rem 0;
   width: 100%;
-  margin: 1rem 0 0 0;
 
   .content {
-    font-size: 0.7rem;
-    text-align: center;
-    padding: 0.5rem 0 0 0;
-    margin: 0 auto;
-    max-width: 960px;
-    line-height: 1.2rem;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
 
     ul {
       padding: 0;
@@ -80,10 +94,8 @@ body {
   }
 }
 
-.container {
-  margin: 0 auto;
-  max-width: 760px;
-  padding: 0 10px;
+main {
+  margin: 60px auto 0 auto;
 
   .intro {
     clear: both;
@@ -107,12 +119,11 @@ body {
   }
 
   .content {
-    a {
-      border-bottom: 1px solid $link-color;
-    }
+    margin: 0 auto;
+    max-width: 900px;
 
     li::marker {
-      color: $light-text-color;
+      color: $light-text;
     }
 
     img {
@@ -139,7 +150,7 @@ body {
           padding-top: 6px;
           margin-right: 1.8em;
           font-size: 1.6em;
-          color: $light-text-color;
+          color: $light-text;
 
           &:hover {
             text-decoration: underline;
@@ -155,7 +166,7 @@ body {
         }
 
         .post-item {
-          border-bottom: 1px $light-text-color dashed;
+          border-bottom: 1px $light-text dashed;
 
           a {
             display: flex;
@@ -167,7 +178,7 @@ body {
         }
 
         .post-day {
-          color: $light-text-color;
+          color: $light-text;
           flex-shrink: 0;
           font-size: 0.8rem;
           margin-left: 1em;
@@ -223,7 +234,7 @@ body {
       font-size: 0.8rem;
 
       a {
-        color: $light-text-color;
+        color: $light-text;
         font-weight: normal;
       }
     }

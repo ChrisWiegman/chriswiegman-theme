@@ -1,33 +1,32 @@
-$sans-font: Frutiger, "Helvetica Neue", Helvetica, Arial, sans-serif;
+$sans-font: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica,
+  Arial, sans-serif;
 
 html {
   font-family: $sans-font;
-  font-size: 20px;
-  line-height: 36px;
-  color: $text-color;
-}
-
-h2,
-h3,
-h4,
-h5,
-h6 {
-  border-bottom: 1px solid $border-color;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: $font;
 }
 
 a {
-  color: $link-color;
+  color: $link;
+  border-bottom: 2px solid $primary;
+  border-top: 2px solid transparent;
   text-decoration: none;
 
   &:hover {
-    color: $link-hover-color;
+    background: $primary;
+    color: $reverse;
+    border-top: 2px solid $primary;
+    border-bottom: 2px solid $primary;
   }
 }
 
 svg {
-  fill: $link-color;
+  fill: $link;
 
   &:hover {
-    fill: $link-hover-color;
+    fill: reverse;
+    background: $primary;
   }
 }

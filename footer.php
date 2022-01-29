@@ -7,9 +7,9 @@
 
 ?>
 
-</div>
+</main>
 
-<div class="footer wrapper">
+<footer>
 	<div class="content">
 		<nav class="nav">
 			<?php
@@ -27,7 +27,7 @@
 					Licensed</a> · <a href="/policies/">Policies</a></div>
 		</div>
 	</div>
-</div>
+</footer>
 
 <?php wp_footer(); ?>
 </body>
