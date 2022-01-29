@@ -1,32 +1,33 @@
-$sans-font: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica,
-  Arial, sans-serif;
+$sans-font: Frutiger, "Helvetica Neue", Helvetica, Arial, sans-serif;
 
 html {
   font-family: $sans-font;
-  font-size: 1rem;
-  line-height: 1.6;
-  color: $font;
+  font-size: 20px;
+  line-height: 36px;
+  color: $text-color;
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+  border-bottom: 1px solid $border-color;
 }
 
 a {
-  color: $link;
-  border-bottom: 2px solid $primary;
-  border-top: 2px solid transparent;
+  color: $link-color;
   text-decoration: none;
 
   &:hover {
-    background: $primary;
-    color: $reverse;
-    border-top: 2px solid $primary;
-    border-bottom: 2px solid $primary;
+    color: $link-hover-color;
   }
 }
 
 svg {
-  fill: $link;
+  fill: $link-color;
 
   &:hover {
-    fill: reverse;
-    background: $primary;
+    fill: $link-hover-color;
   }
 }

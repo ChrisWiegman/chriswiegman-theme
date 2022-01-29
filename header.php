@@ -19,7 +19,7 @@
 
 <body>
 
-<header>
+<div class="header">
 	<div class="content">
 		<span class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php bloginfo( 'name' ); ?> Homepage"><?php bloginfo( 'name' ); ?></a></span>
 		<?php
@@ -31,6 +31,6 @@
 		);
 		?>
 	</div>
-</header>
+</div>
 
-<main>
+<div class="container">

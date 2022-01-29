@@ -1,48 +1,34 @@
-html {
-  background-color: $background;
-}
-
 body {
   margin: 0;
 }
 
-header {
+.header {
   top: 0;
-  background: $header-footer-background;
-  border-bottom: 1px solid $border;
-  height: 60px;
-  left: 0;
-  position: fixed;
-  width: 100%;
-
-  a {
-    border-radius: 8px;
-    color: $font;
-    line-height: 1.1;
-    padding: 0.5rem;
-
-    &:hover {
-      color: $bright-font;
-      background: $header-footer-background-hover;
-    }
-  }
+  padding: 1rem 10px;
 
   .content {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    height: 100%;
     margin: 0 auto;
-    padding: 0.5rem 1.5rem;
+    max-width: 960px;
+    padding: 0 1rem;
 
     span.site-title {
-      font-size: 1rem;
+      flex: 1;
+      font-size: 1.4rem;
       font-weight: bold;
+
+      a {
+        color: $text-color;
+
+        &:hover {
+          color: $link-hover-color;
+        }
+      }
     }
   }
 
-  ul.menu,
-  div.menu ul {
+  ul.menu {
     padding: 0;
     margin: 0;
     right: 0;
@@ -50,7 +36,7 @@ header {
 
     li {
       display: inline;
-      gap: 0.5rem;
+      padding: 0 15px 0 0;
 
       &.search-form {
         padding-right: 0;
@@ -69,17 +55,17 @@ header {
   }
 }
 
-footer {
-  background: $header-footer-background;
-  border-top: 1px solid $border;
-  padding: 3rem 0;
+.footer {
   width: 100%;
+  margin: 1rem 0 0 0;
 
   .content {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    gap: 1.25rem;
+    font-size: 0.7rem;
+    text-align: center;
+    padding: 0.5rem 0 0 0;
+    margin: 0 auto;
+    max-width: 960px;
+    line-height: 1.2rem;
 
     ul {
       padding: 0;
@@ -94,8 +80,10 @@ footer {
   }
 }
 
-main {
-  margin: 60px auto 0 auto;
+.container {
+  margin: 0 auto;
+  max-width: 760px;
+  padding: 0 10px;
 
   .intro {
     clear: both;
@@ -119,11 +107,12 @@ main {
   }
 
   .content {
-    margin: 0 auto;
-    max-width: 900px;
+    a {
+      border-bottom: 1px solid $link-color;
+    }
 
     li::marker {
-      color: $light-text;
+      color: $light-text-color;
     }
 
     img {
@@ -150,7 +139,7 @@ main {
           padding-top: 6px;
           margin-right: 1.8em;
           font-size: 1.6em;
-          color: $light-text;
+          color: $light-text-color;
 
           &:hover {
             text-decoration: underline;
@@ -166,7 +155,7 @@ main {
         }
 
         .post-item {
-          border-bottom: 1px $light-text dashed;
+          border-bottom: 1px $light-text-color dashed;
 
           a {
             display: flex;
@@ -178,7 +167,7 @@ main {
         }
 
         .post-day {
-          color: $light-text;
+          color: $light-text-color;
           flex-shrink: 0;
           font-size: 0.8rem;
           margin-left: 1em;
@@ -234,7 +223,7 @@ main {
       font-size: 0.8rem;
 
       a {
-        color: $light-text;
+        color: $light-text-color;
         font-weight: normal;
       }
     }
