@@ -1,10 +1,10 @@
 $sans-font: Frutiger, "Helvetica Neue", Helvetica, Arial, sans-serif;
 
 html {
-    font-family: $sans-font;
-    font-size: 20px;
-    line-height: 36px;
-    color: $text-color;
+  font-family: $sans-font;
+  font-size: 20px;
+  line-height: 36px;
+  color: $text-color;
 }
 
 h2,
@@ -12,23 +12,22 @@ h3,
 h4,
 h5,
 h6 {
-    border-bottom: 1px solid $border-color;
+  border-bottom: 1px solid $border-color;
 }
 
 a {
+  color: $link-color;
+  text-decoration: none;
 
-    color: $link-color;
-    text-decoration: none;
-
-    &:hover {
-        color: $link-hover-color;
-    }
+  &:hover {
+    color: $link-hover-color;
+  }
 }
 
 svg {
-    fill: $link-color;
+  fill: $link-color;
 
-    &:hover {
-        fill: $link-hover-color;
-    }
+  &:hover {
+    fill: $link-hover-color;
+  }
 }
