@@ -229,7 +229,7 @@ trust-lando-cert-mac: ## Trust Lando's SSL certificate on your mac
 
 .PHONY: update-composer
 update-composer:
-	$(DOCKER_RUN) $(COMPOSER_BASE_CONTAINER) update
+	$(DOCKER_RUN) $(COMPOSER_IMAGE) update
 
 .PHONY: update-npm
 update-npm:
