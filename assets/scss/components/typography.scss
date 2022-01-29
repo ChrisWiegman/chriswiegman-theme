@@ -3,4 +3,64 @@ $font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Roboto",
 
 a {
   text-decoration: none;
+
+  &.post {
+    grid-gap: 1rem;
+    align-items: center;
+    border: 1px solid transparent;
+    display: grid;
+    grid-template-columns: auto 60px;
+    margin-left: -1rem;
+    margin-right: -1rem;
+    padding: 0.4rem 1rem;
+
+    a {
+      &:hover {
+        border-radius: 8px;
+      }
+    }
+
+    .post-title {
+      display: grid;
+      align-items: center;
+      color: $text-bright;
+      -webkit-filter: brightness(1);
+      filter: brightness(1);
+      font-size: 1.1rem;
+      font-weight: 500;
+      margin: 0;
+    }
+
+    .post-day {
+      display: block;
+      font-size: 0.8rem;
+      font-weight: 400;
+      text-align: center;
+    }
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin: 0 0 1.5rem 0;
+  line-height: 1.2;
+  color: $primary;
+  scroll-margin-top: 80px;
+  font-weight: 600;
+}
+
+h3,
+h4,
+h5 {
+  color: var(--secondary);
+  font-weight: 500;
+}
+
+h2:not(:first-child),
+h3:not(:first-child),
+h4:not(:first-child) {
+  margin-top: 3rem;
 }

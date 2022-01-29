@@ -11,7 +11,7 @@ body {
 .container {
   margin-left: auto;
   margin-right: auto;
-  max-width: 900px;
+  max-width: 850px;
   padding: 2rem;
 }
 
@@ -75,6 +75,8 @@ main {
   min-height: calc(100vh - 215px);
 
   article {
+    padding-bottom: 3rem;
+
     a {
       border-top: 2px solid transparent;
       border-bottom: 2px solid $primary;
@@ -85,6 +87,60 @@ main {
         background: $primary;
         border-top: 2px solid $primary;
         color: $reverse;
+      }
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+      color: $text-bright;
+    }
+
+    h2,
+    h3,
+    h4,
+    h5 {
+      margin: 0 0 1.25rem 0;
+    }
+
+    h2 {
+      font-size: 1.9rem;
+      padding-bottom: 0.25rem;
+    }
+
+    h3 {
+      font-size: 1.75rem;
+    }
+
+    h4 {
+      margin-bottom: 0.75rem;
+      border-bottom: 1px solid $border-light;
+    }
+
+    h5 {
+      font-size: 1rem;
+      text-transform: uppercase;
+    }
+
+    header {
+      padding-top: 2rem;
+      text-align: center;
+    }
+
+    .main-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid $border-light;
+
+      a {
+        font-size: 1rem;
+
+        &:hover {
+          border-top: 2px solid $primary;
+          color: $reverse;
+        }
       }
     }
   }

@@ -57,27 +57,26 @@ get_header();
 				</svg></a>
 			</div>
 		</div>
-	</article>
 
-	<div>
-		<h2 class="main-header"><span>Recent Posts</span> <a href="/blog">View All</a></h2>
-		<?php
-		if ( have_posts() ) {
+		<div class="container">
+			<h2 class="main-header"><span>Recent Posts</span> <a href="/blog">View All</a></h2>
+			<?php
+			if ( have_posts() ) {
 
-			/* Start the Loop */
-			while ( have_posts() ) {
-				the_post();
-				?>
-				<a href="<?php esc_url( get_the_permalink() ); ?>">
-					<?php the_title( '<span class="post-title">', '</span>' ); ?>
-					<span class="post-day"><?php get_the_date( 'M j' ); ?></span>
-				</a>
-
-				<?php
+				/* Start the Loop */
+				while ( have_posts() ) {
+					the_post();
+					?>
+					<a class="post" href="<?php esc_url( get_the_permalink() ); ?>">
+						<?php the_title( '<h3 class="post-title">', '</h3>' ); ?>
+						<span class="post-day"><?php the_date( 'M j' ); ?></span>
+					</a>
+					<?php
+				}
 			}
-		}
-		?>
-	</div>
+			?>
+		</div>
+	</article>
 </main>
 
 <?php
