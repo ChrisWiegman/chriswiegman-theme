@@ -172,8 +172,9 @@ function action_after_setup_theme() {
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus(
 		array(
-			'primary' => 'Primary Menu',
-			'footer'  => 'Footer Menu',
+			'primary'   => 'Primary Menu',
+			'footer'    => 'Footer Menu',
+			'copyright' => ' Copyright Menu',
 		)
 	);
 

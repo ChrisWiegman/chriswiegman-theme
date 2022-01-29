@@ -6,7 +6,7 @@
  */
 
 get_header();
-
+echo '<main>';
 echo '<div class="content search">';
 
 printf( '<h1>Search results for: %s</h1>', esc_attr( get_search_query() ) );
@@ -35,5 +35,5 @@ if ( have_posts() ) {
 }
 
 echo '</div>';
-
+echo '</main>';
 get_footer();

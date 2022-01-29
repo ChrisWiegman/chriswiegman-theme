@@ -7,7 +7,7 @@
 
 get_header();
 ?>
-
+<main>
 <article class='h-entry' itemscope='' itemtype='http://schema.org/BlogPosting'>
 	<div class='content-header'>
 		<?php
@@ -40,6 +40,6 @@ get_header();
 	<span class="next"><?php next_post_link( '%link &rarr;', '%title', false ); ?></span>
 </div>
 <?php } ?>
-
+</main>
 <?php
 get_footer();

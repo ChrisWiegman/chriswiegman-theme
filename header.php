@@ -19,18 +19,14 @@
 
 <body>
 
-<div class="header">
-	<div class="content">
-		<span class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php bloginfo( 'name' ); ?> Homepage"><?php bloginfo( 'name' ); ?></a></span>
-		<?php
-		wp_nav_menu(
-			array(
-				'theme_location' => 'primary',
-				'container'      => '',
-			)
-		);
-		?>
-	</div>
-</div>
-
-<div class="container">
+<header>
+	<span class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php bloginfo( 'name' ); ?> Homepage"><?php bloginfo( 'name' ); ?></a></span>
+	<?php
+	wp_nav_menu(
+		array(
+			'theme_location' => 'primary',
+			'container'      => '',
+		)
+	);
+	?>
+</header>
