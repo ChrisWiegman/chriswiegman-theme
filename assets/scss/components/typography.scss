@@ -18,6 +18,10 @@ a {
       &:hover {
         border-radius: 8px;
       }
+
+      &.post-day {
+        color: $text-dark;
+      }
     }
 
     .post-title {
