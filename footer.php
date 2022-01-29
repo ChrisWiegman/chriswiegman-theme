@@ -8,25 +8,19 @@
 ?>
 
 <footer>
-	<?php
-	wp_nav_menu(
-		array(
-			'theme_location' => 'footer',
-			'container'      => '',
-		)
-	);
-	?>
-	<div>
-
-	<div class="copyright">
+	<div class="content">
 		<?php
 		wp_nav_menu(
 			array(
-				'theme_location' => 'copyright',
+				'theme_location' => 'footer',
 				'container'      => '',
 			)
 		);
 		?>
+
+		<div class="copyright">
+			<span class="copyright-date">Copyright&copy; <?php the_time( 'Y' ); ?></span> | <a title="Attribution-ShareAlike 4.0 International (CC BY-SA 4.0) license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="license">Creative Commons Licensed</a> | <a href="/policies/">Policies</a>
+		</div>
 	</div>
 </footer>
 

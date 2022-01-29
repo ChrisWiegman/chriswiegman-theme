@@ -23,14 +23,12 @@ function init() {
 
 	// Add new actions and filters.
 	add_action( 'after_setup_theme', $n( 'action_after_setup_theme' ) );
-	add_action( 'widgets_init', $n( 'action_widgets_init' ) );
 	add_action( 'wp_enqueue_scripts', $n( 'action_wp_enqueue_scripts' ) );
 	add_filter( 'feed_links_show_comments_feed', '__return_false' );
 	add_filter( 'wp_resource_hints', $n( 'filter_wp_resource_hints' ), 10, 2 );
 	add_action( 'admin_menu', $n( 'action_admin_menu' ) );
 	add_action( 'init', $n( 'action_init' ), 100 );
 	add_action( 'wp_before_admin_bar_render', $n( 'action_wp_before_admin_bar_render' ) );
-	add_filter( 'wp_nav_menu_items', $n( 'filter_wp_nav_menu_items' ), 10, 2 );
 	add_action( 'send_headers', $n( 'action_send_headers' ) );
 	// Cleanup extra garbage.
 	if ( function_exists( 'remove_action' ) ) {
@@ -61,28 +59,6 @@ function action_send_headers() {
 	header( 'x-permitted-cross-domain-policies: none' );
 	header( 'x-xss-protection: 1; mode=block' );
 	header( 'x-frame-options: SAMEORIGIN' );
-
-}
-
-/**
- * Filter wp_nav_menu_items
- *
- * Adds a search box to the main nav menu
- *
- * @since 9.6.0
- *
- * @param string  $items Output of menu items.
- * @param WP_Term $args Array of menu arguments.
- *
- * @return string Output of menu items.
- */
-function filter_wp_nav_menu_items( $items, $args ) {
-
-	if ( 'primary' === $args->theme_location ) {
-		$items .= '<li class="menu-item search-form">' . get_search_form( false ) . '</li>';
-	}
-
-	return $items;
 
 }
 
@@ -172,32 +148,8 @@ function action_after_setup_theme() {
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus(
 		array(
-			'primary'   => 'Primary Menu',
-			'footer'    => 'Footer Menu',
-			'copyright' => ' Copyright Menu',
-		)
-	);
-
-}
-
-/**
- * Action widgets_init
- *
- * Register widget area.
- *
- * @since 9.0.0
- */
-function action_widgets_init() {
-
-	register_sidebar(
-		array(
-			'name'          => 'Homepage Intro',
-			'id'            => 'home-intro',
-			'description'   => 'The intro section for the homepage',
-			'before_widget' => '',
-			'after_widget'  => '',
-			'before_title'  => '<h2 class="widget-title">',
-			'after_title'   => '</h2>',
+			'primary' => 'Primary Menu',
+			'footer'  => 'Footer Menu',
 		)
 	);
 
