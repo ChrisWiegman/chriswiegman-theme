@@ -20,15 +20,12 @@ module.exports = {
     },
     sourceType: "module",
   },
-  extends: ["plugin:react/recommended", "plugin:prettier/recommended"],
+  extends: ["plugin:prettier/recommended"],
   plugins: [],
   // add your custom rules here
   ignorePatterns: ["**/dist", "**/includes/settings/scss/bootstrap"],
   rules: {
     "no-console": ["error", { allow: ["warn", "error"] }],
-    "react/prop-types": 0,
-    "react/no-unescaped-entities": 0,
-    "react/no-children-prop": 0,
     "no-unsafe-optional-chaining": 0,
   },
 };
