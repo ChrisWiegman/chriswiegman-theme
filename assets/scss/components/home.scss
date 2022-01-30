@@ -1,0 +1,86 @@
+main {
+  .hero {
+    padding: 2rem 0 0;
+    text-align: left;
+
+    .container {
+      color: $text-dark;
+      font-size: 1.3rem;
+
+      .content {
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+
+        h1 {
+          color: $text-bright;
+          font-size: 3rem;
+          margin-bottom: 1.5rem;
+        }
+
+        img {
+          height: auto;
+          margin-left: 2rem;
+          width: 250px;
+        }
+      }
+
+      .social {
+        display: flex;
+        gap: 1rem;
+        font-size: 1.3rem;
+        align-items: center;
+
+        a,
+        a:hover {
+          border: none;
+        }
+
+        svg {
+          font-size: 2rem;
+          fill: $link;
+
+          &:hover {
+            fill: $reverse;
+          }
+        }
+      }
+    }
+  }
+}
+
+a.post {
+  grid-gap: 1rem;
+  align-items: center;
+  border: 1px solid transparent;
+  display: grid;
+  grid-template-columns: auto 60px;
+  margin-left: -1rem;
+  margin-right: -1rem;
+  padding: 0.4rem 1rem;
+  color: $text-dark;
+
+  &:hover {
+    border: 1px solid transparent;
+    border-radius: 8px;
+    background: $dark-opacity;
+    color: $text-bright;
+  }
+
+  .post-title {
+    display: grid;
+    align-items: center;
+    -webkit-filter: brightness(1);
+    filter: brightness(1);
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin: 0;
+  }
+
+  .post-day {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 400;
+    text-align: center;
+  }
+}

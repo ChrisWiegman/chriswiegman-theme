@@ -67,7 +67,7 @@ get_header();
 				while ( have_posts() ) {
 					the_post();
 					?>
-					<a class="post" href="<?php esc_url( get_the_permalink() ); ?>">
+					<a class="post" href="<?php the_permalink(); ?>">
 						<?php the_title( '<h3 class="post-title">', '</h3>' ); ?>
 						<span class="post-day"><?php the_date( 'M j' ); ?></span>
 					</a>

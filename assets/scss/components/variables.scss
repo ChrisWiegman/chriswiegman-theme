@@ -3,6 +3,7 @@ $secondary: #ffd479;
 $background: #252525;
 $border: #111;
 $border-light: #444;
+$dark-opacity: rgba(0, 0, 0, 0.2);
 $link: #fff;
 $navbar: #181818;
 $navbar-hover: #272727;
@@ -11,3 +12,6 @@ $text: #b3b9c5;
 $text-bright: #eee;
 $text-dark: #8f949d;
 $text-heading: $primary;
+
+$font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial,
+  "Noto Sans", sans-serif;

@@ -8,11 +8,33 @@ body {
   background: $background;
 }
 
-.container {
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 850px;
-  padding: 2rem;
+a {
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin: 0 0 1.5rem 0;
+  line-height: 1.2;
+  color: $primary;
+  scroll-margin-top: 80px;
+  font-weight: 600;
+}
+
+h3,
+h4,
+h5 {
+  color: var(--secondary);
+  font-weight: 500;
+}
+
+h2:not(:first-child),
+h3:not(:first-child),
+h4:not(:first-child) {
+  margin-top: 3rem;
 }
 
 header,
@@ -68,6 +90,13 @@ header {
       margin: 0 5px -3px 0;
     }
   }
+}
+
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 850px;
+  padding: 2rem;
 }
 
 main {
@@ -140,55 +169,6 @@ main {
         &:hover {
           border-top: 2px solid $primary;
           color: $reverse;
-        }
-      }
-    }
-  }
-
-  .hero {
-    padding: 2rem 0 0;
-    text-align: left;
-
-    .container {
-      color: $text-dark;
-      font-size: 1.3rem;
-
-      .content {
-        align-items: center;
-        display: flex;
-        justify-content: space-between;
-
-        h1 {
-          color: $text-bright;
-          font-size: 3rem;
-          margin-bottom: 1.5rem;
-        }
-
-        img {
-          height: auto;
-          margin-left: 2rem;
-          width: 250px;
-        }
-      }
-
-      .social {
-        display: flex;
-        gap: 1rem;
-        font-size: 1.3rem;
-        align-items: center;
-
-        a,
-        a:hover {
-          border-bottom: none;
-        }
-
-        svg {
-          font-size: 2rem;
-          fill: $link;
-
-          &:hover {
-            fill: $reverse;
-          }
         }
       }
     }
