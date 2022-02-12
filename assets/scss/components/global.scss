@@ -92,7 +92,8 @@ header {
   }
 }
 
-.container {
+.container,
+.prevnext {
   margin-left: auto;
   margin-right: auto;
   max-width: 850px;
@@ -103,9 +104,8 @@ main {
   margin-top: 60px;
   min-height: calc(100vh - 215px);
 
-  article {
-    padding-bottom: 3rem;
-
+  article,
+  .prevnext {
     a {
       border-top: 2px solid transparent;
       border-bottom: 2px solid $primary;
