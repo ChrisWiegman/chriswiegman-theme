@@ -1,45 +1,49 @@
-main {
-  article {
-    .content-header {
-      text-align: center;
+.single,
+.page {
+  main {
+    article {
+      .content-header {
+        text-align: center;
 
-      .tags {
-        align-items: center;
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.5rem;
-        justify-content: center;
-        margin: 1.5rem 0;
+        .tags {
+          align-items: center;
+          display: flex;
+          flex-wrap: wrap;
+          gap: 0.5rem;
+          justify-content: center;
+          margin: 1.5rem 0;
 
-        a {
-          border: 1px solid $border-light;
-          border-radius: 8px;
-          color: $text-bright;
-          display: inline-block;
-          font-size: 0.9rem;
-          font-weight: 600;
-          line-height: normal;
-          padding: 0.4rem 0.6rem;
-          vertical-align: middle;
-        }
+          a {
+            border: 1px solid $border-light;
+            border-radius: 8px;
+            color: $text-bright;
+            display: inline-block;
+            font-size: 0.9rem;
+            font-weight: 600;
+            line-height: normal;
+            padding: 0.4rem 0.6rem;
+            vertical-align: middle;
+          }
 
-        a:hover {
-          background: $reverse;
-          border-color: $primary;
-          color: $primary;
+          a:hover {
+            background: $reverse;
+            border-color: $primary;
+            color: $primary;
+          }
         }
       }
-    }
 
-    .content {
-      .wp-post-image {
-        display: block;
-        margin: 2rem auto;
-      }
+      .content {
+        .wp-post-image {
+          display: block;
+          margin: 2rem auto;
+        }
 
-      p {
-        font-size: 1.3rem;
-        margin: 0 0 2rem;
+        p,
+        ul {
+          font-size: 1.3rem;
+          margin: 0 0 2rem;
+        }
       }
     }
   }
