@@ -32,17 +32,22 @@
           font-size: 1.3rem;
           align-items: center;
 
-          a,
-          a:hover {
-            border: none;
-          }
+          .links {
+            display: flex;
+            gap: 1rem;
 
-          svg {
-            font-size: 2rem;
-            fill: $link;
+            a,
+            a:hover {
+              border: none;
+            }
 
-            &:hover {
-              fill: $reverse;
+            svg {
+              font-size: 2rem;
+              fill: $link;
+
+              &:hover {
+                fill: $reverse;
+              }
             }
           }
         }
