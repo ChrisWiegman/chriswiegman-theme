@@ -12,6 +12,47 @@ a {
   text-decoration: none;
 }
 
+a.post {
+  grid-gap: 1rem;
+  align-items: center;
+  border: 1px solid transparent;
+  display: grid;
+  grid-template-columns: auto 60px;
+  margin-left: -1rem;
+  margin-right: -1rem;
+  padding: 0.4rem 1rem;
+  color: $text-dark;
+
+  &:hover {
+    border: 1px solid transparent;
+    border-radius: 8px;
+    background: $dark-opacity;
+    color: $text-bright;
+
+    .post-title {
+      color: $text-bright;
+    }
+  }
+
+  .post-title {
+    color: $text-dark;
+    display: grid;
+    align-items: center;
+    -webkit-filter: brightness(1);
+    filter: brightness(1);
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin: 0;
+  }
+
+  .post-day {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 400;
+    text-align: center;
+  }
+}
+
 h1,
 h2,
 h3,
@@ -75,6 +116,7 @@ header {
   background: $navbar;
   border-bottom: 1px solid $border-light;
   height: 60px;
+  z-index: 2000;
 
   .content {
     display: flex;

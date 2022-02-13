@@ -1,0 +1,35 @@
+.page-blog {
+  h2 {
+    margin-top: 2.5rem;
+  }
+
+  .description {
+    color: $text-dark;
+    font-size: 1.45rem;
+    margin-bottom: 0;
+  }
+
+  .content-search {
+    form {
+      grid-gap: 1rem;
+      align-items: center;
+      display: grid;
+      grid-template-columns: auto 87px;
+
+      label {
+        display: none;
+      }
+
+      input {
+        -webkit-appearance: none;
+        background: $background;
+        border: 1px solid $border-light;
+        border-radius: 8px;
+        color: $text-bright;
+        font-size: 1.1rem;
+        line-height: 1.1;
+        padding: 0.75rem 1rem;
+      }
+    }
+  }
+}
