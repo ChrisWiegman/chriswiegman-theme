@@ -30,6 +30,8 @@ function init() {
 	add_action( 'init', $n( 'action_init' ), 100 );
 	add_action( 'wp_before_admin_bar_render', $n( 'action_wp_before_admin_bar_render' ) );
 	add_action( 'send_headers', $n( 'action_send_headers' ) );
+	add_action( 'pre_get_posts', $n( 'action_pre_get_posts' ) );
+
 	// Cleanup extra garbage.
 	if ( function_exists( 'remove_action' ) ) {
 
@@ -42,6 +44,22 @@ function init() {
 		remove_action( 'wp_head', 'wp_oembed_add_discovery_links' );
 		remove_action( 'wp_head', 'rest_output_link_wp_head' );
 
+	}
+}
+
+/**
+ * Action pre_get_posts
+ *
+ * @since 11.0.0
+ *
+ * @param WP_Query $query The query we're trying to edit.
+ */
+function action_pre_get_posts( $query ) {
+
+	global $wp_the_query;
+
+	if ( ! is_home() && $query === $wp_the_query ) {
+		$query->set( 'posts_per_page', -1 );
 	}
 }
 

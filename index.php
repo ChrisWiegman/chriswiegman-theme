@@ -6,59 +6,55 @@
  */
 
 get_header();
+global $wp_query;
 ?>
 <main>
-	<article class='h-entry page-blog' itemscope='' itemtype='http://schema.org/BlogPosting'>
+	<article class='h-entry page-index' itemscope='' itemtype='http://schema.org/BlogPosting'>
 		<div class="container">
 			<div class="content-header">
-				<?php the_title( '<h1 class="title post-title p-name" itemprop="name headline">', '</h1>' ); ?>
-				<p class="description">All the technical and personal posts I've written for this site going back to 2008.</p>
+				<?php
+				if ( is_search() ) {
+					printf( '<h1 class="title p-name" itemprop="name headline">Search results for: %s</h1>', esc_attr( get_search_query() ) );
+				} elseif ( is_archive() ) {
+					$cw_theme_archive_prefix = 'Posts tagged: ';
+					if ( is_category() ) {
+						$cw_theme_archive_prefix = 'Posts in: ';
+					}
+
+					printf( '<h1 class="title p-name" itemprop="name headline">%s</h1>', esc_attr( single_cat_title( $cw_theme_archive_prefix, false ) ) );
+				} else {
+					the_title( '<h1 class="title post-title p-name" itemprop="name headline">', '</h1>' );
+				}
+				?>
+				<p class="description"><?php printf( '<span class="post-count">%d</span> posts found.', intval( $wp_query->found_posts ) ); ?></p>
 			</div>
 			<div class="content-search">
 				<form action="/" method="get">
 					<label for="search">Search all content</label>
 					<input type="text" name="s" id="search" placeholder="Search all content" value="<?php the_search_query(); ?>" />
-					<input type="button" alt="Search" value="Search"  />
+					<input type="submit" alt="Search" value="Search"  />
 				</form>
 			</div>
 			<div class="content e-content" itemprop="articleBody">
 				<?php
 
 				if ( have_posts() ) {
-
-					echo '<!-- Group by year. -->';
-
-					$cw_theme_current_year = false;
-
-					/* Start the Loop */
-					while ( have_posts() ) {
-						the_post();
-
-						$cw_theme_post_year = get_the_date( 'Y' );
-
-						if ( $cw_theme_post_year !== $cw_theme_current_year ) {
-
-							if ( false !== $cw_theme_current_year ) {
-								echo '</div>';
-								echo '</div>';
-							}
-
-							echo '<div class="posts-group">';
-							printf( '<h2 class="main-header">%s</h2>', intval( $cw_theme_post_year ) );
-							echo '<div class="posts">';
-
-						}
-
-						$cw_theme_current_year = $cw_theme_post_year;
-						?>
-						<a class="post" href="<?php the_permalink(); ?>">
-							<?php the_title( '<h3 class="post-title">', '</h3>' ); ?>
-							<span class="post-day"><?php the_date( 'M j' ); ?></span>
-						</a>
-						<?php
-					}
-				}
-				?>
+					?>
+					<div class="posts-group">
+						<div class="posts">
+							<?php
+							/* Start the Loop */
+							while ( have_posts() ) {
+								the_post();
+								?>
+							<a class="post" href="<?php the_permalink(); ?>">
+								<?php the_title( '<h3 class="post-title">', '</h3>' ); ?>
+								<span class="post-day"><?php the_date( 'M j' ); ?></span>
+							</a>
+							<?php } ?>
+						</div>
+					</div>
+				<?php } ?>
 			</div>
 		</div>
 	</article>

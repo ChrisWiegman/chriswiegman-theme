@@ -194,6 +194,14 @@ main {
       text-transform: uppercase;
     }
 
+    blockquote,
+    ol,
+    p,
+    table,
+    ul {
+      margin: 0 0 2rem;
+    }
+
     header {
       padding-top: 2rem;
       text-align: center;

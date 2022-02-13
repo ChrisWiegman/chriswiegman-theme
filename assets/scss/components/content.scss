@@ -1,5 +1,7 @@
 .single,
-.page {
+.page,
+.search,
+.archive {
   main {
     article {
       .content-header {
@@ -52,6 +54,8 @@
 
         .wp-block-code,
         .wp-block-quote {
+          border-radius: 8px;
+          border: 1px solid $border-light;
           font-size: 1.3rem;
           margin: 2.5em 0;
 

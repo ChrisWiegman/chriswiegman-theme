@@ -8,17 +8,17 @@
 get_header();
 ?>
 <main>
-	<article class='h-entry page-blog' itemscope='' itemtype='http://schema.org/BlogPosting'>
+	<article class='h-entry page-index' itemscope='' itemtype='http://schema.org/BlogPosting'>
 		<div class="container">
 			<div class="content-header">
 				<?php the_title( '<h1 class="title post-title p-name" itemprop="name headline">', '</h1>' ); ?>
-				<p class="description">All the technical and personal posts I've written for this site going back to 2008.</p>
+				<p class="description">All the technical and personal posts I've written on this site going back to 2008.</p>
 			</div>
 			<div class="content-search">
 				<form action="/" method="get">
 					<label for="search">Search all content</label>
 					<input type="text" name="s" id="search" placeholder="Search all content" value="<?php the_search_query(); ?>" />
-					<input type="button" alt="Search" value="Search"  />
+					<input type="submit" alt="Search" value="Search"  />
 				</form>
 			</div>
 			<div class="content e-content" itemprop="articleBody">
