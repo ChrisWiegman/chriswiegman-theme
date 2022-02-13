@@ -48,9 +48,18 @@
         }
 
         p,
-        ul {
+        ul,
+        ol {
           font-size: 1.3rem;
           margin: 0 0 2rem;
+        }
+
+        .wp-block-embed {
+          display: block;
+
+          div {
+            margin: 0 auto;
+          }
         }
 
         .wp-block-code,
@@ -62,6 +71,16 @@
 
           p {
             padding: 0 1rem;
+          }
+        }
+
+        .wp-block-quote {
+          background-color: $background-code;
+          font-family: monospace;
+
+          p {
+            margin: 0;
+            padding: 1rem;
           }
         }
       }

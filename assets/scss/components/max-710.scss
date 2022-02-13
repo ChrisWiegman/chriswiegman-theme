@@ -1,0 +1,13 @@
+@media screen and (max-width: 710px) {
+  header {
+    .content {
+      ul {
+        display: block;
+        left: 0;
+        position: absolute;
+        text-align: center;
+        width: 100%;
+      }
+    }
+  }
+}
