@@ -14,14 +14,14 @@ global $wp_query;
 			<div class="content-header">
 				<?php
 				if ( is_search() ) {
-					printf( '<h1 class="title p-name" itemprop="name headline">Search results for: %s</h1>', esc_attr( get_search_query() ) );
+					printf( '<h1 class="title p-name" itemprop="name headline">Search results for: <span class="term">%s</span></h1>', esc_attr( get_search_query() ) );
 				} elseif ( is_archive() ) {
 					$cw_theme_archive_prefix = 'Posts tagged: ';
 					if ( is_category() ) {
 						$cw_theme_archive_prefix = 'Posts in: ';
 					}
 
-					printf( '<h1 class="title p-name" itemprop="name headline">%s</h1>', esc_attr( single_cat_title( $cw_theme_archive_prefix, false ) ) );
+					printf( '<h1 class="title p-name" itemprop="name headline">%s<span class="term">%s</span></h1>', esc_attr( $cw_theme_archive_prefix ), esc_attr( single_cat_title( '', false ) ) );
 				} else {
 					the_title( '<h1 class="title post-title p-name" itemprop="name headline">', '</h1>' );
 				}
