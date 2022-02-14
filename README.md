@@ -13,7 +13,7 @@ Before starting your workstation will need the following:
 
 1. Clone the repository
 
-`git clone https://gitea.chriswiegman.com/chriswiegman/chriswiegman-themme.git`
+`git clone https://github.com/chriswiegman/chriswiegman-theme.git`
 
 2. Start Lando
 
