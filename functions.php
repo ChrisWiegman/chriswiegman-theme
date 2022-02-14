@@ -171,6 +171,12 @@ function action_after_setup_theme() {
 		)
 	);
 
+	// Cleanup unneeded Block editor features.
+	add_theme_support( 'disable-custom-font-sizes' );
+	add_theme_support( 'disable-custom-colors' );
+	add_theme_support( 'disable-custom-gradients' );
+	remove_theme_support( 'core-block-patterns' );
+
 }
 
 
