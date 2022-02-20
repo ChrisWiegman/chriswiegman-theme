@@ -178,7 +178,7 @@ function action_after_setup_theme() {
 	remove_theme_support( 'core-block-patterns' );
 
 	// Add a better image size.
-	add_image_size( 'featured', 850, 500 );
+	add_image_size( 'featured', 850 );
 
 }
 
