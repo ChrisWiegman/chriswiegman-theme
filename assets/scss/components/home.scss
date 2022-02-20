@@ -1,0 +1,57 @@
+.home {
+  main {
+    .hero {
+      padding: 2rem 0 0;
+      text-align: left;
+
+      .container {
+        color: $text-dark;
+        font-size: 1.3rem;
+
+        .content {
+          align-items: center;
+          display: flex;
+          justify-content: space-between;
+
+          h1 {
+            color: $text-bright;
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+          }
+
+          img {
+            height: auto;
+            margin-left: 2rem;
+            width: 250px;
+          }
+        }
+
+        .social {
+          display: flex;
+          gap: 1rem;
+          font-size: 1.3rem;
+          align-items: center;
+
+          .links {
+            display: flex;
+            gap: 1rem;
+
+            a,
+            a:hover {
+              border: none;
+            }
+
+            svg {
+              font-size: 2rem;
+              fill: $link;
+
+              &:hover {
+                fill: $reverse;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

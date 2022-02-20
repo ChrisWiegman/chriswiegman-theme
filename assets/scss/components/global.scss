@@ -1,0 +1,254 @@
+body {
+  -webkit-font-smoothing: antialiased;
+  margin: 0;
+  font-family: $font-family;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: $text;
+  background: $background;
+}
+
+a {
+  text-decoration: none;
+}
+
+a.post {
+  grid-gap: 1rem;
+  align-items: center;
+  border: 1px solid transparent;
+  display: grid;
+  grid-template-columns: auto 60px;
+  margin-left: -1rem;
+  margin-right: -1rem;
+  padding: 0.4rem 1rem;
+  color: $text-dark;
+
+  &:hover {
+    border: 1px solid transparent;
+    border-radius: 8px;
+    background: $dark-opacity;
+    color: $text-bright;
+
+    .post-title {
+      color: $text-bright;
+    }
+  }
+
+  .post-title {
+    color: $text-dark;
+    display: grid;
+    align-items: center;
+    -webkit-filter: brightness(1);
+    filter: brightness(1);
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin: 0;
+  }
+
+  .post-day {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 400;
+    text-align: center;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  margin: 0 0 1.5rem 0;
+  line-height: 1.2;
+  color: $primary;
+  scroll-margin-top: 80px;
+  font-weight: 600;
+}
+
+h3,
+h4,
+h5 {
+  color: $secondary;
+  font-weight: 500;
+}
+
+h2:not(:first-child),
+h3:not(:first-child),
+h4:not(:first-child) {
+  margin-top: 3rem;
+}
+
+header,
+footer {
+  .content {
+    ul {
+      justify-content: flex-end;
+      gap: 0.5rem;
+      padding: 0;
+      list-style: none;
+
+      li {
+        display: inline;
+      }
+    }
+
+    a {
+      color: $text;
+      gap: 0.5rem;
+      padding: 0.5rem;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      align-items: center;
+
+      &:hover {
+        color: $text-bright;
+        background: $navbar-hover;
+      }
+    }
+  }
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: $navbar;
+  border-bottom: 1px solid $border-light;
+  height: 60px;
+  z-index: 2000;
+
+  .content {
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    padding: 0 1.5rem;
+    height: 100%;
+    justify-content: space-between;
+
+    img {
+      max-height: 20px;
+      max-width: 25px;
+      margin: 0 5px -3px 0;
+    }
+  }
+}
+
+.container,
+.prevnext {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 850px;
+  padding: 2rem;
+}
+
+main {
+  margin-top: 60px;
+  min-height: calc(100vh - 215px);
+
+  article,
+  .prevnext {
+    a {
+      border-top: 2px solid transparent;
+      border-bottom: 2px solid $primary;
+      color: $link;
+      font-weight: 600;
+
+      &:hover {
+        background: $primary;
+        border-top: 2px solid $primary;
+        color: $reverse;
+      }
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+      color: $text-bright;
+    }
+
+    h2,
+    h3,
+    h4,
+    h5 {
+      margin: 0 0 1.25rem 0;
+    }
+
+    h2 {
+      font-size: 1.9rem;
+      padding-bottom: 0.25rem;
+    }
+
+    h3 {
+      font-size: 1.75rem;
+    }
+
+    h4 {
+      margin-bottom: 0.75rem;
+      border-bottom: 1px solid $border-light;
+    }
+
+    h5 {
+      font-size: 1rem;
+      text-transform: uppercase;
+    }
+
+    blockquote,
+    ol,
+    p,
+    table,
+    ul {
+      margin: 0 0 2rem;
+    }
+
+    header {
+      padding-top: 2rem;
+      text-align: center;
+    }
+
+    .main-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid $border-light;
+
+      a {
+        font-size: 1rem;
+
+        &:hover {
+          border-top: 2px solid $primary;
+          color: $reverse;
+        }
+      }
+    }
+  }
+}
+
+footer {
+  border-bottom: none;
+  border-top: 1px solid $border-light;
+  width: 100%;
+  background: $navbar;
+  padding: 3rem 0;
+
+  .content {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+
+    ul {
+      margin: 0;
+    }
+
+    .copyright,
+    .copyright a {
+      font-size: 0.7rem;
+    }
+
+    .copyright {
+      display: inline-block;
+    }
+  }
+}

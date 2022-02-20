@@ -7,27 +7,22 @@
 
 ?>
 
-</div>
-
-<div class="footer wrapper">
+<footer>
 	<div class="content">
-		<nav class="nav">
-			<?php
-			wp_nav_menu(
-				array(
-					'theme_location' => 'footer',
-					'container'      => '',
-					'menu_class'     => 'footer-menu',
-				)
-			);
-			?>
-		</nav>
-		<div>
-			<div class="copyright"><a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/" title="Attribution-ShareAlike 4.0 International (CC BY-SA 4.0) license">Creative Commons
-					Licensed</a> · <a href="/policies/">Policies</a></div>
+		<?php
+		wp_nav_menu(
+			array(
+				'theme_location' => 'footer',
+				'container'      => '',
+			)
+		);
+		?>
+
+		<div class="copyright">
+			<span class="copyright-date">Copyright&copy; <?php the_time( 'Y' ); ?></span> | <a title="Attribution-ShareAlike 4.0 International (CC BY-SA 4.0) license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="license">Creative Commons Licensed</a> | <a href="/policies/">Policies</a>
 		</div>
 	</div>
-</div>
+</footer>
 
 <?php wp_footer(); ?>
 </body>

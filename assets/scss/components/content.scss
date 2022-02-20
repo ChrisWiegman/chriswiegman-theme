@@ -1,0 +1,114 @@
+.single,
+.page,
+.search,
+.archive {
+  main {
+    article {
+      .content-header {
+        padding: 0 2rem 2rem 2rem;
+        text-align: center;
+
+        .meta {
+          padding-top: 0.4rem;
+        }
+
+        .tags {
+          align-items: center;
+          display: flex;
+          flex-wrap: wrap;
+          gap: 0.5rem;
+          justify-content: center;
+          margin: 1.5rem 0 0 0 0;
+
+          a {
+            border: 1px solid $border-light;
+            border-radius: 8px;
+            color: $text-bright;
+            display: inline-block;
+            font-size: 0.9rem;
+            font-weight: 600;
+            line-height: normal;
+            padding: 0.4rem 0.6rem;
+            vertical-align: middle;
+          }
+
+          a:hover {
+            background: $reverse;
+            border-color: $primary;
+            color: $primary;
+          }
+        }
+      }
+
+      .content {
+        .wp-post-image {
+          display: block;
+          margin: 0 auto 2rem auto;
+          width: 100%;
+        }
+
+        p,
+        ul,
+        ol {
+          font-size: 1.3rem;
+          margin: 0 0 2rem;
+        }
+
+        .wp-block-embed {
+          display: block;
+
+          div {
+            margin: 0 auto;
+          }
+        }
+
+        .wp-block-code,
+        .wp-block-quote {
+          border-radius: 8px;
+          border: 1px solid $border-light;
+          font-size: 1.3rem;
+          margin: 2.5em 0;
+
+          p {
+            padding: 0 1rem;
+          }
+        }
+
+        .wp-block-quote {
+          background-color: $background-code;
+          font-family: monospace;
+
+          p {
+            margin: 0;
+            padding: 1rem;
+          }
+        }
+      }
+    }
+
+    .prevnext {
+      padding-top: 0;
+
+      a {
+        border-bottom: none;
+      }
+
+      .prev {
+        max-width: 49%;
+        float: left;
+      }
+
+      .next {
+        max-width: 49%;
+        float: right;
+        text-align: right;
+      }
+
+      &:after {
+        content: " ";
+        display: block;
+        clear: both;
+      }
+    }
+  }
+}

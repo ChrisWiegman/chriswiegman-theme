@@ -7,6 +7,8 @@
 
 get_header();
 
+echo '<main>';
+
 echo '<h1 class="title post-title p-name" itemprop="name headline">' . single_cat_title( 'Posts In: ', false ) . '</h1>';
 
 echo '<div class="content home">';
@@ -49,5 +51,5 @@ if ( have_posts() ) {
 }
 
 echo '</div>';
-
+echo '</main>';
 get_footer();

@@ -8,12 +8,12 @@ A fully featured development environment is included using PHP 7.4 and more. Scr
 
 Before starting your workstation will need the following:
 
-* [Docker](https://www.docker.com/)
-* [Lando](https://lando.dev/)
+- [Docker](https://www.docker.com/)
+- [Lando](https://lando.dev/)
 
 1. Clone the repository
 
-`git clone https://gitea.chriswiegman.com/chriswiegman/chriswiegman-themme.git`
+`git clone https://github.com/chriswiegman/chriswiegman-theme.git`
 
 2. Start Lando
 
@@ -26,20 +26,19 @@ When finished, Lando will give you the local URL of your site. You can finish th
 
 WordPress Credentials:
 
-__URL:__ _https://chriswiegman-theme.lndo.site/wp-admin_
+**URL:** _https://chriswiegman-theme.lndo.site/wp-admin_
 
-__Admin User:__ _admin_
+**Admin User:** _admin_
 
-__Admin Password:__ _password
+**Admin Password:** \_password
 
 ## Using Xdebug
 
 Xdebug 3 released a [number of changes](https://xdebug.org/docs/upgrade_guide) that affect the way Xdebug works. Namely, it no longer listens on every request and requires a "trigger" to enable the connection. Use one of the following plugins to enable the trigger on your machine:
 
-
-* [Xdebug Helper for Firefox](https://addons.mozilla.org/en-GB/firefox/addon/xdebug-helper-for-firefox/) ([source](https://github.com/BrianGilbert/xdebug-helper-for-firefox)).
-* [Xdebug Helper for Chrome](https://chrome.google.com/extensions/detail/eadndfjplgieldjbigjakmdgkmoaaaoc) ([source](https://github.com/mac-cain13/xdebug-helper-for-chrome)).
-* [XDebugToggle for Safari](https://apps.apple.com/app/safari-xdebug-toggle/id1437227804?mt=12) ([source](https://github.com/kampfq/SafariXDebugToggle)).
+- [Xdebug Helper for Firefox](https://addons.mozilla.org/en-GB/firefox/addon/xdebug-helper-for-firefox/) ([source](https://github.com/BrianGilbert/xdebug-helper-for-firefox)).
+- [Xdebug Helper for Chrome](https://chrome.google.com/extensions/detail/eadndfjplgieldjbigjakmdgkmoaaaoc) ([source](https://github.com/mac-cain13/xdebug-helper-for-chrome)).
+- [XDebugToggle for Safari](https://apps.apple.com/app/safari-xdebug-toggle/id1437227804?mt=12) ([source](https://github.com/kampfq/SafariXDebugToggle)).
 
 ## Build and Testing
 
@@ -77,4 +76,4 @@ You can run all testing (all lints and unit tests) together with the following:
 
 ```bash
 make test
-```w
+```

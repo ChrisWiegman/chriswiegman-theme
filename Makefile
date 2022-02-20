@@ -238,4 +238,4 @@ update-npm:
 .PHONY: watch
 watch: | build-assets
 	@echo "Building and watching theme assets"
-	$(DOCKER_RUN) $(NODE_IMAGE) ./node_modules/gulp-cli/bin/gulp.js watch
+	$(DOCKER_RUN) -d $(NODE_IMAGE) ./node_modules/gulp-cli/bin/gulp.js watch

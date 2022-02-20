@@ -1,0 +1,128 @@
+@media screen and (max-width: 710px) {
+  .prevnext,
+  .container {
+    padding: 1rem;
+  }
+
+  header,
+  footer {
+    .content {
+      padding: 0 0.2rem;
+      font-size: 0.7rem;
+
+      a {
+        padding: 0.2rem;
+      }
+    }
+
+    img {
+      display: none;
+    }
+  }
+
+  footer {
+    .content {
+      .copyright {
+        text-align: center;
+      }
+    }
+  }
+
+  .home,
+  .single,
+  .page-index {
+    .content-search form {
+      grid-template-columns: auto;
+    }
+
+    main {
+      .hero {
+        padding: 0;
+        .container {
+          .social {
+            font-size: 1rem;
+            flex-direction: column;
+          }
+
+          .content {
+            align-items: flex-start;
+            flex-direction: column;
+            display: flex;
+
+            .intro {
+              order: 2;
+
+              h1 {
+                font-size: 1.5rem;
+                margin-bottom: 1rem;
+              }
+
+              p {
+                font-size: 1rem;
+              }
+            }
+
+            img {
+              order: 1;
+              max-width: 50%;
+              margin: 0 auto 1.5rem auto;
+            }
+          }
+        }
+      }
+
+      article {
+        .content-header {
+          padding: 0 0 2rem 0;
+
+          .meta {
+            padding: 0.4rem 0;
+          }
+        }
+
+        a.post h3 {
+          font-size: 1rem;
+        }
+      }
+    }
+
+    main {
+      article {
+        h1 {
+          font-size: 1.8rem;
+        }
+
+        h2 {
+          font-size: 1.5rem;
+        }
+
+        .content {
+          p,
+          ol,
+          ul,
+          table,
+          blockquote {
+            font-size: 1.2rem;
+            margin: 0 0 1.5rem;
+          }
+
+          .wp-post-image {
+            height: auto;
+          }
+        }
+      }
+    }
+
+    .description {
+      font-size: 1rem;
+    }
+  }
+
+  main {
+    article {
+      h1 {
+        font-size: 1.8rem;
+      }
+    }
+  }
+}

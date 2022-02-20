@@ -1,6 +1,4 @@
-@import "components/editor-colors";
-@import "components/typography";
-@import "components/layout";
-@import "components/images";
-@import "components/editor";
-@import "components/max-690";
+@import "components/variables.scss";
+@import "components/block-gallery.scss";
+@import "components/block-image.scss";
+@import "components/editor.scss";
