@@ -177,6 +177,9 @@ function action_after_setup_theme() {
 	add_theme_support( 'disable-custom-gradients' );
 	remove_theme_support( 'core-block-patterns' );
 
+	// Add a better image size.
+	add_image_size( 'featured', 850, 500 );
+
 }
 
 
