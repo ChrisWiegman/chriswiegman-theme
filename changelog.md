@@ -1,3 +1,8 @@
+# 11.0.1
+
+- Fix featured images on page template
+- Updated dependencies
+
 # 11.0.0
 
 - Completely new theme with dark styles inspired by [Tania Rascia](https://www.taniarascia.com)
