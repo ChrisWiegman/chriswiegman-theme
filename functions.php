@@ -88,7 +88,7 @@ function action_pre_get_posts( $query ) {
 
 	global $wp_the_query;
 
-	if ( ! is_home() && $query === $wp_the_query ) {
+	if ( ! is_home() && ! is_admin() && $query === $wp_the_query ) {
 		$query->set( 'posts_per_page', -1 );
 	}
 }
