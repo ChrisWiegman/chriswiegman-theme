@@ -8,7 +8,7 @@
 namespace CW\Theme;
 
 // Useful global constants.
-define( 'CW_THEME_VERSION', '11.0.1' );
+define( 'CW_THEME_VERSION', '11.1.0' );
 
 /**
  * Setup theme hooks.
@@ -31,6 +31,16 @@ function init() {
 	add_action( 'wp_before_admin_bar_render', $n( 'action_wp_before_admin_bar_render' ) );
 	add_action( 'send_headers', $n( 'action_send_headers' ) );
 	add_action( 'pre_get_posts', $n( 'action_pre_get_posts' ) );
+	add_action( 'admin_init', $n( 'action_admin_init' ) );
+	add_filter( 'xmlrpc_enabled', '__return_false' );
+	add_filter( 'rest_enabled', '__return_false' );
+
+	// Close comments on the front-end.
+	add_filter( 'comments_open', '__return_false', 20, 2 );
+	add_filter( 'pings_open', '__return_false', 20, 2 );
+
+	// Hide existing comments.
+	add_filter( 'comments_array', '__return_empty_array', 10, 2 );
 
 	// Cleanup extra garbage.
 	if ( function_exists( 'remove_action' ) ) {
@@ -43,8 +53,46 @@ function init() {
 		remove_action( 'template_redirect', 'rest_output_link_header', 11 );
 		remove_action( 'wp_head', 'wp_oembed_add_discovery_links' );
 		remove_action( 'wp_head', 'rest_output_link_wp_head' );
+		remove_action( 'xmlrpc_rsd_apis', 'rest_output_rsd' );
+		remove_action( 'wp_head', 'rest_output_link_wp_head', 10, 0 );
+		remove_action( 'template_redirect', 'rest_output_link_header', 11, 0 );
+		remove_action( 'auth_cookie_malformed', 'rest_cookie_collect_status' );
+		remove_action( 'auth_cookie_expired', 'rest_cookie_collect_status' );
+		remove_action( 'auth_cookie_bad_username', 'rest_cookie_collect_status' );
+		remove_action( 'auth_cookie_bad_hash', 'rest_cookie_collect_status' );
+		remove_action( 'auth_cookie_valid', 'rest_cookie_collect_status' );
+		remove_filter( 'rest_authentication_errors', 'rest_cookie_check_errors', 100 );
+		remove_action( 'init', 'rest_api_init' );
+		remove_action( 'rest_api_init', 'rest_api_default_filters', 10, 1 );
+		remove_action( 'parse_request', 'rest_api_loaded' );
+		remove_action( 'rest_api_init', 'wp_oembed_register_route' );
+		remove_filter( 'rest_pre_serve_request', '_oembed_rest_pre_serve_request', 10, 4 );
+		remove_action( 'wp_head', 'wp_oembed_add_discovery_links' );
+		remove_action( 'wp_head', 'wp_oembed_add_host_js' );
 
 	}
+}
+
+/**
+ * Action admin_init
+ *
+ * @since 11.1.0
+ */
+function action_admin_init() {
+
+	// Redirect any user trying to access comments page.
+	global $pagenow;
+
+	if ( 'edit-comments.php' === $pagenow ) {
+
+		wp_safe_redirect( admin_url() );
+		exit;
+
+	}
+
+	// Remove comments metabox from dashboard.
+	remove_meta_box( 'dashboard_recent_comments', 'dashboard', 'normal' );
+
 }
 
 /**
@@ -58,7 +106,7 @@ function action_pre_get_posts( $query ) {
 
 	global $wp_the_query;
 
-	if ( ! is_home() && $query === $wp_the_query ) {
+	if ( ! is_home() && ! is_admin() && $query === $wp_the_query ) {
 		$query->set( 'posts_per_page', -1 );
 	}
 }
