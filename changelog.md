@@ -1,3 +1,7 @@
+# 11.1.0
+
+- Improve comments removal
+
 # 11.0.1
 
 - Fix featured images on page template
