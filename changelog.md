@@ -1,6 +1,7 @@
 # 11.1.0
 
 - Improve comments removal
+- Fix post list count in admin.
 
 # 11.0.1
 
