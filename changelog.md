@@ -2,6 +2,8 @@
 
 - Improve comments removal
 - Fix post list count in admin.
+- Disable XMLRPC
+- Disable unneeded APIs
 
 # 11.0.1
 
