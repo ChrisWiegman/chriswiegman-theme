@@ -31,6 +31,14 @@ function init() {
 	add_action( 'wp_before_admin_bar_render', $n( 'action_wp_before_admin_bar_render' ) );
 	add_action( 'send_headers', $n( 'action_send_headers' ) );
 	add_action( 'pre_get_posts', $n( 'action_pre_get_posts' ) );
+	add_action( 'admin_init', $n( 'action_admin_init' ) );
+
+	// Close comments on the front-end.
+	add_filter( 'comments_open', '__return_false', 20, 2 );
+	add_filter( 'pings_open', '__return_false', 20, 2 );
+
+	// Hide existing comments.
+	add_filter( 'comments_array', '__return_empty_array', 10, 2 );
 
 	// Cleanup extra garbage.
 	if ( function_exists( 'remove_action' ) ) {
@@ -45,6 +53,36 @@ function init() {
 		remove_action( 'wp_head', 'rest_output_link_wp_head' );
 
 	}
+}
+
+/**
+ * Action admin_init
+ *
+ * @since 11.1.0
+ */
+function action_admin_init() {
+
+	// Redirect any user trying to access comments page.
+	global $pagenow;
+
+	if ( 'edit-comments.php' === $pagenow ) {
+
+		wp_safe_redirect( admin_url() );
+		exit;
+
+	}
+
+	// Remove comments metabox from dashboard.
+	remove_meta_box( 'dashboard_recent_comments', 'dashboard', 'normal' );
+
+	// Disable support for comments and trackbacks in post types.
+	foreach ( get_post_types() as $post_type ) {
+		if ( post_type_supports( $post_type, 'comments' ) ) {
+			remove_post_type_support( $post_type, 'comments' );
+			remove_post_type_support( $post_type, 'trackbacks' );
+		}
+	}
+
 }
 
 /**
