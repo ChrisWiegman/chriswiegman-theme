@@ -32,6 +32,7 @@ function init() {
 	add_action( 'send_headers', $n( 'action_send_headers' ) );
 	add_action( 'pre_get_posts', $n( 'action_pre_get_posts' ) );
 	add_action( 'admin_init', $n( 'action_admin_init' ) );
+	add_filter( 'xmlrpc_enabled', '__return_false' );
 
 	// Close comments on the front-end.
 	add_filter( 'comments_open', '__return_false', 20, 2 );
