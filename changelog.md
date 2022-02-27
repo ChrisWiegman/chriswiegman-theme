@@ -1,3 +1,8 @@
+# 11.1.1
+
+- Fix issue where the editor was broken due to being over-zealous in disable the REST api
+- Update dependencies
+
 # 11.1.0
 
 - Improve comments removal
