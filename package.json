@@ -18,7 +18,7 @@
     "node-sass": "^7.0.1",
     "sass": "^1.49.9",
     "eslint": "^8.10.0",
-    "eslint-config-prettier": "^8.4.0",
+    "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.0.0",
     "prettier": "^2.5.1"
   }
