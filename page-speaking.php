@@ -14,19 +14,13 @@ get_header();
 				<?php the_title( '<h1 class="title post-title p-name" itemprop="name headline">', '</h1>' ); ?>
 				<p class="description">All the technical and personal posts I've written on this site going back to 2008.</p>
 			</div>
-			<div class="content-search">
-				<form action="/" method="get">
-					<label for="search">Search all content</label>
-					<input type="text" name="s" id="search" placeholder="Search all content" value="<?php the_search_query(); ?>" />
-					<input type="submit" alt="Search" value="Search"  />
-				</form>
-			</div>
 			<div class="content e-content" itemprop="articleBody">
 				<?php
 				$cw_theme_event_params = array(
-					'orderby' => 't.name DESC',
+					'orderby' => 'event_date DESC',
+					'where'   => 'event_type = "Conference"',
 				);
-				$cw_theme_events       = pods( 'event' )->find();
+				$cw_theme_events       = pods( 'event' )->find( $cw_theme_event_params );
 
 				if ( 0 < $cw_theme_events->total() ) {
 
@@ -37,7 +31,7 @@ get_header();
 					/* Start the Loop */
 					while ( $cw_theme_events->fetch() ) {
 
-						$cw_theme_post_year = $cw_theme_events->field( 'start_date' );
+						$cw_theme_post_year = gmdate( 'Y', strtotime( $cw_theme_events->field( 'event_date' ) ) );
 
 						if ( $cw_theme_post_year !== $cw_theme_current_year ) {
 
