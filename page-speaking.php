@@ -1,6 +1,6 @@
 <?php
 /**
- * Templates for individual posts and pages.
+ * Template for my speaking page.
  *
  * @package chriswiegman-theme
  */
@@ -12,9 +12,18 @@ get_header();
 		<div class="container">
 			<div class="content-header">
 				<?php the_title( '<h1 class="title post-title p-name" itemprop="name headline">', '</h1>' ); ?>
-				<p class="description">All the technical and personal posts I've written on this site going back to 2008.</p>
 			</div>
 			<div class="content e-content" itemprop="articleBody">
+
+				<?php
+				if ( has_post_thumbnail() ) {
+					the_post_thumbnail( 'featured' );
+				}
+
+					the_content();
+				?>
+
+				<h2 id="conferences">Conferences</h2>
 				<?php
 				$cw_theme_event_params = array(
 					'orderby' => 'event_date DESC',
@@ -55,6 +64,9 @@ get_header();
 					}
 				}
 				?>
+
+				<h2 id="slides">Slides</h2>
+				<p>You can find slides from many of my talks at <a href="https://slides.chriswiegman.com/">slides.chriswiegman.com</a>.</p>
 			</div>
 		</div>
 	</article>
