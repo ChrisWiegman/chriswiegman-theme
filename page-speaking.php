@@ -23,23 +23,21 @@ get_header();
 			</div>
 			<div class="content e-content" itemprop="articleBody">
 				<?php
-				$cw_theme_args       = array(
-					'post_type'      => 'talk',
-					'posts_per_page' => -1,
+				$cw_theme_event_params = array(
+					'orderby' => 't.name DESC',
 				);
-				$cw_theme_blog_query = new WP_Query( $cw_theme_args );
+				$cw_theme_events       = pods( 'event' )->find();
 
-				if ( $cw_theme_blog_query->have_posts() ) {
+				if ( 0 < $cw_theme_events->total() ) {
 
 					echo '<!-- Group by year. -->';
 
 					$cw_theme_current_year = false;
 
 					/* Start the Loop */
-					while ( $cw_theme_blog_query->have_posts() ) {
-						$cw_theme_blog_query->the_post();
+					while ( $cw_theme_events->fetch() ) {
 
-						$cw_theme_post_year = get_the_date( 'Y' );
+						$cw_theme_post_year = $cw_theme_events->field( 'start_date' );
 
 						if ( $cw_theme_post_year !== $cw_theme_current_year ) {
 
@@ -56,9 +54,8 @@ get_header();
 
 						$cw_theme_current_year = $cw_theme_post_year;
 						?>
-						<a class="post" href="<?php the_permalink(); ?>">
-							<?php the_title( '<h3 class="post-title">', '</h3>' ); ?>
-							<span class="post-day"><?php the_date( 'M j' ); ?></span>
+						<a class="post" href="<?php echo esc_url( $cw_theme_events->display( 'event_link' ) ); ?>">
+							<h3 class="post-title"><?php echo esc_html( $cw_theme_events->display( 'post_title' ) ); ?></h3>
 						</a>
 						<?php
 					}
