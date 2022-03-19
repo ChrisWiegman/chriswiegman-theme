@@ -45,25 +45,66 @@ get_header();
 						if ( $cw_theme_post_year !== $cw_theme_current_year ) {
 
 							if ( false !== $cw_theme_current_year ) {
-								echo '</div>';
-								echo '</div>';
+								echo '</ul>';
 							}
 
-							echo '<div class="posts-group">';
-							printf( '<h2 class="main-header">%s</h2>', intval( $cw_theme_post_year ) );
-							echo '<div class="posts">';
+							printf( '<h3>%s</h3>', intval( $cw_theme_post_year ) );
+							echo '<ul>';
 
 						}
 
 						$cw_theme_current_year = $cw_theme_post_year;
 						?>
-						<a class="post" href="<?php echo esc_url( $cw_theme_events->display( 'event_link' ) ); ?>">
-							<h3 class="post-title"><?php echo esc_html( $cw_theme_events->display( 'post_title' ) ); ?></h3>
-						</a>
+						<li><a href="<?php echo esc_url( $cw_theme_events->display( 'event_link' ) ); ?>"><?php echo esc_html( $cw_theme_events->display( 'post_title' ) ); ?></a></li>
 						<?php
 					}
 				}
 				?>
+				</ul>
+
+				<h2 id="meetups">Meetups</h2>
+				<p>Of course, conferences aren’t all there is. I’ve also been fortunate to work with local WordPress and other groups in my hometown and beyond. Here are some of the Meetup groups I’ve been honored to speak to over the years.</p>
+				<ul>
+					<?php
+					$cw_theme_meetup_params = array(
+						'orderby' => 'event_date DESC',
+						'where'   => 'event_type = "Meetup"',
+					);
+					$cw_theme_meetups       = pods( 'event' )->find( $cw_theme_meetup_params );
+
+					if ( 0 < $cw_theme_meetups->total() ) {
+
+						/* Start the Loop */
+						while ( $cw_theme_meetups->fetch() ) {
+							?>
+							<li><a href="<?php echo esc_url( $cw_theme_meetups->display( 'event_link' ) ); ?>"><?php echo esc_html( $cw_theme_meetups->display( 'post_title' ) ); ?></a></li>
+							<?php
+						}
+					}
+					?>
+				</ul>
+
+				<h2 id="full-talks">Full Talks Available Online</h2>
+				<p>Some of my talks are available online. Here’s a list of talks I’ve given with links to the full talk.</p>
+				<ul>
+					<?php
+					$cw_theme_full_talk_params = array(
+						'orderby' => 'post_title ASC',
+						'where'   => 'video_link <> ""',
+					);
+					$cw_theme_full_talks       = pods( 'talk' )->find( $cw_theme_full_talk_params );
+
+					if ( 0 < $cw_theme_full_talks->total() ) {
+
+						/* Start the Loop */
+						while ( $cw_theme_full_talks->fetch() ) {
+							?>
+							<li><a href="<?php echo esc_url( $cw_theme_full_talks->display( 'event_link' ) ); ?>"><?php echo esc_html( $cw_theme_full_talks->display( 'post_title' ) ); ?></a></li>
+							<?php
+						}
+					}
+					?>
+				</ul>
 
 				<h2 id="slides">Slides</h2>
 				<p>You can find slides from many of my talks at <a href="https://slides.chriswiegman.com/">slides.chriswiegman.com</a>.</p>
