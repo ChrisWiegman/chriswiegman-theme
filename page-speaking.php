@@ -26,8 +26,11 @@ get_header();
 				<h2 id="conferences">Conferences</h2>
 				<?php
 				$cw_theme_event_params = array(
+					// 'select' => 't.*, COUNT( talks.ID ) AS talk_count',
 					'orderby' => 'event_date DESC',
 					'where'   => 'event_type = "Conference"',
+					// 'having'  => 'talk_count > 0',
+					'limit'   => -1,
 				);
 				$cw_theme_events       = pods( 'event' )->find( $cw_theme_event_params );
 
@@ -40,23 +43,37 @@ get_header();
 					/* Start the Loop */
 					while ( $cw_theme_events->fetch() ) {
 
-						$cw_theme_post_year = gmdate( 'Y', strtotime( $cw_theme_events->field( 'event_date' ) ) );
+						if ( ! empty( $cw_theme_events->field( 'talks' ) ) ) {
 
-						if ( $cw_theme_post_year !== $cw_theme_current_year ) {
+							$cw_theme_post_year = gmdate( 'Y', strtotime( $cw_theme_events->field( 'event_date' ) ) );
 
-							if ( false !== $cw_theme_current_year ) {
-								echo '</ul>';
+							if ( $cw_theme_post_year !== $cw_theme_current_year ) {
+
+								if ( false !== $cw_theme_current_year ) {
+									echo '</ul>';
+								}
+
+								printf( '<h3>%s</h3>', intval( $cw_theme_post_year ) );
+								echo '<ul>';
+
 							}
 
-							printf( '<h3>%s</h3>', intval( $cw_theme_post_year ) );
-							echo '<ul>';
-
+							$cw_theme_current_year = $cw_theme_post_year;
+							$cw_theme_keynote      = '';
+							$cw_theme_talks        = $cw_theme_events->field( 'talks' );
+							foreach ( $cw_theme_talks as $cw_theme_talk ) {
+								if ( isset( $cw_theme_talk['keynote'] ) && '1' === $cw_theme_talk['keynote'] ) {
+									$cw_theme_keynote = ' (keynote presentation)';
+								}
+							}
+							?>
+							<?php if ( strlen( trim( $cw_theme_events->display( 'event_link' ) ) ) > 0 ) { ?>
+								<li><a href="<?php echo esc_url( $cw_theme_events->display( 'event_link' ) ); ?>"><?php echo esc_html( $cw_theme_events->display( 'post_title' ) ); ?></a><?php echo esc_html( $cw_theme_keynote ); ?></li>
+							<?php } else { ?>
+								<li><?php echo esc_html( $cw_theme_events->display( 'post_title' ) ); ?><?php echo esc_html( $cw_theme_keynote ); ?></li>
+								<?php
+							}
 						}
-
-						$cw_theme_current_year = $cw_theme_post_year;
-						?>
-						<li><a href="<?php echo esc_url( $cw_theme_events->display( 'event_link' ) ); ?>"><?php echo esc_html( $cw_theme_events->display( 'post_title' ) ); ?></a></li>
-						<?php
 					}
 				}
 				?>
@@ -98,8 +115,9 @@ get_header();
 
 						/* Start the Loop */
 						while ( $cw_theme_full_talks->fetch() ) {
+							$cw_theme_event = $cw_theme_full_talks->field( 'event' );
 							?>
-							<li><a href="<?php echo esc_url( $cw_theme_full_talks->display( 'event_link' ) ); ?>"><?php echo esc_html( $cw_theme_full_talks->display( 'post_title' ) ); ?></a></li>
+							<li><a href="<?php echo esc_url( $cw_theme_full_talks->display( 'event_link' ) ); ?>"><?php echo esc_html( $cw_theme_full_talks->display( 'post_title' ) ); ?></a> - <?php echo esc_html( $cw_theme_event['post_title'] ); ?></li>
 							<?php
 						}
 					}
