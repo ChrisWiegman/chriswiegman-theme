@@ -26,10 +26,8 @@ get_header();
 				<h2 id="conferences">Conferences</h2>
 				<?php
 				$cw_theme_event_params = array(
-					// 'select' => 't.*, COUNT( talks.ID ) AS talk_count',
 					'orderby' => 'event_date DESC',
 					'where'   => 'event_type = "Conference"',
-					// 'having'  => 'talk_count > 0',
 					'limit'   => -1,
 				);
 				$cw_theme_events       = pods( 'event' )->find( $cw_theme_event_params );
