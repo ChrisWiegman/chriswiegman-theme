@@ -1,6 +1,6 @@
 <?php
 /**
- * Modifies the admin colummns for the event post type.
+ * Modifies the admin columns for the event post type.
  *
  * @package chriswiegman-theme
  */
