@@ -5,14 +5,14 @@
  * @package chriswiegman-theme
  */
 
-namespace CW\Theme\Post_Columns;
+namespace CW\Theme\Post_Columns\Event;
 
 /**
  * Setup theme hooks.
  *
  * @since 12.0.0
  */
-function event_init() {
+function init() {
 
 	$n = function ( $function ) {
 		return __NAMESPACE__ . "\\$function";
@@ -174,4 +174,4 @@ function action_manage_event_posts_custom_column( $column_name, $post_id ) {
 	}
 }
 
-event_init();
+init();
