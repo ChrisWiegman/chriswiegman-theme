@@ -1,3 +1,12 @@
+# 12
+
+- Update dependencies
+- Add date to posts list where appropriate
+- Switch to Pods for tracking all my talks
+- Custom speaker page template based on pods data
+- Remove Gallery block CSS
+- Use a more appropriate image size for the homepage
+
 # 11.1.1
 
 - Fix issue where the editor was broken due to being over-zealous in disable the REST api

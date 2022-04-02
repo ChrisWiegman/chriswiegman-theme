@@ -49,7 +49,7 @@ global $wp_query;
 								?>
 							<a class="post" href="<?php the_permalink(); ?>">
 								<?php the_title( '<h3 class="post-title">', '</h3>' ); ?>
-								<span class="post-day"><?php the_date( 'M j' ); ?></span>
+								<span class="post-day"><?php the_date( 'M j, Y' ); ?></span>
 							</a>
 							<?php } ?>
 						</div>

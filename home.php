@@ -16,7 +16,7 @@ get_header();
 					<h1>Hi, I'm Chris.</h1>
 					<p>I'm an <a href="https://wpengine.com/" title="WP Engine">engineering manager</a>, teacher, <a href="/speaking">speaker</a>, aspiring <a href="/blog">writer</a> and pilot currently based in Sarasota, Florida. My work focuses on WordPress, developer experience and humane and sustainable technology.</p>
 				</div>
-				<img src="/wp-content/uploads/2021/04/chris-wiegman-401x401.png" alt="Chris Wiegman" />
+				<img src="/wp-content/uploads/2021/04/chris-wiegman-228x228.png" alt="Chris Wiegman" />
 			</div>
 			<div class="social">
 				<span>Find me elsewhere:</span>
