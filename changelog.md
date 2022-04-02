@@ -1,6 +1,10 @@
-# 11
+# 12
 
 - Update dependencies
+- Add date to posts list where appropriate
+- Switch to Pods for tracking all my talks
+- Custom speaker page template based on pods data
+- Remove Gallery block CSS
 
 # 11.1.1
 
