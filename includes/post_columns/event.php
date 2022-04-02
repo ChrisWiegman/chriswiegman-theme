@@ -53,6 +53,11 @@ function filter_posts_orderby_request( $orderby, $query ) {
 		return $orderby;
 	}
 
+	if ( '' === $order_by_var ) {
+		$order_by_var = 'event_date';
+		$order_var    = 'DESC';
+	}
+
 	return sprintf( 'wp_pods_event.%s %s', $order_by_var, $order_var );
 
 }
