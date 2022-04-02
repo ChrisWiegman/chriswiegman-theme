@@ -23,6 +23,84 @@ function init() {
 
 	// Edit each column as needed.
 	add_action( 'manage_event_posts_custom_column', $n( 'action_manage_event_posts_custom_column' ), 10, 2 );
+
+	// Make the columns sortable.
+	add_filter( 'manage_edit-event_sortable_columns', $n( 'filter_manage_edit_event_sortable_columns' ) );
+	add_filter( 'posts_join_request', $n( 'filter_posts_join_request' ), 10, 2 );
+	add_filter( 'posts_orderby_request', $n( 'filter_posts_orderby_request' ), 10, 2 );
+
+}
+
+/**
+ * Filter posts_orderby_request
+ *
+ * Creates the appropriate SQL to join by a pods field.
+ *
+ * @since 12.0.0
+ *
+ * @param string    $orderby The ORDER BY clause of the query.
+ * @param \WP_Query $query   The WP_Query instance (passed by reference).
+ *
+ * @return string
+ */
+function filter_posts_orderby_request( $orderby, $query ) {
+
+	$order_by_var = get_query_var( 'orderby', false );
+	$order_var    = get_query_var( 'order', false );
+	$post_type    = get_query_var( 'post_type', false );
+
+	if ( ! is_admin() || ! is_main_query() || 'event' !== $post_type || 'title' === $order_by_var ) {
+		return $orderby;
+	}
+
+	return sprintf( 'wp_pods_event.%s %s', $order_by_var, $order_var );
+
+}
+
+/**
+ * Filter posts_join_request
+ *
+ * Joins the appropriate Pods table for sorting
+ *
+ * @since 12.0.0
+ *
+ * @param string    $join  The JOIN clause of the query.
+ * @param \WP_Query $query The WP_Query instance (passed by reference).
+ *
+ * @return string
+ */
+function filter_posts_join_request( $join, $query ) {
+
+	$order_by_var = get_query_var( 'orderby', false );
+	$post_type    = get_query_var( 'post_type', false );
+
+	if ( ! is_admin() || ! is_main_query() || 'event' !== $post_type || 'title' === $order_by_var ) {
+		return $join;
+	}
+
+	return 'JOIN wp_pods_event ON wp_posts.ID = wp_pods_event.id';
+
+}
+
+/**
+ * Filter manage_edit-event_sortable_columns
+ *
+ * @since 12.0.0
+ *
+ * @param array $columns Associative array of sortable columns.
+ *
+ * @return array
+ */
+function filter_manage_edit_event_sortable_columns( $columns ) {
+
+	$columns['event_type'] = 'event_type';
+	$columns['event_date'] = 'event_date';
+	$columns['location']   = 'location';
+	$columns['organizer']  = 'organizer';
+	$columns['talk_count'] = 'talk_count';
+
+	return $columns;
+
 }
 
 /**
@@ -33,6 +111,8 @@ function init() {
  * @since 12.0.0
  *
  * @param array $post_columns An associative array of column headings.
+ *
+ * @return array
  */
 function filter_manage_event_posts_columns( $post_columns ) {
 
