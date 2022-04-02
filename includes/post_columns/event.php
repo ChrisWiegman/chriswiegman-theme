@@ -95,9 +95,7 @@ function filter_manage_edit_event_sortable_columns( $columns ) {
 
 	$columns['event_type'] = 'event_type';
 	$columns['event_date'] = 'event_date';
-	$columns['location']   = 'location';
 	$columns['organizer']  = 'organizer';
-	$columns['talk_count'] = 'talk_count';
 
 	return $columns;
 
