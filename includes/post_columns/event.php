@@ -12,7 +12,7 @@ namespace CW\Theme\Post_Columns;
  *
  * @since 12.0.0
  */
-function init() {
+function event_init() {
 
 	$n = function ( $function ) {
 		return __NAMESPACE__ . "\\$function";
@@ -174,4 +174,4 @@ function action_manage_event_posts_custom_column( $column_name, $post_id ) {
 	}
 }
 
-init();
+event_init();
