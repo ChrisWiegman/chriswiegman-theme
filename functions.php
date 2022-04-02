@@ -59,6 +59,7 @@ function init() {
 
 	// Require additional functionality.
 	require __DIR__ . '/includes/post_columns/event.php';
+	require __DIR__ . '/includes/post_columns/location.php';
 
 }
 
