@@ -56,6 +56,10 @@ function init() {
 		remove_action( 'wp_head', 'rest_output_link_wp_head', 10, 0 );
 
 	}
+
+	// Require additional functionality.
+	require __DIR__ . '/includes/post_columns/event.php';
+
 }
 
 /**
