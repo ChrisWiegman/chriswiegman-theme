@@ -1,12 +1,12 @@
 {
     "meta": {
         "version": "2.8.10",
-        "build": 1647784001
+        "build": 1648927576
     },
     "pods": [
         {
             "name": "event",
-            "id": 1347,
+            "id": 1346,
             "label": "Events",
             "description": "",
             "type": "post_type",
@@ -48,7 +48,7 @@
             "groups": [
                 {
                     "name": "event_details",
-                    "id": 1348,
+                    "id": 1347,
                     "label": "Event Details",
                     "description": "",
                     "weight": 0,
@@ -58,7 +58,7 @@
                     "fields": [
                         {
                             "name": "event_type",
-                            "id": 1350,
+                            "id": 1349,
                             "label": "Event Type",
                             "description": "Select the event type",
                             "weight": 0,
@@ -88,14 +88,14 @@
                         },
                         {
                             "name": "location",
-                            "id": 1351,
+                            "id": 1350,
                             "label": "Location",
                             "description": "The location of the event",
                             "weight": 1,
                             "type": "pick",
                             "pick_object": "post_type",
                             "pick_val": "location",
-                            "sister_id": "1361",
+                            "sister_id": "1360",
                             "post_status": "publish",
                             "pick_table": "-- Select One --",
                             "required": "0",
@@ -118,12 +118,12 @@
                         },
                         {
                             "name": "event_date",
-                            "id": 1352,
+                            "id": 1351,
                             "label": "Event Date",
                             "description": "The date the event occurred or started on.",
                             "weight": 2,
                             "type": "date",
-                            "sister_id": "-- Select One --",
+                            "sister_id": "1360",
                             "required": "0",
                             "unique": "0",
                             "date_type": "format",
@@ -136,7 +136,7 @@
                         },
                         {
                             "name": "event_link",
-                            "id": 1353,
+                            "id": 1352,
                             "label": "Event Link",
                             "description": "A Link to the event's homepage",
                             "weight": 3,
@@ -157,9 +157,9 @@
                     ]
                 },
                 {
-                    "name": "talks",
-                    "id": 1349,
-                    "label": "Talks",
+                    "name": "organizer_info",
+                    "id": 1459,
+                    "label": "Organizer Info",
                     "description": "",
                     "weight": 1,
                     "meta_box_context": "normal",
@@ -167,15 +167,59 @@
                     "roles_allowed": "administrator",
                     "fields": [
                         {
+                            "name": "organizer",
+                            "id": 1460,
+                            "label": "Organizer",
+                            "description": "Were you an organizer of this event?",
+                            "weight": 0,
+                            "type": "boolean",
+                            "sister_id": "-- Select One --",
+                            "required": "0",
+                            "unique": "0",
+                            "boolean_format_type": "checkbox",
+                            "boolean_yes_label": "Yes",
+                            "boolean_no_label": "No",
+                            "roles_allowed": "administrator",
+                            "rest_pick_response": "array",
+                            "rest_pick_depth": "1"
+                        },
+                        {
+                            "name": "organizer_role",
+                            "id": 1461,
+                            "label": "Organizer Role",
+                            "description": "What was your role as organizer?",
+                            "weight": 1,
+                            "type": "text",
+                            "sister_id": "-- Select One --",
+                            "required": "0",
+                            "unique": "0",
+                            "text_allowed_html_tags": "strong em a ul ol li b i",
+                            "text_max_length": "255",
+                            "roles_allowed": "administrator",
+                            "rest_pick_response": "array",
+                            "rest_pick_depth": "1"
+                        }
+                    ]
+                },
+                {
+                    "name": "talks",
+                    "id": 1348,
+                    "label": "Talks",
+                    "description": "",
+                    "weight": 2,
+                    "meta_box_context": "normal",
+                    "meta_box_priority": "default",
+                    "roles_allowed": "administrator",
+                    "fields": [
+                        {
                             "name": "talks",
-                            "id": 1354,
+                            "id": 1353,
                             "label": "Talks",
                             "description": "Talks given at this event",
                             "weight": 0,
                             "type": "pick",
                             "pick_object": "post_type",
                             "pick_val": "talk",
-                            "sister_id": "1366",
                             "post_status": "publish",
                             "pick_table": "-- Select One --",
                             "required": "0",
@@ -194,7 +238,8 @@
                             "pick_user_role": "Administrator",
                             "roles_allowed": "administrator",
                             "rest_pick_response": "array",
-                            "rest_pick_depth": "1"
+                            "rest_pick_depth": "1",
+                            "sister_id": "1365"
                         }
                     ]
                 }
@@ -202,7 +247,7 @@
         },
         {
             "name": "location",
-            "id": 1355,
+            "id": 1354,
             "label": "Locations",
             "description": "",
             "type": "post_type",
@@ -239,10 +284,11 @@
             "show_in_nav_menus": "1",
             "show_in_admin_bar": "1",
             "menu_icon": "dashicons-airplane",
+            "sister_id": "1365",
             "groups": [
                 {
                     "name": "geo_location",
-                    "id": 1356,
+                    "id": 1355,
                     "label": "Geolocation",
                     "description": "",
                     "weight": 0,
@@ -252,7 +298,7 @@
                     "fields": [
                         {
                             "name": "latitude",
-                            "id": 1359,
+                            "id": 1358,
                             "label": "Latitude",
                             "description": "The latitude of the location",
                             "weight": 0,
@@ -275,7 +321,7 @@
                         },
                         {
                             "name": "longitude",
-                            "id": 1360,
+                            "id": 1359,
                             "label": "Longitude",
                             "description": "The longitude of the location",
                             "weight": 1,
@@ -300,7 +346,7 @@
                 },
                 {
                     "name": "events",
-                    "id": 1357,
+                    "id": 1356,
                     "label": "Events",
                     "description": "",
                     "weight": 1,
@@ -310,14 +356,13 @@
                     "fields": [
                         {
                             "name": "events",
-                            "id": 1361,
+                            "id": 1360,
                             "label": "Events",
                             "description": "Events at this location",
                             "weight": 0,
                             "type": "pick",
                             "pick_object": "post_type",
                             "pick_val": "event",
-                            "sister_id": "1351",
                             "post_status": "publish",
                             "pick_table": "-- Select One --",
                             "required": "0",
@@ -336,13 +381,14 @@
                             "pick_user_role": "Administrator",
                             "roles_allowed": "administrator",
                             "rest_pick_response": "array",
-                            "rest_pick_depth": "1"
+                            "rest_pick_depth": "1",
+                            "sister_id": "1351"
                         }
                     ]
                 },
                 {
                     "name": "talks",
-                    "id": 1358,
+                    "id": 1357,
                     "label": "Talks",
                     "description": "",
                     "weight": 2,
@@ -352,14 +398,13 @@
                     "fields": [
                         {
                             "name": "talks",
-                            "id": 1362,
+                            "id": 1361,
                             "label": "Talks",
                             "description": "The talks at this location",
                             "weight": 0,
                             "type": "pick",
                             "pick_object": "post_type",
                             "pick_val": "talk",
-                            "sister_id": "1370",
                             "post_status": "publish",
                             "pick_table": "-- Select One --",
                             "required": "0",
@@ -378,7 +423,8 @@
                             "pick_user_role": "Administrator",
                             "roles_allowed": "administrator",
                             "rest_pick_response": "array",
-                            "rest_pick_depth": "1"
+                            "rest_pick_depth": "1",
+                            "sister_id": "1369"
                         }
                     ]
                 }
@@ -386,7 +432,7 @@
         },
         {
             "name": "talk",
-            "id": 1363,
+            "id": 1362,
             "label": "Talks",
             "description": "",
             "type": "post_type",
@@ -424,10 +470,11 @@
             "show_in_nav_menus": "1",
             "show_in_admin_bar": "1",
             "menu_icon": "dashicons-megaphone",
+            "sister_id": "1369",
             "groups": [
                 {
                     "name": "talk_information",
-                    "id": 1364,
+                    "id": 1363,
                     "label": "Talk Information",
                     "description": "",
                     "weight": 0,
@@ -437,14 +484,14 @@
                     "fields": [
                         {
                             "name": "event",
-                            "id": 1366,
+                            "id": 1365,
                             "label": "Event",
                             "description": "The event the talk is part of",
                             "weight": 0,
                             "type": "pick",
                             "pick_object": "post_type",
                             "pick_val": "event",
-                            "sister_id": "1354",
+                            "sister_id": "1353",
                             "post_status": "publish",
                             "pick_table": "-- Select One --",
                             "required": "1",
@@ -467,13 +514,13 @@
                         },
                         {
                             "name": "talk_type",
-                            "id": 1367,
+                            "id": 1366,
                             "label": "Talk Type",
                             "description": "Select the talk type",
                             "weight": 1,
+                            "sister_id": "-- Select One --",
                             "type": "pick",
                             "pick_object": "custom-simple",
-                            "sister_id": "-- Select One --",
                             "post_status": "publish",
                             "pick_table": "-- Select One --",
                             "required": "1",
@@ -497,7 +544,7 @@
                         },
                         {
                             "name": "talk_date",
-                            "id": 1368,
+                            "id": 1367,
                             "label": "Talk Date",
                             "description": "The date on which the talk was given",
                             "weight": 2,
@@ -515,7 +562,7 @@
                         },
                         {
                             "name": "description",
-                            "id": 1369,
+                            "id": 1368,
                             "label": "Description",
                             "description": "Describe the talk",
                             "weight": 3,
@@ -531,14 +578,14 @@
                         },
                         {
                             "name": "talk_location",
-                            "id": 1370,
+                            "id": 1369,
                             "label": "Talk Location",
                             "description": "The location of the talk",
                             "weight": 4,
                             "type": "pick",
                             "pick_object": "post_type",
                             "pick_val": "location",
-                            "sister_id": "1362",
+                            "sister_id": "1361",
                             "post_status": "publish",
                             "pick_table": "-- Select One --",
                             "required": "0",
@@ -561,12 +608,12 @@
                         },
                         {
                             "name": "keynote",
-                            "id": 1371,
+                            "id": 1370,
                             "label": "Keynote",
                             "description": "Is the talk a keynote?",
                             "weight": 5,
-                            "type": "boolean",
                             "sister_id": "-- Select One --",
+                            "type": "boolean",
                             "required": "0",
                             "unique": "0",
                             "boolean_format_type": "checkbox",
@@ -580,7 +627,7 @@
                 },
                 {
                     "name": "talk_links",
-                    "id": 1365,
+                    "id": 1364,
                     "label": "Talk Links",
                     "description": "",
                     "weight": 1,
@@ -590,7 +637,7 @@
                     "fields": [
                         {
                             "name": "talk_link",
-                            "id": 1372,
+                            "id": 1371,
                             "label": "Talk Link",
                             "description": "A link to the marketing or other page for the talk",
                             "weight": 0,
@@ -610,7 +657,7 @@
                         },
                         {
                             "name": "slides_link",
-                            "id": 1373,
+                            "id": 1372,
                             "label": "Slides Link",
                             "description": "A link to the talk's slides (if available)",
                             "weight": 1,
@@ -630,7 +677,7 @@
                         },
                         {
                             "name": "video_link",
-                            "id": 1374,
+                            "id": 1373,
                             "label": "Video Link",
                             "description": "A link to the full video of the talk",
                             "weight": 2,
