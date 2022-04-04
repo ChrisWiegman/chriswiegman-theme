@@ -1,3 +1,7 @@
+#
+
+- Remove extra favicon tag
+
 # 12
 
 - Update dependencies
