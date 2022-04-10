@@ -1,6 +1,7 @@
-#
+# 12.0.1
 
 - Remove extra favicon tag
+- Update dependencies
 
 # 12
 
