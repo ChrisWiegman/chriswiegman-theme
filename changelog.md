@@ -1,3 +1,7 @@
+#
+
+- Remove unneeded files from the generated zip file
+
 # 12.0.1
 
 - Remove extra favicon tag
