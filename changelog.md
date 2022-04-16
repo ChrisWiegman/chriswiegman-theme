@@ -1,6 +1,7 @@
 #
 
 - Remove unneeded files from the generated zip file
+- Update dependencies
 
 # 12.0.1
 
