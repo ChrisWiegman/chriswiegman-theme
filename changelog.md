@@ -1,3 +1,9 @@
+# 12.0.2
+
+- Fix the homepage image
+- Remove unneeded files from the generated zip file
+- Update dependencies
+
 # 12.0.1
 
 - Remove extra favicon tag

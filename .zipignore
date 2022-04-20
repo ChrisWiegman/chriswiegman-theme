@@ -25,3 +25,6 @@
 *.idea/*
 *.DS_Store*
 *gulpfile.js*
+*pods.json*
+*changelog.md*
+*homepage-widget.html*
