@@ -8,7 +8,7 @@
 namespace CW\Theme;
 
 // Useful global constants.
-define( 'CW_THEME_VERSION', '12.0.2' );
+define( 'CW_THEME_VERSION', '12.0.3' );
 
 /**
  * Setup theme hooks.
@@ -33,6 +33,8 @@ function init() {
 	add_action( 'pre_get_posts', $n( 'action_pre_get_posts' ) );
 	add_action( 'admin_init', $n( 'action_admin_init' ) );
 	add_filter( 'xmlrpc_enabled', '__return_false' );
+	add_filter( 'big_image_size_threshold', '__return_false' );
+	add_filter( 'intermediate_image_sizes_advanced', $n( 'filter_intermediate_image_sizes_advanced' ), 10, 3 );
 
 	// Close comments on the front-end.
 	add_filter( 'comments_open', '__return_false', 20, 2 );
@@ -61,6 +63,28 @@ function init() {
 	require __DIR__ . '/includes/post_columns/event.php';
 	require __DIR__ . '/includes/post_columns/location.php';
 	require __DIR__ . '/includes/post_columns/talk.php';
+
+}
+
+/**
+ * Filter intermediate_image_sizes_advanced.
+ *
+ * Unset default image sizes.
+ *
+ * @since 12.0.3
+ *
+ * @param array $new_sizes Associative array of image sizes to be created.
+ * @param array $image_meta The image meta data: width, height, file, sizes, etc.
+ * @param int   $attachment_id The attachment post ID for the image.
+ *
+ * @return array
+ */
+function filter_intermediate_image_sizes_advanced( $new_sizes, $image_meta, $attachment_id ) {
+
+	unset( $new_sizes['thumbnail'] );
+	unset( $new_sizes['medium_large'] );
+
+	return $new_sizes;
 
 }
 
@@ -152,7 +176,6 @@ function action_init() {
 
 	remove_post_type_support( 'post', 'comments' );
 	remove_post_type_support( 'page', 'comments' );
-	add_image_size( 'avatar', 228, 228, true );
 
 }
 
@@ -216,8 +239,8 @@ function action_after_setup_theme() {
 	add_theme_support( 'disable-custom-gradients' );
 	remove_theme_support( 'core-block-patterns' );
 
-	// Add a better image size.
-	add_image_size( 'featured', 850 );
+	remove_image_size( '1536x1536' );
+	remove_image_size( '2048x2048' );
 
 }
 

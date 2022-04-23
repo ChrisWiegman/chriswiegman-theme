@@ -1,3 +1,9 @@
+# 12.0.3
+
+- Update dependencies
+- Remove unneeded image sizes
+- Cleanup extra featured image CSS
+
 # 12.0.2
 
 - Fix the homepage image
