@@ -35,7 +35,7 @@ get_header();
 
 				<?php
 				if ( has_post_thumbnail() ) {
-					the_post_thumbnail( 'large' );
+					the_post_thumbnail( 'large', array( 'class' => 'wp-block-image aligncenter' ) );
 				}
 
 				the_content();
