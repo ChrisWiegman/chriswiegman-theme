@@ -1,4 +1,4 @@
-#
+# 12.0.4
 
 - Update dependencies
 - More cleanup of unused CSS
