@@ -1,3 +1,9 @@
+# 12.0.4
+
+- Update dependencies
+- More cleanup of unused CSS
+- Fix image overflow on mobile
+
 # 12.0.3
 
 - Update dependencies
