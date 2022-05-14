@@ -1,3 +1,7 @@
+# 12.1.0
+
+- Update blog or speaking page time when related content is updated
+
 # 12.0.4
 
 - Update dependencies
