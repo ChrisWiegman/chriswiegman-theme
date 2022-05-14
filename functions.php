@@ -86,7 +86,11 @@ function action_save_post( $post_ID, $post, $update ) {
 		'event' => 463,
 	);
 
-	if ( array_key_exists( $post->post_type, $post_types ) && ! wp_is_post_revision( $post ) && 'publish' === $post->post_status ) {
+	if (
+		array_key_exists( $post->post_type, $post_types ) &&
+		! wp_is_post_revision( $post ) &&
+		'publish' === $post->post_status
+	) {
 
 		remove_action( 'save_post', __NAMESPACE__ . '\action_save_post', 10, 3 );
 
