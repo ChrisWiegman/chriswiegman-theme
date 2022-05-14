@@ -8,7 +8,7 @@
 namespace CW\Theme;
 
 // Useful global constants.
-define( 'CW_THEME_VERSION', '12.0.4' );
+define( 'CW_THEME_VERSION', '12.1.0' );
 
 /**
  * Setup theme hooks.
@@ -32,6 +32,7 @@ function init() {
 	add_action( 'send_headers', $n( 'action_send_headers' ) );
 	add_action( 'pre_get_posts', $n( 'action_pre_get_posts' ) );
 	add_action( 'admin_init', $n( 'action_admin_init' ) );
+	add_action( 'save_post', $n( 'action_save_post' ), 10, 3 );
 	add_filter( 'xmlrpc_enabled', '__return_false' );
 	add_filter( 'big_image_size_threshold', '__return_false' );
 	add_filter( 'intermediate_image_sizes_advanced', $n( 'filter_intermediate_image_sizes_advanced' ), 10, 3 );
@@ -64,6 +65,43 @@ function init() {
 	require __DIR__ . '/includes/post_columns/location.php';
 	require __DIR__ . '/includes/post_columns/talk.php';
 
+}
+
+/**
+ * Action save_post
+ *
+ * Update the index pages when content is saved.
+ *
+ * @since 12.1.0
+ *
+ * @param int      $post_ID Post ID.
+ * @param \WP_POST $post Post object.
+ * @param  bool     $update Whether this is an existing post being updated.
+ */
+function action_save_post( $post_ID, $post, $update ) {
+
+	$post_types = array(
+		'post'  => 1226,
+		'talk'  => 463,
+		'event' => 463,
+	);
+
+	if (
+		array_key_exists( $post->post_type, $post_types ) &&
+		! wp_is_post_revision( $post ) &&
+		'publish' === $post->post_status
+	) {
+
+		remove_action( 'save_post', __NAMESPACE__ . '\action_save_post', 10, 3 );
+
+		$index_page = array(
+			'ID'            => $post_types[ $post->post_type ],
+			'post_date'     => current_time( 'mysql' ),
+			'post_date_gmt' => current_time( 'mysql', 1 ),
+		);
+
+		wp_update_post( $index_page );
+	}
 }
 
 /**
