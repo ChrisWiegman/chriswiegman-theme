@@ -53,9 +53,7 @@ a.post {
 
 h1,
 h2,
-h3,
-h4,
-h5 {
+h3 {
   margin: 0 0 1.5rem 0;
   line-height: 1.2;
   color: $primary;
@@ -63,16 +61,13 @@ h5 {
   font-weight: 600;
 }
 
-h3,
-h4,
-h5 {
+h3 {
   color: $secondary;
   font-weight: 500;
 }
 
 h2:not(:first-child),
-h3:not(:first-child),
-h4:not(:first-child) {
+h3:not(:first-child){
   margin-top: 3rem;
 }
 
@@ -171,9 +166,7 @@ main {
     }
 
     h2,
-    h3,
-    h4,
-    h5 {
+    h3{
       margin: 0 0 1.25rem 0;
     }
 
@@ -186,20 +179,9 @@ main {
       font-size: 1.75rem;
     }
 
-    h4 {
-      margin-bottom: 0.75rem;
-      border-bottom: 1px solid $border-light;
-    }
-
-    h5 {
-      font-size: 1rem;
-      text-transform: uppercase;
-    }
-
     blockquote,
     ol,
     p,
-    table,
     ul {
       margin: 0 0 2rem;
     }
