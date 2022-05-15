@@ -1,3 +1,8 @@
+# 12.1.1
+
+- More CSS cleanup
+- Center main menu when needed
+
 # 12.1.0
 
 - Update blog or speaking page time when related content is updated
