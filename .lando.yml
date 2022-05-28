@@ -2,7 +2,7 @@ name: chriswiegman-theme
 recipe: wordpress
 config:
   webroot: wordpress
-  php: "7.4"
+  php: "8.0"
   via: nginx
   database: mariadb
 services:
