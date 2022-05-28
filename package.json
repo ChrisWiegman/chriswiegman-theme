@@ -9,7 +9,7 @@
   "license": "GPLv3",
   "homepage": "https://chriswiegman.com/",
   "devDependencies": {
-    "del": "^6.1.0",
+    "del": "^6.1.1",
     "gulp": "^4.0.2",
     "gulp-cli": "^2.3.0",
     "gulp-rename": "^2.0.0",
