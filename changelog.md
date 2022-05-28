@@ -1,6 +1,7 @@
 #
 
 - Update dependencies
+- Switch to PHP 8.0 for project development
 
 # 12.1.1
 
