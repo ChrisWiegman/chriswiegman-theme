@@ -1,3 +1,9 @@
+# 12.1.2
+
+- Update dependencies
+- Switch to PHP 8.0 for project development
+- Fix link to full talks on speaker page
+
 # 12.1.1
 
 - More CSS cleanup

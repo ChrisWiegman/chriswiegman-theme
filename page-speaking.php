@@ -115,7 +115,7 @@ get_header();
 						while ( $cw_theme_full_talks->fetch() ) {
 							$cw_theme_event = $cw_theme_full_talks->field( 'event' );
 							?>
-							<li><a href="<?php echo esc_url( $cw_theme_full_talks->display( 'event_link' ) ); ?>"><?php echo esc_html( $cw_theme_full_talks->display( 'post_title' ) ); ?></a> - <?php echo esc_html( $cw_theme_event['post_title'] ); ?></li>
+							<li><a href="<?php echo esc_url( $cw_theme_full_talks->display( 'video_link' ) ); ?>"><?php echo esc_html( $cw_theme_full_talks->display( 'post_title' ) ); ?></a> - <?php echo esc_html( $cw_theme_event['post_title'] ); ?></li>
 							<?php
 						}
 					}
