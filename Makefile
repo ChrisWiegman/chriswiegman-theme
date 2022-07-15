@@ -53,6 +53,7 @@ clean-build:
 		node_modules \
 		wordpress \
 		vendor \
+		.vscode/*.log \
 		.phpunit.result.cache
 
 .PHONY: clean-prod-assets
