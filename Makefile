@@ -167,7 +167,6 @@ reset: destroy start ## Resets a running dev environment to new
 setup: | copy-prod-assets import-db
 	lando wp plugin deactivate --path=./wordpress ewww-image-optimizer
 	$(MAKE) setup-wordpress-plugins
-	$(MAKE) setup-wordpress-theme
 
 .PHONY: setup-wordpress
 setup-wordpress:
