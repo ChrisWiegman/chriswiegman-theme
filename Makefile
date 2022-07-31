@@ -12,7 +12,7 @@ build: build-assets
 .PHONY: build-assets
 build-assets: | clean-assets
 	@echo "Building theme assets"
-	$(DOCKER_RUN) $(NODE_IMAGE) ./node_modules/gulp-cli/bin/gulp.js
+	$(DOCKER_RUN) $(NODE_IMAGE) npm run build-assets
 
 .PHONY: build-docker
 build-docker: build-docker-node build-docker-php
@@ -236,6 +236,6 @@ update-npm:
 	$(DOCKER_RUN) $(NODE_IMAGE) npm update
 
 .PHONY: watch
-watch: | build-assets
+watch:
 	@echo "Building and watching theme assets"
-	$(DOCKER_RUN) -d $(NODE_IMAGE) ./node_modules/gulp-cli/bin/gulp.js watch
+	$(DOCKER_RUN) -d $(NODE_IMAGE) npm run watch
