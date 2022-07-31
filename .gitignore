@@ -221,3 +221,6 @@ Docker/debug
 /build/
 clover.xml
 .phpunit.result.cache
+
+# VS Code log files
+/.vscode/*.log

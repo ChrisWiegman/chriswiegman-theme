@@ -1,3 +1,8 @@
+# 12.2.0
+
+- Update dependencies
+- Remove use of Gulp.js for processing SASS
+
 # 12.1.2
 
 - Update dependencies

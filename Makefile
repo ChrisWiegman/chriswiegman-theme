@@ -12,7 +12,7 @@ build: build-assets
 .PHONY: build-assets
 build-assets: | clean-assets
 	@echo "Building theme assets"
-	$(DOCKER_RUN) $(NODE_IMAGE) ./node_modules/gulp-cli/bin/gulp.js
+	$(DOCKER_RUN) $(NODE_IMAGE) npm run build-assets
 
 .PHONY: build-docker
 build-docker: build-docker-node build-docker-php
@@ -45,6 +45,7 @@ clean-assets:
 	@echo "Cleaning up theme assets"
 	rm -f assets/*.js
 	rm -f assets/*.css
+	rm -f assets/*.map
 
 .PHONY: clean-build
 clean-build:
@@ -53,6 +54,7 @@ clean-build:
 		node_modules \
 		wordpress \
 		vendor \
+		.vscode/*.log \
 		.phpunit.result.cache
 
 .PHONY: clean-prod-assets
@@ -166,7 +168,6 @@ reset: destroy start ## Resets a running dev environment to new
 setup: | copy-prod-assets import-db
 	lando wp plugin deactivate --path=./wordpress ewww-image-optimizer
 	$(MAKE) setup-wordpress-plugins
-	$(MAKE) setup-wordpress-theme
 
 .PHONY: setup-wordpress
 setup-wordpress:
@@ -236,6 +237,6 @@ update-npm:
 	$(DOCKER_RUN) $(NODE_IMAGE) npm update
 
 .PHONY: watch
-watch: | build-assets
+watch:
 	@echo "Building and watching theme assets"
-	$(DOCKER_RUN) -d $(NODE_IMAGE) ./node_modules/gulp-cli/bin/gulp.js watch
+	$(DOCKER_RUN) -d $(NODE_IMAGE) npm run watch
