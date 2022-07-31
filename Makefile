@@ -45,6 +45,7 @@ clean-assets:
 	@echo "Cleaning up theme assets"
 	rm -f assets/*.js
 	rm -f assets/*.css
+	rm -f assets/*.map
 
 .PHONY: clean-build
 clean-build:

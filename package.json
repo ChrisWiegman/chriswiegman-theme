@@ -10,21 +10,14 @@
   "homepage": "https://chriswiegman.com/",
   "devDependencies": {
     "clean-css-cli": "^5.6.1",
-    "del": "^6.1.1",
     "eslint": "^8.20.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.2.1",
-    "gulp": "^4.0.2",
-    "gulp-cli": "^2.3.0",
-    "gulp-rename": "^2.0.0",
-    "gulp-sass": "^5.1.0",
-    "gulp-sourcemaps": "^3.0.0",
     "node-sass": "^7.0.1",
-    "prettier": "^2.7.1",
-    "sass": "^1.54.0"
+    "prettier": "^2.7.1"
   },
   "watch": {
-    "assets": {
+    "build-assets": {
       "patterns": [
         "assets"
       ],
@@ -38,7 +31,7 @@
     "minify-main": "cleancss -O2 --output ./assets/main.min.css ./assets/main.css",
     "compile-editor": "node-sass --output-style expanded --source-map true --source-map-contents true ./assets/scss/editor.scss ./assets/editor.css",
     "minify-editor": "cleancss -O2 --output ./assets/editor.min.css ./assets/editor.css",
-    "assets": "npm run clean-maps && npm run compile-main && npm run compile-editor && npm run minify-main && npm run minify-editor",
-    "watch": "npm-watch assets"
+    "build-assets": "npm run clean-maps && npm run compile-main && npm run compile-editor && npm run minify-main && npm run minify-editor",
+    "watch": "npm-watch build-assets"
   }
 }
