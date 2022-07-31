@@ -8,7 +8,7 @@
 namespace CW\Theme;
 
 // Useful global constants.
-define( 'CW_THEME_VERSION', '12.1.2' );
+define( 'CW_THEME_VERSION', '12.2.0' );
 
 /**
  * Setup theme hooks.
