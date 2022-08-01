@@ -3,15 +3,11 @@
 *.vscode*
 *Docker*
 *wordpress/*
-*.eslintrc.js*
 *.gitignore*
 *.lando.yml*
-*.prettierignore*
-*.prettierrc.json*
 *.zipignore*
 *composer.json*
 *composer.lock*
-*Jenkinsfile*
 *Makefile*
 *package-lock.json*
 *package.json*
@@ -24,4 +20,3 @@
 *.DS_Store*
 *pods.json*
 *changelog.md*
-*homepage-widget.html*
