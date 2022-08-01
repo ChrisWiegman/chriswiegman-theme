@@ -1,4 +1,4 @@
-#
+# 12.2.1
 
 - Remove unused phpunit support
 - Simplify make testing targets for linting only
