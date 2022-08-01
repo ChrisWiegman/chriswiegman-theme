@@ -2,22 +2,16 @@
 *node_modules*
 *.vscode*
 *Docker*
-*tests*
 *wordpress/*
-*.eslintrc.js*
 *.gitignore*
 *.lando.yml*
-*.prettierignore*
-*.prettierrc.json*
 *.zipignore*
 *composer.json*
 *composer.lock*
-*Jenkinsfile*
 *Makefile*
 *package-lock.json*
 *package.json*
 *phpcs.xml*
-*phpunit.xml.dist*
 *README.md*
 *.githold*
 *.git*
@@ -26,4 +20,3 @@
 *.DS_Store*
 *pods.json*
 *changelog.md*
-*homepage-widget.html*

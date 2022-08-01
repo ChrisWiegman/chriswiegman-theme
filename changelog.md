@@ -1,3 +1,9 @@
+# 12.2.1
+
+- Remove unused phpunit support
+- Simplify make testing targets for linting only
+- Cleanup extra files in the repo
+
 # 12.2.0
 
 - Update dependencies

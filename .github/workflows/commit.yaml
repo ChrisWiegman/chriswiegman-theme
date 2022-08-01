@@ -8,11 +8,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: php-actions/composer@v6
-      - name: PHPUnit Tests
-        uses: php-actions/phpunit@v3
-        with:
-          configuration: phpunit.xml.dist
-          args: --coverage-text
       - name: PHP_CodeSniffer
         run: |
           cd ${GITHUB_WORKSPACE}

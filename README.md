@@ -40,7 +40,7 @@ Xdebug 3 released a [number of changes](https://xdebug.org/docs/upgrade_guide) t
 - [Xdebug Helper for Chrome](https://chrome.google.com/extensions/detail/eadndfjplgieldjbigjakmdgkmoaaaoc) ([source](https://github.com/mac-cain13/xdebug-helper-for-chrome)).
 - [XDebugToggle for Safari](https://apps.apple.com/app/safari-xdebug-toggle/id1437227804?mt=12) ([source](https://github.com/kampfq/SafariXDebugToggle)).
 
-## Build and Testing
+## Build the project
 
 The theme minified versions of any JavaScript files:
 
@@ -50,30 +50,8 @@ make build
 
 Note, assets will also build during the install phase.
 
-The project uses the WP_Mock library for unit testing. Once setup run the following for unit tests:
-
-```bash
-make test-unit
-```
-
 We also use [PHP_CodeSniffer](https://github.com/squizlabs/PHP_CodeSniffer) with [WordPress Coding Standards](https://github.com/WordPress/WordPress-Coding-Standards) and [JSHint](http://jshint.com/) with [WordPress' JS Standards](https://make.wordpress.org/core/handbook/best-practices/coding-standards/javascript/#installing-and-running-jshint). Linting will automagically be setup for you if you use [Visual Studio Code](https://code.visualstudio.com/). If you want to run it manually use the following:
 
 ```bash
-make test-lint
-```
-
-or, to run an individual lint, use one of the following:
-
-```bash
-make test-lint-php
-```
-
-```bash
-make test-lint-javascript
-```
-
-You can run all testing (all lints and unit tests) together with the following:
-
-```bash
-make test
+make lint
 ```
