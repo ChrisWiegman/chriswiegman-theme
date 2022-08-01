@@ -54,8 +54,7 @@ clean-build:
 		node_modules \
 		wordpress \
 		vendor \
-		.vscode/*.log \
-		.phpunit.result.cache
+		.vscode/*.log
 
 .PHONY: clean-prod-assets
 clean-prod-assets:
@@ -146,6 +145,9 @@ ifdef HAS_LANDO
 	fi
 endif
 
+.PHONY: lint
+lint: test ## Run all linting
+
 .PHONY: open
 open: ## Open the development site in your default browser
 	open https://chriswiegman-theme.lndo.site
@@ -193,7 +195,7 @@ start: lando-start open-site ## Starts the development environment including dow
 stop: lando-stop ## Stops the development environment. This is non-destructive.
 
 .PHONY: test
-test: test-lint test-phpunit  ## Run all testing
+test: test-lint-php  ## Run all testing
 
 .PHONY: test-lint
 test-lint: test-lint-php ## Run linting on both PHP and JavaScript
@@ -212,16 +214,6 @@ test-lint-php: ## Run linting on PHP only
 		--rm \
 		php:7.4-cli \
 		/app/vendor/bin/phpcs --standard=./phpcs.xml
-
-.PHONY: test-phpunit
-test-phpunit: ## Run PhpUnit
-	@echo "Running Unit Tests Without Coverage"
-	docker run \
-		-v "$$(pwd):/app" \
-		--workdir /app \
-		--rm \
-		php:7.4-cli \
-		/app/vendor/bin/phpunit
 
 .PHONY: trust-lando-cert-mac
 trust-lando-cert-mac: ## Trust Lando's SSL certificate on your mac

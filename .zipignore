@@ -2,7 +2,6 @@
 *node_modules*
 *.vscode*
 *Docker*
-*tests*
 *wordpress/*
 *.eslintrc.js*
 *.gitignore*
@@ -17,7 +16,6 @@
 *package-lock.json*
 *package.json*
 *phpcs.xml*
-*phpunit.xml.dist*
 *README.md*
 *.githold*
 *.git*
