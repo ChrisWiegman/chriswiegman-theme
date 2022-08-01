@@ -53,17 +53,5 @@ Note, assets will also build during the install phase.
 We also use [PHP_CodeSniffer](https://github.com/squizlabs/PHP_CodeSniffer) with [WordPress Coding Standards](https://github.com/WordPress/WordPress-Coding-Standards) and [JSHint](http://jshint.com/) with [WordPress' JS Standards](https://make.wordpress.org/core/handbook/best-practices/coding-standards/javascript/#installing-and-running-jshint). Linting will automagically be setup for you if you use [Visual Studio Code](https://code.visualstudio.com/). If you want to run it manually use the following:
 
 ```bash
-make test-lint
-```
-
-or, to run an individual lint, use one of the following:
-
-```bash
-make test-lint-php
-```
-
-You can run all testing (all lints and unit tests) together with the following:
-
-```bash
-make test
+make lint
 ```

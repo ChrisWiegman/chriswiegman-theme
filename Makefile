@@ -146,7 +146,14 @@ ifdef HAS_LANDO
 endif
 
 .PHONY: lint
-lint: test ## Run all linting
+lint: ## Run all linting
+	@echo "Running PHP linting"
+	docker run \
+		-v "$$(pwd):/app" \
+		--workdir /app \
+		--rm \
+		php:7.4-cli \
+		/app/vendor/bin/phpcs --standard=./phpcs.xml
 
 .PHONY: open
 open: ## Open the development site in your default browser
@@ -193,27 +200,6 @@ start: lando-start open-site ## Starts the development environment including dow
 
 .PHONY: stop
 stop: lando-stop ## Stops the development environment. This is non-destructive.
-
-.PHONY: test
-test: test-lint-php  ## Run all testing
-
-.PHONY: test-lint
-test-lint: test-lint-php ## Run linting on both PHP and JavaScript
-
-.PHONY: test-lint-javascript
-test-lint-javascript: ## Run linting on JavaScript only
-	@echo "Running JavaScript linting"
-	$(DOCKER_RUN) $(NODE_IMAGE) npm run lint
-
-.PHONY: test-lint-php
-test-lint-php: ## Run linting on PHP only
-	@echo "Running PHP linting"
-	docker run \
-		-v "$$(pwd):/app" \
-		--workdir /app \
-		--rm \
-		php:7.4-cli \
-		/app/vendor/bin/phpcs --standard=./phpcs.xml
 
 .PHONY: trust-lando-cert-mac
 trust-lando-cert-mac: ## Trust Lando's SSL certificate on your mac
