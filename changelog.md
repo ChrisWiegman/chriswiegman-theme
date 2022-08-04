@@ -1,3 +1,7 @@
+# 12.2.2
+
+- Switch the the still-supported Sass package
+
 # 12.2.1
 
 - Remove unused phpunit support
