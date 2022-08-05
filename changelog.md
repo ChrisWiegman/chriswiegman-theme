@@ -1,3 +1,8 @@
+#
+
+- Reintroduce SASS watch script
+- Update dependencies
+
 # 12.2.2
 
 - Switch the the still-supported Sass package
