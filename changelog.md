@@ -1,4 +1,4 @@
-#
+# 12.2.3
 
 - Reintroduce SASS watch script
 - Update dependencies
