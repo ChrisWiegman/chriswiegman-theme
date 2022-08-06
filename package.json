@@ -10,12 +10,13 @@
   "homepage": "https://chriswiegman.com/",
   "devDependencies": {
     "clean-css-cli": "^5.6.1",
-    "sass": "^1.54.2"
+    "sass": "^1.54.3"
   },
   "scripts": {
     "clean": "rm -f ./assets/*.map && rm -f ./assets/*.css",
     "compile": "sass assets/scss/main.scss:assets/main.css assets/scss/editor.scss:assets/editor.css",
     "minify": "cleancss -O2 --batch --batch-suffix '.min' assets/*.css",
-    "build-assets": "npm run clean && npm run compile && npm run minify"
+    "build-assets": "npm run clean && npm run compile && npm run minify",
+    "watch": "sass --watch assets/scss/main.scss:assets/main.css assets/scss/editor.scss:assets/editor.css"
   }
 }
