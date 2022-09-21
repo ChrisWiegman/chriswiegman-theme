@@ -1,7 +1,6 @@
 DOCKER_RUN     := @docker run --rm
 COMPOSER_IMAGE := -v $$(pwd):/app --user $$(id -u):$$(id -g) composer
 NODE_IMAGE     := -w /home/node/app -v $$(pwd):/home/node/app --user node node:lts
-HAS_LANDO      := $(shell command -v lando 2> /dev/null)
 HIGHLIGHT      :=\033[0;32m
 END_HIGHLIGHT  :=\033[0m # No Color
 THEME_VERSION  := $$(grep "^Version" style.css | awk -F' ' '{print $3}' | cut -d ":" -f2 | sed 's/ //g')
@@ -79,7 +78,7 @@ copy-prod-assets: | clean-prod-assets
 import-db:
 	echo "Importing production database"
 	kana db-import ./wordpress/wp-content/mysql.sql
-	kana wp --path=./wordpress search-replace https://chriswiegman.com https://chriswiegman-theme.lndo.site --all-tables
+	kana wp search-replace https://chriswiegman.com https://chriswiegman-theme.lndo.site --all-tables
 
 .PHONY: destroy
 destroy: ## Destroys the developer environment completely (this is irreversible)
@@ -89,12 +88,12 @@ destroy: ## Destroys the developer environment completely (this is irreversible)
 .PHONY: flush-cache
 flush-cache: ## Clears all server caches enabled within WordPress
 	@echo "Flushing cache"
-	kana wp cache flush --path=./wordpress
+	kana wp cache flush
 
 .PHONY: delete-transients
 delete-transients: ## Deletes all WordPress transients stored in the database
 	@echo "Deleting transients"
-	kana wp transient delete --path=./wordpress --all
+	kana wp transient delete --all
 
 .PHONY: help
 help:  ## Display help
@@ -164,7 +163,7 @@ reset: destroy start ## Resets a running dev environment to new
 
 .PHONY: setup-site
 setup: | copy-prod-assets import-db
-	kana wp plugin deactivate --path=./wordpress ewww-image-optimizer
+	kana wp plugin deactivate ewww-image-optimizer
 	$(MAKE) setup-wordpress-plugins
 
 .PHONY: setup-wordpress-plugins
