@@ -1,7 +1,6 @@
 DOCKER_RUN     := @docker run --rm
 COMPOSER_IMAGE := -v $$(pwd):/app --user $$(id -u):$$(id -g) composer
 NODE_IMAGE     := -w /home/node/app -v $$(pwd):/home/node/app --user node node:lts
-HAS_LANDO      := $(shell command -v lando 2> /dev/null)
 HIGHLIGHT      :=\033[0;32m
 END_HIGHLIGHT  :=\033[0m # No Color
 THEME_VERSION  := $$(grep "^Version" style.css | awk -F' ' '{print $3}' | cut -d ":" -f2 | sed 's/ //g')
@@ -78,23 +77,23 @@ copy-prod-assets: | clean-prod-assets
 .PHONY: import-db
 import-db:
 	echo "Importing production database"
-	lando db-import ./wordpress/wp-content/mysql.sql
-	lando wp --path=./wordpress search-replace https://chriswiegman.com https://chriswiegman-theme.lndo.site --all-tables
+	kana db-import ./wordpress/wp-content/mysql.sql
+	kana wp search-replace https://chriswiegman.com https://chriswiegman-theme.lndo.site --all-tables
 
 .PHONY: destroy
 destroy: ## Destroys the developer environment completely (this is irreversible)
-	lando destroy -y
+	kana destroy
 	$(MAKE) clean
 
 .PHONY: flush-cache
 flush-cache: ## Clears all server caches enabled within WordPress
 	@echo "Flushing cache"
-	lando wp cache flush --path=./wordpress
+	kana wp cache flush
 
 .PHONY: delete-transients
 delete-transients: ## Deletes all WordPress transients stored in the database
 	@echo "Deleting transients"
-	lando wp transient delete --path=./wordpress --all
+	kana wp transient delete --all
 
 .PHONY: help
 help:  ## Display help
@@ -117,33 +116,28 @@ install-composer:
 install-npm:
 	$(DOCKER_RUN) $(NODE_IMAGE) npm install
 
-.PHONY: lando-start
-lando-start:
-ifdef HAS_LANDO
+.PHONY: kana-start
+kana-start:
 	if [ ! -d ./wordpress/ ]; then \
 		$(MAKE) install; \
 	fi
-	if [ ! "$$(docker ps | grep chriswiegmantheme_appserver)" ]; then \
-		echo "Starting Lando"; \
-		lando start; \
+	if [ ! "$$(docker ps | grep kana_chriswiegman-theme_wordpress)" ]; then \
+		echo "Starting Kana"; \
+		kana start --theme --local; \
 	fi
-	if [ ! -f ./wordpress/wp-config.php ]; then \
-		$(MAKE) setup-wordpress; \
+	if [ ! -f ./wordpress/wp-content/plugins/debug-bar/debug-bar.php ]; then \
 		$(MAKE) setup-wordpress-plugins; \
 		$(MAKE) setup-wordpress-theme; \
-		echo "You can open your dev site at: ${HIGHLIGHT}https://chriswiegman-theme.lndo.site${END_HIGHLIGHT}"; \
+		echo "You can open your dev site at: ${HIGHLIGHT}https://chriswiegman-theme.sites.kana.li${END_HIGHLIGHT}"; \
 		echo "See the readme for further details."; \
 	fi
-endif
 
-.PHONY: lando-stop
-lando-stop:
-ifdef HAS_LANDO
-	if [ "$$(docker ps | grep chriswiegmantheme_appserver)" ]; then \
-		echo "Stopping Lando"; \
-		lando stop; \
+.PHONY: kana-stop
+kana-stop:
+	if [ "$$(docker ps | grep kana_chriswiegman-theme_wordpress)" ]; then \
+		echo "Stopping Kana"; \
+		kana stop; \
 	fi
-endif
 
 .PHONY: lint
 lint: ## Run all linting
@@ -155,17 +149,11 @@ lint: ## Run all linting
 		php:7.4-cli \
 		/app/vendor/bin/phpcs --standard=./phpcs.xml
 
-.PHONY: open
-open: ## Open the development site in your default browser
-	open https://chriswiegman-theme.lndo.site
-
 .PHONY: open-db
 open-db: ## Open the database in TablePlus
 	@echo "Opening the database for direct access"
 	open mysql://wordpress:wordpress@127.0.0.1:$$(lando info --service=database --path 0.external_connection.port | tr -d "'")/wordpress?enviroment=local&name=$database&safeModeLevel=0&advancedSafeModeLevel=0
 
-.PHONY: open-site
-open-site: open
 
 .PHONY: relase
 release: chriswiegman-theme-version.zip
@@ -175,36 +163,23 @@ reset: destroy start ## Resets a running dev environment to new
 
 .PHONY: setup-site
 setup: | copy-prod-assets import-db
-	lando wp plugin deactivate --path=./wordpress ewww-image-optimizer
+	kana wp plugin deactivate ewww-image-optimizer
 	$(MAKE) setup-wordpress-plugins
-
-.PHONY: setup-wordpress
-setup-wordpress:
-	@echo "Setting up WordPress"
-	lando wp core download --path=./wordpress --version=latest
-	lando wp config create --dbname=wordpress --dbuser=wordpress --dbpass=wordpress --dbhost=database --path=./wordpress
-	lando wp core install --path=./wordpress --url=https://chriswiegman-theme.lndo.site --title="Chris Wiegman Theme Development" --admin_user=admin --admin_password=password --admin_email=contact@chriswiegman.com
-	sed -i "/$table_prefix = 'wp_';/a define( 'WP_DEBUG', true );\ndefine( 'WP_DEBUG_DISPLAY', true );" ./wordpress/wp-config.php
 
 .PHONY: setup-wordpress-plugins
 setup-wordpress-plugins:
-	lando wp plugin install --path=./wordpress debug-bar --activate
-	lando wp plugin install --path=./wordpress query-monitor --activate
+	kana wp plugin install debug-bar --activate
+	kana wp plugin install query-monitor --activate
 
 .PHONY: setup-wordpress-theme
 setup-wordpress-theme:
-	lando wp theme activate --path=./wordpress chriswiegman-theme
+	kana wp theme activate chriswiegman-theme
 
 .PHONY: start
-start: lando-start open-site ## Starts the development environment including downloading and setting up everything it needs
+start: kana-start ## Starts the development environment including downloading and setting up everything it needs
 
 .PHONY: stop
-stop: lando-stop ## Stops the development environment. This is non-destructive.
-
-.PHONY: trust-lando-cert-mac
-trust-lando-cert-mac: ## Trust Lando's SSL certificate on your mac
-	@echo "Trusting Lando cert"
-	sudo security add-trusted-cert -d -r trustRoot -k /Library/Keychains/System.keychain ~/.lando/certs/lndo.site.pem
+stop: kana-stop ## Stops the development environment. This is non-destructive.
 
 .PHONY: update-composer
 update-composer:
