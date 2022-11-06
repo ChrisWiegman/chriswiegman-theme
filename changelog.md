@@ -1,3 +1,8 @@
+# 12.2.4
+
+- Remove Twitter link from homepage
+- Update dependencies
+
 # 12.2.3
 
 - Reintroduce SASS watch script
