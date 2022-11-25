@@ -1,16 +1,16 @@
 {
-    "version": "0.2.0",
-    "configurations": [
-      {
-        "name": "Listen for XDebug",
-        "type": "php",
-        "request": "launch",
-        "port": 9003,
-        "log": true,
-        "pathMappings": {
-            "/app/wordpress/wp-content/themes/chriswiegman-theme/": "${workspaceFolder}",
-            "/app/wordpress/": "${workspaceFolder}/wordpress",
-        }
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Listen for XDebug",
+      "type": "php",
+      "request": "launch",
+      "port": 9003,
+      "log": true,
+      "pathMappings": {
+        "/var/www/html/wp-content/themes/chriswiegman-theme/": "${workspaceFolder}",
+        "/var/www/html/": "${workspaceFolder}/wordpress",
       }
-    ]
-  }
+    }
+  ]
+}
