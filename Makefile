@@ -75,7 +75,9 @@ import-db:
 
 .PHONY: destroy
 destroy: ## Destroys the developer environment completely (this is irreversible)
-	kana destroy --confirm-destroy
+	if [ -d ./wordpress/ ]; then \
+		kana destroy --confirm-destroy; \
+	fi
 	$(MAKE) clean
 
 .PHONY: flush-cache
