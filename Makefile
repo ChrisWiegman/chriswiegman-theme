@@ -145,13 +145,10 @@ stop: ## Stops the development environment. This is non-destructive.
 		kana stop; \
 	fi
 
-.PHONY: update-composer
-update-composer:
-	$(DOCKER_RUN) $(COMPOSER_IMAGE) update
-
-.PHONY: update-npm
-update-npm:
+.PHONY: update
+update:
 	$(DOCKER_RUN) $(NODE_IMAGE) npm update
+	$(DOCKER_RUN) $(COMPOSER_IMAGE) update
 
 .PHONY: watch
 watch:
