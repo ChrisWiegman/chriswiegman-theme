@@ -1,0 +1,18 @@
+{
+  "local": true,
+  "php": "8.0",
+  "plugins": [
+    "csp-manager",
+    "debug-bar",
+    "disable-floc",
+    "pods",
+    "query-monitor",
+    "rss-featured-image",
+    "syntax-highlighting-code-block",
+    "two-factor",
+    "autoupdater",
+    "wordpress-seo"
+  ],
+  "type": "theme",
+  "xdebug": true
+}
