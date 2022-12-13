@@ -63,7 +63,7 @@ clean-release:
 .PHONY: copy-prod-assets
 copy-prod-assets: | clean-prod-assets
 	@echo "Copying assets from chriswiegman.com"
-	rsync -avz -e "ssh" --progress chriswiegman@chriswiegman.ssh.wpengine.net:/home/wpe-user/sites/chriswiegman/wp-content/uploads/ ./wordpress/wp-content/uploads/
+	rsync -aqz -e "ssh" --progress chriswiegman@chriswiegman.ssh.wpengine.net:/home/wpe-user/sites/chriswiegman/wp-content/uploads/ ./wordpress/wp-content/uploads/
 	scp -O chriswiegman@chriswiegman.ssh.wpengine.net:/home/wpe-user/sites/chriswiegman/wp-content/mysql.sql ./wordpress/wp-content/
 
 .PHONY: import-db
