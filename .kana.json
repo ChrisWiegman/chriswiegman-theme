@@ -10,9 +10,8 @@
     "rss-featured-image",
     "syntax-highlighting-code-block",
     "two-factor",
-    "autoupdater",
     "wordpress-seo"
   ],
   "type": "theme",
-  "xdebug": true
+  "xdebug": false
 }
