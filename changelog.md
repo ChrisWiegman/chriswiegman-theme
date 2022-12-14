@@ -1,3 +1,8 @@
+# 12.2.5
+
+- Move from Lando to Kana
+- Update dependencies
+
 # 12.2.4
 
 - Remove Twitter link from homepage
