@@ -1,3 +1,8 @@
+# 12.3.0
+
+- Update homepage links to text links
+- Update dependencies
+
 # 12.2.5
 
 - Move from Lando to Kana
