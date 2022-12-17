@@ -25,32 +25,6 @@
             width: 225px;
           }
         }
-
-        .social {
-          display: flex;
-          gap: 1rem;
-          font-size: 1.3rem;
-          align-items: center;
-
-          .links {
-            display: flex;
-            gap: 1rem;
-
-            a,
-            a:hover {
-              border: none;
-            }
-
-            svg {
-              font-size: 2rem;
-              fill: $link;
-
-              &:hover {
-                fill: $reverse;
-              }
-            }
-          }
-        }
       }
     }
   }
