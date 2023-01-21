@@ -36,6 +36,8 @@ function init() {
 	add_filter( 'xmlrpc_enabled', '__return_false' );
 	add_filter( 'big_image_size_threshold', '__return_false' );
 	add_filter( 'intermediate_image_sizes_advanced', $n( 'filter_intermediate_image_sizes_advanced' ), 10, 3 );
+	add_filter( 'wpseo_next_rel_link', '__return_false' );
+	add_filter( 'wpseo_prev_rel_link', '__return_false' );
 
 	// Close comments on the front-end.
 	add_filter( 'comments_open', '__return_false', 20, 2 );
@@ -57,6 +59,8 @@ function init() {
 		remove_action( 'wp_head', 'rest_output_link_wp_head' );
 		remove_action( 'xmlrpc_rsd_apis', 'rest_output_rsd' );
 		remove_action( 'wp_head', 'rest_output_link_wp_head', 10, 0 );
+		remove_action('wp_head', 'wp_shortlink_wp_head', 10);
+		remove_action( 'template_redirect', 'wp_shortlink_header', 11);
 
 	}
 
