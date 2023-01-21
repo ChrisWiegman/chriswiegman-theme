@@ -1,3 +1,8 @@
+# 12.4.0
+
+- Cleanup html header from unwanted info
+- Update dependencies
+
 # 12.3.0
 
 - Update homepage links to text links
