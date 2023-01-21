@@ -19,7 +19,7 @@
 		?>
 
 		<div class="copyright">
-			<span class="copyright-date">Copyright&copy; <?php echo date( 'Y' ); ?></span> | <a title="Attribution-ShareAlike 4.0 International (CC BY-SA 4.0) license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="license">Creative Commons Licensed</a> | <a href="/policies/">Policies</a>
+			<span class="copyright-date">Copyright&copy; <?php echo esc_html( gmdate( 'Y' ) ); ?></span> | <a title="Attribution-ShareAlike 4.0 International (CC BY-SA 4.0) license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="license">Creative Commons Licensed</a> | <a href="/policies/">Policies</a>
 		</div>
 	</div>
 </footer>
