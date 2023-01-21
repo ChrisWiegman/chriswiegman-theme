@@ -59,8 +59,8 @@ function init() {
 		remove_action( 'wp_head', 'rest_output_link_wp_head' );
 		remove_action( 'xmlrpc_rsd_apis', 'rest_output_rsd' );
 		remove_action( 'wp_head', 'rest_output_link_wp_head', 10, 0 );
-		remove_action('wp_head', 'wp_shortlink_wp_head', 10);
-		remove_action( 'template_redirect', 'wp_shortlink_header', 11);
+		remove_action( 'wp_head', 'wp_shortlink_wp_head', 10 );
+		remove_action( 'template_redirect', 'wp_shortlink_header', 11 );
 
 	}
 
