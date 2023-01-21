@@ -1,3 +1,7 @@
+# 12.4.1
+
+- Fix copyright year
+
 # 12.4.0
 
 - Cleanup html header from unwanted info
