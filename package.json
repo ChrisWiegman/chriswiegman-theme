@@ -9,7 +9,7 @@
   "license": "GPLv3",
   "homepage": "https://chriswiegman.com/",
   "devDependencies": {
-    "clean-css-cli": "^5.6.1",
+    "clean-css-cli": "^5.6.2",
     "sass": "^1.57.1"
   },
   "scripts": {
