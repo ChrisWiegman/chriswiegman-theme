@@ -2,7 +2,7 @@
     "name": "chriswiegman/chriswiegman-theme",
     "description": "Minimal and sustainable WordPress theme for ChrisWiegman.com.",
     "require-dev": {
-        "dealerdirect/phpcodesniffer-composer-installer": "v0.7.2",
+        "dealerdirect/phpcodesniffer-composer-installer": "v1.0.0",
         "phpcompatibility/phpcompatibility-wp": "2.1.4",
         "wp-coding-standards/wpcs": "2.3.0"
     },

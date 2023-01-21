@@ -8,7 +8,7 @@
 namespace CW\Theme;
 
 // Useful global constants.
-define( 'CW_THEME_VERSION', '12.3.0' );
+define( 'CW_THEME_VERSION', '12.4.0' );
 
 /**
  * Setup theme hooks.
@@ -36,6 +36,8 @@ function init() {
 	add_filter( 'xmlrpc_enabled', '__return_false' );
 	add_filter( 'big_image_size_threshold', '__return_false' );
 	add_filter( 'intermediate_image_sizes_advanced', $n( 'filter_intermediate_image_sizes_advanced' ), 10, 3 );
+	add_filter( 'wpseo_next_rel_link', '__return_false' );
+	add_filter( 'wpseo_prev_rel_link', '__return_false' );
 
 	// Close comments on the front-end.
 	add_filter( 'comments_open', '__return_false', 20, 2 );
@@ -57,6 +59,8 @@ function init() {
 		remove_action( 'wp_head', 'rest_output_link_wp_head' );
 		remove_action( 'xmlrpc_rsd_apis', 'rest_output_rsd' );
 		remove_action( 'wp_head', 'rest_output_link_wp_head', 10, 0 );
+		remove_action( 'wp_head', 'wp_shortlink_wp_head', 10 );
+		remove_action( 'template_redirect', 'wp_shortlink_header', 11 );
 
 	}
 
@@ -304,6 +308,8 @@ function action_wp_enqueue_scripts() {
 
 	wp_deregister_script( 'wp-embed' );
 	wp_dequeue_style( 'wp-block-library' );
+	wp_dequeue_style( 'global-styles' );
+	wp_dequeue_style( 'classic-theme-styles' );
 	wp_enqueue_style( 'cw-theme-style', get_template_directory_uri() . '/assets/main' . $min . '.css', array(), $version );
 
 }
