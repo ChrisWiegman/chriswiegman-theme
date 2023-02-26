@@ -1,5 +1,6 @@
 {
   "local": true,
+  "mailpit": true,
   "php": "8.0",
   "plugins": [
     "csp-manager",
@@ -12,6 +13,8 @@
     "two-factor",
     "wordpress-seo"
   ],
+  "ssl": false,
   "type": "theme",
-  "xdebug": false
+  "wpdebug": true,
+  "xdebug": true
 }
