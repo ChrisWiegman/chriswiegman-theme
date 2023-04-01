@@ -1,3 +1,8 @@
+# 12.4.2
+
+- Remove extra CSS
+- Update dependencies
+
 # 12.4.1
 
 - Fix copyright year
