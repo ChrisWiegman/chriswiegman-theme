@@ -132,7 +132,7 @@ start: ## Starts the development environment including downloading and setting u
 	if [ ! -d ./wordpress/ ]; then \
 		$(MAKE) install; \
 	fi
-	if [ ! "$$(docker ps | grep kana_chriswiegman-theme_wordpress)" ]; then \
+	if [ ! "$$(docker ps | grep kana-chriswiegman-theme-wordpress)" ]; then \
 		echo "Starting Kana"; \
 		kana start; \
 		kana wp theme activate chriswiegman-theme; \
@@ -142,7 +142,7 @@ start: ## Starts the development environment including downloading and setting u
 
 .PHONY: stop
 stop: ## Stops the development environment. This is non-destructive.
-	if [ "$$(docker ps | grep kana_chriswiegman-theme_wordpress)" ]; then \
+	if [ "$$(docker ps | grep kana-chriswiegman-theme-wordpress)" ]; then \
 		echo "Stopping Kana"; \
 		kana stop; \
 	fi
