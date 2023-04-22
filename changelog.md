@@ -1,3 +1,8 @@
+# 12.4.3
+
+- Update dependencies
+- Update style.css header
+
 # 12.4.2
 
 - Remove extra CSS
