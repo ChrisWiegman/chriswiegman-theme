@@ -1,3 +1,7 @@
+# 12.4.4
+
+- Remove Pixelfed link from homepage
+
 # 12.4.3
 
 - Update dependencies
