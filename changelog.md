@@ -1,3 +1,7 @@
+# 12.4.5
+
+- Fixed call to `add_theme_support` to correctly handle the HTML5 param
+
 # 12.4.4
 
 - Remove Pixelfed link from homepage
