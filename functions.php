@@ -265,7 +265,7 @@ function action_after_setup_theme() {
 	add_theme_support( 'title-tag' );
 
 	// Add theme support for the title tag.
-	add_theme_support( 'html5' );
+	add_theme_support( 'html5', array( 'search-form' ) );
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus(
