@@ -135,7 +135,6 @@ start: ## Starts the development environment including downloading and setting u
 	if [ ! "$$(docker ps | grep kana-chriswiegman-theme-wordpress)" ]; then \
 		echo "Starting Kana"; \
 		kana start; \
-		kana wp theme activate chriswiegman-theme; \
 		echo "You can open your dev site at: ${HIGHLIGHT}https://chriswiegman-theme.sites.kana.li${END_HIGHLIGHT}"; \
 		echo "See the readme for further details."; \
 	fi
