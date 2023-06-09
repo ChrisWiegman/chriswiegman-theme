@@ -1,11 +1,10 @@
 {
-    "recommendations": [
-      "bmewburn.vscode-intelephense-client",
-      "neilbrayfield.php-docblocker",
-      "wongjn.php-sniffer",
-      "xdebug.php-debug",
-      "dbaeumer.vscode-eslint",
-      "esbenp.prettier-vscode",
-      "johnbillion.vscode-wordpress-hooks"
-    ]
-  }
+  "recommendations": [
+    "bmewburn.vscode-intelephense-client",
+    "neilbrayfield.php-docblocker",
+    "wongjn.php-sniffer",
+    "xdebug.php-debug",
+    "dbaeumer.vscode-eslint",
+    "johnbillion.vscode-wordpress-hooks"
+  ]
+}
