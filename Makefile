@@ -106,11 +106,14 @@ install:
 .PHONY: lint
 lint: ## Run all linting
 	@echo "Running PHP linting"
+	if [ ! -d ./wordpress/ ]; then \
+		$(MAKE) install; \
+	fi
 	docker run \
 		-v "$$(pwd):/app" \
 		--workdir /app \
 		--rm \
-		php:7.4-cli \
+		php:8.0-cli \
 		/app/vendor/bin/phpcs --standard=./phpcs.xml
 
 .PHONY: open-db
@@ -118,7 +121,7 @@ open-db: ## Open the database in TablePlus
 	@echo "Opening the database for direct access"
 	open mysql://wordpress:wordpress@127.0.0.1:$$(lando info --service=database --path 0.external_connection.port | tr -d "'")/wordpress?enviroment=local&name=$database&safeModeLevel=0&advancedSafeModeLevel=0
 
-.PHONY: relase
+.PHONY: release
 release: chriswiegman-theme-version.zip
 
 .PHONY: reset
@@ -133,16 +136,12 @@ start: ## Starts the development environment including downloading and setting u
 		$(MAKE) install; \
 	fi
 	if [ ! "$$(docker ps | grep kana-chriswiegman-theme-wordpress)" ]; then \
-		echo "Starting Kana"; \
 		kana start; \
-		echo "You can open your dev site at: ${HIGHLIGHT}https://chriswiegman-theme.sites.kana.li${END_HIGHLIGHT}"; \
-		echo "See the readme for further details."; \
 	fi
 
 .PHONY: stop
 stop: ## Stops the development environment. This is non-destructive.
 	if [ "$$(docker ps | grep kana-chriswiegman-theme-wordpress)" ]; then \
-		echo "Stopping Kana"; \
 		kana stop; \
 	fi
 
