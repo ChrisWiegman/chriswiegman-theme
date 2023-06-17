@@ -1,6 +1,7 @@
 #
 
 - Minor formatting fixes
+- Update project dependencies
 
 # 12.4.5
 
