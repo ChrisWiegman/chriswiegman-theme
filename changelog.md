@@ -1,3 +1,7 @@
+#
+
+- Minor formatting fixes
+
 # 12.4.5
 
 - Fixed call to `add_theme_support` to correctly handle the HTML5 param
