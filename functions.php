@@ -16,7 +16,6 @@ define( 'CW_THEME_VERSION', '12.4.5' );
  * @since 9.0.0
  */
 function init() {
-
 	$n = function ( $function ) {
 		return __NAMESPACE__ . "\\$function";
 	};
@@ -48,7 +47,6 @@ function init() {
 
 	// Cleanup extra garbage.
 	if ( function_exists( 'remove_action' ) ) {
-
 		remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
 		remove_action( 'wp_print_styles', 'print_emoji_styles' );
 		remove_action( 'wp_head', 'rsd_link' );
@@ -61,14 +59,12 @@ function init() {
 		remove_action( 'wp_head', 'rest_output_link_wp_head', 10, 0 );
 		remove_action( 'wp_head', 'wp_shortlink_wp_head', 10 );
 		remove_action( 'template_redirect', 'wp_shortlink_header', 11 );
-
 	}
 
 	// Require additional functionality.
 	require __DIR__ . '/includes/post_columns/event.php';
 	require __DIR__ . '/includes/post_columns/location.php';
 	require __DIR__ . '/includes/post_columns/talk.php';
-
 }
 
 /**
@@ -83,7 +79,6 @@ function init() {
  * @param  bool     $update Whether this is an existing post being updated.
  */
 function action_save_post( $post_ID, $post, $update ) {
-
 	$post_types = array(
 		'post'  => 1226,
 		'talk'  => 463,
@@ -95,7 +90,6 @@ function action_save_post( $post_ID, $post, $update ) {
 		! wp_is_post_revision( $post ) &&
 		'publish' === $post->post_status
 	) {
-
 		remove_action( 'save_post', __NAMESPACE__ . '\action_save_post', 10, 3 );
 
 		$index_page = array(
@@ -122,12 +116,10 @@ function action_save_post( $post_ID, $post, $update ) {
  * @return array
  */
 function filter_intermediate_image_sizes_advanced( $new_sizes, $image_meta, $attachment_id ) {
-
 	unset( $new_sizes['thumbnail'] );
 	unset( $new_sizes['medium_large'] );
 
 	return $new_sizes;
-
 }
 
 /**
@@ -136,20 +128,17 @@ function filter_intermediate_image_sizes_advanced( $new_sizes, $image_meta, $att
  * @since 11.1.0
  */
 function action_admin_init() {
-
 	// Redirect any user trying to access comments page.
 	global $pagenow;
 
 	if ( 'edit-comments.php' === $pagenow ) {
-
 		wp_safe_redirect( admin_url() );
-		exit;
 
+		exit;
 	}
 
 	// Remove comments metabox from dashboard.
 	remove_meta_box( 'dashboard_recent_comments', 'dashboard', 'normal' );
-
 }
 
 /**
@@ -160,7 +149,6 @@ function action_admin_init() {
  * @param WP_Query $query The query we're trying to edit.
  */
 function action_pre_get_posts( $query ) {
-
 	global $wp_the_query;
 
 	if ( ! is_home() && ! is_admin() && $query === $wp_the_query ) {
@@ -176,13 +164,11 @@ function action_pre_get_posts( $query ) {
  * @since 9.6.2
  */
 function action_send_headers() {
-
 	header( 'Strict-Transport-Security: max-age=15768000' );
 	header( 'x-content-type-options: nosniff' );
 	header( 'x-permitted-cross-domain-policies: none' );
 	header( 'x-xss-protection: 1; mode=block' );
 	header( 'x-frame-options: SAMEORIGIN' );
-
 }
 
 /**
@@ -191,11 +177,9 @@ function action_send_headers() {
  * @since 9.3.3
  */
 function action_wp_before_admin_bar_render() {
-
 	global $wp_admin_bar;
 
 	$wp_admin_bar->remove_menu( 'comments' );
-
 }
 
 /**
@@ -204,9 +188,7 @@ function action_wp_before_admin_bar_render() {
  * @since 9.3.3
  */
 function action_admin_menu() {
-
 	remove_menu_page( 'edit-comments.php' );
-
 }
 
 /**
@@ -215,10 +197,8 @@ function action_admin_menu() {
  * @since 9.3.3
  */
 function action_init() {
-
 	remove_post_type_support( 'post', 'comments' );
 	remove_post_type_support( 'page', 'comments' );
-
 }
 
 /**
@@ -232,7 +212,6 @@ function action_init() {
  * @return array
  */
 function filter_wp_resource_hints( $urls, $relation_type ) {
-
 	if ( 'dns-prefetch' !== $relation_type ) {
 		return $urls;
 	}
@@ -250,7 +229,6 @@ function filter_wp_resource_hints( $urls, $relation_type ) {
  * @since 9.0.0
  */
 function action_after_setup_theme() {
-
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
 
@@ -283,7 +261,6 @@ function action_after_setup_theme() {
 
 	remove_image_size( '1536x1536' );
 	remove_image_size( '2048x2048' );
-
 }
 
 
@@ -295,15 +272,12 @@ function action_after_setup_theme() {
  * @since 9.0.0
  */
 function action_wp_enqueue_scripts() {
-
 	$min     = '.min';
 	$version = CW_THEME_VERSION;
 
 	if ( defined( 'SCRIPT_DEBUG' ) && true === SCRIPT_DEBUG ) {
-
 		$min     = '';
 		$version = time();
-
 	}
 
 	wp_deregister_script( 'wp-embed' );
@@ -311,7 +285,6 @@ function action_wp_enqueue_scripts() {
 	wp_dequeue_style( 'global-styles' );
 	wp_dequeue_style( 'classic-theme-styles' );
 	wp_enqueue_style( 'cw-theme-style', get_template_directory_uri() . '/assets/main' . $min . '.css', array(), $version );
-
 }
 
 init();
