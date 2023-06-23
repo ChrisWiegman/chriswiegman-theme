@@ -11,7 +11,8 @@
     "rss-featured-image",
     "syntax-highlighting-code-block",
     "two-factor",
-    "wordpress-seo"
+    "wordpress-seo",
+    "favicon-by-realfavicongenerator"
   ],
   "ssl": false,
   "type": "theme",
