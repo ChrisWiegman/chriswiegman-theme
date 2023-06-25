@@ -1,4 +1,4 @@
-#
+# 12.4.6
 
 - Minor formatting fixes
 - Update project dependencies
