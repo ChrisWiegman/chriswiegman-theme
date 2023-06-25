@@ -76,19 +76,9 @@ import-db:
 .PHONY: destroy
 destroy: ## Destroys the developer environment completely (this is irreversible)
 	if [ -d ./wordpress/ ]; then \
-		kana destroy --confirm-destroy; \
+		kana destroy --force; \
 	fi
 	$(MAKE) clean
-
-.PHONY: flush-cache
-flush-cache: ## Clears all server caches enabled within WordPress
-	@echo "Flushing cache"
-	kana wp cache flush
-
-.PHONY: delete-transients
-delete-transients: ## Deletes all WordPress transients stored in the database
-	@echo "Deleting transients"
-	kana wp transient delete --all
 
 .PHONY: help
 help:  ## Display help
