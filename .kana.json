@@ -1,7 +1,7 @@
 {
   "local": true,
   "mailpit": true,
-  "php": "8.0",
+  "php": "8.2",
   "plugins": [
     "csp-manager",
     "debug-bar",
