@@ -1,3 +1,9 @@
+#
+
+- Update homepage intro
+- Minor CSS validation fixes
+- Update project dependencies
+
 # 12.4.7
 
 - Update "Tested up to" version
