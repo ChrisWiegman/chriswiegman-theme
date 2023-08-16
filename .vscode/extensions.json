@@ -7,5 +7,6 @@
     "dbaeumer.vscode-eslint",
     "johnbillion.vscode-wordpress-hooks",
     "pflannery.vscode-versionlens",
+    "smelukov.vscode-csstree",
   ]
 }
