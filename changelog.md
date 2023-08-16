@@ -1,5 +1,6 @@
-#
+# 12.5.0
 
+- Cleanup Yoast comments in the header
 - Update homepage intro
 - Minor CSS validation fixes
 - Update project dependencies
