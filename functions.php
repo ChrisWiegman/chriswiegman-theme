@@ -37,6 +37,7 @@ function init() {
 	add_filter( 'intermediate_image_sizes_advanced', $n( 'filter_intermediate_image_sizes_advanced' ), 10, 3 );
 	add_filter( 'wpseo_next_rel_link', '__return_false' );
 	add_filter( 'wpseo_prev_rel_link', '__return_false' );
+	add_filter( 'wpseo_debug_markers', '__return_false' );
 
 	// Close comments on the front-end.
 	add_filter( 'comments_open', '__return_false', 20, 2 );
