@@ -1,3 +1,7 @@
+# 12.6.0
+
+- Shrink the footer so it looks a bit better
+
 # 12.5.0
 
 - Cleanup Yoast comments in the header
