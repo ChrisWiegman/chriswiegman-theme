@@ -1,3 +1,7 @@
+#
+
+- Update to WordPress Coding Standards 3.0.0
+
 # 12.6.0
 
 - Shrink the footer so it looks a bit better
