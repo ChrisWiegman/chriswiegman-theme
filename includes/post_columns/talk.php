@@ -14,8 +14,8 @@ namespace CW\Theme\Post_Columns\Talk;
  */
 function init() {
 
-	$n = function ( $function ) {
-		return __NAMESPACE__ . "\\$function";
+	$n = function ( $function_name ) {
+		return __NAMESPACE__ . "\\$function_name";
 	};
 
 	// Add and remove the columns we need.
@@ -28,7 +28,6 @@ function init() {
 	add_filter( 'manage_edit-talk_sortable_columns', $n( 'filter_manage_edit_talk_sortable_columns' ) );
 	add_filter( 'posts_join_request', $n( 'filter_posts_join_request' ), 10, 2 );
 	add_filter( 'posts_orderby_request', $n( 'filter_posts_orderby_request' ), 10, 2 );
-
 }
 
 /**
@@ -59,7 +58,6 @@ function filter_posts_orderby_request( $orderby, $query ) {
 	}
 
 	return sprintf( 'wp_pods_talk.%s %s', $order_by_var, $order_var );
-
 }
 
 /**
@@ -84,7 +82,6 @@ function filter_posts_join_request( $join, $query ) {
 	}
 
 	return 'JOIN wp_pods_talk ON wp_posts.ID = wp_pods_talk.id';
-
 }
 
 /**
@@ -106,7 +103,6 @@ function filter_manage_edit_talk_sortable_columns( $columns ) {
 	$columns['video_link']  = 'video_link';
 
 	return $columns;
-
 }
 
 /**
@@ -135,7 +131,6 @@ function filter_manage_talk_posts_columns( $post_columns ) {
 	$post_columns['video_link']  = 'Video';
 
 	return $post_columns;
-
 }
 
 /**

@@ -14,8 +14,8 @@ namespace CW\Theme\Post_Columns\Event;
  */
 function init() {
 
-	$n = function ( $function ) {
-		return __NAMESPACE__ . "\\$function";
+	$n = function ( $function_name ) {
+		return __NAMESPACE__ . "\\$function_name";
 	};
 
 	// Add and remove the columns we need.
@@ -28,7 +28,6 @@ function init() {
 	add_filter( 'manage_edit-event_sortable_columns', $n( 'filter_manage_edit_event_sortable_columns' ) );
 	add_filter( 'posts_join_request', $n( 'filter_posts_join_request' ), 10, 2 );
 	add_filter( 'posts_orderby_request', $n( 'filter_posts_orderby_request' ), 10, 2 );
-
 }
 
 /**
@@ -59,7 +58,6 @@ function filter_posts_orderby_request( $orderby, $query ) {
 	}
 
 	return sprintf( 'wp_pods_event.%s %s', $order_by_var, $order_var );
-
 }
 
 /**
@@ -84,7 +82,6 @@ function filter_posts_join_request( $join, $query ) {
 	}
 
 	return 'JOIN wp_pods_event ON wp_posts.ID = wp_pods_event.id';
-
 }
 
 /**
@@ -103,7 +100,6 @@ function filter_manage_edit_event_sortable_columns( $columns ) {
 	$columns['organizer']  = 'organizer';
 
 	return $columns;
-
 }
 
 /**
@@ -129,7 +125,6 @@ function filter_manage_event_posts_columns( $post_columns ) {
 	$post_columns['talk_count'] = 'Talk Count';
 
 	return $post_columns;
-
 }
 
 /**

@@ -16,8 +16,8 @@ define( 'CW_THEME_VERSION', '12.6.0' );
  * @since 9.0.0
  */
 function init() {
-	$n = function ( $function ) {
-		return __NAMESPACE__ . "\\$function";
+	$n = function ( $function_name ) {
+		return __NAMESPACE__ . "\\$function_name";
 	};
 
 	// Add new actions and filters.

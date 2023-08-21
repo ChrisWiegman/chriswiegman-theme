@@ -14,8 +14,8 @@ namespace CW\Theme\Post_Columns\Location;
  */
 function init() {
 
-	$n = function ( $function ) {
-		return __NAMESPACE__ . "\\$function";
+	$n = function ( $function_name ) {
+		return __NAMESPACE__ . "\\$function_name";
 	};
 
 	// Add and remove the columns we need.
@@ -28,7 +28,6 @@ function init() {
 	add_filter( 'manage_edit-location_sortable_columns', $n( 'filter_manage_edit_location_sortable_columns' ) );
 	add_filter( 'posts_join_request', $n( 'filter_posts_join_request' ), 10, 2 );
 	add_filter( 'posts_orderby_request', $n( 'filter_posts_orderby_request' ), 10, 2 );
-
 }
 
 /**
@@ -78,7 +77,6 @@ function filter_posts_join_request( $join, $query ) {
 	}
 
 	return 'JOIN wp_pods_location ON wp_posts.ID = wp_pods_location.id';
-
 }
 
 /**
@@ -96,7 +94,6 @@ function filter_manage_edit_location_sortable_columns( $columns ) {
 	$columns['longitude'] = 'longitude';
 
 	return $columns;
-
 }
 
 /**
@@ -121,7 +118,6 @@ function filter_manage_location_posts_columns( $post_columns ) {
 	$post_columns['talk_count']  = 'Talk Count';
 
 	return $post_columns;
-
 }
 
 /**
