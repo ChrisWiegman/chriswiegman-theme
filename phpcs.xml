@@ -4,16 +4,7 @@
 
 	<file>.</file>
 
-	<!-- Only sniff PHP files -->
-	<arg name="extensions" value="php"/>
-
-	<!-- Show sniff codes in all reports -->
-	<arg value="s"/>
-
-	<!-- Up the Memory limit for large plugins -->
-	<ini name="memory_limit" value="512M"/>
-
-	<!-- FILES -->
+	<!-- Exclude WP Core folders and files from being checked. -->
     <exclude-pattern>*/node_modules/*</exclude-pattern>
     <exclude-pattern>*/vendor/*</exclude-pattern>
     <exclude-pattern>*.xml</exclude-pattern>
@@ -21,11 +12,20 @@
     <exclude-pattern>*.js</exclude-pattern>
     <exclude-pattern>*/wordpress/*</exclude-pattern>
 
-	<rule ref="WordPress" />
+	<arg name="basepath" value="."/>
 
-	<config name="testVersion" value="7.2-" />
+	<arg name="parallel" value="8"/>
 
-	<rule ref="PHPCompatibilityWP" />
+	<rule ref="WordPress"/>
+
+	<rule ref="Generic.Commenting.Todo"/>
+
+	<config name="testVersion" value="5.6-"/>
+	<rule ref="PHPCompatibilityWP">
+		<include-pattern>*\.php</include-pattern>
+	</rule>
+
+	<config name="minimum_wp_version" value="6.0"/>
 
 	<rule ref="WordPress.NamingConventions.PrefixAllGlobals">
 		<properties>
