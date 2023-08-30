@@ -103,7 +103,7 @@ lint: ## Run all linting
 		-v "$$(pwd):/app" \
 		--workdir /app \
 		--rm \
-		php:8.0-cli \
+		php:cli \
 		/app/vendor/bin/phpcs --standard=./phpcs.xml
 
 .PHONY: open-db
