@@ -1,4 +1,4 @@
-#
+# 12.6.1
 
 - Update to WordPress Coding Standards 3.0.0
 - Update package dependencies
