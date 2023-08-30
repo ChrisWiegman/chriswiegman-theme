@@ -37,12 +37,11 @@ function init() {
  *
  * @since 12.0.0
  *
- * @param string    $orderby The ORDER BY clause of the query.
- * @param \WP_Query $query   The WP_Query instance (passed by reference).
+ * @param string $orderby The ORDER BY clause of the query.
  *
  * @return string
  */
-function filter_posts_orderby_request( $orderby, $query ) {
+function filter_posts_orderby_request( $orderby ) {
 
 	$order_by_var = get_query_var( 'orderby', false );
 	$order_var    = get_query_var( 'order', false );
@@ -67,12 +66,11 @@ function filter_posts_orderby_request( $orderby, $query ) {
  *
  * @since 12.0.0
  *
- * @param string    $join  The JOIN clause of the query.
- * @param \WP_Query $query The WP_Query instance (passed by reference).
+ * @param string $join  The JOIN clause of the query.
  *
  * @return string
  */
-function filter_posts_join_request( $join, $query ) {
+function filter_posts_join_request( $join ) {
 
 	$order_by_var = get_query_var( 'orderby', false );
 	$post_type    = get_query_var( 'post_type', false );

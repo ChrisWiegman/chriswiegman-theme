@@ -77,9 +77,8 @@ function init() {
  *
  * @param int      $post_ID Post ID.
  * @param \WP_POST $post Post object.
- * @param  bool     $update Whether this is an existing post being updated.
  */
-function action_save_post( $post_ID, $post, $update ) {
+function action_save_post( $post_ID, $post ) {
 	$post_types = array(
 		'post'  => 1226,
 		'talk'  => 463,
@@ -111,12 +110,10 @@ function action_save_post( $post_ID, $post, $update ) {
  * @since 12.0.3
  *
  * @param array $new_sizes Associative array of image sizes to be created.
- * @param array $image_meta The image meta data: width, height, file, sizes, etc.
- * @param int   $attachment_id The attachment post ID for the image.
  *
  * @return array
  */
-function filter_intermediate_image_sizes_advanced( $new_sizes, $image_meta, $attachment_id ) {
+function filter_intermediate_image_sizes_advanced( $new_sizes ) {
 	unset( $new_sizes['thumbnail'] );
 	unset( $new_sizes['medium_large'] );
 
