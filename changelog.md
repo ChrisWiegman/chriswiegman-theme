@@ -1,6 +1,8 @@
 #
 
 - Update to WordPress Coding Standards 3.0.0
+- Update package dependencies
+- Fix homepage intro
 
 # 12.6.0
 
