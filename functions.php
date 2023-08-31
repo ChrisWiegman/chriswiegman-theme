@@ -16,25 +16,21 @@ define( 'CW_THEME_VERSION', '12.6.1' );
  * @since 9.0.0
  */
 function init() {
-	$n = function ( $function_name ) {
-		return __NAMESPACE__ . "\\$function_name";
-	};
-
 	// Add new actions and filters.
-	add_action( 'after_setup_theme', $n( 'action_after_setup_theme' ) );
-	add_action( 'wp_enqueue_scripts', $n( 'action_wp_enqueue_scripts' ) );
+	add_action( 'after_setup_theme', 'CW\Theme\action_after_setup_theme' );
+	add_action( 'wp_enqueue_scripts', 'CW\Theme\action_wp_enqueue_scripts' );
 	add_filter( 'feed_links_show_comments_feed', '__return_false' );
-	add_filter( 'wp_resource_hints', $n( 'filter_wp_resource_hints' ), 10, 2 );
-	add_action( 'admin_menu', $n( 'action_admin_menu' ) );
-	add_action( 'init', $n( 'action_init' ), 100 );
-	add_action( 'wp_before_admin_bar_render', $n( 'action_wp_before_admin_bar_render' ) );
-	add_action( 'send_headers', $n( 'action_send_headers' ) );
-	add_action( 'pre_get_posts', $n( 'action_pre_get_posts' ) );
-	add_action( 'admin_init', $n( 'action_admin_init' ) );
-	add_action( 'save_post', $n( 'action_save_post' ), 10, 3 );
+	add_filter( 'wp_resource_hints', 'CW\Theme\filter_wp_resource_hints', 10, 2 );
+	add_action( 'admin_menu', 'CW\Theme\action_admin_menu' );
+	add_action( 'init', 'CW\Theme\action_init', 100 );
+	add_action( 'wp_before_admin_bar_render', 'CW\Theme\action_wp_before_admin_bar_render' );
+	add_action( 'send_headers', 'CW\Theme\action_send_headers' );
+	add_action( 'pre_get_posts', 'CW\Theme\action_pre_get_posts' );
+	add_action( 'admin_init', 'CW\Theme\action_admin_init' );
+	add_action( 'save_post', 'CW\Theme\action_save_post', 10, 3 );
 	add_filter( 'xmlrpc_enabled', '__return_false' );
 	add_filter( 'big_image_size_threshold', '__return_false' );
-	add_filter( 'intermediate_image_sizes_advanced', $n( 'filter_intermediate_image_sizes_advanced' ), 10, 3 );
+	add_filter( 'intermediate_image_sizes_advanced', 'CW\Theme\filter_intermediate_image_sizes_advanced', 10, 3 );
 	add_filter( 'wpseo_next_rel_link', '__return_false' );
 	add_filter( 'wpseo_prev_rel_link', '__return_false' );
 	add_filter( 'wpseo_debug_markers', '__return_false' );
@@ -142,15 +138,15 @@ function action_admin_init() {
 /**
  * Action pre_get_posts
  *
- * @since 11.0.0
+ * @param \WP_Query $query The query we're trying to edit.
  *
- * @param WP_Query $query The query we're trying to edit.
+ * @since 11.0.0
  */
 function action_pre_get_posts( $query ) {
 	global $wp_the_query;
 
 	if ( ! is_home() && ! is_admin() && $query === $wp_the_query ) {
-		$query->set( 'posts_per_page', -1 );
+		$query->set( 'posts_per_page', - 1 );
 	}
 }
 
@@ -202,9 +198,9 @@ function action_init() {
 /**
  * Filter wp_resource hints
  *
- * Remove extra DNS prefecth links.
+ * Remove extra DNS pre-fetch links.
  *
- * @param array  $urls          URLs to print for resource hints.
+ * @param array  $urls URLs to print for resource hints.
  * @param string $relation_type The relation type the URLs are printed for, e.g. 'preconnect' or 'prerender'.
  *
  * @return array
