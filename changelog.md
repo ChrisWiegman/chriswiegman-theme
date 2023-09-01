@@ -1,3 +1,8 @@
+# 
+
+- Minor refactoring due to linting suggestions
+- Remove duplicate "alt" tag from header image
+
 # 12.6.1
 
 - Update to WordPress Coding Standards 3.0.0
