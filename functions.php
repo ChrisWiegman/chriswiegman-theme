@@ -8,6 +8,9 @@
 namespace CW\Theme;
 
 // Useful global constants.
+use WP_POST;
+use WP_Query;
+
 define( 'CW_THEME_VERSION', '12.6.1' );
 
 /**
@@ -53,8 +56,8 @@ function init() {
 		remove_action( 'wp_head', 'wp_oembed_add_discovery_links' );
 		remove_action( 'wp_head', 'rest_output_link_wp_head' );
 		remove_action( 'xmlrpc_rsd_apis', 'rest_output_rsd' );
-		remove_action( 'wp_head', 'rest_output_link_wp_head', 10, 0 );
-		remove_action( 'wp_head', 'wp_shortlink_wp_head', 10 );
+		remove_action( 'wp_head', 'rest_output_link_wp_head' );
+		remove_action( 'wp_head', 'wp_shortlink_wp_head' );
 		remove_action( 'template_redirect', 'wp_shortlink_header', 11 );
 	}
 
@@ -71,8 +74,8 @@ function init() {
  *
  * @since 12.1.0
  *
- * @param int      $post_ID Post ID.
- * @param \WP_POST $post Post object.
+ * @param int     $post_ID Post ID.
+ * @param WP_POST $post Post object.
  */
 function action_save_post( $post_ID, $post ) {
 	$post_types = array(
@@ -86,7 +89,7 @@ function action_save_post( $post_ID, $post ) {
 		! wp_is_post_revision( $post ) &&
 		'publish' === $post->post_status
 	) {
-		remove_action( 'save_post', __NAMESPACE__ . '\action_save_post', 10, 3 );
+		remove_action( 'save_post', __NAMESPACE__ . '\action_save_post' );
 
 		$index_page = array(
 			'ID'            => $post_types[ $post->post_type ],
@@ -138,7 +141,7 @@ function action_admin_init() {
 /**
  * Action pre_get_posts
  *
- * @param \WP_Query $query The query we're trying to edit.
+ * @param WP_Query $query The query we're trying to edit.
  *
  * @since 11.0.0
  */
