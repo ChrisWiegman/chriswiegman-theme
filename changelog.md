@@ -1,7 +1,8 @@
-# 
+# 12.6.2
 
 - Minor refactoring due to linting suggestions
 - Remove duplicate "alt" tag from header image
+- Added additional linting configuration
 
 # 12.6.1
 
