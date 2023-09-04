@@ -21,7 +21,7 @@
 
 	<rule ref="Generic.Commenting.Todo"/>
 
-	<config name="testVersion" value="5.6-"/>
+	<config name="testVersion" value="8.0-"/>
 	<rule ref="PHPCompatibilityWP">
 		<include-pattern>*\.php</include-pattern>
 	</rule>
