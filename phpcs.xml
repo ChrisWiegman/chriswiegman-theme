@@ -19,6 +19,8 @@
 
 	<rule ref="WordPress"/>
 
+	<rule ref="VariableAnalysis"/>
+
 	<rule ref="Generic.Commenting.Todo"/>
 
 	<config name="testVersion" value="8.0-"/>
