@@ -73,7 +73,7 @@ function init() {
  *
  * Register widget area.
  *
- * @since 12.2.0
+ * @since 12.7.0
  */
 function action_widgets_init() {
 	register_sidebar(
