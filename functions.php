@@ -80,7 +80,7 @@ function action_widgets_init() {
 		array(
 			'name'          => 'Intro',
 			'id'            => 'intro',
-			'description'   => 'The intro area at the top of most pages.',
+			'description'   => 'The intro area at the top of the home page.',
 			'before_widget' => '<div class="container">',
 			'after_widget'  => '</div>',
 			'before_title'  => '<h2 class="widget-title">',
