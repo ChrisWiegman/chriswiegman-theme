@@ -10,17 +10,7 @@ get_header();
 
 <main>
 	<article class="hero">
-		<div class="container">
-			<div class="content">
-				<div class="intro">
-					<h1>Hi, I'm Chris.</h1>
-					<p>I'm an <a href="https://wpengine.com/" title="WP Engine">engineering manager</a>, developer, <a href="/speaking">speaker</a>, and teacher currently based in Sarasota, Florida. My work focuses on WordPress, developer experience and emphasizes humane and sustainable technology.</p>
-					<p>Find me on: <a rel="me" href="https://mastodon.chriswiegman.com/@chris">Mastodon</a> or <a rel="me" href="https://github.com/ChrisWiegman">GitHub</a>.</p>
-				</div>
-				<img src="/wp-content/uploads/2022/04/chris-wiegman.png" alt="Chris Wiegman" />
-			</div>
-		</div>
-
+		<?php dynamic_sidebar( 'intro' ); ?>
 		<div class="container">
 			<h2 class="main-header"><span>Recent Posts</span> <a href="/blog">View All</a></h2>
 			<?php

@@ -37,6 +37,7 @@ function init() {
 	add_filter( 'wpseo_next_rel_link', '__return_false' );
 	add_filter( 'wpseo_prev_rel_link', '__return_false' );
 	add_filter( 'wpseo_debug_markers', '__return_false' );
+	add_action( 'widgets_init', 'CW\Theme\action_widgets_init' );
 
 	// Close comments on the front-end.
 	add_filter( 'comments_open', '__return_false', 20, 2 );
@@ -65,6 +66,27 @@ function init() {
 	require __DIR__ . '/includes/post_columns/event.php';
 	require __DIR__ . '/includes/post_columns/location.php';
 	require __DIR__ . '/includes/post_columns/talk.php';
+}
+
+/**
+ * Action widgets_init
+ *
+ * Register widget area.
+ *
+ * @since 12.2.0
+ */
+function action_widgets_init() {
+	register_sidebar(
+		array(
+			'name'          => 'Intro',
+			'id'            => 'intro',
+			'description'   => 'The intro area at the top of most pages.',
+			'before_widget' => '<div class="container">',
+			'after_widget'  => '</div>',
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>',
+		)
+	);
 }
 
 /**
