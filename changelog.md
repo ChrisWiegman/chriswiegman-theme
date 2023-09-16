@@ -1,3 +1,8 @@
+# 12.7.0
+
+- Convert the homepage intro back to a widget.
+- Update project dependencies
+
 # 12.6.2
 
 - Minor refactoring due to linting suggestions
