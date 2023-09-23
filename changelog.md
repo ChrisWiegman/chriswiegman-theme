@@ -1,3 +1,7 @@
+#
+
+- Update project dependencies
+
 # 12.7.0
 
 - Convert the homepage intro back to a widget.
