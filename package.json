@@ -10,7 +10,7 @@
   "homepage": "https://chriswiegman.com/",
   "devDependencies": {
     "clean-css-cli": "^5.6.3",
-    "sass": "^1.69.5"
+    "sass": "^1.69.6"
   },
   "scripts": {
     "clean": "rm -f ./assets/*.map && rm -f ./assets/*.css",
