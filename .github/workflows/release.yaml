@@ -1,0 +1,26 @@
+name: release
+
+on:
+  push:
+    tags:
+      - "*"
+
+jobs:
+  release:
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Make Release File
+        run: |
+            make clean
+            make install
+            make build
+            make release
+
+      - name: Create GitHub Release
+        uses: ncipollo/release-action@v1.13.0
+        with:
+          artifacts: "chriswiegman-${GITHUB_REF##*/}.zip"
+          bodyFile: ".changes/${GITHUB_REF##*/}.md"
