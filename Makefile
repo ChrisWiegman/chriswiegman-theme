@@ -4,11 +4,45 @@ NODE_IMAGE     := -w /home/node/app -v $$(pwd):/home/node/app --user node node:l
 HIGHLIGHT      :=\033[0;32m
 END_HIGHLIGHT  :=\033[0m # No Color
 THEME_VERSION  := $$(grep "^Version" style.css | awk -F' ' '{print $3}' | cut -d ":" -f2 | sed 's/ //g')
+ARGS            = `arg="$(filter-out $@,$(MAKECMDGOALS))" && echo $${arg:-${1}}`
+
+%:
+	@:
 
 .PHONY: build
 build:  | clean-assets
 	@echo "Building theme assets"
 	$(DOCKER_RUN) $(NODE_IMAGE) npm run build-assets
+
+.PHONY: change
+change:
+	docker run \
+		--rm \
+		--platform linux/amd64 \
+		--mount type=bind,source=$(PWD),target=/src \
+		-w /src \
+		-it \
+		ghcr.io/miniscruff/changie \
+		new
+
+.PHONY: changelog
+changelog:
+	docker run \
+		--rm \
+		--platform linux/amd64 \
+		--mount type=bind,source=$(PWD),target=/src \
+		-w /src \
+		-it \
+		ghcr.io/miniscruff/changie \
+		batch $(call ARGS,defaultstring)
+	docker run \
+		--rm \
+		--platform linux/amd64 \
+		--mount type=bind,source=$(PWD),target=/src \
+		-w /src \
+		-it \
+		ghcr.io/miniscruff/changie \
+		merge
 
 .PHONY: chriswiegman-theme.zip
 chriswiegman-theme.zip: clean-release build
