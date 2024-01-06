@@ -1,6 +1,6 @@
 DOCKER_RUN     := @docker run --rm
 COMPOSER_IMAGE := -v $$(pwd):/app --user $$(id -u):$$(id -g) composer
-NODE_IMAGE     := -w /home/node/app -v $$(pwd):/home/node/app --user node node:lts
+NODE_IMAGE     := -w /home/node/app -v $$(pwd):/home/node/app --user $$(id -u):$$(id -g) node:lts
 HIGHLIGHT      :=\033[0;32m
 END_HIGHLIGHT  :=\033[0m # No Color
 THEME_VERSION  := $$(grep "^Version" style.css | awk -F' ' '{print $3}' | cut -d ":" -f2 | sed 's/ //g')
