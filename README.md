@@ -30,7 +30,7 @@ When finished, Kana will open a development version of your site in the browser 
 
 WordPress Credentials:
 
-**URL:** _https://chriswiegman-theme.lndo.site/wp-admin_
+**URL:** _http://chriswiegman-theme.sites.kana.li/wp-admin_
 
 **Admin User:** _admin_
 
