@@ -10,6 +10,9 @@ ARGS            = `arg="$(filter-out $@,$(MAKECMDGOALS))" && echo $${arg:-${1}}`
 .PHONY: build
 build:  | clean-assets
 	@echo "Building theme assets"
+	if [ ! -d ./node_modules/ ]; then \
+		$(MAKE) install-npm; \
+	fi
 	npm run build-assets
 
 .PHONY: change
