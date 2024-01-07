@@ -17,5 +17,6 @@
   "ssl": false,
   "type": "theme",
   "wpdebug": true,
-  "xdebug": false
+  "xdebug": false,
+  "scriptdebug": true
 }
