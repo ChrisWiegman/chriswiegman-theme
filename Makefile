@@ -1,6 +1,4 @@
 DOCKER_RUN     := @docker run --rm
-COMPOSER_IMAGE := -v $$(pwd):/app --user $$(id -u):$$(id -g) composer
-NODE_IMAGE     := -w /home/node/app -v $$(pwd):/home/node/app --user $$(id -u):$$(id -g) node:lts
 HIGHLIGHT      :=\033[0;32m
 END_HIGHLIGHT  :=\033[0m # No Color
 THEME_VERSION  := $$(grep "^Version" style.css | awk -F' ' '{print $3}' | cut -d ":" -f2 | sed 's/ //g')
@@ -12,7 +10,7 @@ ARGS            = `arg="$(filter-out $@,$(MAKECMDGOALS))" && echo $${arg:-${1}}`
 .PHONY: build
 build:  | clean-assets
 	@echo "Building theme assets"
-	$(DOCKER_RUN) $(NODE_IMAGE) npm run build-assets
+	npm run build-assets
 
 .PHONY: change
 change:
@@ -44,21 +42,36 @@ changelog:
 		ghcr.io/miniscruff/changie \
 		merge
 
-.PHONY: chriswiegman-theme.zip
-chriswiegman-theme.zip: clean-release build
-	@echo "Building release file: chriswiegman-theme.$(THEME_VERSION).zip"
-	rm -rf chriswiegman-theme.$(THEME_VERSION).zip
-	rm -rf build
-	mkdir build
-	cp -av theme build
-	mv build/theme build/chriswiegman-theme
-	THEME_VERSION=$(THEME_VERSION) && cd build && zip -r chriswiegman-theme.$$THEME_VERSION.zip *
-	mv build/chriswiegman-theme.$(THEME_VERSION).zip ./
-
 .PHONY: chriswiegman-theme-version.zip
 chriswiegman-theme-version.zip: clean-release
 	@echo "Building release file: chriswiegman-theme.$(THEME_VERSION).zip"
-	THEME_VERSION=$(THEME_VERSION) && cd ../ && zip --verbose -r -x=@chriswiegman-theme/.zipignore chriswiegman-theme/chriswiegman-theme.$$THEME_VERSION.zip chriswiegman-theme/*
+	THEME_VERSION=$(THEME_VERSION) && \
+		cd ../ && \
+		zip \
+		--verbose \
+		--recurse-paths \
+		--exclude="*.changes/*" \
+		--exclude="*.git/*" \
+		--exclude="*.github/*" \
+		--exclude="*.vscode/*" \
+		--exclude="*node_modules/*" \
+		--exclude="*.changie.yml" \
+		--exclude="*.gitignore" \
+		--exclude="*.kana.json" \
+		--exclude="*.npmrc" \
+		--exclude="*.nvmrc" \
+		--exclude="*CHANGELOG.md" \
+		--exclude="*composer.json" \
+		--exclude="*composer.lock" \
+		--exclude="*Makefile" \
+		--exclude="*package-lock.json" \
+		--exclude="*package.json" \
+		--exclude="*phpcs.xml" \
+		--exclude="*pods.json" \
+		--exclude="*README.md" \
+		--exclude="*vendor/*" \
+		chriswiegman-theme/chriswiegman-theme.$$THEME_VERSION.zip \
+		chriswiegman-theme/*
 	if [ ! -f ./chriswiegman-theme.$(THEME_VERSION).zip  ]; then \
 		echo "file not available"; \
 		exit 1; \
@@ -122,9 +135,15 @@ help:  ## Display help
 		}' $(MAKEFILE_LIST) | sort
 
 .PHONY: install
-install:
-	$(DOCKER_RUN) $(COMPOSER_IMAGE) install
-	$(DOCKER_RUN) $(NODE_IMAGE) npm install
+install: | install-composer install-npm
+
+.PHONY: install-composer
+install-composer:
+	composer install
+
+.PHONY: install-npm
+install-npm:
+	npm install
 	$(MAKE) build
 
 .PHONY: lint
@@ -170,11 +189,18 @@ stop: ## Stops the development environment. This is non-destructive.
 	fi
 
 .PHONY: update
-update:
-	$(DOCKER_RUN) $(NODE_IMAGE) npm update
-	$(DOCKER_RUN) $(COMPOSER_IMAGE) update
+update: | update-composer update-node
+
+.PHONY: update-composer
+update-composer:
+	composer update
+
+.PHONY: update-npm
+update-npm:
+	npm update
+
 
 .PHONY: watch
 watch:
 	@echo "Building and watching theme assets"
-	$(DOCKER_RUN) -d $(NODE_IMAGE) npm run watch
+	npm run watch
