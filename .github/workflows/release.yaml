@@ -30,5 +30,5 @@ jobs:
       - name: Create GitHub Release
         uses: ncipollo/release-action@v1.13.0
         with:
-          artifacts: "chriswiegman-${{ env.RELEASE_VERSION }}.zip"
+          artifacts: "chriswiegman-theme.${{ env.RELEASE_VERSION }}.zip"
           bodyFile: ".changes/${{ env.RELEASE_VERSION }}.md"
