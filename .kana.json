@@ -1,22 +1,27 @@
 {
-  "local": true,
+  "activate": true,
+  "databaseclient": "phpmyadmin",
+  "environment": "local",
   "mailpit": true,
-  "php": "8.2",
+  "mariadb": "11",
+  "multisite": "none",
+  "php": "8.1",
   "plugins": [
     "csp-manager",
     "debug-bar",
     "disable-floc",
+    "favicon-by-realfavicongenerator",
     "pods",
     "query-monitor",
     "rss-featured-image",
     "syntax-highlighting-code-block",
     "two-factor",
-    "wordpress-seo",
-    "favicon-by-realfavicongenerator"
+    "wordpress-seo"
   ],
+  "removedefaultplugins": true,
+  "scriptdebug": true,
   "ssl": false,
   "type": "theme",
   "wpdebug": true,
-  "xdebug": false,
-  "scriptdebug": true
+  "xdebug": false
 }
