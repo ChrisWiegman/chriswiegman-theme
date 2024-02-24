@@ -5,12 +5,11 @@
   "mailpit": true,
   "mariadb": "11",
   "multisite": "none",
-  "php": "8.1",
+  "php": "8.2",
   "plugins": [
     "csp-manager",
     "debug-bar",
     "disable-floc",
-    "favicon-by-realfavicongenerator",
     "pods",
     "query-monitor",
     "rss-featured-image",
