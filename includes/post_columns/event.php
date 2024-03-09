@@ -13,21 +13,16 @@ namespace CW\Theme\Post_Columns\Event;
  * @since 12.0.0
  */
 function init() {
-
-	$n = function ( $function_name ) {
-		return __NAMESPACE__ . "\\$function_name";
-	};
-
 	// Add and remove the columns we need.
-	add_filter( 'manage_event_posts_columns', $n( 'filter_manage_event_posts_columns' ) );
+	add_filter( 'manage_event_posts_columns', 'CW\Theme\Post_Columns\Event\filter_manage_event_posts_columns' );
 
 	// Edit each column as needed.
-	add_action( 'manage_event_posts_custom_column', $n( 'action_manage_event_posts_custom_column' ), 10, 2 );
+	add_action( 'manage_event_posts_custom_column', 'CW\Theme\Post_Columns\Event\action_manage_event_posts_custom_column', 10, 2 );
 
 	// Make the columns sortable.
-	add_filter( 'manage_edit-event_sortable_columns', $n( 'filter_manage_edit_event_sortable_columns' ) );
-	add_filter( 'posts_join_request', $n( 'filter_posts_join_request' ), 10, 2 );
-	add_filter( 'posts_orderby_request', $n( 'filter_posts_orderby_request' ), 10, 2 );
+	add_filter( 'manage_edit-event_sortable_columns', 'CW\Theme\Post_Columns\Event\filter_manage_edit_event_sortable_columns' );
+	add_filter( 'posts_join_request', 'CW\Theme\Post_Columns\Event\filter_posts_join_request', 10, 2 );
+	add_filter( 'posts_orderby_request', 'CW\Theme\Post_Columns\Event\filter_posts_orderby_request', 10, 2 );
 }
 
 /**

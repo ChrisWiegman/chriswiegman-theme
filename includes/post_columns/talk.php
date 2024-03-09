@@ -13,21 +13,16 @@ namespace CW\Theme\Post_Columns\Talk;
  * @since 12.0.0
  */
 function init() {
-
-	$n = function ( $function_name ) {
-		return __NAMESPACE__ . "\\$function_name";
-	};
-
 	// Add and remove the columns we need.
-	add_filter( 'manage_talk_posts_columns', $n( 'filter_manage_talk_posts_columns' ) );
+	add_filter( 'manage_talk_posts_columns', 'CW\Theme\Post_Columns\Talk\filter_manage_talk_posts_columns' );
 
 	// Edit each column as needed.
-	add_action( 'manage_talk_posts_custom_column', $n( 'action_manage_talk_posts_custom_column' ), 10, 2 );
+	add_action( 'manage_talk_posts_custom_column', 'CW\Theme\Post_Columns\Talk\action_manage_talk_posts_custom_column', 10, 2 );
 
 	// Make the columns sortable.
-	add_filter( 'manage_edit-talk_sortable_columns', $n( 'filter_manage_edit_talk_sortable_columns' ) );
-	add_filter( 'posts_join_request', $n( 'filter_posts_join_request' ), 10, 2 );
-	add_filter( 'posts_orderby_request', $n( 'filter_posts_orderby_request' ), 10, 2 );
+	add_filter( 'manage_edit-talk_sortable_columns', 'CW\Theme\Post_Columns\Talk\filter_manage_edit_talk_sortable_columns' );
+	add_filter( 'posts_join_request', 'CW\Theme\Post_Columns\Talk\filter_posts_join_request', 10, 2 );
+	add_filter( 'posts_orderby_request', 'CW\Theme\Post_Columns\Talk\filter_posts_orderby_request', 10, 2 );
 }
 
 /**
