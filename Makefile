@@ -192,7 +192,7 @@ stop: ## Stops the development environment. This is non-destructive.
 	fi
 
 .PHONY: update
-update: | update-composer update-node
+update: | update-composer update-npm
 
 .PHONY: update-composer
 update-composer:
