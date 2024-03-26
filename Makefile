@@ -152,15 +152,10 @@ install-npm:
 .PHONY: lint
 lint: ## Run all linting
 	@echo "Running PHP linting"
-	if [ ! -d ./wordpress/ ]; then \
-		$(MAKE) install; \
+	if [ ! -d ./vendor/ ]; then \
+		$(MAKE) install-composer; \
 	fi
-	docker run \
-		-v "$$(pwd):/app" \
-		--workdir /app \
-		--rm \
-		php:cli \
-		/app/vendor/bin/phpcs --standard=./phpcs.xml
+	./vendor/bin/phpcs -standard=./phpcs.xml
 
 .PHONY: open-db
 open-db: ## Open the database in TablePlus
