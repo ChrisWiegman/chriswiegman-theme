@@ -5,6 +5,7 @@
  * @package chriswiegman-theme
  */
 
+add_filter( 'syntax_highlighting_code_block_styling', '__return_true' );
 get_header();
 ?>
 <main>
