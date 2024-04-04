@@ -1,4 +1,0 @@
-kind: Bug Fixes
-body: Don't enqueue syntax highlighting styles on pages that couldn't possibly use
-  them.
-time: 2024-04-04T18:23:07.654985385Z
