@@ -39,6 +39,7 @@ function init() {
 	add_filter( 'wpseo_debug_markers', '__return_false' );
 	add_action( 'widgets_init', 'CW\Theme\action_widgets_init' );
 	add_filter( 'wpseo_json_ld_output', '__return_false' );
+	add_filter( 'should_load_separate_core_block_assets', '__return_true' );
 
 	// Close comments on the front-end.
 	add_filter( 'comments_open', '__return_false', 20, 2 );
