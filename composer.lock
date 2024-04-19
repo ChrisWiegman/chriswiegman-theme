@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "55e7f91e8f8bdd873edb99c0b9e3a69b",
+    "content-hash": "7af5ae6c9ad7453ef3d11c0fea3ec9d1",
     "packages": [],
     "packages-dev": [
         {
@@ -427,16 +427,16 @@
         },
         {
             "name": "sirbrillig/phpcs-variable-analysis",
-            "version": "v2.11.17",
+            "version": "v2.11.18",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sirbrillig/phpcs-variable-analysis.git",
-                "reference": "3b71162a6bf0cde2bff1752e40a1788d8273d049"
+                "reference": "ca242a0b7309e0f9d1f73b236e04ecf4ca3248d0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sirbrillig/phpcs-variable-analysis/zipball/3b71162a6bf0cde2bff1752e40a1788d8273d049",
-                "reference": "3b71162a6bf0cde2bff1752e40a1788d8273d049",
+                "url": "https://api.github.com/repos/sirbrillig/phpcs-variable-analysis/zipball/ca242a0b7309e0f9d1f73b236e04ecf4ca3248d0",
+                "reference": "ca242a0b7309e0f9d1f73b236e04ecf4ca3248d0",
                 "shasum": ""
             },
             "require": {
@@ -481,7 +481,7 @@
                 "source": "https://github.com/sirbrillig/phpcs-variable-analysis",
                 "wiki": "https://github.com/sirbrillig/phpcs-variable-analysis/wiki"
             },
-            "time": "2023-08-05T23:46:11+00:00"
+            "time": "2024-04-13T16:42:46+00:00"
         },
         {
             "name": "squizlabs/php_codesniffer",

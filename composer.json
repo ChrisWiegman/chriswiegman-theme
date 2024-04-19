@@ -9,7 +9,7 @@
         "phpcompatibility/phpcompatibility-wp": "2.1.4",
         "wp-coding-standards/wpcs": "3.1.0",
         "squizlabs/php_codesniffer": "3.9.1",
-        "sirbrillig/phpcs-variable-analysis": "^v2.11.17"
+        "sirbrillig/phpcs-variable-analysis": "v2.11.18"
     },
     "config": {
         "allow-plugins": {
