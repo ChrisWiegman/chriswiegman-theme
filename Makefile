@@ -155,7 +155,7 @@ lint: ## Run all linting
 	if [ ! -d ./vendor/ ]; then \
 		$(MAKE) install-composer; \
 	fi
-	./vendor/bin/phpcs -standard=./phpcs.xml
+	./vendor/bin/phpcs --standard=./phpcs.xml
 
 .PHONY: open-db
 open-db: ## Open the database in TablePlus
