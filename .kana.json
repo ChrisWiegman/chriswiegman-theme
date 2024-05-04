@@ -19,7 +19,7 @@
   ],
   "removedefaultplugins": true,
   "scriptdebug": true,
-  "ssl": false,
+  "ssl": true,
   "type": "theme",
   "wpdebug": true,
   "xdebug": false
