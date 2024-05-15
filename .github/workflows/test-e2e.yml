@@ -1,4 +1,4 @@
-name: Playwright Tests
+name: E2E Tests
 
 on:
   push:
@@ -7,7 +7,7 @@ on:
     branches: [ main, canary ]
 
 jobs:
-  playwright-test:
+  e2e-test:
     timeout-minutes: 60
     runs-on: ubuntu-22.04
     steps:
@@ -26,14 +26,14 @@ jobs:
       run: npm run build
 
     - name: Install Playwright Browsers
-      run: npx playwright install --with-deps
+      run: npx playwright chromium --with-deps
 
     - name: Start WordPress Environment and activate theme
       run: |
         npx wp-env start
         npx wp-env run cli wp theme activate chriswiegman-theme
 
-    - name: Run Playwright tests
+    - name: Run E2E tests
       run: npm run test
 
     - uses: actions/upload-artifact@v4
