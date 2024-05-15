@@ -25,6 +25,11 @@ jobs:
     - name: Install Playwright Browsers
       run: npx playwright install --with-deps
 
+    - name: Start WordPress Environment and activate theme
+      run: |
+        npx wp-env start
+        npx wp-env run cli wp theme activate chriswiegman-theme
+
     - name: Run Playwright tests
       run: npx playwright test
 
