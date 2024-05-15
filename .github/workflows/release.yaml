@@ -9,7 +9,7 @@ jobs:
   release:
     runs-on: ubuntu-22.04
     steps:
-      - name: Checkout
+      - name: Checkout project
         uses: actions/checkout@v4
 
       - name: Set release version
