@@ -6,7 +6,7 @@ const config = defineConfig({
 	...baseConfig,
 	reporter: [
 		['list'],
-		['html', { open: 'never', outputFolder: path.join(process.cwd(), 'artifacts', 'test-results', 'html') }],
+		['html', { open: 'never', outputFolder: path.join(process.cwd(), 'artifacts', 'html') }],
 		['github']
 	]
 });
