@@ -65,3 +65,7 @@ wordpress/
 assets/*.css
 assets/*.map
 chriswiegman-theme.*.zip
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
