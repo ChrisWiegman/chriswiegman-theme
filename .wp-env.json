@@ -1,0 +1,12 @@
+{
+    "plugins": [
+        "https://downloads.wordpress.org/plugin/pods.zip"
+    ],
+    "themes": [
+        "."
+    ],
+    "port": 8888,
+    "config": {
+        "WP_DEBUG": true
+    }
+}
