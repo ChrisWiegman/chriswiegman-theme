@@ -11,7 +11,7 @@ namespace CW\Theme;
 use WP_POST;
 use WP_Query;
 
-define( 'CW_THEME_VERSION', '12.9.6' );
+define( 'CW_THEME_VERSION', '12.9.7' );
 
 /**
  * Setup theme hooks.
