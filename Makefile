@@ -13,7 +13,7 @@ build:  | clean-assets
 	if [ ! -d ./node_modules/ ]; then \
 		$(MAKE) install-npm; \
 	fi
-	npm run build-assets
+	npm run build
 
 .PHONY: change
 change:
