@@ -22,6 +22,9 @@ jobs:
     - name: Install Node dependencies
       run: npm ci
 
+    - name: Build CSS and JS
+      run: npm run build
+
     - name: Install Playwright Browsers
       run: npx playwright install --with-deps
 
