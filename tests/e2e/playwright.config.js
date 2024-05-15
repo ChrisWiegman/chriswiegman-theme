@@ -1,6 +1,5 @@
-import { defineConfig } from '@playwright/test';
-
-// import base WordPress configuration
+const { defineConfig } = require('@playwright/test');
+const path = require('path');
 const baseConfig = require('@wordpress/scripts/config/playwright.config');
 
 const config = defineConfig({
