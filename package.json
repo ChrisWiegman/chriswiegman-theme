@@ -27,6 +27,6 @@
     "minify": "cleancss -O2 --batch --batch-suffix '.min' assets/*.css",
     "build": "npm run clean && npm run compile && npm run minify",
     "watch": "sass --watch assets/scss/main.scss:assets/main.css assets/scss/editor.scss:assets/editor.css",
-    "test": "wp-scripts test-playwright"
+    "test": "wp-scripts test-playwright --config tests/e2e/playwright.config.js"
   }
 }
