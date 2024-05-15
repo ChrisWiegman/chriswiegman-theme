@@ -40,5 +40,5 @@ jobs:
       if: always()
       with:
         name: e2e-report
-        path: artifacts/test_results/
+        path: artifacts/test-results/
         retention-days: 30
