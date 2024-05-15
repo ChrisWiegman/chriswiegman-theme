@@ -26,7 +26,7 @@ jobs:
       run: npm run build
 
     - name: Install Playwright Browsers
-      run: npx playwright install chromium --with-deps
+      run: npx playwright install --with-deps
 
     - name: Start WordPress Environment and activate theme
       run: |
