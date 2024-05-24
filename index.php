@@ -1,6 +1,6 @@
 <?php
 /**
- * Templates for the main blog page.
+ * Templates for the archive and other pages.
  *
  * @package chriswiegman-theme
  */

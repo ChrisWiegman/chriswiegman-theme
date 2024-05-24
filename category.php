@@ -6,13 +6,15 @@
  */
 
 get_header();
+
+global $wp_query;
 ?>
 <main>
 	<article class='h-entry page-index' itemscope='' itemtype='http://schema.org/BlogPosting'>
 		<div class="container">
 			<div class="content-header">
-				<?php the_title( '<h1 class="title post-title p-name" itemprop="name headline">', '</h1>' ); ?>
-				<p class="description">All the technical and personal posts I've written on this site going back to 2008.</p>
+				<?php printf( '<h1 class="title p-name" itemprop="name headline">Posts in: <span class="term">%s</span></h1>', esc_attr( single_cat_title( '', false ) ) ); ?>
+				<p class="description"><?php printf( '<span class="post-count">%d</span> posts found.', intval( $wp_query->found_posts ) ); ?></p>
 			</div>
 			<div class="content-search">
 				<form action="/" method="get">
@@ -21,22 +23,18 @@ get_header();
 					<input type="submit" alt="Search" value="Search"  />
 				</form>
 			</div>
+			<h2 class="main-header"><span>Recent Posts</span> <a href="/blog">View All</a></h2>
 			<div class="content e-content" itemprop="articleBody">
 				<?php
-				$cw_theme_args       = array(
-					'posts_per_page' => -1,
-				);
-				$cw_theme_blog_query = new WP_Query( $cw_theme_args );
-
-				if ( $cw_theme_blog_query->have_posts() ) {
+				if ( $wp_query->have_posts() ) {
 
 					echo '<!-- Group by year. -->';
 
 					$cw_theme_current_year = false;
 
 					/* Start the Loop */
-					while ( $cw_theme_blog_query->have_posts() ) {
-						$cw_theme_blog_query->the_post();
+					while ( $wp_query->have_posts() ) {
+						$wp_query->the_post();
 
 						$cw_theme_post_year = get_the_date( 'Y' );
 
