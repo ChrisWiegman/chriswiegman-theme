@@ -1,6 +1,6 @@
 <?php
 /**
- * Templates for individual posts and pages.
+ * Templates for the main blog page.
  *
  * @package chriswiegman-theme
  */
@@ -58,7 +58,6 @@ global $wp_query;
 			</div>
 		</div>
 	</article>
-
 </main>
 <?php
 get_footer();
