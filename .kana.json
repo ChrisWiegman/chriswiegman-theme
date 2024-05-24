@@ -1,5 +1,11 @@
 {
   "activate": true,
+  "admin": {
+    "email": "admin@sites.kana.sh",
+    "password": "password",
+    "username": "admin"
+  },
+  "automaticlogin": true,
   "databaseclient": "phpmyadmin",
   "environment": "local",
   "mailpit": true,
@@ -20,6 +26,7 @@
   "removedefaultplugins": true,
   "scriptdebug": true,
   "ssl": true,
+  "theme": "",
   "type": "theme",
   "wpdebug": true,
   "xdebug": false
