@@ -4,7 +4,9 @@
 .archive {
   main {
     article {
-      .content-header {
+
+      .content-header,
+      .content-categories {
         padding: 0 2rem 2rem 2rem;
         text-align: center;
 
@@ -12,7 +14,8 @@
           padding-top: 0.4rem;
         }
 
-        .tags {
+        .tags,
+        .categories {
           align-items: center;
           display: flex;
           flex-wrap: wrap;

@@ -23,7 +23,23 @@ global $wp_query;
 					<input type="submit" alt="Search" value="Search"  />
 				</form>
 			</div>
-			<h2 class="main-header"><span>Recent Posts</span> <a href="/blog">View All</a></h2>
+			<div class="content-categories">
+				<div class="categories">
+					Filter Posts: <a href="/blog" class="category">All Posts</a>
+					<?php
+					$cw_theme_categories = get_categories(
+						array(
+							'orderby' => 'name',
+							'order'   => 'ASC',
+						)
+					);
+
+					foreach ( $cw_theme_categories as $cw_theme_category ) {
+						printf( '<a href="%s" class="category">%s Posts</a>', esc_url( get_category_link( $cw_theme_category->term_id ) ), esc_html( $cw_theme_category->name ) );
+					}
+					?>
+				</div>
+			</div>
 			<div class="content e-content" itemprop="articleBody">
 				<?php
 				if ( $wp_query->have_posts() ) {

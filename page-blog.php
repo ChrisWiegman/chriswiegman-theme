@@ -6,13 +6,18 @@
  */
 
 get_header();
+
+$cw_theme_args       = array(
+	'posts_per_page' => -1,
+);
+$cw_theme_blog_query = new WP_Query( $cw_theme_args );
 ?>
 <main>
 	<article class='h-entry page-index' itemscope='' itemtype='http://schema.org/BlogPosting'>
 		<div class="container">
 			<div class="content-header">
-				<?php the_title( '<h1 class="title post-title p-name" itemprop="name headline">', '</h1>' ); ?>
-				<p class="description">All the technical and personal posts I've written on this site going back to 2008.</p>
+				<h1 class="title post-title p-name" itemprop="name headline">All Posts</h1>
+				<p class="description"><?php printf( '<span class="post-count">%d</span> posts found.', intval( $cw_theme_blog_query->found_posts ) ); ?></p>
 			</div>
 			<div class="content-search">
 				<form action="/" method="get">
@@ -21,13 +26,25 @@ get_header();
 					<input type="submit" alt="Search" value="Search"  />
 				</form>
 			</div>
+			<div class="content-categories">
+				<div class="categories">
+					Filter Posts: <a href="/blog" class="category">All Posts</a>
+					<?php
+					$cw_theme_categories = get_categories(
+						array(
+							'orderby' => 'name',
+							'order'   => 'ASC',
+						)
+					);
+
+					foreach ( $cw_theme_categories as $cw_theme_category ) {
+						printf( '<a href="%s" class="category">%s Posts</a>', esc_url( get_category_link( $cw_theme_category->term_id ) ), esc_html( $cw_theme_category->name ) );
+					}
+					?>
+				</div>
+			</div>
 			<div class="content e-content" itemprop="articleBody">
 				<?php
-				$cw_theme_args       = array(
-					'posts_per_page' => -1,
-				);
-				$cw_theme_blog_query = new WP_Query( $cw_theme_args );
-
 				if ( $cw_theme_blog_query->have_posts() ) {
 
 					echo '<!-- Group by year. -->';
