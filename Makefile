@@ -113,8 +113,8 @@ clean-release:
 .PHONY: copy-prod-assets
 copy-prod-assets: | clean-prod-assets
 	@echo "Copying assets from chriswiegman.com"
-	rsync -aqz -e "ssh" --progress chriswiegman@chriswiegman.ssh.wpengine.net:/home/wpe-user/sites/chriswiegman/wp-content/uploads/ ./wordpress/wp-content/uploads/
-	scp -O chriswiegman@chriswiegman.ssh.wpengine.net:/home/wpe-user/sites/chriswiegman/wp-content/mysql.sql ./wordpress/wp-content/
+	rsync -aqz -e "ssh -p 18765" --progress u2489-wtdrslulygzg@giowm1307.siteground.biz:/home/u2489-wtdrslulygzg/www/chriswiegman.com/public_html/wp-content/uploads/ ./wordpress/wp-content/uploads/
+	scp -p 18765 -O u2489-wtdrslulygzg@giowm1307.siteground.biz:/home/u2489-wtdrslulygzg/www/chriswiegman.com/public_html/wp-content/mysql.sql ./wordpress/wp-content/
 
 .PHONY: import-db
 import-db:
